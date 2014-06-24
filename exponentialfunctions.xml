@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Overall element for a Mathbook XML document; mandatory, always-->
+<mathbook>
+
+        <section xml:id="test">
+            <title>Introduction</title>
+  <p>
+In our mathematical adventures so far we have studied linear, quadratic, 
+and radical functions. The simplicity of these functions is useful when 
+introducing new concepts such as transformations, composition, and 
+inverse functions; but it is somewhat restrictive when we wish to 
+consider interesting real-world application problems. <xref ref="test" /> 
+  </p>
+  <cmh>
+    nonsense
+    nonsense
+    nonsense
+  </cmh>
+</section>
+</mathbook>
