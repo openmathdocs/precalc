@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+% arara: xslt: {convertTo: html, outputToFile: no}
+% arara: xslt: {convertTo: tex, outputToFile: no}
+-->
 
 <!-- Overall element for a Mathbook XML document; mandatory, always-->
 <mathbook>

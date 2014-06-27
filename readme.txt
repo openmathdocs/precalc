@@ -42,3 +42,29 @@ Process work flow (ever changing)
 
     TO DO: get the basename of the file so that we don't have to specify it every time.
     TO DO: research how to cross reference between .html pages (perhaps using php and a .haux file?)
+
+arara
+=======
+    You can perform the xsltproc conversion using arara directives. For example, let's say that we have
+    myfile.xml that looks like the following:
+
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <!-- 
+    % arara: xslt: {convertTo: html, outputToFile: yes}
+    % arara: xslt: {convertTo: tex, outputToFile: no}
+    -->
+
+    This will perform two conversions - the first to html, and will be written to myfile.html; the second to 
+    tex, and will only be written to the screen.
+
+    You'll need to update your araraconfig.yaml file (which lives at the highest level of your home directory, ~/araraconfig.yaml)
+    so that it contains the following lines:
+
+        !config
+        paths:
+        - /home/cmhughes/Documents/projects/111and112doc
+        filetypes:
+        - extension: xml
+          pattern: ^(\s)*%\s+
+
+    Just make sure that the paths variable matches the directory in which you are keeping this project.
