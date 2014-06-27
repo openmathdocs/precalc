@@ -12,9 +12,9 @@ To output to `derivatives.html` file (hard coded in `sample-article.xml`) you ca
 xsltproc ./xsl/mathbook-html.xsl sample-article.xml
 ```
 
-##Process work flow (outline as it is ever changing)
+####Process work flow (outline as it is ever changing)
 
-###`.tex`
+######`.tex`
 mainfile.tex will be maintained separately as a .tex file - it will not be 
 changed using the XML approach
 
@@ -35,7 +35,7 @@ pdflatex mainfile.tex
 
 or, alternatively, once we put the arara directives in place, arara chapterfile.tex 
 
-###`.html`
+######`.html`
 `mainfile.html` (doesn't currently exist), which will link to mainfile.css and probably 
 a Javascript library, will link to chapter .html files and those are created by 
 running the command:
@@ -46,7 +46,7 @@ xsltproc ./xsl/omd2html.xsl sample-article.xml > myfile.html
 
 TO DO: research how to cross reference between .html pages (perhaps using php and a .haux file?)
 
-###`arara`
+######`arara`
 You can perform the xsltproc conversion using arara directives. For example, let's say that we have
 myfile.xml that begins with the following lines:
 
