@@ -13,8 +13,10 @@ xsltproc ./xsl/mathbook-html.xsl sample-article.xml
 ```
 
 ####Process work flow (outline as it is ever changing)
+Writing the code in `xml` allows us to convert easily into beautiful `.tex` files 
+and into `.html` files. 
 
-###### .tex version
+##### .tex version
 mainfile.tex will be maintained separately as a .tex file - it will not be 
 changed using the XML approach
 
@@ -36,7 +38,7 @@ pdflatex mainfile.tex
 
 or, alternatively, once we put the arara directives in place, arara chapterfile.tex 
 
-###### .html version
+##### .html version
 `mainfile.html` (doesn't currently exist), which will link to mainfile.css and probably 
 a Javascript library, will link to chapter .html files and those are created by 
 running the command:
@@ -47,7 +49,7 @@ xsltproc ./xsl/omd2html.xsl sample-article.xml > myfile.html
 
 TO DO: research how to cross reference between .html pages (perhaps using php and a .haux file?)
 
-###### using arara to help with conversion
+##### using arara to help with conversion
 You can perform the xsltproc conversion using arara directives. For example, let's say that we have
 myfile.xml that begins with the following lines:
 
