@@ -483,6 +483,15 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="xref[@ref]">
     <!-- Save what the reference points to -->
     <xsl:variable name="target" select="id(@ref)" />
+    <!-- Create a 'cleveref'-type reference -->
+    <xsl:choose>
+        <xsl:when test="$target/self::section">
+            <xsl:text>Section </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>FIX!!! </xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
     <!-- Create what the reader sees, equation references get parentheses -->
     <xsl:variable name="visual">
         <xsl:choose>

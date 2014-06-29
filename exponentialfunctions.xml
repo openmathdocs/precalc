@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- 
-% arara: xslt: {convertTo: tex, outputToFile: no}
-% !arara: xslt: {convertTo: html, outputToFile: no}
+% !arara: xslt: {convertTo: tex, outputToFile: no}
+% arara: xslt: {convertTo: html, outputToFile: no}
 -->
 
 <!-- Overall element for a Mathbook XML document; mandatory, always-->
@@ -9,7 +9,7 @@
 <commentsAtTop>
 This file is all about exponential functions.
 </commentsAtTop>
-        <section xml:id="test">
+        <section xml:id="testlabel">
             <title>Introduction</title>
 <outcomes>
   <li> Explore increasing and decreasing functions, particularly in the context of concavity;</li>
@@ -21,10 +21,12 @@ and radical functions. The simplicity of these functions is useful when
 introducing new concepts such as transformations, composition, and 
 inverse functions; but it is somewhat restrictive when we wish to 
 consider interesting real-world application problems. 
-<xref ref="test" /> 
-<Xref ref="test" /> 
-<xref ref="test" faraway="true"/> 
-<Xref ref="test" faraway="true"/> 
+<xref ref="testlabel" /> 
+<xref ref="testlabel" beginsentence='true'/> 
+<xref ref="testlabel" faraway="true"/> 
+<xref ref="testlabel" faraway="true" beginsentence="true"/> 
+need to fix referencing so that it uses *our* ID (at the very least in the .tex version)
+need to work out how to define a 'xrefRange' command (two arguments???)
   </p>
   <ignore>
 For example, let's say that we were interested in modeling the 

@@ -1224,32 +1224,31 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>}</xsl:text>
 </xsl:template>
 
-<!-- LaTeX references equations differently than theorems, etc -->
+<!-- LaTeX references use cleveref or varioref, depending on if the object is 'faraway' or at the beginning of a sentence -->
 <xsl:template match="xref[@ref]">
     <xsl:variable name="target" select="id(@ref)" />
     <xsl:choose>
+        <!-- far away at beginning of a sentence -->
+        <xsl:when test="@faraway='true' and @beginsentence='true'">
+            <xsl:text>\Vref{</xsl:text>
+        </xsl:when>
+        <!-- far away, mid sentece -->
         <xsl:when test="@faraway='true'">
             <xsl:text>\vref{</xsl:text>
         </xsl:when>
+        <!-- not far away at beginning of a sentence -->
+        <xsl:when test="@beginsentence='true'">
+            <xsl:text>\Cref{</xsl:text>
+        </xsl:when>
+        <!-- not far away mid-sentence -->
         <xsl:otherwise>
             <xsl:text>\cref{</xsl:text>
         </xsl:otherwise>
     </xsl:choose>
+    <!-- OLD
     <xsl:apply-templates select="$target" mode="xref-identifier" />
-    <xsl:text>}</xsl:text>
-</xsl:template>
-
-<xsl:template match="Xref[@ref]">
-    <xsl:variable name="target" select="id(@ref)" />
-    <xsl:choose>
-        <xsl:when test="@faraway='true'">
-            <xsl:text>\Vref{</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:text>\Cref{</xsl:text>
-        </xsl:otherwise>
-    </xsl:choose>
-    <xsl:apply-templates select="$target" mode="xref-identifier" />
+    -->
+    <xsl:value-of select="@ref"/>
     <xsl:text>}</xsl:text>
 </xsl:template>
 
