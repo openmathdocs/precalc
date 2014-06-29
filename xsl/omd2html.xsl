@@ -361,6 +361,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:copy>
 </xsl:template>
 
+<!-- Outcomes are an unordered type of list -->
+<xsl:template match="outcomes">
+    <ul>
+    <xsl:apply-templates select="li" />
+  </ul>
+</xsl:template>
+
 <!-- Figures and their captions -->
 <xsl:template match="figure">
     <div class="figure">
@@ -1428,6 +1435,16 @@ var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "
 </div>
 </noscript>
 <xsl:comment>End: StatCounter code</xsl:comment>
+</xsl:template>
+
+<!-- Comments at the top of each file -->
+<xsl:template match="commentsAtTop">
+  <xsl:comment>
+This file was created using ./xsl/omd2html.xsl
+there is no point in editing it :)
+    <xsl:apply-templates />
+  </xsl:comment>
+  <xsl:text>&#xa;&#xa;</xsl:text>
 </xsl:template>
 
 

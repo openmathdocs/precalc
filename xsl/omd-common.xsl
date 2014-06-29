@@ -455,6 +455,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:message>
 </xsl:template>
 
+<!-- An ignore environment -->
+<xsl:template match="ignore"/>
 
 
 

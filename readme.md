@@ -24,8 +24,9 @@ chapter files *are* `.xml` files and are converted into `.tex` files using, for 
 xsltproc ./xsl/omd2tex.xsl sample-article.xml > myfile.tex
 ```
 
-TO DO: change cross-referencing mechanism so that it uses the id that *we specify*, 
+TO DO: - change cross-referencing mechanism so that it uses the id that *we specify*, 
        (e.g `\label{sec:introduction}`), not an automated, hard-coded label (e.g, `\label{section-1}`)
+       - make the cross referencing work so that we can use cref, Cref, vref, Vref, crefrange, etc
 
 The last thing to do is to run 
 
