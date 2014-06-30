@@ -91,7 +91,8 @@ which will give, in `.tex`,
 \cref{firstsection} 
 \Cref{firstsection} 
 \vref{firstsection} 
-\Vref{firstsection}```
+\Vref{firstsection}
+```
 In `.html` it simply gives the name of the object being referred to (e.g Section, Figure, etc) and a hyperlink
 to that object; note that page references (given by `vref` and friends in `.tex`) are not as relevant in `.html`.
 
@@ -100,13 +101,15 @@ Similarly,
 <xrefrange ref1="firstsection" ref2="secondsection"/> 
 <xrefrange ref1="firstsection" ref2="secondsection" beginsentence='true'/>                
 <xrefrange ref1="firstsection" ref2="secondsection" faraway="true"/>                      
-<xrefrange ref1="firstsection" ref2="secondsection" faraway="true" beginsentence="true"/> ```
+<xrefrange ref1="firstsection" ref2="secondsection" faraway="true" beginsentence="true"/> 
+```
 outputs (in `.tex`)
 ```tex
 \crefrange{firstsection}{secondsection} 
 \Crefrange{firstsection}{secondsection}                
 \vrefrange{firstsection}{secondsection}                      
-\Vrefrange{firstsection}{secondsection}```
+\Vrefrange{firstsection}{secondsection}
+```
 In `.html` it outputs, for example, Section `<hyperlink to firstsection>` through `<hyperlink to second section>`.
 
 ##### general to do
