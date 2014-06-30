@@ -1226,7 +1226,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
 <!-- LaTeX references use cleveref or varioref, depending on if the object is 'faraway' or at the beginning of a sentence -->
 <xsl:template match="xref[@ref]">
+    <!-- OLD
     <xsl:variable name="target" select="id(@ref)" />
+    -->
     <xsl:choose>
         <!-- far away at beginning of a sentence -->
         <xsl:when test="@faraway='true' and @beginsentence='true'">
@@ -1249,6 +1251,32 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="$target" mode="xref-identifier" />
     -->
     <xsl:value-of select="@ref"/>
+    <xsl:text>}</xsl:text>
+</xsl:template>
+
+<!-- xrefrange when referring to a range of cross references, e.g \crefrange{first:object}{second:object} -->
+<xsl:template match="xrefrange[@ref1 and @ref2]">
+    <xsl:choose>
+        <!-- far away at beginning of a sentence -->
+        <xsl:when test="@faraway='true' and @beginsentence='true'">
+            <xsl:text>\Vrefrange{</xsl:text>
+        </xsl:when>
+        <!-- far away, mid sentece -->
+        <xsl:when test="@faraway='true'">
+            <xsl:text>\vrefrange{</xsl:text>
+        </xsl:when>
+        <!-- not far away at beginning of a sentence -->
+        <xsl:when test="@beginsentence='true'">
+            <xsl:text>\Crefrange{</xsl:text>
+        </xsl:when>
+        <!-- not far away mid-sentence -->
+        <xsl:otherwise>
+            <xsl:text>\crefrange{</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:value-of select="@ref1"/>
+    <xsl:text>}{</xsl:text>
+    <xsl:value-of select="@ref2"/>
     <xsl:text>}</xsl:text>
 </xsl:template>
 

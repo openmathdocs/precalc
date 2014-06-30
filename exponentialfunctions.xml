@@ -9,7 +9,7 @@
 <commentsAtTop>
 This file is all about exponential functions.
 </commentsAtTop>
-        <section xml:id="testlabel">
+        <section xml:id="firstsection">
             <title>Introduction</title>
 <outcomes>
   <li> Explore increasing and decreasing functions, particularly in the context of concavity;</li>
@@ -21,13 +21,26 @@ and radical functions. The simplicity of these functions is useful when
 introducing new concepts such as transformations, composition, and 
 inverse functions; but it is somewhat restrictive when we wish to 
 consider interesting real-world application problems. 
-<xref ref="testlabel" /> 
-<xref ref="testlabel" beginsentence='true'/> 
-<xref ref="testlabel" faraway="true"/> 
-<xref ref="testlabel" faraway="true" beginsentence="true"/> 
+<xref ref="firstsection" /> 
+<xref ref="firstsection" beginsentence='true'/> 
+<xref ref="firstsection" faraway="true"/> 
+<xref ref="firstsection" faraway="true" beginsentence="true"/> 
+</p>
+<p>
+HERE:
+<xrefrange ref1="firstsection" ref2="secondsection"/> 
+<xrefrange ref1="firstsection" ref2="secondsection" beginsentence='true'/>                
+<xrefrange ref1="firstsection" ref2="secondsection" faraway="true"/>                      
+<xrefrange ref1="firstsection" ref2="secondsection" faraway="true" beginsentence="true"/> 
+DONE
+
 need to fix referencing so that it uses *our* ID (at the very least in the .tex version)
 need to work out how to define a 'xrefRange' command (two arguments???)
   </p>
+</section>
+        <section xml:id="secondsection">
+            <title>Method</title>
+</section>
   <ignore>
 For example, let's say that we were interested in modeling the 
 temperature of a hot cup of coffee since it was first poured. We cannot 
@@ -8662,5 +8675,4 @@ of the exponential function $f$ that has formula $f(x)=\left( \frac{2}{3} \right
 %\section{Glossary}
 %\fixthis{Chris: Add the glossary}
   </ignore>
-</section>
 </mathbook>

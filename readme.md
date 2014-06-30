@@ -36,7 +36,7 @@ The last thing to do is to run
 pdflatex mainfile.tex
 ```
 
-or, alternatively, once we put the arara directives in place, arara chapterfile.tex 
+or, alternatively, once we put the `arara` directives in place, `arara chapterfile.tex`
 
 ##### .html version
 `mainfile.html` (doesn't currently exist), which will link to mainfile.css and probably 
@@ -49,9 +49,9 @@ xsltproc ./xsl/omd2html.xsl sample-article.xml > myfile.html
 
 TO DO: research how to cross reference between .html pages (perhaps using php and a .haux file?)
 
-##### using arara to help with conversion
-You can perform the xsltproc conversion using arara directives. For example, let's say that we have
-myfile.xml that begins with the following lines:
+##### using `arara` to help with conversion
+You can perform the `xsltproc` conversion using `arara` directives. For example, let's say that we have
+`myfile.xml` that begins with the following lines:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -77,3 +77,41 @@ filetypes:
 ```
 
 Just make sure that the paths variable matches the directory in which you are keeping this project.
+
+##### cross referencing
+heavily inspired by the `cleveref` and `varioref` packages, we can use
+```xml
+<xref ref="firstsection" /> 
+<xref ref="firstsection" beginsentence='true'/> 
+<xref ref="firstsection" faraway="true"/> 
+<xref ref="firstsection" faraway="true" beginsentence="true"/> 
+```
+which will give, in `.tex`,
+```tex
+\cref{firstsection} 
+\Cref{firstsection} 
+\vref{firstsection} 
+\Vref{firstsection}```
+In `.html` it simply gives the name of the object being referred to (e.g Section, Figure, etc) and a hyperlink
+to that object; note that page references (given by `vref` and friends in `.tex`) are not as relevant in `.html`.
+
+Similarly,
+```xml
+<xrefrange ref1="firstsection" ref2="secondsection"/> 
+<xrefrange ref1="firstsection" ref2="secondsection" beginsentence='true'/>                
+<xrefrange ref1="firstsection" ref2="secondsection" faraway="true"/>                      
+<xrefrange ref1="firstsection" ref2="secondsection" faraway="true" beginsentence="true"/> ```
+outputs (in `.tex`)
+```tex
+\crefrange{firstsection}{secondsection} 
+\Crefrange{firstsection}{secondsection}                
+\vrefrange{firstsection}{secondsection}                      
+\Vrefrange{firstsection}{secondsection}```
+In `.html` it outputs, for example, Section `<hyperlink to firstsection>` through `<hyperlink to second section>`.
+
+##### general to do
+- add support for multiple references such as `\cref{ref1,ref2,ref3}` which would output, for example `Sections 1, 2 and 3`, or 
+  even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc
+- create graphics using html canvas element
+- make the graphs zoomable on hover
+- make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
