@@ -26,10 +26,6 @@ chapter files *are* `.xml` files and are converted into `.tex` files using, for 
 xsltproc ./xsl/omd2tex.xsl sample-article.xml > myfile.tex
 ```
 
-TO DO: - change cross-referencing mechanism so that it uses the id that *we specify*, 
-       (e.g `\label{sec:introduction}`), not an automated, hard-coded label (e.g, `\label{section-1}`)
-       - make the cross referencing work so that we can use cref, Cref, vref, Vref, crefrange, etc
-
 The last thing to do is to run 
 
 ```bash
@@ -46,8 +42,6 @@ running the command:
 ```bash
 xsltproc ./xsl/omd2html.xsl sample-article.xml > myfile.html
 ```
-
-TO DO: research how to cross reference between .html pages (perhaps using php and a .haux file?)
 
 ##### using `arara` to help with conversion
 You can perform the `xsltproc` conversion using `arara` directives. For example, let's say that we have
@@ -112,9 +106,13 @@ outputs (in `.tex`)
 ```
 In `.html` it outputs, for example, Section `<hyperlink to firstsection>` through `<hyperlink to second section>`.
 
-##### general to do
+##### to do
 - add support for multiple references such as `\cref{ref1,ref2,ref3}` which would output, for example `Sections 1, 2 and 3`, or 
-  even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc
+  even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc; `.tex` version is easy, `.html` is tricky
+  possibly useful: http://stackoverflow.com/questions/16894908/xsl-transform-to-split-comma-separated-values
+- research how to cross reference between .html pages (perhaps using php and a .haux file?)
 - create graphics using html canvas element
+- MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
+- make sure that different line styles will work (solid, dashed, dotted circles, etc)
 - make the graphs zoomable on hover
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
