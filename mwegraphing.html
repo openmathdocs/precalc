@@ -17,11 +17,15 @@
 			cnv = document.getElementById("cmh");
 
 			// draw the graph
-            cnv.plotOptions = {xmin:-10, xmax:10, xres:2, 
-                               ymin:-6, ymax : 5, yres:1, 
-                               a:-8, b:8, numberOfLines:1,
-                               lineCount:1, lineColours:["rgb(200,0,0)"],
-                               lineStyles:["solid"]};
+            cnv.plotOptions = {xmin:-10, xmax:10, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
+                               ymin:-10, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
+                               a:-8, b:8,                  // optional (default: a=0.0001, b=10) 
+                               numberOfLines:1,            // optional (default: 1)
+                               lineCount:1, 
+                               lineColours:["Red"], //optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               lineStyles:["solid"],  // optional (default: solid, options: solid, dashed, dotted)
+                               lineWidths:["ultra thick"],  // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+            };
 			cnv.graphingFunction = string2Object(testGraph);
 			cnv.getinfo = drawStuff;
 			cnv.getinfo("cmh");
@@ -31,10 +35,10 @@
     {
         var scope = {x:X};
                     //f = Math.pow(x-1,2)-4;
-                    //f = math.eval('(x-1)^2-4',scope);
+                    f = math.eval('(x-1)^2-4',scope);
                     //f = math.eval('sin(2*x deg)',scope);
                     //f = math.eval('sin(2*x)',scope);
-                    f = math.eval('1/(x*(x+2))',scope);
+                    //f = math.eval('1/(x*(x+2))',scope);
     				return f;
     }
 

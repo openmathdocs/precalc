@@ -41,7 +41,7 @@ function drawStuff(id)
 		var width = canvas.width;
 		height = canvas.height;
 
-		// Draw a box round the canvas
+		// Draw frame round the canvas
 		ctx.beginPath();
 		ctx.moveTo(0,0);
 		ctx.lineTo(width,0);
@@ -49,7 +49,7 @@ function drawStuff(id)
 		ctx.lineTo(0,height);
 		ctx.lineTo(0,0);
 	    // draw frame in black	
-		ctx.strokeStyle = "rgb(0,0,0)";
+		ctx.strokeStyle = "Black";
 		
 		width -= 40;
 		height -=40;
@@ -134,13 +134,10 @@ function drawStuff(id)
 		{	
 			ctx.beginPath();
 	
-			if(thick)
-			{
+			if(thick){
 				ctx.lineWidth = 1/4;
 				thick = 0;		
-			}
-			else
-			{
+			} else {
 				ctx.lineWidth = 1/8;
 				thick = 1;		
 			}
@@ -184,23 +181,69 @@ function drawStuff(id)
 		// switch off vertical asymptotes by default
 		vertAsymp = 0;
 		
-		//ctx.strokeStyle = "rgb(0,0,200)";
-
 		for(j=0; j<numberOfLines; j++)
 		{
-			
-			ctx.strokeStyle = this.plotOptions.lineColours[j];
-            // dashed lines: see http://www.rgraph.net/blog/2013/january/html5-canvas-dashed-lines.html
-            if(this.plotOptions.lineStyles[j]==="dashed")
-            {
-             ctx.setLineDash([5]);
+		    // line colour 	
+            var lineColour;
+            if(typeof this.plotOptions.lineColours =='undefined') {
+                lineColour = 'Red';
+            } else {
+                lineColour = this.plotOptions.lineColours[j]||'Red';
             }
-            // dotted lines
-            else if(this.plotOptions.lineStyles[j]==="dotted")
-            {
-             ctx.setLineDash([1,2]);
+			ctx.strokeStyle = lineColour;
+            
+            // line style (solid, dashed, dotted, etc)
+            var lineStyle;
+            if(typeof this.plotOptions.lineStyles =='undefined') {
+                lineStyle = 'solid';
+            } else {
+                lineStyle = this.plotOptions.lineStyles[j]||'solid';
             }
-	
+
+            switch(lineStyle)
+            {
+              // solid lines
+              case 'solid': break;
+              // dashed lines: see http://www.rgraph.net/blog/2013/january/html5-canvas-dashed-lines.html
+              case 'dashed': ctx.setLineDash([5]);
+                             break;
+              // dotted lines
+              case 'dotted': ctx.setLineDash([1,2]);
+                             break;
+            }
+
+            // line width (ultra thin, very thin, thin, normal, thick, very thick, ultra thick, etc)
+            var lineWidth;
+            if(typeof this.plotOptions.lineWidths =='undefined') {
+                lineWidth = 'normal';
+            } else {
+                lineWidth = this.plotOptions.lineWidths[j]||'normal';
+            }
+
+            switch(lineWidth)
+            {
+              // ultra thin lines
+              case 'ultra thin': ctx.lineWidth = .25;
+                             break;
+              // very thin lines
+              case 'very thin': ctx.lineWidth = .5;
+                             break;
+              // thin lines
+              case 'thin': ctx.lineWidth = 1;
+                             break;
+              // normal lines
+              case 'normal': ctx.lineWidth = 2;
+                             break;
+              // thick lines
+              case 'thick': ctx.lineWidth = 3;
+                             break;
+              // very thick lines
+              case 'very thick': ctx.lineWidth = 4;
+                             break;
+              // ultra thick lines
+              case 'ultra thick': ctx.lineWidth = 5;
+                             break;
+            }
 	
 			if(plotOptions.parametric==1)
 			{
@@ -233,9 +276,7 @@ function drawStuff(id)
 					
 				}
 				ctx.stroke();
-			}
-			else
-			{
+			} else {
 
 				ctx.beginPath();
 				for(i=0; i<numberOfPoints; i++)
@@ -297,9 +338,7 @@ function drawStuff(id)
 							vertAsymp = 1;
 							yAsymptote = y;				
 						}
-					}
-					else
-					{
+					} else {
 			
 						yPrevious = y;
 						
@@ -329,9 +368,7 @@ function drawStuff(id)
 								ctx.moveTo(x,y);
 							}
 							
-						}
-						else
-						{
+						} else {
 							// if the graph starts off outside of the viewing window, then i=0 (first point on the graph)
 							if(i==0)
 							{
@@ -389,8 +426,8 @@ function drawStuff(id)
 		for(i=0; i<=Math.ceil(width/xIncrement); i++)
 		{
 			ctx.fillStyle = "blue";
-                // new
-			    ctx.fillText(axislabel,0,0);	
+            // new
+			ctx.fillText(axislabel,0,0);	
 			ctx.translate((xres)*width/(xmax-xmin),0);
 			axislabel += xres;
 		}
