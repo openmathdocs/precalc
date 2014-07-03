@@ -111,6 +111,7 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
   even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc; `.tex` version is easy, `.html` is tricky
   possibly useful: http://stackoverflow.com/questions/16894908/xsl-transform-to-split-comma-separated-values
 - research how to cross reference between .html pages (perhaps using php and a .haux file?)
+
 ##### `html canvas` to do 
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
 - create hover feature that details the coordinates
