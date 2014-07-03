@@ -13,8 +13,17 @@
 <script type="text/javascript">
 	function readData()
 	{
-			// set up the canvas as part of the question node
-			cnv = document.getElementById("cmh");
+			// grab the canvas wrapping div box
+		    var outnode = document.getElementById('canvaswrapper');
+
+			// set up the canvas as part of the div box node
+			var cnv = document.createElement("canvas");
+			cnv.setAttribute("id", "myCanvas");
+			cnv.setAttribute("height", "400");
+			cnv.setAttribute("width", "420");
+
+			// append it to the div box wrapper
+			outnode.appendChild(cnv);
 
 			// draw the graph
             cnv.plotOptions = {// axis options
@@ -31,7 +40,8 @@
             };
 			cnv.graphingFunction = string2Object(testGraph);
 			cnv.getinfo = drawStuff;
-			cnv.getinfo("cmh");
+			cnv.getinfo("myCanvas");
+
     }					
 
     function testGraph(X)
@@ -51,7 +61,11 @@
 
 <body onload="readData()">
 
-<canvas height=400 width=420 id="cmh">
-</canvas>
+<div id="canvaswrapper">
+</div>
   </body>
 </html>
+<!--
+stick the labels on top of the graph???
+http://stackoverflow.com/questions/5688599/add-elements-to-canvas-html5
+-->

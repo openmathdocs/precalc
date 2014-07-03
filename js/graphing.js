@@ -399,8 +399,6 @@ function drawStuff(id)
 			this.plotOptions.lineCount++;
 		}
 
-		//return;
-
 		// x and y tick marks
 		ctx.translate(-originX-15,-originY);
 		ctx.mozTextStyle = "9pt Arial";
