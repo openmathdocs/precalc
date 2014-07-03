@@ -16,17 +16,12 @@
 			// grab the canvas wrapping div box
 		    var outnode = document.getElementById('canvaswrapper');
 
-			// set up the canvas as part of the div box node
-			var cnv = document.createElement("canvas");
-			cnv.setAttribute("id", "myCanvas");
-			cnv.setAttribute("height", "400");
-			cnv.setAttribute("width", "420");
-
-			// append it to the div box wrapper
-			outnode.appendChild(cnv);
-
 			// draw the graph
-            cnv.plotOptions = {// axis options
+            outnode.plotOptions = {
+                               // html options
+                               height: 400, width: 420,    // optional (default: height=400, width=420) 
+                               id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
+                               // axis options
                                xmin:-10, xmax:10, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
                                ymin:-10, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
                                // axis house keeping (should be specified automatically)
@@ -34,13 +29,13 @@
                                lineCount:1, 
                                // plot options
                                a:-8, b:8,                  // optional (default: a=0.0001, b=10) 
-                               lineColours:["Red"], //optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
-                               lineStyles:["solid"],  // optional (default: solid, options: solid, dashed, dotted)
-                               lineWidths:["ultra thick"],  // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+                               lineColours:["Red"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               lineStyles:["solid"],       // optional (default: solid, options: solid, dashed, dotted)
+                               lineWidths:["ultra thick"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
             };
-			cnv.graphingFunction = string2Object(testGraph);
-			cnv.getinfo = drawStuff;
-			cnv.getinfo("myCanvas");
+			outnode.graphingFunction = string2Object(testGraph);
+			outnode.getinfo = drawGraph;
+			outnode.getinfo("canvaswrapper");
 
     }					
 

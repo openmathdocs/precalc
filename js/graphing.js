@@ -2,43 +2,30 @@
 
 GRAPHING.js
 ===================
-	Copyright (C) <2008>  <Dr Chris Hughes>
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-	Please feel free to contact me at:
-
-		christopher.michael.hughes@gmail.com
-
-Description
-===================
-	
-	This file contains the graphing engine, which is a function called, 'drawstuff'
-	It takes 2 arguments:
-
+	This file contains the graphing engine, which is a function called, 'drawGraph'
 
 */
 
-function drawStuff(id)
+function drawGraph(id)
 {
-
+    // grab the plotOptions object
 	plotOptions = this.plotOptions;
 
-	var canvas = document.getElementById(id);
+    // grab html options, or set defaults
+    var height = plotOptions.height||400;
+    var width = plotOptions.width||420;
+    var canvasID = plotOptions.id||id.concat('GRAPH');
+
+    // set up the canvas as part of the div box node
+    var canvas = document.createElement("canvas");
+    canvas.setAttribute("id", canvasID);
+    canvas.setAttribute("height", height);
+    canvas.setAttribute("width", width);
+
 	if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
-		var width = canvas.width;
+		width = canvas.width;
 		height = canvas.height;
 
 		// Draw frame round the canvas
@@ -408,8 +395,7 @@ function drawStuff(id)
 		for(i=0; i<=Math.ceil(height/yIncrement); i++)
 		{
 			ctx.fillStyle = "blue";
-                // new
-			    ctx.fillText(axislabel,0,0);	
+			ctx.fillText(axislabel,0,0);	
 			ctx.translate(0, (yres)*height/(yMax-ymin));
 			axislabel -= yres;
 		}
@@ -424,7 +410,6 @@ function drawStuff(id)
 		for(i=0; i<=Math.ceil(width/xIncrement); i++)
 		{
 			ctx.fillStyle = "blue";
-            // new
 			ctx.fillText(axislabel,0,0);	
 			ctx.translate((xres)*width/(xmax-xmin),0);
 			axislabel += xres;
@@ -432,5 +417,10 @@ function drawStuff(id)
 
 
 	}
+    // grab the canvas wrapping div box
+    var outnode = document.getElementById(id);
+
+    // append canvas to the div box wrapper
+    outnode.appendChild(canvas);
 
 }
