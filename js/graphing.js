@@ -7,7 +7,7 @@ GRAPHING.js
 
 */
 
-function drawGraph(id)
+function drawGraph(wrapperID)
 {
     // grab the plotOptions object
 	plotOptions = this.plotOptions;
@@ -15,7 +15,7 @@ function drawGraph(id)
     // grab html options, or set defaults
     var height = plotOptions.height||400;
     var width = plotOptions.width||420;
-    var canvasID = plotOptions.id||id.concat('GRAPH');
+    var canvasID = plotOptions.id||wrapperID.concat('GRAPH');
 
     // set up the canvas as part of the div box node
     var canvas = document.createElement("canvas");
@@ -418,9 +418,16 @@ function drawGraph(id)
 
 	}
     // grab the canvas wrapping div box
-    var outnode = document.getElementById(id);
+    var outnode = document.getElementById(wrapperID);
 
     // append canvas to the div box wrapper
     outnode.appendChild(canvas);
+
+    var mydiv = document.createElement("div");
+    mydiv.style.position = "absolute";
+    mydiv.style.top = "50px";
+    mydiv.style.left = "50px";
+    mydiv.innerHTML = "\\(y=x^2\\)";
+    outnode.appendChild(mydiv);
 
 }
