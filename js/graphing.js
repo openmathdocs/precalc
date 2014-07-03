@@ -12,15 +12,11 @@ function drawGraph(wrapperID)
     // grab the plotOptions object
 	plotOptions = this.plotOptions;
 
-    // grab html options, or set defaults
-    var height = plotOptions.height||400;
-    var width = plotOptions.width||420;
-    var canvasID = plotOptions.id||wrapperID.concat('GRAPH');
-    if(typeof this.plotOptions.tiksUseMathJax ==='undefined') {
-        var tiksUseMathJax = 1;
-    } else {
-        var tiksUseMathJax = plotOptions.tiksUseMathJax;
-    }
+    // grab html options, or set defaults see: http://stackoverflow.com/questions/148901/is-there-a-better-way-to-do-optional-function-parameters-in-javascript
+    var height = (typeof plotOptions.height === "undefined") ? 400 : plotOptions.height;
+    var width = (typeof plotOptions.width === "undefined") ? 420 : plotOptions.width;
+    var canvasID = (typeof plotOptions.id === "undefined") ? wrapperID.concat('GRAPH') : plotOptions.id;
+    var tiksUseMathJax = (typeof plotOptions.tiksUseMathJax === "undefined") ? 1 : plotOptions.tiksUseMathJax;
 
     // set up the canvas as part of the div box node
     var canvas = document.createElement("canvas");
@@ -68,21 +64,21 @@ function drawGraph(wrapperID)
 		var yIncrement, y;
 		var xIncrement, x;
 	
-        // axis variables (defaults given with || *** )
-		var xmin = plotOptions.xmin ||-10;
-		var xmax = plotOptions.xmax ||10;
-		var xres = plotOptions.xres || 1;
+        // axis variables (defaults given with ? *** )
+        var xmin = (typeof plotOptions.xmin === "undefined") ? -10 : plotOptions.xmin;
+        var xmax = (typeof plotOptions.xmax === "undefined") ? 10 : plotOptions.xmax;
+        var xres = (typeof plotOptions.xres === "undefined") ? 1 : plotOptions.xres;
 
-		var ymin = plotOptions.ymin ||-10;
-		var ymax = plotOptions.ymax ||10;
-		var yres = plotOptions.yres || 1;
+        var ymin = (typeof plotOptions.ymin === "undefined") ? -10 : plotOptions.ymin;
+        var ymax = (typeof plotOptions.ymax === "undefined") ? 10 : plotOptions.ymax;
+        var yres = (typeof plotOptions.yres === "undefined") ? 1 : plotOptions.yres;
 
         // domain variables: function is plotted from a to b
-		var a = plotOptions.a || 0.0001;
-		var b = plotOptions.b || 10;
+        var a = (typeof plotOptions.a === "undefined") ? 1 : plotOptions.a;
+        var b = (typeof plotOptions.b === "undefined") ? 5 : plotOptions.b;
 
         // number of lines to be plotted (default is 1)
-        var numberOfLines = plotOptions.numberOfLines || 1;
+        var numberOfLines = (typeof plotOptions.numberOfLines === "undefined") ? 1 : plotOptions.numberOfLines;
 
 		// Grid lines y direction
 		yIncrement = height/(ymax-ymin)*yres;
@@ -179,6 +175,10 @@ function drawGraph(wrapperID)
 		// switch off vertical asymptotes by default
 		vertAsymp = 0;
 		
+        // initialize the lineCount
+        this.plotOptions.lineCount = 1;
+
+        // plot however many functions there are
 		for(j=0; j<numberOfLines; j++)
 		{
 		    // line colour 	
@@ -186,7 +186,7 @@ function drawGraph(wrapperID)
             if(typeof this.plotOptions.lineColours =='undefined') {
                 lineColour = 'Red';
             } else {
-                lineColour = this.plotOptions.lineColours[j]||'Red';
+                lineColour = (typeof this.plotOptions.lineColours[j] === "undefined") ? "Red" : this.plotOptions.lineColours[j];
             }
 			ctx.strokeStyle = lineColour;
             
@@ -195,13 +195,14 @@ function drawGraph(wrapperID)
             if(typeof this.plotOptions.lineStyles =='undefined') {
                 lineStyle = 'solid';
             } else {
-                lineStyle = this.plotOptions.lineStyles[j]||'solid';
+                lineStyle = (typeof this.plotOptions.lineStyles[j] === "undefined") ? "solid" : this.plotOptions.lineStyles[j];
             }
 
             switch(lineStyle)
             {
               // solid lines
-              case 'solid': break;
+              case 'solid': ctx.setLineDash([50000]);
+                            break;
               // dashed lines: see http://www.rgraph.net/blog/2013/january/html5-canvas-dashed-lines.html
               case 'dashed': ctx.setLineDash([5]);
                              break;
@@ -215,7 +216,7 @@ function drawGraph(wrapperID)
             if(typeof this.plotOptions.lineWidths =='undefined') {
                 lineWidth = 'normal';
             } else {
-                lineWidth = this.plotOptions.lineWidths[j]||'normal';
+                lineWidth = (typeof this.plotOptions.lineWidths[j] === "undefined") ? "normal" : this.plotOptions.lineWidths[j];
             }
 
             switch(lineWidth)

@@ -22,18 +22,17 @@
             outnode.plotOptions = {
                                // html options
                                height: 400, width: 420,    // optional (default: height=400, width=420) 
-                               id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
+                               //id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
                                tiksUseMathJax: 1,          // optional (default: 1)
                                // axis options
                                xmin:-10, xmax:10, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
                                ymin:-10, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
                                // axis house keeping (should be specified automatically)
-                               numberOfLines:1,            // optional (default: 1)
-                               lineCount:1, 
+                               numberOfLines:2,            // optional (default: 1)
                                // plot options
                                a:-8, b:8,                  // optional (default: a=0.0001, b=10) 
-                               lineColours:["Red"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
-                               lineStyles:["solid"],       // optional (default: solid, options: solid, dashed, dotted)
+                               lineColours:["Blue"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               lineStyles:["dotted"],  // optional (default: solid, options: solid, dashed, dotted)
                                lineWidths:["ultra thick"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
             };
 			outnode.graphingFunction = string2Object(testGraph);
@@ -45,9 +44,13 @@
     function testGraph(X)
     {
         var scope = {x:X};
-                    //f = Math.pow(X-1,2)-4;
-                    f = math.eval('(x-1)^2-4',scope);
-                    //f = math.eval('sin(2*x deg)',scope);
+        if(this.plotOptions.lineCount==1){
+                    //f = math.eval('(x-1)^2-4',scope);
+                    f = Math.pow(X-1,2)-4;
+        } else {
+                    //f = math.eval('sin(2*x)',scope);
+                    f = Math.sin(2*X);
+        }
                     //f = math.eval('sin(2*x)',scope);
                     //f = math.eval('1/(x*(x+2))',scope);
     				return f;
