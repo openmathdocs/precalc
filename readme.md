@@ -111,8 +111,10 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
   even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc; `.tex` version is easy, `.html` is tricky
   possibly useful: http://stackoverflow.com/questions/16894908/xsl-transform-to-split-comma-separated-values
 - research how to cross reference between .html pages (perhaps using php and a .haux file?)
-- create graphics using html canvas element
+###### `html canvas` to do 
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
-- make sure that different line styles will work (solid, dashed, dotted circles, etc)
-- make the graphs zoomable on hover
+- create hover feature that details the coordinates
+- create nodes to label the graphs, e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
+- create `legend`
+- create zoom feature (zoomable on hover/click???)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
