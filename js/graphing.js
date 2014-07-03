@@ -16,12 +16,22 @@ function drawGraph(wrapperID)
     var height = plotOptions.height||400;
     var width = plotOptions.width||420;
     var canvasID = plotOptions.id||wrapperID.concat('GRAPH');
+    if(typeof this.plotOptions.tiksUseMathJax ==='undefined') {
+        var tiksUseMathJax = 1;
+    } else {
+        var tiksUseMathJax = plotOptions.tiksUseMathJax;
+    }
 
     // set up the canvas as part of the div box node
     var canvas = document.createElement("canvas");
     canvas.setAttribute("id", canvasID);
-    canvas.setAttribute("height", height);
-    canvas.setAttribute("width", width);
+    canvas.setAttribute("height", height+"px");
+    canvas.setAttribute("width", width+"px");
+    
+    // grab the canvas wrapping div box
+    var outnode = document.getElementById(wrapperID);
+    outnode.style.width = width+"px";
+    outnode.style.height = height+"px";
 
 	if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
@@ -38,11 +48,12 @@ function drawGraph(wrapperID)
 	    // draw frame in black	
 		ctx.strokeStyle = "Black";
 		
-		width -= 40;
+		width -= 55;
 		height -=40;
 		
 		// Leave enough space for the y-axis tick marks
-		ctx.translate(20,20);
+        var hoffset = 45;
+		ctx.translate(hoffset,9);
 		
 		// Draw boundary
 		ctx.beginPath();
@@ -63,7 +74,7 @@ function drawGraph(wrapperID)
 		var xres = plotOptions.xres || 1;
 
 		var ymin = plotOptions.ymin ||-10;
-		var yMax = plotOptions.ymax ||10;
+		var ymax = plotOptions.ymax ||10;
 		var yres = plotOptions.yres || 1;
 
         // domain variables: function is plotted from a to b
@@ -74,17 +85,17 @@ function drawGraph(wrapperID)
         var numberOfLines = plotOptions.numberOfLines || 1;
 
 		// Grid lines y direction
-		yIncrement = height/(yMax-ymin)*yres;
+		yIncrement = height/(ymax-ymin)*yres;
 
 		var thick = 0;
-		if(Math.round(yMax/2)==yMax/2)
+		if(Math.round(ymax/2)==ymax/2)
 		{
 			thick = 1; 
 		}
 
 		for(var i=0; i<=Math.ceil(height/yIncrement); i++)
 		{
-			y = (yres * i)*height/(yMax-ymin);	
+			y = (yres * i)*height/(ymax-ymin);	
 		
 			if(y<=(height))
 			{
@@ -139,7 +150,7 @@ function drawGraph(wrapperID)
 
 		// Find the origin
 		var originY, originX;
-		originY = height/(yMax-ymin)*yMax;
+		originY = height/(ymax-ymin)*ymax;
 		originX = width/(xmax-xmin)*Math.abs(xmin);
 
 		// Draw the y - axis
@@ -252,11 +263,11 @@ function drawGraph(wrapperID)
 					yUnscaled = y;
 					
 					// scale x and y
-					y *= -height/(yMax-ymin);
+					y *= -height/(ymax-ymin);
 					x *= width/(xmax-xmin);
 
 					// check that the current point is in the viewing window
-					if(yUnscaled<=yMax && yUnscaled>=ymin && xUnscaled>=xmin && xUnscaled <=xmax)		
+					if(yUnscaled<=ymax && yUnscaled>=ymin && xUnscaled>=xmin && xUnscaled <=xmax)		
 					{
 						ctx.lineTo(x,y);
 					}
@@ -289,14 +300,14 @@ function drawGraph(wrapperID)
 							}		
 							else if(yPrevious>0)
 							{
-								y = yMax;
+								y = ymax;
 							}		
 	
 							// need the unscaled version of y to make sure it doesn't go above the gridlines
 							yUnscaled = y;
 
 							// scale x and y
-							y *= -height/(yMax-ymin);
+							y *= -height/(ymax-ymin);
 							x *= width/(xmax-xmin);
 					
 							// end the current path before we cross the discontinuity
@@ -316,9 +327,9 @@ function drawGraph(wrapperID)
 							}
 							else if(yOld>0)
 							{
-								y = yMax;
+								y = ymax;
 							}
-							y *= -height/(yMax-ymin);
+							y *= -height/(ymax-ymin);
 							
 							//ctx.lineTo(x,y);			
 							
@@ -333,10 +344,10 @@ function drawGraph(wrapperID)
 						yUnscaled = y;
 						
 						// scale x and y
-						y *= -height/(yMax-ymin);
+						y *= -height/(ymax-ymin);
 						x *= width/(xmax-xmin);
 					
-						if(yUnscaled<=yMax && yUnscaled>=ymin)
+						if(yUnscaled<=ymax && yUnscaled>=ymin)
 						{			
 							// if we've got
 							//		ymin <= y <= ymax
@@ -345,7 +356,7 @@ function drawGraph(wrapperID)
 							
 							if(vertAsymp == 1)
 							{
-								// draw a line to either ymin or yMax (determined above)
+								// draw a line to either ymin or ymax (determined above)
 								ctx.lineTo(x,yAsymptote);
 								
 								// switch off vertical asymptotes
@@ -365,14 +376,14 @@ function drawGraph(wrapperID)
 							// otherwise we are at the first occurence when the function goes out of the viewing window
 							if(alreadyReachedExtremePoint !=1)
 							{
-								// determine if we're closer to ymin or yMax
-								if(Math.abs(yUnscaled-ymin)<Math.abs(yUnscaled-yMax))
+								// determine if we're closer to ymin or ymax
+								if(Math.abs(yUnscaled-ymin)<Math.abs(yUnscaled-ymax))
 								{
-									ctx.lineTo(x,ymin*(-height/(yMax-ymin)));
+									ctx.lineTo(x,ymin*(-height/(ymax-ymin)));
 								}
 								else
 								{
-									ctx.lineTo(x,yMax*(-height/(yMax-ymin)));
+									ctx.lineTo(x,ymax*(-height/(ymax-ymin)));
 								}
 							}
 							alreadyReachedExtremePoint = 1;
@@ -386,48 +397,94 @@ function drawGraph(wrapperID)
 			this.plotOptions.lineCount++;
 		}
 
-		// x and y tick marks
-		ctx.translate(-originX-15,-originY);
-		ctx.mozTextStyle = "9pt Arial";
-	
-		// y ticks
-		var axislabel = yMax;
-		for(i=0; i<=Math.ceil(height/yIncrement); i++)
-		{
-			ctx.fillStyle = "blue";
-			ctx.fillText(axislabel,0,0);	
-			ctx.translate(0, (yres)*height/(yMax-ymin));
-			axislabel -= yres;
-		}
-	
-		ctx.translate(0, -(yres)*height/(yMax-ymin));
-		
-		
-		// x ticks
-		axislabel = xmin;
-		ctx.translate(10,15);
-	
-		for(i=0; i<=Math.ceil(width/xIncrement); i++)
-		{
-			ctx.fillStyle = "blue";
-			ctx.fillText(axislabel,0,0);	
-			ctx.translate((xres)*width/(xmax-xmin),0);
-			axislabel += xres;
-		}
 
+		// x and y tick marks
+        if(tiksUseMathJax){
+            // MathJax tick labels (drawn *on top* of the canvas)
+            // MathJax tick labels (drawn *on top* of the canvas)
+            // MathJax tick labels (drawn *on top* of the canvas)
+            //
+            // append canvas to the div box wrapper;
+            // at this stage it contains the graph - we're 
+            // going to add a series of other div boxes
+            // on top using MathJax
+            outnode.appendChild(canvas);
+
+            var yticklabeldiv;
+
+		    // y ticks
+		    var axislabel = ymax;
+		    for(i=0; i<=Math.ceil(height/yIncrement); i++)
+		    {
+                yticklabeldiv = document.createElement("div");
+                yticklabeldiv.style.position = "absolute";
+                yticklabeldiv.style.textAlign = "right";
+                yticklabeldiv.style.width = "30px";
+                yticklabeldiv.style.fontSize = "80%";
+                yticklabeldiv.style.top = ""+i*yIncrement+"px";
+                yticklabeldiv.innerHTML = "\\("+axislabel+"\\)";
+                outnode.appendChild(yticklabeldiv);
+		    	axislabel -= yres;
+		    }
+
+            var xticklabeldiv;
+
+		    // x ticks
+		    var axislabel = xmin;
+		    for(i=0; i<=Math.ceil(width/xIncrement); i++)
+		    {
+                xticklabeldiv = document.createElement("div");
+                xticklabeldiv.style.position = "absolute";
+                xticklabeldiv.style.textAlign = "center";
+                xticklabeldiv.style.width = "30px";
+                xticklabeldiv.style.fontSize = "80%";
+                if(axislabel<0){
+                    xticklabeldiv.style.left = ""+(i*xIncrement+hoffset/2)+"px";
+                } else {
+                    xticklabeldiv.style.left = ""+(i*xIncrement+.7*hoffset)+"px";
+                    xticklabeldiv.style.textAlign = "center";
+                }
+                xticklabeldiv.style.top = ""+(height+20)+"px";
+                xticklabeldiv.innerHTML = "\\("+axislabel+"\\)";
+                outnode.appendChild(xticklabeldiv);
+		    	axislabel += xres;
+		    }
+        } else {
+            // non-MathJax tick labels (part of the canvas)
+            // non-MathJax tick labels (part of the canvas)
+            // non-MathJax tick labels (part of the canvas)
+            //
+		    ctx.translate(-originX-15,-originY);
+		    ctx.mozTextStyle = "9pt Arial";
+	
+		    // y ticks
+		    var axislabel = ymax;
+		    for(i=0; i<=Math.ceil(height/yIncrement); i++)
+		    {
+		    	ctx.fillStyle = "blue";
+		    	ctx.fillText(axislabel,0,0);	
+		    	ctx.translate(0, (yres)*height/(ymax-ymin));
+		    	axislabel -= yres;
+		    }
+	
+		    ctx.translate(0, -(yres)*height/(ymax-ymin));
+		    
+		    // x ticks
+		    axislabel = xmin;
+		    ctx.translate(10,15);
+	
+		    for(i=0; i<=Math.ceil(width/xIncrement); i++)
+		    {
+		    	ctx.fillStyle = "blue";
+		    	ctx.fillText(axislabel,0,0);	
+		    	ctx.translate((xres)*width/(xmax-xmin),0);
+		    	axislabel += xres;
+		    }
+            // append canvas to the div box wrapper
+            outnode.appendChild(canvas);
+        }
 
 	}
-    // grab the canvas wrapping div box
-    var outnode = document.getElementById(wrapperID);
 
-    // append canvas to the div box wrapper
-    outnode.appendChild(canvas);
-
-    var mydiv = document.createElement("div");
-    mydiv.style.position = "absolute";
-    mydiv.style.top = "50px";
-    mydiv.style.left = "50px";
-    mydiv.innerHTML = "\\(y=x^2\\)";
-    outnode.appendChild(mydiv);
 
 }
