@@ -68,6 +68,8 @@ function drawGraph(wrapperID)
         var xmin = (typeof plotOptions.xmin === "undefined") ? -10 : plotOptions.xmin;
         var xmax = (typeof plotOptions.xmax === "undefined") ? 10 : plotOptions.xmax;
         var xres = (typeof plotOptions.xres === "undefined") ? 1 : plotOptions.xres;
+        var xlabel = (typeof plotOptions.xlabel === "undefined") ? "x" : plotOptions.xlabel;
+        var ylabel = (typeof plotOptions.ylabel === "undefined") ? "y" : plotOptions.ylabel;
 
         var ymin = (typeof plotOptions.ymin === "undefined") ? -10 : plotOptions.ymin;
         var ymax = (typeof plotOptions.ymax === "undefined") ? 10 : plotOptions.ymax;
@@ -76,6 +78,10 @@ function drawGraph(wrapperID)
         // domain variables: function is plotted from a to b
         var a = (typeof plotOptions.a === "undefined") ? 1 : plotOptions.a;
         var b = (typeof plotOptions.b === "undefined") ? 5 : plotOptions.b;
+
+        // some checks on a and b to make sure they will fit on the axis
+        if(a<xmin){ a = xmin;}
+        if(b>xmax){ b = xmax;}
 
         // number of lines to be plotted (default is 1)
         var numberOfLines = (typeof plotOptions.numberOfLines === "undefined") ? 1 : plotOptions.numberOfLines;
@@ -154,7 +160,9 @@ function drawGraph(wrapperID)
 		ctx.moveTo(originX,0);
 		ctx.lineTo(originX,height);
 		ctx.lineWidth = 2;
-		ctx.stroke();
+        if(xmin*xmax<=0){
+		    ctx.stroke();
+        }
 
 		// Draw the x - axis
 		ctx.beginPath();
@@ -427,7 +435,9 @@ function drawGraph(wrapperID)
                 yticklabeldiv.style.fontSize = "80%";
                 yticklabeldiv.style.top = ""+i*yIncrement+"px";
                 yticklabeldiv.innerHTML = "\\("+axislabel+"\\)";
-                outnode.appendChild(yticklabeldiv);
+                if(axislabel>=ymin && axislabel<=ymax){
+                    outnode.appendChild(yticklabeldiv);
+                }
 		    	axislabel -= yres;
 		    }
 
@@ -449,9 +459,53 @@ function drawGraph(wrapperID)
                 }
                 xticklabeldiv.style.top = ""+(height+20)+"px";
                 xticklabeldiv.innerHTML = "\\("+axislabel+"\\)";
-                outnode.appendChild(xticklabeldiv);
+                if(axislabel>=xmin && axislabel<=xmax){
+                    outnode.appendChild(xticklabeldiv);
+                }
 		    	axislabel += xres;
 		    }
+
+            // x-label - need to check that the x-axis is in the current window
+            var xlabeldiv;
+            if(ymin*ymax<0){
+                xlabeldiv = document.createElement("div");
+                xlabeldiv.style.position = "absolute";
+                xlabeldiv.style.fontSize = "80%";
+                xlabeldiv.style.top = ""+(originY-10)+"px";
+                xlabeldiv.style.right = ""+15+"px";
+                xlabeldiv.innerHTML = "\\("+xlabel+"\\)";
+                outnode.appendChild(xlabeldiv);
+            }
+            else if(ymin*ymax==0){
+                xlabeldiv = document.createElement("div");
+                xlabeldiv.style.position = "absolute";
+                xlabeldiv.style.fontSize = "80%";
+                xlabeldiv.style.top = ""+(height-10)+"px";
+                xlabeldiv.style.right = ""+15+"px";
+                xlabeldiv.innerHTML = "\\("+xlabel+"\\)";
+                outnode.appendChild(xlabeldiv);
+            }
+            
+            // y-label - need to check that the y-axis is in the current window
+            var ylabeldiv;
+            if(xmin*xmax<0){
+                ylabeldiv = document.createElement("div");
+                ylabeldiv.style.position = "absolute";
+                ylabeldiv.style.fontSize = "80%";
+                ylabeldiv.style.left = ""+(originX+hoffset+10)+"px";
+                ylabeldiv.style.top = ""+15+"px";
+                ylabeldiv.innerHTML = "\\("+ylabel+"\\)";
+                outnode.appendChild(ylabeldiv);
+            }
+            else if(xmin*xmax==0){
+                ylabeldiv = document.createElement("div");
+                ylabeldiv.style.position = "absolute";
+                ylabeldiv.style.fontSize = "80%";
+                ylabeldiv.style.left = ""+(hoffset+10)+"px";
+                ylabeldiv.style.top = ""+15+"px";
+                ylabeldiv.innerHTML = "\\("+ylabel+"\\)";
+                outnode.appendChild(ylabeldiv);
+            }
         } else {
             // non-MathJax tick labels (part of the canvas)
             // non-MathJax tick labels (part of the canvas)
