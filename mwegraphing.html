@@ -31,6 +31,8 @@
                                numberOfLines:2,            // optional (default: 1)
                                // plot options
                                a:-8, b:8,                  // optional (default: a=0.0001, b=10) 
+                               numberOfPoints:200,         // optional (default: numerOfPoints=100)
+                               //parametric:1,             // optional switch to determine if the function is parametric (no default)
                                lineColours:["Blue"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
                                lineStyles:["dotted"],  // optional (default: solid, options: solid, dashed, dotted)
                                lineWidths:["ultra thick"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
@@ -53,8 +55,16 @@
         }
                     //f = math.eval('sin(2*x)',scope);
                     //f = math.eval('1/(x*(x+2))',scope);
-    				return f;
-    }
+        return f;
+
+        // parametric example
+        // parametric example
+        // parametric example
+	    t = X;
+	    x = Math.cos(3*t)*Math.cos(t);
+	    y = Math.cos(3*t)*Math.sin(t);
+	    return [x,y];
+     }
 
 </script>
 

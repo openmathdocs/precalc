@@ -167,9 +167,10 @@ function drawGraph(wrapperID)
 		ctx.translate(originX,originY);
 
 		// Draw the curve
-		var x, y, deltax, numberOfPoints, gridpointX;
+		var x, y, deltax, gridpointX;
 
-		numberOfPoints = 1000;
+        // resolution of the curve
+        var numberOfPoints = (typeof plotOptions.numberOfPoints === "undefined") ? 100 : plotOptions.numberOfPoints;
 		deltax = (b-a)/numberOfPoints;
 
 		// switch off vertical asymptotes by default
@@ -244,11 +245,14 @@ function drawGraph(wrapperID)
                              break;
             }
 	
+            // parametric plots
+            // parametric plots
+            // parametric plots
 			if(plotOptions.parametric==1)
 			{
-				tmin = plotOptions.tmin;
-				tmax = plotOptions.tmax;
-				tstep = plotOptions.tstep;
+                var tmin = (typeof plotOptions.tmin === "undefined") ? 0 : plotOptions.tmin;
+                var tmax = (typeof plotOptions.tmax === "undefined") ? (2*Math.PI) : plotOptions.tmax;
+                var tstep = (typeof plotOptions.tstep === "undefined") ? 0.01 : plotOptions.tstep;
 				numberOfPoints = Math.ceil((tmax-tmin)/tstep);		
 
 				ctx.beginPath();
@@ -411,9 +415,8 @@ function drawGraph(wrapperID)
             // on top using MathJax
             outnode.appendChild(canvas);
 
-            var yticklabeldiv;
-
 		    // y ticks
+            var yticklabeldiv;
 		    var axislabel = ymax;
 		    for(i=0; i<=Math.ceil(height/yIncrement); i++)
 		    {
@@ -428,9 +431,8 @@ function drawGraph(wrapperID)
 		    	axislabel -= yres;
 		    }
 
-            var xticklabeldiv;
-
 		    // x ticks
+            var xticklabeldiv;
 		    var axislabel = xmin;
 		    for(i=0; i<=Math.ceil(width/xIncrement); i++)
 		    {
@@ -484,8 +486,5 @@ function drawGraph(wrapperID)
             // append canvas to the div box wrapper
             outnode.appendChild(canvas);
         }
-
 	}
-
-
 }
