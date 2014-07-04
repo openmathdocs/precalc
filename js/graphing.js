@@ -69,11 +69,13 @@ function drawGraph(wrapperID)
         var xmax = (typeof plotOptions.xmax === "undefined") ? 10 : plotOptions.xmax;
         var xres = (typeof plotOptions.xres === "undefined") ? 1 : plotOptions.xres;
         var xlabel = (typeof plotOptions.xlabel === "undefined") ? "x" : plotOptions.xlabel;
-        var ylabel = (typeof plotOptions.ylabel === "undefined") ? "y" : plotOptions.ylabel;
+        var xAxisStyle = (typeof plotOptions.xAxisStyle === "undefined") ? "<->" : plotOptions.xAxisStyle;
 
         var ymin = (typeof plotOptions.ymin === "undefined") ? -10 : plotOptions.ymin;
         var ymax = (typeof plotOptions.ymax === "undefined") ? 10 : plotOptions.ymax;
         var yres = (typeof plotOptions.yres === "undefined") ? 1 : plotOptions.yres;
+        var ylabel = (typeof plotOptions.ylabel === "undefined") ? "y" : plotOptions.ylabel;
+        var yAxisStyle = (typeof plotOptions.yAxisStyle === "undefined") ? "<->" : plotOptions.yAxisStyle;
 
         // domain variables: function is plotted from a to b
         var a = (typeof plotOptions.a === "undefined") ? 1 : plotOptions.a;
@@ -155,18 +157,52 @@ function drawGraph(wrapperID)
 		originX = width/(xmax-xmin)*Math.abs(xmin);
 
 		// Draw the y - axis
+        // set the appropriate style from yaxisStyle
+        var yAxisOptions = {};
+        switch(yAxisStyle){
+              // - no arrows
+              case '-': yAxisOptions.which=0;
+                            break;
+              // -> arrows at one end
+              case '->': yAxisOptions.which=1;
+                            break;
+              // <- arrows at one end
+              case '<-': yAxisOptions.which=2;
+                            break;
+              // <-> arrows at both ends
+              case '<-': yAxisOptions.which=3;
+                            break;
+        }
 		ctx.beginPath();
 		ctx.moveTo(originX,0);
 		ctx.lineWidth = 2;
-        if(xmin*xmax<=0){
-            drawArrow(ctx,originX,0,originX,height);
+        if(xmin*xmax<=0 && yAxisStyle!='none'){
+            drawArrow(ctx,originX,height,originX,0,yAxisOptions);
         }
 
 		// Draw the x - axis
+        // set the appropriate style from xAxisStyle
+        var xAxisOptions = {};
+        switch(xAxisStyle){
+              // - no arrows
+              case '-': xAxisOptions.which=0;
+                            break;
+              // -> arrows at one end
+              case '->': xAxisOptions.which=1;
+                            break;
+              // <- arrows at one end
+              case '<-': xAxisOptions.which=2;
+                            break;
+              // <-> arrows at both ends
+              case '<-': xAxisOptions.which=3;
+                            break;
+        }
 		ctx.beginPath();
 		ctx.moveTo(0,originY);
 		ctx.lineWidth = 2;
-        drawArrow(ctx,0,originY,width,originY);
+        if(xAxisStyle != 'none'){
+            drawArrow(ctx,0,originY,width,originY,xAxisOptions);
+        }
 
 		// Set the origin as the reference point
 		ctx.translate(originX,originY);
@@ -530,7 +566,7 @@ function drawGraph(wrapperID)
 
 
 // stolen and tweaked from: http://www.dbp-consulting.com/tutorials/canvas/CanvasArrow.html
-function drawArrow(ctx,x1,y1,x2,y2,style,which,angle,d)
+function drawArrow(ctx,x1,y1,x2,y2,options)
 {
     // drawArrow(x1,y1,x2,y2,style,which,angle,length)
     //
@@ -565,13 +601,17 @@ function drawArrow(ctx,x1,y1,x2,y2,style,which,angle,d)
   if(typeof(y1)=='string') y1=parseInt(y1);
   if(typeof(x2)=='string') x2=parseInt(x2);
   if(typeof(y2)=='string') y2=parseInt(y2);
-  style = (typeof(style) === "undefined") ? 4 : style;
-  which = (typeof(which) === "undefined") ? 3 : which; // both ends by default
-  angle = (typeof(angle) === "undefined") ? Math.PI/8 : angle; 
-  d = (typeof(d) === "undefined") ? 10 : d; 
+  if(typeof(options) === "undefined"){ 
+    var options = {};
+  }
+
+  var style = (typeof(options.style) === "undefined") ? 4 : options.style;
+  var which = (typeof(options.which) === "undefined") ? 3 : options.which; // both ends by default
+  var angle = (typeof(options.angle) === "undefined") ? Math.PI/8 : options.angle; 
+  var d = (typeof(options.d) === "undefined") ? 10 : options.d; 
   // default to using drawHead to draw the head, but if the style
   // argument is a function, use it instead
-  var toDrawHead=typeof(style)!='function'?drawHead:style;
+  var toDrawHead=typeof(options.style)!='function'?drawHead:style;
 
   // For ends with arrow we actually want to stop before we get to the arrow
   // so that wide lines won't put a flat end on the arrow.

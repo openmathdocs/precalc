@@ -121,5 +121,4 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 - create `legend`
 - create zoom feature (zoomable on hover/click???)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
-- add o-* support for open and closed intervals
-- add arrow support for axis and curves
+- add arrow support for curves (with options, i.e -,<-,->,<->,o-*,*-*,o-,-*, etc)

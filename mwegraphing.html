@@ -28,15 +28,17 @@
                                xmin:-10, xmax:10, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
                                ymin:-10, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
                                xlabel:"t",                 // optional (defaul: "x")
-                               ylabel:"y=f(x)",                 // optional (defaul: "y")
+                               ylabel:"y=f(x)",            // optional (defaul: "y")
+                               xAxisStyle:'<-',            // optional (default: <->; options: none, -, ->, <-, <->) 
+                               yAxisStyle:'->',            // optional (default: <->; options: none, -, ->, <-, <->)
                                // axis house keeping (should be specified automatically)
                                numberOfLines:1,            // optional (default: 1)
                                // plot options
                                a:-4, b:4,                  // optional (default: a=1, b=5) 
-                               samples:1000,         // optional (default: samples=100)
+                               samples:1000,               // optional (default: samples=100)
                                //parametric:1,             // optional switch to determine if the function is parametric (no default)
-                               lineColours:["Blue"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
-                               lineStyles:["solid"],  // optional (default: solid, options: solid, dashed, dotted)
+                               lineColours:["Blue"],       // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               lineStyles:["solid"],       // optional (default: solid, options: solid, dashed, dotted)
                                lineWidths:["ultra thick"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
             };
 			outnode.graphingFunction = string2Object(testGraph);
