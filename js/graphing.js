@@ -149,7 +149,6 @@ function drawGraph(wrapperID)
 			ctx.stroke();
 		}
 
-
 		// Find the origin
 		var originY, originX;
 		originY = height/(ymax-ymin)*ymax;
@@ -178,8 +177,8 @@ function drawGraph(wrapperID)
 		var x, y, deltax, gridpointX;
 
         // resolution of the curve
-        var numberOfPoints = (typeof plotOptions.numberOfPoints === "undefined") ? 100 : plotOptions.numberOfPoints;
-		deltax = (b-a)/numberOfPoints;
+        var samples = (typeof plotOptions.samples === "undefined") ? 100 : plotOptions.samples;
+		deltax = (b-a)/samples;
 
 		// switch off vertical asymptotes by default
 		vertAsymp = 0;
@@ -261,10 +260,10 @@ function drawGraph(wrapperID)
                 var tmin = (typeof plotOptions.tmin === "undefined") ? 0 : plotOptions.tmin;
                 var tmax = (typeof plotOptions.tmax === "undefined") ? (2*Math.PI) : plotOptions.tmax;
                 var tstep = (typeof plotOptions.tstep === "undefined") ? 0.01 : plotOptions.tstep;
-				numberOfPoints = Math.ceil((tmax-tmin)/tstep);		
+				samples = Math.ceil((tmax-tmin)/tstep);		
 
 				ctx.beginPath();
-				for(i=0; i<=(numberOfPoints+1); i++)
+				for(i=0; i<=(samples+1); i++)
 				{
 					t = tmin + i*tstep;
 					var output = this.graphingFunction(t); 
@@ -289,10 +288,12 @@ function drawGraph(wrapperID)
 				ctx.stroke();
 			} else {
 
+                // non-parametric curve
+                // non-parametric curve
+                // non-parametric curve
 				ctx.beginPath();
-				for(i=0; i<numberOfPoints; i++)
+				for(i=0; i<samples; i++)
 				{
-
 					x = a + deltax*i;	
 					y = this.graphingFunction(x); 
 
@@ -307,12 +308,9 @@ function drawGraph(wrapperID)
 	
 							// we determine the behaviour of y surrounding
 							// the vertical asymptote by examining yPrevious
-							if(yPrevious<0)
-							{
+							if(yPrevious<0){
 								y = ymin;
-							}		
-							else if(yPrevious>0)
-							{
+							} else if(yPrevious>0) {
 								y = ymax;
 							}		
 	
@@ -330,16 +328,12 @@ function drawGraph(wrapperID)
 							}
 							ctx.stroke();
 
-							
 							// begin a new path
 							ctx.beginPath();
 										
-							if(yOld<0)
-							{
+							if(yOld<0){
 								y = ymin;
-							}
-							else if(yOld>0)
-							{
+							} else if(yOld>0) {
 								y = ymax;
 							}
 							y *= -height/(ymax-ymin);
@@ -360,15 +354,13 @@ function drawGraph(wrapperID)
 						y *= -height/(ymax-ymin);
 						x *= width/(xmax-xmin);
 					
-						if(yUnscaled<=ymax && yUnscaled>=ymin)
-						{			
+						if(yUnscaled<=ymax && yUnscaled>=ymin){			
 							// if we've got
 							//		ymin <= y <= ymax
 							ctx.lineTo(x,y);	
 							alreadyReachedExtremePoint = 0;							
 							
-							if(vertAsymp == 1)
-							{
+							if(vertAsymp == 1){
 								// draw a line to either ymin or ymax (determined above)
 								ctx.lineTo(x,yAsymptote);
 								
@@ -378,8 +370,7 @@ function drawGraph(wrapperID)
 								// move back to beginning of the curve
 								ctx.moveTo(x,y);
 							}
-							
-						} else {
+						 } else {
 							// if the graph starts off outside of the viewing window, then i=0 (first point on the graph)
 							if(i==0)
 							{
@@ -390,18 +381,14 @@ function drawGraph(wrapperID)
 							if(alreadyReachedExtremePoint !=1)
 							{
 								// determine if we're closer to ymin or ymax
-								if(Math.abs(yUnscaled-ymin)<Math.abs(yUnscaled-ymax))
-								{
+								if(Math.abs(yUnscaled-ymin)<Math.abs(yUnscaled-ymax)){
 									ctx.lineTo(x,ymin*(-height/(ymax-ymin)));
-								}
-								else
-								{
+								} else {
 									ctx.lineTo(x,ymax*(-height/(ymax-ymin)));
 								}
 							}
 							alreadyReachedExtremePoint = 1;
 						}
-						
 					}
 				}
 				ctx.stroke();
