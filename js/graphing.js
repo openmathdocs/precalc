@@ -27,7 +27,6 @@ function drawGraph(wrapperID)
     // grab the canvas wrapping div box
     var outnode = document.getElementById(wrapperID);
     outnode.style.width = width+"px";
-    outnode.style.height = height+"px";
 
 	if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
@@ -44,12 +43,23 @@ function drawGraph(wrapperID)
 	    // draw frame in black	
 		ctx.strokeStyle = "Black";
 		
-		width -= 55;
-		height -=40;
+        // we don't want the graph extending the entire 
+        // width of the canvas
+        var totalWidthReduction = 60;
+        var totalHeightReduction = 40;
+		width  -= totalWidthReduction;
+		height -= totalHeightReduction;
+        canvas.totalWidthReduction = totalWidthReduction;
+        canvas.totalHeightReduction = totalHeightReduction;
 		
 		// Leave enough space for the y-axis tick marks
-        var hoffset = 45;
-		ctx.translate(hoffset,9);
+        var leftMargin = 45;
+        var topMargin = 9;
+        canvas.leftMargin = leftMargin;
+        canvas.topMargin = topMargin;
+
+        // translate the cursor
+		ctx.translate(leftMargin,topMargin);
 		
 		// Draw boundary
 		ctx.beginPath();
@@ -384,7 +394,7 @@ function drawGraph(wrapperID)
 						// need the unscaled version of y to make sure it doesn't go above the gridlines
 						yUnscaled = y;
 						
-						// scale x and y
+						// scale x and y onto the canvas
 						y *= -height/(ymax-ymin);
 						x *= width/(xmax-xmin);
 					
@@ -473,9 +483,9 @@ function drawGraph(wrapperID)
                 xticklabeldiv.style.width = "30px";
                 xticklabeldiv.style.fontSize = "80%";
                 if(axislabel<0){
-                    xticklabeldiv.style.left = ""+(i*xIncrement+hoffset/2)+"px";
+                    xticklabeldiv.style.left = ""+(i*xIncrement+leftMargin/2)+"px";
                 } else {
-                    xticklabeldiv.style.left = ""+(i*xIncrement+.7*hoffset)+"px";
+                    xticklabeldiv.style.left = ""+(i*xIncrement+.7*leftMargin)+"px";
                     xticklabeldiv.style.textAlign = "center";
                 }
                 xticklabeldiv.style.top = ""+(height+20)+"px";
@@ -493,7 +503,7 @@ function drawGraph(wrapperID)
                 xlabeldiv.style.position = "absolute";
                 xlabeldiv.style.fontSize = "80%";
                 xlabeldiv.style.top = ""+(originY-10)+"px";
-                xlabeldiv.style.right = ""+15+"px";
+                xlabeldiv.style.left = ""+(width+canvas.leftMargin-15)+"px";
                 xlabeldiv.innerHTML = "\\("+xlabel+"\\)";
                 outnode.appendChild(xlabeldiv);
             }
@@ -502,7 +512,7 @@ function drawGraph(wrapperID)
                 xlabeldiv.style.position = "absolute";
                 xlabeldiv.style.fontSize = "80%";
                 xlabeldiv.style.top = ""+(height-10)+"px";
-                xlabeldiv.style.right = ""+15+"px";
+                xlabeldiv.style.left = ""+(width+canvas.leftMargin-15)+"px";
                 xlabeldiv.innerHTML = "\\("+xlabel+"\\)";
                 outnode.appendChild(xlabeldiv);
             }
@@ -513,7 +523,7 @@ function drawGraph(wrapperID)
                 ylabeldiv = document.createElement("div");
                 ylabeldiv.style.position = "absolute";
                 ylabeldiv.style.fontSize = "80%";
-                ylabeldiv.style.left = ""+(originX+hoffset+10)+"px";
+                ylabeldiv.style.left = ""+(originX+leftMargin+10)+"px";
                 ylabeldiv.style.top = ""+15+"px";
                 ylabeldiv.innerHTML = "\\("+ylabel+"\\)";
                 outnode.appendChild(ylabeldiv);
@@ -522,7 +532,7 @@ function drawGraph(wrapperID)
                 ylabeldiv = document.createElement("div");
                 ylabeldiv.style.position = "absolute";
                 ylabeldiv.style.fontSize = "80%";
-                ylabeldiv.style.left = ""+(hoffset+10)+"px";
+                ylabeldiv.style.left = ""+(leftMargin+10)+"px";
                 ylabeldiv.style.top = ""+15+"px";
                 ylabeldiv.innerHTML = "\\("+ylabel+"\\)";
                 outnode.appendChild(ylabeldiv);
@@ -562,7 +572,59 @@ function drawGraph(wrapperID)
             outnode.appendChild(canvas);
         }
 	}
+
+    // show the coordinates of the mouse pointer when it moves
+    // modified from:
+    // http://www.html5canvastutorials.com/advanced/html5-canvas-mouse-coordinates/
+    var coordinateBox = document.createElement("div");
+    coordinateBox.id = canvasID.concat('coords');
+    coordinateBox.innerHTML = "Coordinates shown on hover...";
+    outnode.appendChild(coordinateBox);
+    canvas.addEventListener('mousemove', function(evt) {
+            var mousePos = getMousePos(canvas, evt);
+            // only show coordinates if within the graph on the canvas
+            if( mousePos.x < canvas.leftMargin 
+                || mousePos.x>(canvas.width-(canvas.totalWidthReduction-canvas.leftMargin)) 
+                || mousePos.y<(canvas.topMargin) 
+                || mousePos.y>(canvas.height-(canvas.totalHeightReduction-canvas.topMargin))
+                ) 
+            {   
+              return;
+            }
+            // scale the x coordinates
+            mousePos.x -= canvas.leftMargin;
+            mousePos.x *= (xmax-xmin)/width;
+            mousePos.x += (xmin);
+            mousePos.x = truncateDecimals(mousePos.x,4);
+            // scale the y coordinates
+            mousePos.y -= canvas.topMargin;
+            mousePos.y *= -(ymax-ymin)/height;
+            mousePos.y += (ymax);
+            mousePos.y = truncateDecimals(mousePos.y,4);
+            var message = 'Coordinates: (' + mousePos.x + ',' + mousePos.y+')';
+            document.getElementById(coordinateBox.id).innerHTML = ""+message;
+          }, false);
+
+    function getMousePos(canvas, evt) {
+      var rect = canvas.getBoundingClientRect();
+      return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+      };
+    }
+
+    // http://stackoverflow.com/questions/4912788/truncate-not-round-off-decimal-numbers-in-javascript
+    function truncateDecimals (num, digits) {
+        var numS = num.toString(),
+            decPos = numS.indexOf('.'),
+            substrLength = decPos == -1 ? numS.length : 1 + decPos + digits,
+            trimmedResult = numS.substr(0, substrLength),
+            finalResult = isNaN(trimmedResult) ? 0 : trimmedResult;
+    
+        return parseFloat(finalResult);
+    }
 }
+
 
 
 // stolen and tweaked from: http://www.dbp-consulting.com/tutorials/canvas/CanvasArrow.html
@@ -665,6 +727,7 @@ function drawArrow(ctx,x1,y1,x2,y2,options)
   }
 }
 
+// draw the arrow head stolen and tweaked from: http://www.dbp-consulting.com/tutorials/canvas/CanvasArrow.html
 function drawHead(ctx,x0,y0,x1,y1,x2,y2,style)
 {
   // draw the arrow heads
