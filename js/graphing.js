@@ -157,18 +157,16 @@ function drawGraph(wrapperID)
 		// Draw the y - axis
 		ctx.beginPath();
 		ctx.moveTo(originX,0);
-		ctx.lineTo(originX,height);
 		ctx.lineWidth = 2;
         if(xmin*xmax<=0){
-		    ctx.stroke();
+            drawArrow(ctx,originX,0,originX,height);
         }
 
 		// Draw the x - axis
 		ctx.beginPath();
 		ctx.moveTo(0,originY);
-		ctx.lineTo(width,originY);
 		ctx.lineWidth = 2;
-		ctx.stroke();
+        drawArrow(ctx,0,originY,width,originY);
 
 		// Set the origin as the reference point
 		ctx.translate(originX,originY);
@@ -529,3 +527,180 @@ function drawGraph(wrapperID)
         }
 	}
 }
+
+
+// stolen and tweaked from: http://www.dbp-consulting.com/tutorials/canvas/CanvasArrow.html
+function drawArrow(ctx,x1,y1,x2,y2,style,which,angle,d)
+{
+    // drawArrow(x1,y1,x2,y2,style,which,angle,length)
+    //
+    // sample usage (draws big arrows at either end of the line)
+    // drawArrow(ctx,originX,0,originX,height,4,3,Math.PI/4,20);
+
+    // x1,y1 - the line of the shaft starts here
+    // x2,y2 - the line of the shaft ends here
+    // style - type of head to draw
+    //     0 - filled head with back a curve drawn with arcTo
+    //     n.b. some browsers have an arcTo bug that make this look bizarre
+    //     1 - filled head with back a straight line
+    //     2 - unfilled but stroked head
+    //     3 - filled head with back a curve drawn with quadraticCurveTo
+    //     4 - filled head with back a curve drawn with bezierCurveTo
+    //     function(ctx,x0,y0,x1,y1,x2,y2,style) - a function provided by the user to draw the head. Point (x1,y1) is the same as the end of the line, and (x0,y0) and (x2,y2) are the two back corners. The style argument is the this for the function. An example that just draws little circles at each corner of the arrow head is shown later in this document.
+    // default 3 (filled head with quadratic back)
+    // which - which end(s) get the arrow
+    //     0 - neither
+    //     1 - x2,y2 end
+    //     2 - x1,y1 end
+    //     3 - (that's 1+2) both ends
+    // default 1 (destination end gets the arrow)
+    // angle - the angle θ from shaft to one side of arrow head - default π/8 radians (22 1/2°, half of a 45°)
+    // length - the distance d in pixels from arrow point back along the shaft to the back of the arrow head - default 10px
+
+
+  'use strict';
+  // Ceason pointed to a problem when x1 or y1 were a string, and concatenation
+  // would happen instead of addition
+  if(typeof(x1)=='string') x1=parseInt(x1);
+  if(typeof(y1)=='string') y1=parseInt(y1);
+  if(typeof(x2)=='string') x2=parseInt(x2);
+  if(typeof(y2)=='string') y2=parseInt(y2);
+  style = (typeof(style) === "undefined") ? 4 : style;
+  which = (typeof(which) === "undefined") ? 3 : which; // both ends by default
+  angle = (typeof(angle) === "undefined") ? Math.PI/8 : angle; 
+  d = (typeof(d) === "undefined") ? 10 : d; 
+  // default to using drawHead to draw the head, but if the style
+  // argument is a function, use it instead
+  var toDrawHead=typeof(style)!='function'?drawHead:style;
+
+  // For ends with arrow we actually want to stop before we get to the arrow
+  // so that wide lines won't put a flat end on the arrow.
+  //
+  var dist=Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+  var ratio=(dist-d/3)/dist;
+  var tox, toy,fromx,fromy;
+  if(which&1){
+    tox=Math.round(x1+(x2-x1)*ratio);
+    toy=Math.round(y1+(y2-y1)*ratio);
+  }else{
+    tox=x2;
+    toy=y2;
+  }
+  if(which&2){
+    fromx=x1+(x2-x1)*(1-ratio);
+    fromy=y1+(y2-y1)*(1-ratio);
+  }else{
+    fromx=x1;
+    fromy=y1;
+  }
+
+  // Draw the shaft of the arrow
+  ctx.beginPath();
+  ctx.moveTo(fromx,fromy);
+  ctx.lineTo(tox,toy);
+  ctx.stroke();
+
+  // calculate the angle of the line
+  var lineangle=Math.atan2(y2-y1,x2-x1);
+  // h is the line length of a side of the arrow head
+  var h=Math.abs(d/Math.cos(angle));
+
+  if(which&1){	// handle far end arrow head
+    var angle1=lineangle+Math.PI+angle;
+    var topx=x2+Math.cos(angle1)*h;
+    var topy=y2+Math.sin(angle1)*h;
+    var angle2=lineangle+Math.PI-angle;
+    var botx=x2+Math.cos(angle2)*h;
+    var boty=y2+Math.sin(angle2)*h;
+    toDrawHead(ctx,topx,topy,x2,y2,botx,boty,style);
+  }
+  if(which&2){ // handle near end arrow head
+    var angle1=lineangle+angle;
+    var topx=x1+Math.cos(angle1)*h;
+    var topy=y1+Math.sin(angle1)*h;
+    var angle2=lineangle-angle;
+    var botx=x1+Math.cos(angle2)*h;
+    var boty=y1+Math.sin(angle2)*h;
+    toDrawHead(ctx,topx,topy,x1,y1,botx,boty,style);
+  }
+}
+
+function drawHead(ctx,x0,y0,x1,y1,x2,y2,style)
+{
+  // draw the arrow heads
+  'use strict';
+  if(typeof(x0)=='string') x0=parseInt(x0);
+  if(typeof(y0)=='string') y0=parseInt(y0);
+  if(typeof(x1)=='string') x1=parseInt(x1);
+  if(typeof(y1)=='string') y1=parseInt(y1);
+  if(typeof(x2)=='string') x2=parseInt(x2);
+  if(typeof(y2)=='string') y2=parseInt(y2);
+  var radius=3;
+  var twoPI=2*Math.PI;
+
+  // all cases do this.
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x0,y0);
+  ctx.lineTo(x1,y1);
+  ctx.lineTo(x2,y2);
+  switch(style){
+    case 0:
+      // curved filled, add the bottom as an arcTo curve and fill
+      var backdist=Math.sqrt(((x2-x0)*(x2-x0))+((y2-y0)*(y2-y0)));
+      ctx.arcTo(x1,y1,x0,y0,.55*backdist);
+      ctx.fill();
+      break;
+    case 1:
+      // straight filled, add the bottom as a line and fill.
+      ctx.beginPath();
+      ctx.moveTo(x0,y0);
+      ctx.lineTo(x1,y1);
+      ctx.lineTo(x2,y2);
+      ctx.lineTo(x0,y0);
+      ctx.fill();
+      break;
+    case 2:
+      // unfilled head, just stroke.
+      ctx.stroke();
+      break;
+    case 3:
+      //filled head, add the bottom as a quadraticCurveTo curve and fill
+      var cpx=(x0+x1+x2)/3;
+      var cpy=(y0+y1+y2)/3;
+      ctx.quadraticCurveTo(cpx,cpy,x0,y0);
+      ctx.fill();
+      break;
+    case 4:
+      //filled head, add the bottom as a bezierCurveTo curve and fill
+      var cp1x, cp1y, cp2x, cp2y,backdist;
+      var shiftamt=5;
+      if(x2==x0){
+	// Avoid a divide by zero if x2==x0
+	backdist=y2-y0;
+	cp1x=(x1+x0)/2;
+	cp2x=(x1+x0)/2;
+	cp1y=y1+backdist/shiftamt;
+	cp2y=y1-backdist/shiftamt;
+      }else{
+	backdist=Math.sqrt(((x2-x0)*(x2-x0))+((y2-y0)*(y2-y0)));
+	var xback=(x0+x2)/2;
+	var yback=(y0+y2)/2;
+	var xmid=(xback+x1)/2;
+	var ymid=(yback+y1)/2;
+
+	var m=(y2-y0)/(x2-x0);
+	var dx=(backdist/(2*Math.sqrt(m*m+1)))/shiftamt;
+	var dy=m*dx;
+	cp1x=xmid-dx;
+	cp1y=ymid-dy;
+	cp2x=xmid+dx;
+	cp2y=ymid+dy;
+      }
+
+      ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x0,y0);
+      ctx.fill();
+      break;
+  }
+  ctx.restore();
+};
