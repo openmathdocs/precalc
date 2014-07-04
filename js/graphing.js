@@ -298,7 +298,7 @@ function drawGraph(wrapperID)
 					y = this.graphingFunction(x); 
 
 					// discontinuities
-					if(Math.abs(y)==Infinity || Math.abs(y)==NaN)
+					if(Math.abs(y)==Infinity || Math.abs(y)==NaN || (y>ymax && i>0 )|| (y<ymin && i>0))
 					{
 						if(i>0)
 						{
