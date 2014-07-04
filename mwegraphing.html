@@ -26,14 +26,14 @@
                                tiksUseMathJax: 1,          // optional (default: 1)
                                // axis options
                                xmin:-10, xmax:10, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
-                               ymin:-2, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
+                               ymin:-10, ymax : 10, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
                                xlabel:"t",                 // optional (defaul: "x")
                                ylabel:"y=f(x)",                 // optional (defaul: "y")
                                // axis house keeping (should be specified automatically)
                                numberOfLines:1,            // optional (default: 1)
                                // plot options
-                               a:-8, b:20,                  // optional (default: a=0.0001, b=10) 
-                               samples:200,         // optional (default: numerOfPoints=100)
+                               a:-10, b:10,                  // optional (default: a=1, b=5) 
+                               samples:1000,         // optional (default: samples=100)
                                //parametric:1,             // optional switch to determine if the function is parametric (no default)
                                lineColours:["Blue"],        // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
                                lineStyles:["solid"],  // optional (default: solid, options: solid, dashed, dotted)
@@ -47,6 +47,9 @@
 
     function testGraph(X)
     {
+        //f = 2*X*(X-2)*(X+3);
+        f = 1/(X*(X+2));
+        return f;
         var scope = {x:X};
         if(this.plotOptions.lineCount==1){
                     //f = math.eval('(x-1)^2-4',scope);

@@ -12,13 +12,13 @@ To output to `derivatives.html` file (hard coded in `sample-article.xml`) you ca
 xsltproc ./xsl/mathbook-html.xsl sample-article.xml
 ```
 
-####Process work flow (outline as it is ever changing)
+####Process work flow (only an outline, as the work flow is ever changing)
 Writing the code in `xml` allows us to convert easily into beautiful `.tex` files 
 and into `.html` files. 
 
 ##### .tex version
-mainfile.tex will be maintained separately as a .tex file - it will not be 
-changed using the XML approach
+`mainfile.tex` will be maintained separately as a `.tex` file - it will not be 
+changed using the `XML` approach
 
 chapter files *are* `.xml` files and are converted into `.tex` files using, for example,
 
@@ -36,7 +36,7 @@ or, alternatively, once we put the `arara` directives in place, `arara chapterfi
 
 ##### .html version
 `mainfile.html` (doesn't currently exist), which will link to mainfile.css and probably 
-a Javascript library, will link to chapter .html files and those are created by 
+a Javascript library, will link to chapter `.html` files and those are created by 
 running the command:
 
 ```bash
@@ -112,10 +112,14 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
   possibly useful: http://stackoverflow.com/questions/16894908/xsl-transform-to-split-comma-separated-values
 - research how to cross reference between .html pages (perhaps using php and a .haux file?)
 
-##### `html canvas` to do 
+##### `html canvas` to do (mostly inspired by `pgfplots`)
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
 - create hover feature that details the coordinates
-- create nodes to label the graphs, e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
+- create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
+- add support for grid lines choices (minor, major, both)
+- add support for xticklabels
 - create `legend`
 - create zoom feature (zoomable on hover/click???)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
+- add o-* support for open and closed intervals
+- add arrow support for axis and curves
