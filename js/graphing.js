@@ -10,13 +10,19 @@ GRAPHING.js
 function drawGraph(wrapperID)
 {
     // grab the plotOptions object
-	plotOptions = this.plotOptions;
+    if(typeof(this.plotOptions) === "undefined"){ 
+      this.plotOptions= {};
+      var plotOptions= {};
+    } else {
+	  var plotOptions = this.plotOptions;
+    }
 
     // grab html options, or set defaults see: http://stackoverflow.com/questions/148901/is-there-a-better-way-to-do-optional-function-parameters-in-javascript
     var height = (typeof plotOptions.height === "undefined") ? 400 : plotOptions.height;
     var width = (typeof plotOptions.width === "undefined") ? 420 : plotOptions.width;
     var canvasID = (typeof plotOptions.id === "undefined") ? wrapperID.concat('GRAPH') : plotOptions.id;
     var tiksUseMathJax = (typeof plotOptions.tiksUseMathJax === "undefined") ? 1 : plotOptions.tiksUseMathJax;
+    var showCoordinatesOnHover = (typeof plotOptions.showCoordinatesOnHover === "undefined") ? 1 : plotOptions.showCoordinatesOnHover;
 
     // set up the canvas as part of the div box node
     var canvas = document.createElement("canvas");
@@ -593,17 +599,20 @@ function drawGraph(wrapperID)
     var coordinateBox = document.createElement("div");
     coordinateBox.appendChild(checkbox);
     coordinateBox.appendChild(checkboxlabel);
+    if(!showCoordinatesOnHover) { coordinateBox.style.display = 'none'; }
     outnode.appendChild(coordinateBox);
 
     // create the hover feature which shows the x and y coordinates
     canvas.addEventListener('mousemove', function(evt) {
             var mousePos = getMousePos(canvas, evt);
             // only show coordinates if within the graph on the canvas
+            // and the check box is *available* and checked
             if( mousePos.x < canvas.leftMargin 
                 || mousePos.x>(canvas.width-(canvas.totalWidthReduction-canvas.leftMargin)) 
                 || mousePos.y<(canvas.topMargin) 
                 || mousePos.y>(canvas.height-(canvas.totalHeightReduction-canvas.topMargin))
                 || (document.getElementById(checkbox.id).checked === false)
+                || !showCoordinatesOnHover
                 ) 
             {   
               return;
