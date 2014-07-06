@@ -46,6 +46,14 @@
 			outnode.getinfo = drawGraph;
 			outnode.getinfo("canvaswrapper");
 
+			// grab the canvas wrapping div box
+		    var outnode = document.getElementById('canvaswrapper1');
+
+			// draw the graph
+			outnode.graphingFunction = string2Object(testGraph);
+			outnode.getinfo = drawGraph;
+			outnode.getinfo("canvaswrapper1");
+
     }					
 
     function testGraph(X)
@@ -98,6 +106,8 @@
 </div>
 -->
 <div id="canvaswrapper" style="border:solid orange 4px;padding:0px;position:relative">
+</div>
+<div id="canvaswrapper1" style="border:solid orange 4px;padding:0px;position:relative">
 </div>
 <div style="border:solid 2px;padding:0px;width:200px">
   text text tex text text tex text text tex text text tex text text tex text text tex

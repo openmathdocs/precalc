@@ -487,6 +487,8 @@ function drawGraph(wrapperID)
                 xticklabeldiv.style.position = "absolute";
                 xticklabeldiv.style.textAlign = "center";
                 xticklabeldiv.style.width = "30px";
+                // xtick label position is slightly different for negative 
+                // and positive numbers (because of the - sign)
                 xticklabeldiv.style.fontSize = "80%";
                 if(axislabel<0){
                     xticklabeldiv.style.left = ""+(i*xIncrement+leftMargin/2)+"px";
@@ -496,6 +498,7 @@ function drawGraph(wrapperID)
                 }
                 xticklabeldiv.style.top = ""+(height+20)+"px";
                 xticklabeldiv.innerHTML = "\\("+axislabel+"\\)";
+                // add the xtick label if xmin <= axislabel <= xmax
                 if(axislabel>=xmin && axislabel<=xmax){
                     outnode.appendChild(xticklabeldiv);
                 }
@@ -601,8 +604,32 @@ function drawGraph(wrapperID)
     coordinateBox.appendChild(checkboxlabel);
     if(!showCoordinatesOnHover) { coordinateBox.style.display = 'none'; }
     outnode.appendChild(coordinateBox);
+    
+    // draw a 'target' or 'cross hairs' to help the user
+    // vertical piece
+    var drawVertLine = document.createElement("div");
+    drawVertLine.style.position = "absolute";
+    drawVertLine.style.borderRight = "dashed red 2px";
+    drawVertLine.style.width = "0px";
+    drawVertLine.style.height = height+"px";
+    drawVertLine.style.top = topMargin+"px";
+    drawVertLine.style.left = leftMargin+"px";
+    drawVertLine.style.display = 'none';
+    outnode.appendChild(drawVertLine);
+    
+    // horizontal piece
+    var drawHorizLine = document.createElement("div");
+    drawHorizLine.style.position = "absolute";
+    drawHorizLine.style.borderTop = "dashed red 2px";
+    drawHorizLine.style.width = width+"px";
+    drawHorizLine.style.height = "0px";
+    drawHorizLine.style.top = topMargin+"px";
+    drawHorizLine.style.left = leftMargin+"px";
+    drawHorizLine.style.display = 'none';
+    outnode.appendChild(drawHorizLine);
 
     // create the hover feature which shows the x and y coordinates
+    // and adjusts the 'cross hairs' or 'target'
     canvas.addEventListener('mousemove', function(evt) {
             var mousePos = getMousePos(canvas, evt);
             // only show coordinates if within the graph on the canvas
@@ -614,9 +641,16 @@ function drawGraph(wrapperID)
                 || (document.getElementById(checkbox.id).checked === false)
                 || !showCoordinatesOnHover
                 ) 
-            {   
+            {
+              drawHorizLine.style.display = 'none';
+              drawVertLine.style.display = 'none';
               return;
             }
+            // move the cross hairs (or 'target')
+            drawHorizLine.style.display = 'block';
+            drawVertLine.style.display = 'block';
+            drawVertLine.style.left = mousePos.x+"px";
+            drawHorizLine.style.top = mousePos.y+"px";
             // scale the x coordinates
             mousePos.x -= canvas.leftMargin;
             mousePos.x *= (xmax-xmin)/width;
@@ -627,6 +661,7 @@ function drawGraph(wrapperID)
             mousePos.y *= -(ymax-ymin)/height;
             mousePos.y += (ymax);
             mousePos.y = truncateDecimals(mousePos.y,4);
+            // update the coordinates
             document.getElementById(checkboxlabel.id).innerHTML = ""+' Coordinates: (' + mousePos.x + ',' + mousePos.y+')';
           }, false);
 
