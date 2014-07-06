@@ -25,6 +25,7 @@
                                id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
                                tiksUseMathJax: 1,          // optional (default: 1)
                                showCoordinatesOnHover: 1,  // optional (default: 1)
+                               showCoordinatesChecked: 0,  // optional (default: 1)
                                // axis options
                                xmin:-2, xmax:9, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
                                ymin:-20, ymax : 30, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
@@ -46,8 +47,13 @@
 			outnode.getinfo = drawGraph;
 			outnode.getinfo("canvaswrapper");
 
+
 			// grab the canvas wrapping div box
-		    var outnode = document.getElementById('canvaswrapper1');
+		    outnode = document.getElementById('canvaswrapper1');
+            outnode.plotOptions = {
+                               showCoordinatesOnHover: 0,  // optional (default: 1)
+                               showCoordinatesChecked: 0,  // optional (default: 1)
+            }
 
 			// draw the graph
 			outnode.graphingFunction = string2Object(testGraph);

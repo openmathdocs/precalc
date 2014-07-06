@@ -23,6 +23,7 @@ function drawGraph(wrapperID)
     var canvasID = (typeof plotOptions.id === "undefined") ? wrapperID.concat('GRAPH') : plotOptions.id;
     var tiksUseMathJax = (typeof plotOptions.tiksUseMathJax === "undefined") ? 1 : plotOptions.tiksUseMathJax;
     var showCoordinatesOnHover = (typeof plotOptions.showCoordinatesOnHover === "undefined") ? 1 : plotOptions.showCoordinatesOnHover;
+    var showCoordinatesChecked = (typeof plotOptions.showCoordinatesChecked === "undefined") ? 1 : plotOptions.showCoordinatesChecked;
 
     // set up the canvas as part of the div box node
     var canvas = document.createElement("canvas");
@@ -589,7 +590,11 @@ function drawGraph(wrapperID)
     // create the check box 
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
-    checkbox.checked = true;
+    if(showCoordinatesChecked){
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
     checkbox.id = canvasID.concat('checkBox');
 
     // create the coordinate text which is actually a label next to the check box
