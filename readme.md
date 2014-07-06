@@ -115,6 +115,7 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 ##### `html canvas` to do (mostly inspired by `pgfplots`)
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
 - create hover feature that details the coordinates
+- create check box to stop coordinates being shown
 - create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
 - add support for grid lines choices (minor, major, both)
 - add support for xticklabels

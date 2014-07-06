@@ -576,10 +576,26 @@ function drawGraph(wrapperID)
     // show the coordinates of the mouse pointer when it moves
     // modified from:
     // http://www.html5canvastutorials.com/advanced/html5-canvas-mouse-coordinates/
+
+    // create the check box 
+    var checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.checked = true;
+    checkbox.id = canvasID.concat('checkBox');
+
+    // create the coordinate text which is actually a label next to the check box
+    var checkboxtext = document.createTextNode(" Coordinates shown on hover")
+    var checkboxlabel = document.createElement("label");
+    checkboxlabel.id = canvasID.concat('label');
+    checkboxlabel.appendChild(checkboxtext);
+
+    // append both the check box and the label text to a div box after graph
     var coordinateBox = document.createElement("div");
-    coordinateBox.id = canvasID.concat('coords');
-    coordinateBox.innerHTML = "Coordinates shown on hover...";
+    coordinateBox.appendChild(checkbox);
+    coordinateBox.appendChild(checkboxlabel);
     outnode.appendChild(coordinateBox);
+
+    // create the hover feature which shows the x and y coordinates
     canvas.addEventListener('mousemove', function(evt) {
             var mousePos = getMousePos(canvas, evt);
             // only show coordinates if within the graph on the canvas
@@ -587,6 +603,7 @@ function drawGraph(wrapperID)
                 || mousePos.x>(canvas.width-(canvas.totalWidthReduction-canvas.leftMargin)) 
                 || mousePos.y<(canvas.topMargin) 
                 || mousePos.y>(canvas.height-(canvas.totalHeightReduction-canvas.topMargin))
+                || (document.getElementById(checkbox.id).checked === false)
                 ) 
             {   
               return;
@@ -601,8 +618,7 @@ function drawGraph(wrapperID)
             mousePos.y *= -(ymax-ymin)/height;
             mousePos.y += (ymax);
             mousePos.y = truncateDecimals(mousePos.y,4);
-            var message = 'Coordinates: (' + mousePos.x + ',' + mousePos.y+')';
-            document.getElementById(coordinateBox.id).innerHTML = ""+message;
+            document.getElementById(checkboxlabel.id).innerHTML = ""+' Coordinates: (' + mousePos.x + ',' + mousePos.y+')';
           }, false);
 
     function getMousePos(canvas, evt) {
