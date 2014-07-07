@@ -114,12 +114,14 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 
 ##### `html canvas` to do (mostly inspired by `pgfplots`)
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
-- create hover feature that details the coordinates
-- create check box to stop coordinates being shown
+- create alt tags and tool tips
+- some of the javascript should actually be controlled via css (xtick/ytick labels, xlabels, ylabels, nodes, cross hairs)
+- make a switch for tick label size? 
 - create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
 - add support for grid lines choices (minor, major, both)
 - add support for xticklabels
 - create `legend`
 - create zoom feature (zoomable on hover/click???)
+- zoom box? (like on a calculator?)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
 - add arrow support for curves (with options, i.e -,<-,->,<->,o-*,*-*,o-,-*, etc)
