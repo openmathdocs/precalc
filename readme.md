@@ -114,7 +114,7 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 
 ##### `html canvas` to do (mostly inspired by `pgfplots`)
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
-- create alt tags and tool tips
+- create alt tags and tool tips (http://msdn.microsoft.com/en-us/library/ie/hh968259%28v=vs.85%29.aspx)
 - some of the javascript should actually be controlled via css (xtick/ytick labels, xlabels, ylabels, nodes, cross hairs)
 - make a switch for tick label size? 
 - create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 

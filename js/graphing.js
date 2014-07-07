@@ -97,6 +97,9 @@ function drawGraph(wrapperID)
         // domain variables: function is plotted from a to b
         var a = (typeof plotOptions.a === "undefined") ? 1 : plotOptions.a;
         var b = (typeof plotOptions.b === "undefined") ? 5 : plotOptions.b;
+        
+        // curve style: <->, ->, <-, o-o, *-o, etc
+        var curveStyle = (typeof plotOptions.curveStyle === "undefined") ? "<->" : plotOptions.curveStyle;
 
         // some checks on a and b to make sure they will fit on the axis
         if(a<xmin){ a = xmin;}
@@ -187,7 +190,7 @@ function drawGraph(wrapperID)
               case '<-': yAxisOptions.which=2;
                             break;
               // <-> arrows at both ends
-              case '<-': yAxisOptions.which=3;
+              case '<->': yAxisOptions.which=3;
                             break;
         }
 		ctx.beginPath();
@@ -248,6 +251,8 @@ function drawGraph(wrapperID)
                 lineColour = (typeof this.plotOptions.lineColours[j] === "undefined") ? "Red" : this.plotOptions.lineColours[j];
             }
 			ctx.strokeStyle = lineColour;
+            // set the fill style here so that it affects the arrow colours
+			ctx.fillStyle = lineColour;
             
             // line style (solid, dashed, dotted, etc)
             var lineStyle;
@@ -443,8 +448,111 @@ function drawGraph(wrapperID)
 					}
 				}
 				ctx.stroke();
-			}
 
+                // draw arrows at the end of curves (if the options allow)
+                var curve={};
+                var x1, x2, y1, y2, drawLeftArrow, drawRightArrow; 
+                var drawLeftHollowCircle, drawRightHollowCircle, drawLeftSolidCircle, drawRightSolidCircle
+                // match the curve style: look for left arrows, right arrows, open circles, solid circles
+                if (curveStyle.indexOf("<-")>-1){
+                    drawLeftArrow = 1;
+                }
+                if (curveStyle.indexOf("->")>-1){
+                    drawRightArrow = 1;
+                }
+                if (curveStyle.indexOf("o-")>-1){
+                    drawLeftHollowCircle=1;
+                }
+                if (curveStyle.indexOf("-o")>-1){
+                    drawRightHollowCircle=1;
+                }
+                if (curveStyle.indexOf("*-")>-1){
+                    drawLeftSolidCircle=1;
+                }
+                if (curveStyle.indexOf("-*")>-1){
+                    drawRightSolidCircle=1;
+                }
+
+                // draw the hollow circles, solid circles, left arrows, or right arrows as appropriate
+                if(drawLeftHollowCircle){
+                    // the left hollow circle
+                    x1 = a;
+				    y1 = this.graphingFunction(x1); 
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+                    ctx.beginPath();
+                    ctx.arc(x1,y1,3, 0, 2 * Math.PI, false);
+			        ctx.fillStyle = 'White';
+                    ctx.fill();
+				    ctx.stroke();
+                }
+                if(drawRightHollowCircle){
+                    // the right hollow circle
+                    x1 = b;
+				    y1 = this.graphingFunction(x1); 
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+                    ctx.beginPath();
+                    ctx.arc(x1,y1,3, 0, 2 * Math.PI, false);
+			        ctx.fillStyle = 'White';
+                    ctx.fill();
+				    ctx.stroke();
+                }
+                // reset the fill style to be the line colour
+                ctx.fillStyle = lineColour;
+                if(drawLeftSolidCircle){
+                    // the left solid circle
+                    x1 = a;
+				    y1 = this.graphingFunction(x1); 
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+                    ctx.beginPath();
+                    ctx.arc(x1,y1,3, 0, 2 * Math.PI, false);
+                    ctx.fill();
+				    ctx.stroke();
+                }
+                if(drawRightSolidCircle){
+                    // the right solid circle
+                    x1 = b;
+				    y1 = this.graphingFunction(x1); 
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+                    ctx.beginPath();
+                    ctx.arc(x1,y1,3, 0, 2 * Math.PI, false);
+                    ctx.fill();
+				    ctx.stroke();
+                }
+                if(drawRightArrow){
+                    // the right arrow
+                    curve.which = (b>=0)?1:2;
+                    b *= 0.99;
+                    x1 = b;
+                    x2 = x1*1.01;
+				    y1 = this.graphingFunction(x1); 
+				    y2 = this.graphingFunction(x2); 
+			        // scale x and y onto the canvas
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+			        x2 *= width/(xmax-xmin);
+			        y2 *= -height/(ymax-ymin);
+                    drawArrow(ctx,x1,y1,x2,y2,curve);
+                }
+                if(drawLeftArrow){
+                    // the left arrow
+                    curve.which = (a>=0)?2:1;
+                    a *= 1.01;
+                    x1 = a*0.99;
+                    x2 = a;
+				    y1 = this.graphingFunction(x1); 
+				    y2 = this.graphingFunction(x2); 
+			        // scale x and y onto the canvas
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+			        x2 *= width/(xmax-xmin);
+			        y2 *= -height/(ymax-ymin);
+                    drawArrow(ctx,x1,y1,x2,y2,curve);
+                }
+			}
 			this.plotOptions.lineCount++;
 		}
 

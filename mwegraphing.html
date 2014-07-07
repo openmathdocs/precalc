@@ -21,7 +21,7 @@
 			// draw the graph
             outnode.plotOptions = {
                                // html options
-                               height: 300, width: 520,    // optional (default: height=400, width=420) 
+                               height: 300, width: 1020,    // optional (default: height=400, width=420) 
                                id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
                                tiksUseMathJax: 1,          // optional (default: 1)
                                showCoordinatesOnHover: 1,  // optional (default: 1)
@@ -32,17 +32,18 @@
                                xlabel:"t",                 // optional (defaul: "x")
                                ylabel:"y=f(x)",            // optional (defaul: "y")
                                xAxisStyle:'<-',            // optional (default: <->; options: none, -, ->, <-, <->) 
-                               yAxisStyle:'->',            // optional (default: <->; options: none, -, ->, <-, <->)
+                               yAxisStyle:'<->',            // optional (default: <->; options: none, -, ->, <-, <->)
                                // axis house keeping (should be specified automatically)
                                numberOfLines:1,            // optional (default: 1)
                                // plot options
-                               // do these next two options need to be arrays???? I think so...
-                               a:-4, b:4,                  // optional (default: a=1, b=5) 
+                               // do these next options need to be arrays???? I think so...
+                               a:-4, b:6,                  // optional (default: a=1, b=5) 
                                samples:1000,               // optional (default: samples=100)
+                               curveStyle:'<->',           // optional (default: <->)
                                //parametric:1,             // optional switch to determine if the function is parametric (no default)
                                lineColours:["Blue"],       // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
                                lineStyles:["solid"],       // optional (default: solid, options: solid, dashed, dotted)
-                               lineWidths:["ultra thick"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+                               lineWidths:["normal"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
             };
 			outnode.graphingFunction = string2Object(testGraph);
 			outnode.getinfo = drawGraph;
@@ -54,6 +55,7 @@
             outnode.plotOptions = {
                                showCoordinatesOnHover: 0,  // optional (default: 1)
                                showCoordinatesChecked: 0,  // optional (default: 1)
+                               a:-2, b:2,                  // optional (default: a=1, b=5) 
             }
 
 			// draw the graph
