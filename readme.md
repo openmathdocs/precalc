@@ -124,4 +124,3 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 - create zoom feature (zoomable on hover/click???)
 - zoom box? (like on a calculator?)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
-- add arrow support for curves (with options, i.e -,<-,->,<->,o-*,*-*,o-,-*, etc)
