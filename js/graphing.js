@@ -554,6 +554,9 @@ function drawGraph(wrapperID)
                 }
 			}
 			this.plotOptions.lineCount++;
+
+            // switch off vertical asymptotes as it can cause confusion if there is more than one graph to be plotted 
+            vertAsymp = 0;
 		}
 
 
