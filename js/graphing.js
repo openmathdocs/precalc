@@ -21,7 +21,7 @@ function drawGraph(wrapperID)
     var height = (typeof plotOptions.height === "undefined") ? 400 : plotOptions.height;
     var width = (typeof plotOptions.width === "undefined") ? 420 : plotOptions.width;
     var canvasID = (typeof plotOptions.id === "undefined") ? wrapperID.concat('GRAPH') : plotOptions.id;
-    var tiksUseMathJax = (typeof plotOptions.tiksUseMathJax === "undefined") ? 1 : plotOptions.tiksUseMathJax;
+    var ticksUseMathJax = (typeof plotOptions.ticksUseMathJax === "undefined") ? 1 : plotOptions.ticksUseMathJax;
     var showCoordinatesOnHover = (typeof plotOptions.showCoordinatesOnHover === "undefined") ? 1 : plotOptions.showCoordinatesOnHover;
     var showCoordinatesChecked = (typeof plotOptions.showCoordinatesChecked === "undefined") ? 1 : plotOptions.showCoordinatesChecked;
 
@@ -95,15 +95,16 @@ function drawGraph(wrapperID)
         var yAxisStyle = (typeof plotOptions.yAxisStyle === "undefined") ? "<->" : plotOptions.yAxisStyle;
 
         // domain variables: function is plotted from a to b
-        var a = (typeof plotOptions.a === "undefined") ? 1 : plotOptions.a;
-        var b = (typeof plotOptions.b === "undefined") ? 5 : plotOptions.b;
+        var a, b;
+        var tmin, tmax, tstep;
+        // resolution of the curve
+        var samples;
         
         // curve style: <->, ->, <-, o-o, *-o, etc
-        var curveStyle = (typeof plotOptions.curveStyle === "undefined") ? "<->" : plotOptions.curveStyle;
-
-        // some checks on a and b to make sure they will fit on the axis
-        if(a<xmin){ a = xmin;}
-        if(b>xmax){ b = xmax;}
+        var curveStyle;
+        var curve={};
+        var x1, x2, y1, y2, drawLeftArrow, drawRightArrow; 
+        var drawLeftHollowCircle, drawRightHollowCircle, drawLeftSolidCircle, drawRightSolidCircle
 
         // number of lines to be plotted (default is 1)
         var numberOfLines = (typeof plotOptions.numberOfLines === "undefined") ? 1 : plotOptions.numberOfLines;
@@ -227,12 +228,9 @@ function drawGraph(wrapperID)
 		// Set the origin as the reference point
 		ctx.translate(originX,originY);
 
-		// Draw the curve
+		// variables to draw each curve
 		var x, y, deltax, gridpointX;
-
-        // resolution of the curve
-        var samples = (typeof plotOptions.samples === "undefined") ? 100 : plotOptions.samples;
-		deltax = (b-a)/samples;
+        var parametric,lineColour,lineStyle,lineWidth;
 
 		// switch off vertical asymptotes by default
 		vertAsymp = 0;
@@ -243,25 +241,49 @@ function drawGraph(wrapperID)
         // plot however many functions there are
 		for(j=0; j<numberOfLines; j++)
 		{
-		    // line colour 	
-            var lineColour;
-            if(typeof this.plotOptions.lineColours =='undefined') {
-                lineColour = 'Red';
-            } else {
-                lineColour = (typeof this.plotOptions.lineColours[j] === "undefined") ? "Red" : this.plotOptions.lineColours[j];
+            // curve style: <->, ->, <-, o-o, *-o, etc
+            curveStyle  = '<->';
+
+            // domain variables defaults
+            a = 1; b = 5;
+            samples = 100;
+            parametric = 0;
+            tmin=0; tmax=2*Math.PI; tstep=0.01;
+
+            // line colour
+            lineColour = 'Red';
+            // style (solid, dashed, dotted, etc)
+            lineStyle = 'solid';
+            // line width (ultra thin, very thin, thin, normal, thick, very thick, ultra thick, etc)
+            lineWidth = 'normal';
+            
+            // grab options for each curve
+            if(typeof this.plotOptions.curveOptions !='undefined') {
+              if(typeof plotOptions.curveOptions[j] != "undefined"){
+                curveStyle = (typeof plotOptions.curveOptions[j].curveStyle === "undefined") ? curveStyle : plotOptions.curveOptions[j].curveStyle;
+                a = (typeof plotOptions.curveOptions[j].a === "undefined") ? a : plotOptions.curveOptions[j].a;
+                b = (typeof plotOptions.curveOptions[j].b === "undefined") ? b : plotOptions.curveOptions[j].b;
+                samples = (typeof plotOptions.curveOptions[j].samples === "undefined") ? samples : plotOptions.curveOptions[j].samples;
+                lineColour = (typeof plotOptions.curveOptions[j].lineColour === "undefined") ? lineColour : plotOptions.curveOptions[j].lineColour;
+                lineStyle = (typeof plotOptions.curveOptions[j].lineStyle === "undefined") ? lineStyle : plotOptions.curveOptions[j].lineStyle;
+                lineWidth = (typeof plotOptions.curveOptions[j].lineWidth === "undefined") ? lineWidth : plotOptions.curveOptions[j].lineWidth;
+                parametric = (typeof plotOptions.curveOptions[j].parametric === "undefined") ? parametric : plotOptions.curveOptions[j].parametric;
+                if(parametric){
+                    tmin = (typeof plotOptions.curveOptions[j].tmin === "undefined") ? tmin : plotOptions.curveOptions[j].tmin;
+                    tmax = (typeof plotOptions.curveOptions[j].tmax === "undefined") ? tmax : plotOptions.curveOptions[j].tmax;
+                    tstep = (typeof plotOptions.curveOptions[j].tstep === "undefined") ? tstep : plotOptions.curveOptions[j].tstep;
+                }
+              }
             }
+
+            // now that a and b are fixed, we can calculate deltax
+		    deltax = (b-a)/samples;
+                
+            // the lineColour is now fixed, so assign it
 			ctx.strokeStyle = lineColour;
             // set the fill style here so that it affects the arrow colours
 			ctx.fillStyle = lineColour;
             
-            // line style (solid, dashed, dotted, etc)
-            var lineStyle;
-            if(typeof this.plotOptions.lineStyles =='undefined') {
-                lineStyle = 'solid';
-            } else {
-                lineStyle = (typeof this.plotOptions.lineStyles[j] === "undefined") ? "solid" : this.plotOptions.lineStyles[j];
-            }
-
             switch(lineStyle)
             {
               // solid lines
@@ -273,14 +295,6 @@ function drawGraph(wrapperID)
               // dotted lines
               case 'dotted': ctx.setLineDash([1,2]);
                              break;
-            }
-
-            // line width (ultra thin, very thin, thin, normal, thick, very thick, ultra thick, etc)
-            var lineWidth;
-            if(typeof this.plotOptions.lineWidths =='undefined') {
-                lineWidth = 'normal';
-            } else {
-                lineWidth = (typeof this.plotOptions.lineWidths[j] === "undefined") ? "normal" : this.plotOptions.lineWidths[j];
             }
 
             switch(lineWidth)
@@ -311,11 +325,8 @@ function drawGraph(wrapperID)
             // parametric plots
             // parametric plots
             // parametric plots
-			if(plotOptions.parametric==1)
+			if(parametric)
 			{
-                var tmin = (typeof plotOptions.tmin === "undefined") ? 0 : plotOptions.tmin;
-                var tmax = (typeof plotOptions.tmax === "undefined") ? (2*Math.PI) : plotOptions.tmax;
-                var tstep = (typeof plotOptions.tstep === "undefined") ? 0.01 : plotOptions.tstep;
 				samples = Math.ceil((tmax-tmin)/tstep);		
 
 				ctx.beginPath();
@@ -347,6 +358,12 @@ function drawGraph(wrapperID)
                 // non-parametric curve
                 // non-parametric curve
                 // non-parametric curve
+                
+                // some checks on a and b to make sure they will fit on the axis
+                if(a<xmin){ a = xmin;}
+                if(b>xmax){ b = xmax;}
+
+
 				ctx.beginPath();
 				for(i=0; i<samples; i++)
 				{
@@ -449,10 +466,17 @@ function drawGraph(wrapperID)
 				}
 				ctx.stroke();
 
+                // make sure the line style is solid for the arrows and circles
+                // otherwise it looks rubbish
+                ctx.setLineDash([50000]);
+
                 // draw arrows at the end of curves (if the options allow)
-                var curve={};
-                var x1, x2, y1, y2, drawLeftArrow, drawRightArrow; 
-                var drawLeftHollowCircle, drawRightHollowCircle, drawLeftSolidCircle, drawRightSolidCircle
+                curve={};
+                // reset all end styles (arrows, circles) which is necessary
+                // when plotting more than one curve
+                drawLeftArrow = 0; drawRightArrow = 0; 
+                drawLeftHollowCircle = 0; drawRightHollowCircle = 0; 
+                drawLeftSolidCircle = 0; drawRightSolidCircle = 0;
                 // match the curve style: look for left arrows, right arrows, open circles, solid circles
                 if (curveStyle.indexOf("<-")>-1){
                     drawLeftArrow = 1;
@@ -561,7 +585,7 @@ function drawGraph(wrapperID)
 
 
 		// x and y tick marks
-        if(tiksUseMathJax){
+        if(ticksUseMathJax){
             // MathJax tick labels (drawn *on top* of the canvas)
             // MathJax tick labels (drawn *on top* of the canvas)
             // MathJax tick labels (drawn *on top* of the canvas)

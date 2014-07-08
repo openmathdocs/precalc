@@ -23,7 +23,7 @@
                                // html options
                                height: 300, width: 1020,    // optional (default: height=400, width=420) 
                                id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
-                               tiksUseMathJax: 1,          // optional (default: 1)
+                               ticksUseMathJax: 1,          // optional (default: 1)
                                showCoordinatesOnHover: 1,  // optional (default: 1)
                                showCoordinatesChecked: 1,  // optional (default: 1)
                                // axis options
@@ -34,16 +34,29 @@
                                xAxisStyle:'<-',            // optional (default: <->; options: none, -, ->, <-, <->) 
                                yAxisStyle:'<->',            // optional (default: <->; options: none, -, ->, <-, <->)
                                // axis house keeping (should be specified automatically)
-                               numberOfLines:2,            // optional (default: 1)
-                               // plot options
-                               // do these next options need to be arrays???? I think so...
-                               a:-1.5, b:4,                  // optional (default: a=1, b=5) 
-                               samples:1000,               // optional (default: samples=100)
-                               curveStyle:'*-*',           // optional (default: <->)
-                               //parametric:1,             // optional switch to determine if the function is parametric (no default)
-                               lineColours:["Blue"],       // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
-                               lineStyles:["solid"],       // optional (default: solid, options: solid, dashed, dotted)
-                               lineWidths:["normal"], // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+                               numberOfLines:3,            // optional (default: 1)
+                               // plot options are set for *each* curve as we may want different 
+                               // values of a, b, samples, line styles, etc
+                               // 
+                               // curveOptions is an array of objects:
+                               //  [{options for curve 1},{options for curve 2},...]
+                               // the entries can be left empty, in which case a default will be assigned
+                               //
+                               // Each entry in the array can have any/all/none of the following: 
+                               //   {a:-1.5, b:4,       // optional (default: a=1, b=5) 
+                               //    samples:1000,      // optional (default: samples=100)
+                               //    parametric:1,      // optional switch to determine if the function is parametric (no default)
+                               //    tmin:0,            // optional (default, tmin:0)
+                               //    tmax:Math.PI,      // optional (default, tmin:2*Math.PI)
+                               //    curveStyle:'*-*',  // optional (default: <->, options: -, *-, -o, o-o, *-*, ->, <-, <->)
+                               //    lineColour:'Blue', // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               //    lineStyle:'dotted',// optional (default: 'solid')
+                               //    lineWidth:'thick'} // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+                               curveOptions:[
+                                        {lineWidth:'thick',lineStyle:'dashed',lineColour:"Black",curveStyle:'o-*',a:-1.5,b:3},
+                                        {a:-2,curveStyle:'<-',b:4},
+                                        {parametric:1,samples:100,lineColour:'Blue',lineWidth:'normal',tmin:0,tmax:Math.PI/2,a:0,curveStyle:'<-',b:4}
+                               ],
             };
 			outnode.graphingFunction = string2Object(testGraph);
 			outnode.getinfo = drawGraph;
@@ -79,7 +92,16 @@
                     //f = math.eval('sin(2*x)',scope);
                     f = Math.sin(2*X);
         } else {
-                    f = 1/(X*(X+2));
+                    //f = 1/(X*(X+2));
+                    // parametric example
+                    // parametric example
+                    // parametric example
+	                t = X;
+	                //x = Math.cos(3*t)*Math.cos(t);
+	                //y = Math.cos(3*t)*Math.sin(t);
+	                x = Math.cos(t);
+	                y = Math.sin(t);
+	                return [x,y];
         }
                     //f = math.eval('sin(2*x)',scope);
                     //f = math.eval('1/(x*(x+2))',scope);
