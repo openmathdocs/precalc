@@ -238,42 +238,39 @@ function drawGraph(wrapperID)
         // initialize the lineCount
         this.plotOptions.lineCount = 1;
 
+        // check for existence of curveOptions
+        // otherwise set it up as an empty array
+        if(typeof plotOptions.curveOptions ==='undefined'){
+            plotOptions.curveOptions = [];
+        }
+
         // plot however many functions there are
 		for(j=0; j<numberOfLines; j++)
 		{
+            // check if curveOptions exist for the current curve
+            // otherwise set them up as an empty object
+            if(typeof plotOptions.curveOptions[j] ==='undefined'){
+                plotOptions.curveOptions[j] = {};
+            }
+
+            // grab options for each curve, or choose the default option does not exist
+            //
             // curve style: <->, ->, <-, o-o, *-o, etc
-            curveStyle  = '<->';
-
-            // domain variables defaults
-            a = 1; b = 5;
-            samples = 100;
-            parametric = 0;
-            tmin=0; tmax=2*Math.PI; tstep=0.01;
-
-            // line colour
-            lineColour = 'Red';
-            // style (solid, dashed, dotted, etc)
-            lineStyle = 'solid';
-            // line width (ultra thin, very thin, thin, normal, thick, very thick, ultra thick, etc)
-            lineWidth = 'normal';
-            
-            // grab options for each curve
-            if(typeof this.plotOptions.curveOptions !='undefined') {
-              if(typeof plotOptions.curveOptions[j] != "undefined"){
-                curveStyle = (typeof plotOptions.curveOptions[j].curveStyle === "undefined") ? curveStyle : plotOptions.curveOptions[j].curveStyle;
-                a = (typeof plotOptions.curveOptions[j].a === "undefined") ? a : plotOptions.curveOptions[j].a;
-                b = (typeof plotOptions.curveOptions[j].b === "undefined") ? b : plotOptions.curveOptions[j].b;
-                samples = (typeof plotOptions.curveOptions[j].samples === "undefined") ? samples : plotOptions.curveOptions[j].samples;
-                lineColour = (typeof plotOptions.curveOptions[j].lineColour === "undefined") ? lineColour : plotOptions.curveOptions[j].lineColour;
-                lineStyle = (typeof plotOptions.curveOptions[j].lineStyle === "undefined") ? lineStyle : plotOptions.curveOptions[j].lineStyle;
-                lineWidth = (typeof plotOptions.curveOptions[j].lineWidth === "undefined") ? lineWidth : plotOptions.curveOptions[j].lineWidth;
-                parametric = (typeof plotOptions.curveOptions[j].parametric === "undefined") ? parametric : plotOptions.curveOptions[j].parametric;
-                if(parametric){
-                    tmin = (typeof plotOptions.curveOptions[j].tmin === "undefined") ? tmin : plotOptions.curveOptions[j].tmin;
-                    tmax = (typeof plotOptions.curveOptions[j].tmax === "undefined") ? tmax : plotOptions.curveOptions[j].tmax;
-                    tstep = (typeof plotOptions.curveOptions[j].tstep === "undefined") ? tstep : plotOptions.curveOptions[j].tstep;
-                }
-              }
+            curveStyle = (typeof plotOptions.curveOptions[j].curveStyle === "undefined") ? '<->': plotOptions.curveOptions[j].curveStyle;
+            // domain variables 
+            a = (typeof plotOptions.curveOptions[j].a === "undefined") ? 1 : plotOptions.curveOptions[j].a;
+            b = (typeof plotOptions.curveOptions[j].b === "undefined") ? 5 : plotOptions.curveOptions[j].b;
+            samples = (typeof plotOptions.curveOptions[j].samples === "undefined") ? 100 : plotOptions.curveOptions[j].samples;
+            // line styles
+            lineColour = (typeof plotOptions.curveOptions[j].lineColour === "undefined") ? 'Red' : plotOptions.curveOptions[j].lineColour;
+            lineStyle = (typeof plotOptions.curveOptions[j].lineStyle === "undefined") ? 'solid' : plotOptions.curveOptions[j].lineStyle;
+            lineWidth = (typeof plotOptions.curveOptions[j].lineWidth === "undefined") ? 'normal' : plotOptions.curveOptions[j].lineWidth;
+            // parametric curves
+            parametric = (typeof plotOptions.curveOptions[j].parametric === "undefined") ? 0 : plotOptions.curveOptions[j].parametric;
+            if(parametric){
+                tmin = (typeof plotOptions.curveOptions[j].tmin === "undefined") ? 0 : plotOptions.curveOptions[j].tmin;
+                tmax = (typeof plotOptions.curveOptions[j].tmax === "undefined") ? 2*Math.PI : plotOptions.curveOptions[j].tmax;
+                tstep = (typeof plotOptions.curveOptions[j].tstep === "undefined") ? 0.01 : plotOptions.curveOptions[j].tstep;
             }
 
             // now that a and b are fixed, we can calculate deltax
@@ -281,6 +278,7 @@ function drawGraph(wrapperID)
                 
             // the lineColour is now fixed, so assign it
 			ctx.strokeStyle = lineColour;
+
             // set the fill style here so that it affects the arrow colours
 			ctx.fillStyle = lineColour;
             
