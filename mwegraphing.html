@@ -21,7 +21,7 @@
 			// draw the graph
             outnode.plotOptions = {
                                // html options
-                               height: 300, width: 1020,    // optional (default: height=400, width=420) 
+                               height: 300, width: 500,    // optional (default: height=400, width=420) 
                                id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
                                ticksUseMathJax: 1,          // optional (default: 1)
                                showCoordinatesOnHover: 1,  // optional (default: 1)
@@ -32,9 +32,9 @@
                                xlabel:"t",                 // optional (defaul: "x")
                                ylabel:"y=f(x)",            // optional (defaul: "y")
                                xAxisStyle:'<-',            // optional (default: <->; options: none, -, ->, <-, <->) 
-                               yAxisStyle:'<->',            // optional (default: <->; options: none, -, ->, <-, <->)
+                               yAxisStyle:'->',            // optional (default: <->; options: none, -, ->, <-, <->)
                                // axis house keeping (should be specified automatically)
-                               numberOfLines:3,            // optional (default: 1)
+                               numberOfLines:2,            // optional (default: 1)
                                // plot options are set for *each* curve as we may want different 
                                // values of a, b, samples, line styles, etc
                                // 
@@ -53,8 +53,8 @@
                                //    lineStyle:'dotted',// optional (default: 'solid')
                                //    lineWidth:'thick'} // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
                                curveOptions:[
-                                        {lineWidth:'thick',lineStyle:'dashed',lineColour:"Black",curveStyle:'o-*',a:-1.5,b:3},
-                                        {a:-2,curveStyle:'<-',b:4},
+                               {lineWidth:'thick',lineStyle:'dashed',lineColour:"Black",curveStyle:'o-*',a:-1.5,b:3,node:{pos:0.1,label:'y=x^3+4x'}},
+                                        {a:-2,curveStyle:'<-',b:4,node:{label:'y=\\sin(x)'}},
                                         {parametric:1,samples:100,lineColour:'Blue',lineWidth:'normal',tmin:0,tmax:Math.PI/2,a:0,curveStyle:'<-',b:4}
                                ],
             };

@@ -265,6 +265,8 @@ function drawGraph(wrapperID)
             lineColour = (typeof plotOptions.curveOptions[j].lineColour === "undefined") ? 'Red' : plotOptions.curveOptions[j].lineColour;
             lineStyle = (typeof plotOptions.curveOptions[j].lineStyle === "undefined") ? 'solid' : plotOptions.curveOptions[j].lineStyle;
             lineWidth = (typeof plotOptions.curveOptions[j].lineWidth === "undefined") ? 'normal' : plotOptions.curveOptions[j].lineWidth;
+            // node on curves
+            node = (typeof plotOptions.curveOptions[j].node === "undefined") ? 'none' : plotOptions.curveOptions[j].node;
             // parametric curves
             parametric = (typeof plotOptions.curveOptions[j].parametric === "undefined") ? 0 : plotOptions.curveOptions[j].parametric;
             if(parametric){
@@ -573,6 +575,27 @@ function drawGraph(wrapperID)
 			        x2 *= width/(xmax-xmin);
 			        y2 *= -height/(ymax-ymin);
                     drawArrow(ctx,x1,y1,x2,y2,curve);
+                }
+                // node label
+                var nodeDiv;
+                if(node != 'none'){
+                    // set a default value of position
+                    var pos = (typeof node.pos === "undefined") ? 1 : node.pos;
+                    // check that it is within limits
+                    pos = (pos>1||pos<0) ? 1 : pos;
+                    nodeDiv = document.createElement("div");
+                    nodeDiv.style.position = "absolute";
+                    nodeDiv.style.fontSize = "80%";
+                    x1 = a + pos*(b-a);
+			    	y1 = this.graphingFunction(x1); 
+                    // scale x1 and y1 onto the canvas
+			        x1 *= width/(xmax-xmin);
+			        y1 *= -height/(ymax-ymin);
+                    //y1 = originY;
+                    nodeDiv.style.top = ""+(y1+originY+topMargin)+"px";
+                    nodeDiv.style.left = ""+(x1+originX+leftMargin)+"px";
+                    nodeDiv.innerHTML = "\\("+node.label+"\\)";
+                    outnode.appendChild(nodeDiv);
                 }
 			}
 			this.plotOptions.lineCount++;
