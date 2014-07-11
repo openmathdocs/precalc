@@ -115,6 +115,7 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 ##### `html canvas` to do (mostly inspired by `pgfplots`)
 - MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
 - create alt tags and tool tips (http://msdn.microsoft.com/en-us/library/ie/hh968259%28v=vs.85%29.aspx)
+- need to make topMargin, leftMargin configurable with defaults (also rightMargin and bottomMargin)
 - some of the javascript should actually be controlled via css (xtick/ytick labels, xlabels, ylabels, nodes, cross hairs)
 - make a switch for tick label size? 
 - create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
@@ -124,3 +125,9 @@ In `.html` it outputs, for example, Section `<hyperlink to firstsection>` throug
 - create zoom feature (zoomable on hover/click???)
 - zoom box? (like on a calculator?)
 - make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
+- make right-click context menu for graphing (a la MathJax) which governs how zooming, hovering, etc behaves:
+  -- need to make axis labels obey crosshairs/MathJax priority
+  -- should be useful:  http://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage
+                    and https://www.google.co.uk/search?client=ubuntu&channel=fs&q=mathjax+right+click+context+menu&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=O-e-U9uUM-bX8gfQtoDICg#channel=fs&q=html+create+right+click+context+menu
+                    and http://www.codeproject.com/Tips/630793/Context-Menu-on-Right-Click-in-Webpage
+  -- store choices in cookie (hide images, cross hairs vs MathJax for hover, zoom behaviour, etc)

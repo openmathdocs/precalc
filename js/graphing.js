@@ -30,7 +30,13 @@ function drawGraph(wrapperID)
     canvas.setAttribute("id", canvasID);
     canvas.setAttribute("height", height+"px");
     canvas.setAttribute("width", width+"px");
-    
+
+    // set up right click to show context menu
+    canvas.setAttribute("onmousedown", "HideMenu('contextMenu');");
+    canvas.setAttribute("onmouseup", "HideMenu('contextMenu');");
+    canvas.setAttribute("onmouseout", "HideMenu('contextMenu');");
+    canvas.setAttribute("oncontextmenu", "ShowMenu('contextMenu',event);");
+
     // grab the canvas wrapping div box
     var outnode = document.getElementById(wrapperID);
     outnode.style.width = width+"px";
@@ -586,6 +592,7 @@ function drawGraph(wrapperID)
                     nodeDiv = document.createElement("div");
                     nodeDiv.style.position = "absolute";
                     nodeDiv.style.fontSize = "80%";
+                    nodeDiv.style.pointerEvents = 'none';
                     x1 = a + pos*(b-a);
 			    	y1 = this.graphingFunction(x1); 
                     // scale x1 and y1 onto the canvas
@@ -776,6 +783,7 @@ function drawGraph(wrapperID)
     drawVertLine.style.top = topMargin+"px";
     drawVertLine.style.left = leftMargin+"px";
     drawVertLine.style.display = 'none';
+    drawVertLine.style.pointerEvents = 'none';
     outnode.appendChild(drawVertLine);
     
     // horizontal piece
@@ -787,6 +795,7 @@ function drawGraph(wrapperID)
     drawHorizLine.style.top = topMargin+"px";
     drawHorizLine.style.left = leftMargin+"px";
     drawHorizLine.style.display = 'none';
+    drawHorizLine.style.pointerEvents = 'none';
     outnode.appendChild(drawHorizLine);
 
     // create the hover feature which shows the x and y coordinates
@@ -846,6 +855,20 @@ function drawGraph(wrapperID)
     }
 }
 
+// idea taken from http://www.codeproject.com/Tips/630793/Context-Menu-on-Right-Click-in-Webpage
+function ShowMenu(control, e) {
+    var posx = e.clientX +window.pageXOffset +'px'; //Left Position of Mouse Pointer
+    var posy = e.clientY + window.pageYOffset + 'px'; //Top Position of Mouse Pointer
+    document.getElementById(control).style.display = 'inline-block';
+    document.getElementById(control).style.left = posx;
+    document.getElementById(control).style.top = posy;           
+    // http://stackoverflow.com/questions/381795/how-to-disable-right-click-context-menu-in-javascript
+    // stop the default context menu being displayed while on the canvas
+    e.preventDefault();
+}
+function HideMenu(control) {
+    document.getElementById(control).style.display = 'none'; 
+}
 
 
 // stolen and tweaked from: http://www.dbp-consulting.com/tutorials/canvas/CanvasArrow.html
