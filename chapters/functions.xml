@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Overall element for a Mathbook XML document; mandatory, always-->
+<mathbook>
+
+    <!--
+    "docinfo" is like metadata, it mostly migrates
+    various places, or gets used multiple times
+    -->
+    <docinfo>
+        <!-- There can be several authors here -->
+        <author>
+            <personname>Alex Jordan</personname>
+            <department>Division of Mathematics and Industrial Technology</department>
+            <!-- Use "break" tag anywhere for forced line break -->
+            <institution>Portland Community College Sylvania<br /> Portland, Oregon, USA</institution>
+            <email>alex.jordan@pcc.edu</email>
+        </author>
+        <!-- Could set date manually or use the "today" element -->
+        <date><today /></date>
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        -->
+        <todo>define \sq properly, as commented out below</todo>
+	<todo>get siunitx package loaded so that \num works and we won't need this macro below</todo>
+	<macros>
+	\newcommand\num{}
+	\newcommand\sq{\operatorname{sqrt}(}
+	%\newcommand\sq[1][]{%
+        %\operatorname{sqrt}%
+        %\ifstrequal{#1}{(}{% if we want ()
+        %    (\phantom{x})%
+        %}%
+        %{% else
+        %    \ifstrempty{#1}{% if #1 is empty then do nothing
+        %    }%
+        %    {% otherwise put #1 in ()
+        %        (#1)%
+        %        }%
+        %}%
+        %}
+        </macros>
+    </docinfo>
+
+    <!--
+    The article element is top-level for anything short of a book.
+    There is a book element, which is not demonstrated here.
+    The "filebase" attribute is used for the filename of the
+    HTML output, s part of a chunking scheme that is not complete.
+    -->
+    <article filebase="derivatives">
+        <title>Functions</title>
+        <!--
+        Articles have sections, which have subsections,
+        which have subsubsections.  A titled-paragraph
+        subdivision is planned.  These are all "containers"
+        and so line breaks and extraneous whitespace gets
+        scrubbed.  Use indentation and line breaks liberally
+        within containers to make the structure of your
+        source readable.
+
+        An abstract and a bibliography are like special sections,
+        they belong at the same level in the hierarchy as a
+        section.
+        -->
+
+    <todo>Minitoc</todo>
+
+        <section>
+	    <title>The Basics of Function Vocabulary</title>
+    		<todo>Outcomes</todo>
+
+		<p>Most of us are familiar with the <m>\sqrt{\phantom{x}}</m> symbol.
+		This symbols is used to turn numbers into their square roots. Sometimes it's
+		simple to do this on paper or in our heads, and sometimes it helps a lot to
+		have a calculator. We can see some calculations in <todo>figure out cref \cref{fun:tab:squareroots}.</todo></p>
+
+		<todo>A margin table goes here</todo>
+
+		<p>The <m>\sqrt{\phantom{x}}</m> symbol signifies a <em>process</em>; it's a way for us to
+		turn numbers into other numbers. This idea of having a process for turning numbers into other
+		numbers is fundamental to the science and mathematics that uses college-level algebra.</p>
+
+		<todo>A pccdefinition goes here</todo>
+
+		<p>This definition is so broad that you probably use functions all the time.</p>
+
+		<todo>A pccexample goes here</todo>
+
+		<p>The process of using <m>\sqrt{\phantom{x}}</m> to change numbers might feel more ``mathematical''
+		than these examples. Let's continue thinking about <m>\sqrt{\phantom{x}}</m> for now, since
+		it's a formula-like symbol that we are familiar with. One concern with  <m>\sqrt{\phantom{x}}</m>
+		is that although we live in the modern age of computers, this symbol is not found on most
+		keyboards. And yet computers still tend to be capable of producing square roots. Computer
+		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <todo>\cref{fun:tab:sqrts}</todo>.</p>
+
+		<todo>A margintable goes here</todo>
+
+		<p> The parentheses in <m>\sq[(]</m> are very important. To see why, try to put yourself in the
+		``mind'' of a computer, and look closely at <m>\sq\num{16}</m>. The computer will recognize <m>\sq</m>
+		and know that it needs to compute a square root. But sometimes computers have myopic vision and 
+		they might not see the entire number <m>\num{16}</m>. A computer might think that it needs to compute 
+		<m>\sq\num{1}</m> and then append a ``6'' to the end, which would produce a final result of <m>\num{16}</m>. 
+		This is probably not what was intended. And so the purpose of the parentheses in <m>\sq[\num{16}]</m> is 
+		to denote exactly what number needs to be operated on.</p>
+
+	</section>
+
+
+    </article>
+
+</mathbook>
+
