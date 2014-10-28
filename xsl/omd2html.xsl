@@ -361,6 +361,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:copy>
 </xsl:template>
 
+<!-- Outcomes are an unordered type of list -->
+<xsl:template match="outcomes">
+    <ul>
+    <xsl:apply-templates select="li" />
+  </ul>
+</xsl:template>
+
 <!-- Figures and their captions -->
 <xsl:template match="figure">
     <div class="figure">
@@ -473,9 +480,19 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:call-template>
 </xsl:template>
 
+<!-- 'clever' cross referencing (similar to cleveref package in LaTeX) of a single object -->
 <xsl:template match="xref[@ref]">
     <!-- Save what the reference points to -->
     <xsl:variable name="target" select="id(@ref)" />
+    <!-- Create a 'cleveref'-type reference -->
+    <xsl:choose>
+        <xsl:when test="$target/self::section">
+            <xsl:text>Section </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>FIX!!! </xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
     <!-- Create what the reader sees, equation references get parentheses -->
     <xsl:variable name="visual">
         <xsl:choose>
@@ -503,6 +520,80 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xsl:apply-templates select="$target" mode="xref-identifier" />
         </xsl:attribute>
     <xsl:value-of select="$visual" />
+    </xsl:element>
+</xsl:template>
+
+<!-- 
+     'clever' cross referencing (similar to cleveref package in LaTeX) of *multiple* objects
+     this command is analogous to \crefrange, \Crefrange, \vrefrange, \Vrefrange
+-->
+<xsl:template match="xrefrange[@ref1 and @ref2]">
+    <!-- Save what the reference points to -->
+    <xsl:variable name="target1" select="id(@ref1)" />
+    <xsl:variable name="target2" select="id(@ref2)" />
+    <!-- Create a 'cleveref'-type reference -->
+    <xsl:choose>
+        <xsl:when test="$target1/self::section">
+            <xsl:text>Section </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>FIX!!! </xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- Create what the reader sees, equation references get parentheses -->
+    <xsl:variable name="visual1">
+        <xsl:choose>
+            <xsl:when test="$target1/self::mrow or $target1/self::me or $target1/self::men">
+                <xsl:text>(</xsl:text>
+                <xsl:apply-templates select="$target1" mode="number" />
+                <xsl:text>)</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="$target1" mode="number" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <xsl:variable name="visual2">
+        <xsl:choose>
+            <xsl:when test="$target2/self::mrow or $target2/self::me or $target2/self::men">
+                <xsl:text>(</xsl:text>
+                <xsl:apply-templates select="$target2" mode="number" />
+                <xsl:text>)</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates select="$target2" mode="number" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <!-- Build the anchors -->
+    <xsl:element name ="a">
+        <!-- http://stackoverflow.com/questions/585261/is-there-an-xslt-name-of-element -->
+        <!-- Sans namespace (would be name(.)) -->
+        <xsl:attribute name="class">
+            <xsl:value-of select="local-name($target1)" />
+        </xsl:attribute>
+        <xsl:attribute name="href">
+            <xsl:apply-templates select="$target1" mode="basename" />
+            <xsl:text>.html</xsl:text>
+            <xsl:text>#</xsl:text>
+            <xsl:apply-templates select="$target1" mode="xref-identifier" />
+        </xsl:attribute>
+    <xsl:value-of select="$visual1" />
+    </xsl:element>
+    <xsl:text> through </xsl:text>
+    <xsl:element name ="a">
+        <!-- http://stackoverflow.com/questions/585261/is-there-an-xslt-name-of-element -->
+        <!-- Sans namespace (would be name(.)) -->
+        <xsl:attribute name="class">
+            <xsl:value-of select="local-name($target2)" />
+        </xsl:attribute>
+        <xsl:attribute name="href">
+            <xsl:apply-templates select="$target2" mode="basename" />
+            <xsl:text>.html</xsl:text>
+            <xsl:text>#</xsl:text>
+            <xsl:apply-templates select="$target2" mode="xref-identifier" />
+        </xsl:attribute>
+    <xsl:value-of select="$visual2" />
     </xsl:element>
 </xsl:template>
 
@@ -1428,6 +1519,16 @@ var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "
 </div>
 </noscript>
 <xsl:comment>End: StatCounter code</xsl:comment>
+</xsl:template>
+
+<!-- Comments at the top of each file -->
+<xsl:template match="commentsAtTop">
+  <xsl:comment>
+This file was created using ./xsl/omd2html.xsl
+there is no point in editing it :)
+    <xsl:apply-templates />
+  </xsl:comment>
+  <xsl:text>&#xa;&#xa;</xsl:text>
 </xsl:template>
 
 

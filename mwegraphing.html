@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>MWE graphing</title>
+	<link rel="stylesheet" type="text/css" href="css/graphing.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+			<script src='./js/objectsArraysString.js' type='text/javascript'></script>
+			<script src='./js/graphing.js' type='text/javascript'></script>
+    <!--MathJax-->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <!-- needed for math.eval to parse strings such as 3*x^2-4 -->
+			<script src='http://cdnjs.cloudflare.com/ajax/libs/mathjs/0.25.0/math.js' type='text/javascript'></script>
+
+<script type="text/javascript">
+	function readData()
+	{
+			// grab the canvas wrapping div box
+		    var outnode = document.getElementById('canvaswrapper');
+
+			// draw the graph
+            outnode.plotOptions = {
+                               // html options
+                               height: 300, width: 500,    // optional (default: height=400, width=420) 
+                               id: "mycanvas",             // optional (default: id=canvaswrapperGRAPH)
+                               ticksUseMathJax: 1,          // optional (default: 1)
+                               showCoordinatesOnHover: 1,  // optional (default: 1)
+                               showCoordinatesChecked: 1,  // optional (default: 1)
+                               // axis options
+                               xmin:-3, xmax:9, xres:2,  // optional (default: xmin=-10, xmax=10, xres=1)
+                               ymin:-5, ymax : 6, yres:2,// optional (default: ymin=-10, ymax=10, yres=1) 
+                               xlabel:"t",                 // optional (defaul: "x")
+                               ylabel:"y=f(x)",            // optional (defaul: "y")
+                               xAxisStyle:'<-',            // optional (default: <->; options: none, -, ->, <-, <->) 
+                               yAxisStyle:'->',            // optional (default: <->; options: none, -, ->, <-, <->)
+                               // axis house keeping (should be specified automatically)
+                               numberOfLines:2,            // optional (default: 1)
+                               // plot options are set for *each* curve as we may want different 
+                               // values of a, b, samples, line styles, etc
+                               // 
+                               // curveOptions is an array of objects:
+                               //  [{options for curve 1},{options for curve 2},...]
+                               // the entries can be left empty, in which case a default will be assigned
+                               //
+                               // Each entry in the array can have any/all/none of the following: 
+                               //   {a:-1.5, b:4,       // optional (default: a=1, b=5) 
+                               //    samples:1000,      // optional (default: samples=100)
+                               //    parametric:1,      // optional switch to determine if the function is parametric (no default)
+                               //    tmin:0,            // optional (default, tmin:0)
+                               //    tmax:Math.PI,      // optional (default, tmin:2*Math.PI)
+                               //    curveStyle:'*-*',  // optional (default: <->, options: -, *-, -o, o-o, *-*, ->, <-, <->)
+                               //    lineColour:'Blue', // optional (default: Red) see: http://www.w3schools.com/tags/ref_colornames.asp
+                               //    lineStyle:'dotted',// optional (default: 'solid')
+                               //    lineWidth:'thick'} // optional (default: normal, options: ultra thin, very thin, thin, normal, thick, very thick, ultra thick)
+                               curveOptions:[
+                               {lineWidth:'thick',lineStyle:'dashed',lineColour:"Black",curveStyle:'o-*',a:-1.5,b:3,node:{pos:0.1,label:'y=x^3+4x'}},
+                                        {a:-2,curveStyle:'<-',b:4,node:{label:'y=\\sin(x)'}},
+                                        {parametric:1,samples:100,lineColour:'Blue',lineWidth:'normal',tmin:0,tmax:Math.PI/2,a:0,curveStyle:'<-',b:4}
+                               ],
+            };
+			outnode.graphingFunction = string2Object(testGraph);
+			outnode.getinfo = drawGraph;
+			outnode.getinfo("canvaswrapper");
+
+
+			// grab the canvas wrapping div box
+		    outnode = document.getElementById('canvaswrapper1');
+            outnode.plotOptions = {
+                               showCoordinatesOnHover: 0,  // optional (default: 1)
+                               showCoordinatesChecked: 0,  // optional (default: 1)
+                               curveOptions:[{a:-2, b:2}]
+            }
+
+			// draw the graph
+			outnode.graphingFunction = string2Object(testGraph);
+			outnode.getinfo = drawGraph;
+			outnode.getinfo("canvaswrapper1");
+
+    }					
+
+    function testGraph(X)
+    {
+        //f = 3*X*(X-2)*(X+3);
+        //f = Math.pow(X-1,2)-4;
+        ////f = 1/(X*(X+2));
+        //return f;
+        //var scope = {x:X};
+        if(this.plotOptions.lineCount==1){
+                    //f = math.eval('(x-1)^2-4',scope);
+                    f = Math.pow(X-1,2)-4;
+        } else if (this.plotOptions.lineCount==2){
+                    //f = math.eval('sin(2*x)',scope);
+                    f = Math.sin(2*X);
+        } else {
+                    //f = 1/(X*(X+2));
+                    // parametric example
+                    // parametric example
+                    // parametric example
+	                t = X;
+	                //x = Math.cos(3*t)*Math.cos(t);
+	                //y = Math.cos(3*t)*Math.sin(t);
+	                x = Math.cos(t);
+	                y = Math.sin(t);
+	                return [x,y];
+        }
+                    //f = math.eval('sin(2*x)',scope);
+                    //f = math.eval('1/(x*(x+2))',scope);
+        return f;
+
+        // parametric example
+        // parametric example
+        // parametric example
+	    t = X;
+	    x = Math.cos(3*t)*Math.cos(t);
+	    y = Math.cos(3*t)*Math.sin(t);
+	    return [x,y];
+     }
+
+</script>
+
+</head>
+
+<body onload="readData()">
+  <div style="display:none;" id="contextMenu">
+    <h4>Graph Options</h4>
+    <ul>
+      <li>Coordinates</li>
+    </ul>
+    </div>
+  <!--
+<div style="border:solid 2px;padding:0px;width:200px">
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+</div>
+<div style="border:solid 2px;padding:0px;width:200px">
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+</div>
+-->
+<div id="canvaswrapper" style="border:solid orange 4px;padding:0px;position:relative"> 
+</div>
+<div id="canvaswrapper1" style="border:solid orange 4px;padding:0px;position:relative">
+</div>
+<div style="border:solid 2px;padding:0px;width:200px">
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+  text text tex text text tex text text tex text text tex text text tex text text tex
+</div>
+
+  </body>
+</html>
+<!--
+stick the labels on top of the graph???
+http://stackoverflow.com/questions/5688599/add-elements-to-canvas-html5
+-->

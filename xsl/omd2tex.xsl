@@ -72,7 +72,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- so gets killed via apply-templates                -->
 <xsl:template match="docinfo"></xsl:template>
 
-
 <!-- An article, LaTeX structure -->
 <!--     One page, full of sections (with abstract, references)                    -->
 <!--     Or, one page, totally unstructured, just lots of paragraphs, widgets, etc -->
@@ -758,12 +757,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <!-- Lists -->
+<!-- ordered list -->
 <xsl:template match="ol">
     <xsl:text>\begin{enumerate}&#xa;</xsl:text>
     <xsl:apply-templates select="li" />
     <xsl:text>\end{enumerate}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
+<!-- unordered list -->
 <xsl:template match="ul">
     <xsl:text>\begin{itemize}&#xa;</xsl:text>
     <xsl:apply-templates select="li" />
@@ -775,6 +776,16 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="li" />
     <xsl:text>\end{description}&#xa;%&#xa;</xsl:text>
 </xsl:template>
+
+<!-- Outcome environments -->
+<xsl:template match="outcomes">
+  <xsl:text>\begin{outcomes}&#xa;</xsl:text>
+  <xsl:text>\begin{outcomelist}&#xa;</xsl:text>
+    <xsl:apply-templates select="li" />
+  <xsl:text>\end{outcomelist}&#xa;</xsl:text>
+  <xsl:text>\end{outcomes}&#xa;</xsl:text>
+</xsl:template>
+
 
 <!-- Sometimes a nested list ends as part of an item  -->
 <!-- We output a % with each carriage return to avoid -->
@@ -1213,18 +1224,59 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>}</xsl:text>
 </xsl:template>
 
-<!-- LaTeX references equations differently than theorems, etc -->
+<!-- LaTeX references use cleveref or varioref, depending on if the object is 'faraway' or at the beginning of a sentence -->
 <xsl:template match="xref[@ref]">
+    <!-- OLD
     <xsl:variable name="target" select="id(@ref)" />
+    -->
     <xsl:choose>
-        <xsl:when test="$target/self::mrow or $target/self::me or $target/self::men">
-            <xsl:text>\eqref{</xsl:text>
+        <!-- far away at beginning of a sentence -->
+        <xsl:when test="@faraway='true' and @beginsentence='true'">
+            <xsl:text>\Vref{</xsl:text>
         </xsl:when>
+        <!-- far away, mid sentece -->
+        <xsl:when test="@faraway='true'">
+            <xsl:text>\vref{</xsl:text>
+        </xsl:when>
+        <!-- not far away at beginning of a sentence -->
+        <xsl:when test="@beginsentence='true'">
+            <xsl:text>\Cref{</xsl:text>
+        </xsl:when>
+        <!-- not far away mid-sentence -->
         <xsl:otherwise>
-            <xsl:text>\ref{</xsl:text>
+            <xsl:text>\cref{</xsl:text>
         </xsl:otherwise>
     </xsl:choose>
+    <!-- OLD
     <xsl:apply-templates select="$target" mode="xref-identifier" />
+    -->
+    <xsl:value-of select="@ref"/>
+    <xsl:text>}</xsl:text>
+</xsl:template>
+
+<!-- xrefrange when referring to a range of cross references, e.g \crefrange{first:object}{second:object} -->
+<xsl:template match="xrefrange[@ref1 and @ref2]">
+    <xsl:choose>
+        <!-- far away at beginning of a sentence -->
+        <xsl:when test="@faraway='true' and @beginsentence='true'">
+            <xsl:text>\Vrefrange{</xsl:text>
+        </xsl:when>
+        <!-- far away, mid sentece -->
+        <xsl:when test="@faraway='true'">
+            <xsl:text>\vrefrange{</xsl:text>
+        </xsl:when>
+        <!-- not far away at beginning of a sentence -->
+        <xsl:when test="@beginsentence='true'">
+            <xsl:text>\Crefrange{</xsl:text>
+        </xsl:when>
+        <!-- not far away mid-sentence -->
+        <xsl:otherwise>
+            <xsl:text>\crefrange{</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:value-of select="@ref1"/>
+    <xsl:text>}{</xsl:text>
+    <xsl:value-of select="@ref2"/>
     <xsl:text>}</xsl:text>
 </xsl:template>
 
@@ -1390,6 +1442,15 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:apply-templates />
         <xsl:text>}}</xsl:text>
     </xsl:if>
+</xsl:template>
+
+<!-- Comments at the top of each file -->
+<xsl:template match="commentsAtTop">
+  <xsl:text>\begin{comment}&#xa;</xsl:text>
+  <xsl:text>This file was created using ./xsl/omd2tex.xsl,&#xa;</xsl:text>
+  <xsl:text>there is no point in editing it :)&#xa;</xsl:text>
+    <xsl:apply-templates />
+  <xsl:text>\end{comment}&#xa;&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Converter information for header -->
