@@ -22,37 +22,12 @@
         TeX/LaTeX macros can be written in the usual way.
         Whitespace and line breaks are irrelevant here.
         -->
-        <todo>define \sq properly, as commented out below</todo>
-	<todo>get siunitx package loaded so that \num works and we won't need this macro below</todo>
-	<macros>
-	\newcommand\num{}
-	\newcommand\sq{\operatorname{sqrt}(}
-	%\newcommand\sq[1][]{%
-        %\operatorname{sqrt}%
-        %\ifstrequal{#1}{(}{% if we want ()
-        %    (\phantom{x})%
-        %}%
-        %{% else
-        %    \ifstrempty{#1}{% if #1 is empty then do nothing
-        %    }%
-        %    {% otherwise put #1 in ()
-        %        (#1)%
-        %        }%
-        %}%
-        %}
-        </macros>
     </docinfo>
 
-    <!--
-    The article element is top-level for anything short of a book.
-    There is a book element, which is not demonstrated here.
-    The "filebase" attribute is used for the filename of the
-    HTML output, s part of a chunking scheme that is not complete.
-    -->
-    <article filebase="derivatives">
+    <chapter filebase="functions">
         <title>Functions</title>
         <!--
-        Articles have sections, which have subsections,
+        Chapters have sections, which have subsections,
         which have subsubsections.  A titled-paragraph
         subdivision is planned.  These are all "containers"
         and so line breaks and extraneous whitespace gets
@@ -62,14 +37,19 @@
 
         An abstract and a bibliography are like special sections,
         they belong at the same level in the hierarchy as a
-        section.
+        section. (Not planned as part of OMD chapters)
         -->
 
-    <todo>Minitoc</todo>
+    <minitoc>Minitoc</minitoc>
 
         <section>
 	    <title>The Basics of Function Vocabulary</title>
-    		<todo>Outcomes</todo>
+    		<outcomes>
+			<li>You will have an understanding of the definition of a function.</li>
+			<li>You will be able to use standard notation concerning functions
+	                correctly, and recognize when notation has been used incorrectly.</li>
+			<li>You will recognize some real examples of functions in your life.</li>
+		</outcomes>
 
 		<p>Most of us are familiar with the <m>\sqrt{\phantom{x}}</m> symbol.
 		This symbols is used to turn numbers into their square roots. Sometimes it's
@@ -108,7 +88,7 @@
 	</section>
 
 
-    </article>
+    </chapter>
 
 </mathbook>
 
