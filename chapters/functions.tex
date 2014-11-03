@@ -14,16 +14,16 @@
 %
 \begin{outcomes}
 \begin{outcomelist}
-\item You will have an understanding of the definition of a function.%
-\item You will be able to use standard notation concerning functions
+\item You will understand the definition of a function.%
+\item You will be able to use standard notation for functions
 	                correctly, and recognize when notation has been used incorrectly.%
-\item You will recognize some real examples of functions in your life.%
+\item You will recognize some everyday examples of functions.%
 \end{outcomelist}
 \end{outcomes}
 Most of us are familiar with the $\sqrt{\phantom{x}}$ symbol.
 		This symbols is used to turn numbers into their square roots. Sometimes it's
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
-		have a calculator. We can see some calculations in \cref{fun-tab-squareroots}
+		have a calculator. We can see some calculations in \cref{fun-tab-squareroots}.
 %
 \begin{margintable}\centering
 \captionof{table}{Values of $\sqrt{x}$}
@@ -39,9 +39,9 @@ $\sqrt{\num{2}}$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 
 		\end{margintable}
 %
-\par The $\sqrt{\phantom{x}}$ symbol signifies a \emph{process}; it's a way for us to
-		turn numbers into other numbers. This idea of having a process for turning numbers into other
-		numbers is fundamental to the science and mathematics that uses college-level algebra.
+\par The $\sqrt{\phantom{x}}$ symbol represents a \emph{process}; it's a way for us to
+		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
+		fundamental to science and mathematics that use college-level algebra. 
 %
 \begin{definition}[Function]\label{}
 A function is a process for turning numbers into (potentially) different numbers. 
@@ -50,22 +50,23 @@ A function is a process for turning numbers into (potentially) different numbers
 \par This definition is so broad that you probably use functions all the time.
 %
 \begin{example}\label{}
-Think about each of these examples, where some process is used for turning one number into another.
+Think about each of these examples. How do they fit the defintion of a function?
 %
 \begin{itemize}
-\item If you use a person's birth year to determine how old they are, you are using a function.%
-\item If you look up the Kelly Blue Book value of a Mazda Proteg\'{ e} based on how old it is, you are using a function.%
-\item If you use the the amount of money that you have available to determine how much
-        you wish to spend on a birthday gift for your friend, you are using a function.%
+\item If you use the year a person was born to determine how old they are, you are using a function.%
+\item If you look up the Kelly Blue Book value of a Mazda Proteg\'{ e} based on how old it is, 
+				you are using a function.%
+\item If you use the the amount of money that you have on you to determine how many beers you could buy for 
+				your friends at the bar, you are using a function.%
 \end{itemize}
 %
 \end{example}
 %
 \par The process of using $\sqrt{\phantom{x}}$ to change numbers might feel more ``mathematical''
 		than these examples. Let's continue thinking about $\sqrt{\phantom{x}}$ for now, since
-		it's a formula-like symbol that we are familiar with. One concern with  $\sqrt{\phantom{x}}$
-		is that although we live in the modern age of computers, this symbol is not found on most
-		keyboards. And yet computers still tend to be capable of producing square roots. Computer
+		it's a formula-like symbol that we are familiar with. Even though we live in the age of computers,
+		this symbol is not found on most
+		keyboards. This doesn't stop people from using computers to calculate square roots though. Computer
 		technicians write $\sq[(]$ when they want to compute a square root, as we see in \cref{fun-tab-sqrts}.
 %
 \begin{margintable}\centering
@@ -82,11 +83,34 @@ $\sq[\num{2}]$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 
                 \end{margintable}
 %
-\par  The parentheses in $\sq[(]$ are very important. To see why, try to put yourself in the
+\par The parentheses in $\sq[(]$ are very important. To see why, try to put yourself in the
 		``mind'' of a computer, and look closely at $\sq\num{16}$. The computer will recognize $\sq$
-		and know that it needs to compute a square root. But sometimes computers have myopic vision and 
-		they might not see the entire number $\num{16}$. A computer might think that it needs to compute 
-		$\sq\num{1}$ and then append a ``6'' to the end, which would produce a final result of $\num{16}$. 
-		This is probably not what was intended. And so the purpose of the parentheses in $\sq[\num{16}]$ is 
+		and know that it needs to compute a square root. But computers are very picky with how they interpret input, and 
+		they might not see the entire number $\num{16}$. A computer might read as far as $\sq\num{1}$ and think that it needs to compute this.
+		That would leave $1$ with a ``6'' character still hanging. The final result would be $\num{16}$, and we know we inteded the  
+		result to be $4$. And so the purpose of the parentheses in $\sq[\num{16}]$ is 
 		to denote exactly what number needs to be operated on.
+%
+\par This use of $\sq[(]$ serves as a model for the standard notation that is used worldwide to
+        	write down most functions. By having a standard notation for communicating about functions,
+        	people in China, Venezuela, Senegal, and the United States can all communicate mathematics
+        	with each other more easily.
+%
+\par Functions have their own names. We've seen a function named $\sq$, but any name you can
+        	imagine is allowable. In the sciences, it is common to name functions with whole words,
+        	like $\operatorname{weight}$ or $\operatorname{health\_index}$. In mathematics, we often
+        	abbreviate such function names to $w$ or $h$. And of course, since the word ``function''
+        	itself starts with ``f'', we will often name a function $f$.
+%
+\par It's crucial to continue reminding ourselves that functions are \emph{processes} for
+        	changing numbers; they are not numbers themselves. And that means that we have a potential
+        	for confusion that we need to stay aware of. In some contexts, the symbol $t$ might
+        	represent a variable---a number that is represented by a letter. For example, it might represent 
+		how much time has passed since something started. But in other contexts, $t$
+        	might represent a function---a process for changing numbers into other numbers. For example, if you 
+		have a year in mind, $t$ might be the function that tells you how many tornadoes there were that year. 
+		So $t$ would be a process for turning years into numbers of tornadoes. By
+        	staying conscious of the context of an investigation, we avoid confusion.
+%
+\par Next we need to discuss how we go about using a function's name.
 %
