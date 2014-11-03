@@ -692,6 +692,11 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:text>&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="acute">
+    <xsl:text>\'{ </xsl:text>
+    <xsl:value-of select="@letter" />
+    <xsl:text>}</xsl:text>
+</xsl:template>
 
 <!-- Math  -->
 <!--       -->
@@ -1180,33 +1185,48 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:text>%&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="margintable">
+    <xsl:text>\begin{margintable}\centering&#xa;</xsl:text>
+    <xsl:text>\captionof{table}{</xsl:text>
+    <xsl:apply-templates select="caption/node()" />
+    <xsl:text>}&#xa;</xsl:text>
+    <xsl:apply-templates select="." mode="label"/>
+    <xsl:apply-templates />
+    <xsl:text>\end{margintable}&#xa;</xsl:text>
+    <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
 <xsl:template match="table/caption">
     <xsl:text>\caption{</xsl:text>
     <xsl:apply-templates />
     <xsl:text>}&#xa;</xsl:text>
 </xsl:template>
 
+
+
 <!-- Unclear how to handle *multiple* tgroups in latex -->
 <xsl:template match="tgroup">
     <xsl:text>\begin{tabular}</xsl:text>
-    <xsl:text>{*{</xsl:text>
-    <xsl:value-of select="@cols" />
-    <xsl:text>}{</xsl:text>
+    <xsl:text>{</xsl:text>
     <xsl:choose>
-        <xsl:when test="@align='left'">  <xsl:text>l</xsl:text></xsl:when>
-        <xsl:when test="@align='center'"><xsl:text>c</xsl:text></xsl:when>
-        <xsl:when test="@align='right'"> <xsl:text>r</xsl:text></xsl:when>
-        <xsl:otherwise>                  <xsl:text>c</xsl:text></xsl:otherwise>
+        <xsl:when test="@tabletype='equation'"><xsl:text>r@{}c@{}l</xsl:text></xsl:when>
+        <xsl:otherwise><xsl:text>{*{</xsl:text><xsl:value-of select="@cols" /><xsl:text>}{</xsl:text></xsl:otherwise>
+            <xsl:choose>
+                <xsl:when test="@align='left}'">  <xsl:text>l</xsl:text></xsl:when>
+                <xsl:when test="@align='center}'"><xsl:text>c</xsl:text></xsl:when>
+                <xsl:when test="@align='right}'"> <xsl:text>r</xsl:text></xsl:when>
+                <xsl:otherwise>                  <xsl:value-of select="@align" /></xsl:otherwise>
+            </xsl:choose>
     </xsl:choose>
-    <xsl:text>}}&#xa;</xsl:text>
+    <xsl:text>}&#xa;</xsl:text>
     <xsl:apply-templates />
     <xsl:text>\end{tabular}&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="thead">
-    <xsl:text>\hline\hline </xsl:text>
+    <xsl:text>\beforeheading &#xa;</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>\\\hline\hline </xsl:text>
+    <xsl:text>\afterheading &#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="tbody">
@@ -1215,8 +1235,12 @@ This file is being modified to suit the needs of OMD chapters
 
 <xsl:template match="row">
     <xsl:apply-templates />
-    <xsl:text>\\&#xa;</xsl:text>
+    <xsl:choose>
+        <xsl:when test="@position='last'">  <xsl:text>\\\lastline&#xa;</xsl:text></xsl:when>
+        <xsl:otherwise>                    <xsl:text>\\\normalline&#xa;</xsl:text></xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
+
 
 <xsl:template match="entry[1]">
     <xsl:apply-templates />
@@ -1316,10 +1340,10 @@ This file is being modified to suit the needs of OMD chapters
 <!-- Insert a xref identifier as a LaTeX label on anything   -->
 <!-- Calls to this template need come from where LaTeX likes -->
 <!-- a \label, generally someplace that can be numbered      -->
-<!-- Could do optionally: <xsl:value-of select="@xml:id" />  -->
+<!-- Could do optionally: <xsl:apply-templates select="." mode="xref-identifier" />  -->
 <xsl:template match="*" mode="label">
     <xsl:text>\label{</xsl:text>
-    <xsl:apply-templates select="." mode="xref-identifier" />
+    <xsl:value-of select="@xml:id" />
     <xsl:text>}</xsl:text>
 </xsl:template>
 

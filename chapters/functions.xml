@@ -40,7 +40,7 @@
         section. (Not planned as part of OMD chapters)
         -->
 
-    <minitoc>Minitoc</minitoc>
+    <minitoc/>
 
         <section>
 	    <title>The Basics of Function Vocabulary</title>
@@ -54,28 +54,62 @@
 		<p>Most of us are familiar with the <m>\sqrt{\phantom{x}}</m> symbol.
 		This symbols is used to turn numbers into their square roots. Sometimes it's
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
-		have a calculator. We can see some calculations in <todo>figure out cref \cref{fun:tab:squareroots}.</todo></p>
+		have a calculator. We can see some calculations in <xref ref="fun-tab-squareroots"/></p>
 
-		<todo>A margin table goes here</todo>
+		<margintable xml:id="fun-tab-squareroots">
+			<caption>Values of <m>\sqrt{x}</m></caption>
+			<tgroup tabletype="equation">
+				<thead>
+				</thead>
+				<tbody>
+					<row><entry><m>\sqrt{\num{9}}</m></entry><entry><m>{}={}</m></entry><entry>\num{3}</entry></row>
+                                        <row><entry><m>\sqrt{\num{1/4}}</m></entry><entry><m>{}={}</m></entry><entry>\num{1/2}</entry></row>
+                                        <row position="last"><entry><m>\sqrt{\num{2}}</m></entry><entry><m>{}\approx{}</m></entry><entry>\num{1.41}\ldots</entry></row>
+				</tbody>
+			</tgroup>
+		</margintable> 
 
 		<p>The <m>\sqrt{\phantom{x}}</m> symbol signifies a <em>process</em>; it's a way for us to
 		turn numbers into other numbers. This idea of having a process for turning numbers into other
 		numbers is fundamental to the science and mathematics that uses college-level algebra.</p>
 
-		<todo>A pccdefinition goes here</todo>
+		<definition>
+			<title>Function</title>
+			<statement>A function is a process for turning numbers into (potentially) different numbers. 
+			It's important that any input consistently produces the same output.</statement>
+		</definition>
 
 		<p>This definition is so broad that you probably use functions all the time.</p>
 
-		<todo>A pccexample goes here</todo>
+		<example>
+			<p>Think about each of these examples, where some process is used for turning one number into another.</p>
+			<ul>
+				<li>If you use a person's birth year to determine how old they are, you are using a function.</li>
+				<li>If you look up the Kelly Blue Book value of a Mazda Proteg<acute letter="e" /> based on how old it is, you are using a function.</li>
+				<li>If you use the the amount of money that you have available to determine how much
+        you wish to spend on a birthday gift for your friend, you are using a function.</li>
+			</ul>
+		</example>
 
 		<p>The process of using <m>\sqrt{\phantom{x}}</m> to change numbers might feel more ``mathematical''
 		than these examples. Let's continue thinking about <m>\sqrt{\phantom{x}}</m> for now, since
 		it's a formula-like symbol that we are familiar with. One concern with  <m>\sqrt{\phantom{x}}</m>
 		is that although we live in the modern age of computers, this symbol is not found on most
 		keyboards. And yet computers still tend to be capable of producing square roots. Computer
-		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <todo>\cref{fun:tab:sqrts}</todo>.</p>
+		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <xref ref="fun-tab-sqrts" />.</p>
 
-		<todo>A margintable goes here</todo>
+                <margintable xml:id="fun-tab-sqrts">
+                        <caption>Values of <m>\sq[x]</m></caption>
+                        <tgroup tabletype="equation">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                        <row><entry><m>\sq[\num{9}]</m></entry><entry><m>{}={}</m></entry><entry>\num{3}</entry></row>
+                                        <row><entry><m>\sq\left(\num{1/4}\right)</m></entry><entry><m>{}={}</m></entry><entry>\num{1/2}</entry></row>
+                                        <row position="last"><entry><m>\sq[\num{2}]</m></entry><entry><m>{}\approx{}</m></entry><entry>\num{1.41}\ldots</entry></row>
+                                </tbody>
+                        </tgroup>
+                </margintable>
 
 		<p> The parentheses in <m>\sq[(]</m> are very important. To see why, try to put yourself in the
 		``mind'' of a computer, and look closely at <m>\sq\num{16}</m>. The computer will recognize <m>\sq</m>
