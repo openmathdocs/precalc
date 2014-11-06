@@ -600,24 +600,41 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:apply-templates select="statement" />
 </xsl:template>
 
+<xsl:template match="specialnote">
+    <xsl:apply-templates select="statement" />
+</xsl:template>
+
+<xsl:template match="checkpoint">
+    <xsl:text>\begin{checkpoint}</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates select="exercise"/>
+    <xsl:text>\end{checkpoint}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
 <!-- Include solutions to exercises by default value of switch-->
 <xsl:template match="exercise">
-    <xsl:text>\begin{exercise}</xsl:text>
+    <xsl:text>\begin{problem}</xsl:text>
     <xsl:apply-templates select="title" mode="environment-option" />
     <xsl:apply-templates select="." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="statement"/>
     <xsl:apply-templates select="solution"/>
-    <xsl:text>\end{exercise}&#xa;%&#xa;</xsl:text>
+    <xsl:apply-templates select="answer"/>
+    <xsl:text>\end{problem}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="exercise/solution">
-    <xsl:if test="$solutions.included='yes'">
-        <xsl:text>\par\smallskip\noindent\textbf{</xsl:text>
-        <xsl:apply-templates select="." mode="type-name" />
-        <xsl:text>.}\quad&#xa;</xsl:text>
+        <xsl:text>\begin{longsolution}&#xa;%&#xa;</xsl:text>
+	<xsl:apply-templates />
+	<xsl:text>&#xa;%&#xa;</xsl:text>
+        <xsl:text>\end{longsolution}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercise/answer">
+        <xsl:text>\begin{shortsolution}&#xa;%&#xa;</xsl:text>
         <xsl:apply-templates />
-    </xsl:if>
+        <xsl:text>&#xa;%&#xa;</xsl:text>
+        <xsl:text>\end{shortsolution}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Reorg?, consolidate following with local-name() -->
@@ -658,6 +675,14 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:text>\end{definition}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="specialnote/statement">
+    <xsl:text>\begin{specialnote}</xsl:text>
+    <xsl:apply-templates select="../title" mode="environment-option" />
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>\end{specialnote}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
 <xsl:template match="example">
     <xsl:text>\begin{example}</xsl:text>
     <xsl:apply-templates select="title" mode="environment-option" />
@@ -666,6 +691,7 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:apply-templates />
     <xsl:text>\end{example}&#xa;%&#xa;</xsl:text>
 </xsl:template>
+
 
 <xsl:template match="notation">
     <xsl:text>Sample notation (in a master list eventually): $</xsl:text>
@@ -1210,11 +1236,12 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:text>{</xsl:text>
     <xsl:choose>
         <xsl:when test="@tabletype='equation'"><xsl:text>r@{}c@{}l</xsl:text></xsl:when>
+	<xsl:when test="not(@cols)"><xsl:value-of select="@tabletype" /></xsl:when>
         <xsl:otherwise><xsl:text>{*{</xsl:text><xsl:value-of select="@cols" /><xsl:text>}{</xsl:text></xsl:otherwise>
             <xsl:choose>
-                <xsl:when test="@align='left}'">  <xsl:text>l</xsl:text></xsl:when>
-                <xsl:when test="@align='center}'"><xsl:text>c</xsl:text></xsl:when>
-                <xsl:when test="@align='right}'"> <xsl:text>r</xsl:text></xsl:when>
+                <xsl:when test="@align='left'">  <xsl:text>l</xsl:text></xsl:when>
+                <xsl:when test="@align='center'"><xsl:text>c</xsl:text></xsl:when>
+                <xsl:when test="@align='right'"> <xsl:text>r</xsl:text></xsl:when>
                 <xsl:otherwise>                  <xsl:value-of select="@align" /></xsl:otherwise>
             </xsl:choose>
     </xsl:choose>
@@ -1236,7 +1263,7 @@ This file is being modified to suit the needs of OMD chapters
 <xsl:template match="row">
     <xsl:apply-templates />
     <xsl:choose>
-        <xsl:when test="@position='last'">  <xsl:text>\\\lastline&#xa;</xsl:text></xsl:when>
+        <xsl:when test="position() = last()">  <xsl:text>\\\lastline&#xa;</xsl:text></xsl:when>
         <xsl:otherwise>                    <xsl:text>\\\normalline&#xa;</xsl:text></xsl:otherwise>
     </xsl:choose>
 </xsl:template>
