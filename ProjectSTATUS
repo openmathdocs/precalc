@@ -19,4 +19,17 @@ works to create a standalone .tex article, which compiles to pdf fine (except fo
 
 Ended 10/27/14 at line 81 of functionsOriginalTeX.tex.
 
+============================
+
+Created omdchapter2tex.xsl. Probably could have used omd2tex.xsl, but this helps me compartmentalize.
+In omdchapter2tex.xsl, I am adding things. So far I added the xsl to make the minitoc and outcomes list
+appear for the chatper.
+
+So as of 11/1/14, use omdchapter2tex.xsl to convert function.xml to functions.tex, then compile precalc.tex.
+
+
+
+
+
+
 

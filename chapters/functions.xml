@@ -22,37 +22,12 @@
         TeX/LaTeX macros can be written in the usual way.
         Whitespace and line breaks are irrelevant here.
         -->
-        <todo>define \sq properly, as commented out below</todo>
-	<todo>get siunitx package loaded so that \num works and we won't need this macro below</todo>
-	<macros>
-	\newcommand\num{}
-	\newcommand\sq{\operatorname{sqrt}(}
-	%\newcommand\sq[1][]{%
-        %\operatorname{sqrt}%
-        %\ifstrequal{#1}{(}{% if we want ()
-        %    (\phantom{x})%
-        %}%
-        %{% else
-        %    \ifstrempty{#1}{% if #1 is empty then do nothing
-        %    }%
-        %    {% otherwise put #1 in ()
-        %        (#1)%
-        %        }%
-        %}%
-        %}
-        </macros>
     </docinfo>
 
-    <!--
-    The article element is top-level for anything short of a book.
-    There is a book element, which is not demonstrated here.
-    The "filebase" attribute is used for the filename of the
-    HTML output, s part of a chunking scheme that is not complete.
-    -->
-    <article filebase="derivatives">
+    <chapter filebase="functions">
         <title>Functions</title>
         <!--
-        Articles have sections, which have subsections,
+        Chapters have sections, which have subsections,
         which have subsubsections.  A titled-paragraph
         subdivision is planned.  These are all "containers"
         and so line breaks and extraneous whitespace gets
@@ -62,53 +37,116 @@
 
         An abstract and a bibliography are like special sections,
         they belong at the same level in the hierarchy as a
-        section.
+        section. (Not planned as part of OMD chapters)
         -->
 
-    <todo>Minitoc</todo>
+    <minitoc/>
 
         <section>
 	    <title>The Basics of Function Vocabulary</title>
-    		<todo>Outcomes</todo>
+    		<outcomes>
+			<li>You will understand the definition of a function.</li>
+			<li>You will be able to use standard notation for functions
+	                correctly, and recognize when notation has been used incorrectly.</li>
+			<li>You will recognize some everyday examples of functions.</li>
+		</outcomes>
 
 		<p>Most of us are familiar with the <m>\sqrt{\phantom{x}}</m> symbol.
 		This symbols is used to turn numbers into their square roots. Sometimes it's
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
-		have a calculator. We can see some calculations in <todo>figure out cref \cref{fun:tab:squareroots}.</todo></p>
+		have a calculator. We can see some calculations in <xref ref="fun-tab-squareroots"/>.</p>
 
-		<todo>A margin table goes here</todo>
+		<margintable xml:id="fun-tab-squareroots">
+			<caption>Values of <m>\sqrt{x}</m></caption>
+			<tgroup tabletype="equation">
+				<thead>
+				</thead>
+				<tbody>
+					<row><entry><m>\sqrt{\num{9}}</m></entry><entry><m>{}={}</m></entry><entry>\num{3}</entry></row>
+                                        <row><entry><m>\sqrt{\num{1/4}}</m></entry><entry><m>{}={}</m></entry><entry>\num{1/2}</entry></row>
+                                        <row position="last"><entry><m>\sqrt{\num{2}}</m></entry><entry><m>{}\approx{}</m></entry><entry>\num{1.41}\ldots</entry></row>
+				</tbody>
+			</tgroup>
+		</margintable> 
 
-		<p>The <m>\sqrt{\phantom{x}}</m> symbol signifies a <em>process</em>; it's a way for us to
-		turn numbers into other numbers. This idea of having a process for turning numbers into other
-		numbers is fundamental to the science and mathematics that uses college-level algebra.</p>
+		<p>The <m>\sqrt{\phantom{x}}</m> symbol represents a <em>process</em>; it's a way for us to
+		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
+		fundamental to science and mathematics that use college-level algebra. </p>
 
-		<todo>A pccdefinition goes here</todo>
+		<definition>
+			<title>Function</title>
+			<statement>A function is a process for turning numbers into (potentially) different numbers. 
+			It's important that any input consistently produces the same output.</statement>
+		</definition>
 
 		<p>This definition is so broad that you probably use functions all the time.</p>
 
-		<todo>A pccexample goes here</todo>
+		<example>
+			<p>Think about each of these examples. How do they fit the defintion of a function?</p>
+			<ul>
+				<li>If you use the year a person was born to determine how old they are, you are using a function.</li>
+				<li>If you look up the Kelly Blue Book value of a Mazda Proteg<acute letter="e" /> based on how old it is, 
+				you are using a function.</li>
+				<li>If you use the the amount of money that you have on you to determine how many beers you could buy for 
+				your friends at the bar, you are using a function.</li>
+			</ul>
+		</example>
 
 		<p>The process of using <m>\sqrt{\phantom{x}}</m> to change numbers might feel more ``mathematical''
 		than these examples. Let's continue thinking about <m>\sqrt{\phantom{x}}</m> for now, since
-		it's a formula-like symbol that we are familiar with. One concern with  <m>\sqrt{\phantom{x}}</m>
-		is that although we live in the modern age of computers, this symbol is not found on most
-		keyboards. And yet computers still tend to be capable of producing square roots. Computer
-		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <todo>\cref{fun:tab:sqrts}</todo>.</p>
+		it's a formula-like symbol that we are familiar with. Even though we live in the age of computers,
+		this symbol is not found on most
+		keyboards. This doesn't stop people from using computers to calculate square roots though. Computer
+		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <xref ref="fun-tab-sqrts" />.</p>
 
-		<todo>A margintable goes here</todo>
+                <margintable xml:id="fun-tab-sqrts">
+                        <caption>Values of <m>\sq[x]</m></caption>
+                        <tgroup tabletype="equation">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                        <row><entry><m>\sq[\num{9}]</m></entry><entry><m>{}={}</m></entry><entry>\num{3}</entry></row>
+                                        <row><entry><m>\sq\left(\num{1/4}\right)</m></entry><entry><m>{}={}</m></entry><entry>\num{1/2}</entry></row>
+                                        <row position="last"><entry><m>\sq[\num{2}]</m></entry><entry><m>{}\approx{}</m></entry><entry>\num{1.41}\ldots</entry></row>
+                                </tbody>
+                        </tgroup>
+                </margintable>
 
-		<p> The parentheses in <m>\sq[(]</m> are very important. To see why, try to put yourself in the
+		<p>The parentheses in <m>\sq[(]</m> are very important. To see why, try to put yourself in the
 		``mind'' of a computer, and look closely at <m>\sq\num{16}</m>. The computer will recognize <m>\sq</m>
-		and know that it needs to compute a square root. But sometimes computers have myopic vision and 
-		they might not see the entire number <m>\num{16}</m>. A computer might think that it needs to compute 
-		<m>\sq\num{1}</m> and then append a ``6'' to the end, which would produce a final result of <m>\num{16}</m>. 
-		This is probably not what was intended. And so the purpose of the parentheses in <m>\sq[\num{16}]</m> is 
+		and know that it needs to compute a square root. But computers are very picky with how they interpret input, and 
+		they might not see the entire number <m>\num{16}</m>. A computer might read as far as <m>\sq\num{1}</m> and think that it needs to compute this.
+		That would leave <m>1</m> with a ``6'' character still hanging. The final result would be <m>\num{16}</m>, and we know we inteded the  
+		result to be <m>4</m>. And so the purpose of the parentheses in <m>\sq[\num{16}]</m> is 
 		to denote exactly what number needs to be operated on.</p>
+
+		<p>This use of <m>\sq[(]</m> serves as a model for the standard notation that is used all over the world to
+        	write down most functions. By having a standard notation for communicating about functions,
+        	people in China, Venezuela, Senegal, and the United States can all communicate mathematics
+        	with each other more easily.</p>
+
+        	<p>Functions have their own names. We've seen a function named <m>\sq</m>, but any name you can
+        	imagine is allowable. In the sciences, it is common to name functions with whole words,
+        	like <m>\operatorname{weight}</m> or <m>\operatorname{health\_index}</m>. In mathematics, we often
+        	abbreviate such function names to <m>w</m> or <m>h</m>. And of course, since the word ``function''
+        	starts with ``f'', we will often name a function <m>f</m>.</p>
+
+        	<p>It's crucial to continue reminding ourselves that functions are \emph{processes} for
+        	changing numbers; they are not numbers themselves. And that means that we have a potential
+        	for confusion that we need to stay aware of. In some contexts, the symbol <m>t</m> might
+        	represent a variable---a number that is represented by a letter. For example, it might represent 
+		how much time has passed since something started. But in other contexts, <m>t</m>
+        	might represent a function---a process for changing numbers into other numbers. For example, if you 
+		have a year in mind, <m>t</m> might be the function that tells you how many tornadoes there were that year. 
+		So <m>t</m> would be a process for turning years into numbers of tornadoes. By
+        	staying conscious of the context of an investigation, we avoid confusion.</p>
+
+        	<p>Next we need to discuss how we go about using a function's name.</p>
 
 	</section>
 
 
-    </article>
+    </chapter>
 
 </mathbook>
 

@@ -273,10 +273,10 @@ color=gray,mark=none,line width=1pt,<->\\%
 % custom environments
 \crefname{problem}{Problem}{Problems}
 \Crefname{problem}{Problem}{Problems}
-\crefname{pccdefinition}{Definition}{Definitions}
-\Crefname{pccdefinition}{Definition}{Definitions}
-\crefname{pccexample}{Example}{Examples}
-\Crefname{pccexample}{Example}{Examples}
+\crefname{definition}{Definition}{Definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{example}{Example}{Examples}
+\Crefname{example}{Example}{Examples}
 \crefname{worksheet}{Worksheet}{Worksheets}
 \Crefname{worksheet}{Worksheet}{Worksheets}
 \crefname{subprobenumi}{Problem}{Problems}
@@ -428,7 +428,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \makeatother
 
 % example (that uses an associated 'solution' )
-\newcounter{pccexample}[section]
+% \newcounter{example}[section]
 \theoremstyle{marginpcc}
 \theorembodyfont{}
 \theoremsymbol{\rlap{$\blacksquare$}}
@@ -436,7 +436,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \theorempostwork{}
 \theoremseparator{:}
 \theorempreskip{\topskip}
-\newtheorem{pccexample}{Example}%[chapter]
+\renewtheorem{example}{Example}%[chapter]
 
 
 % associated solution for the example
@@ -779,15 +779,17 @@ color=gray,mark=none,line width=1pt,<->\\%
 \makeatletter
 \if@tempswa % draft option is active
     % make the Definition environment without colour, no frame
-    \newtheorem{pccdefinition}{Definition}%
+    \renewtheorem{definition}{Definition}%
 \else%
+    \csundef{definition}
+    \csundef{definition*}
     \newmdtheoremenv[outerlinewidth=3,
     innerlinewidth=2,linecolor=gray,leftmargin=60,%
     rightmargin=40,
     backgroundcolor=yellow!40,%
     innerlinecolor=blue!50,outerlinecolor=red!50,innertopmargin=0pt,%
     splittopskip=\topskip,%skipbelow=\baselineskip,%
-    skipabove=\baselineskip,ntheorem]{pccdefinition}{Definition}%[chapter]
+    skipabove=\baselineskip,ntheorem]{definition}{Definition}%[chapter]
 \fi
 \makeatother
 %====================================
