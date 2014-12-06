@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--*                                    *-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2014-12-06T10:01:16Z    *-->
+<!--*                                    *-->
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js"],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+        Macros: {
+            sq: '{\\mathop{\\rm sq}\\nolimits}'
+        },
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="http://sagecell.sagemath.org/static/jquery.min.js"></script><script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script><script>
+$(function () {
+    // Make *any* div with class 'sage-compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.sage-compute',
+                           linked: true,
+                           evalButtonText: 'Evaluate'});
+});
+    </script><script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><link href="http://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://aimath.org/knowl.js"></script><script src="http://aimath.org/mathbook/ScrollingNav.js"></script><script src="http://aimath.org/mathbook/Mathbook.js"></script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic%7CSource+Code+Pro:400" rel="stylesheet" type="text/css">
+<link href="http://aimath.org/mathbook/mathbook-modern-3.css" rel="stylesheet" type="text/css">
+<link href="http://aimath.org/mathbook/icons.css" rel="stylesheet" type="text/css">
+<link href="http://aimath.org/mathbook/add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="has-toc">
+<header id="masthead"><div class="banner"><div class="container"><div class="title-container">
+<h1 id="title"><span class="title"></span></h1>
+<p id="byline"><span class="byline">Alex Jordan</span></p>
+</div></div></div>
+<div id="navbar"><div class="container">
+<div id="toc-navbar-item" class="navbar-item">
+<h2 class="navbar-item-text icon-navicon-round ">Table of Contents</h2>
+<nav id="toc"></nav>
+</div>
+<nav id="prevnext"> </nav>
+</div></div></header><div class="page"><main class="main"><div id="content"><section class="chapter"><h1 class="heading">
+<span class="type">Chapter</span> <span class="counter">1</span> <span class="title">Functions</span>
+</h1>
+<section class="section" id="section-1"><h4 class="heading">
+<span class="type">Section</span> <span class="counter">1.1</span> <span class="title">The Basics of Function Vocabulary</span>
+</h4>
+<ul>
+<li>You will understand the definition of a function.</li>
+<li>You will be able to use standard notation for functions
+	                correctly, and recognize when notation has been used incorrectly.</li>
+<li>You will recognize some everyday examples of functions.</li>
+</ul>
+<p>Most of us are familiar with the \(\sqrt{\phantom{x}}\) symbol.
+		This symbols is used to turn numbers into their square roots. Sometimes it's
+		simple to do this on paper or in our heads, and sometimes it helps a lot to
+		have a calculator. We can see some calculations in Table <a class="table" href="functions.html#table-1">1.1</a>.</p>
+<table class="plain-table">
+<caption>Table 1.1: Values of \(\sqrt{x}\)<a class="label" name="fun-tab-squareroots"></a>
+</caption>
+<thead></thead>
+<tbody>
+<tr>
+<td align="">\(\sqrt{\num{9}}\)</td>
+<td align="">\({}={}\)</td>
+<td align="">\num{3}</td>
+</tr>
+<tr>
+<td align="">\(\sqrt{\num{1/4}}\)</td>
+<td align="">\({}={}\)</td>
+<td align="">\num{1/2}</td>
+</tr>
+<tr>
+<td align="">\(\sqrt{\num{2}}\)</td>
+<td align="">\({}\approx{}\)</td>
+<td align="">\num{1.41}\ldots</td>
+</tr>
+</tbody>
+</table>
+<p>The \(\sqrt{\phantom{x}}\) symbol represents a <em>process</em>; it's a way for us to
+		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
+		fundamental to science and mathematics that use college-level algebra. </p>
+<article class="theorem-like" id="definition-1"><h5>
+<span class="type">Definition</span> <span class="counter"></span> <span class="title">Function</span>
+</h5>A function is a process for turning numbers into (potentially) different numbers. 
+			It's important that any input consistently produces the same output.</article><p>This definition is so broad that you probably use functions all the time.</p>
+<article class="example-like" id="example-1"><h5>
+<span class="type">Example</span> <span class="counter"></span>
+</h5>
+<p>Think about each of these examples. How do they fit the defintion of a function?</p>
+<ul>
+<li>If you use the year a person was born to determine how old they are, you are using a function.</li>
+<li>If you look up the Kelly Blue Book value of a Mazda Proteg based on how old it is, 
+				you are using a function.</li>
+<li>If you use the the amount of money that you have on you to determine how many beers you could buy for 
+				your friends at the bar, you are using a function.</li>
+</ul></article><p>The process of using \(\sqrt{\phantom{x}}\) to change numbers might feel more “mathematical”
+		than these examples. Let's continue thinking about \(\sqrt{\phantom{x}}\) for now, since
+		it's a formula-like symbol that we are familiar with. Even though we live in the age of computers,
+		this symbol is not found on most
+		keyboards. This doesn't stop people from using computers to calculate square roots though. Computer
+		technicians write \(\sq[(]\) when they want to compute a square root, as we see in Table <a class="table" href="functions.html#table-2">1.2</a>.</p>
+<table class="plain-table">
+<caption>Table 1.2: Values of \(\sq[x]\)<a class="label" name="fun-tab-sqrts"></a>
+</caption>
+<thead></thead>
+<tbody>
+<tr>
+<td align="">\(\sq[\num{9}]\)</td>
+<td align="">\({}={}\)</td>
+<td align="">\num{3}</td>
+</tr>
+<tr>
+<td align="">\(\sq\left(\num{1/4}\right)\)</td>
+<td align="">\({}={}\)</td>
+<td align="">\num{1/2}</td>
+</tr>
+<tr>
+<td align="">\(\sq[\num{2}]\)</td>
+<td align="">\({}\approx{}\)</td>
+<td align="">\num{1.41}\ldots</td>
+</tr>
+</tbody>
+</table>
+<p>The parentheses in \(\sq[(]\) are very important. To see why, try to put yourself in the
+          “mind” of a computer, and look closely at \(\sq\num{16}\). The computer will recognize \(\sq\)
+		and know that it needs to compute a square root. But computers are very picky with how they interpret input, and 
+		they might not see the entire number \(\num{16}\). A computer might read as far as \(\sq\num{1}\) and think that it needs to compute this.
+        That would leave \(1\) with a “6” character still hanging. The final result would be \(\num{16}\), and we know we inteded the  
+		result to be \(4\). And so the purpose of the parentheses in \(\sq[\num{16}]\) is 
+		to denote exactly what number needs to be operated on.</p>
+<p>This use of \(\sq[(]\) serves as a model for the standard notation that is used all over the world to
+        	write down most functions. By having a standard notation for communicating about functions,
+        	people in China, Venezuela, Senegal, and the United States can all communicate mathematics
+        	with each other more easily.</p>
+<p>Functions have their own names. We've seen a function named \(\sq\), but any name you can
+        	imagine is allowable. In the sciences, it is common to name functions with whole words,
+        	like \(\operatorname{weight}\) or \(\operatorname{health\_index}\). In mathematics, we often
+            abbreviate such function names to \(w\) or \(h\). And of course, since the word “function”
+            starts with “f”, we will often name a function \(f\).</p>
+<p>It's crucial to continue reminding ourselves that functions are <em>processes</em> for
+        	changing numbers; they are not numbers themselves. And that means that we have a potential
+        	for confusion that we need to stay aware of. In some contexts, the symbol \(t\) might
+        	represent a variable---a number that is represented by a letter. For example, it might represent 
+		how much time has passed since something started. But in other contexts, \(t\)
+        	might represent a function---a process for changing numbers into other numbers. For example, if you 
+		have a year in mind, \(t\) might be the function that tells you how many tornadoes there were that year. 
+		So \(t\) would be a process for turning years into numbers of tornadoes. By
+        	staying conscious of the context of an investigation, we avoid confusion.</p>
+<p>Next we need to discuss how we go about using a function's name.</p></section></section></div></main></div>
+</body>
+</html>

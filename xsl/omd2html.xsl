@@ -489,6 +489,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:when test="$target/self::section">
             <xsl:text>Section </xsl:text>
         </xsl:when>
+        <xsl:when test="$target/self::table">
+            <xsl:text>Table </xsl:text>
+        </xsl:when>
+        <xsl:when test="$target/self::figure">
+            <xsl:text>Figure </xsl:text>
+        </xsl:when>
         <xsl:otherwise>
             <xsl:text>FIX!!! </xsl:text>
         </xsl:otherwise>
@@ -1386,6 +1392,9 @@ MathJax.Hub.Config({
                          },
         TagSide: "right",
         TagIndent: ".8em",
+        Macros: {
+            sq: '{\\mathop{\\rm sq}\\nolimits}'
+        },
     },
     "HTML-CSS": {
         scale: 88,
