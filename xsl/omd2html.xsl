@@ -17,7 +17,14 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
-*********************************************************************-->
+*********************************************************************
+
+General notes: <script></script> is treated differently from <script/>, see
+    http://stackoverflow.com/questions/69913/why-dont-self-closing-script-tags-work
+for example; this is why you'll see things such as:
+  <script src="http://sagecell.sagemath.org/static/jquery.min.js"><xsl:text> </xsl:text></script>
+Note that we use <xsl:text> to insert a blank space
+-->
 
 <!-- Identify as a stylesheet -->
 <xsl:stylesheet 
@@ -1236,12 +1243,17 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
     <xsl:param name="subtitle" />
     <xsl:param name="credits" />
     <xsl:param name="content" />
-    <exsl:document href="{@filebase}.html" method="html">
+    <exsl:document href="{@filebase}.html" method="xml" indent="yes" omit-xml-declaration="yes">
     <!-- Need to be careful for format of this initial string     -->
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html>&#xa;</xsl:text>
     <html> <!-- lang="", and/or dir="rtl" here -->
-        <head>
+          <xsl:element name="head">
             <xsl:call-template name="converter-blurb" />
+          <xsl:element name="meta">
+            <xsl:attribute name="http-equiv">Content-Type</xsl:attribute>
+            <xsl:attribute name="content">text/html</xsl:attribute>
+            <xsl:attribute name="charset">UTF-8</xsl:attribute>
+        </xsl:element>
             <!-- http://webdesignerwall.com/tutorials/responsive-design-in-3-steps -->
             <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
             <xsl:call-template name="mathjax" />
@@ -1253,7 +1265,7 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
             <xsl:if test="//video">
                 <xsl:call-template name="video" />
             </xsl:if>
-        </head>
+        </xsl:element>
         <xsl:element name="body">
             <xsl:if test="$toc='yes'">
                 <xsl:attribute name="class">has-toc</xsl:attribute>
@@ -1388,7 +1400,7 @@ MathJax.Hub.Config({
         extensions: ["AMSmath.js", "AMSsymbols.js"],
         equationNumbers: { autoNumber: "none",
                            useLabelIds: true,
-                           formatID: function (n) {return String(n).replace(/[:'"&lt;&gt;&amp;]/g,"")},
+                           <xsl:text disable-output-escaping='yes'>formatID: function (n) {return String(n).replace(/[:'"&lt;&gt;&amp;]/g,"")}</xsl:text>,
                          },
         TagSide: "right",
         TagIndent: ".8em",
@@ -1401,13 +1413,25 @@ MathJax.Hub.Config({
     },
 });
 </script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full" />
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
 </xsl:template>
 
 <!-- Sage Cell header -->
 <xsl:template name="sagecell">
-    <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script>
-    <script src="http://sagecell.sagemath.org/embedded_sagecell.js"></script>
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://sagecell.sagemath.org/static/jquery.min.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://sagecell.sagemath.org/embedded_sagecell.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
     <script>
 $(function () {
     // Make *any* div with class 'sage-compute' a Sage cell
@@ -1420,16 +1444,31 @@ $(function () {
 
 <!-- Knowl header -->
 <xsl:template name="knowl">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> 
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://code.jquery.com/jquery-latest.min.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
 <link href="http://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css" /> 
-<script type="text/javascript" src="http://aimath.org/knowl.js"></script>
-
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://aimath.org/knowl.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
 </xsl:template>
 
 <!-- Mathbook Javasript header -->
 <xsl:template name="mathbook-js">
-    <script src="http://aimath.org/mathbook/ScrollingNav.js"></script>
-    <script src="http://aimath.org/mathbook/Mathbook.js"></script>
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://aimath.org/mathbook/ScrollingNav.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
+<xsl:element name="script">
+  <xsl:attribute name="type">text/javascript</xsl:attribute>
+  <xsl:attribute name="src">http://aimath.org/mathbook/Mathbook.js</xsl:attribute>
+  <xsl:text> </xsl:text>
+</xsl:element>
 </xsl:template>
 
 <!-- Font header -->
