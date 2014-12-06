@@ -444,12 +444,19 @@ Note that we use <xsl:text> to insert a blank space
 <!-- All the relevant information is in the parent -->
 <xsl:template match="table/caption">
     <caption>
+            <xsl:element name="a">
+              <xsl:attribute name="class">anchor</xsl:attribute>
+            <xsl:attribute name="name">
+                <xsl:apply-templates select=".." mode="type-name"/>
+                <xsl:text>-</xsl:text>
+                <xsl:apply-templates select=".." mode="number"/>
+            </xsl:attribute>
         <xsl:apply-templates select=".." mode="type-name"/>
         <xsl:text> </xsl:text>
         <xsl:apply-templates select=".." mode="number"/>
         <xsl:text>: </xsl:text>
         <xsl:apply-templates />
-        <xsl:apply-templates select=".." mode="label" />
+            </xsl:element>
     </caption>
 </xsl:template>
 
@@ -530,7 +537,9 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:apply-templates select="$target" mode="basename" />
             <xsl:text>.html</xsl:text>
             <xsl:text>#</xsl:text>
-            <xsl:apply-templates select="$target" mode="xref-identifier" />
+            <xsl:apply-templates select="$target" mode="type-name"/>
+            <xsl:text>-</xsl:text>
+            <xsl:apply-templates select="$target" mode="number"/>
         </xsl:attribute>
     <xsl:value-of select="$visual" />
     </xsl:element>
@@ -664,10 +673,6 @@ Note that we use <xsl:text> to insert a blank space
     </xsl:element>
 </xsl:template>
 
-
-
-
-<!-- TODO: condition on id present!!!!!-->
 <!-- TODO: perhaps back up a level on xml:id and regroup elsewhere, see latex version -->
 <xsl:template match="*" mode="label">
     <xsl:element name="a">
@@ -675,7 +680,9 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:value-of select="'label'" />
         </xsl:attribute>
         <xsl:attribute name="name">
-            <xsl:value-of select="@xml:id" />
+            <xsl:apply-templates select="." mode="type-name"/>
+            <xsl:text>-</xsl:text>
+            <xsl:apply-templates select="." mode="number"/>
         </xsl:attribute>
     </xsl:element>
 </xsl:template>
@@ -1246,7 +1253,8 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
     <exsl:document href="{@filebase}.html" method="xml" indent="yes" omit-xml-declaration="yes">
     <!-- Need to be careful for format of this initial string     -->
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html>&#xa;</xsl:text>
-    <html> <!-- lang="", and/or dir="rtl" here -->
+    <xsl:element name="html">
+        <!-- lang="", and/or dir="rtl" here -->
           <xsl:element name="head">
             <xsl:call-template name="converter-blurb" />
           <xsl:element name="meta">
@@ -1303,7 +1311,7 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
             </div>
         <xsl:apply-templates select="$docinfo/analytics" />
         </xsl:element>
-    </html>
+    </xsl:element>
     </exsl:document>
 </xsl:template>
 
