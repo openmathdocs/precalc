@@ -61,7 +61,7 @@
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
 		have a calculator. We can see some calculations in <xref ref="fun-tab-squareroots"/>.</p>
 
-		<margintable xml:id="fun-tab-squareroots">
+		<table xml:id="fun-tab-squareroots">
 			<caption>Values of <m>\sqrt{x}</m></caption>
 			<tgroup tabletype="equation">
 				<thead>
@@ -72,7 +72,7 @@
                                         <row><entry><m>\sqrt{\num{2}}</m></entry><entry><m>{}\approx{}</m></entry><entry><num>1.41</num><ellipsis /></entry></row>
 				</tbody>
 			</tgroup>
-		</margintable> 
+		</table> 
 
 		<p>The <m>\sqrt{\phantom{x}}</m> symbol represents a <em>process</em>; it's a way for us to
 		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
@@ -97,14 +97,14 @@
 			</ul>
 		</example>
 
-		<p>The process of using <m>\sqrt{\phantom{x}}</m> to change numbers might feel more ``mathematical''
+        <p>The process of using <m>\sqrt{\phantom{x}}</m> to change numbers might feel more <q>mathematical</q>
 		than these examples. Let's continue thinking about <m>\sqrt{\phantom{x}}</m> for now, since
 		it's a formula-like symbol that we are familiar with. Even though we live in the age of computers,
 		this symbol is not found on most
 		keyboards. This doesn't stop people from using computers to calculate square roots though. Computer
 		technicians write <m>\sq[(]</m> when they want to compute a square root, as we see in <xref ref="fun-tab-sqrts" />.</p>
 
-                <margintable xml:id="fun-tab-sqrts">
+                <table xml:id="fun-tab-sqrts" style="margin">
                         <caption>Values of <m>\sq[x]</m></caption>
                         <tgroup tabletype="equation">
                                 <thead>
@@ -115,10 +115,10 @@
                                         <row><entry><m>\sq[\num{2}]</m></entry><entry><m>{}\approx{}</m></entry><entry><num>1.41</num><ellipsis /></entry></row>
                                 </tbody>
                         </tgroup>
-                </margintable>
+                </table>
 
 		<p>The parentheses in <m>\sq[(]</m> are very important. To see why, try to put yourself in the
-		``mind'' of a computer, and look closely at <m>\sq\num{16}</m>. The computer will recognize <m>\sq</m>
+          <q>mind</q> of a computer, and look closely at <m>\sq\num{16}</m>. The computer will recognize <m>\sq</m>
 		and know that it needs to compute a square root. But computers are very picky with how they interpret input, and 
 		they might not see the entire number <num>16</num>. A computer might read as far as <m>\sq\num{1}</m> and think that it needs to compute this.
 		That would leave <m>1</m> with a ``6'' character still hanging. The final result would be <num>16</num>, and we know we inteded the  
@@ -133,10 +133,10 @@
         	<p>Functions have their own names. We've seen a function named <m>\sq</m>, but any name you can
         	imagine is allowable. In the sciences, it is common to name functions with whole words,
         	like <m>\operatorname{weight}</m> or <m>\operatorname{health\_index}</m>. In mathematics, we often
-        	abbreviate such function names to <m>w</m> or <m>h</m>. And of course, since the word ``function''
-        	starts with ``f'', we will often name a function <m>f</m>.</p>
+            abbreviate such function names to <m>w</m> or <m>h</m>. And of course, since the word <q>function</q>
+            starts with <q>f</q>, we will often name a function <m>f</m>.</p>
 
-        	<p>It's crucial to continue reminding ourselves that functions are <em>processes</em> for
+          <p>It's crucial to continue reminding ourselves that functions are <em>processes</em> for
         	changing numbers; they are not numbers themselves. And that means that we have a potential
         	for confusion that we need to stay aware of. In some contexts, the symbol <m>t</m> might
         	represent a variable<emdash />a number that is represented by a letter. For example, it might represent 
