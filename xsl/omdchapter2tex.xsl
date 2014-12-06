@@ -1205,10 +1205,19 @@ This file is being modified to suit the needs of OMD chapters
 <!-- See http://stackoverflow.com/questions/19716449/converting-xhtml-table-to-latex-using-xslt -->
 <xsl:template match="table">
     <xsl:text>\begin{table}[thb]\centering&#xa;</xsl:text>
-    <xsl:apply-templates select="." mode="label" />
     <xsl:apply-templates />
     <xsl:text>\end{table}&#xa;</xsl:text>
     <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="num">
+    <xsl:text>\num{</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>}</xsl:text>
+</xsl:template>
+
+<xsl:template match="ellipsis">
+    <xsl:text>\ldots</xsl:text>
 </xsl:template>
 
 <xsl:template match="margintable">
@@ -1226,6 +1235,7 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:text>\caption{</xsl:text>
     <xsl:apply-templates />
     <xsl:text>}&#xa;</xsl:text>
+    <xsl:apply-templates select=".." mode="label" />
 </xsl:template>
 
 
@@ -1237,13 +1247,15 @@ This file is being modified to suit the needs of OMD chapters
     <xsl:choose>
         <xsl:when test="@tabletype='equation'"><xsl:text>r@{}c@{}l</xsl:text></xsl:when>
 	<xsl:when test="not(@cols)"><xsl:value-of select="@tabletype" /></xsl:when>
-        <xsl:otherwise><xsl:text>{*{</xsl:text><xsl:value-of select="@cols" /><xsl:text>}{</xsl:text></xsl:otherwise>
+        <xsl:otherwise><xsl:text>*{</xsl:text><xsl:value-of select="@cols" /><xsl:text>}{</xsl:text>
             <xsl:choose>
                 <xsl:when test="@align='left'">  <xsl:text>l</xsl:text></xsl:when>
                 <xsl:when test="@align='center'"><xsl:text>c</xsl:text></xsl:when>
                 <xsl:when test="@align='right'"> <xsl:text>r</xsl:text></xsl:when>
                 <xsl:otherwise>                  <xsl:value-of select="@align" /></xsl:otherwise>
             </xsl:choose>
+	    <xsl:text>}</xsl:text>
+	</xsl:otherwise>
     </xsl:choose>
     <xsl:text>}&#xa;</xsl:text>
     <xsl:apply-templates />

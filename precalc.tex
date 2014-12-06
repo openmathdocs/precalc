@@ -379,7 +379,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 % 
 % This allows us to put Problem 1, 2, 3, etc in every chapter
 % as the hyperlinks have the form \hypertarget{soln:#1\thechapter}{}
-\section*{Answers (long)}
+\section*{Solutions}
 \setcounter{chapter}{0}
 \setcounter{section}{0}
 
@@ -757,15 +757,15 @@ color=gray,mark=none,line width=1pt,<->\\%
 \theorempostwork{}
 \makeatletter
 \if@tempswa % draft option is active
-    % make the specialcomment environment without colour, no frame
-    \newtheorem{pccspecialcomment}{}%
+    % make the specialnote environment without colour, no frame
+    \newtheorem{specialnote}{}% formerly known as pccspecialcomment
 \else%
     \newmdtheoremenv[outerlinewidth=3,
         innerlinewidth=2,linecolor=gray,
         backgroundcolor=blue!20,%
         innerlinecolor=blue!50,outerlinecolor=red!50,innertopmargin=0pt,%
         splittopskip=\topskip,skipbelow=0pt,%
-        ]{pccspecialcomment}{}%[chapter]
+        ]{specialnote}{}%[chapter]
 \fi
 \makeatother
 
@@ -937,7 +937,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 %====================================
 %   BEGIN essentialskills, tryityourself, exercises
 %====================================
-\newenvironment{doyouunderstand}%
+\newenvironment{checkpoint}% formerly doyouunderstand
 {\FloatBarrier\setlist[subprobenum]{align=left,leftmargin=!}%
     \begin{list}{}{%    the first argument of the list environment is the label
             \setlength{\leftmargin}{0mm}%
@@ -978,7 +978,7 @@ can complete them before moving on!}}%
 {\end{adjustwidth}}
 
 %====================================
-%   END essentialskills, doyouunderstand, exercises
+%   END essentialskills, checkpoint, exercises
 %====================================
 
 %====================================
@@ -1014,7 +1014,7 @@ can complete them before moving on!}}%
       % Executed BEFORE the body of the section (see titlesec documentation)
       % redefine the \section command to increment probSectCounter
       % note that this could also be done for \subsection if desired
-      \Writetofile{shortsolutions}{\protect\stepcounter{section}\protect\subsection*{Solutions for problems in Section \protect\thesection}}%
+      \Writetofile{shortsolutions}{\protect\stepcounter{section}\protect\subsection*{Short answers for exercises in Section \protect\thesection}}%
       \thispagestyle{plain}%
       \stepcounter{probSectCounter}%
       \addcontentsline{prb}{}{heading\theprobSectCounter}%
@@ -1398,7 +1398,7 @@ can complete them before moving on!}}%
 
 \clearpage
 % input the LONG solutions file
-%\IfFileExists{longsolutions.tex}{\input{longsolutions.tex}}{}
+\IfFileExists{longsolutions.tex}{\input{longsolutions.tex}}{}
 
 \clearpage
 % input the HINTS file
