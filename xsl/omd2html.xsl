@@ -499,18 +499,33 @@ Note that we use <xsl:text> to insert a blank space
     <!-- Save what the reference points to -->
     <xsl:variable name="target" select="id(@ref)" />
     <!-- Create a 'cleveref'-type reference -->
+    <xsl:variable name="creftext">
+        <xsl:choose>
+            <xsl:when test="$target/self::section">
+                <xsl:text>Section </xsl:text>
+            </xsl:when>
+            <xsl:when test="$target/self::table">
+                <xsl:text>Table </xsl:text>
+            </xsl:when>
+            <xsl:when test="$target/self::figure">
+                <xsl:text>Figure </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>FIX!!!</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <!-- Output the cross reference text -->
     <xsl:choose>
-        <xsl:when test="$target/self::section">
-            <xsl:text>Section </xsl:text>
-        </xsl:when>
-        <xsl:when test="$target/self::table">
-            <xsl:text>Table </xsl:text>
-        </xsl:when>
-        <xsl:when test="$target/self::figure">
-            <xsl:text>Figure </xsl:text>
+        <xsl:when test="$creftext='FIX!!!'">
+            <xsl:element name="font">
+                <xsl:attribute name="color">red</xsl:attribute>
+                <xsl:attribute name="size">5</xsl:attribute>
+                <xsl:value-of select="$creftext" />
+            </xsl:element>
         </xsl:when>
         <xsl:otherwise>
-            <xsl:text>FIX!!! </xsl:text>
+                <xsl:value-of select="$creftext" />
         </xsl:otherwise>
     </xsl:choose>
     <!-- Create what the reader sees, equation references get parentheses -->
@@ -526,23 +541,25 @@ Note that we use <xsl:text> to insert a blank space
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
-    <!-- Build the anchor -->
-    <xsl:element name ="a">
-        <!-- http://stackoverflow.com/questions/585261/is-there-an-xslt-name-of-element -->
-        <!-- Sans namespace (would be name(.)) -->
-        <xsl:attribute name="class">
-            <xsl:value-of select="local-name($target)" />
-        </xsl:attribute>
-        <xsl:attribute name="href">
-            <xsl:apply-templates select="$target" mode="basename" />
-            <xsl:text>.html</xsl:text>
-            <xsl:text>#</xsl:text>
-            <xsl:apply-templates select="$target" mode="type-name"/>
-            <xsl:text>-</xsl:text>
-            <xsl:apply-templates select="$target" mode="number"/>
-        </xsl:attribute>
-    <xsl:value-of select="$visual" />
-    </xsl:element>
+    <!-- Build the anchor, but only when the cross reference works -->
+    <xsl:if test="not($creftext='FIX!!!')">
+        <xsl:element name ="a">
+            <!-- http://stackoverflow.com/questions/585261/is-there-an-xslt-name-of-element -->
+            <!-- Sans namespace (would be name(.)) -->
+            <xsl:attribute name="class">
+                <xsl:value-of select="local-name($target)" />
+            </xsl:attribute>
+            <xsl:attribute name="href">
+                <xsl:apply-templates select="$target" mode="basename" />
+                <xsl:text>.html</xsl:text>
+                <xsl:text>#</xsl:text>
+                <xsl:apply-templates select="$target" mode="type-name"/>
+                <xsl:text>-</xsl:text>
+                <xsl:apply-templates select="$target" mode="number"/>
+            </xsl:attribute>
+        <xsl:value-of select="$visual" />
+        </xsl:element>
+    </xsl:if>
 </xsl:template>
 
 <!-- 

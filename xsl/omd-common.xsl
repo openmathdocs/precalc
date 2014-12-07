@@ -392,11 +392,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Figures & Tables:  chapter.x                       -->
 <!-- These float, so number independent of theorems (?) -->
 <!-- But separate from each other -->
+<!-- Automatic numbering reference: http://www.xml.com/lpt/a/1078 -->
 <xsl:template match="figure" mode="number">
     <xsl:number level="multiple" count="chapter|figure" />
 </xsl:template>
 <xsl:template match="table" mode="number">
-    <xsl:number level="multiple" count="chapter|table" />
+    <xsl:number level="any" from="chapter|figure"/>
 </xsl:template>
 
 <!-- Two-level numbering for book with chapters and theorem-like environments, plus -->

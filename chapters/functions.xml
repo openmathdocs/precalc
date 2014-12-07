@@ -165,23 +165,23 @@
 		</specialnote>
 
 		<example>
-			<p><m>f(\num{13})</m> is pronounced ``f of 13''. The word ``of'' is very important,
+          <p><m>f(\num{13})</m> is pronounced <q>f of 13</q>. The word <q>of</q> is very important,
         		because it reminds us that <m>f</m> is a process and we are about to apply that
         		process to the input value <num>13</num>. So <m>f</m> is the function, <num>13</num> is the
         		input, and <m>f(\num{13})</m> is the output we'd get from using <num>13</num> as input.</p>
 
-        		<p><m>f(x)</m> is pronounced ``f of x''. This is just like the previous example,
+              <p><m>f(x)</m> is pronounced <q>f of x</q>. This is just like the previous example,
         		except that the input is not some specific number. The value of <m>x</m> could be
         		<num>13</num> or any other number. Whatever <m>x</m>'s value, <m>f(x)</m> means the corresponding
         		output from the function <m>f</m>.</p>
 
-        		<p><m>\operatorname{BudgetDeficit}(2009)</m> is pronounced ``BudgetDeficit of 2009''.
+              <p><m>\operatorname{BudgetDeficit}(2009)</m> is pronounced <q>BudgetDeficit of 2009</q>.
         		This is probably a function that takes a year as input, and gives that
         		year's federal budget deficit as output. The process here of changing a year
         		into a dollar amount might not involve any mathematical formula, but rather
         		looking up information from the Congressional Budget Office's website.</p>
 
-			<p><m>\operatorname{Celsius}(F)</m> is pronounced ``Celsius of F''. This is probably
+              <p><m>\operatorname{Celsius}(F)</m> is pronounced <q>Celsius of F</q>. This is probably
         		a function that takes a Fahrenheit temperature as input and gives the
         		corresponding Celsius temperature as output. Maybe a formula is used to do this;
         		maybe a chart or some other tool is used to do this. Here, <m>\operatorname{Celsius}</m>
@@ -208,7 +208,7 @@
 		<checkpoint>
 			<exercise>
 				<statement><p>Describe your own example of a function using experience from your life. You will need some 
-				kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
+                    kind of input variable, like <q>number of years since 2000</q> or <q>weight of a bowling ball</q>. You will 
 				need a process for turning that number into a different kind of number. The process does not need to
                 		involve a formula; a verbal description would be fine.</p>
 
@@ -268,7 +268,7 @@
 					<li>We can see that the deficit reduced by a little bit between 2009 and 2010, and then remained stable.</li>
 				</ul>
 
-				<p>These observations serve to help us understand the function $\operatorname{BudgetDeficit}$ a little better.</p>
+                <p>These observations serve to help us understand the function <m>\operatorname{BudgetDeficit}</m> a little better.</p>
 			</example>
 
 			<example xml:id="fun-ex-sqrttable">
