@@ -1,0 +1,9 @@
+a.anchor {color:black; 
+            font-variant: small-caps; 
+            text-decoration:none}
+
+/* table styles */
+table thead { border-top: 2px solid #000; }
+table tbody { border-top: 1px solid #000; 
+border-bottom: 2px solid #000; 
+}

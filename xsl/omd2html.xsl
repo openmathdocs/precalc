@@ -431,7 +431,7 @@ Note that we use <xsl:text> to insert a blank space
 <!-- Follow "XML Exchange Table Model"           -->
 <!-- A subset of the (failed) "CALS Table Model" -->
 <!-- Should be able to replace this by extant XSLT for this conversion -->
-<xsl:template match="table"><table class="plain-table"><xsl:apply-templates /></table></xsl:template>
+<xsl:template match="table"><table class="plain-table" align="center"><xsl:apply-templates /></table></xsl:template>
 <xsl:template match="tgroup"><xsl:apply-templates /></xsl:template>
 <xsl:template match="thead"><thead><xsl:apply-templates /></thead></xsl:template>
 <xsl:template match="tbody"><tbody><xsl:apply-templates /></tbody></xsl:template>
@@ -444,19 +444,24 @@ Note that we use <xsl:text> to insert a blank space
 <!-- All the relevant information is in the parent -->
 <xsl:template match="table/caption">
     <caption>
-            <xsl:element name="a">
-              <xsl:attribute name="class">anchor</xsl:attribute>
+        <!-- make the caption an anchor to refer to -->
+        <xsl:element name="a">
+            <xsl:attribute name="class">anchor</xsl:attribute>
             <xsl:attribute name="name">
                 <xsl:apply-templates select=".." mode="type-name"/>
                 <xsl:text>-</xsl:text>
                 <xsl:apply-templates select=".." mode="number"/>
             </xsl:attribute>
-        <xsl:apply-templates select=".." mode="type-name"/>
-        <xsl:text> </xsl:text>
-        <xsl:apply-templates select=".." mode="number"/>
-        <xsl:text>: </xsl:text>
-        <xsl:apply-templates />
-            </xsl:element>
+            <xsl:apply-templates select=".." mode="type-name"/>
+            <xsl:text> </xsl:text>
+            <xsl:apply-templates select=".." mode="number"/>
+            <!-- test that the caption element actually contains 
+                 something; if so, then use a : and a space, and put the caption text in-->
+        </xsl:element>
+        <xsl:if test=".!=''">
+            <xsl:text>: </xsl:text>
+            <xsl:apply-templates />
+        </xsl:if>
     </caption>
 </xsl:template>
 
@@ -1510,6 +1515,7 @@ $(function () {
     <link href="http://aimath.org/mathbook/mathbook-modern-3.css" rel="stylesheet" type="text/css" />
     <link href="http://aimath.org/mathbook/icons.css" rel="stylesheet" type="text/css" />
     <link href="http://aimath.org/mathbook/add-on.css" rel="stylesheet" type="text/css" />
+    <link href="../css/omd.css" rel="stylesheet" type="text/css" />
 </xsl:template>
 
 <!-- Video header                    -->
