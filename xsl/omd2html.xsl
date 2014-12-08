@@ -310,7 +310,10 @@ Note that we use <xsl:text> to insert a blank space
             <span class="title"><xsl:apply-templates select="title" /></span>
         </xsl:if>
         </h5>
-        <xsl:apply-templates select="statement" />
+        <xsl:element name="div">
+          <xsl:attribute name="class">definition</xsl:attribute>
+           <xsl:apply-templates select="statement" />
+        </xsl:element>
     </article>
 </xsl:template>
 
@@ -339,7 +342,10 @@ Note that we use <xsl:text> to insert a blank space
                 <span class="title"><xsl:apply-templates select="title" /></span>
             </xsl:if>
         </xsl:element>
-        <xsl:apply-templates select="*[not(self::title)]"/>
+        <xsl:element name="div">
+          <xsl:attribute name="class">example</xsl:attribute>
+           <xsl:apply-templates select="*[not(self::title)]"/>
+        </xsl:element>
     </article>
 </xsl:template>
 
@@ -348,18 +354,20 @@ Note that we use <xsl:text> to insert a blank space
     <xsl:variable name="xref">
         <xsl:apply-templates select="." mode="xref-identifier" />
     </xsl:variable>
-    <article class="exercise-like" id="{$xref}">
-        <h5>
-        <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
-        <xsl:text> </xsl:text>
-        <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
-        <xsl:if test="title">
+    <div class="exercise">
+        <article class="exercise-like" id="{$xref}">
+            <h5>
+            <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
             <xsl:text> </xsl:text>
-            <span class="title"><xsl:apply-templates select="title" /></span>
-        </xsl:if>
-        </h5>
-        <xsl:apply-templates select="statement" />
-    </article>
+            <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
+            <xsl:if test="title">
+                <xsl:text> </xsl:text>
+                <span class="title"><xsl:apply-templates select="title" /></span>
+            </xsl:if>
+            </h5>
+            <xsl:apply-templates select="statement" />
+        </article>
+    </div>
     <xsl:apply-templates select="solution" />
 </xsl:template>
 

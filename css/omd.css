@@ -1,3 +1,4 @@
+/* color reference: http://www.hitmill.com/html/pastels.html */
 a.anchor {color:black; 
             text-decoration:none}
 
@@ -6,3 +7,30 @@ table thead { border-top: 2px solid #000; }
 table tbody { border-top: 1px solid #000; 
 border-bottom: 2px solid #000; 
 }
+
+/* definition style */
+div.definition {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #23819C;
+    background:#A5DBEB;
+  }
+
+/* example style */
+div.example {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #DFE32D;
+    background:#EEF093;
+  }
+
+/* exercise style */
+div.exercise {
+    margin-left:2cm;
+    padding-left:.5cm;
+    padding-top:.1cm;
+    padding-bottom:.1cm;
+    border-left: thick solid #BF00BF;
+    background:#DD75DD;
+    border-radius: 15px;
+  }
