@@ -392,12 +392,23 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Figures & Tables:  chapter.x                       -->
 <!-- These float, so number independent of theorems (?) -->
 <!-- But separate from each other -->
-<!-- Automatic numbering reference: http://www.xml.com/lpt/a/1078 -->
+<!-- Automatic numbering reference: http://www.xml.com/lpt/a/1078 
+        level="multiple" gives numbers such as 1.1, 1.2, 4.1.3, etc
+        level="any" gives continuous numbering across sections, chapters, etc
+     It seems the two are not compatible, so, for example, to get 
+     table numbers <section.table> that run throughout a chapter (which *don't* 
+     get reset every section), we need to specify the section number explicitly.
+     -->
 <xsl:template match="figure" mode="number">
     <xsl:number level="multiple" count="chapter|figure" />
 </xsl:template>
 <xsl:template match="table" mode="number">
-    <xsl:number level="any" from="chapter|figure"/>
+  <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
+       node with name chapter
+       see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="table"/>
 </xsl:template>
 
 <!-- Two-level numbering for book with chapters and theorem-like environments, plus -->
