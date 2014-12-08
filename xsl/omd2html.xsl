@@ -293,9 +293,18 @@ Note that we use <xsl:text> to insert a blank space
     </xsl:variable>
     <article class="theorem-like" id="{$xref}">
         <h5>
-        <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
-        <xsl:text> </xsl:text>
-        <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
+        <!-- create an anchor -->
+        <xsl:element name="a">
+            <xsl:attribute name="class">anchor</xsl:attribute>
+            <xsl:attribute name="name">
+                <xsl:apply-templates select="." mode="type-name"/>
+                <xsl:text>-</xsl:text>
+                <xsl:apply-templates select="." mode="number"/>
+            </xsl:attribute>
+            <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
+            <xsl:text> </xsl:text>
+            <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
+        </xsl:element>
         <xsl:if test="title">
             <xsl:text> </xsl:text>
             <span class="title"><xsl:apply-templates select="title" /></span>
@@ -313,9 +322,18 @@ Note that we use <xsl:text> to insert a blank space
     </xsl:variable>
     <article class="example-like" id="{$xref}">
         <xsl:element name="h5">
-            <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
-            <xsl:text> </xsl:text>
-            <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
+            <!-- create an anchor -->
+            <xsl:element name="a">
+                <xsl:attribute name="class">anchor</xsl:attribute>
+                <xsl:attribute name="name">
+                    <xsl:apply-templates select="." mode="type-name"/>
+                    <xsl:text>-</xsl:text>
+                    <xsl:apply-templates select="." mode="number"/>
+                </xsl:attribute>
+                <span class="type"><xsl:apply-templates select="." mode="type-name" /></span>
+                <xsl:text> </xsl:text>
+                <span class="counter"><xsl:apply-templates select="." mode="number" /></span>
+            </xsl:element>
             <xsl:if test="title">
                 <xsl:text> </xsl:text>
                 <span class="title"><xsl:apply-templates select="title" /></span>
@@ -517,6 +535,9 @@ Note that we use <xsl:text> to insert a blank space
             </xsl:when>
             <xsl:when test="$target/self::figure">
                 <xsl:text>Figure </xsl:text>
+            </xsl:when>
+            <xsl:when test="$target/self::example">
+                <xsl:text>Example </xsl:text>
             </xsl:when>
             <xsl:otherwise>
               <xsl:text>FIX!!!</xsl:text>

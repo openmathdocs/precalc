@@ -416,26 +416,22 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   <xsl:number level="any" count="table"/>
 </xsl:template>
 
-<!-- Two-level numbering for book with chapters and theorem-like environments, plus -->
-<!-- Condition on articles, and then articles with sections -->
-<!-- TODO: Number exercises in an exercise section properly, these are sporadic in text -->
-<xsl:template match="theorem|corollary|lemma|proposition|claim|fact|conjecture|definition|example|exercise" mode="number">
-    <xsl:choose>
-        <xsl:when test="/mathbook/book">
-            <xsl:if test="/mathbook/book/chapter">
-                <xsl:number from="book" level="any" count="chapter" />
-                <xsl:text>.</xsl:text>
-            </xsl:if>
-                <xsl:number from="chapter" level="any" count="theorem|corollary|lemma|proposition|claim|fact|conjecture|definition|example|exercise" />
-        </xsl:when>
-        <xsl:when test="/mathbook/article">
-            <xsl:if test="/mathbook/article/section">
-                <xsl:number from="article" level="any" count="section" />
-                <xsl:text>.</xsl:text>
-            </xsl:if>
-                <xsl:number from="section" level="any" count="theorem|corollary|lemma|proposition|claim|fact|conjecture|definition|example|exercise" />
-        </xsl:when>
-    </xsl:choose>
+<!-- Two-level numbering for book with chapters and theorem-like environments -->
+<!-- TODO: can this be abbriviated in one template ?-->
+<xsl:template match="definition" mode="number">
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="definition"/>
+</xsl:template>
+<xsl:template match="example" mode="number">
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="example"/>
+</xsl:template>
+<xsl:template match="exercise" mode="number">
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="exercise"/>
 </xsl:template>
 
 <!-- Footnotes  x -->
