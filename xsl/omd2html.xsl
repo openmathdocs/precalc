@@ -367,14 +367,48 @@ Note that we use <xsl:text> to insert a blank space
             </h5>
             <xsl:apply-templates select="statement" />
         </article>
+        <!-- put solution in a knowl, noting that 
+             knowls need to be in a paragraph element -->
+        <xsl:element name="p">
+            <xsl:apply-templates select="solution" />
+        </xsl:element>
     </div>
-    <xsl:apply-templates select="solution" />
 </xsl:template>
 
+<!-- put solution into a knowl 
+     note: the solution inherits a number from the 
+     exercise, which is why we see 
+        select=".."
+     in the code that follows because we know that
+     <solution> will always be contained within <exercise> -->
 <xsl:template match="exercise/solution">
-    <xsl:apply-templates select="." mode="type-name" />
-    <xsl:text>. </xsl:text>
-    <xsl:apply-templates />
+    <xsl:variable name="ident">
+        <xsl:text>solution-</xsl:text>
+        <xsl:apply-templates select=".." mode="number" />
+    </xsl:variable>
+    <!-- -->
+    <xsl:call-template name="knowl-factory">
+        <xsl:with-param name="identifier" select="$ident" />
+        <xsl:with-param name="content">
+            <!-- check the solution is not empty -->
+            <xsl:choose>
+                <xsl:when test=".!=''">
+                    <xsl:apply-templates />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>NO SOLUTION FOUND--FIX!!!</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:with-param>
+    </xsl:call-template>
+    <!-- -->
+    <xsl:call-template name="knowl-link-factory">
+        <xsl:with-param name="css-class">footnote</xsl:with-param>
+        <xsl:with-param name="identifier" select="$ident" />
+        <xsl:with-param name="content">
+          <xsl:text>Solution</xsl:text>
+        </xsl:with-param>
+    </xsl:call-template>
 </xsl:template>
 
 <xsl:template match="notation">
@@ -485,7 +519,7 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:text> </xsl:text>
             <xsl:apply-templates select=".." mode="number"/>
         </xsl:element>
-        <!-- test that the caption element actually contains 
+        <!-- test that the caption element is not empty
              something; if so, then use a : and a space, and put the caption text in-->
         <xsl:if test=".!=''">
             <xsl:text>: </xsl:text>
