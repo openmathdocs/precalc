@@ -20,8 +20,10 @@ div.definition {
 div.example {
     margin-left:2cm;
     padding-left:.5cm;
-    border-left: thick solid #DFE32D;
+    border-left: 2px solid #DFE32D;
+    border-bottom: 2px solid #DFE32D;
     background:#EEF093;
+    border-bottom-left-radius: 15px;
   }
 
 /* exercise style */
@@ -30,7 +32,8 @@ div.exercise {
     padding-left:.5cm;
     padding-top:.1cm;
     padding-bottom:.1cm;
-    border-left: thick solid #BF00BF;
+    border: thick solid #BF00BF;
     background:#DD75DD;
     border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
   }
