@@ -370,9 +370,12 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- Outcomes are an unordered type of list -->
 <xsl:template match="outcomes">
-    <ul>
+  <xsl:element name="em">
+    <xsl:text>By the end of this chapter:</xsl:text>
+  </xsl:element>
+  <xsl:element name="ul">
     <xsl:apply-templates select="li" />
-  </ul>
+  </xsl:element>
 </xsl:template>
 
 <!-- Figures and their captions -->
@@ -382,7 +385,7 @@ Note that we use <xsl:text> to insert a blank space
     </div>
 </xsl:template>
 
-<!-- Caption of a figure                           -->
+<!-- Caption of a figure-I believe figcaption is obsolete, cmh 8/12/14 -->
 <!-- All the relevant information is in the parent -->
 <xsl:template match="figure/caption">
     <figcaption>
@@ -440,9 +443,9 @@ Note that we use <xsl:text> to insert a blank space
 <xsl:template match="thead/row/entry"><th align="{../../../@align}"><xsl:apply-templates /></th></xsl:template>
 <xsl:template match="tbody/row/entry"><td align="{../../../@align}"><xsl:apply-templates /></td></xsl:template>
 
-<!-- Caption of a table                            -->
+<!-- Caption of a table or figure                  -->
 <!-- All the relevant information is in the parent -->
-<xsl:template match="table/caption">
+<xsl:template match="table/caption|figure/caption">
     <caption>
         <!-- make the caption an anchor to refer to -->
         <xsl:element name="a">
@@ -455,9 +458,9 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:apply-templates select=".." mode="type-name"/>
             <xsl:text> </xsl:text>
             <xsl:apply-templates select=".." mode="number"/>
-            <!-- test that the caption element actually contains 
-                 something; if so, then use a : and a space, and put the caption text in-->
         </xsl:element>
+        <!-- test that the caption element actually contains 
+             something; if so, then use a : and a space, and put the caption text in-->
         <xsl:if test=".!=''">
             <xsl:text>: </xsl:text>
             <xsl:apply-templates />

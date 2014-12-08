@@ -400,7 +400,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      get reset every section), we need to specify the section number explicitly.
      -->
 <xsl:template match="figure" mode="number">
-    <xsl:number level="multiple" count="chapter|figure" />
+  <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
+       node with name chapter
+       see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="figure"/>
 </xsl:template>
 <xsl:template match="table" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 

@@ -386,7 +386,12 @@
 			A graph of <m>f</m> provides us with helpful specific information about <m>f</m>; it tells us what <m>f</m> does to its input values. When we were making graphs, 
 			we plotted points of the form <me>(\text{input},\text{output})\text{.}</me> Now given a graph of <m>f</m>, we interpret coordinates in the same way.</p>
 
-			<todo>graph</todo>
+			<todo>graph--see figure template below</todo>
+				<figure xml:id="fun-fig-readgraph">
+                  <code>
+                  </code>
+                  <caption>caption text goes here</caption>
+                </figure>
 
 			<p>In <xref ref="fun-fig-readgraph"/> we have a graph of a function <m>f</m>. If we wish to find <m>f(1)</m>, we recognize that <num>1</num> is being used as an input.
 			So we would want to find a point of the form <m>(1,\phantom{y})</m>. Seeking out <m>x</m>-coordinate <num>1</num> in <xref ref="fun-fig-readgraph"/>, we find that 
