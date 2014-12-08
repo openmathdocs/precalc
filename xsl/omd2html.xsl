@@ -80,7 +80,7 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- Book                                                                           -->
 <!--     A sequence of chapters and appendices (with table of contents, index, etc) -->
-<xsl:template match="mathbook/book">
+<xsl:template match="mathbook">
     <xsl:apply-templates select="." mode="page-wrap">
         <xsl:with-param name="toc">
             <xsl:value-of select="'yes'" />
@@ -1353,7 +1353,9 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
             <!-- http://webdesignerwall.com/tutorials/responsive-design-in-3-steps -->
             <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
             <xsl:call-template name="mathjax" />
+            <!--
             <xsl:call-template name="sagecell" />
+            -->
             <xsl:call-template name="knowl" />
             <xsl:call-template name="mathbook-js" />
             <xsl:call-template name="fonts" />
@@ -1422,7 +1424,7 @@ This is a Java Applet created using GeoGebra from www.geogebra.org - it looks li
     <div id="toc-navbar-item" class="navbar-item">
         <h2 class="navbar-item-text icon-navicon-round ">Table of Contents</h2>
         <nav id="toc">
-        <xsl:for-each select="/mathbook/book/chapter|/mathbook/book/appendix">
+        <xsl:for-each select="/mathbook/chapter|/mathbook/appendix">
             <xsl:variable name="fn">
                 <xsl:value-of select="@filebase" />
                 <xsl:text>.html</xsl:text>

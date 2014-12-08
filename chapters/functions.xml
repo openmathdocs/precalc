@@ -415,6 +415,14 @@
 		</subsection>
 
 	</section>
+    <section>
+      <title>foo</title>
+      <p>here is another section</p>
+	</section>
+    <section>
+      <title>bar</title>
+      <p>here is another section</p>
+	</section>
 
 
     </chapter>
