@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!-- 
 % !arara: xslt: {convertTo: tex, outputToFile: no}
 % arara: xslt: {convertTo: html, outputToFile: no}
 -->
 
-<!-- Overall element for a Mathbook XML document; mandatory, always-->
-<mathbook>
+<chapter filebase="exponentialfunctions">
+  <title>Exponential functions</title>
 <commentsAtTop>
 This file is all about exponential functions.
 </commentsAtTop>
@@ -40,7 +39,36 @@ need to work out how to define a 'xrefRange' command (two arguments???)
 </section>
         <section xml:id="secondsection">
             <title>Method</title>
+			<exercise>
+				<statement><p>Describe your own example of a function using experience from your life. You will need some 
+                    kind of input variable, like <q>number of years since 2000</q> or <q>weight of a bowling ball</q>. You will 
+				need a process for turning that number into a different kind of number. The process does not need to
+                		involve a formula; a verbal description would be fine.</p>
+
+                		<p>Give your function a name. Write the symbol that you would use to represent
+                		input. Write the symbol(s) that you would use to represent output.</p></statement>
+
+				<solution>Answers will vary.</solution>
+
+				<answer>Answers will vary.</answer>
+			</exercise>
+		<definition>
+			<title>Function</title>
+			<statement>A function is a process for turning numbers into (potentially) different numbers. 
+			It's important that any input consistently produces the same output.</statement>
+		</definition>
+		<example>
+			<p>Think about each of these examples. How do they fit the defintion of a function?</p>
+			<ul>
+				<li>If you use the year a person was born to determine how old they are, you are using a function.</li>
+				<li>If you look up the Kelly Blue Book value of a Mazda Proteg<acute letter="e" /> based on how old it is, 
+				you are using a function.</li>
+				<li>If you use the the amount of money that you have on you to determine how many beers you could buy for 
+				your friends at the bar, you are using a function.</li>
+			</ul>
+		</example>
 </section>
+</chapter>
   <ignore>
 For example, let's say that we were interested in modeling the 
 temperature of a hot cup of coffee since it was first poured. We cannot 
@@ -8675,4 +8703,3 @@ of the exponential function $f$ that has formula $f(x)=\left( \frac{2}{3} \right
 %\section{Glossary}
 %\fixthis{Chris: Add the glossary}
   </ignore>
-</mathbook>

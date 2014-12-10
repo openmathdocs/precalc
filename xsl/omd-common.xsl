@@ -421,17 +421,17 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="definition" mode="number">
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="definition"/>
+  <xsl:number level="any" count="definition" from="chapter"/>
 </xsl:template>
 <xsl:template match="example" mode="number">
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="example"/>
+  <xsl:number level="any" count="example" from="chapter"/>
 </xsl:template>
 <xsl:template match="exercise" mode="number">
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="exercise"/>
+  <xsl:number level="any" count="exercise" from="chapter"/>
 </xsl:template>
 
 <!-- Footnotes  x -->

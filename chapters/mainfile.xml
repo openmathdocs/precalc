@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE doc [
+<!ENTITY functions SYSTEM "functions.xml">
+<!ENTITY exponentialfunctions SYSTEM "exponentialfunctions.xml">
+]>
+
+<!-- Overall element for a Mathbook XML document; mandatory, always-->
+<mathbook>
+
+    <!--
+    "docinfo" is like metadata, it mostly migrates
+    various places, or gets used multiple times
+    -->
+    <docinfo>
+        <!-- There can be several authors here -->
+        <author>
+            <personname>Alex Jordan</personname>
+            <department>Division of Mathematics and Industrial Technology</department>
+            <!-- Use "break" tag anywhere for forced line break -->
+            <institution>Portland Community College Sylvania<br /> Portland, Oregon, USA</institution>
+            <email>alex.jordan@pcc.edu</email>
+        </author>
+        <!-- Could set date manually or use the "today" element -->
+        <date><today /></date>
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        -->
+    </docinfo>
+
+    <!-- including other xml files can be done as follows
+         reference: http://xml.silmaril.ie/includes.html -->
+    <book>
+    &functions;
+    &exponentialfunctions;
+    </book>
+</mathbook>
+
