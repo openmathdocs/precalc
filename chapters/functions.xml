@@ -363,6 +363,23 @@
 			<todo>graph--see figure template below</todo>
 				<figure xml:id="fun-fig-readgraph">
                   <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <description>This node contains the figure description; it will be used both in the alt tag attribute of the svg image, and in a knowl in the caption. </description>
+                  <caption>caption text goes here</caption>
+                </figure>
+
+				<figure>
+                  <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
                   </code>
                   <caption>caption text goes here</caption>
                 </figure>
