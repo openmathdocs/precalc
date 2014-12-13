@@ -484,6 +484,16 @@ Note that we use <xsl:text> to insert a blank space
     <xsl:attribute name="align">center</xsl:attribute>
     <xsl:element name="div">
       <xsl:attribute name="class">figure</xsl:attribute>
+        <!-- create an anchor so that cross references can be linked -->
+        <xsl:element name="a">
+          <xsl:attribute name="class">anchor</xsl:attribute>
+          <xsl:attribute name="name">
+            <xsl:apply-templates select="." mode="type-name"/>
+            <xsl:text>-</xsl:text>
+            <xsl:apply-templates select="." mode="number"/>
+          </xsl:attribute>
+        </xsl:element>
+        <!-- insert figure -->
       <xsl:apply-templates />
     </xsl:element>
   </xsl:element>
@@ -539,7 +549,7 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- Caption of a table or figure                  -->
 <!-- All the relevant information is in the parent -->
-<xsl:template match="table/caption|figure/caption">
+<xsl:template match="table/caption">
   <xsl:element name="caption">
     <!-- make the caption into an anchor to refer to -->
     <xsl:element name="a">
@@ -553,6 +563,21 @@ Note that we use <xsl:text> to insert a blank space
       <xsl:text> </xsl:text>
       <xsl:apply-templates select=".." mode="number"/>
     </xsl:element>
+    <!-- test that the caption element is not empty
+             something; if so, then use a : and a space, and put the caption text in-->
+        <xsl:if test=".!=''">
+          <xsl:text>: </xsl:text>
+          <xsl:apply-templates />
+        </xsl:if>
+      </xsl:element>
+    </xsl:template>
+
+<!-- figure captions shouldn't be the anchor, as they will be *below* the figure -->
+<xsl:template match="figure/caption">
+  <xsl:element name="caption">
+      <xsl:apply-templates select=".." mode="type-name"/>
+      <xsl:text> </xsl:text>
+      <xsl:apply-templates select=".." mode="number"/>
     <!-- test that the caption element is not empty
              something; if so, then use a : and a space, and put the caption text in-->
         <xsl:if test=".!=''">
