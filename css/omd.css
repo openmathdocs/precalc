@@ -17,6 +17,14 @@ div.definition {
     background:#A5DBEB;
   }
 
+/* specialnote style */
+div.specialnote {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #23819C;
+    background:#A5DBEB;
+  }
+
 /* example style */
 div.example {
     margin-left:2cm;

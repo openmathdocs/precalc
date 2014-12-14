@@ -317,6 +317,20 @@ Note that we use <xsl:text> to insert a blank space
   </article>
 </xsl:template>
 
+<!-- special note -->
+<xsl:template match="specialnote">
+    <xsl:element name="div">
+      <xsl:attribute name="class">specialnote</xsl:attribute>
+        <xsl:if test="title">
+            <xsl:element name="b">
+                <xsl:apply-templates select="title" />
+                <xsl:text>: </xsl:text>
+            </xsl:element>
+        </xsl:if>
+      <xsl:apply-templates select="statement" />
+    </xsl:element>
+</xsl:template>
+
 <!-- Examples, Remarks -->
 <!-- Just a sequence of paragraphs, etc -->
 <xsl:template match="example|remark">
