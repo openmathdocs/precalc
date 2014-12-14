@@ -132,6 +132,11 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{document}&#xa;</xsl:text>
 </xsl:template>
 
+<!-- book with no preamble; the other template should be deleted, cmh dec 2014 -->
+<xsl:template match="book">
+    <xsl:apply-templates/>
+</xsl:template>
+
 <!-- A letter, LaTeX structure -->
 <xsl:template match="letter">
     <xsl:call-template name="converter-blurb" />
@@ -566,7 +571,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="*[not(self::title or self::author)]"/>
 </xsl:template>
 
-
+<!-- Chapters may have minitoc -->
+<xsl:template match="minitoc">
+    <xsl:text>\minitoc&#xa;%&#xa;</xsl:text>
+</xsl:template>
 
 <!-- Theorems, Proofs, Definitions, Examples, Exercises -->
 
@@ -590,24 +598,41 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="statement" />
 </xsl:template>
 
+<xsl:template match="specialnote">
+    <xsl:apply-templates select="statement" />
+</xsl:template>
+
+<xsl:template match="checkpoint">
+    <xsl:text>\begin{checkpoint}</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates select="exercise"/>
+    <xsl:text>\end{checkpoint}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
 <!-- Include solutions to exercises by default value of switch-->
 <xsl:template match="exercise">
-    <xsl:text>\begin{exercise}</xsl:text>
+    <xsl:text>\begin{problem}</xsl:text>
     <xsl:apply-templates select="title" mode="environment-option" />
     <xsl:apply-templates select="." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="statement"/>
     <xsl:apply-templates select="solution"/>
-    <xsl:text>\end{exercise}&#xa;%&#xa;</xsl:text>
+    <xsl:apply-templates select="answer"/>
+    <xsl:text>\end{problem}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="exercise/solution">
-    <xsl:if test="$solutions.included='yes'">
-        <xsl:text>\par\smallskip\noindent\textbf{</xsl:text>
-        <xsl:apply-templates select="." mode="type-name" />
-        <xsl:text>.}\quad&#xa;</xsl:text>
+        <xsl:text>\begin{longsolution}&#xa;%&#xa;</xsl:text>
+	<xsl:apply-templates />
+	<xsl:text>&#xa;%&#xa;</xsl:text>
+        <xsl:text>\end{longsolution}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercise/answer">
+        <xsl:text>\begin{shortsolution}&#xa;%&#xa;</xsl:text>
         <xsl:apply-templates />
-    </xsl:if>
+        <xsl:text>&#xa;%&#xa;</xsl:text>
+        <xsl:text>\end{shortsolution}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Reorg?, consolidate following with local-name() -->
@@ -648,6 +673,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{definition}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="specialnote/statement">
+    <xsl:text>\begin{specialnote}</xsl:text>
+    <xsl:apply-templates select="../title" mode="environment-option" />
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>\end{specialnote}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
 <xsl:template match="example">
     <xsl:text>\begin{example}</xsl:text>
     <xsl:apply-templates select="title" mode="environment-option" />
@@ -680,6 +713,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\par </xsl:text>
     <xsl:apply-templates />
     <xsl:text>&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="acute">
+    <xsl:text>\'{ </xsl:text>
+    <xsl:value-of select="@letter" />
+    <xsl:text>}</xsl:text>
 </xsl:template>
 
 
@@ -961,6 +1000,17 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\dots </xsl:text>
 </xsl:template>
 
+<xsl:template match="margintable">
+    <xsl:text>\begin{margintable}\centering&#xa;</xsl:text>
+    <xsl:text>\captionof{table}{</xsl:text>
+    <xsl:apply-templates select="caption/node()" />
+    <xsl:text>}&#xa;</xsl:text>
+    <xsl:apply-templates select="." mode="label"/>
+    <xsl:apply-templates />
+    <xsl:text>\end{margintable}&#xa;</xsl:text>
+    <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
 <!-- \@ following a period makes it an abbreviation, not the end of a sentence -->
 <!-- So use it for abbreviations which will not end a sentence                 -->
 <!-- Best: \makeatletter\newcommand\etc{etc\@ifnextchar.{}{.\@}}\makeatother   -->
@@ -1089,8 +1139,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:choose>
 </xsl:template>
 
-
-
 <!-- Figures and Captions -->
 <!-- http://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned -->
 <xsl:template match="figure">
@@ -1108,6 +1156,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>}&#xa;</xsl:text>
     <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
 </xsl:template>
+
+<!-- create an empty template for figure descriptions -->
+<xsl:template match="figure/description"/>
 
 
 <!-- Images -->
@@ -1153,40 +1204,80 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Should be able to replace this by extant XSLT for this conversion -->
 <!-- See http://stackoverflow.com/questions/19716449/converting-xhtml-table-to-latex-using-xslt -->
 <xsl:template match="table">
-    <xsl:text>\begin{table}[thb]\centering&#xa;</xsl:text>
-    <xsl:apply-templates select="." mode="label" />
-    <xsl:apply-templates />
-    <xsl:text>\end{table}&#xa;</xsl:text>
-    <xsl:text>%&#xa;</xsl:text>
+    <xsl:choose>
+        <!-- margin table -->
+        <xsl:when test="@style='margin'">
+            <xsl:text>\begin{margintable}\centering&#xa;</xsl:text>
+            <xsl:apply-templates />
+            <xsl:text>\end{margintable}&#xa;</xsl:text>
+            <xsl:text>%&#xa;</xsl:text>
+        </xsl:when>
+        <!-- normal table -->
+        <xsl:otherwise>
+            <xsl:text>\begin{table}[thb]\centering&#xa;</xsl:text>
+            <xsl:apply-templates />
+            <xsl:text>\end{table}&#xa;</xsl:text>
+            <xsl:text>%&#xa;</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
+<!-- caption for a table -->
 <xsl:template match="table/caption">
-    <xsl:text>\caption{</xsl:text>
+    <xsl:choose>
+        <xsl:when test="../@style='margin'">
+            <xsl:text>\captionof{table}{</xsl:text>
+                <xsl:apply-templates />
+            <xsl:text>}&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>\caption{</xsl:text>
+                <xsl:apply-templates />
+            <xsl:text>}&#xa;</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:if test="../@xml:id">
+        <xsl:apply-templates select=".." mode="label" />
+        <xsl:text>&#xa;</xsl:text>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="num">
+    <xsl:text>\num{</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>}&#xa;</xsl:text>
+    <xsl:text>}</xsl:text>
+</xsl:template>
+
+<xsl:template match="ellipsis">
+    <xsl:text>\ldots</xsl:text>
 </xsl:template>
 
 <!-- Unclear how to handle *multiple* tgroups in latex -->
 <xsl:template match="tgroup">
     <xsl:text>\begin{tabular}</xsl:text>
-    <xsl:text>{*{</xsl:text>
-    <xsl:value-of select="@cols" />
-    <xsl:text>}{</xsl:text>
+    <xsl:text>{</xsl:text>
     <xsl:choose>
-        <xsl:when test="@align='left'">  <xsl:text>l</xsl:text></xsl:when>
-        <xsl:when test="@align='center'"><xsl:text>c</xsl:text></xsl:when>
-        <xsl:when test="@align='right'"> <xsl:text>r</xsl:text></xsl:when>
-        <xsl:otherwise>                  <xsl:text>c</xsl:text></xsl:otherwise>
+        <xsl:when test="@tabletype='equation'"><xsl:text>r@{}c@{}l</xsl:text></xsl:when>
+	<xsl:when test="not(@cols)"><xsl:value-of select="@tabletype" /></xsl:when>
+        <xsl:otherwise><xsl:text>*{</xsl:text><xsl:value-of select="@cols" /><xsl:text>}{</xsl:text>
+            <xsl:choose>
+                <xsl:when test="@align='left'">  <xsl:text>l</xsl:text></xsl:when>
+                <xsl:when test="@align='center'"><xsl:text>c</xsl:text></xsl:when>
+                <xsl:when test="@align='right'"> <xsl:text>r</xsl:text></xsl:when>
+                <xsl:otherwise>                  <xsl:value-of select="@align" /></xsl:otherwise>
+            </xsl:choose>
+	    <xsl:text>}</xsl:text>
+	</xsl:otherwise>
     </xsl:choose>
-    <xsl:text>}}&#xa;</xsl:text>
+    <xsl:text>}&#xa;</xsl:text>
     <xsl:apply-templates />
     <xsl:text>\end{tabular}&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="thead">
-    <xsl:text>\hline\hline </xsl:text>
+    <xsl:text>\beforeheading &#xa;</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>\\\hline\hline </xsl:text>
+    <xsl:text>\afterheading &#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="tbody">
@@ -1195,7 +1286,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
 <xsl:template match="row">
     <xsl:apply-templates />
-    <xsl:text>\\&#xa;</xsl:text>
+        <xsl:choose>
+        <xsl:when test="position() = last()">  <xsl:text>\\\lastline&#xa;</xsl:text></xsl:when>
+        <xsl:otherwise>                    <xsl:text>\\\normalline&#xa;</xsl:text></xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 <xsl:template match="entry[1]">
@@ -1296,12 +1390,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Insert a xref identifier as a LaTeX label on anything   -->
 <!-- Calls to this template need come from where LaTeX likes -->
 <!-- a \label, generally someplace that can be numbered      -->
-<!-- Could do optionally: <xsl:value-of select="@xml:id" />  -->
+<!-- Could do optionally: <xsl:apply-templates select="." mode="xref-identifier" />  -->
 <xsl:template match="*" mode="label">
     <xsl:text>\label{</xsl:text>
-    <xsl:apply-templates select="." mode="xref-identifier" />
+    <xsl:value-of select="@xml:id" />
     <xsl:text>}</xsl:text>
 </xsl:template>
+
 
 <!-- Footnotes               -->
 <!--   with no customization -->

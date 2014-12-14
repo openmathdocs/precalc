@@ -35,7 +35,7 @@
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
 		have a calculator. We can see some calculations in <xref ref="fun-tab-squareroots"/>.</p>
 
-		<table xml:id="fun-tab-squareroots">
+		<table xml:id="fun-tab-squareroots" style="margin">
 			<caption>Values of <m>\sqrt{x}</m></caption>
 			<tgroup tabletype="equation">
 				<thead>

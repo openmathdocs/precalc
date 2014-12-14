@@ -28,16 +28,14 @@ Most of us are familiar with the $\sqrt{\phantom{x}}$ symbol.
 \begin{margintable}\centering
 \captionof{table}{Values of $\sqrt{x}$}
 \label{fun-tab-squareroots}
-			
-			\begin{tabular}{r@{}c@{}l}
+\begin{tabular}{r@{}c@{}l}
 \beforeheading 
 \afterheading 
 $\sqrt{\num{9}}$&${}={}$&\num{3}\\\normalline
 $\sqrt{\num{1/4}}$&${}={}$&\num{1/2}\\\normalline
 $\sqrt{\num{2}}$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 \end{tabular}
-
-		\end{margintable}
+\end{margintable}
 %
 \par The $\sqrt{\phantom{x}}$ symbol represents a \emph{process}; it's a way for us to
 		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
@@ -72,19 +70,17 @@ Think about each of these examples. How do they fit the defintion of a function?
 \begin{margintable}\centering
 \captionof{table}{Values of $\sq[x]$}
 \label{fun-tab-sqrts}
-                        
-                        \begin{tabular}{r@{}c@{}l}
+\begin{tabular}{r@{}c@{}l}
 \beforeheading 
 \afterheading 
 $\sq[\num{9}]$&${}={}$&\num{3}\\\normalline
 $\sq\left(\num{1/4}\right)$&${}={}$&\num{1/2}\\\normalline
 $\sq[\num{2}]$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 \end{tabular}
-
-                \end{margintable}
+\end{margintable}
 %
 \par The parentheses in $\sq[(]$ are very important. To see why, try to put yourself in the
-		``mind'' of a computer, and look closely at $\sq\num{16}$. The computer will recognize $\sq$
+          ``mind'' of a computer, and look closely at $\sq\num{16}$. The computer will recognize $\sq$
 		and know that it needs to compute a square root. But computers are very picky with how they interpret input, and 
 		they might not see the entire number \num{16}. A computer might read as far as $\sq\num{1}$ and think that it needs to compute this.
 		That would leave $1$ with a ``6'' character still hanging. The final result would be \num{16}, and we know we inteded the  
@@ -99,8 +95,8 @@ $\sq[\num{2}]$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 \par Functions have their own names. We've seen a function named $\sq$, but any name you can
         	imagine is allowable. In the sciences, it is common to name functions with whole words,
         	like $\operatorname{weight}$ or $\operatorname{health\_index}$. In mathematics, we often
-        	abbreviate such function names to $w$ or $h$. And of course, since the word ``function''
-        	starts with ``f'', we will often name a function $f$.
+            abbreviate such function names to $w$ or $h$. And of course, since the word ``function''
+            starts with ``f'', we will often name a function $f$.
 %
 \par It's crucial to continue reminding ourselves that functions are \emph{processes} for
         	changing numbers; they are not numbers themselves. And that means that we have a potential
@@ -171,7 +167,7 @@ While a function has a name like $f$, and the input to that function often
 \begin{checkpoint}
 \begin{problem}\label{}
 Describe your own example of a function using experience from your life. You will need some 
-				kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
+                    kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
 				need a process for turning that number into a different kind of number. The process does not need to
                 		involve a formula; a verbal description would be fine.
 %
@@ -221,7 +217,8 @@ Consider the function $\operatorname{BudgetDeficit}$, that takes in a year as
 %
 \begin{table}[thb]\centering
 \caption{}
-\label{fun-tab-BudgetDeficit}\begin{tabular}{S[table-format=4.0]S[table-format=1.2]}
+\label{fun-tab-BudgetDeficit}
+\begin{tabular}{S[table-format=4.0]S[table-format=1.2]}
 \beforeheading 
 \heading{input}&\heading{output}\\\normalline
 \heading{$x$ (year)}&\heading{$\operatorname{BudgetDeficit}(x)$ ($\si{\$\trillion}$)}\\\normalline
@@ -251,7 +248,8 @@ Let's return to our example of the function $\sq$. Tabulating some inputs and ou
 %
 \begin{table}[thb]\centering
 \caption{}
-\label{fun-tab-sqrtexample}\begin{tabular}{S[table-format=1.0]c}
+\label{fun-tab-sqrtexample}
+\begin{tabular}{S[table-format=1.0]c}
 \beforeheading 
 \heading{input}&\heading{output}\\\normalline
 \heading{$x$}&\heading{$\sq[x]$}\\\lastline
@@ -290,7 +288,8 @@ Returning to the function $\operatorname{BudgetDeficit}$ that we studied in \cre
 %
 \begin{table}[thb]\centering
 \caption{}
-\label{fun-tab-BudgetDeficitCoords}\begin{tabular}{*{1}{c}}
+\label{fun-tab-BudgetDeficitCoords}
+\begin{tabular}{*{1}{c}}
 \beforeheading 
 (input, output)\\\normalline
 $(x,\operatorname{BudgetDeficit}(x))$\\\lastline
@@ -315,7 +314,8 @@ Now let's construct a graph for $\sq$. Tabulating inputs and outputs gives the p
 %
 \begin{table}[thb]\centering
 \caption{}
-\label{fun-tab-sqrtCoords}\begin{tabular}{*{1}{c}}
+\label{fun-tab-sqrtCoords}
+\begin{tabular}{*{1}{c}}
 \beforeheading 
 (input, output)\\\normalline
 $(x,\sq(x))$\\\lastline
@@ -353,6 +353,28 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
 			A graph of $f$ provides us with helpful specific information about $f$; it tells us what $f$ does to its input values. When we were making graphs, 
 			we plotted points of the form \begin{displaymath}(\text{input},\text{output})\text{.}\end{displaymath} Now given a graph of $f$, we interpret coordinates in the same way.
 %
+\begin{figure}[!htbp]
+\centering
+
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here\label{fun-fig-readgraph}}
+\end{figure}
+%
+\begin{figure}[!htbp]
+\centering
+
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here\label{}}
+\end{figure}
+%
 \par In \cref{fun-fig-readgraph} we have a graph of a function $f$. If we wish to find $f(1)$, we recognize that \num{1} is being used as an input.
 			So we would want to find a point of the form $(1,\phantom{y})$. Seeking out $x$-coordinate \num{1} in \cref{fun-fig-readgraph}, we find that 
 			the only such point is $(1,2)$. Therefore the output for \num{1} is \num{2}; in other words $f(1)=2$.
@@ -386,4 +408,115 @@ $f(0)=0.5$, $f(3)=3$, and $f(4)=2$
 \end{problem}
 %
 \end{checkpoint}
+%
+\typeout{************************************************}
+\typeout{Section 1.2 foo}
+\typeout{************************************************}
+%
+\section{foo}\label{}
+%
+here is another section
+%
+\typeout{************************************************}
+\typeout{Section 1.3 bar}
+\typeout{************************************************}
+%
+\section{bar}\label{}
+%
+here is another section
+%
+\typeout{************************************************}
+\typeout{Chapter 2 Exponential functions}
+\typeout{************************************************}
+%
+\chapter{Exponential functions}\label{}
+%
+\begin{comment}
+This file was created using ./xsl/omd2tex.xsl,
+there is no point in editing it :)
+
+This file is all about exponential functions.
+\end{comment}
+
+\typeout{************************************************}
+\typeout{Section 2.1 Introduction}
+\typeout{************************************************}
+%
+\section{Introduction}\label{firstsection}
+%
+\begin{outcomes}
+\begin{outcomelist}
+\item  Explore increasing and decreasing functions, particularly in the context of concavity;%
+\item  Determine a function's concavity based on a table of values, a graph, or a description. %
+\end{outcomelist}
+\end{outcomes}
+
+In our mathematical adventures so far we have studied linear, quadratic, 
+and radical functions. The simplicity of these functions is useful when 
+introducing new concepts such as transformations, composition, and 
+inverse functions; but it is somewhat restrictive when we wish to 
+consider interesting real-world application problems. 
+\cref{firstsection} 
+\Cref{firstsection} 
+\vref{firstsection} 
+\Vref{firstsection} 
+
+%
+\par 
+HERE:
+\crefrange{firstsection}{secondsection} 
+\Crefrange{firstsection}{secondsection}                
+\vrefrange{firstsection}{secondsection}                      
+\Vrefrange{firstsection}{secondsection} 
+DONE
+
+need to fix referencing so that it uses *our* ID (at the very least in the .tex version)
+need to work out how to define a 'xrefRange' command (two arguments???)
+  
+%
+\typeout{************************************************}
+\typeout{Section 2.2 Method}
+\typeout{************************************************}
+%
+\section{Method}\label{secondsection}
+%
+\begin{problem}\label{}
+Describe your own example of a function using experience from your life. You will need some 
+                    kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
+				need a process for turning that number into a different kind of number. The process does not need to
+                		involve a formula; a verbal description would be fine.
+%
+\par Give your function a name. Write the symbol that you would use to represent
+                		input. Write the symbol(s) that you would use to represent output.
+%
+\begin{longsolution}
+%
+Answers will vary.
+%
+\end{longsolution}
+%
+\begin{shortsolution}
+%
+Answers will vary.
+%
+\end{shortsolution}
+%
+\end{problem}
+%
+\begin{definition}[Function]\label{}
+A function is a process for turning numbers into (potentially) different numbers. 
+			It's important that any input consistently produces the same output.\end{definition}
+%
+\begin{example}\label{}
+Think about each of these examples. How do they fit the defintion of a function?
+%
+\begin{itemize}
+\item If you use the year a person was born to determine how old they are, you are using a function.%
+\item If you look up the Kelly Blue Book value of a Mazda Proteg\'{ e} based on how old it is, 
+				you are using a function.%
+\item If you use the the amount of money that you have on you to determine how many beers you could buy for 
+				your friends at the bar, you are using a function.%
+\end{itemize}
+%
+\end{example}
 %
