@@ -2,7 +2,7 @@
 \typeout{Chapter 1 Functions}
 \typeout{************************************************}
 %
-\chapter{Functions}\label{}
+\chapter{Functions}
 %
 \minitoc
 %
@@ -10,7 +10,7 @@
 \typeout{Section 1.1 The Basics of Function Vocabulary}
 \typeout{************************************************}
 %
-\section{The Basics of Function Vocabulary}\label{}
+\section{The Basics of Function Vocabulary}
 %
 \begin{outcomes}
 \begin{outcomelist}
@@ -25,7 +25,8 @@ Most of us are familiar with the $\sqrt{\phantom{x}}$ symbol.
 		simple to do this on paper or in our heads, and sometimes it helps a lot to
 		have a calculator. We can see some calculations in \cref{fun-tab-squareroots}.
 %
-\begin{margintable}\centering
+\begin{margintable}
+\centering
 \captionof{table}{Values of $\sqrt{x}$}
 \label{fun-tab-squareroots}
 \begin{tabular}{r@{}c@{}l}
@@ -41,13 +42,13 @@ $\sqrt{\num{2}}$&${}\approx{}$&\num{1.41}\ldots\\\lastline
 		turn numbers into other numbers. This idea of finding some numbers based on other numbers is
 		fundamental to science and mathematics that use college-level algebra. 
 %
-\begin{definition}[Function]\label{}
+\begin{definition}[Function]
 A function is a process for turning numbers into (potentially) different numbers. 
 			It's important that any input consistently produces the same output.\end{definition}
 %
 \par This definition is so broad that you probably use functions all the time.
 %
-\begin{example}\label{}
+\begin{example}
 Think about each of these examples. How do they fit the defintion of a function?
 %
 \begin{itemize}
@@ -67,7 +68,8 @@ Think about each of these examples. How do they fit the defintion of a function?
 		keyboards. This doesn't stop people from using computers to calculate square roots though. Computer
 		technicians write $\sq[(]$ when they want to compute a square root, as we see in \cref{fun-tab-sqrts}.
 %
-\begin{margintable}\centering
+\begin{margintable}
+\centering
 \captionof{table}{Values of $\sq[x]$}
 \label{fun-tab-sqrts}
 \begin{tabular}{r@{}c@{}l}
@@ -124,7 +126,7 @@ The standard notation for referring to functions involves giving the function it
                                 \\
                         \end{array}\right)\end{displaymath}\end{specialnote}
 %
-\begin{example}\label{}
+\begin{example}
 $f(\num{13})$ is pronounced ``f of 13''. The word ``of'' is very important,
         		because it reminds us that $f$ is a process and we are about to apply that
         		process to the input value \num{13}. So $f$ is the function, \num{13} is the
@@ -165,7 +167,7 @@ While a function has a name like $f$, and the input to that function often
        		to be multiplied. It all depends on the context in which these symbols are being used.
 %
 \begin{checkpoint}
-\begin{problem}\label{}
+\begin{problem}
 Describe your own example of a function using experience from your life. You will need some 
                     kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
 				need a process for turning that number into a different kind of number. The process does not need to
@@ -200,7 +202,7 @@ Answers will vary.
 \typeout{Subsection 1.1.1 Tables and Graphs}
 \typeout{************************************************}
 %
-\subsection{Tables and Graphs}\label{}
+\subsection{Tables and Graphs}
 %
 Since functions are potentially so complicated, we seek out new ways to understand
         		them better. Two basic tools for understanding a function better are tables and graphs.
@@ -215,7 +217,8 @@ Consider the function $\operatorname{BudgetDeficit}$, that takes in a year as
 				website\footnote{\href{http://data.bls.gov/timeseries/LNS14000000}{Congressional Budget Office}}, we put together 
 				\cref{fun-tab-BudgetDeficit}.
 %
-\begin{table}[thb]\centering
+\begin{table}[thb]
+\centering
 \caption{}
 \label{fun-tab-BudgetDeficit}
 \begin{tabular}{S[table-format=4.0]S[table-format=1.2]}
@@ -246,7 +249,8 @@ Consider the function $\operatorname{BudgetDeficit}$, that takes in a year as
 \begin{example}\label{fun-ex-sqrttable}
 Let's return to our example of the function $\sq$. Tabulating some inputs and outputs reveals \cref{fun-tab-sqrtexample}.
 %
-\begin{table}[thb]\centering
+\begin{table}[thb]
+\centering
 \caption{}
 \label{fun-tab-sqrtexample}
 \begin{tabular}{S[table-format=1.0]c}
@@ -286,7 +290,8 @@ Returning to the function $\operatorname{BudgetDeficit}$ that we studied in \cre
         			Since there was not any actual data for inputs in between any two years, the curve is dashed. In other words, this curve is dashed because 
 				it just represents someone's best guess as to how to connect the plotted points. Only the plotted points themselves are precise.
 %
-\begin{table}[thb]\centering
+\begin{table}[thb]
+\centering
 \caption{}
 \label{fun-tab-BudgetDeficitCoords}
 \begin{tabular}{*{1}{c}}
@@ -312,7 +317,8 @@ $(2011, 1.29)$\\\lastline
 Now let's construct a graph for $\sq$. Tabulating inputs and outputs gives the points in \cref{fun-tab-sqrtCoords}, which in turn gives us the 
 				graph in \cref{fun-fig-sqrt}.
 %
-\begin{table}[thb]\centering
+\begin{table}[thb]
+\centering
 \caption{}
 \label{fun-tab-sqrtCoords}
 \begin{tabular}{*{1}{c}}
@@ -361,7 +367,8 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
                         \addplot{x};
                         \end{axis}
                     \end{tikzpicture}
-                  \caption{caption text goes here\label{fun-fig-readgraph}}
+                  \caption{caption text goes here}
+\label{fun-fig-readgraph}
 \end{figure}
 %
 \begin{figure}[!htbp]
@@ -372,7 +379,7 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
                         \addplot{x};
                         \end{axis}
                     \end{tikzpicture}
-                  \caption{caption text goes here\label{}}
+                  \caption{caption text goes here}
 \end{figure}
 %
 \par In \cref{fun-fig-readgraph} we have a graph of a function $f$. If we wish to find $f(1)$, we recognize that \num{1} is being used as an input.
@@ -380,7 +387,7 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
 			the only such point is $(1,2)$. Therefore the output for \num{1} is \num{2}; in other words $f(1)=2$.
 %
 \begin{checkpoint}
-\begin{problem}\label{}
+\begin{problem}
 Use the graph of $f$ in \cref{fun-fig-readgraph} to find $f(0)$, $f(3)$, and $f(4)$.
 %
 \begin{longsolution}
@@ -413,7 +420,7 @@ $f(0)=0.5$, $f(3)=3$, and $f(4)=2$
 \typeout{Section 1.2 foo}
 \typeout{************************************************}
 %
-\section{foo}\label{}
+\section{foo}
 %
 here is another section
 %
@@ -421,7 +428,7 @@ here is another section
 \typeout{Section 1.3 bar}
 \typeout{************************************************}
 %
-\section{bar}\label{}
+\section{bar}
 %
 here is another section
 %
@@ -429,7 +436,7 @@ here is another section
 \typeout{Chapter 2 Exponential functions}
 \typeout{************************************************}
 %
-\chapter{Exponential functions}\label{}
+\chapter{Exponential functions}
 %
 \begin{comment}
 This file was created using ./xsl/omd2tex.xsl,
@@ -480,7 +487,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
 %
 \section{Method}\label{secondsection}
 %
-\begin{problem}\label{}
+\begin{problem}
 Describe your own example of a function using experience from your life. You will need some 
                     kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
 				need a process for turning that number into a different kind of number. The process does not need to
@@ -503,11 +510,11 @@ Answers will vary.
 %
 \end{problem}
 %
-\begin{definition}[Function]\label{}
+\begin{definition}[Function]
 A function is a process for turning numbers into (potentially) different numbers. 
 			It's important that any input consistently produces the same output.\end{definition}
 %
-\begin{example}\label{}
+\begin{example}
 Think about each of these examples. How do they fit the defintion of a function?
 %
 \begin{itemize}

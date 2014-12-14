@@ -1152,8 +1152,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates />
     <xsl:text>\caption{</xsl:text>
     <xsl:apply-templates select="caption/node()" />
-    <xsl:apply-templates select="." mode="label"/>
     <xsl:text>}&#xa;</xsl:text>
+    <xsl:apply-templates select="." mode="label"/>
     <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
@@ -1207,14 +1207,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:choose>
         <!-- margin table -->
         <xsl:when test="@style='margin'">
-            <xsl:text>\begin{margintable}\centering&#xa;</xsl:text>
+            <xsl:text>\begin{margintable}&#xa;\centering&#xa;</xsl:text>
             <xsl:apply-templates />
             <xsl:text>\end{margintable}&#xa;</xsl:text>
             <xsl:text>%&#xa;</xsl:text>
         </xsl:when>
         <!-- normal table -->
         <xsl:otherwise>
-            <xsl:text>\begin{table}[thb]\centering&#xa;</xsl:text>
+            <xsl:text>\begin{table}[thb]&#xa;\centering&#xa;</xsl:text>
             <xsl:apply-templates />
             <xsl:text>\end{table}&#xa;</xsl:text>
             <xsl:text>%&#xa;</xsl:text>
@@ -1236,10 +1236,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xsl:text>}&#xa;</xsl:text>
         </xsl:otherwise>
     </xsl:choose>
-    <xsl:if test="../@xml:id">
-        <xsl:apply-templates select=".." mode="label" />
-        <xsl:text>&#xa;</xsl:text>
-    </xsl:if>
+    <xsl:apply-templates select=".." mode="label" />
 </xsl:template>
 
 <xsl:template match="num">
@@ -1392,9 +1389,16 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- a \label, generally someplace that can be numbered      -->
 <!-- Could do optionally: <xsl:apply-templates select="." mode="xref-identifier" />  -->
 <xsl:template match="*" mode="label">
-    <xsl:text>\label{</xsl:text>
-    <xsl:value-of select="@xml:id" />
-    <xsl:text>}</xsl:text>
+    <!-- only add a \label if an @xml:id exists -->
+    <xsl:if test="@xml:id">
+        <xsl:text>\label{</xsl:text>
+        <xsl:value-of select="@xml:id" />
+        <xsl:text>}</xsl:text>
+        <!-- add a new line if we're in a table or figure environment -->
+        <xsl:if test="name()='table' or name()='figure'">
+            <xsl:text>&#xa;</xsl:text>
+        </xsl:if>
+    </xsl:if>
 </xsl:template>
 
 
