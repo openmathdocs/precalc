@@ -57,3 +57,16 @@ div.figure {
     width:50%;
     align:center;
   }
+
+/* div boxes for multiple objects such as minipages, subfigures, subtables, etc */
+#wrapper {
+    width: 100%;
+    position: relative;
+    align:center;
+    text-align:center; 
+}
+#columns {
+    width: 50%;
+    float: left;
+}
+#filler { clear: both; }

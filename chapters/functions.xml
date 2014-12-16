@@ -405,6 +405,63 @@
 			</checkpoint>
 		</subsection>
 
+        <multobjects type="table">
+          <div width="33%">
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\operatorname{BudgetDeficit}(x))</m></entry></row>
+						</thead>
+						<tbody>
+							<row><entry><m>(2007, 0.16)</m></entry></row>
+                                                        <row><entry><m>(2008, 0.46)</m></entry></row>
+                                                        <row><entry><m>(2009, 1.41)</m></entry></row>
+                                                        <row><entry><m>(2010, 1.30)</m></entry></row>
+                                                        <row><entry><m>(2011, 1.29)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
+          </div>
+          <div width="33%">
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\operatorname{BudgetDeficit}(x))</m></entry></row>
+						</thead>
+						<tbody>
+							<row><entry><m>(2007, 0.16)</m></entry></row>
+                                                        <row><entry><m>(2008, 0.46)</m></entry></row>
+                                                        <row><entry><m>(2009, 1.41)</m></entry></row>
+                                                        <row><entry><m>(2010, 1.30)</m></entry></row>
+                                                        <row><entry><m>(2011, 1.29)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
+          </div>
+          <div width="33%">
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\operatorname{BudgetDeficit}(x))</m></entry></row>
+						</thead>
+						<tbody>
+							<row><entry><m>(2007, 0.16)</m></entry></row>
+                                                        <row><entry><m>(2008, 0.46)</m></entry></row>
+                                                        <row><entry><m>(2009, 1.41)</m></entry></row>
+                                                        <row><entry><m>(2010, 1.30)</m></entry></row>
+                                                        <row><entry><m>(2011, 1.29)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
+          </div>
+        </multobjects>
+
 	</section>
     <section>
       <title>foo</title>

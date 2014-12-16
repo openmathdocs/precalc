@@ -601,7 +601,38 @@ Note that we use <xsl:text> to insert a blank space
       </xsl:element>
     </xsl:template>
 
+<!-- multiple objects inside one float, 
+        e.g     multiple tables
+                multiple figures 
+                a table and a figure 
+                multiple subfigures
+                multiple subtables-->
+<xsl:template match="multobjects">
+  <!-- create div wrapper -->
+  <xsl:element name="div">
+    <xsl:attribute name="id">wrapper</xsl:attribute>
+      <xsl:apply-templates />
+  </xsl:element>
+  <!-- create filler div box -->
+  <xsl:element name="div">
+    <xsl:attribute name="id">filler</xsl:attribute>
+  </xsl:element>
+</xsl:template>
 
+<xsl:template match="multobjects/div">
+  <xsl:element name="div">
+    <!-- if width is defined, then use it, 
+         otherwise the default will be used from omd.css -->
+    <xsl:if test="@width">
+        <xsl:attribute name="style">
+          <xsl:text>width:</xsl:text>
+                <xsl:value-of select="./@width"/>
+        </xsl:attribute>
+    </xsl:if>
+    <xsl:attribute name="id">columns</xsl:attribute>
+    <xsl:apply-templates />
+  </xsl:element>
+</xsl:template>
 
 <!-- Citations, Cross-References -->
 <!-- Each a bit different in style of link (eg knowl), or content of link (eg "here") -->
