@@ -505,7 +505,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Captions are handled specially                         -->
 <!-- so get killed via apply-templates                      -->
 <!-- When needed, get content with XPath, eg caption/node() -->
-<xsl:template match="caption"></xsl:template>
+<xsl:template match="caption"/>
 
 <!-- Logos (images) -->
 <!-- Fine-grained placement of graphics files on pages      -->
@@ -1157,6 +1157,82 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
+<!-- multiple objects inside one float, 
+        e.g     multiple tables
+                multiple figures 
+                a table and a figure 
+                multiple subfigures
+                multiple subtables
+
+     <multobjects> 
+     <multobjects type="table"> 
+     <multobjects type="table" TeXFloatOptions="!ht"> 
+     <multobjects TeXFloatOptions="!ht"> 
+                -->
+<xsl:template match="multobjects">
+    <xsl:variable name="floatname">
+        <xsl:choose>
+            <xsl:when test="@type=table">
+              <xsl:text>table</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>figure</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <!-- set up \begin{table|figure}[float options]-->
+    <xsl:text>&#xa;\begin{</xsl:text><xsl:value-of select="$floatname"/><xsl:text>}[</xsl:text>
+        <xsl:choose>
+          <xsl:when test="@TeXFloatOptions">
+            <xsl:value-of select="@TeXFloatOptions" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>!htbp</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+     <xsl:text>]</xsl:text>
+     <!-- insert figure or table code-->
+     <xsl:apply-templates />
+     <!-- \end{table|figure}-->
+    <xsl:text>\end{</xsl:text><xsl:value-of select="$floatname"/><xsl:text>}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="multobjects/div">
+    <xsl:text>%</xsl:text>
+        <xsl:apply-templates />
+    <xsl:text>%</xsl:text>
+</xsl:template>
+
+<!-- the width of the div box is translated into 
+     a fraction of \textwidth 
+     we do this by stripping the % sign, and 
+     adding a leading .
+     for example 50% is turned into .5 
+
+     div box is turned into minipage 
+     
+     <div width="25%"> turns into \begin{minipage}{.25\textwidth}
+     <div>             turns into \begin{minipage}{.5\textwidth}
+     -->
+<xsl:template match="multobjects/div/figure">
+    <xsl:variable name="width">
+        <xsl:choose>
+            <xsl:when test="@width">
+                <xsl:value-of select="@width" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>50%</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <xsl:variable name="length" select="string-length($width)"/>
+    <xsl:text>\begin{minipage}{.</xsl:text>
+        <xsl:value-of select="substring($width,1,($length - 1))"/>
+        <xsl:text>\textwidth}&#xa;\centering</xsl:text>
+        <xsl:apply-templates />
+    <xsl:text>\end{minipage}%</xsl:text>
+</xsl:template>
+
 <!-- create an empty template for figure descriptions -->
 <xsl:template match="figure/description"/>
 
@@ -1222,11 +1298,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:choose>
 </xsl:template>
 
-<!-- caption for a table -->
-<xsl:template match="table/caption">
+<!-- caption for a figure or table -->
+<xsl:template match="table/caption|figure/caption">
     <xsl:choose>
         <xsl:when test="../@style='margin'">
-            <xsl:text>\captionof{table}{</xsl:text>
+          <!-- this bit will produce \captionof{table}{} or \captionof{figure}{} as appropriate -->
+          <xsl:text>\captionof{</xsl:text>
+          <xsl:value-of select="local-name(..)" />
+          <xsl:text>}{</xsl:text>
                 <xsl:apply-templates />
             <xsl:text>}&#xa;</xsl:text>
         </xsl:when>

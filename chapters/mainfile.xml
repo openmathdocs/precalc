@@ -32,7 +32,7 @@
          reference: http://xml.silmaril.ie/includes.html -->
     <book>
     &functions;
-    &exponentialfunctions;
+    <!--&exponentialfunctions;-->
     </book>
 </mathbook>
 

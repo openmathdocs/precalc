@@ -369,6 +369,8 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
                     \end{tikzpicture}
                   \caption{caption text goes here}
 \label{fun-fig-readgraph}
+\caption{caption text goes here}
+\label{fun-fig-readgraph}
 \end{figure}
 %
 \begin{figure}[!htbp]
@@ -380,6 +382,7 @@ Given a function $f$, when we refer to a \emph{graph of $f$} we are \emph{not} r
                         \end{axis}
                     \end{tikzpicture}
                   \caption{caption text goes here}
+\caption{caption text goes here}
 \end{figure}
 %
 \par In \cref{fun-fig-readgraph} we have a graph of a function $f$. If we wish to find $f(1)$, we recognize that \num{1} is being used as an input.
@@ -416,6 +419,56 @@ $f(0)=0.5$, $f(3)=3$, and $f(4)=2$
 %
 \end{checkpoint}
 %
+\cref{test-table}
+\begin{figure}[h]
+          %
+				\begin{minipage}{.50\textwidth}
+\centering
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here}
+\end{minipage}%
+          %
+          %
+				\begin{minipage}{.50\textwidth}
+\centering
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here}
+\end{minipage}%
+          %
+         \end{figure}
+
+\begin{figure}[h]
+          %
+				\begin{minipage}{.50\textwidth}
+\centering
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here}
+\end{minipage}%
+          %
+          %
+				\begin{minipage}{.50\textwidth}
+\centering
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  \caption{caption text goes here}
+\end{minipage}%
+          %
+         \end{figure}
 \typeout{************************************************}
 \typeout{Section 1.2 foo}
 \typeout{************************************************}
@@ -431,99 +484,4 @@ here is another section
 \section{bar}
 %
 here is another section
-%
-\typeout{************************************************}
-\typeout{Chapter 2 Exponential functions}
-\typeout{************************************************}
-%
-\chapter{Exponential functions}
-%
-\begin{comment}
-This file was created using ./xsl/omd2tex.xsl,
-there is no point in editing it :)
-
-This file is all about exponential functions.
-\end{comment}
-
-\typeout{************************************************}
-\typeout{Section 2.1 Introduction}
-\typeout{************************************************}
-%
-\section{Introduction}\label{firstsection}
-%
-\begin{outcomes}
-\begin{outcomelist}
-\item  Explore increasing and decreasing functions, particularly in the context of concavity;%
-\item  Determine a function's concavity based on a table of values, a graph, or a description. %
-\end{outcomelist}
-\end{outcomes}
-
-In our mathematical adventures so far we have studied linear, quadratic, 
-and radical functions. The simplicity of these functions is useful when 
-introducing new concepts such as transformations, composition, and 
-inverse functions; but it is somewhat restrictive when we wish to 
-consider interesting real-world application problems. 
-\cref{firstsection} 
-\Cref{firstsection} 
-\vref{firstsection} 
-\Vref{firstsection} 
-
-%
-\par 
-HERE:
-\crefrange{firstsection}{secondsection} 
-\Crefrange{firstsection}{secondsection}                
-\vrefrange{firstsection}{secondsection}                      
-\Vrefrange{firstsection}{secondsection} 
-DONE
-
-need to fix referencing so that it uses *our* ID (at the very least in the .tex version)
-need to work out how to define a 'xrefRange' command (two arguments???)
-  
-%
-\typeout{************************************************}
-\typeout{Section 2.2 Method}
-\typeout{************************************************}
-%
-\section{Method}\label{secondsection}
-%
-\begin{problem}
-Describe your own example of a function using experience from your life. You will need some 
-                    kind of input variable, like ``number of years since 2000'' or ``weight of a bowling ball''. You will 
-				need a process for turning that number into a different kind of number. The process does not need to
-                		involve a formula; a verbal description would be fine.
-%
-\par Give your function a name. Write the symbol that you would use to represent
-                		input. Write the symbol(s) that you would use to represent output.
-%
-\begin{longsolution}
-%
-Answers will vary.
-%
-\end{longsolution}
-%
-\begin{shortsolution}
-%
-Answers will vary.
-%
-\end{shortsolution}
-%
-\end{problem}
-%
-\begin{definition}[Function]
-A function is a process for turning numbers into (potentially) different numbers. 
-			It's important that any input consistently produces the same output.\end{definition}
-%
-\begin{example}
-Think about each of these examples. How do they fit the defintion of a function?
-%
-\begin{itemize}
-\item If you use the year a person was born to determine how old they are, you are using a function.%
-\item If you look up the Kelly Blue Book value of a Mazda Proteg\'{ e} based on how old it is, 
-				you are using a function.%
-\item If you use the the amount of money that you have on you to determine how many beers you could buy for 
-				your friends at the bar, you are using a function.%
-\end{itemize}
-%
-\end{example}
 %
