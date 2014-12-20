@@ -1207,7 +1207,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      a fraction of \textwidth 
      we do this by stripping the % sign, and 
      adding a leading .
-     for example 50% is turned into .5 
+     for example 50% is turned into .50\textwith
 
      div box is turned into minipage 
      
@@ -1215,10 +1215,11 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      <div>             turns into \begin{minipage}{.5\textwidth}
      -->
 <xsl:template match="multobjects/div/figure">
+    <!-- process the width attritbute, give a default of 50% if not present -->
     <xsl:variable name="width">
         <xsl:choose>
-            <xsl:when test="@width">
-                <xsl:value-of select="@width" />
+            <xsl:when test="../@width">
+                <xsl:value-of select="../@width" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>50%</xsl:text>
@@ -1226,16 +1227,33 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </xsl:choose>
     </xsl:variable>
     <xsl:variable name="length" select="string-length($width)"/>
-    <xsl:text>\begin{minipage}{.</xsl:text>
-        <xsl:value-of select="substring($width,1,($length - 1))"/>
-        <xsl:text>\textwidth}&#xa;\centering</xsl:text>
-        <xsl:apply-templates />
-    <xsl:text>\end{minipage}%</xsl:text>
+    <!-- the multobjects can receive a children key which can be subfigure, subtable, for example -->
+    <xsl:variable name="envName">
+        <xsl:choose>
+            <xsl:when test="../../@TeXchildren">
+                <xsl:value-of select="../../@TeXchildren" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>minipage</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <!-- bring it all together into an environment -->
+    <xsl:text>\begin{</xsl:text>
+    <xsl:value-of select="$envName"/>
+    <xsl:text>}{.</xsl:text>
+    <xsl:value-of select="substring($width,1,($length - 1))"/>
+    <xsl:text>\textwidth}&#xa;\centering</xsl:text>
+    <!-- body of the table|figure -->
+    <xsl:apply-templates />
+    <!-- \end{minipage|subfigure|subtable} -->
+    <xsl:text>\end{</xsl:text>
+    <xsl:value-of select="$envName"/>
+    <xsl:text>}%</xsl:text>
 </xsl:template>
 
 <!-- create an empty template for figure descriptions -->
 <xsl:template match="figure/description"/>
-
 
 <!-- Images -->
 <xsl:template match="image" >

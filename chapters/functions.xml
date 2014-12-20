@@ -433,7 +433,7 @@
           </div>
          </multobjects>
 
-        <multobjects TeXFloatOptions="h">
+        <multobjects TeXFloatOptions="h" TeXchildren="subtable">
           <div width="50%">
 				<figure>
                   <code>
@@ -446,7 +446,7 @@
                   <caption>caption text goes here</caption>
                 </figure>
           </div>
-          <div width="50%">
+          <div width="25%">
 				<figure>
                   <code>
                     \begin{tikzpicture}
@@ -455,7 +455,7 @@
                         \end{axis}
                     \end{tikzpicture}
                   </code>
-                  <caption>caption text goes here</caption>
+                  <caption>keep the change, you filthy animal</caption>
                 </figure>
           </div>
          </multobjects>
