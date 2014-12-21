@@ -425,6 +425,23 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   <xsl:number level="any" count="table|multobjects[@type='table']"/>
 </xsl:template>
 
+<!-- subfigures have the form <chapter>.<figure>.(<subfigure>) 
+     when called in number mode -->
+<xsl:template match="multobjects[@children='subfigure']/div/figure" mode="number">
+  <xsl:apply-templates select="ancestor::multobjects[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:text>(</xsl:text>
+  <xsl:number format="a" count="multobjects[@children='subfigure']/div"/>
+  <xsl:text>)</xsl:text>
+</xsl:template>
+
+<!-- subfigures have captions (a), (b), so need a different mode -->
+<xsl:template match="multobjects[@children='subfigure']/div/figure" mode="caption">
+  <xsl:text>(</xsl:text>
+  <xsl:number format="a" count="multobjects[@children='subfigure']/div"/>
+  <xsl:text>)</xsl:text>
+</xsl:template>
+
 <xsl:template match="multobjects" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
        node with name chapter

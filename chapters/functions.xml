@@ -453,9 +453,8 @@
          </multobjects>
 
         <multobjects xml:id="multipleobjectstest" type="figure" TeXFloatOptions="h" children="subfigure">
-          <caption>global caption goes here</caption>
           <div width="50%">
-				<figure>
+				<figure xml:id="subfigure-test">
                   <code>
                     \begin{tikzpicture}
                         \begin{axis}
@@ -478,11 +477,19 @@
                   <caption>keep the change, you filthy animal</caption>
                 </figure>
           </div>
+          <caption>global caption goes here</caption>
          </multobjects>
          <p>
            Test cross references to global captions:
          <xref ref="multipleobjectstest"/>
+         <p>
+          </p>
             <xref ref="test-table"/>
+          </p>
+         <p>
+            <xref ref="subfigure-test"/>
+          </p>
+         <p>
             These anchors need fixing in html
           </p>
 	</section>
