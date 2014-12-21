@@ -573,9 +573,19 @@ Note that we use <xsl:text> to insert a blank space
         <xsl:text>-</xsl:text>
         <xsl:apply-templates select=".." mode="number"/>
       </xsl:attribute>
-      <xsl:apply-templates select=".." mode="type-name"/>
-      <xsl:text> </xsl:text>
-      <xsl:apply-templates select=".." mode="number"/>
+     <!-- subtable captions don't have 'table' in the caption -->
+     <xsl:choose>
+      <xsl:when test="not(../../../@children='subtable')">
+        <!-- regular tables, e.g Table 1.3 -->
+        <xsl:apply-templates select=".." mode="type-name"/>
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates select=".." mode="number"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- subtables, e.g (a), (b), (c), etc -->
+        <xsl:apply-templates select=".." mode="caption"/>
+      </xsl:otherwise>
+     </xsl:choose>
     </xsl:element>
     <!-- test that the caption element is not empty
              something; if so, then use a : and a space, and put the caption text in-->
@@ -633,7 +643,8 @@ Note that we use <xsl:text> to insert a blank space
                 multiple subfigures
                 multiple subtables-->
 
-<!-- figures receive their anchor at the beginning -->
+<!-- figures receive their anchor at the beginning 
+     but their caption at the end -->
 <xsl:template match="multobjects[@type='figure']">
   <!-- create an anchor -->
   <xsl:if test="caption">
@@ -663,6 +674,36 @@ Note that we use <xsl:text> to insert a blank space
       <xsl:apply-templates select="caption"/>
     </xsl:element>
   </xsl:if>
+</xsl:template>
+
+<!-- tables receive their anchor and caption at the beginning -->
+<xsl:template match="multobjects[@type='table']">
+  <!-- create an anchor -->
+  <xsl:if test="caption">
+      <xsl:element name="a">
+        <xsl:attribute name="class">anchor</xsl:attribute>
+        <xsl:attribute name="name">
+          <xsl:apply-templates select="." mode="type-name"/>
+          <xsl:text>-</xsl:text>
+          <xsl:apply-templates select="." mode="number"/>
+        </xsl:attribute>
+        <xsl:element name="div">
+          <xsl:attribute name="align">center</xsl:attribute>
+          <xsl:apply-templates select="caption"/>
+        </xsl:element>
+      </xsl:element>
+   </xsl:if>
+  <!-- create div wrapper -->
+  <xsl:element name="div">
+  <!-- if a 'global' caption exists, then we may need an anchor -->
+   <xsl:attribute name="id">wrapper</xsl:attribute>
+      <xsl:apply-templates select="div"/>
+  </xsl:element>
+  <!-- create filler div box -->
+  <xsl:element name="div">
+    <xsl:attribute name="id">filler</xsl:attribute>
+  </xsl:element>
+  <!-- if a 'global' caption exists, process it -->
 </xsl:template>
 
 <xsl:template match="multobjects/div">

@@ -415,7 +415,7 @@
         <multobjects type="table" TeXFloatOptions="h" xml:id="test-table" children="subtable">
           <caption>global caption goes here</caption>
           <div width="50%">
-				<table>
+				<table xml:id="firstsubtable">
 				<caption />
 					<tgroup cols="1" align="center">
 						<thead>
@@ -490,8 +490,40 @@
             <xref ref="subfigure-test"/>
           </p>
          <p>
-            These anchors need fixing in html
+            <xref ref="firstsubtable"/>
           </p>
+        <multobjects type="figure">
+          <div width="50%">
+				<figure>
+                  <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption>caption text goes here</caption>
+                </figure>
+          </div>
+          <div width="25%">
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\sq(x))</m></entry></row>
+						</thead>
+						<tbody>
+                                                        <row><entry><m>(0,0)</m></entry></row>
+                                                        <row><entry><m>(1,1)</m></entry></row>
+                                                        <row><entry><m>\approx(2,1.41)</m></entry></row>
+                                                        <row><entry><m>\approx(3,1.73)</m></entry></row>
+							<row><entry><m>(4,2)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
+          </div>
+         </multobjects>
 	</section>
     <section>
       <title>foo</title>
