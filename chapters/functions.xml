@@ -412,35 +412,47 @@
 			</checkpoint>
 		</subsection>
 
-        <multobjects type="table" TeXFloatOptions="h" xml:id="test-table">
+        <multobjects type="table" TeXFloatOptions="h" xml:id="test-table" children="subtable">
           <caption>global caption goes here</caption>
           <div width="50%">
-				<figure>
-                  <code>
-                    \begin{tikzpicture}
-                        \begin{axis}
-                        \addplot{x};
-                        \end{axis}
-                    \end{tikzpicture}
-                  </code>
-                  <caption>caption text goes here</caption>
-                </figure>
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\sq(x))</m></entry></row>
+						</thead>
+						<tbody>
+                                                        <row><entry><m>(0,0)</m></entry></row>
+                                                        <row><entry><m>(1,1)</m></entry></row>
+                                                        <row><entry><m>\approx(2,1.41)</m></entry></row>
+                                                        <row><entry><m>\approx(3,1.73)</m></entry></row>
+							<row><entry><m>(4,2)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
           </div>
           <div width="50%">
-				<figure>
-                  <code>
-                    \begin{tikzpicture}
-                        \begin{axis}
-                        \addplot{x};
-                        \end{axis}
-                    \end{tikzpicture}
-                  </code>
-                  <caption>caption text goes here</caption>
-                </figure>
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\sq(x))</m></entry></row>
+						</thead>
+						<tbody>
+                                                        <row><entry><m>(0,0)</m></entry></row>
+                                                        <row><entry><m>(1,1)</m></entry></row>
+                                                        <row><entry><m>\approx(2,1.41)</m></entry></row>
+                                                        <row><entry><m>\approx(3,1.73)</m></entry></row>
+							<row><entry><m>(4,2)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
           </div>
          </multobjects>
 
-        <multobjects xml:id="multipleobjectstest" type="figure" TeXFloatOptions="h" TeXchildren="subtable">
+        <multobjects xml:id="multipleobjectstest" type="figure" TeXFloatOptions="h" children="subfigure">
           <caption>global caption goes here</caption>
           <div width="50%">
 				<figure>

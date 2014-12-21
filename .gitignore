@@ -26,4 +26,5 @@ knowl
 chapters/figures/*.tex
 chapters/figures/*.svg
 chapters/*.html
+chapters/.html
 chapters/*.tex

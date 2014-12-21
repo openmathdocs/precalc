@@ -1167,7 +1167,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="multobjects">
     <xsl:variable name="floatname">
         <xsl:choose>
-            <xsl:when test="@type=table">
+            <xsl:when test="@type='table'">
               <xsl:text>table</xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -1213,7 +1213,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      <div width="25%"> turns into \begin{minipage}{.25\textwidth}
      <div>             turns into \begin{minipage}{.5\textwidth}
      -->
-<xsl:template match="multobjects/div/figure">
+<xsl:template match="multobjects/div/figure|multobjects/div/table">
     <!-- process the width attritbute, give a default of 50% if not present -->
     <xsl:variable name="width">
         <xsl:choose>
@@ -1229,8 +1229,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <!-- the multobjects can receive a children key which can be subfigure, subtable, for example -->
     <xsl:variable name="envName">
         <xsl:choose>
-            <xsl:when test="../../@TeXchildren">
-                <xsl:value-of select="../../@TeXchildren" />
+            <xsl:when test="../../@children">
+                <xsl:value-of select="../../@children" />
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>minipage</xsl:text>

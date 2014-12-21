@@ -422,7 +422,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
        see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="table"/>
+  <xsl:number level="any" count="table|multobjects[@type='table']"/>
 </xsl:template>
 
 <xsl:template match="multobjects" mode="number">
