@@ -741,9 +741,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Unnumbered, single displayed equation -->
 <!-- Output follows source line breaks     -->
 <xsl:template match="me">
-    <xsl:text>\begin{displaymath}</xsl:text>
+    <xsl:text>\[</xsl:text>
     <xsl:value-of select="." />
-    <xsl:text>\end{displaymath}</xsl:text>
+    <xsl:text>\]&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Numbered, single displayed equation -->
@@ -1140,7 +1140,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <!-- Figures and Captions -->
-<!-- http://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned -->
 <xsl:template match="figure">
     <xsl:text>\begin{figure}[</xsl:text>
     <xsl:choose>
@@ -1150,10 +1149,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>]&#xa;</xsl:text>
     <xsl:text>\centering&#xa;</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>\caption{</xsl:text>
-    <xsl:apply-templates select="caption/node()" />
-    <xsl:text>}&#xa;</xsl:text>
-    <xsl:apply-templates select="." mode="label"/>
     <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
@@ -1190,7 +1185,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xsl:text>!htbp</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
-     <xsl:text>]</xsl:text>
+     <xsl:text>]&#xa;\centering&#xa;</xsl:text>
      <!-- insert figure or table code-->
      <xsl:apply-templates />
      <!-- \end{table|figure}-->
@@ -1200,7 +1195,11 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="multobjects/div">
     <xsl:text>%</xsl:text>
         <xsl:apply-templates />
+</xsl:template>
+
+<xsl:template match="figure/code">
     <xsl:text>%</xsl:text>
+        <xsl:apply-templates />
 </xsl:template>
 
 <!-- the width of the div box is translated into 
@@ -1317,7 +1316,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <!-- caption for a figure or table -->
-<xsl:template match="table/caption|figure/caption">
+<xsl:template match="table/caption|figure/caption|multobjects/caption">
     <xsl:choose>
         <xsl:when test="../@style='margin'">
           <!-- this bit will produce \captionof{table}{} or \captionof{figure}{} as appropriate -->

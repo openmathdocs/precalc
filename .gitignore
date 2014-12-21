@@ -19,7 +19,10 @@ longsolutions*
 *.idx
 *.maf
 *.pdf
+*.bak
 derivatives.html
 myfile.*
 knowl
+chapters/figures
 chapters/*.html
+chapters/*.tex

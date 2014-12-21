@@ -601,6 +601,21 @@ Note that we use <xsl:text> to insert a blank space
       </xsl:element>
     </xsl:template>
 
+<!-- figure|table captions for multiple objects -->
+<xsl:template match="multobjects/caption">
+  <xsl:element name="caption">
+         <xsl:apply-templates select=".." mode="type-name"/>
+         <xsl:text> </xsl:text>
+         <xsl:apply-templates select=".." mode="number"/>
+         <!-- test that the caption element is not empty
+                  something; if so, then use a : and a space, and put the caption text in-->
+         <xsl:if test=".!=''">
+           <xsl:text>: </xsl:text>
+           <xsl:apply-templates />
+         </xsl:if>
+    </xsl:element>
+</xsl:template>
+
 <!-- multiple objects inside one float, 
         e.g     multiple tables
                 multiple figures 
