@@ -410,10 +410,10 @@
 					</answer>
 				</exercise>
 			</checkpoint>
-            <xref ref="test-table"/>
 		</subsection>
 
-        <multobjects type="table" TeXFloatOptions="h">
+        <multobjects type="table" TeXFloatOptions="h" xml:id="test-table">
+          <caption>global caption goes here</caption>
           <div width="50%">
 				<figure>
                   <code>
@@ -440,7 +440,7 @@
           </div>
          </multobjects>
 
-        <multobjects TeXFloatOptions="h" TeXchildren="subtable">
+        <multobjects xml:id="multipleobjectstest" type="figure" TeXFloatOptions="h" TeXchildren="subtable">
           <caption>global caption goes here</caption>
           <div width="50%">
 				<figure>
@@ -467,7 +467,12 @@
                 </figure>
           </div>
          </multobjects>
-
+         <p>
+           Test cross references to global captions:
+         <xref ref="multipleobjectstest"/>
+            <xref ref="test-table"/>
+            These anchors need fixing in html
+          </p>
 	</section>
     <section>
       <title>foo</title>

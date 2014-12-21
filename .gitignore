@@ -23,6 +23,7 @@ longsolutions*
 derivatives.html
 myfile.*
 knowl
-chapters/figures
+chapters/figures/*.tex
+chapters/figures/*.svg
 chapters/*.html
 chapters/*.tex

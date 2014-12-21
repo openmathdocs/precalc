@@ -270,9 +270,18 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- which provides the named template, type-name   -->
 <!-- This template allows a node to report its name -->
 <xsl:template match="*" mode="type-name">
-    <xsl:call-template name="type-name">
-        <xsl:with-param name="generic" select="local-name(.)" />
-    </xsl:call-template>
+        <xsl:choose>
+            <xsl:when test="local-name(.)='multobjects'">
+                <xsl:call-template name="type-name">
+                  <xsl:with-param name="generic" select="./@type" />
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="type-name">
+                <xsl:with-param name="generic" select="local-name(.)" />
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
 </xsl:template>
 
 <!-- Identifiers                          -->
@@ -405,7 +414,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
        see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="figure"/>
+  <xsl:number level="any" count="figure|multobjects[@type='figure']"/>
 </xsl:template>
 <xsl:template match="table" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
@@ -414,6 +423,22 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
   <xsl:number level="any" count="table"/>
+</xsl:template>
+
+<xsl:template match="multobjects" mode="number">
+  <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
+       node with name chapter
+       see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
+  <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:choose>
+      <xsl:when test="@type='table'">
+        <xsl:number level="any" count="table|multobjects[@type='table']"/>
+      </xsl:when>
+      <xsl:otherwise test="@type='figure' or not(@type)">
+        <xsl:number level="any" count="figure|multobjects[@type='figure']"/>
+      </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <!-- Two-level numbering for book with chapters and theorem-like environments -->

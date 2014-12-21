@@ -603,6 +603,7 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- figure|table captions for multiple objects -->
 <xsl:template match="multobjects/caption">
+  <xsl:element name="div">
   <xsl:element name="caption">
          <xsl:apply-templates select=".." mode="type-name"/>
          <xsl:text> </xsl:text>
@@ -613,6 +614,7 @@ Note that we use <xsl:text> to insert a blank space
            <xsl:text>: </xsl:text>
            <xsl:apply-templates />
          </xsl:if>
+    </xsl:element>
     </xsl:element>
 </xsl:template>
 
@@ -691,10 +693,10 @@ Note that we use <xsl:text> to insert a blank space
       <xsl:when test="$target/self::section">
         <xsl:text>Section </xsl:text>
       </xsl:when>
-      <xsl:when test="$target/self::table">
+      <xsl:when test="$target/self::table|$target/self::multobjects[@type='table']">
         <xsl:text>Table </xsl:text>
       </xsl:when>
-      <xsl:when test="$target/self::figure">
+      <xsl:when test="$target/self::figure|$target/self::multobjects[@type='figure']">
         <xsl:text>Figure </xsl:text>
       </xsl:when>
       <xsl:when test="$target/self::example">
