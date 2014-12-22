@@ -457,11 +457,12 @@ Note that we use <xsl:text> to insert a blank space
   <!-- create $identifier variable to be figure-<chapter number>-<figure number> -->
       <xsl:variable name="identifier">
         <xsl:text>figure-</xsl:text>
-        <xsl:apply-templates select=".." mode="number" />
+        <xsl:apply-templates select=".." mode="filename" />
       </xsl:variable>
       <!-- create img element-->
       <xsl:element name="img">
         <xsl:attribute name="src">./figures/<xsl:value-of select="$identifier"/>.svg</xsl:attribute>
+        <xsl:attribute name="width">100%</xsl:attribute>
         <!-- test to see if <description> exists, otherwise put a message -->
         <xsl:choose>
             <xsl:when test="../description!=''">
@@ -486,6 +487,47 @@ Note that we use <xsl:text> to insert a blank space
         <xsl:text>% arara: pdflatex&#xa;</xsl:text>
         <xsl:text>\documentclass[tikz]{standalone}&#xa;</xsl:text>
         <xsl:text>\usepackage{pgfplots}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{backgrounds}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{shadows}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{mindmap}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{backgrounds}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{fit}&#xa;</xsl:text>
+        <xsl:text>\usetikzlibrary{positioning}&#xa;</xsl:text>
+        <xsl:text>\pgfplotscreateplotcyclelist{pccstylelist}{%&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>color=red,mark=none,line width=1pt,&lt;-&gt;\\%&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>color=blue,mark=none,line width=1pt,&lt;-&gt;\\%&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>color=gray,mark=none,line width=1pt,&lt;-&gt;\\%&#xa;</xsl:text>
+        <xsl:text>}&#xa;</xsl:text>
+        <xsl:text>% axis style, ticks, etc&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{every axis/.append style={&#xa;</xsl:text>
+        <xsl:text>					axis x line=middle,    % put the x axis in the middle&#xa;</xsl:text>
+        <xsl:text>					axis y line=middle,    % put the y axis in the middle&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>axis line style={&lt;-&gt;}, % arrows on the axis&#xa;</xsl:text>
+        <xsl:text>                    xlabel={$x$},          % default put x on x-axis&#xa;</xsl:text>
+        <xsl:text>                    ylabel={$y$},          % default put y on y-axis&#xa;</xsl:text>
+        <xsl:text>                    scale only axis,       % otherwise width won't be as intended: http://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width&#xa;</xsl:text>
+        <xsl:text>                    cycle list name=pccstylelist,&#xa;</xsl:text>
+        <xsl:text>                    tick label style={font=\tiny},&#xa;</xsl:text>
+        <xsl:text>                    label style={font=\small},&#xa;</xsl:text>
+        <xsl:text>                    legend cell align=left,&#xa;</xsl:text>
+        <xsl:text>					legend style={font=\tiny},&#xa;</xsl:text>
+        <xsl:text>                    width=\textwidth,&#xa;</xsl:text>
+        <xsl:text>                    every node near coord/.append style={&#xa;</xsl:text>
+        <xsl:text>                            font=\small},&#xa;</xsl:text>
+        <xsl:text>                    }}&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>\pgfplotsset{pccplot/.style={color=red,mark=none,line width=1pt,&lt;-&gt;}} % this is pretty redundant in most cases now that cycle list is implemented&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{asymptote/.style={color=red,mark=none,line width=1pt,dashed}}&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{soldot/.style={color=red,only marks,mark=*}}&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{holdot/.style={color=red,fill=white,only marks,mark=*}}&#xa;</xsl:text>
+        <xsl:text>% bar chart style&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{pccbar/.style={ybar,draw=blue,fill=blue!20}}&#xa;</xsl:text>
+        <xsl:text>% arrow style&#xa;</xsl:text>
+        <xsl:text>\tikzset{>=stealth}&#xa;</xsl:text>
+        <xsl:text>% framing the graphs&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{framed/.style={axis background/.style ={draw=gray}}}&#xa;</xsl:text>
+        <xsl:text>\tikzset{axisnode/.style={font=\tiny,text=black}}&#xa;</xsl:text>
+        <xsl:text>% grid style&#xa;</xsl:text>
+        <xsl:text>\pgfplotsset{grid style={dashed,gray}}&#xa;</xsl:text>
         <xsl:text>\begin{document}&#xa;</xsl:text>
         <xsl:apply-templates />
         <xsl:text>\end{document}</xsl:text>

@@ -31,8 +31,8 @@
     <!-- including other xml files can be done as follows
          reference: http://xml.silmaril.ie/includes.html -->
     <book>
-    &functions;
-    <!--&exponentialfunctions;-->
+      <!--&functions;-->
+    &exponentialfunctions;
     </book>
 </mathbook>
 

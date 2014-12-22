@@ -442,6 +442,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   <xsl:text>)</xsl:text>
 </xsl:template>
 
+<!-- subfigures would usually have (a), but we can't put ( or ) in a filename -->
+<xsl:template match="multobjects[@children='subfigure']/div/figure" mode="filename">
+  <xsl:apply-templates select="ancestor::multobjects[1]" mode="number"/>
+  <xsl:number format="a" count="multobjects[@children='subfigure']/div"/>
+</xsl:template>
+
 <!-- subtables have the form <chapter>.<table>.(<subtable>) 
      when called in number mode -->
 <xsl:template match="multobjects[@children='subtable']/div/table" mode="number">
