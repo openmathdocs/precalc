@@ -272,16 +272,16 @@ need to work out how to define a 'xrefRange' command (two arguments???)
       </chapter>
       <ignore>
 
-        \begin{pccexample}[Rice on a chessboard]\label{exp:prob:queenschessboard}%
+        \begin{pccexample}[Rice on a chessboard]\label{exp-prob-queenschessboard}%
         Many years ago there lived a Queen who loved to play games; so much so, that 
         she had a jester dedicated to devising interesting games for her. The Queen 
         particularly enjoyed mathematical games.
 
-        One day the jester brought her a chessboard (see \cref{exp:fig:grainsofrice}) and a bucket filled with rice. 
+        One day the jester brought her a chessboard (see \cref{exp-fig-grainsofrice}) and a bucket filled with rice. 
         \begin{table}[!htb]
         \centering
         \caption{}
-        \label{exp:tab:grainsofrice}
+        \label{exp-tab-grainsofrice}
         \begin{tabular}[t]{S[table-format=2.0]S[table-format=10.0]}
         \beforeheading
         \heading{square on board} &amp; \heading{grains of rice} \\
@@ -312,7 +312,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
         \end{tikzpicture}
         \captionof{figure}{}
-        \label{exp:fig:grainsofrice}
+        \label{exp-fig-grainsofrice}
         \end{marginfigure}
         The jester asked the Queen to follow these instructions
         \begin{itemize}
@@ -320,7 +320,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item Place 9 grains of rice on the square immediately to the right of the square you were just working with.
         \item Place 27 grains of rice on the square immediately to the right of the square you were just working with.
         \end{itemize}
-        The Queen starts to notice a pattern, and records her findings in \cref{exp:tab:grainsofrice}. She also notes
+        The Queen starts to notice a pattern, and records her findings in \cref{exp-tab-grainsofrice}. She also notes
         that as she progresses from square to square, the number of grains appears to be \emph{tripling} each time.
 
         The Queen, being mathematically inclined, decides to try to model 
@@ -340,10 +340,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{$g$}
-        \label{exp:fig:queensgraph}
+        \label{exp-fig-queensgraph}
         \end{marginfigure}
 
-        The Queen notices that each of the numbers she writes in \cref{exp:tab:grainsofrice}
+        The Queen notices that each of the numbers she writes in \cref{exp-tab-grainsofrice}
         can be written as a power of $3$, and concludes that the formula for the number
         of grains on square $x$ of the chessboard is
         \[
@@ -361,7 +361,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         she graphed $g$ on her calculator (which she always has with her for just 
         such a situation). The Queen graphs $g$ on her calculator assuming 
         that $g$ can take values outside of the contextual domain, and 
-        obtains the graph in \cref{exp:fig:queensgraph}.
+        obtains the graph in \cref{exp-fig-queensgraph}.
 
         The Queen concludes that $g$ is increasing at a faster and faster rate, and 
         cannot imagine ever being able to fit the appropriate amount of rice on 
@@ -369,7 +369,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{pccexample}
         \begin{doyouunderstand}
         \begin{problem}
-        Repeat \cref{exp:prob:queenschessboard}, but instead of \emph{tripling} the 
+        Repeat \cref{exp-prob-queenschessboard}, but instead of \emph{tripling} the 
         number of grains of rice on each square, try \emph{quadrupling} them.
         \begin{shortsolution}
         The equivalent of the function $g$ is $h$ and has formula $h(x)=4^x$.
@@ -414,13 +414,13 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{align*}
         Let's try and generalize our results by letting $x$ be the number of 
         paper folds; $x$ will start at 0, and increase in integer values. 
-        \Cref{exp:tab:foldingpaper} has two columns, one for the number of folds (up to 7), and one for the visible surface area 
+        \Cref{exp-tab-foldingpaper} has two columns, one for the number of folds (up to 7), and one for the visible surface area 
         of the (folded) paper. 
         \begin{table}[!htb]
         \begin{minipage}{.5\textwidth}
         \centering
         \captionof{table}{}
-        \label{exp:tab:foldingpaper}
+        \label{exp-tab-foldingpaper}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
         \beforeheading
         \heading{number of folds} &amp; \heading{visible area}           \\
@@ -449,7 +449,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{$y=A(x)$}
-        \label{exp:fig:foldingpaper}
+        \label{exp-fig-foldingpaper}
         \end{minipage}%
         \end{table}
 
@@ -459,7 +459,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         A(x) = 93.5\left(\frac{1}{2}\right)^x
         \]
         where $x=0,1,2,\ldots$. If we allow $A$ to take values outside of its contextual domain, then 
-        we can graph $y=A(x)$ on a graphing calculator, and obtain \cref{exp:fig:foldingpaper}. Notice 
+        we can graph $y=A(x)$ on a graphing calculator, and obtain \cref{exp-fig-foldingpaper}. Notice 
         in particular that $A$ decreases at a slower and slower rate.
         \end{pccexample}
 
@@ -468,8 +468,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   April 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:asymptote}
-        Consider the function $f$ in \cref{exp:fig:expmotivation}. 
+        \begin{pccexample}\label{exp-ex-asymptote}
+        Consider the function $f$ in \cref{exp-fig-expmotivation}. 
         There are a number of features that we can note:
         \begin{itemize}
         \item $f$ is increasing;
@@ -478,7 +478,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item $f(x)\to\infty$ as $x\to\infty$;
         \item the range of $f$ is $(3,\infty)$.
         \end{itemize}
-        Note that $f$ never touches its horizontal asymptote (see \cref{exp:fig:closeup}).
+        Note that $f$ never touches its horizontal asymptote (see \cref{exp-fig-closeup}).
         \end{pccexample}
         \begin{figure}[!htb]
         \begin{minipage}[t]{.5\textwidth}
@@ -498,7 +498,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$f(x)=2^x+3$}
-        \label{exp:fig:expmotivation}
+        \label{exp-fig-expmotivation}
         \end{minipage}%
         \begin{minipage}[t]{.5\textwidth}
         \centering
@@ -519,7 +519,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Close up!}
-        \label{exp:fig:closeup}
+        \label{exp-fig-closeup}
         \end{minipage}%
         \end{figure}
         %===================================
@@ -528,7 +528,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{doyouunderstand}
         \begin{problem}
-        Repeat \cref{exp:ex:asymptote} for each of the functions defined 
+        Repeat \cref{exp-ex-asymptote} for each of the functions defined 
         by the following formulas.
         \end{problem}
         \begin{multicols}{2}
@@ -603,7 +603,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{pccsolution}
         \end{pccexample}
 
-        \begin{pccdefinition}[Growth factor and growth rate]\label{exp:def:growthfactorrate}
+        \begin{pccdefinition}[Growth factor and growth rate]\label{exp-def-growthfactorrate}
         An exponential function $f$ can be written in (at least) two ways.
         \begin{align*}
         f(t) &amp; =a\,b^t &amp; f(t) &amp; =a(1+r)^t 
@@ -662,11 +662,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Let $P(t)$ be the number of bacteria where $t$ is the amount of time that 
         has passed (in minutes) since the population was $50$ bacteria. 
 
-        \Cref{exp:tab:bacterium} shows values of $P(t)$ for the first $27$ hours.
+        \Cref{exp-tab-bacterium} shows values of $P(t)$ for the first $27$ hours.
         \begin{table}[!htb]
         \centering
         \caption{}
-        \label{exp:tab:bacterium}
+        \label{exp-tab-bacterium}
         \begin{tabular}{S[table-format=2.0]S[table-format=3.0]l}
         \beforeheading
         \heading{$t$} &amp; \heading{$P(t)$} &amp; \heading{Exponential form}                 \\
@@ -678,7 +678,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{tabular}
         \end{table}
 
-        We can deduce from \cref{exp:tab:bacterium} that 
+        We can deduce from \cref{exp-tab-bacterium} that 
         \[
         P(t) = 50\cdot 2^{\nicefrac{t}{9}}
         \]
@@ -697,7 +697,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   April 2011
         %===================================
         \begin{problem}[The Legend of Payasam]
-        \Cref{exp:prob:queenschessboard} is a version of the Legend of Payasam. 
+        \Cref{exp-prob-queenschessboard} is a version of the Legend of Payasam. 
 
         According to legend, Lord Krishna once appeared in the form of a sage in the court of a 
         king who ruled a region of southern India. Lord Krishna challenged the king to a game of chess. 
@@ -736,14 +736,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         $2^{15}=32768&gt;21600$. The 15th square.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}[core]\label{exp:prob:greedy}
+        \begin{subproblem}[core]\label{exp-prob-greedy}
         Before we begin our money calculations, write down how much money you would like 
         to get as a prize from the king.
         \begin{shortsolution}
         Answers will vary.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:ricevalue}
+        \begin{subproblem}\label{exp-prob-ricevalue}
         If you were to exchange the rice on the 16th square for money, how much would you get?
         \begin{shortsolution}
         The 16th square would give us $2^{16}/21600\approx 3.03$ bags of rice. We would get approximately \$6
@@ -751,14 +751,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Using the value you obtained in \cref{exp:prob:ricevalue}, determine the value 
+        Using the value you obtained in \cref{exp-prob-ricevalue}, determine the value 
         of the rice on the 17th square.
         \begin{shortsolution}
         Using the previous value of \$6, we would obtain \$12 from the rice on the 17th square.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Using the value you obtained in \cref{exp:prob:ricevalue}, determine the first square 
+        Using the value you obtained in \cref{exp-prob-ricevalue}, determine the first square 
         that would give you more than \$1,000,000 worth of rice.
         \begin{shortsolution}
         $6\cdot 2^{18}\approx 1572864&gt;1000000$. We would only have to get to the 34th square on the board in 
@@ -766,14 +766,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Using the value you obtained in \cref{exp:prob:ricevalue}, determine the value
+        Using the value you obtained in \cref{exp-prob-ricevalue}, determine the value
         of the rice put on the last square. 
         \begin{shortsolution}
         $\$6\cdot 2^{48}\approx \$ 1.68884986\times 10^{15}$. Quite a lot.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        How does the value of the rice on the last square compare to the amount you wrote down in \cref{exp:prob:greedy}?
+        How does the value of the rice on the last square compare to the amount you wrote down in \cref{exp-prob-greedy}?
         \begin{shortsolution}
         Answers will vary.
         \end{shortsolution}
@@ -784,14 +784,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Feb 2011
         %===================================
         \begin{problem}[Changing Rates of Change]
-        \begin{subproblem} \label{exp:prob:graphsofincreasingfunctions}
-        The graphs of several increasing functions are given in \crefrange{exp:fig:functionm}{exp:fig:functiono}.  
+        \begin{subproblem} \label{exp-prob-graphsofincreasingfunctions}
+        The graphs of several increasing functions are given in \crefrange{exp-fig-functionm}{exp-fig-functiono}.  
         For each function, decide whether the function increases at a constant rate, increases at an increasing 
         rate (concave up), or increases at a slower and slower rate (concave down).
         \begin{shortsolution}
-        $m(x)$ in \cref{exp:fig:functionm} is increasing at a faster and faster rate, 
-        $n(x)$ in \cref{exp:fig:functionn} is increasing at a faster and faster rate, 
-        and $o(x)$ in \cref{exp:fig:functiono} is increasing at a slower and slower rate.
+        $m(x)$ in \cref{exp-fig-functionm} is increasing at a faster and faster rate, 
+        $n(x)$ in \cref{exp-fig-functionn} is increasing at a faster and faster rate, 
+        and $o(x)$ in \cref{exp-fig-functiono} is increasing at a slower and slower rate.
         \end{shortsolution}
         \end{subproblem}
 
@@ -808,7 +808,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=m(x)$}
-        \label{exp:fig:functionm}
+        \label{exp-fig-functionm}
         \end{minipage}%
         \hfill
         \begin{minipage}{.25\textwidth}
@@ -823,7 +823,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=n(x)$}
-        \label{exp:fig:functionn}
+        \label{exp-fig-functionn}
         \end{minipage}%
         \hfill
         \begin{minipage}{.25\textwidth}
@@ -838,14 +838,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=o(x)$}
-        \label{exp:fig:functiono}
+        \label{exp-fig-functiono}
         \end{minipage}
         \hfill
         \mbox{}
         \end{figure}
 
-        \begin{subproblem}\label{exp:prob:tablesofincreasingfunctions}
-        \Crefrange{exp:tab:functionp}{exp:tab:functionr} show values for $3$ increasing functions.
+        \begin{subproblem}\label{exp-prob-tablesofincreasingfunctions}
+        \Crefrange{exp-tab-functionp}{exp-tab-functionr} show values for $3$ increasing functions.
         For each function, decide whether the function increases at a constant rate, increases at an increasing 
         rate (concave up), or increases at a slower and slower rate (concave down).
         \begin{shortsolution}
@@ -869,7 +869,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         8             &amp; 38            \\\normalline
         16            &amp; 78            \\\lastline
         \end{tabular}
-        \label{exp:tab:functionp}
+        \label{exp-tab-functionp}
         \end{minipage}
         \hfill
         \begin{minipage}{0.25\textwidth}
@@ -885,7 +885,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         16            &amp; 9             \\\normalline
         25            &amp; 10            \\\lastline
         \end{tabular}
-        \label{exp:tab:functionq}
+        \label{exp-tab-functionq}
         \end{minipage}
         \hfill
         \begin{minipage}{0.25\textwidth}
@@ -901,7 +901,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         4             &amp; 32            \\\normalline
         5             &amp; 64            \\\lastline
         \end{tabular}
-        \label{exp:tab:functionr}
+        \label{exp-tab-functionr}
         \end{minipage}
         \hfill
         \mbox{}
@@ -976,25 +976,25 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{problem}[Melting of Arctic Sea Ice]
         Using satellite imagery, scientists now believe that the Arctic sea ice cover is being reduced in area by 8\% every ten years.  In September of 2005 the area of the ice cover was $\SI{5.35}{\million\kilo\meter\squared}$, according to the National Snow and Ice Data Center\footnote{\href{http://nsidc.org/}{http://nsidc.org/}}.  
         \begin{subproblem}
-        Generate an exponential model for the melting of the Arctic sea ice cover.\label{exp:prob:iceexpmodel}
+        Generate an exponential model for the melting of the Arctic sea ice cover.\label{exp-prob-iceexpmodel}
         \begin{shortsolution}
         $A(t)=5.35(0.92)^t$, where $t$ is the number of decades since 2005, and $A(t)$ is measured in $\si{\million\kilo\meter\squared}$.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Find the half-life of the ice.  In what year will the Arctic sea ice reach half of its 2005 level?\label{exp:prob:icehalflife}
+        Find the half-life of the ice.  In what year will the Arctic sea ice reach half of its 2005 level?\label{exp-prob-icehalflife}
         \begin{shortsolution}
         A graph indicates that about $8.3$ decades after 2005 (or in 2088), the Arctic sea ice cover will have reached half of its 2005 level. So the half-life of the ice is 8.3 decades.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        According to your model, what was the area in 1995?  \label{exp:prob:1995ice}
+        According to your model, what was the area in 1995?  \label{exp-prob-1995ice}
         \begin{shortsolution}
         $A(-1)=5.35(0.92)^{-1}\approx5.82$. According to the model, in 1995 the Arctic sea ice level was about $\SI{5.82}{\million\kilo\meter\squared}$
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Use the two data points you determined in \cref{exp:prob:icehalflife,exp:prob:1995ice} to generate a \emph{linear} model for the melting of the Arctic sea ice cover.  Comment on the differences in your two models' predictions for 2010, 2030, and 2050.    \label{exp:prob:icelinmodel}
+        Use the two data points you determined in \cref{exp-prob-icehalflife,exp-prob-1995ice} to generate a \emph{linear} model for the melting of the Arctic sea ice cover.  Comment on the differences in your two models' predictions for 2010, 2030, and 2050.    \label{exp-prob-icelinmodel}
 
         \begin{shortsolution}
         Using $B(t)$ to represent a linear model for the ice cover, where $t$ is measured in decades since 2005, $B$ has slope of $2.675-5.815/8.3-(-1)$\si{\million\kilo\meter\squared\per\decade}
@@ -1008,7 +1008,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        When do each of your models (from \cref{exp:prob:iceexpmodel,exp:prob:icelinmodel}) predict the Arctic sea ice cover will melt to less than $\SI{100}{\kilo\meter\squared}$?
+        When do each of your models (from \cref{exp-prob-iceexpmodel,exp-prob-icelinmodel}) predict the Arctic sea ice cover will melt to less than $\SI{100}{\kilo\meter\squared}$?
         \begin{shortsolution}
         Since $A(t)$ and $B(t)$ are measured in $\si{\million\kilo\meter\squared}$, we should work with the value $\SI{0.0001}{\million\square\kilo\meter}$. A graph shows that $B(16.2)\approx0.0001$ and $A(130.5)\approx0.0001$. So the linear model predicts that after 6.2 decades (in 2212) the Arctic sea ice cover will melt to less than $\SI{100}{\square\kilo\meter}$. The exponential model predicts that this will not happen for 130.5 decades, or until the year 3310.
         \end{shortsolution}
@@ -1203,7 +1203,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   February 2012
         %===================================
-        \begin{problem}[Exponential function evaluation]\label{exp:prob:fnevaln}%
+        \begin{problem}[Exponential function evaluation]\label{exp-prob-fnevaln}%
         Evaluate each of the following formulas at $-10$, $-5$, $0$, $5$, and $10$. 
         Give the exact answer, and an approximation (where appropriate) using two figures after the decimal.
         \begin{multicols}{4}
@@ -1263,7 +1263,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   February 2012
         %===================================
         \begin{problem}[Features of exponential functions]
-        Refer to the functions $f$, $g$, $h$, and $k$ defined in \cref{exp:prob:fnevaln} 
+        Refer to the functions $f$, $g$, $h$, and $k$ defined in \cref{exp-prob-fnevaln} 
         throughout this problem.
         \begin{subproblem}
         Decide if each function is always increasing or always decreasing. 
@@ -1393,14 +1393,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Barkin
         %   Date:   April 2011
         %===================================
-        \begin{problem}[Increasing exponential functions]\label{exp:prob:increasingexptabs}%
+        \begin{problem}[Increasing exponential functions]\label{exp-prob-increasingexptabs}%
         Consider the functions $f$ and $g$ that have formulas $f(x) = 2^x$ and $g(x) = 3^x+4$.  
         \begin{table}[!htb]
         \centering
         \begin{minipage}{.3\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:increasingexp}
+        \label{exp-tab-increasingexp}
         \begin{tabular}{S[table-format=1.0]rr}
         \beforeheading
         \heading{$x$} &amp; \heading{$f(x)$} &amp; \heading{$g(x)$} \\
@@ -1428,13 +1428,13 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         1             &amp;                  &amp;                  \\\normalline
         2             &amp;                  &amp;                  \\\lastline
         \end{tabular}
-        \label{exp:tab:decreasingexp}
+        \label{exp-tab-decreasingexp}
         \end{minipage}%
         \hfill\mbox{}
         \end{table}
 
         \begin{subproblem}
-        Graph the functions $f$ and $g$ over the interval $-3\le x \le 2$ after first filling in \cref{exp:tab:increasingexp}.  
+        Graph the functions $f$ and $g$ over the interval $-3\le x \le 2$ after first filling in \cref{exp-tab-increasingexp}.  
         Label the functions $f$ and $g$ on your graph.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.0]cc}
@@ -1503,7 +1503,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{problem}[Decreasing exponential functions]
         Consider the functions $m$ and $n$ that have formulas $m(x) = \left(\nicefrac{1}{2}\right)^x$ and $n(x) = \left(\nicefrac{1}{3}\right)^x-2$.  
         \begin{subproblem}
-        Graph these functions over the interval $-2\le x \le 3$ after first filling in \cref{exp:tab:increasingexp}.  
+        Graph these functions over the interval $-2\le x \le 3$ after first filling in \cref{exp-tab-increasingexp}.  
         Label the functions $m$ and $n$.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.0]cc}
@@ -1551,7 +1551,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
         \begin{subproblem}
         Notice that both of these functions are decreasing as $x$ increases.  Why do these functions decrease when 
-        the functions in \cref{exp:prob:increasingexptabs} increase?
+        the functions in \cref{exp-prob-increasingexptabs} increase?
         \begin{shortsolution}
         Because $b&lt;1$ and $a&gt;0$.
         \end{shortsolution}
@@ -1562,7 +1562,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   Feb 2011
         %===================================
-        \begin{problem}[Horizontal asymptotes when $b&gt;1$]\label{exp:prob:matchexponentials}%
+        \begin{problem}[Horizontal asymptotes when $b&gt;1$]\label{exp-prob-matchexponentials}%
         Consider the functions $f$, $g$, $h$, and $j$ that have formulas
         \begin{align*}
         f(x) &amp; =3^x-1, &amp; g(x) &amp; =-4^x-3, &amp; h(x) &amp; =2^x+1, &amp; j(x) &amp; =-5^x+2 
@@ -1585,7 +1585,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexponential1}
+        \label{exp-fig-matchexponential1}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1601,7 +1601,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexponential2}
+        \label{exp-fig-matchexponential2}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1617,7 +1617,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexponential3}
+        \label{exp-fig-matchexponential3}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1633,23 +1633,23 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexponential4}
+        \label{exp-fig-matchexponential4}
         \end{subfigure}
-        \caption{Graphs for \cref{exp:prob:matchexponentials}.}
-        \label{exp:fig:matchexponentials}
+        \caption{Graphs for \cref{exp-prob-matchexponentials}.}
+        \label{exp-fig-matchexponentials}
         \end{widepage}
         \end{figure}
         %++++++++++++++++
         \begin{subproblem}
-        Match each of the functions $f$, $g$, $h$, and $j$ with one of the graphs in \cref{exp:fig:matchexponentials}.
+        Match each of the functions $f$, $g$, $h$, and $j$ with one of the graphs in \cref{exp-fig-matchexponentials}.
         \begin{shortsolution}
-        \Vref{exp:fig:matchexponential2} shows $f(x)=3^x-1$.\\
-        \Vref{exp:fig:matchexponential4} shows $f(x)=-4^x-3$.\\
-        \Vref{exp:fig:matchexponential1} shows $f(x)=2^x+1$.  \\
-        \Vref{exp:fig:matchexponential3} shows $f(x)=-5^x+2$.
+        \Vref{exp-fig-matchexponential2} shows $f(x)=3^x-1$.\\
+        \Vref{exp-fig-matchexponential4} shows $f(x)=-4^x-3$.\\
+        \Vref{exp-fig-matchexponential1} shows $f(x)=2^x+1$.  \\
+        \Vref{exp-fig-matchexponential3} shows $f(x)=-5^x+2$.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:asympneginf}
+        \begin{subproblem}\label{exp-prob-asympneginf}
         As $x\to-\infty$, $f(x)\to -1$. This tells us two things:
         \begin{itemize}
         \item the horizontal asymptote as $x\to-\infty$ is the line $y=-1$;
@@ -1658,19 +1658,19 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         For the remaining three functions $g$, $h$, and $j$, deduce the behavior as $x\to-\infty$, the horizontal 
         asymptote as $x\to-\infty$, and the range.
         \begin{shortsolution}
-        \Vref{exp:fig:matchexponential4}, $g(x)=-4^x-3$: 
+        \Vref{exp-fig-matchexponential4}, $g(x)=-4^x-3$: 
         \begin{itemize}
         \item $g(x)\to -3$ as $x\to-\infty$;
         \item the horizontal asymptote as $x\to-\infty$ is the line $y=-3$;
         \item the range of $g$ is range: $(-\infty,-3)$.
         \end{itemize}
-        \Vref{exp:fig:matchexponential1}, $h(x)=2^x+1$: 
+        \Vref{exp-fig-matchexponential1}, $h(x)=2^x+1$: 
         \begin{itemize}
         \item $h(x)\to 1$ as $x\to -\infty$;
         \item the horizontal asymptote as $x\to-\infty$ is the line $y=1$;
         \item the range of $h$ is $(1,\infty)$.
         \end{itemize}
-        \Vref{exp:fig:matchexponential3}, $j(x)=-5^x+2$: 
+        \Vref{exp-fig-matchexponential3}, $j(x)=-5^x+2$: 
         \begin{itemize}
         \item $j(x)\to 2$ as $x\to-\infty$;
         \item the horizontal asymptote as $x\to-\infty$ is the line $y=2$;
@@ -1678,10 +1678,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{itemize}
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:asymptotes}
-        Using the appropriate function in \cref{exp:fig:matchexponentials}, we can observe that
+        \begin{subproblem}\label{exp-prob-asymptotes}
+        Using the appropriate function in \cref{exp-fig-matchexponentials}, we can observe that
         $f(x)\to \infty$, as $x\to\infty$.
-        Make analogous statements about the remaining functions in \cref{exp:fig:matchexponentials}.
+        Make analogous statements about the remaining functions in \cref{exp-fig-matchexponentials}.
         \begin{shortsolution}
         $-4^x-3\to -\infty$ as $x\to\infty$.\\ 
         $2^x+1\to \infty$ as $x\to\infty-$.\\
@@ -1697,7 +1697,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \[
         \lim_{x\to-\infty}f(x)=1.
         \]
-        Use limit notation to re-write your answers from \cref{exp:prob:asympneginf,exp:prob:asymptotes}.
+        Use limit notation to re-write your answers from \cref{exp-prob-asympneginf,exp-prob-asymptotes}.
         \begin{shortsolution}
         $\dd\lim_{x\to-\infty}(-4^x-3)=3$;     $\dd\lim_{x\to\infty}(-4^x-3)= -\infty$.	\\  	    
         $\dd\lim_{x\to-\infty}(2^x+1)=1$;     $\dd\lim_{x\to\infty}(2^x+1)= \infty$.	\\  	    
@@ -1710,18 +1710,18 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   Feb 2011
         %===================================
-        \begin{problem}[Horizontal asymptotes when $0&lt;b&lt;1$]\label{exp:prob:matchexpslessthan1}%
+        \begin{problem}[Horizontal asymptotes when $0&lt;b&lt;1$]\label{exp-prob-matchexpslessthan1}%
         Consider the functions $F$, $G$, $H$ and $J$ that have formulas
         \begin{align*}
         F(x) &amp; =\left(\frac{1}{3}\right)^x-1, &amp; G(x) &amp; =-\left(\frac{1}{4}\right)^x-3, &amp; H(x) &amp; =-\left(\frac{1}{5}\right)^x+2, &amp; J(x) &amp; =\left(\frac{1}{2}\right)^x+1 
         \end{align*}
         \begin{subproblem}
-        Match each of the functions $F$, $G$, $H$, and $J$ with one of the graphs in \cref{exp:fig:matchexpslessthan1}.
+        Match each of the functions $F$, $G$, $H$, and $J$ with one of the graphs in \cref{exp-fig-matchexpslessthan1}.
         \begin{shortsolution}
-        \Vref{exp:fig:matchexpsbaselt12} shows $\dd F(x)=\left(\frac{1}{3}\right)^x-1$.\\
-        \Vref{exp:fig:matchexpsbaselt14} shows $\dd G(x)=-\left(\frac{1}{4}\right)^x-3$.\\
-        \Vref{exp:fig:matchexpsbaselt13} shows $\dd H(x)=-\left(\frac{1}{5}\right)^x+2$.\\
-        \Vref{exp:fig:matchexpsbaselt11} shows $\dd J(x)=\left(\frac{1}{2}\right)^x+1$.
+        \Vref{exp-fig-matchexpsbaselt12} shows $\dd F(x)=\left(\frac{1}{3}\right)^x-1$.\\
+        \Vref{exp-fig-matchexpsbaselt14} shows $\dd G(x)=-\left(\frac{1}{4}\right)^x-3$.\\
+        \Vref{exp-fig-matchexpsbaselt13} shows $\dd H(x)=-\left(\frac{1}{5}\right)^x+2$.\\
+        \Vref{exp-fig-matchexpsbaselt11} shows $\dd J(x)=\left(\frac{1}{2}\right)^x+1$.
         \end{shortsolution}
         \end{subproblem}
         %++++++++++++++++
@@ -1742,7 +1742,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexpsbaselt11}
+        \label{exp-fig-matchexpsbaselt11}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1758,7 +1758,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexpsbaselt12}
+        \label{exp-fig-matchexpsbaselt12}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1774,7 +1774,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexpsbaselt13}
+        \label{exp-fig-matchexpsbaselt13}
         \end{subfigure}
         \hfill
         \begin{subfigure}{\figurewidth}
@@ -1790,18 +1790,18 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchexpsbaselt14}
+        \label{exp-fig-matchexpsbaselt14}
         \end{subfigure}
-        \caption{Graphs for \cref{exp:prob:matchexpslessthan1}.}
-        \label{exp:fig:matchexpslessthan1}
+        \caption{Graphs for \cref{exp-prob-matchexpslessthan1}.}
+        \label{exp-fig-matchexpslessthan1}
         \end{widepage}
         \end{figure}
         %++++++++++++++++
-        \begin{subproblem}\label{exp:prob:asymptoteslt1}
-        Using the appropriate function in \cref{exp:fig:matchexpslessthan1},
+        \begin{subproblem}\label{exp-prob-asymptoteslt1}
+        Using the appropriate function in \cref{exp-fig-matchexpslessthan1},
         we can say that $\left( \frac{1}{2} \right)^x+1\to 1$ as $x\to\infty$.
         Similarly, we can say that $\left( \frac{1}{2} \right)^x+1\to \infty$ as $x\to-\infty$.
-        Make analogous statements about the remaining functions in \cref{exp:fig:matchexpslessthan1}.
+        Make analogous statements about the remaining functions in \cref{exp-fig-matchexpslessthan1}.
         \begin{shortsolution}
         $\left(\frac{1}{3}\right)^x-1 \to   -1$ as $x\to\infty$; $\left(\frac{1}{3}\right)^x-1 \to \infty$ as $x\to-\infty$.\\ 
         $-\left(\frac{1}{5}\right)^x+2\to   2$ as $x\to\infty$;  $-\left(\frac{1}{5}\right)^x+2\to -\infty$ as $x\to-\infty$.\\ 
@@ -1809,7 +1809,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Use limit notation to re-write your answers from \cref{exp:prob:asymptoteslt1}.
+        Use limit notation to re-write your answers from \cref{exp-prob-asymptoteslt1}.
         \begin{shortsolution}
         $\dd\lim_{x\to\infty}\left(\left(\frac{1}{3}\right)^x-1\right) =  -1$;  $\dd\lim_{x\to-\infty}\left(\left(\frac{1}{3}\right)^x-1\right) = \infty$.\\
         $\dd\lim_{x\to\infty}-\left(\left(\frac{1}{5}\right)^x+2\right)=  2$ ;  $\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{5}\right)^x+2\right)= -\infty$.\\
@@ -1872,14 +1872,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         $\displaystyle\frac{f(x+1)}{f(x)}=\frac{ab^{x+1}}{ab^x}=\frac{b^{x+1}}{b^x}=b$
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:exponentialgraphs}
-        For each of the functions graphed in \crefrange{exp:fig:expfunctionm}{exp:fig:expfunctionr}, 
+        \begin{subproblem}\label{exp-prob-exponentialgraphs}
+        For each of the functions graphed in \crefrange{exp-fig-expfunctionm}{exp-fig-expfunctionr}, 
         determine whether or not the function is exponential.  If it is, determine the base $b$ of the function. Your first step might be to choose 
         3 ordered pairs that have successive $x$-values (e.g 1, 2, 3), and compare the ratio of the $y$-values.
         \begin{shortsolution}
-        The function graphed in \cref{exp:fig:expfunctionn} is exponential, $n(x)=2^x$.  
-        The function graphed in \cref{exp:fig:expfunctionr} is exponential, and $r(x)=\left(\frac13\right)^x$.
-        The function graphed in \cref{exp:fig:expfunctionm} is not exponential.  
+        The function graphed in \cref{exp-fig-expfunctionn} is exponential, $n(x)=2^x$.  
+        The function graphed in \cref{exp-fig-expfunctionr} is exponential, and $r(x)=\left(\frac13\right)^x$.
+        The function graphed in \cref{exp-fig-expfunctionm} is not exponential.  
         \end{shortsolution}
         \end{subproblem}
 
@@ -1902,7 +1902,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=n(x)$}
-        \label{exp:fig:expfunctionn}
+        \label{exp-fig-expfunctionn}
         \end{minipage}
         \hfill
         \begin{minipage}{.25\textwidth}
@@ -1922,7 +1922,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=r(x)$}
-        \label{exp:fig:expfunctionr}
+        \label{exp-fig-expfunctionr}
         \end{minipage}
         \hfill
         \centering
@@ -1943,19 +1943,19 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$y=m(x)$}
-        \label{exp:fig:expfunctionm}
+        \label{exp-fig-expfunctionm}
         \end{minipage}
         \end{widepage}
         \end{figure}
 
-        \begin{subproblem}\label{exp:prob:exponentialtables}
-        For each of the functions implied by the data in \crefrange{exp:tab:expfunctiong}{exp:tab:expfunctionk}, 
+        \begin{subproblem}\label{exp-prob-exponentialtables}
+        For each of the functions implied by the data in \crefrange{exp-tab-expfunctiong}{exp-tab-expfunctionk}, 
         determine whether or not the function is exponential.  If it is, determine the base $b$ of the function. 
         \begin{shortsolution}
-        The function tabulated in \cref{exp:tab:expfunctiong} is exponential, and $g(x)=3^x$.  
-        The function tabulated in \cref{exp:tab:expfunctionh} is exponential, and 
+        The function tabulated in \cref{exp-tab-expfunctiong} is exponential, and $g(x)=3^x$.  
+        The function tabulated in \cref{exp-tab-expfunctionh} is exponential, and 
         $h(x)=\sqrt[3]{25}\cdot(\sqrt[3]{5})^x$.  
-        The function tabulated in \cref{exp:tab:expfunctionk} is not exponential.
+        The function tabulated in \cref{exp-tab-expfunctionk} is not exponential.
         \end{shortsolution}
         \end{subproblem}
         \begin{table}[!htb]
@@ -1975,7 +1975,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         4             &amp; 81            \\\normalline
         5             &amp; 241           \\\lastline
         \end{tabular}
-        \label{exp:tab:expfunctiong}
+        \label{exp-tab-expfunctiong}
         \end{minipage}
         \hfill
         \begin{minipage}{.25\textwidth}
@@ -1991,7 +1991,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         10            &amp; 625           \\\normalline
         13            &amp; 3125          \\\lastline
         \end{tabular}
-        \label{exp:tab:expfunctionh}
+        \label{exp-tab-expfunctionh}
         \end{minipage}
         \hfill
         \begin{minipage}{.25\textwidth}
@@ -2007,7 +2007,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         8             &amp; 256           \\\normalline
         16            &amp; 1024          \\\lastline
         \end{tabular}
-        \label{exp:tab:expfunctionk}
+        \label{exp-tab-expfunctionk}
         \end{minipage}
         \hfill
         \end{widepage}
@@ -2112,9 +2112,9 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Recall some of the basic rules for exponents, assuming that $a$, $b$, $x$,
         and $y$ are real numbers:
         \begin{props}
-        \item\label{exp:prop:pow} $a^xb^x=(ab)^x$ 
-        \item\label{exp:prop:add} $a^xa^y =a^{x+y}$
-        \item\label{exp:prop:mult} $a^{(xy)} = (a^x)^y$
+        \item\label{exp-prop-pow} $a^xb^x=(ab)^x$ 
+        \item\label{exp-prop-add} $a^xa^y =a^{x+y}$
+        \item\label{exp-prop-mult} $a^{(xy)} = (a^x)^y$
         \end{props}
         \end{pccspecialcomment}
         We can often make use of these rules to simplify exponential expressions.
@@ -2221,15 +2221,15 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item
         $\begin{aligned}[t]
         f(t) &amp; = 2\left(3^t\right)\left(3^{3t}\right) &amp;                             \\
-        &amp; = 2\left(3^{t+3t}\right)               &amp; \text{\cref{exp:prop:add}}  \\
+        &amp; = 2\left(3^{t+3t}\right)               &amp; \text{\cref{exp-prop-add}}  \\
         &amp; = 2\left(3^{4t}\right)                 &amp;                             \\
-        &amp; = 2(3^4)^t                             &amp; \text{\cref{exp:prop:mult}} \\
+        &amp; = 2(3^4)^t                             &amp; \text{\cref{exp-prop-mult}} \\
         &amp; = 2(81)^t                              &amp;                             
         \end{aligned}$
         \item
         $\begin{aligned}[t]
         g(t) &amp; = 7(1.08)^t(3.2)^t  &amp;                            \\
-        &amp; = 7(1.08\cdot3.2)^t &amp; \text{\cref{exp:prop:pow}} \\
+        &amp; = 7(1.08\cdot3.2)^t &amp; \text{\cref{exp-prop-pow}} \\
         &amp; = 7(3.456)^t        &amp;                            
         \end{aligned}$
         \item
@@ -2237,11 +2237,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         h(t) &amp; = 8^t\left(2^{\frac{t+1}{2}}\right)                             &amp;                            \\
         &amp; = (2^3)^t\left(2^{\frac{t+1}{2}}\right)                         &amp;                            \\
         &amp; = 2^{3t}\left(2^{\frac{t+1}{2}}\right)                          &amp;                            \\
-        &amp; = 2^{3t+\frac{t+1}{2}}                                          &amp; \text{\cref{exp:prop:add}} \\
+        &amp; = 2^{3t+\frac{t+1}{2}}                                          &amp; \text{\cref{exp-prop-add}} \\
         &amp; = 2^{\frac{7t+1}{2}}                                            &amp;                            \\
-        &amp; = \left(2^{\nicefrac{1}{2}}\right)^{7t+1}                       &amp; \text{\cref{exp:prop:pow}} \\
-        &amp; = \left(\sqrt{2}\right)\left(\sqrt{2}\right)^{7t}               &amp; \text{\cref{exp:prop:add}} \\
-        &amp; = \left(\sqrt{2}\right)\left(\left(\sqrt{2}\right)^{7}\right)^t &amp; \text{\cref{exp:prop:pow}} \\
+        &amp; = \left(2^{\nicefrac{1}{2}}\right)^{7t+1}                       &amp; \text{\cref{exp-prop-pow}} \\
+        &amp; = \left(\sqrt{2}\right)\left(\sqrt{2}\right)^{7t}               &amp; \text{\cref{exp-prop-add}} \\
+        &amp; = \left(\sqrt{2}\right)\left(\left(\sqrt{2}\right)^{7}\right)^t &amp; \text{\cref{exp-prop-pow}} \\
         &amp; = \left(\sqrt{2}\right)\left(\sqrt{128}\right)^t
         \end{aligned}$
         \end{enumerate}
@@ -2313,14 +2313,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   August 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:factor}
+        \begin{pccexample}\label{exp-ex-factor}
         Solve the following equation by factoring. Hint: put $t=3^x$ as 
         your first step.
-        \begin{equation}\label{exp:eq:solvefact}
+        \begin{equation}\label{exp-eq-solvefact}
         3^{2x}-10\cdot 3^x+9=0
         \end{equation}
         \begin{pccsolution}
-        Following the hint, we substitute $t=3^x$ into \cref{exp:eq:solvefact}, which gives
+        Following the hint, we substitute $t=3^x$ into \cref{exp-eq-solvefact}, which gives
         \[
         t^2 - 10t +9 = 0
         \]
@@ -2330,7 +2330,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         3^x = 9, \qquad 3^x = 1
         \]
         Using our knowledge of exponents, we see that $x=2$ or $x=0$. It is left 
-        an exercise to check that both of these solutions satisfy \cref{exp:eq:solvefact}.
+        an exercise to check that both of these solutions satisfy \cref{exp-eq-solvefact}.
         \end{pccsolution}
         \end{pccexample}
 
@@ -2363,11 +2363,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         2^x = 13
         \]
         \begin{pccsolution}
-        \Cref{exp:tab:solvenoninteger} 
+        \Cref{exp-tab-solvenoninteger} 
         shows the solution is on the interval $[3,4]$; given that 13 is closer to 16 than 
         it is to 8, we expect our solution to be closer to $4$ than it is to $3$.
 
-        \Cref{exp:fig:solvenoninteger} shows $y=2^x$ and $y=13$. The solution 
+        \Cref{exp-fig-solvenoninteger} shows $y=2^x$ and $y=13$. The solution 
         to the equation $2^x=13$ is the $x$-coordinate of the point of intersection; using a calculator, we find
         the $x$-coordinate is approximately $3.70$. 
         \end{pccsolution}
@@ -2388,7 +2388,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         4             &amp; 16              \\\normalline
         \lastline
         \end{tabular}
-        \label{exp:tab:solvenoninteger}
+        \label{exp-tab-solvenoninteger}
         \end{minipage}%
         \hfill
         \begin{minipage}{.4\textwidth}
@@ -2406,7 +2406,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}     
         \captionof{figure}{$y=2^x$}
-        \label{exp:fig:solvenoninteger}
+        \label{exp-fig-solvenoninteger}
         \end{minipage}%
         \hfill\mbox{}
         \end{table}
@@ -2605,11 +2605,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{problem}
 
         \begin{problem}[Factoring]
-        Use the technique demonstrated in \cref{exp:ex:factor} to help you solve the following 
+        Use the technique demonstrated in \cref{exp-ex-factor} to help you solve the following 
         equations.
-        For \cref{exp:prob:needfactor} try putting $t=4^x$ as your first step. Check your solutions.
+        For \cref{exp-prob-needfactor} try putting $t=4^x$ as your first step. Check your solutions.
         \begin{multicols}{3}
-        \begin{subproblem}\label{exp:prob:needfactor}
+        \begin{subproblem}\label{exp-prob-needfactor}
         % factor: (4^x-1)*(4^x+3)
         $4^{2x}+2\cdot 4^x=3$
         \begin{shortsolution}
@@ -2636,9 +2636,9 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   February 2012
         %===================================
-        \begin{problem}[Matching graphs to equations]\label{exp:prob:matcheqns}%
+        \begin{problem}[Matching graphs to equations]\label{exp-prob-matcheqns}%
         \pccname{Jake} and \pccname{Marisa} are solving the following exponential equations. To guide them, 
-        they have graphed the functions involved in \cref{exp:fig:matcheqns}. Match the equations
+        they have graphed the functions involved in \cref{exp-fig-matcheqns}. Match the equations
         with the appropriate graph.
         \[
         4^{-x^2}=\frac{1}{4}, \qquad 
@@ -2648,10 +2648,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \]
         \begin{shortsolution}
         \begin{itemize}
-        \item \Cref{exp:fig:matcheqns1} represents $3^{x^2}=3$
-        \item \Cref{exp:fig:matcheqns2} represents $4^{-x^2}=\frac{1}{4}$
-        \item \Cref{exp:fig:matcheqns3} represents $5^x=5$
-        \item \Cref{exp:fig:matcheqns4} represents $-\left( \frac{1}{3} \right)^{x}=-3$
+        \item \Cref{exp-fig-matcheqns1} represents $3^{x^2}=3$
+        \item \Cref{exp-fig-matcheqns2} represents $4^{-x^2}=\frac{1}{4}$
+        \item \Cref{exp-fig-matcheqns3} represents $5^x=5$
+        \item \Cref{exp-fig-matcheqns4} represents $-\left( \frac{1}{3} \right)^{x}=-3$
         \end{itemize}
         \end{shortsolution}
         \end{problem}
@@ -2672,7 +2672,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}     
         \caption{}
-        \label{exp:fig:matcheqns1}
+        \label{exp-fig-matcheqns1}
         \end{subfigure}%
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -2689,7 +2689,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}     
         \caption{}
-        \label{exp:fig:matcheqns2}
+        \label{exp-fig-matcheqns2}
         \end{subfigure}%
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -2706,7 +2706,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matcheqns3}
+        \label{exp-fig-matcheqns3}
         \end{subfigure}%
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -2723,10 +2723,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matcheqns4}
+        \label{exp-fig-matcheqns4}
         \end{subfigure}%
-        \caption{Graphs for \cref{exp:prob:matcheqns}}
-        \label{exp:fig:matcheqns}
+        \caption{Graphs for \cref{exp-prob-matcheqns}}
+        \label{exp-fig-matcheqns}
         \end{widepage}
         \end{figure}
 
@@ -2742,7 +2742,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         h(x)=5^x-5, \qquad 
         k(x)=3^{x^2}-3
         \]
-        Use your work from \cref{exp:prob:matcheqns} to help you decide how 
+        Use your work from \cref{exp-prob-matcheqns} to help you decide how 
         many zeros each function has.
         \begin{shortsolution}
         \begin{itemize}
@@ -2793,7 +2793,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   February 2012
         %===================================
         \begin{problem}[Beyond exponential equations]
-        The function $f$ that has formula $f(x)=\left( \frac{1}{2} \right)^x+\frac{1}{2}$ is shown in \cref{exp:fig:extension}, 
+        The function $f$ that has formula $f(x)=\left( \frac{1}{2} \right)^x+\frac{1}{2}$ is shown in \cref{exp-fig-extension}, 
         along with a mystery function $g$.
         \end{problem}
         \begin{figure}[!htb]
@@ -2814,11 +2814,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}     
         \caption{}
-        \label{exp:fig:extension}
+        \label{exp-fig-extension}
         \end{widepage}
         \end{figure}
         \begin{subproblem}
-        Use \cref{exp:fig:extension} to decide how many solutions there are to the equation $f(x)=g(x)$
+        Use \cref{exp-fig-extension} to decide how many solutions there are to the equation $f(x)=g(x)$
         on the interval $[0,9]$.
         \begin{shortsolution}
         By counting the number of points of intersection, there are $10$ solutions on 
@@ -2834,7 +2834,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
         \end{exercises}
 
-        \section{Finding an exponential function given two points}\label{exp:sec:findformula}
+        \section{Finding an exponential function given two points}\label{exp-sec-findformula}
         \begin{outcomes}
         \begin{outcomelist}
         \item You will be able to find a formula for an exponential curve that connects two points in the plane. 
@@ -2848,10 +2848,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         Consider a puzzle where two points are given on the plane, and you are asked to connect them with a curve.  
         There are infinitely many ways to do this.  In the past, you've connected two points with a straight 
-        line (as in \cref{exp:fig:pointsline}) and found the equation that represents that line.  Of course, you 
-        could also connect the points with a random curve of your liking (as in \cref{exp:fig:pointscurve}).  
+        line (as in \cref{exp-fig-pointsline}) and found the equation that represents that line.  Of course, you 
+        could also connect the points with a random curve of your liking (as in \cref{exp-fig-pointscurve}).  
         In this section we will try to connect the points with an \emph{exponential} 
-        curve (as in \cref{exp:fig:pointsexp}) and simultaneously find that curve's equation. 
+        curve (as in \cref{exp-fig-pointsexp}) and simultaneously find that curve's equation. 
 
         \begin{figure}[!htb]
         \begin{subfigure}[t]{0.25\textwidth}
@@ -2867,7 +2867,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Points connected with a line}
-        \label{exp:fig:pointsline}
+        \label{exp-fig-pointsline}
         \end{subfigure}%
         \hfill
         \begin{subfigure}[t]{0.25\textwidth}
@@ -2883,7 +2883,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Points connected with an arbitrary curve}
-        \label{exp:fig:pointscurve}
+        \label{exp-fig-pointscurve}
         \end{subfigure}%
         \hfill
         \begin{subfigure}[t]{0.25\textwidth}
@@ -2899,7 +2899,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Points connected with an exponential curve}
-        \label{exp:fig:pointsexp}
+        \label{exp-fig-pointsexp}
         \end{subfigure}%
         \caption{Connecting two points with various curves}
         \end{figure}
@@ -3001,9 +3001,9 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   April 2011
         %===================================
-        \begin{pccexample} \label{exp:ex:findab}
+        \begin{pccexample} \label{exp-ex-findab}
         Find an exponential function $f$ given by $f(t)=a\,b^t$ whose graph goes through the points $\left(-2,\frac{3}{4}\right)$ and $(2,12)$
-        as shown in \cref{exp:fig:expmodellingwithcurve}.
+        as shown in \cref{exp-fig-expmodellingwithcurve}.
         \begin{figure}
         \centering
         \begin{tikzpicture}
@@ -3022,7 +3022,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:expmodellingwithcurve}
+        \label{exp-fig-expmodellingwithcurve}
         \end{figure}
 
         \begin{pccsolution}
@@ -3045,7 +3045,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{equation*}
         Note that we can substitute the value of $b$ into either of the original equations.
 
-        We conclude that $f(t)=3\cdot 2^t$, which is graphed in \cref{exp:fig:expmodellingwithcurve}.
+        We conclude that $f(t)=3\cdot 2^t$, which is graphed in \cref{exp-fig-expmodellingwithcurve}.
         The number $2$ is called the growth factor; every time $t$ increases by $1$, the value of $f(t)$ 
         grows by a factor of $2$.
         \end{pccsolution}
@@ -3125,7 +3125,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{pccsolution}
         We choose to model this situation by treating the given data as points on a plane.  Initially (or when $t=0$) there are $25$ patients, 
         so $(0,25)$ is one point.  At time $7$ (measured in days) there are $2391$ patients, so $(7,2391)$ is the other point.  
-        These points are sketched in \cref{exp:fig:fludata}.
+        These points are sketched in \cref{exp-fig-fludata}.
 
         \begin{figure}[!htb]
         \centering
@@ -3141,7 +3141,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Flu patient data}
-        \label{exp:fig:fludata}
+        \label{exp-fig-fludata}
         \end{figure}
 
         Since we are trying to use an exponential model, we are searching for values of $a$ and $b$ such that the curve $y=a\,b^t$ will 
@@ -3173,7 +3173,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         we can say that there will be about $177$ infected people $3$ days after the initial outbreak.
         \end{pccsolution}
 
-        We can also look at a graph of the model (as in \cref{exp:fig:flugraph}) and answer other interesting questions.  For 
+        We can also look at a graph of the model (as in \cref{exp-fig-flugraph}) and answer other interesting questions.  For 
         example, when will the number of infected persons reach 20,000?  
         \begin{figure}[!htb]
         \centering
@@ -3192,7 +3192,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Flu patient model}
-        \label{exp:fig:flugraph}
+        \label{exp-fig-flugraph}
         \end{figure}
         \begin{pccsolution} 
         The graph suggests that around the tenth day after the initial outbreak, there will be $20000$ infected persons.
@@ -3215,7 +3215,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{pccsolution}
         We are given that $w(3)=53$ and $w(10)=37$ so
         \begin{align}
-        a\,b^3    &amp; = 53\label{exp:eq:wood} \\
+        a\,b^3    &amp; = 53\label{exp-eq-wood} \\
         a\,b^{10} &amp; =47 \nonumber           
         \end{align}
         Eliminating for $b$ gives $b^7=\frac{47}{53}$ and therefore
@@ -3223,7 +3223,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         b &amp; = \sqrt[7]{\frac{47}{53}} \\
         &amp; \approx 0.983             
         \end{align*}
-        Using this value of $b$ in \cref{exp:eq:wood} gives
+        Using this value of $b$ in \cref{exp-eq-wood} gives
         \begin{align*}
         a &amp; = \frac{53}{\left( \frac{47}{53} \right)^{\nicefrac{3}{7}}} \\
         &amp; \approx 55.8                                                
@@ -3240,44 +3240,44 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Apr 2011
         %===================================
         \investigation*{}
-        \begin{problem}[US population]\label{exp:prob:uspopngreen}%
+        \begin{problem}[US population]\label{exp-prob-uspopngreen}%
         The population of the United States has increased roughly exponentially from 76.2 million 
         people in 1900 to 309 million people in 2010.\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1900}{http://www.wolframalpha.com/input/?i=us+population+1900}} 
-        \begin{subproblem} \label{exp:prob:USApop19002010}
+        \begin{subproblem} \label{exp-prob-USApop19002010}
         Find a formula that approximates the number of people in the U.S.A., $p(t)$, in millions, $t$ 
         years after 1900 assuming that the population grows exponentially. 
         \begin{shortsolution}
         $p(t)=76.2\left( \frac{309}{76.2} \right)^{\nicefrac{t}{110}}\approx 76.2(1.012808)^t$
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem} \label{exp:prob:USAprediction2000}
+        \begin{subproblem} \label{exp-prob-USAprediction2000}
         Use your model to approximate the population of the U.S.A.\ in the year 2000.     
         \begin{shortsolution}
         $p(100)\approx 272.072992$; the population of the U.S.A.\ in the year 2000 was approximately 272 million people, according to the model.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem} 
-        The actual population of the U.S.A.\ in 2000 was about 282 million people.\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1900}{http://www.wolframalpha.com/input/?i=us+population+2000}}   Did your approximation from \cref{exp:prob:USAprediction2000} 
+        The actual population of the U.S.A.\ in 2000 was about 282 million people.\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1900}{http://www.wolframalpha.com/input/?i=us+population+2000}}   Did your approximation from \cref{exp-prob-USAprediction2000} 
         underestimate or overestimate, and by how much?		
         \begin{shortsolution}
         The model underestimated the actual population by about 10 million people.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:USApop20002010}
+        \begin{subproblem}\label{exp-prob-USApop20002010}
         Use the actual populations of the U.S.A.\ in the years 2000 and 2010 to find a formula that approximates the number of people in the U.S.A., $P(t)$, in millions, $t$ years after 2000 assuming that the population grows exponentially.
         \begin{shortsolution}
         $P(t)=282\left( \frac{309}{282} \right)^{\nicefrac{t}{10}}\approx 282(1.009185)^t$
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        The population of the U.S.A.\ was 151 million people in 1950\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1950}{http://www.wolframalpha.com/input/?i=us+population+1950}}. How close of an approximation does your model from \cref{exp:prob:USApop20002010} give? How close of an approximation does your model from \cref{exp:prob:USApop19002010} give? 	Why are both models off?  Which model is better for making a prediction about 1950?
+        The population of the U.S.A.\ was 151 million people in 1950\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1950}{http://www.wolframalpha.com/input/?i=us+population+1950}}. How close of an approximation does your model from \cref{exp-prob-USApop20002010} give? How close of an approximation does your model from \cref{exp-prob-USApop19002010} give? 	Why are both models off?  Which model is better for making a prediction about 1950?
         \begin{shortsolution}
         $P(-50) \approx 178.526320$ and $p(50)\approx 143.985979$.  $P(-50)$ was an overestimate by about 27.5 million people, or \SI{18.2}{\percent}.  $p(50)$ was an underestimate by about 7 million people, or \SI{4.6}{\percent}.  So the prediction based off of the model that used the years 1900 and 2000 is better.  Generally, it is better to interpolate than to extrapolate.
         \end{shortsolution}
         \end{subproblem}		
         \end{problem}
 
-        \begin{problem}[Greenhouse gases]\label{exp:prob:greenhouseorig}%
+        \begin{problem}[Greenhouse gases]\label{exp-prob-greenhouseorig}%
         As our cars, homes, businesses and industry become more efficient, each person is responsible for the production of  
         less carbon dioxide (CO$_{2}$) a greenhouse gas. The US Energy Information Administration 
         provides the estimates for future quantities of CO$_{2}$ that each person will produce. They know 
@@ -3299,7 +3299,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        If you have an answer to \cref{exp:prob:USApop20002010}, use it to find a formula for $C(t)$, an approximation for the \emph{total} amount 
+        If you have an answer to \cref{exp-prob-USApop20002010}, use it to find a formula for $C(t)$, an approximation for the \emph{total} amount 
         of CO$_{2}$ that all citizens of the U.S.A.\  
         will be responsible for emitting, in millions of metric tons, $t$ years after the year 2000.
         \begin{shortsolution}
@@ -3312,7 +3312,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Kouzes, Hughes (scaffolding)
         %   Date:   Apr 2011
         %===================================
-        \begin{problem}[Tapfish app]\label{exp:prob:tapfishtable}%
+        \begin{problem}[Tapfish app]\label{exp-prob-tapfishtable}%
         Tapfish is a free mobile device app where you set up a digital aquarium.  
         We can use the application to create approximations of exponential functions. 
         We have simplified the nature of the application to make this problem easier.
@@ -3347,12 +3347,12 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         7             &amp;                  &amp;                  \\\normalline
         8             &amp;                  &amp;                  \\\lastline
         \end{tabular}
-        \label{exp:tab:tapfish}
+        \label{exp-tab-tapfish}
         \end{margintable}
 
         \begin{subproblem}
         Let $F(t)$ be the number of fish we have in our aquarium on day $t$. 
-        Complete the $F(t)$ column in \cref{exp:tab:tapfish}. Assume 
+        Complete the $F(t)$ column in \cref{exp-tab-tapfish}. Assume 
         that we always buy and sell the maximum number of fish, that we use whatever leftover coins we have from previous transactions, and that we cannot buy fractions of fish.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]}
@@ -3394,7 +3394,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         The function $F$ represents the exact number of fish that we have on a given day. 
         We are going to find an approximate formula for $F$ using an exponential function.  To be clear, we will use $A$ to represent the function that \emph{approximates} $F$.
 
-        Pick any two of the points from \cref{exp:tab:tapfish} and find a  function of the form, $A(t)=a\,b^t$, that 
+        Pick any two of the points from \cref{exp-tab-tapfish} and find a  function of the form, $A(t)=a\,b^t$, that 
         approximates   the number of fish in the tank $t$ days after starting.  (Answers will vary depending on which two points you use.)
         \begin{shortsolution}
         Choosing $(0,2)$ and $(8,47)$, 
@@ -3405,7 +3405,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Complete the $A(t)$ column in \cref{exp:tab:tapfish} using 6 decimal places, and compare the 
+        Complete the $A(t)$ column in \cref{exp-tab-tapfish} using 6 decimal places, and compare the 
         values of $A(t)$ to the values of $F(t)$.
 
         \begin{shortsolution}
@@ -3651,7 +3651,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}[Find a formula from a graph]
-        For each of the functions in \cref{exp:fig:findab}, assume that 
+        For each of the functions in \cref{exp-fig-findab}, assume that 
         the vertical intercept is an integer value. Use this, together with 
         the information in each caption, to find a formula for each function.
         \begin{shortsolution}
@@ -3731,7 +3731,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \caption{$k(3)=-\dfrac{4}{27}$}
         \end{subfigure}
         \caption{}
-        \label{exp:fig:findab}
+        \label{exp-fig-findab}
         \end{widepage}
         \end{figure}
 
@@ -3740,7 +3740,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}[Concavity]
-        For the functions in \cref{exp:fig:findab}, which graphs are concave up? Which are concave down? 
+        For the functions in \cref{exp-fig-findab}, which graphs are concave up? Which are concave down? 
         \begin{shortsolution}
         The graphs of $f$ and $g$ are concave up; the graphs of $h$ and $k$ are concave down.
         \end{shortsolution}
@@ -3751,10 +3751,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}[Find a formula from a table]
-        Find a formula for each of the functions implied by the data values in \crefrange{exp:tab:findab10}{exp:tab:findabfifth}.
+        Find a formula for each of the functions implied by the data values in \crefrange{exp-tab-findab10}{exp-tab-findabfifth}.
         Assume that each function has the form $f(x)=a\, b^x$.
         \begin{shortsolution}
-        \Cref{exp:tab:findab10}: $f(x)=10^x$; \cref{exp:tab:findab7}: $f(x)=-9\cdot 7^x$; \cref{exp:tab:findabthird}: $f(x)=-6\left( \frac{1}{3} \right)^x$; \cref{exp:tab:findabfifth}: $f(x)=3\left( \frac{1}{5} \right)^x$.  
+        \Cref{exp-tab-findab10}: $f(x)=10^x$; \cref{exp-tab-findab7}: $f(x)=-9\cdot 7^x$; \cref{exp-tab-findabthird}: $f(x)=-6\left( \frac{1}{3} \right)^x$; \cref{exp-tab-findabfifth}: $f(x)=3\left( \frac{1}{5} \right)^x$.  
         \end{shortsolution}
         \end{problem}
         % manual table stretch, str. by factor of 1.25
@@ -3763,7 +3763,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{widepage}
         \begin{minipage}{.2\textwidth}
         \centering
-        \caption{} \label{exp:tab:findab10}
+        \caption{} \label{exp-tab-findab10}
         \begin{tabular}{S[table-format=1.0]S[table-format=6.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -3777,7 +3777,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{.2\textwidth}
         \centering
-        \caption{} \label{exp:tab:findab7}
+        \caption{} \label{exp-tab-findab7}
         \begin{tabular}{S[table-format=1.0]c}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -3791,7 +3791,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{.2\textwidth}
         \centering
-        \caption{}\label{exp:tab:findabthird}
+        \caption{}\label{exp-tab-findabthird}
         \begin{tabular}{S[table-format=2.0]c}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$}  \\
@@ -3806,7 +3806,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{.2\textwidth}
         \centering
-        \caption{}\label{exp:tab:findabfifth}
+        \caption{}\label{exp-tab-findabfifth}
         \begin{tabular}{S[table-format=2.0]S[table-format=9.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -3826,19 +3826,19 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}[Increasing and decreasing functions]
-        Refer to the functions in \cref{exp:fig:findab} and \crefrange{exp:tab:findab10}{exp:tab:findabfifth} to help you decide 
+        Refer to the functions in \cref{exp-fig-findab} and \crefrange{exp-tab-findab10}{exp-tab-findabfifth} to help you decide 
         if the following statements are true or false. If the answer is false, provide an 
         example that supports your answer.
         \begin{subproblem}
         Exponential functions always increase.
         \begin{shortsolution}
-        False; consider $g$ and $h$ in \cref{exp:fig:findab}.
+        False; consider $g$ and $h$ in \cref{exp-fig-findab}.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
         Exponential functions always decrease.
         \begin{shortsolution}
-        False; consider $f$ and $k$ in \cref{exp:fig:findab}.
+        False; consider $f$ and $k$ in \cref{exp-fig-findab}.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
@@ -3850,7 +3850,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{subproblem}
         If $x$ increases by a constant amount, then $y$ increases by a constant amount.
         \begin{shortsolution}
-        False; consider \crefrange{exp:tab:findab10}{exp:tab:findabfifth}.
+        False; consider \crefrange{exp-tab-findab10}{exp-tab-findabfifth}.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
@@ -3862,7 +3862,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{subproblem}
         If $x$ increases by a constant amount, then the successive ratios of $y$ increase by the same amount.
         \begin{shortsolution}
-        False; consider \crefrange{exp:tab:findab10}{exp:tab:findabfifth}.
+        False; consider \crefrange{exp-tab-findab10}{exp-tab-findabfifth}.
         \end{shortsolution}
         \end{subproblem}
         \end{problem}
@@ -3872,7 +3872,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{problem}[Solar capacity]
         The global solar photovoltaic power capacity (in \si{\mega\watt}) grew from 2000-2007\footnote{\href{http://www.energyandcapital.com/articles/solar-stock-outlook/750}{http://www.energyandcapital.com/articles/solar-stock-outlook/750}} and 
-        is shown in \cref{exp:fig:solarcapacity}. 
+        is shown in \cref{exp-fig-solarcapacity}. 
 
         \begin{figure}[!htb]
         \begin{widepage}
@@ -3908,13 +3908,13 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Solar capacity.}
-        \label{exp:fig:solarcapacity}
+        \label{exp-fig-solarcapacity}
         \end{widepage}
         \end{figure}
 
         \begin{subproblem}
         Let $S(t)$ represent the Solar PV Power Capacity (in \si{\mega\watt}) at time $t$ in years 
-        since 2000. Use the first and last data points in \cref{exp:fig:solarcapacity} to 
+        since 2000. Use the first and last data points in \cref{exp-fig-solarcapacity} to 
         write down two ordered pairs that lie on the graph of $S$.
         \begin{shortsolution}
         $(0,877)$, $(7,8325)$.
@@ -3953,7 +3953,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{problem}
         \end{exercises}
 
-        \section{Exponential modeling}\label{exp:sec:populationmodels}
+        \section{Exponential modeling}\label{exp-sec-populationmodels}
         \begin{outcomes}
         \begin{outcomelist}
         \item stuff
@@ -4046,7 +4046,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Kissick
         %   Date:   April 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:innercity}
+        \begin{pccexample}\label{exp-ex-innercity}
         Since 2001 the population of an inner city has been decreasing as people 
         move to the suburbs. It is decreasing at a rate of \SI{1}{\percent} per year; find a model 
         for this situation.
@@ -4066,7 +4066,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{doyouunderstand}
         \begin{problem}
-        Repeat \cref{exp:ex:innercity} for a population that decreases at a rate of \SI{8}{\percent} per year.
+        Repeat \cref{exp-ex-innercity} for a population that decreases at a rate of \SI{8}{\percent} per year.
         \begin{shortsolution}
         $P(t)=P_0(0.92)^t$ 
         \end{shortsolution}
@@ -4125,7 +4125,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         where some of the atoms are radioactive, the radioactive atoms will decay into other atoms in a very predictable way.  
         In fact, each radioactive element has an 
         associated half-life, which is the time it takes for \SI{50}{\percent} of the radioactive atoms to decay into something else.
-        \begin{pccexample}\label{exp:prob:radioactive}%
+        \begin{pccexample}\label{exp-prob-radioactive}%
         Suppose that we have 8000 atoms of Carbon-12 (which is non-radioactive).  Without an intervening act, 1,000,000 years from 
         now that sample of carbon will still have 8000 atoms of Carbon-12.  However, if we start with a sample 
         of 8000 
@@ -4135,11 +4135,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         If we define $R(t)$ to be the number of radioactive atoms that remain in the sample $t$ years from today, then we can 
         model the function $R$ using the template $R(t)=a\,b^t$ for unknown 
         constants $a$ and $b$.  The number of remaining radioactive atoms $t$ years from today is 
-        shown in \cref{exp:tab:C14decay}.  
+        shown in \cref{exp-tab-C14decay}.  
 
         \begin{table}[!htb]
         \centering
-        \caption{Decaying Radioactive Carbon-14}\label{exp:tab:C14decay}
+        \caption{Decaying Radioactive Carbon-14}\label{exp-tab-C14decay}
         \begin{tabular}{S[table-format=5.0]S[table-format=4.0]}
         \beforeheading
         \heading{Number of years} &amp; \heading{Number of remaining} \\
@@ -4153,7 +4153,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{tabular}
         \end{table}
 
-        Using the data in \cref{exp:tab:C14decay} we can determine the formula for $R(t)$, 
+        Using the data in \cref{exp-tab-C14decay} we can determine the formula for $R(t)$, 
         the number of atoms that remain radioactive after $t$ years; choosing 
         two ordered pairs and assuming that $R(t)=a\ b^t$
         \begin{align*}
@@ -4274,7 +4274,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{pccdefinition}[Simple interest]
         If we invest an amount $P$ in an account with interest rate $r$ (per year), then 
         the amount in the account is
-        \begin{equation}\label{exp:eq:simpleinterest}
+        \begin{equation}\label{exp-eq-simpleinterest}
         A(t)=P(1+r)^t
         \end{equation}
         where $t$ is the amount of time that has passed (in years) since the initial 
@@ -4290,7 +4290,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         the balance after four years? How long will it take your investment to double in value?
 
         \begin{pccsolution}
-        We use \cref{exp:eq:simpleinterest}, with $P=5000$, $r=0.03$, and $t=4$.
+        We use \cref{exp-eq-simpleinterest}, with $P=5000$, $r=0.03$, and $t=4$.
         \begin{align*}
         A(4) &amp; =  5000(1+0.03)^4 \\
         &amp; \approx  5627.54  
@@ -4319,10 +4319,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         23            &amp; 9867.93          \\\normalline
         24            &amp; 10163.97         \\\lastline
         \end{tabular}
-        \label{exp:tab:simpleinterest}
+        \label{exp-tab-simpleinterest}
         \end{margintable}
 
-        Using \cref{exp:tab:simpleinterest}, we conclude that the 
+        Using \cref{exp-tab-simpleinterest}, we conclude that the 
         investment will double in about 24 years. 
         \end{pccsolution}
         \end{pccexample}
@@ -4352,7 +4352,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item after one month, he had $\$100(1.01)=\$101.00$ in his account;
         \item after two months he had $\$100(1.01)^2=\$102.01$ in his account.
         \end{itemize}
-        We complete \cref{exp:tab:fredo} using 
+        We complete \cref{exp-tab-fredo} using 
         2 decimal places, where $t$ indicates the number of months
         since first investing and $A(t)$ is the amount of money that was in his account (in 
         dollars) at time $t$. 
@@ -4378,10 +4378,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         11            &amp; 111.57           \\\normalline
         12            &amp; 112.68           \\\lastline
         \end{tabular}
-        \label{exp:tab:fredo}
+        \label{exp-tab-fredo}
         \end{margintable}
 
-        If we look closely at what happened in \cref{exp:tab:fredo}, we notice that 
+        If we look closely at what happened in \cref{exp-tab-fredo}, we notice that 
         to find $A(2)$ we calculate
         \begin{align*}
         A(2) &amp; =  100(1.01)(1.01) \\
@@ -4436,19 +4436,19 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         daily           &amp; 365           \\\normalline
         non-stop        &amp; \mbox{??}     \\\lastline
         \end{tabular}
-        \label{exp:tab:compoundingfreq}
+        \label{exp-tab-compoundingfreq}
         \end{margintable}
 
-        \begin{pccdefinition}[Compound interest]\label{exp:def:compoundint}
+        \begin{pccdefinition}[Compound interest]\label{exp-def-compoundint}
         The compound interest formula is
         \begin{align}
-        A(t) = P_0\left(1+\frac{r}{n}\right)^{nt}\label{exp:form:compoundinterest} 
+        A(t) = P_0\left(1+\frac{r}{n}\right)^{nt}\label{exp-form-compoundinterest} 
         \end{align}
         where:
         \begin{itemize}
         \item $P_0$ is the initial amount invested;
         \item $r$ is the nominal interest rate;
-        \item $n$ is the compounding frequency (see \cref{exp:tab:compoundingfreq});
+        \item $n$ is the compounding frequency (see \cref{exp-tab-compoundingfreq});
         \item $t$ is the amount of time that has passed since the initial investment (in years);
         \item $A(t)$ is the account balance (in dollars).
         \end{itemize}
@@ -4459,7 +4459,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   April 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:compoundinterest}
+        \begin{pccexample}\label{exp-ex-compoundinterest}
         We have \$7000 to invest into an account that earns interest at a \SI{3}{\percent} nominal rate. Find the amount that we 
         will have after four years assuming each of the following compounding frequencies:
         \begin{multicols}{4}
@@ -4470,7 +4470,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item daily
         \end{enumerate}
         \end{multicols}
-        \begin{pccsolution} Apply the compound interest formula (\cref{exp:form:compoundinterest}) to each case.
+        \begin{pccsolution} Apply the compound interest formula (\cref{exp-form-compoundinterest}) to each case.
         \begin{multicols}{2}
         \begin{enumerate}
         \vspace{\fill}
@@ -4518,8 +4518,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \left( 1+\frac{r}{n} \right)^n - 1
         \]
 
-        The quantity $\left( 1+\frac{r}{n} \right)^n$ represents the annual growth factor defined in \cref{exp:def:growthfactorrate}.
-        This comes from the compound interest formula (\cref{exp:def:compoundint}) and the equality
+        The quantity $\left( 1+\frac{r}{n} \right)^n$ represents the annual growth factor defined in \cref{exp-def-growthfactorrate}.
+        This comes from the compound interest formula (\cref{exp-def-compoundint}) and the equality
         \[
         \left( 1+\frac{r}{n} \right)^{nt}= \left(\left( 1+\frac{r}{n} \right)^n\right)^t 
         \]
@@ -4530,8 +4530,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   April 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:effectiverate}
-        Find the effective rate of interest for each of the problems in \cref{exp:ex:compoundinterest}.
+        \begin{pccexample}\label{exp-ex-effectiverate}
+        Find the effective rate of interest for each of the problems in \cref{exp-ex-compoundinterest}.
 
         \begin{pccsolution}
         We will keep many decimal places in our solutions so that we can see the differences between 
@@ -4542,7 +4542,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \item $\left( 1+\frac{0.03}{52} \right)^{52}-1\approx 0.030445620$
         \item $\left(1+\frac{0.03}{365}\right)^{365}-1\approx 0.030453264$
         \end{enumerate}
-        These have been tabulated in \cref{exp:tab:effectiverate}.
+        These have been tabulated in \cref{exp-tab-effectiverate}.
         \end{pccsolution}
         \end{pccexample}
         \begin{margintable}
@@ -4558,10 +4558,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         52            &amp; 3                   &amp; 3.0445620           \\ \normalline
         365           &amp; 3                   &amp; 3.0453264           \\ \lastline
         \end{tabular}
-        \label{exp:tab:effectiverate}
+        \label{exp-tab-effectiverate}
         \end{margintable}
 
-        \Cref{exp:ex:effectiverate} demonstrates that the nominal interest rate is usually different from the effective interest rate.  
+        \Cref{exp-ex-effectiverate} demonstrates that the nominal interest rate is usually different from the effective interest rate.  
         In practice, an effective interest rate is almost always a bit more than the nominal interest rate.  
 
         \investigation*{}
@@ -4599,10 +4599,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Atmospheric C-14 in Austria (\si{\percent} above pre-nuclear age levels)}%
-        \label{exp:fig:coldwar}
+        \label{exp-fig-coldwar}
         \end{figure}
 
-        \Cref{exp:fig:coldwar} charts the percent of atmospheric C-14 above the natural pre-nuclear test level in the air above Austria\footnote{\href{http://en.wikipedia.org/wiki/Carbon-14}{http://en.wikipedia.org/wiki/Carbon-14}}.  The decay that you see has to do with C-14 being flushed out of the atmosphere and into the ground and ocean, not radioactive decay.
+        \Cref{exp-fig-coldwar} charts the percent of atmospheric C-14 above the natural pre-nuclear test level in the air above Austria\footnote{\href{http://en.wikipedia.org/wiki/Carbon-14}{http://en.wikipedia.org/wiki/Carbon-14}}.  The decay that you see has to do with C-14 being flushed out of the atmosphere and into the ground and ocean, not radioactive decay.
         \begin{subproblem}
         Write a sentence that contextually interprets the data point $(1963,95)$.
         \begin{shortsolution}
@@ -4610,7 +4610,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         the pre-nuclear age concentration.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:c14plot}
+        \begin{subproblem}\label{exp-prob-c14plot}
         Using the first and last data point determine a formula that gives an approximation of C-14 in the atmosphere in 
         Austria as a function of the number of years since 1963. 
         Round your growth factor to the second digit after the decimal point. 
@@ -4621,7 +4621,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Repeat \cref{exp:prob:c14plot} using the data points $(1970,52)$ and $(1976,40)$.
+        Repeat \cref{exp-prob-c14plot} using the data points $(1970,52)$ and $(1976,40)$.
         \begin{shortsolution}
         Using $(7,52)$ and $(13,40)$ we obtain $f(t)=\frac{52^{\nicefrac{13}{6}}}{40^{\nicefrac{7}{6}}}\left( \frac{40}{52} \right)^{\nicefrac{t}{6}}\approx 70.62(0.96)^t$.
         \end{shortsolution}
@@ -4630,7 +4630,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Which model is the better fit? \footnote{In fact in statistics you learn techniques called regression that 
         allows you to take all of the data points into consideration and develop the most accurate model.}
         \begin{shortsolution}
-        Based on visual inspection, the model in \cref{exp:prob:c14plot} most closely 
+        Based on visual inspection, the model in \cref{exp-prob-c14plot} most closely 
         fits each of the data points.
         \end{shortsolution}
         \end{subproblem}
@@ -4654,10 +4654,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Suppose that skeletal human remains are found in a forest in Austria.  A first-molar from the remains is found to 
         have \SI{145}{\percent} of pre-nuclear age C-14.  First-molars develop while a person is about 6 or 7 years of age.  In what 
         year was the person born?  Use the model determined in 
-        \cref{exp:prob:c14plot} while working this problem.
+        \cref{exp-prob-c14plot} while working this problem.
 
         \begin{shortsolution}
-        We will use our answer from \cref{exp:prob:c14plot}:  $f(t) \approx 95(0.936)^t$ where $t$ is years since 1963. \\
+        We will use our answer from \cref{exp-prob-c14plot}:  $f(t) \approx 95(0.936)^t$ where $t$ is years since 1963. \\
         \begin{tikzpicture}[trim axis left]
         \begin{axis}[
         framed,
@@ -4703,11 +4703,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         4                     &amp;                         \\\normalline 
         5                     &amp;                         \\\lastline
         \end{tabular}
-        \label{exp:tab:modelresource}
+        \label{exp-tab-modelresource}
         \end{margintable}
 
         \begin{subproblem}
-        Complete \cref{exp:tab:modelresource} to two decimal places.
+        Complete \cref{exp-tab-modelresource} to two decimal places.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.0]S[table-format=4.2]}
         \beforeheading
@@ -4744,8 +4744,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
         \end{problem}
         \begin{problem}[Revisiting greenhouse gases]
-        Recall in \vref{exp:prob:uspopngreen} we modeled the US population and 
-        in \vref{exp:prob:greenhouseorig} we modeled the average amount of CO$_2$ emissions
+        Recall in \vref{exp-prob-uspopngreen} we modeled the US population and 
+        in \vref{exp-prob-greenhouseorig} we modeled the average amount of CO$_2$ emissions
         for which each US citizen is responsible. The functions we came up with were, 
         respectively,
         \[
@@ -4753,7 +4753,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         C(t)=18.1\left( \frac{16.3}{18.1} \right)^{\nicefrac{-10}{21}}\left( \frac{16.3}{18.1} \right)^{\nicefrac{t}{21}}
         \]
 
-        \begin{subproblem}\label{exp:prob:USACO2}
+        \begin{subproblem}\label{exp-prob-USACO2}
         The total amount of CO$_{2}$ that the U.S.A.\ emits can be found by multiplying the amount that each person 
         emits with the total U.S.\ population. Find and simplify a formula for $T(t)$, the total amount of CO$_{2}$ 
         released by the U.S.A., in millions of metric tons, $t$ years since 2000.
@@ -4765,7 +4765,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}		
         \begin{subproblem}
-        Based on your answer to \cref{exp:prob:USACO2}, is the total amount of CO$_{2}$ produced in the U.S.A.\ each year increasing 
+        Based on your answer to \cref{exp-prob-USACO2}, is the total amount of CO$_{2}$ produced in the U.S.A.\ each year increasing 
         or decreasing, and by what percent?
         \begin{shortsolution}
         The total amount of CO$_{2}$ produced in the US each year is increasing by approximately \SI{0.7769}{\percent}.
@@ -4773,7 +4773,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
         \begin{subproblem}
         The US\ Energy Information Administration estimates that the U.S.A.\ will produce 5,679 million metric tons 
-        of CO$_{2}$ in the year 2015. Use your model from \cref{exp:prob:USACO2} to estimate the average CO$_2$ emissions in the year 2015.  How close is your approximation to the USEIA estimate?
+        of CO$_{2}$ in the year 2015. Use your model from \cref{exp-prob-USACO2} to estimate the average CO$_2$ emissions in the year 2015.  How close is your approximation to the USEIA estimate?
         \begin{shortsolution}
         $T(15) \approx 5813$.  The approximation is only about 134 million metric tons of CO$_{2}$ off, which may seem large but is really only about \SI{2}{\percent} off of the actual estimate.
         \end{shortsolution}
@@ -4905,7 +4905,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Graph $P$ using the grid in \cref{exp:fig:uspopulation}. When graphing the population, we graph it
+        Graph $P$ using the grid in \cref{exp-fig-uspopulation}. When graphing the population, we graph it
         continuously to see the trend, even though we are only modeling it for one specific day of the year. 
         \begin{shortsolution}
         \begin{tikzpicture}
@@ -4927,7 +4927,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
 
 
-        \begin{subproblem}\label{exp:prob:uspopStrWeak}
+        \begin{subproblem}\label{exp-prob-uspopStrWeak}
         What are the strengths and weaknesses of an exponential model like this?
         Are there any other factors or information you might want to know before making 
         a more informed decision on whether this percentage growth rate changes or stays the same? What 
@@ -4960,7 +4960,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{US population}
-        \label{exp:fig:uspopulation}
+        \label{exp-fig-uspopulation}
         \end{minipage}
         \hfill
         \begin{minipage}{\figurewidth}
@@ -4977,7 +4977,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{China population}
-        \label{exp:fig:chinapopulation}
+        \label{exp-fig-chinapopulation}
         \end{minipage}
         \end{widepage}
         \end{figure}
@@ -5005,7 +5005,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Graph $P$ using the grid in \cref{exp:fig:chinapopulation}. When graphing the population, we graph it
+        Graph $P$ using the grid in \cref{exp-fig-chinapopulation}. When graphing the population, we graph it
         continuously to see the trend, even though we are only modeling it for one specific day of the year. 
         \begin{shortsolution}
         \begin{tikzpicture}
@@ -5037,7 +5037,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Answers will vary.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:chinapopStrWeak}
+        \begin{subproblem}\label{exp-prob-chinapopStrWeak}
         What are the strengths and weaknesses of an exponential model like this?
         Are there any other factors or information you might want to know before making 
         a more informed decision on whether this population rate changes or stays the same? What 
@@ -5082,7 +5082,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   July 2011
         %===================================
         \begin{problem}[Simple interest]
-        Use \cref{exp:eq:simpleinterest} to find the given unknowns 
+        Use \cref{exp-eq-simpleinterest} to find the given unknowns 
         in each of the following problems. Give your answers to 2 decimal places.
         \begin{multicols}{2}
         \begin{subproblem}
@@ -5235,7 +5235,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         The effective rate is approximately \SI{6.183696}{\percent}.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:compoundedhalfsecond}
+        \begin{subproblem}\label{exp-prob-compoundedhalfsecond}
         Do you think there would be much difference if the interest was compounded 
         every half second compared to compounding it every second?
         \begin{shortsolution}
@@ -5268,14 +5268,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{problem}[Payday loan]
         A payday loan company makes this offer to a customer: they will receive $\$375$ today and when they get paid in two weeks, they owe the payday loan company $\$450$.  
-        \begin{subproblem}\label{exp:prob:paydayloan}
+        \begin{subproblem}\label{exp-prob-paydayloan}
         What percent interest is charged over the two-week period?
         \begin{shortsolution}
         The interest charged on the $\$375$ loan was $\$75$. As $\frac{75}{375}=0.2$, the 2-week percentage rate is $\SI{20}{\percent}$.
         \end{shortsolution}	
         \end{subproblem}
         \begin{subproblem}
-        Using your answer in \cref{exp:prob:paydayloan}, compute the effective annual rate.
+        Using your answer in \cref{exp-prob-paydayloan}, compute the effective annual rate.
         \begin{shortsolution}
         $1.2^{26} - 1 \approx 113.475$; the effective annual rate is approximately \SI{11347.5}{\percent}.
         \end{shortsolution}
@@ -5335,7 +5335,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         All of those figures are based upon the assumption that the 
         interest is compounded only once a year -- that's where the wheel 
         comes in.  You spin the wheel to see the way in which the interest 
-        will be compounded.  \Cref{exp:tab:wheelfortune} shows the amount that will 
+        will be compounded.  \Cref{exp-tab-wheelfortune} shows the amount that will 
         be in your account at the end of year one if the interest is compounded 
         yearly, monthly, weekly, daily, every hour, every minute, and every second.  
         Make sure that you see the connection between the expression $\left( 1+\frac{1}{n} \right)^n$
@@ -5355,7 +5355,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         525600        &amp; 2.71827922                                    \\\normalline
         31536000      &amp; 2.71828247                                    \\\lastline
         \end{tabular}
-        \label{exp:tab:wheelfortune}
+        \label{exp-tab-wheelfortune}
         \end{margintable}
 
         We can see that through the fifth digit after the decimal point the 
@@ -5382,7 +5382,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         that would be in your giga-millions account at the end of year one 
         would be $e$ dollars where $e\approx 2.71828$.
 
-        \begin{pccdefinition}[The number $e$]\label{exp:def:e}
+        \begin{pccdefinition}[The number $e$]\label{exp-def-e}
         The number $e$ is called Euler's number named after the famous
         Swiss mathematician Leonhard Euler (1707-1783). It is also called 
         the natural base of an exponential function.
@@ -5390,14 +5390,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         e &amp; = \lim_{n\to\infty}\left( 1+\frac{1}{n} \right)^n \\
         &amp; \approx 2.718281828                               
         \end{align*}
-        Another definition of $e$ is hinted at in \cref{exp:prob:factorials}.
+        Another definition of $e$ is hinted at in \cref{exp-prob-factorials}.
         \end{pccdefinition}
 
         \subsection*{Continuous growth and decay}
         We can use the natural base, $e$, to model real life situations that involve 
         \emph{continuous} growth and decay. The following definition will guide us 
         in what follows.
-        \begin{pccdefinition}[Continuous growth and decay]\label{exp:def:contgrowthdecay}
+        \begin{pccdefinition}[Continuous growth and decay]\label{exp-def-contgrowthdecay}
         If we are modeling a situation that involves continuous growth or decay, then 
         the model will have the following form:
         \[
@@ -5415,18 +5415,18 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   April 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:compcont}
+        \begin{pccexample}\label{exp-ex-compcont}
         We have \$7000 to invest in an account that has a nominal interest rate of \SI{3}{\percent} compounded 
         {\em continuously}. 
         \begin{enumerate}
         \item Find a model for this situation.
         \item Find the amount in the account after 4 years.
-        \item Compare the answer with the results of \vref{exp:ex:compoundinterest}.
+        \item Compare the answer with the results of \vref{exp-ex-compoundinterest}.
         \item Find the effective annual rate of interest.
         \end{enumerate}
         \begin{pccsolution}
         \begin{enumerate}
-        \item Using \cref{exp:def:contgrowthdecay}, 
+        \item Using \cref{exp-def-contgrowthdecay}, 
         \[
         Q(t) = 7000\,e^{0.03t}
         \]
@@ -5436,22 +5436,22 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         &amp; \approx  7892.48     
         \end{align*}
         The amount in the account after four years is $\$7892.48$.
-        \item This is larger than any of the values we found in \cref{exp:ex:compoundinterest}.
-        \item We calculate the effective annual rate of interest using \cref{exp:def:contgrowthdecay}
+        \item This is larger than any of the values we found in \cref{exp-ex-compoundinterest}.
+        \item We calculate the effective annual rate of interest using \cref{exp-def-contgrowthdecay}
         \[
         e^{0.03} -1 \approx 0.030454534
         \]
-        The effective annual rate of interest is approximately $\SI{3.0454534}{\percent}$. Note that this is greater than any of the values we found in \vref{exp:ex:effectiverate}.
+        The effective annual rate of interest is approximately $\SI{3.0454534}{\percent}$. Note that this is greater than any of the values we found in \vref{exp-ex-effectiverate}.
         \end{enumerate}
         \end{pccsolution}
         \end{pccexample}
         \begin{doyouunderstand}
         \begin{problem}
-        Repeat \cref{exp:ex:compcont} using an investment of \$4000, and a 
+        Repeat \cref{exp-ex-compcont} using an investment of \$4000, and a 
         nominal rate of \SI{2}{\percent}.
         \begin{shortsolution}
         \begin{enumerate}
-        \item Using \cref{exp:def:contgrowthdecay}, 
+        \item Using \cref{exp-def-contgrowthdecay}, 
         \[
         Q(t) = 4000\,e^{0.02t}
         \]
@@ -5462,7 +5462,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{align*}
         The amount in the account after four years is $\$4333.15$.
         \item Not relevant to this problem.
-        \item We calculate the effective annual rate of interest using \cref{exp:def:contgrowthdecay}
+        \item We calculate the effective annual rate of interest using \cref{exp-def-contgrowthdecay}
         \[
         e^{0.02}-1\approx 0.0202
         \]
@@ -5476,7 +5476,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   July 2011
         %===================================
-        \begin{pccexample}\label{exp:prob:compound5all}%
+        \begin{pccexample}\label{exp-prob-compound5all}%
         You have \$2000 to invest in an interest-bearing account that has a nominal interest rate of $\SI{5}{\percent}$.
         \begin{enumerate}
         \item Calculate the effective annual growth rates if the interest is compounded daily and if the interest is compounded continuously.  
@@ -5528,7 +5528,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
 
         \begin{doyouunderstand}
         \begin{problem}
-        Repeat \cref{exp:prob:compound5all} using an initial investment of \$15,000 at a nominal interest rate of $\SI{8}{\percent}$.
+        Repeat \cref{exp-prob-compound5all} using an initial investment of \$15,000 at a nominal interest rate of $\SI{8}{\percent}$.
         \begin{shortsolution}
         Growth rates:
         \begin{itemize}
@@ -5582,7 +5582,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   July 2011
         %===================================
-        You may remember that we studied radioactive decay in \vref{exp:prob:radioactive}. In 
+        You may remember that we studied radioactive decay in \vref{exp-prob-radioactive}. In 
         fact it is often more appropriate to use the natural base, $e$, in such applications.
 
         \begin{pccexample}
@@ -5616,7 +5616,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         down to finding the slope of the line that best mimics the direction of 
         motion along the function at the point of interest.  These lines are 
         called tangent lines, and the tangent lines at the point $(0,1)$ are shown for three 
-        different exponential functions in \crefrange{exp:fig:eusingslopes2}{exp:fig:eusingslopes3}.
+        different exponential functions in \crefrange{exp-fig-eusingslopes2}{exp-fig-eusingslopes3}.
 
         \begin{figure}[!htb]
         \begin{widepage}
@@ -5636,7 +5636,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{$f(x)=2^x$}
-        \label{exp:fig:eusingslopes2}
+        \label{exp-fig-eusingslopes2}
         \end{minipage}%
         \hfill
         \begin{minipage}{\figurewidth}
@@ -5654,7 +5654,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{$g(x)=e^x$}
-        \label{exp:fig:eusingslopese}
+        \label{exp-fig-eusingslopese}
         \end{minipage}%
         \hfill
         \begin{minipage}{\figurewidth}
@@ -5672,7 +5672,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{$h(x)=3^x$}
-        \label{exp:fig:eusingslopes3}
+        \label{exp-fig-eusingslopes3}
         \end{minipage}
         \end{widepage}
         \end{figure}
@@ -5690,7 +5690,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         and the $y$-coordinate of the function is that the function of the 
         form $y=b^x$ that has a slope of one at $(0,1)$ has a very unique 
         property -- at any given point the slope of the function is exactly 
-        equal to the $y$-coordinate of the point. As suggested in \cref{exp:fig:eusingslopese}, 
+        equal to the $y$-coordinate of the point. As suggested in \cref{exp-fig-eusingslopese}, 
         it turns out that the base that creates this unique situation is that 
         same number that showed up in the continuously compounded interest 
         application, the number $e$. So on the graph of $y=e^x$, at any given 
@@ -5703,7 +5703,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   February 2012
         %===================================
         \begin{problem}[Trusting the definition of $e$]
-        \Cref{exp:def:e} says that 
+        \Cref{exp-def-e} says that 
         \[
         e = \lim_{n\rightarrow\infty}\left( 1+\frac{1}{n} \right)^n   
         \]
@@ -5712,7 +5712,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \[
         f(x) = \left( 1+\frac{1}{x} \right)^x   
         \]
-        \begin{subproblem}\label{exp:prob:exploree}
+        \begin{subproblem}\label{exp-prob-exploree}
         Evaluate $f(10)$, $f(100)$, $f(1000)$, $f(10000)$, and $f(100000)$. Give 
         each answer correct to 5 decimal places
         \begin{shortsolution}
@@ -5721,7 +5721,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{subproblem}
         \begin{subproblem}
         Now use your calculator to evaluate $e$ correct to 5 decimal places, and compare your answer
-        to those you obtained in \cref{exp:prob:exploree}.
+        to those you obtained in \cref{exp-prob-exploree}.
         \begin{shortsolution}
         $e\approx 2.71828$; note that $f(100000)$ is closest to this.
         \end{shortsolution}
@@ -6077,7 +6077,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         $V(t)=10e^{-\frac{t}{0.1}}=10e^{-10t}$
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:circuittab}
+        \begin{subproblem}\label{exp-prob-circuittab}
         Construct a table of values of $V(t)$ using $t=0,0.1,...,0.5$.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.1]S[table-format=2.3]} 
@@ -6095,7 +6095,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Based on your answer to \cref{exp:prob:circuittab}, do you think the 
+        Based on your answer to \cref{exp-prob-circuittab}, do you think the 
         graph of $y=V(t)$ will be concave up or concave down? Why?
         \begin{shortsolution}
         Concave up, since the slopes between successive entries 
@@ -6157,7 +6157,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         $V(t)=10( 1-e^{-0.1t} )$ 
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:chargecaptab}
+        \begin{subproblem}\label{exp-prob-chargecaptab}
         Construct a table of values of $V(t)$ using $t=0,0.1,...,0.5$.
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.1]S[table-format=1.3]} 
@@ -6175,7 +6175,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Based on your answer to \cref{exp:prob:chargecaptab}, do you think the 
+        Based on your answer to \cref{exp-prob-chargecaptab}, do you think the 
         graph of $y=V(t)$ will be concave up or concave down? Why?
         \begin{shortsolution}
         The graph will be concave down since the slopes between successive
@@ -6244,7 +6244,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         The half-life is approximately 6931.47 years.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:q0k}
+        \begin{subproblem}\label{exp-prob-q0k}
         $Q_0=15$, $k=-0.05$
         \begin{shortsolution}
         The half-life is approximately 13.86 years.
@@ -6322,8 +6322,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{itemize}
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:matche23}
-        \Cref{exp:fig:matche23} shows $y=2^x$, $y=e^x$, and $y=3^x$. Match each 
+        \begin{subproblem}\label{exp-prob-matche23}
+        \Cref{exp-fig-matche23} shows $y=2^x$, $y=e^x$, and $y=3^x$. Match each 
         curve to the appropriate formula.
         \begin{shortsolution}
         \begin{tikzpicture}
@@ -6345,8 +6345,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{tikzpicture}
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:matchehalfthird}
-        \Cref{exp:fig:matchehalfthird} shows $y=\left( \frac{1}{2} \right)^x$, $y=e^{-x}$, and $y=\left( \frac{1}{3} \right)^x$. Match each 
+        \begin{subproblem}\label{exp-prob-matchehalfthird}
+        \Cref{exp-fig-matchehalfthird} shows $y=\left( \frac{1}{2} \right)^x$, $y=e^{-x}$, and $y=\left( \frac{1}{3} \right)^x$. Match each 
         curve to the appropriate formula.
         \begin{shortsolution}
         \begin{tikzpicture}
@@ -6385,8 +6385,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \addplot expression[domain=-10:3.56,samples=50]{3^x};
         \end{axis}
         \end{tikzpicture}
-        \caption{Graph for \cref{exp:prob:matche23}}
-        \label{exp:fig:matche23}
+        \caption{Graph for \cref{exp-prob-matche23}}
+        \label{exp-fig-matche23}
         \end{minipage}%
         \hfill
         \begin{minipage}{.45\textwidth}
@@ -6404,8 +6404,8 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \addplot expression[domain=-3.56:10,samples=50]{(1/3)^x};
         \end{axis}
         \end{tikzpicture}
-        \caption{Graph for \cref{exp:prob:matchehalfthird}}
-        \label{exp:fig:matchehalfthird}
+        \caption{Graph for \cref{exp-prob-matchehalfthird}}
+        \label{exp-fig-matchehalfthird}
         \end{minipage}%
         \end{widepage}
         \end{figure}
@@ -6414,27 +6414,27 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{problem}[Slopes]
         In this problem you are going to explore the proportionality relationship between the slope and $y$-coordinate of an exponential function. 
         \begin{subproblem}
-        In \cref{exp:fig:eusingslopes2} we see that the graph of $y=2^x$ has a slope of about
+        In \cref{exp-fig-eusingslopes2} we see that the graph of $y=2^x$ has a slope of about
         $0.69$ at the point $(0,1)$. That means the slope of the curve at the point 
         $(1,2)$ is about $0.69(2)$ which is roughly $1.4$.
         Lay out your ruler with a slope of 1.4 at the point $(1,2)$  and see 
         that it follows the direction of the curve at that point.
         \begin{shortsolution}
-        Verify graphically using \vref{exp:fig:eusingslopese}.
+        Verify graphically using \vref{exp-fig-eusingslopese}.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        In \cref{exp:fig:eusingslopes3} we see that the slope at $(0,1)$ is about $1.10$.  What is the slope at the point where the $y$-coordinate is 2?  Verify this slope using your ruler.
+        In \cref{exp-fig-eusingslopes3} we see that the slope at $(0,1)$ is about $1.10$.  What is the slope at the point where the $y$-coordinate is 2?  Verify this slope using your ruler.
         \begin{shortsolution}
-        The slope is about $2.20$. Verify graphically using \vref{exp:fig:eusingslopes3}.
+        The slope is about $2.20$. Verify graphically using \vref{exp-fig-eusingslopes3}.
         \end{shortsolution}
         \end{subproblem}
         \end{problem}
-        \begin{problem}[Factorials]\label{exp:prob:factorials}%
+        \begin{problem}[Factorials]\label{exp-prob-factorials}%
         There is a function called the factorial function which is symbolized by 
         an exclamation point.  The domain of the function is limited to the 
         non-negative integers. 
-        \Cref{exp:tab:factorial} shows enough values of the function for you to 
+        \Cref{exp-tab-factorial} shows enough values of the function for you to 
         hopefully see the way the function works.
 
         \begin{table}[!htb]
@@ -6442,7 +6442,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{.25\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:factorial}
+        \label{exp-tab-factorial}
         \begin{tabular}{S[table-format=1.0]l}
         \beforeheading
         \heading{$k$} &amp; \heading{$k!$}                         \\\afterheading
@@ -6458,7 +6458,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{.75\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:factoriale}
+        \label{exp-tab-factoriale}
         \renewcommand{\arraystretch}{2}
         \begin{tabular}{ll}
         \beforeheading
@@ -6473,7 +6473,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{table}
 
         Find, correct to 5 decimal places,
-        the decimal values of each of the expressions in \cref{exp:tab:factoriale}.  
+        the decimal values of each of the expressions in \cref{exp-tab-factoriale}.  
         What do you observe?
         \begin{shortsolution}
         \begin{tabular}[t]{ll}
@@ -6626,12 +6626,12 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{problem}
 
         \begin{problem}
-        Determine if the data in \crefrange{exp:tab:lineardata}{exp:tab:neitherdata} could 
+        Determine if the data in \crefrange{exp-tab-lineardata}{exp-tab-neitherdata} could 
         reasonably be modeled with a linear function. 
         \begin{shortsolution}
-        \Cref{exp:tab:lineardata}: this is linear data since $y$ values increase by a constant $6$ when $x$ increases by $1$.
-        \Cref{exp:tab:expdata}: this data is reasonably close to linear since $y$ values increase by \emph{almost} a constant $0.2$ when $x$ increases by $1$.
-        \Cref{exp:tab:neitherdata}: this data is not linear.
+        \Cref{exp-tab-lineardata}: this is linear data since $y$ values increase by a constant $6$ when $x$ increases by $1$.
+        \Cref{exp-tab-expdata}: this data is reasonably close to linear since $y$ values increase by \emph{almost} a constant $0.2$ when $x$ increases by $1$.
+        \Cref{exp-tab-neitherdata}: this data is not linear.
         \end{shortsolution}
         \end{problem}
 
@@ -6640,7 +6640,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \null \hfill
         \begin{minipage}{0.25\textwidth}
         \centering
-        \caption{} \label{exp:tab:lineardata}
+        \caption{} \label{exp-tab-lineardata}
         \begin{tabular}{S[table-format=4.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6655,7 +6655,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.25\textwidth}
         \centering
-        \caption{} \label{exp:tab:expdata}
+        \caption{} \label{exp-tab-expdata}
         \begin{tabular}{S[table-format=2.0]S[table-format=1.2]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6670,7 +6670,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.25\textwidth}
         \centering
-        \caption{}\label{exp:tab:neitherdata}
+        \caption{}\label{exp-tab-neitherdata}
         \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -6715,14 +6715,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         best to model the data using a linear model or an exponential model.  How might you make 
         that decision? If the data is truly linear, then when the input values change at a 
         steady pace, the output values also change at a steady pace.  This is illustrated 
-        in \cref{exp:tab:dataexample1} where the values of $x$ increase by $4$ from row to row 
+        in \cref{exp-tab-dataexample1} where the values of $x$ increase by $4$ from row to row 
         and the values of $y$ decrease by $9$ from row to row.
 
         \begin{table}[!htb]
         \centering
         \begin{minipage}{0.2\textwidth}
         \centering
-        \caption{} \label{exp:tab:dataexample1}
+        \caption{} \label{exp-tab-dataexample1}
         \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6737,7 +6737,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.2\textwidth}
         \centering
-        \caption{} \label{exp:tab:dataexample2}
+        \caption{} \label{exp-tab-dataexample2}
         \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6752,7 +6752,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.2\textwidth}
         \centering
-        \caption{}\label{exp:tab:dataexample3}
+        \caption{}\label{exp-tab-dataexample3}
         \begin{tabular}{S[table-format=1.0]S[table-format=1.7]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -6768,7 +6768,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill 
         \begin{minipage}{0.2\textwidth}
         \centering
-        \caption{} \label{exp:tab:dataexample4}
+        \caption{} \label{exp-tab-dataexample4}
         \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -6783,23 +6783,23 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{minipage}
         \end{table}
         If the data is truly exponential, then when the input values change at a steady pace, the 
-        values of the output change at a constant ratio.  This is illustrated in \cref{exp:tab:dataexample2} 
+        values of the output change at a constant ratio.  This is illustrated in \cref{exp-tab-dataexample2} 
         where the value of $x$ increases by 6 from row to row and the ratio of the successive values of $y$ is always 2.
 
         \begin{pccexample}
-        For each of the data sets in \cref{exp:tab:dataexample3,exp:tab:dataexample4}, determine if the data is 
+        For each of the data sets in \cref{exp-tab-dataexample3,exp-tab-dataexample4}, determine if the data is 
         linear, exponential, or neither.  If the data is either linear or exponential, find a formula that models the data.
 
-        In \cref{exp:tab:dataexample3}, every time the value of $x$ increases by $2$, the ratio of the successive $y$-values is $\frac{1}{4}$.  
+        In \cref{exp-tab-dataexample3}, every time the value of $x$ increases by $2$, the ratio of the successive $y$-values is $\frac{1}{4}$.  
         This is indicative of an exponential function.  
 
         If $f(x)=a\,b^x$, then from the data points $(-8,72)$ and $(-6,18)$ we get $\frac{a\,b^{-6}}{a b^{-8}}=\frac{18}{72}$.  
         So $b^2=\frac{1}{4}$ which means that the base of the function $b$ must be $\frac{1}{2}$ (since the base cannot be negative).  
         Using the data point $(0,0.28125)$ along with our newly discovered base we find $a(0.5)^0=0.28125$, so $a=0.28125$.  
 
-        In conclusion, the data in \cref{exp:tab:dataexample3} is modeled by the exponential function $f$ where $f(x)=0.28125\left(\frac12\right)^x$.
+        In conclusion, the data in \cref{exp-tab-dataexample3} is modeled by the exponential function $f$ where $f(x)=0.28125\left(\frac12\right)^x$.
 
-        In \cref{exp:tab:dataexample4}, every time the value of $x$ increase by 5, the value of $y$ decreases by 5.  This is 
+        In \cref{exp-tab-dataexample4}, every time the value of $x$ increase by 5, the value of $y$ decreases by 5.  This is 
         the behavior of a linear function with a slope of $-1$.  Using either the slope-intercept form of a linear 
         equation or the point-slope form of a linear equation, we can deduce that the data is modeled by the linear 
         function $g$ where $g(x)=-x-8$.
@@ -6809,10 +6809,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         might need to decide which model \emph{best} fits the data, linear or exponential.
 
         \begin{pccexample}
-        Is the data in \cref{exp:tab:dataexample5} better modeled with a linear function or an exponential function?
+        Is the data in \cref{exp-tab-dataexample5} better modeled with a linear function or an exponential function?
         \begin{table}[!htb]
         \centering
-        \captionof{table}{} \label{exp:tab:dataexample5}
+        \captionof{table}{} \label{exp-tab-dataexample5}
         \begin{tabular}{S[table-format=2.0]S[table-format=2.2]}
         \beforeheading
         \heading{$x$} &amp; \heading{$f(x)$} \\\afterheading
@@ -6839,16 +6839,16 @@ need to work out how to define a 'xrefRange' command (two arguments???)
 
         \begin{doyouunderstand}
         \begin{problem}
-        Determine if each of the data sets in \crefrange{exp:tab:dataexample55}{exp:tab:dataexample8} 
+        Determine if each of the data sets in \crefrange{exp-tab-dataexample55}{exp-tab-dataexample8} 
         suggest an exponential relationship, a linear relationship, or neither. 
         \begin{shortsolution}
-        \Cref{exp:tab:dataexample55}: since successive differences are all equal to $2$, a linear model would be appropriate. 
+        \Cref{exp-tab-dataexample55}: since successive differences are all equal to $2$, a linear model would be appropriate. 
         Successive ratios decrease steadily, so an exponential model would not be appropriate.
-        \Cref{exp:tab:dataexample6}: since successive ratios are all equal to $3$, an exponential model would be appropriate.  
+        \Cref{exp-tab-dataexample6}: since successive ratios are all equal to $3$, an exponential model would be appropriate.  
         Successive differences increase, so a linear model would not be appropriate.
-        \Cref{exp:tab:dataexample7}: since successive differences are all quite close to $2.3$, a linear model might be appropriate.  
+        \Cref{exp-tab-dataexample7}: since successive differences are all quite close to $2.3$, a linear model might be appropriate.  
         Successive ratios drop steadily from about $1.13$ to $1.09$, so an exponential model would not be appropriate.
-        \Cref{exp:tab:dataexample8}: since successive ratios are all quite close to $0.92$, an exponential model might be appropriate.  
+        \Cref{exp-tab-dataexample8}: since successive ratios are all quite close to $0.92$, an exponential model might be appropriate.  
         Successive differences rise steadily from $-44$ to $-31$, so a linear model would not be appropriate.
         \end{shortsolution}
         \end{problem}
@@ -6858,7 +6858,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \null\hfill
         \begin{minipage}{0.20\textwidth}
         \centering
-        \caption{}\label{exp:tab:dataexample55}
+        \caption{}\label{exp-tab-dataexample55}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6874,7 +6874,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \centering
         \begin{minipage}{0.20\textwidth}
         \centering
-        \caption{} \label{exp:tab:dataexample6}
+        \caption{} \label{exp-tab-dataexample6}
         \begin{tabular}{S[table-format=4.0]S[table-format=3.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6889,7 +6889,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.20\textwidth}
         \centering
-        \caption{} \label{exp:tab:dataexample7}
+        \caption{} \label{exp-tab-dataexample7}
         \begin{tabular}{S[table-format=4.0]S[table-format=2.3]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\\afterheading
@@ -6904,7 +6904,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \hfill
         \begin{minipage}{0.20\textwidth}
         \centering
-        \caption{}\label{exp:tab:dataexample8}
+        \caption{}\label{exp-tab-dataexample8}
         \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -6927,7 +6927,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Our examples in this section so far have not had any context; they have just been tables of numbers.  As a student of the natural and social sciences, you will encounter data sets that come from interesting sources.  Understanding how to model these data sets can help you understand that subject better.
 
         \begin{pccexample}
-        A study of reproductive health care found the data in \cref{exp:ex:Csection} concerning the percentage of births in the U.S.A.\ that were delivered via a C\ae{}sarian section.
+        A study of reproductive health care found the data in \cref{exp-ex-Csection} concerning the percentage of births in the U.S.A.\ that were delivered via a C\ae{}sarian section.
 
         Can we model this data with a linear or exponential function?
         \begin{pccsolution}
@@ -6950,7 +6950,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         2006           &amp; 30.0                      \\\normalline
         2008           &amp; 32.2                      \\\lastline
         \end{tabular}
-        \label{exp:ex:Csection}
+        \label{exp-ex-Csection}
         \end{minipage}
         \hfill
         \begin{minipage}{.3\textwidth}
@@ -6967,20 +6967,20 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{US C\ae{}sarian section data}
-        \label{exp:fig:Csections}
+        \label{exp-fig-Csections}
         \end{minipage}%
         \hfill\mbox{}
         \end{figure}
 
-        \Cref{exp:fig:Csections} shows us that there is a clear upward trend in C\ae{}sarian section deliveries.  Is the trend linear, exponential, or neither?  
+        \Cref{exp-fig-Csections} shows us that there is a clear upward trend in C\ae{}sarian section deliveries.  Is the trend linear, exponential, or neither?  
 
-        You might be able to see a slight upward bend to the plot, suggesting an exponential growth pattern.  Then again, your eyes might see these points as lying in a relatively straight line, suggesting a linear growth pattern.   Let's look at successive ratios and differences in \cref{exp:ex:CsectionSuccessive}.
+        You might be able to see a slight upward bend to the plot, suggesting an exponential growth pattern.  Then again, your eyes might see these points as lying in a relatively straight line, suggesting a linear growth pattern.   Let's look at successive ratios and differences in \cref{exp-ex-CsectionSuccessive}.
 
-        In \cref{exp:ex:CsectionSuccessive}, we see successive differences that become larger and larger.  This tells us that a linear model would not be appropriate for the C\ae{}sarian section data.  On the other hand, the successive ratios all bounce around close to $1.074$.  This suggests that an exponential model would be appropriate.
+        In \cref{exp-ex-CsectionSuccessive}, we see successive differences that become larger and larger.  This tells us that a linear model would not be appropriate for the C\ae{}sarian section data.  On the other hand, the successive ratios all bounce around close to $1.074$.  This suggests that an exponential model would be appropriate.
         \begin{table}[!htb]
         \centering
         \captionof{table}{US C\ae{}sarian Section Data}
-        \label{exp:ex:CsectionSuccessive}
+        \label{exp-ex-CsectionSuccessive}
         \begin{tabular}{S[table-format=1.1]l}
         \beforeheading
         \heading{Differences} &amp; \heading{Ratios} \\
@@ -7023,7 +7023,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         &amp; = 30^{\nicefrac{1}{4}}22.6^{\nicefrac{3}{4}}\left(  \left( \frac{30.0}{22.6} \right)^{\nicefrac{1}{8}}\right)^t \\
         &amp; \approx 24.26(1.036)^t                                                                                          
         \end{align*}
-        and it is acceptable to say that the percentage of C-section births is growing exponentially in the U.S.A.  For completeness, we can examine a graph of this model overlaying the data in \cref{exp:fig:CsectionsModel}.
+        and it is acceptable to say that the percentage of C-section births is growing exponentially in the U.S.A.  For completeness, we can examine a graph of this model overlaying the data in \cref{exp-fig-CsectionsModel}.
         \end{pccsolution}
         \end{pccexample}
 
@@ -7044,7 +7044,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{US C\ae{}sarian section model}
-        \label{exp:fig:CsectionsModel}
+        \label{exp-fig-CsectionsModel}
         \end{figure}
 
         We have so far modeled data using exponential and linear functions; this
@@ -7055,14 +7055,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   Dec 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:complinexp}
+        \begin{pccexample}\label{exp-ex-complinexp}
         Consider the functions $f$ and $g$ that have formulas
         \[
         f(x)=4x+1, \qquad g(x)=4^x
         \]
         Describe the behavior of both functions as $x\to\infty$ and as $x\to -\infty$.
         \begin{pccsolution}
-        The functions $f$ and $g$ are graphed in \cref{exp:fig:comparelinexp}.
+        The functions $f$ and $g$ are graphed in \cref{exp-fig-comparelinexp}.
         Note that both functions grow without bound as $x\to\infty$. Another 
         way to express this is to say
         \[
@@ -7100,7 +7100,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:comparelinexp}
+        \label{exp-fig-comparelinexp}
         \end{minipage}
         \hfill
         \begin{minipage}{0.3\textwidth}
@@ -7121,7 +7121,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:comparelinexpmn}
+        \label{exp-fig-comparelinexpmn}
         \end{minipage}
         \hfill\null
         \end{figure}
@@ -7137,11 +7137,11 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \]
         Describe the behavior of both functions as $x\to\infty$ and as $x\to-\infty$.
         \begin{pccsolution}
-        The functions $m$ and $n$ are both graphed in \cref{exp:fig:comparelinexpmn}. 
+        The functions $m$ and $n$ are both graphed in \cref{exp-fig-comparelinexpmn}. 
         Note that both functions decrease without bound as $x\to\infty$. However, $m$ does so 
         at \emph{a much faster rate}.
 
-        As in \cref{exp:ex:complinexp}, the behavior of $m$ and $n$ as $x\to-\infty$
+        As in \cref{exp-ex-complinexp}, the behavior of $m$ and $n$ as $x\to-\infty$
         is different. Notice that $m$ has a horizontal asymptote ($y=0$) and that 
         $n$ does not.  In this case $n(x)\to \infty$ as $x\to-\infty$.
         \end{pccsolution}
@@ -7168,7 +7168,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         The units in the numerator are millions and the units in the denominator are years.  So the slope of 25 has meaning as a rate of $\SI{25}{\million\per\year}$.  This means there are 25 million new cell phone subscriptions each year since 2000.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem} \label{exp:prob:phonelinear}
+        \begin{subproblem} \label{exp-prob-phonelinear}
         Assuming that the relationship between years and cell phone users is linear, find 
         a formula that determines the number of cell phone users as a function of the number of years since 2000.
         \begin{shortsolution}
@@ -7181,7 +7181,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Therefore, $f(t)=25t+83$.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem} \label{exp:prob:phoneexp}
+        \begin{subproblem} \label{exp-prob-phoneexp}
         Assuming that the relationship between years and cell phone users is exponential, find 
         a formula that determines the number of cell phone users as a function of the number of years since 2000.
         \begin{shortsolution}
@@ -7189,7 +7189,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        According to your models in \cref{exp:prob:phonelinear,exp:prob:phoneexp}, how many cell phone users were there in 2008?
+        According to your models in \cref{exp-prob-phonelinear,exp-prob-phoneexp}, how many cell phone users were there in 2008?
         In 2008 there were approximately 263 million cell phone users in the United States. Which of the two models 
         does a better job of predicting this number?
         \begin{shortsolution}
@@ -7206,7 +7206,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{problem}[Wind power]
         The wind energy production capacity (in \si{\mega\watt}) for the world\footnote{\href{http://www.thewindpower.net/statistics\_world.php}{http://www.thewindpower.net/statistics\_world.php}} is shown in 
-        \vref{exp:fig:windpower}. 
+        \vref{exp-fig-windpower}. 
 
         \begin{figure}[!htb]
         \centering
@@ -7246,7 +7246,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{Wind power.}
-        \label{exp:fig:windpower}
+        \label{exp-fig-windpower}
         \end{figure}
 
         \begin{subproblem}
@@ -7289,12 +7289,12 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}[Population of Africa]
-        \Cref{exp:tab:AfricaPopulation} gives the population of Africa for each year form 1999 to 2009.\footnote{\href{http://www.earth-policy.org/books/wote}{http://www.earth-policy.org/books/wote}}
+        \Cref{exp-tab-AfricaPopulation} gives the population of Africa for each year form 1999 to 2009.\footnote{\href{http://www.earth-policy.org/books/wote}{http://www.earth-policy.org/books/wote}}
 
         \begin{table}[!htb]
         \centering
         \captionof{table}{Human Population of Africa}
-        \label{exp:tab:AfricaPopulation}
+        \label{exp-tab-AfricaPopulation}
         \begin{tabular}{S[table-format=4.0]S[table-format=3.1]}
         \beforeheading
         \heading{Year} &amp; \heading{Millions} \\
@@ -7321,7 +7321,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         an exponential model is appropriate.  Alternatively, a plot of the data reveals a concave up trend.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:Africamodel}
+        \begin{subproblem}\label{exp-prob-Africamodel}
         Find an explicit exponential model for the population of Africa as a function of time.  
         That is, find an exponential function $P$ where $P(t)=a\,b^t$ such that $P(t)$ approximates the 
         population of Africa at time $t$.  For convenience, take $t=0$ to mean the year 2000, with time measured in years.
@@ -7332,7 +7332,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Use the model that you found in \cref{exp:prob:Africamodel} to estimate the population of Africa in the year 2020.
+        Use the model that you found in \cref{exp-prob-Africamodel} to estimate the population of Africa in the year 2020.
         \begin{shortsolution}
         The model suggests that in 2020 the population of Africa will be about $1310$ million, or $1.31$ billion.
         \end{shortsolution}
@@ -7358,7 +7358,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        How good is your model?  Use your model to add a third column to  \cref{exp:tab:AfricaPopulation} that displays the model's predicted population.  Discuss the accuracy of the model.
+        How good is your model?  Use your model to add a third column to  \cref{exp-tab-AfricaPopulation} that displays the model's predicted population.  Discuss the accuracy of the model.
         \begin{shortsolution}
         Answers will vary as models vary.  Using the model $P(t)=819.7(1.023530)^t$:\\
 
@@ -7588,9 +7588,9 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   April 2011
         %===================================
         \begin{problem}[Linear or exponential?]
-        Consider the data sets in \crefrange{exp:tab:findformula1}{exp:tab:dataproblem3}.
+        Consider the data sets in \crefrange{exp-tab-findformula1}{exp-tab-dataproblem3}.
         \begin{subproblem}
-        For each data set in \crefrange{exp:tab:findformula1}{exp:tab:findformula4}, state whether a linear or 
+        For each data set in \crefrange{exp-tab-findformula1}{exp-tab-findformula4}, state whether a linear or 
         exponential function (or neither) would better model the data.  If a linear or exponential model is appropriate,  
         find an exact formula for the model.
         \begin{shortsolution}
@@ -7603,7 +7603,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.2\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:findformula1}
+        \label{exp-tab-findformula1}
         \begin{tabular}{S[table-format=1.0]S[table-format=1.1]}
         \beforeheading
         \heading{$x$} &amp; \heading{$f(x)$} \\
@@ -7619,7 +7619,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.2\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:findformula2}
+        \label{exp-tab-findformula2}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$g(x)$} \\
@@ -7635,7 +7635,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.2\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:findformula3}
+        \label{exp-tab-findformula3}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.3]}
         \beforeheading
         \heading{x} &amp; \heading{h(x)} \\
@@ -7651,7 +7651,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.2\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:findformula4}
+        \label{exp-tab-findformula4}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$k(x)$} \\
@@ -7669,7 +7669,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.25\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:dataproblem1}
+        \label{exp-tab-dataproblem1}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -7685,7 +7685,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.25\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:dataproblem2}
+        \label{exp-tab-dataproblem2}
         \begin{tabular}{S[table-format=1.0]S[table-format=1.2]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -7701,7 +7701,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \begin{minipage}{0.25\textwidth}
         \centering
         \caption{}
-        \label{exp:tab:dataproblem3}
+        \label{exp-tab-dataproblem3}
         \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
         \beforeheading
         \heading{$x$} &amp; \heading{$y$} \\
@@ -7718,14 +7718,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{widepage}
         \end{table}
 
-        \begin{subproblem}\label{exp:prob:dataproblem1}
-        For each data set in \crefrange{exp:tab:dataproblem1}{exp:tab:dataproblem3}, state whether a 
+        \begin{subproblem}\label{exp-prob-dataproblem1}
+        For each data set in \crefrange{exp-tab-dataproblem1}{exp-tab-dataproblem3}, state whether a 
         linear or exponential function (or neither) would better model the data.  If a linear or exponential 
         model is appropriate,  find an approximate formula for the model.
         \begin{shortsolution}
-        The data in \cref{exp:tab:dataproblem1} could be modeled with an exponential function, since all of the ratios are fairly close to 1.1.  The model could be $y=f(x)$, where $f(x)=5(1.1)^x$.
-        The data in \cref{exp:tab:dataproblem2} could be modeled with a linear function, since all of the differences are fairly close to 1.12.  The model could be $y=g(x)$, where $g(x)=1.12x+2.03$.
-        The data in \cref{exp:tab:dataproblem3} should not be modeled with either a linear function or an exponential function, since the differences are increasing and the ratios are decreasing.
+        The data in \cref{exp-tab-dataproblem1} could be modeled with an exponential function, since all of the ratios are fairly close to 1.1.  The model could be $y=f(x)$, where $f(x)=5(1.1)^x$.
+        The data in \cref{exp-tab-dataproblem2} could be modeled with a linear function, since all of the differences are fairly close to 1.12.  The model could be $y=g(x)$, where $g(x)=1.12x+2.03$.
+        The data in \cref{exp-tab-dataproblem3} should not be modeled with either a linear function or an exponential function, since the differences are increasing and the ratios are decreasing.
         \end{shortsolution}
         \end{subproblem}
         \end{problem}
@@ -7752,14 +7752,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         $f(10)=1.01\times 10^6$, $g(10)=1024$. Clearly $f(10)&gt;g(10)$.
         \end{shortsolution}
         \end{subproblem}
-        \begin{subproblem}\label{exp:prob:expovertake}
+        \begin{subproblem}\label{exp-prob-expovertake}
         Do you think that that $g(x)$ will ever be greater than $f(x)$?
         \begin{shortsolution}
         Answers will vary.
         \end{shortsolution}
         \end{subproblem}
         \begin{subproblem}
-        Evaluate $f(20)$ and $g(20)$. Does this change your answer to \cref{exp:prob:expovertake}?
+        Evaluate $f(20)$ and $g(20)$. Does this change your answer to \cref{exp-prob-expovertake}?
         \begin{shortsolution}
         $f(20)=1.02\times 10^6$, $g(20)\approx 1.05\times 10^6$. 
         \end{shortsolution}
@@ -7937,7 +7937,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   Dec 2011
         %===================================
         \begin{problem}
-        Did you complete \cref{exp:prob:tapfishtable} (from \cref{exp:sec:findformula}) about the Tapfish app?  If you did, do the values of $F(t)$ suggest that an exponential model might be appropriate?  Use successive ratios to decide.
+        Did you complete \cref{exp-prob-tapfishtable} (from \cref{exp-sec-findformula}) about the Tapfish app?  If you did, do the values of $F(t)$ suggest that an exponential model might be appropriate?  Use successive ratios to decide.
 
         \begin{shortsolution}
         \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]l}
@@ -7972,7 +7972,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \[
         f(x)=\left( \frac{1}{4} \right)^x, \qquad n(x)=-3x
         \]
-        which are shown in \cref{exp:fig:complinexpfn}. Describe the behavior
+        which are shown in \cref{exp-fig-complinexpfn}. Describe the behavior
         of $f$ and $n$ as $x\to\infty$ and $x\to-\infty$.
         \begin{shortsolution}
         $f(x)\to 0$ as $x\to\infty$ and $f(x)\to\infty$ as $x\to-\infty$.
@@ -7984,7 +7984,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \[
         g(x)= -\left( \frac{1}{5} \right)^x, \qquad m(x)=6x
         \]
-        which are shown in \cref{exp:fig:complinexpgm}. Describe the behavior
+        which are shown in \cref{exp-fig-complinexpgm}. Describe the behavior
         of $g$ and $m$ as $x\to\infty$ and $x\to-\infty$.
         \begin{shortsolution}
         $g(x)\to 0$ as $x\to\infty$ and $g(x)\to-\infty$ as $x\to-\infty$.
@@ -8014,7 +8014,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$f$ and $n$}
-        \label{exp:fig:complinexpfn}
+        \label{exp-fig-complinexpfn}
         \end{minipage}
         \hfill
         \begin{minipage}{0.3\textwidth}
@@ -8035,7 +8035,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$g$ and $m$}
-        \label{exp:fig:complinexpgm}
+        \label{exp-fig-complinexpgm}
         \end{minipage}
         \hfill\null
         \end{widepage}
@@ -8048,7 +8048,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{problem}[Match formulas to graphs]
         Match each of the following formulas with one of the graphs in 
-        \cref{exp:fig:matchlinexp}. Note that axis ticks and scaling have deliberately
+        \cref{exp-fig-matchlinexp}. Note that axis ticks and scaling have deliberately
         been omitted to encourage you to think about long-run behavior. 
         \begin{multicols}{4}
         \begin{enumerate}[label=(\roman*)]
@@ -8064,14 +8064,14 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{multicols}
         \begin{shortsolution}
         \begin{itemize}
-        \item \Cref{exp:fig:matchlinexp1}: $y=10^x$
-        \item \Cref{exp:fig:matchlinexp2}: $y=-\pi x$
-        \item \Cref{exp:fig:matchlinexp3}: $y=\left( \dfrac{1}{2} \right)^x$
-        \item \Cref{exp:fig:matchlinexp4}: $y=x$
-        \item \Cref{exp:fig:matchlinexp5}: $y=4$
-        \item \Cref{exp:fig:matchlinexp6}: $y=-\left( \dfrac{1}{2} \right)^x$
-        \item \Cref{exp:fig:matchlinexp7}: $y=10x+2$
-        \item \Cref{exp:fig:matchlinexp8}: $y=-4^x$
+        \item \Cref{exp-fig-matchlinexp1}: $y=10^x$
+        \item \Cref{exp-fig-matchlinexp2}: $y=-\pi x$
+        \item \Cref{exp-fig-matchlinexp3}: $y=\left( \dfrac{1}{2} \right)^x$
+        \item \Cref{exp-fig-matchlinexp4}: $y=x$
+        \item \Cref{exp-fig-matchlinexp5}: $y=4$
+        \item \Cref{exp-fig-matchlinexp6}: $y=-\left( \dfrac{1}{2} \right)^x$
+        \item \Cref{exp-fig-matchlinexp7}: $y=10x+2$
+        \item \Cref{exp-fig-matchlinexp8}: $y=-4^x$
         \end{itemize}
         \end{shortsolution}
         \end{problem}
@@ -8092,7 +8092,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp1}
+        \label{exp-fig-matchlinexp1}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8107,7 +8107,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp2}
+        \label{exp-fig-matchlinexp2}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8122,7 +8122,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp3}
+        \label{exp-fig-matchlinexp3}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8137,7 +8137,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp4}
+        \label{exp-fig-matchlinexp4}
         \end{subfigure}\\
         \vspace{0.5cm}
         \begin{subfigure}{.2\textwidth}
@@ -8152,7 +8152,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp5}
+        \label{exp-fig-matchlinexp5}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8167,7 +8167,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp6}
+        \label{exp-fig-matchlinexp6}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8182,7 +8182,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp7}
+        \label{exp-fig-matchlinexp7}
         \end{subfigure}
         \hfill
         \begin{subfigure}{.2\textwidth}
@@ -8197,10 +8197,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{}
-        \label{exp:fig:matchlinexp8}
+        \label{exp-fig-matchlinexp8}
         \end{subfigure}
         \caption{}
-        \label{exp:fig:matchlinexp}
+        \label{exp-fig-matchlinexp}
         \end{widepage}
         \end{figure}
         \end{exercises}
@@ -8213,7 +8213,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{outcomelist}
         \end{outcomes}
         \subsection*{A more realistic population model}
-        We considered population models in \cref{exp:sec:populationmodels}. 
+        We considered population models in \cref{exp-sec-populationmodels}. 
         Each model had the form 
         \[
         P(t) = a\,b^t
@@ -8224,7 +8224,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         increasing population encounters limitations on food and other resources that will prevent it from growing 
         without bound.  The Logistic Model takes resource limitations into account.
 
-        \begin{pccdefinition}[The Logistic Model]\label{exp:def:logistic}
+        \begin{pccdefinition}[The Logistic Model]\label{exp-def-logistic}
         According to the Logistic Model, the population, $P(t)$, $t$ years after the population started its logistic growth is 
         given by the formula
         \[
@@ -8244,12 +8244,12 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Author: Hughes
         %   Date:   May 2011
         %===================================
-        \begin{pccexample}\label{exp:ex:logistic}
+        \begin{pccexample}\label{exp-ex-logistic}
         Let $P(t)$ represent the population of a country at time $t$ (in years) since 2000.
-        Use \cref{exp:def:logistic}, with $k=0.08$ and $M=1000$, to study the effect 
+        Use \cref{exp-def-logistic}, with $k=0.08$ and $M=1000$, to study the effect 
         of changing $P_0$ from 100 to 1400. What happens to $P$ as $t\to\infty$?
         \begin{pccsolution}
-        Using $k=0.08$ and $M=1000$ in \cref{exp:def:logistic}, we have
+        Using $k=0.08$ and $M=1000$ in \cref{exp-def-logistic}, we have
         \[
         P(t) = \frac{1000P_0}{P_0+(1000-P_0)e^{-0.08t}}
         \]
@@ -8257,13 +8257,13 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \[
         P(t)=\frac{1000}{1+9e^{-0.08t}}, \qquad P(t)= \frac{7000}{7-2e^{-0.08t}}
         \]
-        graphs of which are shown in \cref{exp:fig:logistics1,exp:fig:logistics2}.
+        graphs of which are shown in \cref{exp-fig-logistics1,exp-fig-logistics2}.
 
         Notice that in both models, $P(t)\to 1000$ as $t\to\infty$. Remember 
-        that we called $M$ the carrying capacity in \cref{exp:def:logistic}, 
+        that we called $M$ the carrying capacity in \cref{exp-def-logistic}, 
         which represents the maximum population that the environment can support. 
 
-        In contrast to the models presented in \cref{exp:sec:populationmodels}, the populations 
+        In contrast to the models presented in \cref{exp-sec-populationmodels}, the populations 
         neither grow without bound nor decay toward zero. 
         \end{pccsolution}
         \end{pccexample}
@@ -8288,7 +8288,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$\dd P(t)=\frac{1000}{1+9e^{-0.08t}}$}
-        \label{exp:fig:logistics1}
+        \label{exp-fig-logistics1}
         \end{minipage}
         \hfill
         \begin{minipage}{.4\textwidth}
@@ -8310,7 +8310,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \end{axis}
         \end{tikzpicture}
         \caption{$\dd P(t)= \frac{7000}{7-2e^{-0.08t}}$}
-        \label{exp:fig:logistics2}
+        \label{exp-fig-logistics2}
         \end{minipage}
         \end{figure}
 
@@ -8320,7 +8320,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %   Date:   May 2011
         %===================================
         \begin{problem}[Logistic model]
-        Use \cref{exp:def:logistic} and \cref{exp:ex:logistic} to guide you in this 
+        Use \cref{exp-def-logistic} and \cref{exp-ex-logistic} to guide you in this 
         problem. Assume that $k=0.05$, $P_0=100$ and $M=800$.
         \begin{subproblem}
         Find a logistic population model, $P(t)$.
@@ -8374,7 +8374,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         %===================================
         \begin{problem}[Rats!]
         In the 1800s, a ship landed on a remote island and 35 black rats (\textit{Rattus rattus}) escaped to colonize the island.  
-        \begin{subproblem} \label{exp:prob:ratisland}
+        \begin{subproblem} \label{exp-prob-ratisland}
         If the initial relative growth rate was about \SI{90}{\percent} per year and the island has a carrying capacity of 20,000 rats, find a formula for $P(t)$, the number of rats on the island at time $t$, assuming logistic growth.
         \begin{shortsolution}
         $P(t)\approx\frac{700000}{35+19965e^{-0.9t}}$.
@@ -8397,7 +8397,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         Himalayan blackberry is an invasive species.  
         Some seeds found their way into a remote valley and grew into $\SI{8}{\kilo\gram}$ of blackberry biomass by the next year.  
         Suppose that the initial relative growth rate of blackberry biomass was \SI{350}{\percent} per year and that the valley has a carrying capacity of $\SI{50000}{\kilo\gram}$.  
-        \begin{subproblem} \label{exp:prob:blackberries}
+        \begin{subproblem} \label{exp-prob-blackberries}
         If $t=0$ corresponds to the time when there was $\SI{8}{\kilo\gram}$ of biomass, find a formula for the amount of 
         blackberry biomass in the valley after $t$ years, assuming logistic growth.  
         \begin{shortsolution}
