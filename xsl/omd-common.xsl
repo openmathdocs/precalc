@@ -410,12 +410,15 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      -->
 <xsl:template match="figure" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
-       node with name chapter
+       node with name chapter; this allows us to count figures on a per-chapter basis
        see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
-  <xsl:number level="any" count="figure|multobjects[@type='figure']"/>
+  <!-- figure[not(ancestor::multobjects[@children='subfigure'])]    # we don't want to count subfigures in the figure count
+             |multobjects[@type='figure' and @children='subfigure'] # we *do* want to count multobjects that have the subfigure attribute -->
+  <xsl:number level="any" count="figure[not(ancestor::multobjects[@children='subfigure'])]|multobjects[@type='figure' and @children='subfigure']"/>
 </xsl:template>
+
 <xsl:template match="table" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
        node with name chapter

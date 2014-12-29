@@ -457,7 +457,16 @@ Note that we use <xsl:text> to insert a blank space
   <!-- create $identifier variable to be figure-<chapter number>-<figure number> -->
       <xsl:variable name="identifier">
         <xsl:text>figure-</xsl:text>
-        <xsl:apply-templates select=".." mode="filename" />
+        <!-- if the figure is within multobjects, we need to name it
+             using the filename mode to avoid the () -->
+        <xsl:choose>
+          <xsl:when test="ancestor::multobjects">
+              <xsl:apply-templates select=".." mode="filename" />
+          </xsl:when>
+          <xsl:otherwise>
+              <xsl:apply-templates select=".." mode="number" />
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:variable>
       <!-- create img element-->
       <xsl:element name="img">
