@@ -602,6 +602,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="statement" />
 </xsl:template>
 
+<xsl:template match="example">
+    <xsl:apply-templates select="statement" />
+</xsl:template>
+
 <xsl:template match="checkpoint">
     <xsl:text>\begin{checkpoint}</xsl:text>
     <xsl:text>&#xa;</xsl:text>
@@ -665,12 +669,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <xsl:template match="definition/statement">
-    <xsl:text>\begin{definition}</xsl:text>
+    <xsl:text>\begin{pccdefinition}</xsl:text>
     <xsl:apply-templates select="../title" mode="environment-option" />
     <xsl:apply-templates select=".." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>\end{definition}&#xa;%&#xa;</xsl:text>
+    <xsl:text>\end{pccdefinition}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="specialnote/statement">
@@ -681,13 +685,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{specialnote}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="example">
-    <xsl:text>\begin{example}</xsl:text>
-    <xsl:apply-templates select="title" mode="environment-option" />
-    <xsl:apply-templates select="." mode="label"/>
+<xsl:template match="example/statement">
+    <xsl:text>\begin{pccexample}</xsl:text>
+    <xsl:apply-templates select="../title" mode="environment-option" />
+    <xsl:apply-templates select=".." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates />
-    <xsl:text>\end{example}&#xa;%&#xa;</xsl:text>
+    <xsl:text>\end{pccexample}&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="notation">
@@ -743,7 +747,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="me">
     <xsl:text>\[</xsl:text>
     <xsl:value-of select="." />
-    <xsl:text>\]&#xa;</xsl:text>
+    <xsl:text>\]</xsl:text>
 </xsl:template>
 
 <!-- Numbered, single displayed equation -->
@@ -1394,6 +1398,16 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates />
 </xsl:template>
 
+<xsl:template match="thead/row/entry">
+  <xsl:text>\heading{</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>}</xsl:text>
+    <!-- add an & if we're inbetween elements -->
+    <xsl:if test="not(position()=last())">
+      <xsl:text>&amp;</xsl:text>
+    </xsl:if>
+</xsl:template>
+
 
 <!-- Cross-References, Citations -->
 
@@ -1658,6 +1672,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>    %%&#xa;</xsl:text>
     <xsl:text>%%                                    %%&#xa;</xsl:text>
 </xsl:template>
+
+<!-- Example author and date -->
+<xsl:template match="example/author|example/date"/>
 
 
 </xsl:stylesheet>

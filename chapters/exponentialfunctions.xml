@@ -37,33 +37,27 @@ need to work out how to define a 'xrefRange' command (two arguments???)
             <li> Explore increasing and decreasing functions, particularly in the context of concavity;</li>
             <li> Determine a function's concavity based on a table of values, a graph, or a description. </li>
           </outcomes>
-          <p>
-            In our mathematical adventures so far we have studied linear, quadratic, 
+          <p> In our mathematical adventures so far we have studied linear, quadratic, 
             and radical functions. The simplicity of these functions is useful when 
             introducing new concepts such as transformations, composition, and 
             inverse functions; but it is somewhat restrictive when we wish to 
-            consider interesting real-world application problems. 
-          </p>
-          <p>
-            For example, let's say that we were interested in modeling the 
+            consider interesting real-world application problems.  </p>
+          <p> For example, let's say that we were interested in modeling the 
             temperature of a hot cup of coffee since it was first poured. We cannot 
             write a formula for such a model yet, but perhaps <xref ref="exp-fig-motivatecool"/> depicts a reasonable
             approximation of the graph of it. Or perhaps
             we would like to model the growth in population of the world; again, 
             we can not write a formula for such a model at this stage, but you 
             might agree that <xref ref="exp-fig-motivatepop"/> is a likely candidate 
-            for the graph of the model.
-          </p>
-          <p>
-            Clearly the functions depicted in <xref ref="exp-fig-motivate"/> belong to 
+            for the graph of the model.  </p>
+          <p> Clearly the functions depicted in <xref ref="exp-fig-motivate"/> belong to 
             a different class than those that we have considered so far. In fact, they 
             belong to the class known as <em>exponential</em> functions, the study of 
             which is a fascinating topic that encompasses many applications, and a lot 
             of interesting mathematical features. Prepare yourself for a colorful 
             and exciting
             journey that will take us through the landscape of some of the most useful 
-            functions that we will ever encounter.
-          </p>
+            functions that we will ever encounter.  </p>
           <multobjects xml:id="exp-fig-motivate" type="figure" TeXFloatOptions="!htb" children="subfigure">
             <div width="40%">
               <figure xml:id="exp-fig-motivatecool">
@@ -187,92 +181,97 @@ need to work out how to define a 'xrefRange' command (two arguments???)
                 </figure>
           </div>
          </multobjects>
+        <example>
+          <author>Barkin/Bernards</author>
+          <date>April 2011</date>
+          <p>Congratulations, you've been offered a job!  Human Resources told you 
+        that you would start out making <m>\SI{2}{\centunit}</m> on the first day, and every day you work thereafter your pay will double.  
+        Would you take this job?</p>
+      <multobjects type="table" TeXFloatOptions="!htb">
+        <div width="50%">
+          <table xml:id="exp-tab-salary">
+            <caption/>
+					<tgroup tabletype="S[table-format=2.0]S[table-format=10.0]">
+						<thead>
+                          <row><entry><m>d</m> (days worked)</entry><entry><m>p</m> (cents)</entry></row>
+						</thead>
+						<tbody>
+                          <row><entry>1  </entry><entry>2         </entry></row> 
+                          <row><entry>2  </entry><entry>4         </entry></row>
+                          <row><entry>3  </entry><entry>8         </entry></row>
+                          <row><entry>4  </entry><entry>16        </entry></row>
+                          <row><entry>5  </entry><entry>32        </entry></row>
+                          <row><entry>10 </entry><entry>1024      </entry></row>
+                          <row><entry>30 </entry><entry>1073741824</entry></row>
+                      </tbody>
+					</tgroup>
+				</table>
+            </div>
+            <div width="50%">
+              <table xml:id="exp-tab-salaryalt">
+                <caption />
+                <tgroup tabletype="S[table-format=2.0]l">
+                  <thead>
+                    <row><entry><m>d</m> (days worked)</entry> <entry><m>p</m> (cents)</entry></row> 
+                    </thead>
+                    <tbody>
+                      <row><entry>1                          </entry> <entry><m>2</m>                  </entry></row>
+                      <row><entry>2                          </entry> <entry><m>2^2</m>                </entry></row>
+                      <row><entry>3                          </entry> <entry><m>2^3</m>                </entry></row>
+                      <row><entry>4                          </entry> <entry><m>2^4</m>                </entry></row>
+                      <row><entry>5                          </entry> <entry><m>2^5</m>                </entry></row>
+                      <row><entry>10                         </entry> <entry><m>2^{10}</m>             </entry></row>
+                      <row><entry>30                         </entry> <entry><m>2^{30}</m>             </entry></row>
+                    </tbody>
+                </tgroup>
+                </table>
+            </div>
+        </multobjects>
+        <p><xref ref="exp-tab-salary" beginsentence="true"/> shows how much money you would make per day, 
+        in cents, for the first 5 days, and how much you would make on the 10th and 30th days. 
+        The amount you make on day 30 is 1073741824 cents, which is
+        <me> 
+          \$10\textrm{,}737\textrm{,}418.24   
+        </me>
+        That's over 10 million dollars in a single day! How did this happen? Can we develop 
+        a formula to help us understand the mathematics behind this?  </p>
+      <p>It seems that the dollar amount is multiplied by 2 each day. An alternative way 
+        of writing our daily income is shown in <xref ref="exp-tab-salaryalt"/>. Can we write 
+        a formula that calculates the pay, <m>p</m>, in cents, as a function of the number of days
+        worked, <m>d</m>? 
+        According to <xref ref="exp-tab-salaryalt"/>, it appears that the day of the month is in the exponent, 
+        so let's write
+        <me>
+        p = 2^{d}
+      </me>
+        where <m>d</m> is a positive integer. This is our first example of an exponential function -- exploring 
+        these types of functions is our primary goal in this chapter.</p>
+        </example>
+		<definition>
+			<title>Exponential functions</title>
+            <statement> <p>An exponential function is a function <m>f</m> that can be described with the formula 
+              <me>
+        f(x)=a\,b^x
+    </me>
+        where <m>a</m> is a non-zero real number (<m>a\in\mathbb{R}, a\ne 0</m>) and <m>b</m> is a positive 
+        number other than 1 (<m>b>0</m>, <m>b\neq 1</m>). Notice that the variable is in the exponent 
+        and the base is the fixed constant <m>b</m>.</p>
+      <p>Note that in an exponential term the base is fixed and the variable is in the 
+        exponent (e.g. <m>5\cdot 4^x</m>), whereas in a polynomial term the exponent is fixed the base is the variable (e.g <m>6x^3</m>).</p>
+            </statement>
+		</definition>
+        <example xml:id="exp-prob-queenschessboard">
+          <author>Hughes</author>
+          <date>Feb 2011</date>
+          <title>Rice on a chessboard</title>
+          <statement><p>Many years ago there lived a Queen who loved to play games; so much so, that 
+        she had a jester dedicated to devising interesting games for her. The Queen 
+        particularly enjoyed mathematical games.</p></statement>
+        </example>
         </section>
       </chapter>
       <ignore>
 
-        \begin{pccexample}
-        %===================================
-        %   Author: Barkin
-        %   Date:   April 2011
-        %===================================
-        Congratulations, you've been offered a job!  Human Resources told you 
-        that you would start out making \SI{2}{\centunit} on the first day, and every day you work thereafter your pay will double.  
-        Would you take this job?
-
-        \begin{table}[!htb]
-        \begin{minipage}{.5\textwidth}
-        \centering
-        \caption{}
-        \label{exp:tab:salary}
-        \begin{tabular}{S[table-format=2.0]S[table-format=10.0]}
-        \beforeheading
-        \heading{$d$ (days worked)} &amp; \heading{$p$ (cents)} \\\afterheading
-        1                           &amp; 2                     \\\normalline
-        2                           &amp; 4                     \\\normalline
-        3                           &amp; 8                     \\\normalline
-        4                           &amp; 16                    \\\normalline
-        5                           &amp; 32                    \\\normalline
-        10                          &amp; 1024                  \\\normalline
-        30                          &amp; 1073741824            \\\lastline
-        \end{tabular}
-        \end{minipage}%
-        \begin{minipage}{.5\textwidth}
-        \centering
-        \caption{}
-        \label{exp:tab:salaryalt}
-        \begin{tabular}{S[table-format=2.0]l}
-        \beforeheading
-        \heading{$d$ (days worked)} &amp; \heading{$p$ (cents)} \\\afterheading
-        1                           &amp; $2$                   \\\normalline
-        2                           &amp; $2^2$                 \\\normalline
-        3                           &amp; $2^3$                 \\\normalline
-        4                           &amp; $2^4$                 \\\normalline
-        5                           &amp; $2^5$                 \\\normalline
-        10                          &amp; $2^{10}$              \\\normalline
-        30                          &amp; $2^{30}$              \\\lastline
-        \end{tabular}
-        \end{minipage}%
-        \end{table}
-
-        \Cref{exp:tab:salary} shows how much money you would make per day, 
-        in cents, for the first 5 days, and how much you would make on the 10th and 30th days. 
-        The amount you make on day 30 is 1073741824 cents, which is
-        \[
-        \$10\textrm{,}737\textrm{,}418.24   
-        \]
-        That's over 10 million dollars in a single day! How did this happen? Can we develop 
-        a formula to help us understand the mathematics behind this? 
-
-        It seems that the dollar amount is multiplied by 2 each day. An alternative way 
-        of writing our daily income is shown in \cref{exp:tab:salaryalt}. Can we write 
-        a formula that calculates the pay, $p$, in cents, as a function of the number of days
-        worked, $d$? 
-        According to \cref{exp:tab:salaryalt}, it appears that the day of the month is in the exponent, 
-        so let's write
-        \[
-        p = 2^{d}
-        \]
-        where $d$ is a positive integer. This is our first example of an exponential function -- exploring 
-        these types of functions is our primary goal in this chapter.
-        \end{pccexample}
-        \begin{pccdefinition}[Exponential functions]
-        An exponential function is a function $f$ that can be described with the formula 
-        \[
-        f(x)=a\,b^x
-        \] 
-        where $a$ is a non-zero real number ($a\in\mathbb{R}, a\ne 0$) and $b$ is a positive 
-        number other than 1 ($b&gt;0$, $b\neq1$). Notice that the variable is in the exponent 
-        and the base is the fixed constant $b$.
-
-        Note that in an exponential term the base is fixed and the variable is in the 
-        exponent (e.g. $5\cdot 4^x$), whereas in a polynomial term the exponent is fixed the base is the variable (e.g $6x^3$).
-        \end{pccdefinition}
-
-        %===================================
-        %   Author: Hughes
-        %   Date:   Feb 2011
-        %===================================
         \begin{pccexample}[Rice on a chessboard]\label{exp:prob:queenschessboard}%
         Many years ago there lived a Queen who loved to play games; so much so, that 
         she had a jester dedicated to devising interesting games for her. The Queen 

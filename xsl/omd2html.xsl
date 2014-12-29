@@ -489,6 +489,7 @@ Note that we use <xsl:text> to insert a blank space
         </xsl:choose>
       </xsl:element>
       <!-- create standalone .tex file for this figure -->
+      <xsl:message terminate="no">Creating file ./figures/<xsl:value-of select="$identifier" />.tex &#xa;</xsl:message>
       <exsl:document href="./figures/{$identifier}.tex" method="text">
         <xsl:text>% generated on: </xsl:text>
         <xsl:value-of select="date:date-time()" />
