@@ -590,6 +590,20 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>]</xsl:text>
 </xsl:template>
 
+<!-- Floats can take an optional specifier, but we supply a default otherwise -->
+<xsl:template match="table|figure|multobjects" mode="environment-option">
+    <xsl:text>[</xsl:text>
+        <xsl:choose>
+          <xsl:when test="@TeXFloatOptions">
+            <xsl:value-of select="@TeXFloatOptions"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>!htb</xsl:text>
+          </xsl:otherwise>
+      </xsl:choose>
+    <xsl:text>]&#xa;</xsl:text>
+</xsl:template>
+
 <xsl:template match="theorem|corollary|lemma">
     <xsl:apply-templates select="statement|proof" />
 </xsl:template>
@@ -599,10 +613,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <xsl:template match="specialnote">
-    <xsl:apply-templates select="statement" />
-</xsl:template>
-
-<xsl:template match="example">
     <xsl:apply-templates select="statement" />
 </xsl:template>
 
@@ -685,14 +695,17 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{specialnote}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="example/statement">
+<xsl:template match="example">
     <xsl:text>\begin{pccexample}</xsl:text>
-    <xsl:apply-templates select="../title" mode="environment-option" />
-    <xsl:apply-templates select=".." mode="label"/>
+    <xsl:apply-templates select="title" mode="environment-option" />
+    <xsl:apply-templates select="." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates />
     <xsl:text>\end{pccexample}&#xa;</xsl:text>
 </xsl:template>
+
+<!-- create an empty template for example titles, otherwise they get repeated -->
+<xsl:template match="example/title"/>
 
 <xsl:template match="notation">
     <xsl:text>Sample notation (in a master list eventually): $</xsl:text>
@@ -1145,15 +1158,22 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
 <!-- Figures and Captions -->
 <xsl:template match="figure">
-    <xsl:text>\begin{figure}[</xsl:text>
     <xsl:choose>
-      <xsl:when test="@TeXFloatOptions"><xsl:value-of select="@TeXFloatOptions" /><xsl:text></xsl:text></xsl:when>
-      <xsl:otherwise><xsl:text></xsl:text>!htbp</xsl:otherwise>
+        <!-- margin figure -->
+        <xsl:when test="@style='margin'">
+            <xsl:text>\begin{marginfigure}&#xa;\centering&#xa;</xsl:text>
+            <xsl:apply-templates />
+            <xsl:text>\end{marginfigure}&#xa;</xsl:text>
+            <xsl:text>%&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>\begin{figure}</xsl:text>
+            <xsl:apply-templates select="." mode="environment-option" />
+            <xsl:text>\centering&#xa;</xsl:text>
+            <xsl:apply-templates />
+            <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
+        </xsl:otherwise>
     </xsl:choose>
-    <xsl:text>]&#xa;</xsl:text>
-    <xsl:text>\centering&#xa;</xsl:text>
-    <xsl:apply-templates />
-    <xsl:text>\end{figure}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <!-- multiple objects inside one float, 
@@ -1180,19 +1200,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </xsl:choose>
     </xsl:variable>
     <!-- set up \begin{table|figure}[float options]-->
-    <xsl:text>&#xa;\begin{</xsl:text><xsl:value-of select="$floatname"/><xsl:text>}[</xsl:text>
-        <xsl:choose>
-          <xsl:when test="@TeXFloatOptions">
-            <xsl:value-of select="@TeXFloatOptions" />
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>!htbp</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-     <xsl:text>]&#xa;\centering&#xa;</xsl:text>
-     <!-- insert figure or table code-->
-     <xsl:apply-templates />
-     <!-- \end{table|figure}-->
+    <xsl:text>&#xa;\begin{</xsl:text><xsl:value-of select="$floatname"/><xsl:text>}</xsl:text>
+    <xsl:apply-templates select="." mode="environment-option" />
+    <xsl:text>\centering&#xa;</xsl:text>
+    <!-- insert figure or table code-->
+    <xsl:apply-templates />
+    <!-- \end{table|figure}-->
     <xsl:text>\end{</xsl:text><xsl:value-of select="$floatname"/><xsl:text>}&#xa;</xsl:text>
 </xsl:template>
 
@@ -1252,7 +1265,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <!-- \end{minipage|subfigure|subtable} -->
     <xsl:text>\end{</xsl:text>
     <xsl:value-of select="$envName"/>
-    <xsl:text>}%</xsl:text>
+    <xsl:text>}\hfill%</xsl:text>
 </xsl:template>
 
 <!-- create an empty template for figure descriptions -->
@@ -1311,7 +1324,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </xsl:when>
         <!-- normal table -->
         <xsl:otherwise>
-            <xsl:text>\begin{table}[thb]&#xa;\centering&#xa;</xsl:text>
+            <xsl:text>\begin{table}</xsl:text>
+            <xsl:apply-templates select="." mode="environment-option" />
+            <xsl:text>&#xa;\centering&#xa;</xsl:text>
             <xsl:apply-templates />
             <xsl:text>\end{table}&#xa;</xsl:text>
             <xsl:text>%&#xa;</xsl:text>

@@ -28,6 +28,84 @@ DONE
 need to fix referencing so that it uses *our* ID (at the very least in the .tex version)
 need to work out how to define a 'xrefRange' command (two arguments???)
   </p>
+
+              <figure>
+                <code>
+                  \begin{tikzpicture}
+                  \begin{axis}[
+                  framed,
+                  xmin=-10,xmax=50,
+                  ymin=-20,ymax=100,
+                  xtick={-30}, ytick={-30},
+                  minor xtick={10,20,...,50},
+                  minor ytick={20,40,...,100},
+                  xlabel={$t$},
+                  grid=minor,
+                  ]
+                  \addplot+[->]expression[domain=0:50,samples=50]{40*exp(-x/10)+50};
+                  \end{axis}
+                  \end{tikzpicture}
+                </code>
+                <caption></caption>
+              </figure>
+        <multobjects type="figure">
+          <div width="50%">
+				<figure>
+                  <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption>caption text goes here</caption>
+                </figure>
+          </div>
+          <div width="50%">
+				<table>
+				<caption />
+					<tgroup cols="1" align="center">
+						<thead>
+							<row><entry>(input, output)</entry></row>
+                                                        <row><entry><m>(x,\sq(x))</m></entry></row>
+						</thead>
+						<tbody>
+                                                        <row><entry><m>(0,0)</m></entry></row>
+                                                        <row><entry><m>(1,1)</m></entry></row>
+                                                        <row><entry><m>\approx(2,1.41)</m></entry></row>
+                                                        <row><entry><m>\approx(3,1.73)</m></entry></row>
+							<row><entry><m>(4,2)</m></entry></row>
+						</tbody>
+					</tgroup>
+				</table>
+          </div>
+         </multobjects>
+        <multobjects type="figure">
+          <div width="50%">
+				<figure>
+                  <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption>caption text goes here</caption>
+                </figure>
+          </div>
+          <div width="50%">
+				<figure>
+                  <code>
+                    \begin{tikzpicture}
+                        \begin{axis}
+                        \addplot{x};
+                        \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption>caption text goes here</caption>
+                </figure>
+          </div>
+         </multobjects>
 </section>
 -->
         <minitoc/>
@@ -103,91 +181,13 @@ need to work out how to define a 'xrefRange' command (two arguments???)
             </div>
             <caption></caption>
           </multobjects>
-
-              <figure>
-                <code>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-10,xmax=50,
-                  ymin=-20,ymax=100,
-                  xtick={-30}, ytick={-30},
-                  minor xtick={10,20,...,50},
-                  minor ytick={20,40,...,100},
-                  xlabel={$t$},
-                  grid=minor,
-                  ]
-                  \addplot+[->]expression[domain=0:50,samples=50]{40*exp(-x/10)+50};
-                  \end{axis}
-                  \end{tikzpicture}
-                </code>
-                <caption></caption>
-              </figure>
-        <multobjects type="figure">
-          <div width="50%">
-				<figure>
-                  <code>
-                    \begin{tikzpicture}
-                        \begin{axis}
-                        \addplot{x};
-                        \end{axis}
-                    \end{tikzpicture}
-                  </code>
-                  <caption>caption text goes here</caption>
-                </figure>
-          </div>
-          <div width="25%">
-				<table>
-				<caption />
-					<tgroup cols="1" align="center">
-						<thead>
-							<row><entry>(input, output)</entry></row>
-                                                        <row><entry><m>(x,\sq(x))</m></entry></row>
-						</thead>
-						<tbody>
-                                                        <row><entry><m>(0,0)</m></entry></row>
-                                                        <row><entry><m>(1,1)</m></entry></row>
-                                                        <row><entry><m>\approx(2,1.41)</m></entry></row>
-                                                        <row><entry><m>\approx(3,1.73)</m></entry></row>
-							<row><entry><m>(4,2)</m></entry></row>
-						</tbody>
-					</tgroup>
-				</table>
-          </div>
-         </multobjects>
-        <multobjects type="figure">
-          <div width="50%">
-				<figure>
-                  <code>
-                    \begin{tikzpicture}
-                        \begin{axis}
-                        \addplot{x};
-                        \end{axis}
-                    \end{tikzpicture}
-                  </code>
-                  <caption>caption text goes here</caption>
-                </figure>
-          </div>
-          <div width="50%">
-				<figure>
-                  <code>
-                    \begin{tikzpicture}
-                        \begin{axis}
-                        \addplot{x};
-                        \end{axis}
-                    \end{tikzpicture}
-                  </code>
-                  <caption>caption text goes here</caption>
-                </figure>
-          </div>
-         </multobjects>
         <example>
           <author>Barkin/Bernards</author>
           <date>April 2011</date>
           <p>Congratulations, you've been offered a job!  Human Resources told you 
         that you would start out making <m>\SI{2}{\centunit}</m> on the first day, and every day you work thereafter your pay will double.  
         Would you take this job?</p>
-      <multobjects type="table" TeXFloatOptions="!htb">
+      <multobjects type="table" TeXFloatOptions="!hbt">
         <div width="50%">
           <table xml:id="exp-tab-salary">
             <caption/>
@@ -264,44 +264,33 @@ need to work out how to define a 'xrefRange' command (two arguments???)
           <author>Hughes</author>
           <date>Feb 2011</date>
           <title>Rice on a chessboard</title>
-          <statement><p>Many years ago there lived a Queen who loved to play games; so much so, that 
+          <p>Many years ago there lived a Queen who loved to play games; so much so, that 
         she had a jester dedicated to devising interesting games for her. The Queen 
-        particularly enjoyed mathematical games.</p></statement>
-        </example>
-        </section>
-      </chapter>
-      <ignore>
-
-        \begin{pccexample}[Rice on a chessboard]\label{exp-prob-queenschessboard}%
-        Many years ago there lived a Queen who loved to play games; so much so, that 
-        she had a jester dedicated to devising interesting games for her. The Queen 
-        particularly enjoyed mathematical games.
-
-        One day the jester brought her a chessboard (see \cref{exp-fig-grainsofrice}) and a bucket filled with rice. 
-        \begin{table}[!htb]
-        \centering
-        \caption{}
-        \label{exp-tab-grainsofrice}
-        \begin{tabular}[t]{S[table-format=2.0]S[table-format=10.0]}
-        \beforeheading
-        \heading{square on board} &amp; \heading{grains of rice} \\
-        \heading{$x$}             &amp; \heading{$g(x)$}         \\ 
-        \afterheading
-        1                         &amp; 3                        \\\normalline
-        2                         &amp; 9                        \\\normalline
-        3                         &amp; 27                       \\\normalline
-        4                         &amp; 81                       \\\normalline
-        \mbox{\vdots}             &amp; \mbox{\vdots}            \\\normalline
-        \mbox{\vdots}             &amp; \mbox{\vdots}            \\\normalline
-        20                        &amp; 3486784401               \\\normalline
-        \mbox{\vdots}             &amp; \mbox{\vdots}            \\\normalline
-        \mbox{\vdots}             &amp; \mbox{\vdots}            \\\normalline
-        \mbox{$x$}                &amp; \mbox{$3^x$}             \\\lastline
-        \end{tabular}
-        \end{table}
-
-        \begin{marginfigure}
-        \centering
+        particularly enjoyed mathematical games.</p>
+      <p>One day the jester brought her a chessboard (see <xref ref="exp-fig-grainsofrice"/>) and a bucket filled with rice.</p> 
+      <table xml:id="exp-tab-grainsofrice" TeXFloatOptions="!bht">
+        <caption/>
+                <tgroup tabletype="S[table-format=2.0]S[table-format=10.0]">
+                  <thead>
+                    <row><entry>square on board</entry><entry>grains of rice</entry></row>
+                    <row><entry><m>x</m></entry><entry><m>g(x)</m></entry></row>
+                </thead>
+                    <tbody>
+                      <row><entry>1                         </entry><entry> 3             </entry></row>
+                      <row><entry>2                         </entry><entry> 9             </entry></row>
+                      <row><entry>3                         </entry><entry> 27            </entry></row>
+                      <row><entry>4                         </entry><entry> 81            </entry></row>
+                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                      <row><entry>20                        </entry><entry> 3486784401    </entry></row>
+                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                      <row><entry>\mbox{$x$}                </entry><entry> \mbox{$3^x$}  </entry></row>
+                    </tbody>
+                </tgroup>
+                </table>
+                <figure style="margin" xml:id="exp-fig-grainsofrice">
+                  <code>
         \begin{tikzpicture}[scale=.25]
         \foreach \x in {0,...,7} \foreach \y in {0,...,7}
         {
@@ -311,25 +300,23 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         }
         \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
         \end{tikzpicture}
-        \captionof{figure}{}
-        \label{exp-fig-grainsofrice}
-        \end{marginfigure}
-        The jester asked the Queen to follow these instructions
-        \begin{itemize}
-        \item Place 3 grains of rice on the square in the lower left hand corner of the board.
-        \item Place 9 grains of rice on the square immediately to the right of the square you were just working with.
-        \item Place 27 grains of rice on the square immediately to the right of the square you were just working with.
-        \end{itemize}
-        The Queen starts to notice a pattern, and records her findings in \cref{exp-tab-grainsofrice}. She also notes
-        that as she progresses from square to square, the number of grains appears to be \emph{tripling} each time.
-
-        The Queen, being mathematically inclined, decides to try to model 
-        the game using a formula. She decides to  let $x$ be the number 
-        corresponding to the square on the chessboard, and let $g(x)$ represent 
+    </code>
+    <caption/>
+    </figure>
+    <p>The jester asked the Queen to follow these instructions
+      <ul>
+        <li>Place 3 grains of rice on the square in the lower left hand corner of the board.</li>
+        <li>Place 9 grains of rice on the square immediately to the right of the square you were just working with.</li>
+        <li>Place 27 grains of rice on the square immediately to the right of the square you were just working with.</li>
+      </ul>The Queen starts to notice a pattern, and records her findings in <xref ref="exp-tab-grainsofrice"/>. She also notes
+      that as she progresses from square to square, the number of grains appears to be <em>tripling</em> each time.</p>
+    <p>The Queen, being mathematically inclined, decides to try to model 
+        the game using a formula. She decides to  let <m>x</m> be the number 
+        corresponding to the square on the chessboard, and let <m>g(x)</m> represent 
         the number of grains of rice on that square, and  assumes that she 
-        works each row from left to right as she moves up the chessboard.
-        \begin{marginfigure}
-        \centering
+        works each row from left to right as she moves up the chessboard.</p>
+      <figure style="margin" xml:id="exp-fig-queensgraph">
+        <code>
         \begin{tikzpicture}
         \begin{axis}[
         width=.75\textwidth,
@@ -339,34 +326,35 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \addplot expression[domain=-4:2.0959]{3^x};
         \end{axis}
         \end{tikzpicture}
-        \captionof{figure}{$g$}
-        \label{exp-fig-queensgraph}
-        \end{marginfigure}
-
-        The Queen notices that each of the numbers she writes in \cref{exp-tab-grainsofrice}
-        can be written as a power of $3$, and concludes that the formula for the number
+      </code>
+        <caption><m>g</m></caption>
+    </figure>
+    <p>The Queen notices that each of the numbers she writes in <xref ref="exp-tab-grainsofrice"/>
+        can be written as a power of <m>3</m>, and concludes that the formula for the number
         of grains on square $x$ of the chessboard is
-        \[
+        <me>
         g(x)=3^x
-        \]
+    </me>
         The Queen decides to test her formula by calculating the number of grains 
-        on the \nth{17} square. She finds that
-        \[
+        on the <m>\nth{17}</m> square. She finds that
+        <me>
         g(17)=\num{129 140 163}
-        \]
-        and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!
-
-        Of course, the Queen knows that this formula only works when $x$ takes the 
-        integer values $\{1,2,\ldots,64\}$, but wonders what would happen if 
-        she graphed $g$ on her calculator (which she always has with her for just 
-        such a situation). The Queen graphs $g$ on her calculator assuming 
-        that $g$ can take values outside of the contextual domain, and 
-        obtains the graph in \cref{exp-fig-queensgraph}.
-
-        The Queen concludes that $g$ is increasing at a faster and faster rate, and 
+    </me>
+    and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
+  <p> Of course, the Queen knows that this formula only works when $x$ takes the 
+        integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
+        she graphed <m>g</m> on her calculator (which she always has with her for just 
+        such a situation). The Queen graphs <m>g</m> on her calculator assuming 
+        that <m>g</m> can take values outside of the contextual domain, and 
+        obtains the graph in <xref ref="exp-fig-queensgraph"/>.</p>
+      <p>The Queen concludes that <m>g</m> is increasing at a faster and faster rate, and 
         cannot imagine ever being able to fit the appropriate amount of rice on 
-        each square.
-        \end{pccexample}
+        each square.</p>
+        </example>
+        </section>
+      </chapter>
+      <ignore>
+
         \begin{doyouunderstand}
         \begin{problem}
         Repeat \cref{exp-prob-queenschessboard}, but instead of \emph{tripling} the 
