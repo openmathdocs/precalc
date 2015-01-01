@@ -1463,7 +1463,10 @@ Note that we use <xsl:text> to insert a blank space
   <xsl:param name="content"/>
   <exsl:document href="./knowl/{$identifier}.html" method="html">
     <xsl:call-template name="converter-blurb" />
-    <xsl:value-of select="$content" />
+    <!--OLD, which doesn't allow for 'complex' content within knowls: 
+         <xsl:value-of select="$content" />-->
+    <xsl:apply-templates select="*" />
+    <!--<xsl:copy-of select="*" /> -->
   </exsl:document>
 </xsl:template>
 <!-- Second, make a clickable knowl link -->

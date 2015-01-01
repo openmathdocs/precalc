@@ -331,7 +331,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
     </figure>
     <p>The Queen notices that each of the numbers she writes in <xref ref="exp-tab-grainsofrice"/>
         can be written as a power of <m>3</m>, and concludes that the formula for the number
-        of grains on square $x$ of the chessboard is
+        of grains on square <m>x</m> of the chessboard is
         <me>
         g(x)=3^x
     </me>
@@ -341,7 +341,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         g(17)=\num{129 140 163}
     </me>
     and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
-  <p> Of course, the Queen knows that this formula only works when $x$ takes the 
+  <p> Of course, the Queen knows that this formula only works when <m>x</m> takes the 
         integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
         she graphed <m>g</m> on her calculator (which she always has with her for just 
         such a situation). The Queen graphs <m>g</m> on her calculator assuming 
@@ -351,81 +351,72 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         cannot imagine ever being able to fit the appropriate amount of rice on 
         each square.</p>
         </example>
-        </section>
-      </chapter>
-      <ignore>
-
-        \begin{doyouunderstand}
-        \begin{problem}
-        Repeat \cref{exp-prob-queenschessboard}, but instead of \emph{tripling} the 
-        number of grains of rice on each square, try \emph{quadrupling} them.
-        \begin{shortsolution}
-        The equivalent of the function $g$ is $h$ and has formula $h(x)=4^x$.
-        \end{shortsolution}
-        \end{problem}
-        \end{doyouunderstand}
-        We have so far seen two exponential functions, $p$ and $g$, both of which increase 
+        <checkpoint>
+			<exercise>
+              <statement>Repeat <xref ref="exp-prob-queenschessboard"/>, but instead of <em>tripling</em> the 
+                number of grains of rice on each square, try <em>quadrupling</em> them.</statement>
+              <solution><p>The equivalent of the function <m>g</m> is <m>h</m> and has formula <m>h(x)=4^x</m>.</p></solution>
+      </exercise>
+      </checkpoint>
+      <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
         at a faster and faster rate. You may wonder if all exponential functions behave in this way --
-        the next example demonstrates that they do not.
-
-        %===================================
-        %   Author: Hughes
-        %   Date:   Feb 2011
-        %===================================
-        \begin{pccexample}[Folding paper]
-        Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
+        the next example demonstrates that they do not.</p>
+        <example>
+          <author>Hughes</author>
+          <date>Feb 2011</date>
+          <title>Folding paper</title>
+          <p>Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
         of the paper, it becomes quite difficult -- the MythBusters tried quite an elaborate experiment 
-        along these lines.\footnote{\href{http://www.youtube.com/watch?v=kRAEBbotuIE}{http://www.youtube.com/watch?v=kRAEBbotuIE}} 
-
-        We are going to experiment with paper folding and study the mathematics behind the results.
-        The area of a `letter' sheet of paper is $\SI{8.5 x 11}{\inch}$, or $\SI{93.5}{\square\inch}$. We will
-        use two decimal places in what follows.
-
-
-        If we fold a sheet of letter paper in half, the visible surface area is
-        \begin{align*}
-        \frac{\SI{93.52}{\square\inch}}{2} &amp; =\left(\frac{1}{2}\right)\SI{93.5}{\square\inch} \\
-        &amp; =\SI{46.75}{\square\inch}                        
-        \end{align*}
-        Note that we say, `visible', because the actual surface area of the paper has not changed.
-
-        If we fold the sheet in half again, the visible surface area is 
-        \begin{align*}
-        \frac{\SI{46.75}{\square\inch}}{2} &amp; = \frac{\SI{93.52}{\square\inch}}{4}                \\
-        &amp; = \left(\frac{1}{2}\right)^2\SI{93.5}{\square\inch} \\
-        &amp; \approx \SI{23.38}{\square\inch}                    
-        \end{align*}
+        along these lines. <fn><url href="http://www.youtube.com/watch?v=kRAEBbotuIE"/></fn> </p>
+      <p>We are going to experiment with paper folding and study the mathematics behind the results.
+        The area of a <q>letter</q> sheet of paper is <m>\SI{8.5 x 11}{\inch}</m>, or <m>\SI{93.5}{\square\inch}</m>. We will
+        use two decimal places in what follows.</p>
+      <p>If we fold a sheet of letter paper in half, the visible surface area is
+        <md>
+          <mrow>\frac{\SI{93.52}{\square\inch}}{2} &amp; =\left(\frac{1}{2}\right)\SI{93.5}{\square\inch}</mrow>
+          <mrow>&amp; =\SI{46.75}{\square\inch}                       </mrow>
+      </md>
+        Note that we say, <q>visible</q>, because the actual surface area of the paper has not changed.</p>
+      <p>If we fold the sheet in half again, the visible surface area is 
+        <md>
+          <mrow>\frac{\SI{46.75}{\square\inch}}{2} &amp; = \frac{\SI{93.52}{\square\inch}}{4}               </mrow>
+          <mrow>&amp; = \left(\frac{1}{2}\right)^2\SI{93.5}{\square\inch} </mrow>
+          <mrow>&amp; \approx \SI{23.38}{\square\inch}                    </mrow>
+      </md>
         If we fold the sheet in half a third time, the visible surface area is
-        \begin{align*}
-        \frac{\SI{93.5}{\square\inch}}{8} &amp; = \left(  \frac{1}{2}\right)^3\SI{93.5}{\square\inch} \\
-        &amp; \approx \SI{11.69}{\square\inch}                      
-        \end{align*}
-        Let's try and generalize our results by letting $x$ be the number of 
-        paper folds; $x$ will start at 0, and increase in integer values. 
-        \Cref{exp-tab-foldingpaper} has two columns, one for the number of folds (up to 7), and one for the visible surface area 
-        of the (folded) paper. 
-        \begin{table}[!htb]
-        \begin{minipage}{.5\textwidth}
-        \centering
-        \captionof{table}{}
-        \label{exp-tab-foldingpaper}
-        \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
-        \beforeheading
-        \heading{number of folds} &amp; \heading{visible area}           \\
-        \heading{$x$}             &amp; \heading{($\si{\inch\squared}$)} \\ 
-        \afterheading
-        0                         &amp; 93.50                            \\\normalline
-        1                         &amp; 46.75                            \\\normalline
-        2                         &amp; 23.38                            \\\normalline
-        3                         &amp; 11.69                            \\\normalline
-        4                         &amp; 5.84                             \\\normalline
-        5                         &amp; 2.92                             \\\normalline
-        6                         &amp; 1.46                             \\\normalline
-        7                         &amp; 0.73                             \\\lastline
-        \end{tabular}
-        \end{minipage}%
-        \begin{minipage}{.5\textwidth}
-        \centering
+        <md>
+          <mrow>\frac{\SI{93.5}{\square\inch}}{8} &amp; = \left(  \frac{1}{2}\right)^3\SI{93.5}{\square\inch} </mrow>
+          <mrow>&amp; \approx \SI{11.69}{\square\inch}                      </mrow>
+    </md></p>
+    <p>Let's try and generalize our results by letting <m>x</m> be the number of 
+        paper folds; <m>x</m> will start at 0, and increase in integer values. 
+        <xref ref="exp-tab-foldingpaper" beginsentence="true"/> has two columns, one for the number of folds (up to 7), and one for the visible surface area 
+        of the (folded) paper. </p>
+      <multobjects type="table">
+        <div width="50%">
+          <table xml:id="exp-tab-foldingpaper">
+            <caption/>
+                <tgroup tabletype="S[table-format=1.0]S[table-format=2.2]">
+                  <thead>
+                    <row><entry>number of folds</entry><entry>visible area</entry></row>
+                    <row><entry><m>x</m></entry><entry><m>(\si{\inch\squared})</m></entry></row>
+                </thead>
+                <tbody>
+                  <row><entry>0</entry><entry> 93.50</entry></row> 
+                  <row><entry>1</entry><entry> 46.75</entry></row>
+                  <row><entry>2</entry><entry> 23.38</entry></row>
+                  <row><entry>3</entry><entry> 11.69</entry></row>
+                  <row><entry>4</entry><entry> 5.84 </entry></row>
+                  <row><entry>5</entry><entry> 2.92 </entry></row>
+                  <row><entry>6</entry><entry> 1.46 </entry></row>
+                  <row><entry>7</entry><entry> 0.73 </entry></row>
+      </tbody>
+  </tgroup>
+          </table>
+        </div>
+        <div width="50%">
+          <figure xml:id="exp-fig-foldingpaper">
+          <code>
         \begin{tikzpicture}
         \begin{axis}[
         width=.75\textwidth,
@@ -436,20 +427,25 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \addplot expression[domain=-2:4]{93.5*(1/2)^x};
         \end{axis}
         \end{tikzpicture}
-        \captionof{figure}{$y=A(x)$}
-        \label{exp-fig-foldingpaper}
-        \end{minipage}%
-        \end{table}
-
-        If we let $A(x)$ represent the visible surface area of the paper after $x$ folds, then 
-        a formula for $A$ is
-        \[
+    </code>
+    <caption><m>y=A(x)</m></caption>
+</figure>
+        </div>
+      </multobjects>
+      <p>If we let <m>A(x)</m> represent the visible surface area of the paper after <m>x</m> folds, then 
+        a formula for <m>A</m> is
+        <me>
         A(x) = 93.5\left(\frac{1}{2}\right)^x
-        \]
-        where $x=0,1,2,\ldots$. If we allow $A$ to take values outside of its contextual domain, then 
-        we can graph $y=A(x)$ on a graphing calculator, and obtain \cref{exp-fig-foldingpaper}. Notice 
-        in particular that $A$ decreases at a slower and slower rate.
-        \end{pccexample}
+    </me>
+        where <m>x=0,1,2,\ldots</m>. If we allow <m>A</m> to take values outside of its contextual domain, then 
+        we can graph <m>y=A(x)</m> on a graphing calculator, and obtain <xref ref="exp-fig-foldingpaper"/>. Notice 
+        in particular that <m>A</m> decreases at a slower and slower rate.</p>
+        </example>
+        </section>
+      </chapter>
+      <ignore>
+
+
 
         The graphs of exponential functions have certain features that tell us a lot about the quantities they are modeling.  Graphical features like increasing/decreasing and the position of any asymptotes translate to important information about population sizes, bank accounts, and more.
         %===================================

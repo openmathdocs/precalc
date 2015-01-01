@@ -617,10 +617,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <xsl:template match="checkpoint">
-    <xsl:text>\begin{checkpoint}</xsl:text>
+    <xsl:text>\begin{doyouunderstand}</xsl:text>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="exercise"/>
-    <xsl:text>\end{checkpoint}&#xa;%&#xa;</xsl:text>
+    <xsl:text>\end{doyouunderstand}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Include solutions to exercises by default value of switch-->
@@ -630,6 +630,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="statement"/>
+    <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="solution"/>
     <xsl:apply-templates select="answer"/>
     <xsl:text>\end{problem}&#xa;%&#xa;</xsl:text>
@@ -1396,12 +1397,21 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates />
 </xsl:template>
 
-<xsl:template match="row">
+<xsl:template match="tbody/row">
     <xsl:apply-templates />
         <xsl:choose>
-        <xsl:when test="position() = last()">  <xsl:text>\\\lastline&#xa;</xsl:text></xsl:when>
-        <xsl:otherwise>                    <xsl:text>\\\normalline&#xa;</xsl:text></xsl:otherwise>
+          <xsl:when test="position() = last()">  
+            <xsl:text>\\\lastline&#xa;</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>                    
+            <xsl:text>\\\normalline&#xa;</xsl:text>
+          </xsl:otherwise>
     </xsl:choose>
+</xsl:template>
+
+<xsl:template match="thead/row">
+    <xsl:apply-templates />
+    <xsl:text>\\&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="entry[1]">
