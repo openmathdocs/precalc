@@ -32,7 +32,14 @@
          reference: http://xml.silmaril.ie/includes.html -->
     <book>
       <!--&functions;-->
-    &exponentialfunctions;
+      <!-- &exponentialfunctions; -->
+      <chapter>
+        <p>test  <quant/> </p>
+        <p>test  <quant mag="42"/> </p>
+        <p>test  <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" /></quant> </p>
+        <p>test  <quant><unit base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
+        <p>test  <quant mag="13"><unit base="gram" prefix="kilo" exp="-23"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
+      </chapter>
     </book>
 </mathbook>
 

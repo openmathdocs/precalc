@@ -1361,6 +1361,118 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>}</xsl:text>
 </xsl:template>
 
+<!-- siunitx templates 
+     this one is called when there are no unit children 
+     e.g
+     
+        <quant mag="1/5"/>
+
+     becomes
+        
+        \num{1/5}
+
+     for quantities that *don't* have unit children 
+     http://stackoverflow.com/questions/1993213/use-xpath-to-select-an-element-that-doesnt-have-an-img-tag-as-a-child
+     -->
+<xsl:template match="quant[not(descendant::unit)]">
+    <xsl:choose>
+      <xsl:when test="@mag">
+        <xsl:text>\num{</xsl:text>
+        <xsl:value-of select="@mag"/>
+        <xsl:text>}</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>??magnitude needed??</xsl:text>
+        <xsl:message terminate="no">
+            <xsl:text>magnitude needed</xsl:text>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+<!-- quantities with units (with *or* without magnitudes)
+     e.g
+        <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" /></quant>
+        <quant><unit base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant>
+        <quant mag="13"><unit base="gram" prefix="kilo" exp="-23"/><unit base="meter" /><per base="second" exp="2" /></quant>
+     become
+       \SI{42}{\kilo\gram\meter} 
+       \si{\kilo\gram\meter\per\second\tothe{2}} 
+       \SI{13}{\kilo\gram\tothe{-23}\meter\per\second\tothe{2}}  
+
+        -->
+<xsl:template match="quant/unit">
+    <!-- check if this is the first child -->
+    <xsl:if test="position() &lt; 2">
+        <xsl:choose>
+          <!-- quantity with number; note that magnitude
+               is part of the (parent) quant node -->
+          <xsl:when test="../@mag">
+              <xsl:text>\SI{</xsl:text>
+              <xsl:value-of select="../@mag"/>
+              <xsl:text>}{</xsl:text>
+          </xsl:when>
+          <!-- quantity with*out* number -->
+          <xsl:otherwise>
+              <xsl:text>\si{</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+    </xsl:if>
+    <!-- prefix is optional -->
+    <xsl:if test="@prefix">
+        <xsl:text>\</xsl:text>
+        <xsl:value-of select="@prefix"/>
+    </xsl:if>
+    <!-- base unit is *mandatory* so check to see if it has been provided -->
+    <xsl:choose>
+        <xsl:when test="@base">
+            <xsl:text>\</xsl:text>
+            <xsl:value-of select="@base"/>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:message terminate="no">
+                <xsl:text>base unit needed</xsl:text>
+            </xsl:message>
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- optional exponent -->
+    <xsl:if test="@exp">
+        <xsl:text>\tothe{</xsl:text>
+            <xsl:value-of select="@exp"/>
+        <xsl:text>}</xsl:text>
+    </xsl:if>
+    <!-- last child gets to close the brace } -->
+    <xsl:if test="position() = last()">  
+        <xsl:text>}</xsl:text>
+    </xsl:if>  
+</xsl:template>
+
+<!-- quantities with per units -->
+<xsl:template match="quant/per">
+    <!-- base unit is *mandatory* so check to see if it has been provided -->
+    <xsl:choose>
+        <xsl:when test="@base">
+            <xsl:text>\per\</xsl:text>
+            <xsl:value-of select="@base"/>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:message terminate="no">
+                <xsl:text>base unit needed</xsl:text>
+            </xsl:message>
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- optional exponent -->
+    <xsl:if test="@exp">
+        <xsl:text>\tothe{</xsl:text>
+            <xsl:value-of select="@exp"/>
+        <xsl:text>}</xsl:text>
+    </xsl:if>
+    <!-- last child gets to close the brace } -->
+    <xsl:if test="position() = last()">  
+        <xsl:text>}</xsl:text>
+    </xsl:if>  
+</xsl:template>
+
 <xsl:template match="ellipsis">
     <xsl:text>\ldots</xsl:text>
 </xsl:template>
