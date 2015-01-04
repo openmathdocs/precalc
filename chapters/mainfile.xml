@@ -33,12 +33,17 @@
     <book>
       <!--&functions;-->
       <!-- &exponentialfunctions; -->
-      <chapter>
+      <chapter filebase="test">
         <p>test  <quant/> </p>
         <p>test  <quant mag="42"/> </p>
         <p>test  <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" /></quant> </p>
         <p>test  <quant><unit base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
         <p>test  <quant mag="13"><unit base="gram" prefix="kilo" exp="-23"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
+        <!-- from Alex -->
+        <p><quant><per base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant></p>
+        <p><quant mag="42"><per base="gram" prefix="kilo"/></quant></p>
+        <p><quant mag="54.3"><per prefix="kilo" exp="987"/></quant></p>
+        <p><quant mag="109"><unit prefix="kilo" exp="987"/></quant></p>
       </chapter>
     </book>
 </mathbook>

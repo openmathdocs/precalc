@@ -1371,10 +1371,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         
         \num{1/5}
 
-     for quantities that *don't* have unit children 
+     for quantities that *don't* have 'unit' or 'per' children 
      http://stackoverflow.com/questions/1993213/use-xpath-to-select-an-element-that-doesnt-have-an-img-tag-as-a-child
      -->
-<xsl:template match="quant[not(descendant::unit)]">
+<xsl:template match="quant[not(descendant::unit) and not(descendant::per)]">
     <xsl:choose>
       <xsl:when test="@mag">
         <xsl:text>\num{</xsl:text>
@@ -1401,7 +1401,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
        \SI{13}{\kilo\gram\tothe{-23}\meter\per\second\tothe{2}}  
 
         -->
-<xsl:template match="quant/unit">
+<xsl:template match="quant/unit|quant/per">
     <!-- check if this is the first child -->
     <xsl:if test="position() &lt; 2">
         <xsl:choose>
@@ -1418,6 +1418,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
           </xsl:otherwise>
         </xsl:choose>
     </xsl:if>
+    <!-- if we're in a 'per' node -->
+    <xsl:if test="local-name(.)='per'">
+        <xsl:text>\per</xsl:text>
+    </xsl:if>
     <!-- prefix is optional -->
     <xsl:if test="@prefix">
         <xsl:text>\</xsl:text>
@@ -1427,32 +1431,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:choose>
         <xsl:when test="@base">
             <xsl:text>\</xsl:text>
-            <xsl:value-of select="@base"/>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:message terminate="no">
-                <xsl:text>base unit needed</xsl:text>
-            </xsl:message>
-        </xsl:otherwise>
-    </xsl:choose>
-    <!-- optional exponent -->
-    <xsl:if test="@exp">
-        <xsl:text>\tothe{</xsl:text>
-            <xsl:value-of select="@exp"/>
-        <xsl:text>}</xsl:text>
-    </xsl:if>
-    <!-- last child gets to close the brace } -->
-    <xsl:if test="position() = last()">  
-        <xsl:text>}</xsl:text>
-    </xsl:if>  
-</xsl:template>
-
-<!-- quantities with per units -->
-<xsl:template match="quant/per">
-    <!-- base unit is *mandatory* so check to see if it has been provided -->
-    <xsl:choose>
-        <xsl:when test="@base">
-            <xsl:text>\per\</xsl:text>
             <xsl:value-of select="@base"/>
         </xsl:when>
         <xsl:otherwise>
