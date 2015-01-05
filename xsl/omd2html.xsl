@@ -610,8 +610,89 @@ Note that we use <xsl:text> to insert a blank space
 <xsl:template match="tbody"><tbody><xsl:apply-templates /></tbody></xsl:template>
 <xsl:template match="row"><tr><xsl:apply-templates /></tr></xsl:template>
 <!-- With a parent axis, get overrides easily? -->
-<xsl:template match="thead/row/entry"><th align="{../../../@align}"><xsl:apply-templates /></th></xsl:template>
-<xsl:template match="tbody/row/entry"><td align="{../../../@align}"><xsl:apply-templates /></td></xsl:template>
+
+<!-- match table entry to its column type: left, center, right, decimal -->
+<xsl:template match="thead/row/entry">
+  <xsl:element name="th">
+    <xsl:attribute name="text-align">center</xsl:attribute>
+    <xsl:apply-templates />
+  </xsl:element>
+</xsl:template>
+
+<xsl:template match="tbody/row/entry">
+  <!-- get the column *position* of the current entry, e.g 1st, 2nd, 3rd -->
+  <xsl:variable name="columnPos">
+    <xsl:value-of select="position()" />
+  </xsl:variable>
+  <!-- get the column *type* of the current entry, e.g left, center, right, decimal -->
+  <xsl:variable name="columnType">
+    <xsl:value-of select="(../../../coltypes/col[@align])[position()=$columnPos]/@align" />
+  </xsl:variable>
+  <!-- set up <td>...</td> -->
+  <xsl:element name="td">
+    <xsl:choose>
+      <!-- when columnType is decimal we have to use
+           <td style="width:XXXem">
+                <span class="left" style="width:LLLem">xxx</span>
+                .
+                <span class="right" style="width:RRRem">yyy</span>
+           </td>
+                -->
+        <xsl:when test="$columnType='decimal'">
+          <!-- store the cell value into the variable $cell -->
+          <xsl:variable name="cell">
+            <xsl:value-of select="."/>
+          </xsl:variable>
+          <!-- grab the format, e.g 2.4 or 3.5, etc-->
+          <xsl:variable name="format">
+            <xsl:value-of select="(../../../coltypes/col[@align])[position()=$columnPos]/@format"/>
+          </xsl:variable>
+          <!-- the format attribute will be format="2.4", for example,
+               so we need to grab the 2 and the 4 -->
+          <xsl:variable name="integer-part">
+            <xsl:value-of select="$format"/>
+          </xsl:variable>
+          <xsl:variable name="fractional-part">
+            <xsl:value-of select="$format"/>
+          </xsl:variable>
+          <!-- form <td style="width:XXXem"> -->
+          <xsl:attribute name="style">width:<xsl:value-of select="$integer-part+$fractional-part+.3" />em</xsl:attribute>
+          <!-- form <span class="left" style="width:XXXem">XXX</span> -->
+          <xsl:element name="span">
+            <xsl:attribute name="class">left</xsl:attribute>
+            <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />em</xsl:attribute>
+            <xsl:value-of select="substring-before($cell,'.')"/>
+          </xsl:element>
+          <xsl:choose>
+            <xsl:when test="contains($cell,'.')">
+              <!-- insert the decimal point-->
+              <xsl:text>.</xsl:text>
+              <!-- form <span class="right" style="width:YYYem">YYY</span> -->
+              <xsl:element name="span">
+                <xsl:attribute name="class">right</xsl:attribute>
+                <xsl:attribute name="style">width:<xsl:value-of select="$fractional-part" />em</xsl:attribute>
+                <xsl:value-of select="substring-after($cell,'.')"/>
+              </xsl:element>
+           </xsl:when>
+           <xsl:otherwise>
+            <!-- form <span class="left" style="width:XXXem">XXX</span> -->
+            <xsl:element name="span">
+              <xsl:attribute name="class">left</xsl:attribute>
+              <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />em</xsl:attribute>
+              <xsl:value-of select="$cell"/>
+            </xsl:element>
+           </xsl:otherwise>
+         </xsl:choose>
+        </xsl:when>
+        <!-- when columnType is *not* decimal <td text-align="$columnType"> -->
+        <xsl:otherwise>
+            <xsl:attribute name="style">text-align:<xsl:value-of select="$columnType"/></xsl:attribute>
+            <!-- insert contents of <entry> -->
+            <xsl:apply-templates />
+        </xsl:otherwise>
+    </xsl:choose>
+  </xsl:element>
+</xsl:template>
 
 <!-- Caption of a table or figure                  -->
 <!-- All the relevant information is in the parent -->

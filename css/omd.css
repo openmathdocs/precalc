@@ -70,3 +70,7 @@ div.figure {
     float: left;
 }
 #filler { clear: both; }
+
+/* decimal alignment in tables */
+span.left { float: left; text-align: right; }
+span.right { float: right; text-align: left; }
