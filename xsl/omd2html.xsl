@@ -663,7 +663,7 @@ Note that we use <xsl:text> to insert a blank space
               <xsl:element name="span">
                 <xsl:attribute name="class">left</xsl:attribute>
                 <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />ex</xsl:attribute>
-                <xsl:value-of select="substring-before($cell,'.')"/>
+                <xsl:text>\(</xsl:text><xsl:value-of select="substring-before($cell,'.')"/><xsl:text>\)</xsl:text>
               </xsl:element>
               <!-- insert the decimal point-->
               <xsl:text>.</xsl:text>
@@ -671,7 +671,7 @@ Note that we use <xsl:text> to insert a blank space
               <xsl:element name="span">
                 <xsl:attribute name="class">right</xsl:attribute>
                 <xsl:attribute name="style">width:<xsl:value-of select="$fractional-part" />ex</xsl:attribute>
-                <xsl:value-of select="substring-after($cell,'.')"/>
+                <xsl:text>\(</xsl:text><xsl:value-of select="substring-after($cell,'.')"/><xsl:text>\)</xsl:text>
               </xsl:element>
            </xsl:when>
            <xsl:otherwise>
@@ -679,7 +679,7 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:element name="span">
               <xsl:attribute name="class">left</xsl:attribute>
               <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />ex</xsl:attribute>
-              <xsl:value-of select="$cell"/>
+                <xsl:text>\(</xsl:text><xsl:value-of select="$cell"/><xsl:text>\)</xsl:text>
             </xsl:element>
            </xsl:otherwise>
          </xsl:choose>
