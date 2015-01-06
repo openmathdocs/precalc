@@ -51,7 +51,7 @@
     <col align="left"/>
     <col align="right"/>
     <col align="decimal" format="4.4"/>
-    <col align="decimal" format="3.5"/>
+    <col align="decimal" format="6.5"/>
   </coltypes>
   <thead>
   <row>

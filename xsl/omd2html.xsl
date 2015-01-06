@@ -650,27 +650,27 @@ Note that we use <xsl:text> to insert a blank space
           <!-- the format attribute will be format="2.4", for example,
                so we need to grab the 2 and the 4 -->
           <xsl:variable name="integer-part">
-            <xsl:value-of select="$format"/>
+            <xsl:value-of select="substring-before($format,'.')"/>
           </xsl:variable>
           <xsl:variable name="fractional-part">
-            <xsl:value-of select="$format"/>
+            <xsl:value-of select="substring-after($format,'.')"/>
           </xsl:variable>
           <!-- form <td style="width:XXXem"> -->
-          <xsl:attribute name="style">width:<xsl:value-of select="$integer-part+$fractional-part+.3" />em</xsl:attribute>
-          <!-- form <span class="left" style="width:XXXem">XXX</span> -->
-          <xsl:element name="span">
-            <xsl:attribute name="class">left</xsl:attribute>
-            <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />em</xsl:attribute>
-            <xsl:value-of select="substring-before($cell,'.')"/>
-          </xsl:element>
+          <xsl:attribute name="style">width:<xsl:value-of select="$integer-part+$fractional-part+.5" />ex</xsl:attribute>
           <xsl:choose>
             <xsl:when test="contains($cell,'.')">
+              <!-- form <span class="left" style="width:XXXem">XXX</span> -->
+              <xsl:element name="span">
+                <xsl:attribute name="class">left</xsl:attribute>
+                <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />ex</xsl:attribute>
+                <xsl:value-of select="substring-before($cell,'.')"/>
+              </xsl:element>
               <!-- insert the decimal point-->
               <xsl:text>.</xsl:text>
               <!-- form <span class="right" style="width:YYYem">YYY</span> -->
               <xsl:element name="span">
                 <xsl:attribute name="class">right</xsl:attribute>
-                <xsl:attribute name="style">width:<xsl:value-of select="$fractional-part" />em</xsl:attribute>
+                <xsl:attribute name="style">width:<xsl:value-of select="$fractional-part" />ex</xsl:attribute>
                 <xsl:value-of select="substring-after($cell,'.')"/>
               </xsl:element>
            </xsl:when>
@@ -678,7 +678,7 @@ Note that we use <xsl:text> to insert a blank space
             <!-- form <span class="left" style="width:XXXem">XXX</span> -->
             <xsl:element name="span">
               <xsl:attribute name="class">left</xsl:attribute>
-              <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />em</xsl:attribute>
+              <xsl:attribute name="style">width:<xsl:value-of select="$integer-part" />ex</xsl:attribute>
               <xsl:value-of select="$cell"/>
             </xsl:element>
            </xsl:otherwise>
