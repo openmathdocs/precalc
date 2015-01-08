@@ -191,39 +191,43 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         <div width="50%">
           <table xml:id="exp-tab-salary">
             <caption/>
-					<tgroup tabletype="S[table-format=2.0]S[table-format=10.0]">
+            <coltypes>
+              <col align="decimal" format="2.0"/>
+              <col align="decimal" format="10.0"/>
+                    </coltypes>
 						<thead>
                           <row><entry><m>d</m> (days worked)</entry><entry><m>p</m> (cents)</entry></row>
 						</thead>
 						<tbody>
-                          <row><entry>1  </entry><entry>2         </entry></row> 
-                          <row><entry>2  </entry><entry>4         </entry></row>
-                          <row><entry>3  </entry><entry>8         </entry></row>
-                          <row><entry>4  </entry><entry>16        </entry></row>
-                          <row><entry>5  </entry><entry>32        </entry></row>
-                          <row><entry>10 </entry><entry>1024      </entry></row>
-                          <row><entry>30 </entry><entry>1073741824</entry></row>
+                          <row><entry>1</entry><entry>2</entry></row> 
+                          <row><entry>2</entry><entry>4</entry></row>
+                          <row><entry>3</entry><entry>8</entry></row>
+                          <row><entry>4</entry><entry>16</entry></row>
+                          <row><entry>5</entry><entry>32</entry></row>
+                          <row><entry>10</entry><entry>1024</entry></row>
+                          <row><entry>30</entry><entry>1073741824</entry></row>
                       </tbody>
-					</tgroup>
 				</table>
             </div>
             <div width="50%">
               <table xml:id="exp-tab-salaryalt">
                 <caption />
-                <tgroup tabletype="S[table-format=2.0]l">
+            <coltypes>
+              <col align="decimal" format="2.0"/>
+              <col align="left"/>
+                    </coltypes>
                   <thead>
                     <row><entry><m>d</m> (days worked)</entry> <entry><m>p</m> (cents)</entry></row> 
                     </thead>
                     <tbody>
-                      <row><entry>1                          </entry> <entry><m>2</m>                  </entry></row>
-                      <row><entry>2                          </entry> <entry><m>2^2</m>                </entry></row>
-                      <row><entry>3                          </entry> <entry><m>2^3</m>                </entry></row>
-                      <row><entry>4                          </entry> <entry><m>2^4</m>                </entry></row>
-                      <row><entry>5                          </entry> <entry><m>2^5</m>                </entry></row>
-                      <row><entry>10                         </entry> <entry><m>2^{10}</m>             </entry></row>
-                      <row><entry>30                         </entry> <entry><m>2^{30}</m>             </entry></row>
+                      <row><entry>1</entry> <entry><m>2</m>                  </entry></row>
+                      <row><entry>2</entry> <entry><m>2^2</m>                </entry></row>
+                      <row><entry>3</entry> <entry><m>2^3</m>                </entry></row>
+                      <row><entry>4</entry> <entry><m>2^4</m>                </entry></row>
+                      <row><entry>5</entry> <entry><m>2^5</m>                </entry></row>
+                      <row><entry>10</entry> <entry><m>2^{10}</m>             </entry></row>
+                      <row><entry>30</entry> <entry><m>2^{30}</m>             </entry></row>
                     </tbody>
-                </tgroup>
                 </table>
             </div>
         </multobjects>
@@ -270,7 +274,10 @@ need to work out how to define a 'xrefRange' command (two arguments???)
       <p>One day the jester brought her a chessboard (see <xref ref="exp-fig-grainsofrice"/>) and a bucket filled with rice.</p> 
       <table xml:id="exp-tab-grainsofrice" TeXFloatOptions="!bht">
         <caption/>
-                <tgroup tabletype="S[table-format=2.0]S[table-format=10.0]">
+            <coltypes>
+              <col align="decimal" format="2.0"/>
+              <col align="decimal" format="10.0"/>
+                    </coltypes>
                   <thead>
                     <row><entry>square on board</entry><entry>grains of rice</entry></row>
                     <row><entry><m>x</m></entry><entry><m>g(x)</m></entry></row>
@@ -287,7 +294,6 @@ need to work out how to define a 'xrefRange' command (two arguments???)
                       <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
                       <row><entry>\mbox{$x$}                </entry><entry> \mbox{$3^x$}  </entry></row>
                     </tbody>
-                </tgroup>
                 </table>
                 <figure style="margin" xml:id="exp-fig-grainsofrice">
                   <code>
@@ -396,22 +402,24 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         <div width="50%">
           <table xml:id="exp-tab-foldingpaper">
             <caption/>
-                <tgroup tabletype="S[table-format=1.0]S[table-format=2.2]">
+            <coltypes>
+              <col align="decimal" format="1.0"/>
+              <col align="decimal" format="2.2"/>
+                    </coltypes>
                   <thead>
                     <row><entry>number of folds</entry><entry>visible area</entry></row>
                     <row><entry><m>x</m></entry><entry><m>(\si{\inch\squared})</m></entry></row>
                 </thead>
                 <tbody>
-                  <row><entry>0</entry><entry> 93.50</entry></row> 
-                  <row><entry>1</entry><entry> 46.75</entry></row>
-                  <row><entry>2</entry><entry> 23.38</entry></row>
-                  <row><entry>3</entry><entry> 11.69</entry></row>
-                  <row><entry>4</entry><entry> 5.84 </entry></row>
-                  <row><entry>5</entry><entry> 2.92 </entry></row>
-                  <row><entry>6</entry><entry> 1.46 </entry></row>
-                  <row><entry>7</entry><entry> 0.73 </entry></row>
+                  <row><entry>0</entry><entry>93.50</entry></row> 
+                  <row><entry>1</entry><entry>46.75</entry></row>
+                  <row><entry>2</entry><entry>23.38</entry></row>
+                  <row><entry>3</entry><entry>11.69</entry></row>
+                  <row><entry>4</entry><entry>5.84</entry></row>
+                  <row><entry>5</entry><entry>2.92</entry></row>
+                  <row><entry>6</entry><entry>1.46</entry></row>
+                  <row><entry>7</entry><entry>0.73</entry></row>
       </tbody>
-  </tgroup>
           </table>
         </div>
         <div width="50%">

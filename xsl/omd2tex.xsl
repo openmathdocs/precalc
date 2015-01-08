@@ -1018,17 +1018,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\dots </xsl:text>
 </xsl:template>
 
-<xsl:template match="margintable">
-    <xsl:text>\begin{margintable}\centering&#xa;</xsl:text>
-    <xsl:text>\captionof{table}{</xsl:text>
-    <xsl:apply-templates select="caption/node()" />
-    <xsl:text>}&#xa;</xsl:text>
-    <xsl:apply-templates select="." mode="label"/>
-    <xsl:apply-templates />
-    <xsl:text>\end{margintable}&#xa;</xsl:text>
-    <xsl:text>%&#xa;</xsl:text>
-</xsl:template>
-
 <!-- \@ following a period makes it an abbreviation, not the end of a sentence -->
 <!-- So use it for abbreviations which will not end a sentence                 -->
 <!-- Best: \makeatletter\newcommand\etc{etc\@ifnextchar.{}{.\@}}\makeatother   -->
@@ -1261,8 +1250,23 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>}{.</xsl:text>
     <xsl:value-of select="substring($width,1,($length - 1))"/>
     <xsl:text>\textwidth}&#xa;\centering</xsl:text>
-    <!-- body of the table|figure -->
-    <xsl:apply-templates />
+    <xsl:choose>
+      <!-- body of the table is a little subtle -->
+      <xsl:when test="local-name(.)='table'">
+            <xsl:apply-templates select="caption"/>
+            <xsl:text>\begin{tabular}</xsl:text>
+            <xsl:text>{</xsl:text>
+            <xsl:apply-templates select="coltypes/col"/>
+            <xsl:text>}&#xa;</xsl:text>
+            <xsl:apply-templates select="thead"/>
+            <xsl:apply-templates select="tbody"/>
+            <xsl:text>\end{tabular}&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <!-- body of the figure -->
+            <xsl:apply-templates />
+        </xsl:otherwise>
+    </xsl:choose>
     <!-- \end{minipage|subfigure|subtable} -->
     <xsl:text>\end{</xsl:text>
     <xsl:value-of select="$envName"/>
@@ -1315,22 +1319,63 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <!-- Should be able to replace this by extant XSLT for this conversion -->
 <!-- See http://stackoverflow.com/questions/19716449/converting-xhtml-table-to-latex-using-xslt -->
 <xsl:template match="table">
+    <!-- table will either use \begin{table} or \begin{margintable}-->
+    <xsl:variable name="tableType">
+        <xsl:choose>
+            <!-- margin table -->
+            <xsl:when test="@style='margin'">
+                <xsl:text>margintable</xsl:text>
+            </xsl:when>
+            <!-- normal table -->
+            <xsl:otherwise>
+                <xsl:text>table</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+     </xsl:variable>
+     <!-- output the appropriate environment: table/margintable -->
+     <xsl:text>\begin{</xsl:text>
+     <xsl:value-of select="$tableType"/>
+     <xsl:text>}</xsl:text>
+     <!-- table has environment option, margintable doesn't -->
+     <xsl:if test="not(@style='margin')">
+        <xsl:apply-templates select="." mode="environment-option" />
+     </xsl:if>
+     <xsl:text>\centering&#xa;</xsl:text>
+     <!-- caption -->
+     <xsl:apply-templates select="caption"/>
+     <xsl:text>\begin{tabular}</xsl:text>
+     <xsl:text>{</xsl:text>
+     <xsl:apply-templates select="coltypes/col"/>
+     <xsl:text>}&#xa;</xsl:text>
+     <xsl:apply-templates select="thead"/>
+     <xsl:apply-templates select="tbody"/>
+     <xsl:text>\end{tabular}&#xa;</xsl:text>
+     <xsl:text>\end{</xsl:text>
+     <xsl:value-of select="$tableType"/>
+     <xsl:text>}</xsl:text>
+     <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<!-- column types of a table; either left, center, right, or decimal -->
+<xsl:template match="table/coltypes/col">
     <xsl:choose>
-        <!-- margin table -->
-        <xsl:when test="@style='margin'">
-            <xsl:text>\begin{margintable}&#xa;\centering&#xa;</xsl:text>
-            <xsl:apply-templates />
-            <xsl:text>\end{margintable}&#xa;</xsl:text>
-            <xsl:text>%&#xa;</xsl:text>
+        <xsl:when test="@align='center'">
+            <xsl:text>c</xsl:text>
         </xsl:when>
-        <!-- normal table -->
+        <xsl:when test="@align='left'">
+            <xsl:text>l</xsl:text>
+        </xsl:when>
+        <xsl:when test="@align='right'">
+            <xsl:text>r</xsl:text>
+        </xsl:when>
+        <xsl:when test="@align='decimal'">
+            <xsl:text>S[table-format=</xsl:text>
+            <xsl:value-of select="@format"/>
+            <xsl:text>]</xsl:text>
+        </xsl:when>
+        <!-- default is center -->
         <xsl:otherwise>
-            <xsl:text>\begin{table}</xsl:text>
-            <xsl:apply-templates select="." mode="environment-option" />
-            <xsl:text>&#xa;\centering&#xa;</xsl:text>
-            <xsl:apply-templates />
-            <xsl:text>\end{table}&#xa;</xsl:text>
-            <xsl:text>%&#xa;</xsl:text>
+            <xsl:text>c</xsl:text>
         </xsl:otherwise>
     </xsl:choose>
 </xsl:template>
@@ -1345,6 +1390,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
           <xsl:text>}{</xsl:text>
                 <xsl:apply-templates />
             <xsl:text>}&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:when test="ancestor::multobjects and (ancestor::figure or ancestor::table)">
+          <xsl:text>\captionof{</xsl:text>
+          <xsl:value-of select="local-name(..)" />
+          <xsl:text>}{</xsl:text>
+                <xsl:apply-templates />
+          <xsl:text>}&#xa;</xsl:text>
         </xsl:when>
         <xsl:otherwise>
             <xsl:text>\caption{</xsl:text>
