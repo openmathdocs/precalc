@@ -604,6 +604,13 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>]&#xa;</xsl:text>
 </xsl:template>
 
+<!-- problems and subproblems can take the 'core' optional argument -->
+<xsl:template match="exercise/part|exercise/multicols/part" mode="environment-option">
+  <xsl:if test="@core='true'">
+    <xsl:text>[core]</xsl:text>
+  </xsl:if>
+</xsl:template>
+
 <xsl:template match="theorem|corollary|lemma">
     <xsl:apply-templates select="statement|proof" />
 </xsl:template>
@@ -629,25 +636,54 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:apply-templates select="title" mode="environment-option" />
     <xsl:apply-templates select="." mode="label"/>
     <xsl:text>&#xa;</xsl:text>
-    <xsl:apply-templates select="statement"/>
-    <xsl:text>&#xa;</xsl:text>
-    <xsl:apply-templates select="solution"/>
-    <xsl:apply-templates select="answer"/>
+    <xsl:apply-templates />
     <xsl:text>\end{problem}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="exercise/solution">
+<xsl:template match="exercise/statement">
+    <xsl:apply-templates/>
+    <xsl:text>&#xa;</xsl:text>
+</xsl:template>
+
+<!-- subproblems -->
+<xsl:template match="exercise/part|exercise/multicols/part">
+    <xsl:text>\begin{subproblem}</xsl:text>
+    <xsl:apply-templates select="." mode="environment-option" />
+    <xsl:apply-templates select="." mode="label"/>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:text>\end{subproblem}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercise/solution|part/solution">
         <xsl:text>\begin{longsolution}&#xa;%&#xa;</xsl:text>
 	<xsl:apply-templates />
-	<xsl:text>&#xa;%&#xa;</xsl:text>
+	<xsl:text>%&#xa;</xsl:text>
         <xsl:text>\end{longsolution}&#xa;%&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="exercise/answer">
+<xsl:template match="exercise/answer|part/answer">
         <xsl:text>\begin{shortsolution}&#xa;%&#xa;</xsl:text>
         <xsl:apply-templates />
         <xsl:text>&#xa;%&#xa;</xsl:text>
         <xsl:text>\end{shortsolution}&#xa;%&#xa;</xsl:text>
+</xsl:template>
+
+<!-- multicolumns -->
+<xsl:template match="multicols">
+  <xsl:text>\begin{multicols}{</xsl:text>
+  <xsl:choose>
+    <xsl:when test="@cols">
+      <xsl:value-of select="@cols"/>
+    </xsl:when>
+    <xsl:otherwise>
+        <xsl:text>2</xsl:text>
+    </xsl:otherwise>
+</xsl:choose>
+<xsl:text>}&#xa;</xsl:text>
+        <xsl:apply-templates />
+    <xsl:text>\end{multicols}&#xa;</xsl:text>
 </xsl:template>
 
 <!-- Reorg?, consolidate following with local-name() -->
@@ -825,7 +861,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="ul">
     <xsl:text>\begin{itemize}&#xa;</xsl:text>
     <xsl:apply-templates select="li" />
-    <xsl:text>\end{itemize}&#xa;%&#xa;</xsl:text>
+    <xsl:text>\end{itemize}&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="dl">
@@ -1166,6 +1202,11 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     </xsl:choose>
 </xsl:template>
 
+<!-- when a figure is inside a solution, it shouldn't float-->
+<xsl:template match="solution/figure">
+            <xsl:apply-templates />
+</xsl:template>
+
 <!-- multiple objects inside one float, 
         e.g     multiple tables
                 multiple figures 
@@ -1247,7 +1288,14 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <!-- bring it all together into an environment -->
     <xsl:text>\begin{</xsl:text>
     <xsl:value-of select="$envName"/>
-    <xsl:text>}{.</xsl:text>
+    <xsl:text>}</xsl:text>
+    <!-- minipages/subfigures/subtables can take an optional specifier -->
+    <xsl:if test="@verticalAlignment">
+        <xsl:text>[</xsl:text>
+                <xsl:value-of select="@verticalAlignment"/>
+        <xsl:text>]</xsl:text>
+    </xsl:if>
+    <xsl:text>{.</xsl:text>
     <xsl:value-of select="substring($width,1,($length - 1))"/>
     <xsl:text>\textwidth}&#xa;\centering</xsl:text>
     <xsl:choose>
@@ -1841,7 +1889,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 </xsl:template>
 
 <!-- Example author and date -->
-<xsl:template match="example/author|example/date"/>
+<xsl:template match="example/author|example/date|exercise/author|exercise/date"/>
 
 
 </xsl:stylesheet>

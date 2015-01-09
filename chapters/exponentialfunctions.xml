@@ -50,7 +50,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
               </figure>
         <multobjects type="figure">
           <div width="50%">
-				<figure>
+                <figure>
                   <code>
                     \begin{tikzpicture}
                         \begin{axis}
@@ -62,27 +62,27 @@ need to work out how to define a 'xrefRange' command (two arguments???)
                 </figure>
           </div>
           <div width="50%">
-				<table>
-				<caption />
-					<tgroup cols="1" align="center">
-						<thead>
-							<row><entry>(input, output)</entry></row>
+                <table>
+                <caption />
+                    <tgroup cols="1" align="center">
+                        <thead>
+                            <row><entry>(input, output)</entry></row>
                                                         <row><entry><m>(x,\sq(x))</m></entry></row>
-						</thead>
-						<tbody>
+                        </thead>
+                        <tbody>
                                                         <row><entry><m>(0,0)</m></entry></row>
                                                         <row><entry><m>(1,1)</m></entry></row>
                                                         <row><entry><m>\approx(2,1.41)</m></entry></row>
                                                         <row><entry><m>\approx(3,1.73)</m></entry></row>
-							<row><entry><m>(4,2)</m></entry></row>
-						</tbody>
-					</tgroup>
-				</table>
+                            <row><entry><m>(4,2)</m></entry></row>
+                        </tbody>
+                    </tgroup>
+                </table>
           </div>
          </multobjects>
         <multobjects type="figure">
           <div width="50%">
-				<figure>
+                <figure>
                   <code>
                     \begin{tikzpicture}
                         \begin{axis}
@@ -94,7 +94,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
                 </figure>
           </div>
           <div width="50%">
-				<figure>
+                <figure>
                   <code>
                     \begin{tikzpicture}
                         \begin{axis}
@@ -181,344 +181,380 @@ need to work out how to define a 'xrefRange' command (two arguments???)
             </div>
             <caption></caption>
           </multobjects>
-        <example>
-          <author>Barkin/Bernards</author>
-          <date>April 2011</date>
-          <p>Congratulations, you've been offered a job!  Human Resources told you 
-        that you would start out making <m>\SI{2}{\centunit}</m> on the first day, and every day you work thereafter your pay will double.  
-        Would you take this job?</p>
-      <multobjects type="table" TeXFloatOptions="!hbt">
-        <div width="50%">
-          <table xml:id="exp-tab-salary">
-            <caption/>
-            <coltypes>
-              <col align="decimal" format="2.0"/>
-              <col align="decimal" format="10.0"/>
-                    </coltypes>
-						<thead>
-                          <row><entry><m>d</m> (days worked)</entry><entry><m>p</m> (cents)</entry></row>
-						</thead>
-						<tbody>
-                          <row><entry>1</entry><entry>2</entry></row> 
-                          <row><entry>2</entry><entry>4</entry></row>
-                          <row><entry>3</entry><entry>8</entry></row>
-                          <row><entry>4</entry><entry>16</entry></row>
-                          <row><entry>5</entry><entry>32</entry></row>
-                          <row><entry>10</entry><entry>1024</entry></row>
-                          <row><entry>30</entry><entry>1073741824</entry></row>
-                      </tbody>
-				</table>
-            </div>
-            <div width="50%">
-              <table xml:id="exp-tab-salaryalt">
-                <caption />
-            <coltypes>
-              <col align="decimal" format="2.0"/>
-              <col align="left"/>
-                    </coltypes>
+          <example>
+            <author>Barkin/Bernards</author>
+            <date>April 2011</date>
+            <p>Congratulations, you've been offered a job!  Human Resources told you 
+              that you would start out making <m>\SI{2}{\centunit}</m> on the first day, and every day you work thereafter your pay will double.  
+              Would you take this job?</p>
+            <multobjects type="table" TeXFloatOptions="!hbt">
+              <div width="50%">
+                <table xml:id="exp-tab-salary">
+                  <caption/>
+                  <coltypes>
+                    <col align="decimal" format="2.0"/>
+                    <col align="decimal" format="10.0"/>
+                  </coltypes>
+                  <thead>
+                    <row><entry><m>d</m> (days worked)</entry><entry><m>p</m> (cents)</entry></row>
+                  </thead>
+                  <tbody>
+                    <row><entry>1</entry><entry>2</entry></row> 
+                    <row><entry>2</entry><entry>4</entry></row>
+                    <row><entry>3</entry><entry>8</entry></row>
+                    <row><entry>4</entry><entry>16</entry></row>
+                    <row><entry>5</entry><entry>32</entry></row>
+                    <row><entry>10</entry><entry>1024</entry></row>
+                    <row><entry>30</entry><entry>1073741824</entry></row>
+                  </tbody>
+                </table>
+              </div>
+              <div width="50%">
+                <table xml:id="exp-tab-salaryalt">
+                  <caption />
+                  <coltypes>
+                    <col align="decimal" format="2.0"/>
+                    <col align="left"/>
+                  </coltypes>
                   <thead>
                     <row><entry><m>d</m> (days worked)</entry> <entry><m>p</m> (cents)</entry></row> 
-                    </thead>
-                    <tbody>
-                      <row><entry>1</entry> <entry><m>2</m>                  </entry></row>
-                      <row><entry>2</entry> <entry><m>2^2</m>                </entry></row>
-                      <row><entry>3</entry> <entry><m>2^3</m>                </entry></row>
-                      <row><entry>4</entry> <entry><m>2^4</m>                </entry></row>
-                      <row><entry>5</entry> <entry><m>2^5</m>                </entry></row>
-                      <row><entry>10</entry> <entry><m>2^{10}</m>             </entry></row>
-                      <row><entry>30</entry> <entry><m>2^{30}</m>             </entry></row>
-                    </tbody>
+                  </thead>
+                  <tbody>
+                    <row><entry>1</entry> <entry><m>2</m>                  </entry></row>
+                    <row><entry>2</entry> <entry><m>2^2</m>                </entry></row>
+                    <row><entry>3</entry> <entry><m>2^3</m>                </entry></row>
+                    <row><entry>4</entry> <entry><m>2^4</m>                </entry></row>
+                    <row><entry>5</entry> <entry><m>2^5</m>                </entry></row>
+                    <row><entry>10</entry> <entry><m>2^{10}</m>             </entry></row>
+                    <row><entry>30</entry> <entry><m>2^{30}</m>             </entry></row>
+                  </tbody>
                 </table>
-            </div>
-        </multobjects>
-        <p><xref ref="exp-tab-salary" beginsentence="true"/> shows how much money you would make per day, 
-        in cents, for the first 5 days, and how much you would make on the 10th and 30th days. 
-        The amount you make on day 30 is 1073741824 cents, which is
-        <me> 
-          \$10\textrm{,}737\textrm{,}418.24   
-        </me>
-        That's over 10 million dollars in a single day! How did this happen? Can we develop 
-        a formula to help us understand the mathematics behind this?  </p>
-      <p>It seems that the dollar amount is multiplied by 2 each day. An alternative way 
-        of writing our daily income is shown in <xref ref="exp-tab-salaryalt"/>. Can we write 
-        a formula that calculates the pay, <m>p</m>, in cents, as a function of the number of days
-        worked, <m>d</m>? 
-        According to <xref ref="exp-tab-salaryalt"/>, it appears that the day of the month is in the exponent, 
-        so let's write
-        <me>
-        p = 2^{d}
-      </me>
-        where <m>d</m> is a positive integer. This is our first example of an exponential function -- exploring 
-        these types of functions is our primary goal in this chapter.</p>
-        </example>
-		<definition>
-			<title>Exponential functions</title>
-            <statement> <p>An exponential function is a function <m>f</m> that can be described with the formula 
+              </div>
+            </multobjects>
+            <p><xref ref="exp-tab-salary" beginsentence="true"/> shows how much money you would make per day, 
+              in cents, for the first 5 days, and how much you would make on the 10th and 30th days. 
+              The amount you make on day 30 is 1073741824 cents, which is
+              <me> 
+                \$10\textrm{,}737\textrm{,}418.24   
+              </me>
+              That's over 10 million dollars in a single day! How did this happen? Can we develop 
+              a formula to help us understand the mathematics behind this?  </p>
+            <p>It seems that the dollar amount is multiplied by 2 each day. An alternative way 
+              of writing our daily income is shown in <xref ref="exp-tab-salaryalt"/>. Can we write 
+              a formula that calculates the pay, <m>p</m>, in cents, as a function of the number of days
+              worked, <m>d</m>? 
+              According to <xref ref="exp-tab-salaryalt"/>, it appears that the day of the month is in the exponent, 
+              so let's write
               <me>
-        f(x)=a\,b^x
-    </me>
-        where <m>a</m> is a non-zero real number (<m>a\in\mathbb{R}, a\ne 0</m>) and <m>b</m> is a positive 
-        number other than 1 (<m>b>0</m>, <m>b\neq 1</m>). Notice that the variable is in the exponent 
-        and the base is the fixed constant <m>b</m>.</p>
-      <p>Note that in an exponential term the base is fixed and the variable is in the 
-        exponent (e.g. <m>5\cdot 4^x</m>), whereas in a polynomial term the exponent is fixed the base is the variable (e.g <m>6x^3</m>).</p>
+                p = 2^{d}
+              </me>
+              where <m>d</m> is a positive integer. This is our first example of an exponential function -- exploring 
+              these types of functions is our primary goal in this chapter.</p>
+          </example>
+          <definition>
+            <title>Exponential functions</title>
+            <statement> <p>An exponential function is a function <m>f</m> that can be described with the formula 
+                <me>
+                  f(x)=a\,b^x
+                </me>
+                where <m>a</m> is a non-zero real number (<m>a\in\mathbb{R}, a\ne 0</m>) and <m>b</m> is a positive 
+                number other than 1 (<m>b>0</m>, <m>b\neq 1</m>). Notice that the variable is in the exponent 
+                and the base is the fixed constant <m>b</m>.</p>
+              <p>Note that in an exponential term the base is fixed and the variable is in the 
+                exponent (e.g. <m>5\cdot 4^x</m>), whereas in a polynomial term the exponent is fixed the base is the variable (e.g <m>6x^3</m>).</p>
             </statement>
-		</definition>
-        <example xml:id="exp-prob-queenschessboard">
-          <author>Hughes</author>
-          <date>Feb 2011</date>
-          <title>Rice on a chessboard</title>
-          <p>Many years ago there lived a Queen who loved to play games; so much so, that 
-        she had a jester dedicated to devising interesting games for her. The Queen 
-        particularly enjoyed mathematical games.</p>
-      <p>One day the jester brought her a chessboard (see <xref ref="exp-fig-grainsofrice"/>) and a bucket filled with rice.</p> 
-      <table xml:id="exp-tab-grainsofrice" TeXFloatOptions="!bht">
-        <caption/>
-            <coltypes>
-              <col align="decimal" format="2.0"/>
-              <col align="decimal" format="10.0"/>
-                    </coltypes>
-                  <thead>
-                    <row><entry>square on board</entry><entry>grains of rice</entry></row>
-                    <row><entry><m>x</m></entry><entry><m>g(x)</m></entry></row>
-                </thead>
-                    <tbody>
-                      <row><entry>1                         </entry><entry> 3             </entry></row>
-                      <row><entry>2                         </entry><entry> 9             </entry></row>
-                      <row><entry>3                         </entry><entry> 27            </entry></row>
-                      <row><entry>4                         </entry><entry> 81            </entry></row>
-                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
-                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
-                      <row><entry>20                        </entry><entry> 3486784401    </entry></row>
-                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
-                      <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
-                      <row><entry>\mbox{$x$}                </entry><entry> \mbox{$3^x$}  </entry></row>
-                    </tbody>
-                </table>
-                <figure style="margin" xml:id="exp-fig-grainsofrice">
-                  <code>
-        \begin{tikzpicture}[scale=.25]
-        \foreach \x in {0,...,7} \foreach \y in {0,...,7}
-        {
-        \pgfmathparse{mod(\x+\y,2) ? "black" : "white"}
-        \edef\colour{\pgfmathresult}
-        \path[fill=\colour] (\x,\y) rectangle ++ (1,1);
-        }
-        \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
-        \end{tikzpicture}
-    </code>
-    <caption/>
-    </figure>
-    <p>The jester asked the Queen to follow these instructions
-      <ul>
-        <li>Place 3 grains of rice on the square in the lower left hand corner of the board.</li>
-        <li>Place 9 grains of rice on the square immediately to the right of the square you were just working with.</li>
-        <li>Place 27 grains of rice on the square immediately to the right of the square you were just working with.</li>
-      </ul>The Queen starts to notice a pattern, and records her findings in <xref ref="exp-tab-grainsofrice"/>. She also notes
-      that as she progresses from square to square, the number of grains appears to be <em>tripling</em> each time.</p>
-    <p>The Queen, being mathematically inclined, decides to try to model 
-        the game using a formula. She decides to  let <m>x</m> be the number 
-        corresponding to the square on the chessboard, and let <m>g(x)</m> represent 
-        the number of grains of rice on that square, and  assumes that she 
-        works each row from left to right as she moves up the chessboard.</p>
-      <figure style="margin" xml:id="exp-fig-queensgraph">
-        <code>
-        \begin{tikzpicture}
-        \begin{axis}[
-        width=.75\textwidth,
-        xmin=-5, xmax=5,
-        ymin=-1, ymax=10,
-        ]
-        \addplot expression[domain=-4:2.0959]{3^x};
-        \end{axis}
-        \end{tikzpicture}
-      </code>
-        <caption><m>g</m></caption>
-    </figure>
-    <p>The Queen notices that each of the numbers she writes in <xref ref="exp-tab-grainsofrice"/>
-        can be written as a power of <m>3</m>, and concludes that the formula for the number
-        of grains on square <m>x</m> of the chessboard is
-        <me>
-        g(x)=3^x
-    </me>
-        The Queen decides to test her formula by calculating the number of grains 
-        on the <m>\nth{17}</m> square. She finds that
-        <me>
-        g(17)=\num{129 140 163}
-    </me>
-    and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
-  <p> Of course, the Queen knows that this formula only works when <m>x</m> takes the 
-        integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
-        she graphed <m>g</m> on her calculator (which she always has with her for just 
-        such a situation). The Queen graphs <m>g</m> on her calculator assuming 
-        that <m>g</m> can take values outside of the contextual domain, and 
-        obtains the graph in <xref ref="exp-fig-queensgraph"/>.</p>
-      <p>The Queen concludes that <m>g</m> is increasing at a faster and faster rate, and 
-        cannot imagine ever being able to fit the appropriate amount of rice on 
-        each square.</p>
-        </example>
-        <checkpoint>
-			<exercise>
+          </definition>
+          <example xml:id="exp-prob-queenschessboard">
+            <author>Hughes</author>
+            <date>Feb 2011</date>
+            <title>Rice on a chessboard</title>
+            <p>Many years ago there lived a Queen who loved to play games; so much so, that 
+              she had a jester dedicated to devising interesting games for her. The Queen 
+              particularly enjoyed mathematical games.</p>
+            <p>One day the jester brought her a chessboard (see <xref ref="exp-fig-grainsofrice"/>) and a bucket filled with rice.</p> 
+            <table xml:id="exp-tab-grainsofrice" TeXFloatOptions="!bht">
+              <caption/>
+              <coltypes>
+                <col align="decimal" format="2.0"/>
+                <col align="decimal" format="10.0"/>
+              </coltypes>
+              <thead>
+                <row><entry>square on board</entry><entry>grains of rice</entry></row>
+                <row><entry><m>x</m></entry><entry><m>g(x)</m></entry></row>
+              </thead>
+              <tbody>
+                <row><entry>1                         </entry><entry> 3             </entry></row>
+                <row><entry>2                         </entry><entry> 9             </entry></row>
+                <row><entry>3                         </entry><entry> 27            </entry></row>
+                <row><entry>4                         </entry><entry> 81            </entry></row>
+                <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                <row><entry>20                        </entry><entry> 3486784401    </entry></row>
+                <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                <row><entry>\mbox{\vdots}             </entry><entry> \mbox{\vdots} </entry></row>
+                <row><entry>\mbox{$x$}                </entry><entry> \mbox{$3^x$}  </entry></row>
+              </tbody>
+            </table>
+            <figure style="margin" xml:id="exp-fig-grainsofrice">
+              <code>
+                \begin{tikzpicture}[scale=.25]
+                \foreach \x in {0,...,7} \foreach \y in {0,...,7}
+                {
+                \pgfmathparse{mod(\x+\y,2) ? "black" : "white"}
+                \edef\colour{\pgfmathresult}
+                \path[fill=\colour] (\x,\y) rectangle ++ (1,1);
+                }
+                \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
+                \end{tikzpicture}
+              </code>
+              <caption/>
+            </figure>
+            <p>The jester asked the Queen to follow these instructions
+              <ul>
+                <li>Place 3 grains of rice on the square in the lower left hand corner of the board.</li>
+                <li>Place 9 grains of rice on the square immediately to the right of the square you were just working with.</li>
+                <li>Place 27 grains of rice on the square immediately to the right of the square you were just working with.</li>
+              </ul>The Queen starts to notice a pattern, and records her findings in <xref ref="exp-tab-grainsofrice"/>. She also notes
+              that as she progresses from square to square, the number of grains appears to be <em>tripling</em> each time.</p>
+            <p>The Queen, being mathematically inclined, decides to try to model 
+              the game using a formula. She decides to  let <m>x</m> be the number 
+              corresponding to the square on the chessboard, and let <m>g(x)</m> represent 
+              the number of grains of rice on that square, and  assumes that she 
+              works each row from left to right as she moves up the chessboard.</p>
+            <figure style="margin" xml:id="exp-fig-queensgraph">
+              <code>
+                \begin{tikzpicture}
+                \begin{axis}[
+                width=.75\textwidth,
+                xmin=-5, xmax=5,
+                ymin=-1, ymax=10,
+                ]
+                \addplot expression[domain=-4:2.0959]{3^x};
+                \end{axis}
+                \end{tikzpicture}
+              </code>
+              <caption><m>g</m></caption>
+            </figure>
+            <p>The Queen notices that each of the numbers she writes in <xref ref="exp-tab-grainsofrice"/>
+              can be written as a power of <m>3</m>, and concludes that the formula for the number
+              of grains on square <m>x</m> of the chessboard is
+              <me>
+                g(x)=3^x
+              </me>
+              The Queen decides to test her formula by calculating the number of grains 
+              on the <m>\nth{17}</m> square. She finds that
+              <me>
+                g(17)=\num{129 140 163}
+              </me>
+              and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
+            <p> Of course, the Queen knows that this formula only works when <m>x</m> takes the 
+              integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
+              she graphed <m>g</m> on her calculator (which she always has with her for just 
+              such a situation). The Queen graphs <m>g</m> on her calculator assuming 
+              that <m>g</m> can take values outside of the contextual domain, and 
+              obtains the graph in <xref ref="exp-fig-queensgraph"/>.</p>
+            <p>The Queen concludes that <m>g</m> is increasing at a faster and faster rate, and 
+              cannot imagine ever being able to fit the appropriate amount of rice on 
+              each square.</p>
+          </example>
+          <checkpoint>
+            <exercise>
               <statement>Repeat <xref ref="exp-prob-queenschessboard"/>, but instead of <em>tripling</em> the 
                 number of grains of rice on each square, try <em>quadrupling</em> them.</statement>
               <solution><p>The equivalent of the function <m>g</m> is <m>h</m> and has formula <m>h(x)=4^x</m>.</p></solution>
-      </exercise>
-      </checkpoint>
-      <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
-        at a faster and faster rate. You may wonder if all exponential functions behave in this way --
-        the next example demonstrates that they do not.</p>
-        <example>
-          <author>Hughes</author>
-          <date>Feb 2011</date>
-          <title>Folding paper</title>
-          <p>Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
-        of the paper, it becomes quite difficult -- the MythBusters tried quite an elaborate experiment 
-        along these lines. <fn><url href="http://www.youtube.com/watch?v=kRAEBbotuIE"/></fn> </p>
-      <p>We are going to experiment with paper folding and study the mathematics behind the results.
-        The area of a <q>letter</q> sheet of paper is <m>\SI{8.5 x 11}{\inch}</m>, or <m>\SI{93.5}{\square\inch}</m>. We will
-        use two decimal places in what follows.</p>
-      <p>If we fold a sheet of letter paper in half, the visible surface area is
-        <md>
-          <mrow>\frac{\SI{93.52}{\square\inch}}{2} &amp; =\left(\frac{1}{2}\right)\SI{93.5}{\square\inch}</mrow>
-          <mrow>&amp; =\SI{46.75}{\square\inch}                       </mrow>
-      </md>
-        Note that we say, <q>visible</q>, because the actual surface area of the paper has not changed.</p>
-      <p>If we fold the sheet in half again, the visible surface area is 
-        <md>
-          <mrow>\frac{\SI{46.75}{\square\inch}}{2} &amp; = \frac{\SI{93.52}{\square\inch}}{4}               </mrow>
-          <mrow>&amp; = \left(\frac{1}{2}\right)^2\SI{93.5}{\square\inch} </mrow>
-          <mrow>&amp; \approx \SI{23.38}{\square\inch}                    </mrow>
-      </md>
-        If we fold the sheet in half a third time, the visible surface area is
-        <md>
-          <mrow>\frac{\SI{93.5}{\square\inch}}{8} &amp; = \left(  \frac{1}{2}\right)^3\SI{93.5}{\square\inch} </mrow>
-          <mrow>&amp; \approx \SI{11.69}{\square\inch}                      </mrow>
-    </md></p>
-    <p>Let's try and generalize our results by letting <m>x</m> be the number of 
-        paper folds; <m>x</m> will start at 0, and increase in integer values. 
-        <xref ref="exp-tab-foldingpaper" beginsentence="true"/> has two columns, one for the number of folds (up to 7), and one for the visible surface area 
-        of the (folded) paper. </p>
-      <multobjects type="table">
-        <div width="50%">
-          <table xml:id="exp-tab-foldingpaper">
-            <caption/>
-            <coltypes>
-              <col align="decimal" format="1.0"/>
-              <col align="decimal" format="2.2"/>
-                    </coltypes>
+            </exercise>
+          </checkpoint>
+          <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
+            at a faster and faster rate. You may wonder if all exponential functions behave in this way --
+            the next example demonstrates that they do not.</p>
+          <example>
+            <author>Hughes</author>
+            <date>Feb 2011</date>
+            <title>Folding paper</title>
+            <p>Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
+              of the paper, it becomes quite difficult -- the MythBusters tried quite an elaborate experiment 
+              along these lines. <fn><url href="http://www.youtube.com/watch?v=kRAEBbotuIE"/></fn> </p>
+            <p>We are going to experiment with paper folding and study the mathematics behind the results.
+              The area of a <q>letter</q> sheet of paper is <m>\SI{8.5 x 11}{\inch}</m>, or <m>\SI{93.5}{\square\inch}</m>. We will
+              use two decimal places in what follows.</p>
+            <p>If we fold a sheet of letter paper in half, the visible surface area is
+              <md>
+                <mrow>\frac{\SI{93.52}{\square\inch}}{2} &amp; =\left(\frac{1}{2}\right)\SI{93.5}{\square\inch}</mrow>
+                <mrow>&amp; =\SI{46.75}{\square\inch}                       </mrow>
+              </md>
+              Note that we say, <q>visible</q>, because the actual surface area of the paper has not changed.</p>
+            <p>If we fold the sheet in half again, the visible surface area is 
+              <md>
+                <mrow>\frac{\SI{46.75}{\square\inch}}{2} &amp; = \frac{\SI{93.52}{\square\inch}}{4}               </mrow>
+                <mrow>&amp; = \left(\frac{1}{2}\right)^2\SI{93.5}{\square\inch} </mrow>
+                <mrow>&amp; \approx \SI{23.38}{\square\inch}                    </mrow>
+              </md>
+              If we fold the sheet in half a third time, the visible surface area is
+              <md>
+                <mrow>\frac{\SI{93.5}{\square\inch}}{8} &amp; = \left(  \frac{1}{2}\right)^3\SI{93.5}{\square\inch} </mrow>
+                <mrow>&amp; \approx \SI{11.69}{\square\inch}                      </mrow>
+            </md></p>
+            <p>Let's try and generalize our results by letting <m>x</m> be the number of 
+              paper folds; <m>x</m> will start at 0, and increase in integer values. 
+              <xref ref="exp-tab-foldingpaper" beginsentence="true"/> has two columns, one for the number of folds (up to 7), and one for the visible surface area 
+              of the (folded) paper. </p>
+            <multobjects type="table">
+              <div width="50%">
+                <table xml:id="exp-tab-foldingpaper">
+                  <caption/>
+                  <coltypes>
+                    <col align="decimal" format="1.0"/>
+                    <col align="decimal" format="2.2"/>
+                  </coltypes>
                   <thead>
                     <row><entry>number of folds</entry><entry>visible area</entry></row>
                     <row><entry><m>x</m></entry><entry><m>(\si{\inch\squared})</m></entry></row>
-                </thead>
-                <tbody>
-                  <row><entry>0</entry><entry>93.50</entry></row> 
-                  <row><entry>1</entry><entry>46.75</entry></row>
-                  <row><entry>2</entry><entry>23.38</entry></row>
-                  <row><entry>3</entry><entry>11.69</entry></row>
-                  <row><entry>4</entry><entry>5.84</entry></row>
-                  <row><entry>5</entry><entry>2.92</entry></row>
-                  <row><entry>6</entry><entry>1.46</entry></row>
-                  <row><entry>7</entry><entry>0.73</entry></row>
-      </tbody>
-          </table>
-        </div>
-        <div width="50%">
-          <figure xml:id="exp-fig-foldingpaper">
-          <code>
-        \begin{tikzpicture}
-        \begin{axis}[
-        width=.75\textwidth,
-        xmin=-5, xmax=5,
-        ymin=-50, ymax=400,
-        ytick={50,100,...,350},
-        ]
-        \addplot expression[domain=-2:4]{93.5*(1/2)^x};
-        \end{axis}
-        \end{tikzpicture}
-    </code>
-    <caption><m>y=A(x)</m></caption>
-</figure>
-        </div>
-      </multobjects>
-      <p>If we let <m>A(x)</m> represent the visible surface area of the paper after <m>x</m> folds, then 
-        a formula for <m>A</m> is
-        <me>
-        A(x) = 93.5\left(\frac{1}{2}\right)^x
-    </me>
-        where <m>x=0,1,2,\ldots</m>. If we allow <m>A</m> to take values outside of its contextual domain, then 
-        we can graph <m>y=A(x)</m> on a graphing calculator, and obtain <xref ref="exp-fig-foldingpaper"/>. Notice 
-        in particular that <m>A</m> decreases at a slower and slower rate.</p>
-        </example>
+                  </thead>
+                  <tbody>
+                    <row><entry>0</entry><entry>93.50</entry></row> 
+                    <row><entry>1</entry><entry>46.75</entry></row>
+                    <row><entry>2</entry><entry>23.38</entry></row>
+                    <row><entry>3</entry><entry>11.69</entry></row>
+                    <row><entry>4</entry><entry>5.84</entry></row>
+                    <row><entry>5</entry><entry>2.92</entry></row>
+                    <row><entry>6</entry><entry>1.46</entry></row>
+                    <row><entry>7</entry><entry>0.73</entry></row>
+                  </tbody>
+                </table>
+              </div>
+              <div width="50%">
+                <figure xml:id="exp-fig-foldingpaper">
+                  <code>
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    width=.75\textwidth,
+                    xmin=-5, xmax=5,
+                    ymin=-50, ymax=400,
+                    ytick={50,100,...,350},
+                    ]
+                    \addplot expression[domain=-2:4]{93.5*(1/2)^x};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption><m>y=A(x)</m></caption>
+                </figure>
+              </div>
+            </multobjects>
+            <p>If we let <m>A(x)</m> represent the visible surface area of the paper after <m>x</m> folds, then 
+              a formula for <m>A</m> is
+              <me>
+                A(x) = 93.5\left(\frac{1}{2}\right)^x
+              </me>
+              where <m>x=0,1,2,\ldots</m>. If we allow <m>A</m> to take values outside of its contextual domain, then 
+              we can graph <m>y=A(x)</m> on a graphing calculator, and obtain <xref ref="exp-fig-foldingpaper"/>. Notice 
+              in particular that <m>A</m> decreases at a slower and slower rate.</p>
+          </example>
+          <p>The graphs of exponential functions have certain features that tell us a lot about the quantities 
+            they are modeling.  Graphical features like increasing/decreasing and the position of any 
+            asymptotes translate to important information about population sizes, bank accounts, and more.</p>
+          <example xml:id="exp-ex-asymptote">
+            <author>Hughes</author>
+            <date>April 2011</date>
+            <p>Consider the function <m>f</m> in <xref ref="exp-fig-expmotivation"/>. 
+              There are a number of features that we can note:
+              <ul>
+                <li><m>f</m> is increasing;</li>
+                <li><m>f</m> is concave up; in particular, <m>f</m> is increasing at a faster and faster rate;</li>
+                <li>the line <m>y=3</m> is a horizontal asymptote of <m>f</m> as <m>x\to -\infty</m>;</li>
+                <li><m>f(x)\to\infty</m> as <m>x\to\infty</m>;</li>
+                <li>the range of <m>f</m> is <m>(3,\infty)</m>.</li>
+            </ul></p>
+            <p>Note that <m>f</m> never touches its horizontal asymptote (see <xref ref="exp-fig-closeup"/>).</p>
+            <multobjects type="figure">
+              <div width="50%">
+                <figure xml:id="exp-fig-expmotivation" verticalAlignment="t">
+                  <code>
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    framed,
+                    xmin=-6,xmax=6,
+                    ymin=-1,ymax=10,
+                    xtick={-5,-4,...,5},
+                    minor ytick={1,3,...,9},
+                    ytick={2,4,...,8},
+                    grid=both,
+                    ]
+                    \addplot expression[domain=-6:2.807]{2^x+3};
+                    \addplot[asymptote]coordinates{(-6,3)(6,3)};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption><m>f(x)=2^x+3</m></caption>
+                </figure>
+              </div>
+              <div width="50%">
+                <figure xml:id="exp-fig-closeup" verticalAlignment="t">
+                  <code>
+                    \centering
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    width=.5\textwidth,
+                    axis x line=box,
+                    axis y line=box,
+                    axis line style={-}, 
+                    xmin=-6,xmax=-3,
+                    ymin=2,ymax=4,
+                    xtick={-6,-5,...,-3},
+                    ytick={2,2.5,...,4},
+                    grid=both,
+                    ]
+                    \addplot expression[domain=-6:-3]{2^x+3};
+                    \addplot[asymptote]coordinates{(-6,3)(6,3)};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </code>
+                  <caption>Close up!</caption>
+                </figure>
+              </div>
+            </multobjects>
+          </example>
+          <checkpoint>
+            <exercise>
+              <author>Hughes</author>
+              <date>February 2012</date>
+              <statement>Repeat <xref ref="exp-ex-asymptote"/> for each of the functions defined 
+                by the following formulas.</statement>
+              <multicols>
+                <part core="true"><m>g(x)=5-4^x</m> 
+                  <solution>The graph of <m>g</m> is shown below. Note that
+                    <ul>
+                      <li> <m>g</m> is decreasing </li>
+                      <li> <m>g</m> is concave down; in particular <m>g</m> is decreasing at a faster and faster rate;</li>
+                      <li> the line <m>y=5</m> is a horizontal asymptote of <m>g</m> as <m>x\rightarrow-\infty</m>;</li>
+                      <li> <m>g(x)\rightarrow-\infty</m> as <m>x\rightarrow\infty</m>;</li>
+                      <li> the range of <m>g</m> is <m>(-\infty,5)</m>.</li>
+                    </ul>
+                    <figure>
+                      <code>
+                        \begin{tikzpicture}
+                        \begin{axis}[
+                        framed,
+                        xmin=-5,xmax=5,
+                        ymin=-10,ymax=10,
+                        xtick={-4,-3,...,4},
+                        ytick={-8,-6,...,8},
+                        grid=both,
+                        ]
+                        \addplot expression[domain=-5:1.95]{5-4^x};
+                        \addplot[asymptote]coordinates{(-5,5)(5,5)};
+                        \end{axis}
+                        \end{tikzpicture}     
+                      </code>
+                    </figure>
+                </solution></part>
+                <part>mjm</part>
+              </multicols>
+            </exercise>
+          </checkpoint>
         </section>
       </chapter>
       <ignore>
 
-
-
-        The graphs of exponential functions have certain features that tell us a lot about the quantities they are modeling.  Graphical features like increasing/decreasing and the position of any asymptotes translate to important information about population sizes, bank accounts, and more.
-        %===================================
-        %   Author: Hughes
-        %   Date:   April 2011
-        %===================================
-        \begin{pccexample}\label{exp-ex-asymptote}
-        Consider the function $f$ in \cref{exp-fig-expmotivation}. 
-        There are a number of features that we can note:
-        \begin{itemize}
-        \item $f$ is increasing;
-        \item $f$ is concave up; in particular, $f$ is increasing at a faster and faster rate;
-        \item the line $y=3$ is a horizontal asymptote of $f$ as $x\to -\infty$;
-        \item $f(x)\to\infty$ as $x\to\infty$;
-        \item the range of $f$ is $(3,\infty)$.
-        \end{itemize}
-        Note that $f$ never touches its horizontal asymptote (see \cref{exp-fig-closeup}).
-        \end{pccexample}
-        \begin{figure}[!htb]
-        \begin{minipage}[t]{.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-        \begin{axis}[
-        framed,
-        xmin=-6,xmax=6,
-        ymin=-1,ymax=10,
-        xtick={-5,-4,...,5},
-        minor ytick={1,3,...,9},
-        ytick={2,4,...,8},
-        grid=both,
-        ]
-        \addplot expression[domain=-6:2.807]{2^x+3};
-        \addplot[asymptote]coordinates{(-6,3)(6,3)};
-        \end{axis}
-        \end{tikzpicture}
-        \caption{$f(x)=2^x+3$}
-        \label{exp-fig-expmotivation}
-        \end{minipage}%
-        \begin{minipage}[t]{.5\textwidth}
-        \centering
-        \begin{tikzpicture}
-        \begin{axis}[
-        width=.5\textwidth,
-        axis x line=box,
-        axis y line=box,
-        axis line style={-}, 
-        xmin=-6,xmax=-3,
-        ymin=2,ymax=4,
-        xtick={-6,-5,...,-3},
-        ytick={2,2.5,...,4},
-        grid=both,
-        ]
-        \addplot expression[domain=-6:-3]{2^x+3};
-        \addplot[asymptote]coordinates{(-6,3)(6,3)};
-        \end{axis}
-        \end{tikzpicture}
-        \caption{Close up!}
-        \label{exp-fig-closeup}
-        \end{minipage}%
-        \end{figure}
-        %===================================
-        %   Author: Hughes
-        %   Date:   February 2012
-        %===================================
-        \begin{doyouunderstand}
         \begin{problem}
         Repeat \cref{exp-ex-asymptote} for each of the functions defined 
         by the following formulas.
