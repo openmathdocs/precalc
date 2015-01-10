@@ -660,7 +660,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:text>\begin{longsolution}&#xa;%&#xa;</xsl:text>
 	<xsl:apply-templates />
 	<xsl:text>%&#xa;</xsl:text>
-        <xsl:text>\end{longsolution}&#xa;%&#xa;</xsl:text>
+        <xsl:text>\end{longsolution}%</xsl:text>
 </xsl:template>
 
 <xsl:template match="exercise/answer|part/answer">

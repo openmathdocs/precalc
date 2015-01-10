@@ -408,15 +408,27 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
      table numbers <section.table> that run throughout a chapter (which *don't* 
      get reset every section), we need to specify the section number explicitly.
      -->
-<xsl:template match="figure" mode="number">
+<xsl:template match="figure[not(ancestor::solution)]" mode="number">
   <!-- select="ancestor::chapter[1]" searches for the closest ancestor 
        node with name chapter; this allows us to count figures on a per-chapter basis
        see: http://stackoverflow.com/questions/3672992/how-to-select-the-grandparent-of-a-node-using-xslt -->
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
   <!-- figure[not(ancestor::multobjects[@children='subfigure'])]    # we don't want to count subfigures in the figure count
+             [not(ancestor::solution)]                              # we don't want to count figures within solutions
              |multobjects[@type='figure' and @children='subfigure'] # we *do* want to count multobjects that have the subfigure attribute -->
-  <xsl:number level="any" count="figure[not(ancestor::multobjects[@children='subfigure'])]|multobjects[@type='figure' and @children='subfigure']"/>
+  <xsl:number level="any" count="figure[not(ancestor::multobjects[@children='subfigure'])][not(ancestor::solution)]|multobjects[@type='figure' and @children='subfigure']"/>
+</xsl:template>
+
+<!-- figure numbers for *figures in solutions*-->
+<xsl:template match="figure[ancestor::solution]" mode="number">
+  <!-- select="ancestor::exercise[1]" searches for the closest ancestor 
+       node with name exercise -->
+  <xsl:apply-templates select="ancestor::exercise[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <!-- figure[not(ancestor::multobjects[@children='subfigure'])]    # we don't want to count subfigures in the figure count
+             |multobjects[@type='figure' and @children='subfigure'] # we *do* want to count multobjects that have the subfigure attribute -->
+  <xsl:number level="any" count="figure[ancestor::exercise[1]]"/>
 </xsl:template>
 
 <xsl:template match="table" mode="number">
@@ -500,6 +512,11 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
   <xsl:apply-templates select="ancestor::chapter[1]" mode="number"/>
   <xsl:text>.</xsl:text>
   <xsl:number level="any" count="exercise" from="chapter"/>
+</xsl:template>
+<xsl:template match="part" mode="number">
+  <xsl:apply-templates select="ancestor::exercise[1]" mode="number"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number level="any" count="part" from="exercise"/>
 </xsl:template>
 
 <!-- Footnotes  x -->

@@ -520,15 +520,15 @@ need to work out how to define a 'xrefRange' command (two arguments???)
               <statement>Repeat <xref ref="exp-ex-asymptote"/> for each of the functions defined 
                 by the following formulas.</statement>
               <multicols>
-                <part core="true"><m>g(x)=5-4^x</m> 
-                  <solution>The graph of <m>g</m> is shown below. Note that
+                <part core="true"><statement><m>g(x)=5-4^x</m></statement>
+                  <solution><p>The graph of <m>g</m> is shown below. Note that
                     <ul>
                       <li> <m>g</m> is decreasing </li>
                       <li> <m>g</m> is concave down; in particular <m>g</m> is decreasing at a faster and faster rate;</li>
                       <li> the line <m>y=5</m> is a horizontal asymptote of <m>g</m> as <m>x\rightarrow-\infty</m>;</li>
                       <li> <m>g(x)\rightarrow-\infty</m> as <m>x\rightarrow\infty</m>;</li>
                       <li> the range of <m>g</m> is <m>(-\infty,5)</m>.</li>
-                    </ul>
+                </ul></p>
                     <figure>
                       <code>
                         \begin{tikzpicture}
@@ -547,56 +547,17 @@ need to work out how to define a 'xrefRange' command (two arguments???)
                       </code>
                     </figure>
                 </solution></part>
-                <part>mjm</part>
-              </multicols>
-            </exercise>
-          </checkpoint>
-        </section>
-      </chapter>
-      <ignore>
-
-        \begin{problem}
-        Repeat \cref{exp-ex-asymptote} for each of the functions defined 
-        by the following formulas.
-        \end{problem}
-        \begin{multicols}{2}
-        \begin{subproblem}[core]
-        $g(x)=5-4^x$ 
-        \begin{shortsolution}
-        The graph of $g$ is shown below. Note that
-        \begin{itemize}
-        \item $g$ is decreasing
-        \item $g$ is concave down; in particular $g$ is decreasing at a faster and faster rate;
-        \item the line $y=5$ is a horizontal asymptote of $g$ as $x\rightarrow-\infty$;
-        \item $g(x)\rightarrow-\infty$ as $x\rightarrow\infty$;
-        \item the range of $g$ is $(-\infty,5)$.
-        \end{itemize}
-        \begin{tikzpicture}
-        \begin{axis}[
-        framed,
-        xmin=-5,xmax=5,
-        ymin=-10,ymax=10,
-        xtick={-4,-3,...,4},
-        ytick={-8,-6,...,8},
-        grid=both,
-        ]
-        \addplot expression[domain=-5:1.95]{5-4^x};
-        \addplot[asymptote]coordinates{(-5,5)(5,5)};
-        \end{axis}
-        \end{tikzpicture}     
-        \end{shortsolution}
-        \end{subproblem}
-        \begin{subproblem}
-        $h(x)=\left( \frac{2}{3} \right)^x-4$
-        \begin{shortsolution}
-        The graph of $h$ is shown below. Note that
-        \begin{itemize}
-        \item $h$ is decreasing;
-        \item $h$ is concave up; in particular $h$ is decreasing at a slower and slower rate;
-        \item the line $y=-4$ is a horizontal asymptote of $h$ as $x\rightarrow\infty$;
-        \item $h(x)\rightarrow\infty$ as $x\rightarrow-\infty$;
-        \item the range of $h$ is $(-4,\infty)$.
-        \end{itemize}
+                <part><statement><m>h(x)=\left( \frac{2}{3} \right)^x-4</m></statement>
+                  <solution><p>The graph of <m>h</m> is shown below. Note that
+                      <ul>
+        <li><m>h</m> is decreasing;</li>
+        <li><m>h</m> is concave up; in particular <m>h</m> is decreasing at a slower and slower rate;</li>
+        <li>the line <m>y=-4</m> is a horizontal asymptote of <m>h</m> as <m>x\rightarrow\infty</m>;</li>
+        <li><m>h(x)\rightarrow\infty</m> as <m>x\rightarrow-\infty</m>;</li>
+        <li>the range of <m>h</m> is <m>(-4,\infty)</m>.</li>
+    </ul></p>
+    <figure>
+      <code>
         \begin{tikzpicture}
         \begin{axis}[
         framed,
@@ -610,10 +571,16 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         \addplot[asymptote]coordinates{(-5,-4)(5,-4)};
         \end{axis}
         \end{tikzpicture}     
-        \end{shortsolution}
-        \end{subproblem}
-        \end{multicols}
-        \end{doyouunderstand}
+      </code>
+    </figure>
+     </solution>
+              </part>
+              </multicols>
+            </exercise>
+          </checkpoint>
+        </section>
+      </chapter>
+      <ignore>
 
         Exponential modeling will require familiarity with percentages. This example aims to 
         help you (re)acquaint yourself with them.

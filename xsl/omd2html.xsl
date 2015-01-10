@@ -381,6 +381,8 @@ Note that we use <xsl:text> to insert a blank space
       </h5>
       <xsl:apply-templates select="statement" />
     </article>
+    <xsl:apply-templates select="multicols" />
+    <xsl:apply-templates select="part" />
     <!-- put solution in a knowl, noting that 
              knowls need to be in a paragraph element -->
         <xsl:element name="p">
@@ -395,7 +397,7 @@ Note that we use <xsl:text> to insert a blank space
         select=".."
      in the code that follows because we know that
      <solution> will always be contained within <exercise> -->
-<xsl:template match="exercise/solution">
+<xsl:template match="exercise/solution|part/solution">
   <xsl:variable name="ident">
     <xsl:text>solution-</xsl:text>
     <xsl:apply-templates select=".." mode="number" />
@@ -424,6 +426,31 @@ Note that we use <xsl:text> to insert a blank space
     </xsl:with-param>
   </xsl:call-template>
 </xsl:template>
+
+<!-- exercise sub-problems-->
+<xsl:template match="part">
+    <!-- make the counter bold -->
+    <xsl:element name="b">
+        <xsl:if test="@core='true'">
+            <xsl:text>&#9733;</xsl:text>
+        </xsl:if>
+        <xsl:apply-templates select="." mode="number" />
+    </xsl:element>
+    <!-- insert a blank space -->
+    <xsl:text>&#160;</xsl:text>
+      <xsl:apply-templates select="statement"/>
+    <!-- put solution in a knowl, noting that 
+             knowls need to be in a paragraph element -->
+        <xsl:element name="p">
+          <xsl:apply-templates select="solution" />
+        </xsl:element>
+    </xsl:template>
+
+<!-- multicols node -->
+<xsl:template match="multicols">
+    <xsl:apply-templates />
+</xsl:template>
+
 
 <xsl:template match="notation">
   <p>Sample notation (in a master list eventually): \(<xsl:value-of select="." />\)</p>
@@ -457,6 +484,9 @@ Note that we use <xsl:text> to insert a blank space
   <!-- create $identifier variable to be figure-<chapter number>-<figure number> -->
       <xsl:variable name="identifier">
         <xsl:text>figure-</xsl:text>
+        <xsl:if test="ancestor::solution">
+          <xsl:text>solution-</xsl:text>
+        </xsl:if>
         <!-- if the figure is a subfigure within multobjects, we need to name it
              using the filename mode to avoid the () -->
         <xsl:choose>
