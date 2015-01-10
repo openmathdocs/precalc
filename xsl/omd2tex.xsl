@@ -660,7 +660,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:text>\begin{longsolution}&#xa;%&#xa;</xsl:text>
 	<xsl:apply-templates />
 	<xsl:text>%&#xa;</xsl:text>
-        <xsl:text>\end{longsolution}%</xsl:text>
+        <xsl:text>\end{longsolution}%&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="exercise/answer|part/answer">
@@ -739,6 +739,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates />
     <xsl:text>\end{pccexample}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="example/solution">
+  <xsl:text>&#xa;\begin{pccsolution}&#xa;</xsl:text>
+    <xsl:apply-templates />
+  <xsl:text>\end{pccsolution}&#xa;</xsl:text>
 </xsl:template>
 
 <!-- create an empty template for example titles, otherwise they get repeated -->

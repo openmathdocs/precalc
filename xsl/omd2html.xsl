@@ -363,6 +363,13 @@ Note that we use <xsl:text> to insert a blank space
   </article>
 </xsl:template>
 
+<xsl:template match="example/solution">
+  <xsl:element name="h6">
+    Solution
+  </xsl:element>
+  <xsl:apply-templates/>
+</xsl:template>
+
 <!-- Solutions are include by default switch, could be knowls -->
 <xsl:template match="exercise">
   <xsl:variable name="xref">

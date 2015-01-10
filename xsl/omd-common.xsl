@@ -75,7 +75,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:when test="contains(., '&amp;')">
             <xsl:text>\begin{align}</xsl:text>
             <xsl:apply-templates select="mrow|intertext" />
-            <xsl:text>\end{align}</xsl:text>
+            <xsl:text>\end{align}&#xa;</xsl:text>
         </xsl:when>
         <xsl:otherwise>
             <xsl:text>\begin{gather}</xsl:text>
