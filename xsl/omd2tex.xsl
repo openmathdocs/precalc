@@ -686,6 +686,12 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <xsl:text>\end{multicols}&#xa;</xsl:text>
 </xsl:template>
 
+<!-- investigations -->
+<xsl:template match="investigation">
+  <xsl:text>\investigation*{}</xsl:text>
+  <xsl:apply-templates />
+</xsl:template>
+
 <!-- Reorg?, consolidate following with local-name() -->
 
 <xsl:template match="theorem/statement">
@@ -772,7 +778,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 <xsl:template match="p">
     <xsl:text>\par </xsl:text>
     <xsl:apply-templates />
-    <xsl:text>&#xa;%&#xa;</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="acute">

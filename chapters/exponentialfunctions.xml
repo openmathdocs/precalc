@@ -662,7 +662,7 @@ need to work out how to define a 'xrefRange' command (two arguments???)
               <row><entry>27</entry><entry>400</entry><entry><m>50\cdot 2^{\nicefrac{27}{9}}=50\cdot 2^3</m> </entry></row>
             </tbody>
           </table>
-          <p>We can deduce from \cref{exp-tab-bacterium} that 
+          <p>We can deduce from <xref ref="exp-tab-bacterium"/> that 
             <me>
         P(t) = 50\cdot 2^{\nicefrac{t}{9}}
             </me>
@@ -674,56 +674,54 @@ need to work out how to define a 'xrefRange' command (two arguments???)
         </ol></p>
         </solution>
           </example>
-        </section>
-      </chapter>
-      <ignore>
-        need a nice way to handle nicefrac; possible starting point: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac
-
-        \investigation*{}
-        %===================================
+          <investigation>
+            <exercise>
+              <title>The legend of Payasam</title>
         <author>Pettit</author>
         <date>  April 2011</date>
-        %===================================
-        \begin{problem}[The Legend of Payasam]
-        \Cref{exp-prob-queenschessboard} is a version of the Legend of Payasam. 
-
-        According to legend, Lord Krishna once appeared in the form of a sage in the court of a 
+        <statement><p><xref ref="exp-prob-queenschessboard" beginsentence="true"/> is a version of the Legend of Payasam.</p>
+        <p>According to legend, Lord Krishna once appeared in the form of a sage in the court of a 
         king who ruled a region of southern India. Lord Krishna challenged the king to a game of chess. 
         The king, being a chess 
-        enthusiast, gladly accepted the challenge.
-
-        The players decided to put a wager on the game; the king let the sage choose the prize.
+        enthusiast, gladly accepted the challenge.</p>
+      <p>The players decided to put a wager on the game; the king let the sage choose the prize.
         The sage told the 
-        king that he was a man of few material needs, and thus all he wished for was a few grains of rice. 
-
-        The sage suggested that the amount of rice should be determined 
+        king that he was a man of few material needs, and thus all he wished for was a few grains of rice. </p>
+      <p>The sage suggested that the amount of rice should be determined 
         using the chessboard in the following manner. 
         Two grains of rice will be placed on the first square, four grains on the second square, eight 
         on the third square, and so on. That is, every square will have double the 
-        number of grains as its predecessor.
+        number of grains as its predecessor.</p>
+      <p>Upon hearing the demand, the king was unhappy since the sage requested only a few grains of 
+        rice instead of other riches from the kingdom.</p>
+      <p>We are going to attach monetary value to our calculations. We will assume that
+        <ul>
+        <li>there are approximately 7200 grains of rice in a cup;</li>
+        <li>there are 3 cups of rice in a 1-lb bag;</li>
+        <li>a 1-lb bag of rice is worth <dollar/>2. </li>
+</ul>
+</p>
+    </statement>
+    <part core="true">
+      <statement>Approximate the number of grains of rice that are in a 1-lb bag.</statement>
+      <solution><p>There are approximately <m>7200\cdot 3 = 21600</m> grains of rice in a 1-lb bag.</p></solution>
+    </part>
+    <part>
+      <statement>What is the first square on the chessboard that could be used to fill a 1-lb bag (without using rice 
+        from the previous squares)?  </statement>
+      <solution><p><m>2^{15}=32768&gt;21600</m>. The 15th square.</p></solution>
+        </part>
+        <part core="true" xml:id="exp-prob-greedy">
+          <statement>Before we begin our money calculations, write down how much money you would like 
+            to get as a prize from the king.</statement>
+          <solution><p>Answers will vary. </p></solution>
+        </part>
+            </exercise>    
+          </investigation>
+        </section>
+      </chapter>
+      <ignore>
 
-        Upon hearing the demand, the king was unhappy since the sage requested only a few grains of 
-        rice instead of other riches from the kingdom.
-
-        We are going to attach monetary value to our calculations. We will assume that
-        \begin{itemize}
-        <li> there are approximately 7200 grains of rice in a cup;</li>
-        <li> there are 3 cups of rice in a 1-lb bag;</li>
-        <li> a 1-lb bag of rice is worth \$2. </li>
-        \end{itemize}
-        \begin{subproblem}[core]
-        Approximate the number of grains of rice that are in a 1-lb bag.
-        \begin{shortsolution}
-        There are approximately <m>7200\cdot 3 = 21600</m> grains of rice in a 1-lb bag.
-        \end{shortsolution}
-        \end{subproblem}
-        \begin{subproblem}
-        What is the first square on the chessboard that could be used to fill a 1-lb bag (without using rice 
-        from the previous squares)?
-        \begin{shortsolution}
-        <m>2^{15}=32768&gt;21600</m>. The 15th square.
-        \end{shortsolution}
-        \end{subproblem}
         \begin{subproblem}[core]\label{exp-prob-greedy}
         Before we begin our money calculations, write down how much money you would like 
         to get as a prize from the king.

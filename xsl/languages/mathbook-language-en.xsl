@@ -68,6 +68,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         <xsl:when test="$generic='remark'">        <xsl:text>Remark</xsl:text></xsl:when>
         <!-- -->
         <xsl:when test="$generic='exercise'">      <xsl:text>Exercise</xsl:text></xsl:when>
+        <xsl:when test="$generic='part'">      <xsl:text>Exercise</xsl:text></xsl:when>
         <xsl:when test="$generic='solution'">      <xsl:text>Solution</xsl:text></xsl:when>
         <xsl:when test="$generic='hint'">          <xsl:text>Hint</xsl:text></xsl:when>
         <!-- -->

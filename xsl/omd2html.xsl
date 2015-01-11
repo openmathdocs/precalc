@@ -436,6 +436,15 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- exercise sub-problems-->
 <xsl:template match="part">
+    <!-- create an anchor so that cross references can be linked -->
+    <xsl:element name="a">
+      <xsl:attribute name="class">anchor</xsl:attribute>
+      <xsl:attribute name="name">
+        <xsl:apply-templates select="." mode="type-name"/>
+        <xsl:text>-</xsl:text>
+        <xsl:apply-templates select="." mode="number"/>
+      </xsl:attribute>
+    </xsl:element>
     <!-- make the counter bold -->
     <xsl:element name="b">
         <xsl:if test="@core='true'">
@@ -455,6 +464,12 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- multicols node -->
 <xsl:template match="multicols">
+    <xsl:apply-templates />
+</xsl:template>
+
+<!-- investigation node -->
+<xsl:template match="investigation">
+  <xsl:element name="h3">Investigations</xsl:element>
     <xsl:apply-templates />
 </xsl:template>
 
@@ -933,6 +948,9 @@ Note that we use <xsl:text> to insert a blank space
       </xsl:when>
       <xsl:when test="$target/self::example">
         <xsl:text>Example </xsl:text>
+      </xsl:when>
+      <xsl:when test="$target/self::part">
+        <xsl:text>Problem </xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>FIX!!!</xsl:text>
