@@ -2036,6 +2036,22 @@ Note that we use <xsl:text> to insert a blank space
     scale: 88,
     },
     });
+    /* support for the nicefrac command in MathJax 
+        see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+
+  TEX.Definitions.macros.nicefrac = "myBevelFraction";
+
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
   </script>
   <xsl:element name="script">
     <xsl:attribute name="type">text/javascript</xsl:attribute>
