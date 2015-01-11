@@ -1336,16 +1336,10 @@ Note that we use <xsl:text> to insert a blank space
 -->
 
 <xsl:template match="quant[descendant::unit and not(descendant::per)]">
-    <!-- print the magnitude if there is one, followed by a thinspace -->
-        <xsl:choose>
-          <xsl:when test="@mag">
+    <!-- print the magnitude if there is one -->
+        <xsl:if test="@mag">
               <xsl:value-of select="@mag"/>
-              <xsl:text>&#8239;</xsl:text>
-          </xsl:when>
-          <!-- quantity with*out* number -->
-          <xsl:otherwise>
-          </xsl:otherwise>
-        </xsl:choose>
+        </xsl:if>
 	<xsl:apply-templates select="unit" />
 </xsl:template>
 
@@ -1358,23 +1352,14 @@ Note that we use <xsl:text> to insert a blank space
 -->
 
 <xsl:template match="quant[descendant::unit and descendant::per]">
-    <!-- print the magnitude if there is one, followed by a thinspace -->
-        <xsl:choose>
-          <xsl:when test="@mag">
+    <!-- print the magnitude if there is one -->
+        <xsl:if test="@mag">
               <xsl:value-of select="@mag"/>
-              <xsl:text>&#8239;</xsl:text>
-          </xsl:when>
-          <!-- quantity with*out* number -->
-          <xsl:otherwise>
-          </xsl:otherwise>
-        </xsl:choose>
-        <sup>
-                    <xsl:apply-templates select="unit" />
-        </sup>
+        </xsl:if>
+	<!-- numerator units, slash, denominator units -->
+        <sup> <xsl:apply-templates select="unit" /> </sup>
 	<xsl:text>&#8260;</xsl:text>
-	<sub>
-	    <xsl:apply-templates select="per" />
-	</sub>
+	<sub> <xsl:apply-templates select="per" /> </sub>
 </xsl:template>
 
 <!-- quantities with units that *do* have "per" parts and no numerator unit
@@ -1384,29 +1369,25 @@ Note that we use <xsl:text> to insert a blank space
          42&#8239;<sup>1</sup>&#8260;<sub>m<sup>2</sup></sub>
 -->
 
-<xsl:template match="quant[descendant::unit and descendant::per]">
-    <!-- print the magnitude if there is one, followed by a thinspace -->
-        <xsl:choose>
-          <xsl:when test="@mag">
+<xsl:template match="quant[not(descendant::unit) and descendant::per]">
+    <!-- print the magnitude if there is one -->
+        <xsl:if test="@mag">
               <xsl:value-of select="@mag"/>
-              <xsl:text>&#8239;</xsl:text>
-          </xsl:when>
-          <!-- quantity with*out* number -->
-          <xsl:otherwise>
-          </xsl:otherwise>
-        </xsl:choose>
-        <sup>
-            <xsl:text>1</xsl:text>
-        </sup>
+        </xsl:if>
+        <!-- numerator 1, slash, denominator units -->
+        <sup> <xsl:if test="@mag"> <xsl:text>&#8239;</xsl:text> </xsl:if> <xsl:text>1</xsl:text> </sup>
         <xsl:text>&#8260;</xsl:text>
-        <sub>
-            <xsl:apply-templates select="per" />
-        </sub>
+        <sub> <xsl:apply-templates select="per" /> </sub>
 </xsl:template>
 
 
-<!-- format a unit -->
-<xsl:template match="unit|per">
+<!-- format a unit or per -->
+<!-- styling could be inserted here -->
+<xsl:template match="quant/unit|quant/per">
+    <!-- if the unit is 1st and no mag, no need for thinspace. Otherwise, give thinspace -->
+    <xsl:if test="position() != 1 or (local-name(.)='unit' and ../@mag)">
+        <xsl:text>&#8239;</xsl:text>
+    </xsl:if>
     <!-- prefix is optional -->
     <xsl:if test="@prefix">
 	<xsl:if test="@prefix='yocto'">	<xsl:text>y</xsl:text> </xsl:if>
@@ -1489,10 +1470,6 @@ Note that we use <xsl:text> to insert a blank space
     <xsl:if test="@exp">
             <sup><xsl:value-of select="@exp"/></sup>
     </xsl:if>
-    <!--<xsl:if test="position() != ../children().length()"> -->
-    <!--This isn't working..how to determine if current unit is the last one?-->
-	<xml:text>&#8239;</xml:text>
-    <!--</xsl:if>-->
 </xsl:template>
 
 

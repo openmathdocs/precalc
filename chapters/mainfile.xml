@@ -44,8 +44,9 @@
         <p>test <quant mag="42"><per base="gram" prefix="kilo"/></quant> in a sentence</p>
         <p>test <quant mag="54.3"><per prefix="kilo" exp="987"/></quant> in a sentence</p>
         <p>test <quant mag="109"><unit prefix="kilo" exp="987"/></quant> in a sentence</p>
+        <p>test <quant mag="23"><unit prefix="kilo" base="gram" exp="2"/><unit prefix="micro" base="second"/><per prefix="centi" base="meter" exp="3"/><per prefix="milli" base="ohm"/></quant> in a sentence</p>
 
-      </chapter>
+	      </chapter>
     </book>
 </mathbook>
 
