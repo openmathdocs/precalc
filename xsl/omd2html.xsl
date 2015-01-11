@@ -1356,8 +1356,37 @@ Note that we use <xsl:text> to insert a blank space
 </xsl:template>
 
 
+<!-- quantities with units that *do* have "per" parts (with *or* without magnitudes)
+     e.g
+        <quant mag="42"><unit base="gram" prefix="kilo"/><per base="meter" exp="2" /></quant>
+     become
+       42&#8239;<sup>kg</sup>&#8260;<sub>m<sup>2</sup></sub>
+        -->
+
+<xsl:template match="quant[descendant::per]">
+    <!-- print the magnitude if there is one, followed by a thinspace -->
+        <xsl:choose>
+          <xsl:when test="@mag">
+              <xsl:value-of select="@mag"/>
+              <xsl:text>&#8239;</xsl:text>
+          </xsl:when>
+          <!-- quantity with*out* number -->
+          <xsl:otherwise>
+          </xsl:otherwise>
+        </xsl:choose>
+        <sup>
+                    <xsl:apply-templates select="unit" />
+        </sup>
+	<xsl:text>&#8260;</xsl:text>
+	<sub>
+	    <xsl:apply-templates select="per" />
+	</sub>
+</xsl:template>
+
+
+
 <!-- format a unit -->
-<xsl:template match="unit">
+<xsl:template match="unit|per">
     <!-- prefix is optional -->
     <xsl:if test="@prefix">
 	<xsl:if test="@prefix='yocto'">	<xsl:text>y</xsl:text> </xsl:if>
@@ -1444,6 +1473,7 @@ Note that we use <xsl:text> to insert a blank space
 	<xml:text>&#8239;</xml:text>
     <!--</xsl:if>-->
 </xsl:template>
+
 
 
 
