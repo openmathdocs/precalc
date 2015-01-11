@@ -1479,6 +1479,7 @@ Note that we use <xsl:text> to insert a blank space
             <xsl:if test="@base='mile'"> <xsl:text>mi</xsl:text> </xsl:if>
         </xsl:when>
         <xsl:otherwise>
+            <xsl:text>??base needed??</xsl:text>
             <xsl:message terminate="no">
                 <xsl:text>base unit needed</xsl:text>
             </xsl:message>
