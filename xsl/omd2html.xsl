@@ -1308,16 +1308,10 @@ Note that we use <xsl:text> to insert a blank space
 <!-- siunitx-like templates
      this one is called when there are no unit children
      e.g
-
-        <quant mag="1/5"/>
-
+         <quant mag="42"/>
      becomes
-
-        1/5
-
-     for quantities that *don't* have 'unit' or 'per' children
-     http://stackoverflow.com/questions/1993213/use-xpath-to-select-an-element-that-doesnt-have-an-img-tag-as-a-child
-     -->
+         42
+-->
 
 <xsl:template match="quant[not(descendant::unit) and not(descendant::per)]">
     <xsl:choose>
@@ -1337,9 +1331,9 @@ Note that we use <xsl:text> to insert a blank space
 <!-- quantities with units but no "per" parts (with *or* without magnitudes)
      e.g
         <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" exp="2" /></quant>
-     become
+     becomes
        42&#8239;kg&#8239;m<sup>2</sup>
-        -->
+-->
 
 <xsl:template match="quant[descendant::unit and not(descendant::per)]">
     <!-- print the magnitude if there is one, followed by a thinspace -->
@@ -1356,14 +1350,14 @@ Note that we use <xsl:text> to insert a blank space
 </xsl:template>
 
 
-<!-- quantities with units that *do* have "per" parts (with *or* without magnitudes)
-     e.g
-        <quant mag="42"><unit base="gram" prefix="kilo"/><per base="meter" exp="2" /></quant>
-     become
+<!-- quantities with units that *do* have "per" parts and have at least one numerator unit
+     (with *or* without magnitudes) e.g
+         <quant mag="42"><unit base="gram" prefix="kilo"/><per base="meter" exp="2" /></quant>
+     becomes
        42&#8239;<sup>kg</sup>&#8260;<sub>m<sup>2</sup></sub>
-        -->
+-->
 
-<xsl:template match="quant[descendant::per]">
+<xsl:template match="quant[descendant::unit and descendant::per]">
     <!-- print the magnitude if there is one, followed by a thinspace -->
         <xsl:choose>
           <xsl:when test="@mag">
@@ -1383,6 +1377,32 @@ Note that we use <xsl:text> to insert a blank space
 	</sub>
 </xsl:template>
 
+<!-- quantities with units that *do* have "per" parts and no numerator unit
+     (with *or* without magnitudes) e.g
+         <quant mag="42"><per base="meter" exp="2" /></quant>
+     becomes
+         42&#8239;<sup>1</sup>&#8260;<sub>m<sup>2</sup></sub>
+-->
+
+<xsl:template match="quant[descendant::unit and descendant::per]">
+    <!-- print the magnitude if there is one, followed by a thinspace -->
+        <xsl:choose>
+          <xsl:when test="@mag">
+              <xsl:value-of select="@mag"/>
+              <xsl:text>&#8239;</xsl:text>
+          </xsl:when>
+          <!-- quantity with*out* number -->
+          <xsl:otherwise>
+          </xsl:otherwise>
+        </xsl:choose>
+        <sup>
+            <xsl:text>1</xsl:text>
+        </sup>
+        <xsl:text>&#8260;</xsl:text>
+        <sub>
+            <xsl:apply-templates select="per" />
+        </sub>
+</xsl:template>
 
 
 <!-- format a unit -->
