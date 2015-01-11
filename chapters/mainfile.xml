@@ -32,69 +32,20 @@
          reference: http://xml.silmaril.ie/includes.html -->
     <book>
       <!--&functions;-->
-      &exponentialfunctions;
-      <!--
+      <!--&exponentialfunctions;-->
       <chapter filebase="test">
-        <p>test  <quant/> </p>
-        <p>test  <quant mag="42"/> </p>
-        <p>test  <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" /></quant> </p>
-        <p>test  <quant><unit base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
-        <p>test  <quant mag="13"><unit base="gram" prefix="kilo" exp="-23"/><unit base="meter" /><per base="second" exp="2" /></quant> </p>
-        <p><quant><per base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant></p>
-        <p><quant mag="42"><per base="gram" prefix="kilo"/></quant></p>
-        <p><quant mag="54.3"><per prefix="kilo" exp="987"/></quant></p>
-        <p><quant mag="109"><unit prefix="kilo" exp="987"/></quant></p>
+        <p>test  <quant/> in a sentence</p>
+        <p>test  <quant mag="42"/> in a sentence </p>
+        <p>test  <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" /></quant> in a sentence </p>
+        <p>test  <quant><unit base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant> in a sentence </p>
+        <p>test  <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" prefix="micro" /></quant> in a sentence </p>
+        <p>test  <quant mag="13"><unit base="gram" prefix="kilo" exp="-23"/><unit base="meter" /><per base="second" exp="2" /></quant> in a sentence </p>
+        <p>test <quant><per base="gram" prefix="kilo"/><unit base="meter" /><per base="second" exp="2" /></quant> in a sentence</p>
+        <p>test <quant mag="42"><per base="gram" prefix="kilo"/></quant> in a sentence</p>
+        <p>test <quant mag="54.3"><per prefix="kilo" exp="987"/></quant> in a sentence</p>
+        <p>test <quant mag="109"><unit prefix="kilo" exp="987"/></quant> in a sentence</p>
 
-<table>
-  <coltypes>
-    <col align="center"/>
-    <col align="left"/>
-    <col align="right"/>
-    <col align="decimal" format="4.4"/>
-    <col align="decimal" format="6.5"/>
-  </coltypes>
-  <thead>
-  <row>
-    <entry>Month</entry>
-    <entry>Name</entry>
-    <entry>Country</entry>
-    <entry>Savings</entry>
-    <entry>Other</entry>
-  </row>
-</thead>
-  <tbody>
-  <row>
-    <entry>January</entry>
-    <entry>Chris</entry>
-    <entry>UK</entry>
-         <entry>13.3</entry>
-         <entry>000.3</entry>
-  </row>
-  <row>
-    <entry>February</entry>
-    <entry>Alex</entry>
-    <entry>USA</entry>
-         <entry>3.34</entry>
-         <entry>1.00000</entry>
-  </row>
-  <row>
-    <entry>March</entry>
-    <entry>Carl</entry>
-    <entry>Malaysia</entry>
-         <entry>103.34</entry>
-         <entry>100000</entry>
-  </row>
-  <row>
-    <entry>April</entry>
-    <entry>Marisa</entry>
-    <entry>??</entry>
-         <entry>1033.3433</entry>
-         <entry>10.0000</entry>
-  </row>
-</tbody>
-</table>  
       </chapter>
--->
     </book>
 </mathbook>
 

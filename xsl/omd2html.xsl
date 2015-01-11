@@ -1305,6 +1305,148 @@ Note that we use <xsl:text> to insert a blank space
 
 <!-- Other Miscellaneous Symbols, Constructions -->
 
+<!-- siunitx-like templates
+     this one is called when there are no unit children
+     e.g
+
+        <quant mag="1/5"/>
+
+     becomes
+
+        1/5
+
+     for quantities that *don't* have 'unit' or 'per' children
+     http://stackoverflow.com/questions/1993213/use-xpath-to-select-an-element-that-doesnt-have-an-img-tag-as-a-child
+     -->
+
+<xsl:template match="quant[not(descendant::unit) and not(descendant::per)]">
+    <xsl:choose>
+      <xsl:when test="@mag">
+        <xsl:value-of select="@mag"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>??magnitude needed??</xsl:text>
+        <xsl:message terminate="no">
+            <xsl:text>magnitude needed</xsl:text>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+<!-- quantities with units but no "per" parts (with *or* without magnitudes)
+     e.g
+        <quant mag="42"><unit base="gram" prefix="kilo"/><unit base="meter" exp="2" /></quant>
+     become
+       42&#8239;kg&#8239;m<sup>2</sup>
+        -->
+
+<xsl:template match="quant[descendant::unit and not(descendant::per)]">
+    <!-- print the magnitude if there is one, followed by a thinspace -->
+        <xsl:choose>
+          <xsl:when test="@mag">
+              <xsl:value-of select="@mag"/>
+              <xsl:text>&#8239;</xsl:text>
+          </xsl:when>
+          <!-- quantity with*out* number -->
+          <xsl:otherwise>
+          </xsl:otherwise>
+        </xsl:choose>
+	<xsl:apply-templates select="unit" />
+</xsl:template>
+
+
+<!-- format a unit -->
+<xsl:template match="unit">
+    <!-- prefix is optional -->
+    <xsl:if test="@prefix">
+	<xsl:if test="@prefix='yocto'">	<xsl:text>y</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='zepto'">  <xsl:text>z</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='atto'">  <xsl:text>a</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='femto'">  <xsl:text>f</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='pico'">  <xsl:text>p</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='nano'">  <xsl:text>n</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='micro'">  <xsl:text>&#xb5;</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='milli'">  <xsl:text>m</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='centi'">  <xsl:text>c</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='deci'">  <xsl:text>d</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='deca'">  <xsl:text>da</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='hecto'">  <xsl:text>h</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='kilo'">  <xsl:text>k</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='mega'">  <xsl:text>M</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='giga'">  <xsl:text>G</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='tera'">  <xsl:text>T</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='peta'">  <xsl:text>P</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='exa'">  <xsl:text>E</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='zetta'">  <xsl:text>Z</xsl:text> </xsl:if>
+        <xsl:if test="@prefix='yotta'">  <xsl:text>Y</xsl:text> </xsl:if>
+    </xsl:if>
+    <!-- base unit is *mandatory* so check to see if it has been provided -->
+    <xsl:choose>
+        <xsl:when test="@base">
+            <xsl:if test="@base='ampere'"> <xsl:text>A</xsl:text> </xsl:if>
+            <xsl:if test="@base='candela'"> <xsl:text>cd</xsl:text> </xsl:if>
+            <xsl:if test="@base='kelvin'"> <xsl:text>K</xsl:text> </xsl:if>
+            <xsl:if test="@base='gram'"> <xsl:text>g</xsl:text> </xsl:if>
+            <xsl:if test="@base='meter'"> <xsl:text>m</xsl:text> </xsl:if>
+            <xsl:if test="@base='metre'"> <xsl:text>m</xsl:text> </xsl:if>
+            <xsl:if test="@base='mole'"> <xsl:text>mol</xsl:text> </xsl:if>
+            <xsl:if test="@base='second'"> <xsl:text>s</xsl:text> </xsl:if>
+            <xsl:if test="@base='becquerel'"> <xsl:text>Bq</xsl:text> </xsl:if>
+            <xsl:if test="@base='degreeCelsius'"> <xsl:text>&#176;C</xsl:text> </xsl:if>
+            <xsl:if test="@base='coulomb'"> <xsl:text>C</xsl:text> </xsl:if>
+            <xsl:if test="@base='gray'"> <xsl:text>Gy</xsl:text> </xsl:if>
+            <xsl:if test="@base='hertz'"> <xsl:text>Hz</xsl:text> </xsl:if>
+            <xsl:if test="@base='henry'"> <xsl:text>H</xsl:text> </xsl:if>
+            <xsl:if test="@base='joule'"> <xsl:text>J</xsl:text> </xsl:if>
+            <xsl:if test="@base='katal'"> <xsl:text>kat</xsl:text> </xsl:if>
+            <xsl:if test="@base='lumen'"> <xsl:text>lm</xsl:text> </xsl:if>
+            <xsl:if test="@base='lux'"> <xsl:text>lx</xsl:text> </xsl:if>
+            <xsl:if test="@base='newton'"> <xsl:text>N</xsl:text> </xsl:if>
+            <xsl:if test="@base='ohm'"> <xsl:text>&#8486;</xsl:text> </xsl:if>
+            <xsl:if test="@base='pascal'"> <xsl:text>Pa</xsl:text> </xsl:if>
+            <xsl:if test="@base='radian'"> <xsl:text>rad</xsl:text> </xsl:if>
+            <xsl:if test="@base='siemens'"> <xsl:text>S</xsl:text> </xsl:if>
+            <xsl:if test="@base='sievert'"> <xsl:text>Sv</xsl:text> </xsl:if>
+            <xsl:if test="@base='steradian'"> <xsl:text>sr</xsl:text> </xsl:if>
+            <xsl:if test="@base='tesla'"> <xsl:text>T</xsl:text> </xsl:if>
+            <xsl:if test="@base='volt'"> <xsl:text>V</xsl:text> </xsl:if>
+            <xsl:if test="@base='watt'"> <xsl:text>W</xsl:text> </xsl:if>
+            <xsl:if test="@base='weber'"> <xsl:text>Wb</xsl:text> </xsl:if>
+            <xsl:if test="@base='day'"> <xsl:text>d</xsl:text> </xsl:if>
+            <xsl:if test="@base='degree'"> <xsl:text>&#176;</xsl:text> </xsl:if>
+            <xsl:if test="@base='hectare'"> <xsl:text>ha</xsl:text> </xsl:if>
+            <xsl:if test="@base='hour'"> <xsl:text>h</xsl:text> </xsl:if>
+            <xsl:if test="@base='liter'"> <xsl:text>L</xsl:text> </xsl:if>
+            <xsl:if test="@base='litre'"> <xsl:text>l</xsl:text> </xsl:if>
+            <xsl:if test="@base='arcminute'"> <xsl:text>&#8242;</xsl:text> </xsl:if>
+            <xsl:if test="@base='minute'"> <xsl:text>min</xsl:text> </xsl:if>
+            <xsl:if test="@base='arcsecond'"> <xsl:text>&#8243;</xsl:text> </xsl:if>
+            <xsl:if test="@base='degreeFahrenheit'"> <xsl:text>&#176;F</xsl:text> </xsl:if>
+            <xsl:if test="@base='pound'"> <xsl:text>lb</xsl:text> </xsl:if>
+            <xsl:if test="@base='foot'"> <xsl:text>ft</xsl:text> </xsl:if>
+            <xsl:if test="@base='inch'"> <xsl:text>in</xsl:text> </xsl:if>
+            <xsl:if test="@base='yard'"> <xsl:text>yd</xsl:text> </xsl:if>
+            <xsl:if test="@base='mile'"> <xsl:text>mi</xsl:text> </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:message terminate="no">
+                <xsl:text>base unit needed</xsl:text>
+            </xsl:message>
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- exponent is optional -->
+    <xsl:if test="@exp">
+            <sup><xsl:value-of select="@exp"/></sup>
+    </xsl:if>
+    <!--<xsl:if test="position() != ../children().length()"> -->
+    <!--This isn't working..how to determine if current unit is the last one?-->
+	<xml:text>&#8239;</xml:text>
+    <!--</xsl:if>-->
+</xsl:template>
+
+
+
 <!-- Ellipsis (dots), for text, not math -->
 <xsl:template match="ellipsis">
   <xsl:text>&#x2026;</xsl:text>
