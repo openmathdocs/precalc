@@ -1,0 +1,242 @@
+% <!--********************************************************************
+% Copyright 2013 Robert A. Beezer
+% 
+% This file is part of MathBook XML.
+% 
+% MathBook XML is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 2 or version 3 of the
+% License (at your option).
+% 
+% MathBook XML is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+% *********************************************************************-->
+
+
+%% *********************************************************************
+%  MBX .tex output can be produced via xsltproc without specifying the stringparam "latex.style.extra", 
+%  and default styling will be used. If you wish to use a style file like this one for further styling,
+%  run xsltproc with --stringparam "latex.style.extra" "<path to this file or one like it>"
+%
+%  Tags in this file start with <*tagname>, and end with </tagname>, and should have some commentary on
+%  what each one does. The contents of tags should be TeX commands, not just strings. For instance, if
+%  the styling involves loading a package with options, you would use the entire \usepackage[]{}, not 
+%  just spell out the package options. 
+%
+%  In MBX .tex output, the new command \mbxstylefile should point to this style file, or a similar file.
+%  If it is an empty string, default styling will be used.
+%
+%  In MBX .tex output, the new command \mbxstyle appears multiple times in the preamble as \mbxstyle{#1}{#2}.
+%  #2 is simply commands that will be used if a style.tex file like this one is not being used. #1 is a tagname
+%  that appears in the style.tex file.
+%
+%  Once xcltproc is used to produce a .tex file using a style.tex file like this one, then a lot of 
+%  customiztion of appearance can be done without further use of xsltproc. For instance, the style.tex file 
+%  can be edited, and then the .tex file can go through pdflatex again, and changes will be reflected.
+%
+%  Or the author can manually edit the .tex MBX output and change the path to the style.tex file, to 
+%  get a new styling. An author could have an array of style.tex files that they switch back and forth on.
+%
+%  Or the author can revert to default styling be redefining how \mbxstyle is defined. For convenience, a
+%  \renewcommand line is provided that can be uncommented to achieve this.  Note that this doesn't work in 
+%  the opposite direction. If xsltproc is run the first time without a style.tex file, then several important 
+%  things are left out of the preamble that allow for use of a style.tex file in the first place.
+%
+%% *********************************************************************
+
+
+
+
+%% styling of terminology
+%% font commands to apply to vocabulary terms
+%<*terminology>
+\itshape{}
+%</terminology>
+
+%% styling of acronyms
+%% font commands to apply to acronyms
+%<*terminology>
+\bfseries{}
+%</terminology>
+
+%% sisetup
+%% siunitx sisetup arguments
+%<*sisetup>
+\sisetup{per-mode=reciprocal}
+%</sisetup>
+
+
+
+%% theoremstyle for theorems
+%% Either use \theoremstyle{<existing style>} or define a new style and then use it.
+%% An existing style would be an amsthm pre-defined style, or a style defined earlier
+%% in the MBX .tex output's preamble. While this style sheet should maintain an order
+%% that is consistent with that order, it is not a guarantee.
+%% \surroundwithmdframed may be used to decorate the environment. See its documentation.
+%<*theoremstyle-theorem>
+\theoremstyle{plain}
+%</theoremstyle-theorem>
+
+%% theoremstyle for proofs
+%% The proof environment is typically simple: The word "Proof", followed by a period, perhaps 
+%% in italics or something like that, and then at the end the qed symbol. You may want to change
+%% the fontstyle on the word "Proof:". You may want to change the qed symbol. You may wan to 
+%% encase it all in a box using \surroundwithmframed. All of that can be done here.
+%<*theoremstyle-proof>
+\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+\let\oldendproof\endproof
+\renewenvironment{proof}[1][\proofname]{%
+  \oldproof[\scshape #1]%
+}{\oldendproof}
+\renewcommand{\qedsymbol}{\checkmark}
+%</theoremstyle-proof>
+
+%% theoremstyle for corollaries
+%<*theoremstyle-corollary>
+\theoremstyle{plain}
+%</theoremstyle-corollary>
+
+%% theoremstyle for lemmas
+%<*theoremstyle-lemma>
+\theoremstyle{plain}
+%</theoremstyle-lemma>
+
+%% theoremstyle for propositionss
+%<*theoremstyle-proposition>
+\theoremstyle{plain}
+%</theoremstyle-proposition>
+
+%% theoremstyle for claims
+%<*theoremstyle-claim>
+\theoremstyle{plain}
+%</theoremstyle-claim>
+
+%% theoremstyle for facts
+%<*theoremstyle-fact>
+\theoremstyle{plain}
+%</theoremstyle-fact>
+
+%% theoremstyle for conjectures
+%<*theoremstyle-conjecture>
+\theoremstyle{plain}
+%</theoremstyle-conjecture>
+
+%% theoremstyle for axioms
+%<*theoremstyle-axiom>
+\theoremstyle{plain}
+%</theoremstyle-axiom>
+
+%% theoremstyle for principles
+%<*theoremstyle-principle>
+\theoremstyle{plain}
+%</theoremstyle-principle>
+
+%% theoremstyle for definitions
+%<*theoremstyle-definition>
+\newtheoremstyle{definitionstyle}% name of the style to be used
+  {3pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {3pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {\itshape}% name of font to use in the body of the theorem
+  {0pt}% measure of space to indent
+  {\bfseries}% name of head font
+  {.}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmname{#1}\thmnumber{ #2}:\thmnote{ #3}}% Manually specify head
+\theoremstyle{definitionstyle}
+\surroundwithmdframed[outerlinewidth=3,
+                      innerlinewidth=2,
+                      linecolor=gray,
+                      backgroundcolor=yellow!40,
+                      innerlinecolor=blue!50,
+                      outerlinecolor=red!50!,
+                      innertopmargin=1em,
+                      splittopskip=\topskip,
+                      skipabove=\baselineskip,
+                      ]{definition}
+%</theoremstyle-definition>
+
+%% theoremstyle for examples
+%<*theoremstyle-example>
+\theoremstyle{definition}
+\surroundwithmdframed[outerlinewidth=3,
+                      linecolor=black,
+                      ]{example}
+%</theoremstyle-example>
+
+%% theoremstyle for exercises
+%<*theoremstyle-exercise>
+\theoremstyle{definition}
+%</theoremstyle-exercise>
+
+%% theoremstyle for remarks
+%<*theoremstyle-remark>
+\theoremstyle{definition}
+%</theoremstyle-remark>
+
+
+%% theoremstyle for standout, an unnumbered environment with special commentary (original "pccspecialcomment")
+%<*theoremstyle-standout>
+\newtheoremstyle{standoutstyle}% name of the style to be used
+  {3pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {3pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {0pt}% measure of space to indent
+  {\bfseries}% name of head font
+  {.}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmnote{#3}}% Manually specify head
+\theoremstyle{standoutstyle}
+\surroundwithmdframed[outerlinewidth=3,
+                      innerlinewidth=2,
+                      linecolor=gray,
+                      backgroundcolor=blue!20,
+                      innerlinecolor=blue!50,
+                      outerlinecolor=red!50!,
+                      innertopmargin=1em,
+                      splittopskip=\topskip,
+                      skipabove=\baselineskip,
+                      ]{standout}
+%</theoremstyle-standout>
+
+
+%% environment to surround for try-it-yourself exercises
+%<*try-it-yourself-begin>
+ \par%
+ \rule{\textwidth}{2pt}
+ \vskip-16pt
+ \rule{\textwidth}{0.5pt}
+ \vskip-5pt%
+ {\large\textbf{$\bigstar$ try it yourself $\bigstar$}}%
+%</try-it-yourself-begin>
+%<*try-it-yourself-end>
+ \hfill
+ \itshape{make sure you try it!}
+ \vskip-9pt
+ \rule{\textwidth}{0.5pt}
+ \vskip-15pt
+ \rule{\textwidth}{2pt}
+%</try-it-yourself-end>
+
+
+%% environment to surround for outcomes
+%<*outcomes-begin>
+ \itshape%
+ \begin{minipage}{0.6\linewidth}%
+ % define a new environment local to outcomes- the outcomelist
+ % environment will not work outside of outcomes!
+ \newenvironment{outcomelist}{\begin{itemize}[itemsep=0pt, topsep=\parskip, partopsep=\parskip]}{\end{itemize}}%
+ {Section Themes, Concepts, Issues, Competencies, and Skills:}%
+%</outcomes-begin>
+%<*outcomes-end>
+ \par%
+ \end{minipage}%
+ \par%
+%</outcomes-end>
+
+
+

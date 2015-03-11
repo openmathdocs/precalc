@@ -1,9 +1,0 @@
-#contextMenu{
-        position:absolute;
-        display: inline-block;
- 	    border: solid blue; 
-		border-width: thin; 
-		background: rgb(204,204,255);
-		padding: 0.5em;
-        text-align:center;
-}

@@ -1,0 +1,35 @@
+To get started, try running:
+
+xsltproc -xinclude ../xsl/precalc-latex.xsl precalc.xml >> draft.tex
+xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
+
+The latter will create a bunch of html pages. Open precalc.html to see.
+The former will create draft.tex. Open the .tex file to see that it has our preamble content.
+Note the .tex file is not going to compile yet.
+
+precalc-latex.xsl makes use of xsl/latex.preamble.early and xsl/latex.preamble.late, where for now,
+we basically have most items from the original mainfile.tex. Some of these things are incompatible 
+with what mathbook-latex.xsl inserts, and we need to go through and address them. For instance,
+MBX uses amsthm, but we want ntheorem. I posted about this.
+
+latex.preamble.late is coming *too* late. We need a medium level to insert our adjustments right
+before the \begin{document}
+
+Also, much of what is in our original preamble is not needed with MBX. For instance I don't think we
+need the answers package, as pleasing as it is. MBX already handles exercises in a sophisticated way.
+What features it does not yet have can be added without too much trouble, since XML can be handled
+algorithmically.
+
+Graphics items from mainfile.tex are all moved to src/bookinfo.xml, in <latex-image-preamble>.
+
+Math macros need to be moved to src/bookinfo.xml, in <macros>. They need to be MathJax-friendly, and 
+this caused me to scrap our \sq command for a new \sq and \SQ instead.
+
+
+The actual source xml files are structured like this, using inclusions. Content is only in the sections.
+precalc.xml
+  chapters, like functions-part-1.xml
+     sections, like function-basics.xml
+
+
+

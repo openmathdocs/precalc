@@ -20,11 +20,6 @@ longsolutions*
 *.maf
 *.pdf
 *.bak
-derivatives.html
+*.html
 myfile.*
 knowl
-chapters/figures/*.tex
-chapters/figures/*.svg
-chapters/*.html
-chapters/.html
-chapters/*.tex
