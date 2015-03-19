@@ -40,10 +40,20 @@ But the output will have default MBX styling.
 HTML style is controlled by `mathbook.css`. Since `mathbook.css` is a big project for MBX in general, we may not have good
 treatments of the CSS for our HTML output yet. If HTML styling seems bad, it will be dealt with later.
 
+#####Summary of control files
+`/src/bookinfo.xml` controls global latex-image (like pgfplots) settings
+`/style/latex/precalc-style.tex` has decoration of environments and other sytlistic choices for the PDF
+`/xsl/precalc-latex.xsl` is where we can add to or over-write `mathbook-latex.xsl`
+Large chunks of preamble code go into `/xsl/latex.preamble.xml`, to be called on by `mathbook-latex.xsl`
+`/xsl/precalc-html.xsl` is where we can add to or over-write `mathbook-html.xsl`
+`/xsl/precalc-common.xsl` is called by both `/xsl/precalc-latex.xsl` and `/xsl/precalc-html.xsl` to avoid redundancy where it can be avoided
+
+
 #####See some output
 Navigate to `precalc/src/`.
 Run
-```xsltproc -xinclude ../xsl/precalc-latex.xsl precalc.xml >> draft.tex
+```
+xsltproc -xinclude ../xsl/precalc-latex.xsl precalc.xml >> draft.tex
 pdflatex draft.tex
 pdflatex draft.tex
 open draft.pdf
@@ -51,7 +61,8 @@ open draft.pdf
 to see some PDF output.
 
 Run 
-```xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
+```
+xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
 open precalc.html
 ```
 to see some HTML output.
