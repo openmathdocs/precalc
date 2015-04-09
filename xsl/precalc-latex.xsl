@@ -1,5 +1,8 @@
 <?xml version='1.0'?> <!-- As XML file -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+    xmlns:exsl="http://exslt.org/common"
+    extension-element-prefixes="exsl"
+  >
 
 <!-- This XSL file is a thin layer on MathBook XML.
      Create a file called precalc-paths.xsl (in this directory)
@@ -230,8 +233,25 @@
 </xsl:template>
 
 
+<xsl:template match="mathbook[@style='chunk']">
+  <xsl:apply-templates/>
+</xsl:template>
 
+<xsl:template match="book[ancestor::mathbook[@style='chunk']]">
+  <xsl:apply-templates/>
+</xsl:template>
 
+<xsl:template match="chapter[ancestor::mathbook[@style='chunk']]">
+    <xsl:variable name="tex-chapter-name">
+        <xsl:apply-templates select="." mode="internal-id" /><xsl:text>.tex</xsl:text>
+    </xsl:variable>
+    <exsl:document href="{$tex-chapter-name}" method="text">
+        <xsl:text>\chapter{</xsl:text>
+        <xsl:apply-templates select="title" />
+        <xsl:text>}&#xa;</xsl:text>
+        <xsl:apply-templates select="*[not(self::title)]"/>
+    </exsl:document>
+</xsl:template>
 
 <!-- Intend output for rendering by pdflatex -->
 <xsl:output method="text" />
