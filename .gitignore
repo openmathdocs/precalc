@@ -1,4 +1,5 @@
 ._*
+xsl/precalc-paths.xsl
 *.tcp
 *.php
 *.out

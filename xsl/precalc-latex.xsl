@@ -1,17 +1,19 @@
 <?xml version='1.0'?> <!-- As XML file -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
-<!-- This XSL file is a thin layer on MathBook XML                          -->
-<xsl:import href="/Users/alexjordan/mathbook/xsl/mathbook-latex.xsl" />
-
+<!-- This XSL file is a thin layer on MathBook XML.
+     Create a file called precalc-paths.xsl (in this directory)
+     that looks like the following, adapting it to your directory structure
+        <?xml version='1.0'?> 
+        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+        <xsl:import href="/home/cmhughes/Documents/projects/openmathdocs/mathbook/xsl/mathbook-latex.xsl" />
+        <xsl:param name="latex.style.extra" select="'/home/cmhughes/Documents/projects/openmathdocs/precalc/style/latex/precalc-style.tex'" />
+        </xsl:stylesheet>
+-->
+<xsl:import href="precalc-paths.xsl" />
 
 <!-- Common thin layer                                                      -->
 <xsl:import href="precalc-common.xsl" />
-
-
-<!-- LaTeX style file; do not delete or comment out this line. Instead, can use empty string          -->
-<xsl:param name="latex.style.extra" select="'/Users/alexjordan/precalc/style/latex/precalc-style.tex'" />
-
 
 <!-- LaTeX-specific parameters                                              -->
 <xsl:param name="latex.geometry" select="'letterpaper,total={6.25in,9.0in}'" />
