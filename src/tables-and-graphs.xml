@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the book -->
+<!--                               -->
+<!-- Precalculus                   -->
+<!--                               -->
+<!-- Chris Hughes (author)         -->
+<!-- Alex Jordan (author)          -->
+
+<section xml:id="section-tables-and-graphs.xml">
+    <title>Tables and Graphs</title>
+
+    <p>Since functions are potentially so complicated, we seek out new ways to understand them better. Two basic tools for understanding functions better are <term>table</term>s and <term>graph</term>s.</p>
+
+    <example xml:id="example-unemployment-rate-table">
+        <title>Unemployment Rate Table</title>
+
+        <sidebyside>
+            <p valign="top" width="50%"> Consider the function <m>\operatorname{Unemployment}</m>, that takes in a year as its input and outputs the US unemployment rate in January of that year. For example, <url href="http://data.bls.gov/timeseries/LNS14000000">the Congressional Budget Office's website</url> tells us that <m>\fe{\operatorname{Unemployment}}{2009}</m> is <quantity><mag>7.8</mag><unit base="percent"/></quantity>. If we'd like to understand this function better, we might make a <term>table</term> of all the inputs and outputs we can find. Using <url href="http://data.bls.gov/timeseries/LNS14000000">the CBO's website</url>, we put together <todo>table</todo><xref ref="table-unemployment" />.</p>
+
+            <todo>Use pgfplotstables somehow to make this table and the graph come from a single data source file.</todo>
+            <table xml:id="table-unemployment" valign="top" width="50%">
+                <caption>US Unempoyment</caption>
+                <tabular halign="center">
+                    <thead>
+                        <row><cell>input</cell><cell>output</cell></row>
+                        <row><cell><m>x</m> (Year)</cell><cell><m>\fe{\operatorname{Unemployment}}{x}</m> (<quantity><unit base="percent"/></quantity>)</cell></row>
+                    </thead>
+                    <row><cell>2005</cell><cell>5.3</cell></row>
+                    <row><cell>2006</cell><cell>4.7</cell></row>
+                    <row><cell>2007</cell><cell>4.6</cell></row>
+                    <row><cell>2008</cell><cell>5.0</cell></row>
+                    <row><cell>2009</cell><cell>7.8</cell></row>
+                    <row><cell>2010</cell><cell>9.8</cell></row>
+                    <row><cell>2011</cell><cell>9.2</cell></row>
+                    <row><cell>2012</cell><cell>8.3</cell></row>
+                    <row><cell>2013</cell><cell>8.0</cell></row>
+                    <row><cell>2014</cell><cell>6.6</cell></row>
+                    <row><cell>2015</cell><cell>5.7</cell></row>
+                    <tfoot />
+                </tabular>
+                <todo>Make better table</todo>
+            </table>
+        </sidebyside>
+
+        <p>How is this table helpful? There are things about the function that we can see now by looking at the numbers in this table.</p>
+
+        <ul><li>We can see that unemployment rate in January of 2015 is higher than it was in January of 2008.</li>
+            <li>We can see that there was a particularly large jump from 2008 to 2009.</li>
+            <li>We can see that unemployment has reduced steadily since its peak in 2010.</li>
+        </ul>
+
+        <p>These observations serve to help us understand the function <m>\operatorname{Unemployment}</m> a little better.</p>
+
+    </example>
+
+    <example xml:id="example-square-root">
+        <title>Square Root</title>
+
+        <sidebyside>
+            <p valign="top" width="50%">Let's return to our example of the function <m>\sq</m>. Tabulating some inputs and outputs reveals <todo>table</todo><xref ref="table-square-root" />.</p>
+
+            <table xml:id="table-square-root" valign="top" width="50%">
+                <caption>Square Root</caption>
+                <tabular halign="center">
+                    <thead>
+                        <row><cell>input</cell><cell>output</cell></row>
+                        <row><cell><m>x</m></cell><cell><m>\SQ[x]</m></cell></row>
+                    </thead>
+                    <row><cell>0</cell><cell>0</cell></row>
+                    <row><cell>1</cell><cell>1</cell></row>
+                    <row><cell>2</cell><cell>1.41<ellipsis /></cell></row>
+                    <row><cell>3</cell><cell>1.73<ellipsis /></cell></row>
+                    <row><cell>4</cell><cell>2</cell></row>
+                    <tfoot />
+                </tabular>
+                <todo>Make better table</todo>
+            </table>
+        </sidebyside>
+
+        <p>How is this table helpful? Here are some observations that we can make now.</p>
+
+        <ul><li>We can see that when input numbers increase, so do output numbers.</li>
+            <li>We can see even though outputs are increasing, they increase by less and less with each step forward in <m>x</m>.</li>
+        </ul>
+
+        <p>These observations help us understand <m>\sq</m> a little better. For instance, based on these observations which do you think is larger: the difference between <m>\SQ[23]</m> and <m>\SQ[24]</m>, or the difference between <m>\SQ[85]</m> and <m>\SQ[86]</m>?</p>
+
+    </example>
+
+    <p>Another powerful tool for understanding functions better is a <term>graph</term>. Given a function <m>f</m>, one way to make its graph is to take a table of input and output values, and read each row as the coordinates of a point in the <m>xy</m>-plane.</p>
+
+    <example xml:id="example-unemployment-rate-graph">>
+        <title>Unemployment Rate Graph</title>
+
+        <p>Returning to the function <m>\operatorname{Unemployment}</m> that we studied in <xref ref="example-unemployment-rate-table" />, in order to make a graph of this function we view <xref ref="table-unemployment" /> as a list of points with <m>x</m>- and <m>y</m>-coordinates, as in <xref ref="table-unemployment-coordinates" />. We then plot these points on a set of coordinate axes, as in <xref ref="graph-unemployment-coordinates" />. The points have been connected with a curve so that we can see the overall pattern given by the progression of points. Since there was not any actual data for inputs in between any two years, the curve is dashed. That is, this curve is dashed because it just represents someone’s best guess as to how to connect the plotted points. Only the plotted points themselves are precise.</p>
+
+        <todo>Use pgfplotstables somehow to make this table and the graph come from a single data source file.</todo>
+        <sidebyside>
+            <table xml:id="table-unemployment-coordinates" valign="top" width="40%">
+                <caption>US Unempoyment</caption>
+                <tabular halign="center">
+                    <thead>
+                        <row><cell>(input,output)</cell></row>
+                        <row><cell><m>\point{x}{\fe{\operatorname{Unemployment}}{x}}</m></cell></row>
+                    </thead>
+                    <row><cell><m>\point{2005}{5.3}</m></cell></row>
+                    <row><cell><m>\point{2006}{4.7}</m></cell></row>
+                    <row><cell><m>\point{2007}{4.6}</m></cell></row>
+                    <row><cell><m>\point{2008}{5.0}</m></cell></row>
+                    <row><cell><m>\point{2009}{7.8}</m></cell></row>
+                    <row><cell><m>\point{2010}{9.8}</m></cell></row>
+                    <row><cell><m>\point{2011}{9.2}</m></cell></row>
+                    <row><cell><m>\point{2012}{8.3}</m></cell></row>
+                    <row><cell><m>\point{2013}{8.0}</m></cell></row>
+                    <row><cell><m>\point{2014}{6.6}</m></cell></row>
+                    <row><cell><m>\point{2015}{5.7}</m></cell></row>
+                    <tfoot />
+                </tabular>
+                <todo>Make better table</todo>
+            </table>
+
+            <figure xml:id="graph-unemployment-coordinates" valign="top" width="60%">
+                <caption><m>y=\fe{\operatorname{Unemployment}}{x}</m></caption>
+                <image>
+                    <description>A graph of the US unemployment rate from 2005 to 2015</description>
+                    <latex-image-code>
+                        <![CDATA[\begin{tikzpicture}
+                                     \begin{axis}[
+                                         xmin=2004,
+                                         xmax=2016,
+                                         ymin=0,
+                                         ymax=15,
+                                         xlabel={$x$ (year)},
+                                         ylabel={$y$ (\%)},
+                                         height=0.5\linewidth,
+                                         grid=major,
+                                         xtick={2004,2005,...,2016},
+                                         xticklabels={2005,2006,...,2015},
+                                         ytick={0,1,...,15},
+                                         axis x discontinuity=crunch,
+                                         nodes near coords,
+                                         axis lines=left,
+                                     ]
+                                     \addplot+[soldot,smooth,dashed,-] coordinates {
+                                         (2005,5.3)
+                                         (2006,4.7)
+                                         (2007,4.6)
+                                         (2008,5.0)
+                                         (2009,7.8)
+                                         (2010,9.8)
+                                         (2011,9.2)
+                                         (2012,8.3)
+                                         (2013,8.0)
+                                         (2014,6.6)
+                                         (2015,5.7)
+                                     };
+                                     \end{axis}
+                                 \end{tikzpicture}]]>
+                    </latex-image-code>
+                </image>
+            </figure>
+        </sidebyside>
+
+        <p>How has this graph helped us to understand the function better? All of the observations that we made in <xref ref="example-unemployment-rate-table" /> are perhaps even more clear now. For instance, the spike in the unemployment between 2008 and 2009 is now visually apparent. Seeking an explanation for this spike, we can recall that there was a financial crisis in late 2008.</p>
+    </example>
+
+    <example>
+        <title>Square Root Graph</title>
+
+        <p>Let's now construct a graph for <m>\sq</m>. Tabulating inputs and outputs gives the points in <xref ref="table-square-root-coordinates" />, which in turn gives us the graph in <xref ref="figure-square-root" />. Just as in the previous example, we've plotted points where we have concrete coordinates, and then we have made our best attempt to connect those points with a curve. Unlike the previous example, here we believe that points could continue to be computed and plotted indefinitely to the right, and so we have added an arrowhead to the graph.</p> 
+
+        <sidebyside>
+            <table xml:id="table-square-root-coordinates" valign="top" width="40%">
+                <caption><m>y=\SQ[x]</m></caption>
+                <tabular halign="center">
+                    <thead>
+                        <row><cell>(input,output)</cell></row>
+                        <row><cell><m>\point{x}{\SQ[x]}</m></cell></row>
+                    </thead>
+                    <row><cell><m>\point{0}{0}</m></cell></row>
+                    <row><cell><m>\point{1}{1}</m></cell></row>
+                    <row><cell><m>\point{2}{1.41\ldots}</m></cell></row>
+                    <row><cell><m>\point{3}{1.73\ldots}</m></cell></row>
+                    <row><cell><m>\point{4}{2}</m></cell></row>
+                    <tfoot />
+                </tabular>
+                <todo>Make better table</todo>
+            </table>
+
+            <figure xml:id="figure-square-root" valign="top" width="60%">
+                <caption><m>y=\SQ[x]</m></caption>
+                <image>
+                    <description>A graph of the sqrt function</description>
+                    <latex-image-code>
+                        <![CDATA[\begin{tikzpicture}
+                                     \begin{axis}[
+                                         xmin=-1,
+                                         xmax=5,
+                                         ymin=-1,
+                                         ymax=3,
+                                         xlabel={$x$},
+                                         ylabel={$y$},
+                                         height=0.5\linewidth,
+                                         grid=major,
+                                     ]
+                                     \addplot+[->,dashed]expression[domain=0:4.5,samples=50] {sqrt(x)};
+                                     \addplot[soldot]coordinates{ (0,0) (1,1) (2,1.414) (3,1.732) (4,2)};
+                                     \end{axis}
+                                 \end{tikzpicture}]]>
+                    </latex-image-code>
+                </image>
+            </figure>
+        </sidebyside>
+
+        <p>What has this graph done to improve our understanding of <m>\sq</m>? As inputs (<m>x</m>-values) increase, the outputs (<m>y</m>-values) increase too, although not at the same rate. In fact we can see that our graph is steep on its left, and less steep as we move to the right. This confirms our earlier observation in <xref ref="example-square-root"/> that outputs increase by smaller and smaller amounts as the input increases.</p>
+
+    </example>
+
+    <standout xml:id="function-graphs">
+        <title>The Graph of a Function</title>
+
+        <p>Given a function <m>f</m>, when we refer to a <term>graph</term> of <m>f</m> we are <emph>not</emph> referring to an entire picture, like <xref ref="figure-square-root" />. A graph of <m>f</m> is only part of that picture<emdash/>the curve and the points that it connects. Everything else: axes, tick marks, the grid, labels, and the surrounding white space is just important decoration, so that we can read the graph more easily.</p>
+
+        <p>It is also common to refer to the graph of <m>f</m> as the graph of the equation <m>y=\fe{f}{x}</m>. However we should never refer to <q>the graph of <m>\fe{f}{x}</m></q>. That would indicate a fundamental misunderstanding of our notation. We have decided that <m>\fe{f}{x}</m> is the output for a certain input <m>x</m>. That means that <m>\fe{f}{x}</m> is just a number; a relatively uninteresting thing compared to <m>f</m> the function, and not worthy of a two-dimensional picture.</p>
+
+    </standout>
+
+    <p>While it is important to be able to make a graph of a function <m>f</m>, we also need to be capable of looking at a graph and reading it well. A graph of <m>f</m> provides us with helpful specific information about <m>f</m>; it tells us what <m>f</m> does to its input values. When we were making graphs, we plotted points of the form <m>\point{x}{\fe{f}{x}}</m>. Now given a graph of <m>f</m>, we interpret coordinates in the same way.</p>
+
+    <sidebyside>
+
+        <p valign="top" width="50%">In <xref ref="figure-read-graph" /> we have a graph of a function <m>f</m>. If we wish to find <m>\fe{f}{1}</m>, we recognize that <m>1</m> is being used as an input. So we would want to find a point of the form <m>\point{1}{\phantom{y}}</m>. Seeking out <m>x</m>-coordinate <m>1</m> in <xref ref="figure-read-graph" />, we find that the only such point is <m>\point{1}{2}</m>. Therefore the output for <m>1</m> is <m>2</m>; in other words <m>\fe{f}{1}=2</m>.</p>
+
+        <figure xml:id="figure-read-graph" valign="top" width="45%">
+        <caption><m>y=\fe{f}{x}</m></caption>
+            <image>
+                <description>A graph of a function f, with arrows demonstrating how to evaluate f at a particular x</description>
+                <latex-image-code>
+                    <![CDATA[\begin{tikzpicture}
+                                  \begin{axis}[
+                                      xmin=-1,
+                                      xmax=5,
+                                      ymin=-1,
+                                      ymax=4,
+                                      xlabel={$x$},
+                                      ylabel={$y$},
+                                      height=0.5\linewidth,
+                                      grid=major,
+                                  ]
+                                  \addplot+[smooth] coordinates{ (-1,0.5) (0,0.5) (1,2) (2,3) (3,3) (4,2) (5,1.5)};
+                                  \addplot+[->] coordinates{ (0,0) (1,0) (1,2) };
+                                  \end{axis}
+                              \end{tikzpicture}]]>
+                </latex-image-code>
+            </image>
+        </figure>
+    </sidebyside>
+
+    <try-it-yourself>
+        <exercise>
+            <statement>
+                <p>Use the graph of <m>f</m> in <xref ref="figure-read-graph" /> to find <m>\fe{f}{0}</m>, <m>\fe{f}{3}</m>, and <m>\fe{f}{4}</m>.</p>
+            </statement>
+            <solution>
+                <p>We can look where <m>x=0</m>, and see above it that the point <m>\point{0}{0.5}</m> is on the graph. So <m>\fe{f}{0}=0.5</m>. We can look where <m>x=3</m>, and see above it that the point <m>\point{3}{3}</m> is on the graph. So <m>\fe{f}{3}=3</m>. We can look where <m>x=4</m>, and see above it that the point <m>\point{4}{2}</m> is on the graph. So <m>\fe{f}{4}=2</m>.</p>
+            </solution>
+            <answer>
+                <p><m>\fe{f}{0}=0.5</m>, <m>\fe{f}{3}=3</m>, and <m>\fe{f}{4}=2</m>.</p>
+            </answer>
+        </exercise>
+    </try-it-yourself>
+
+
+</section>
+

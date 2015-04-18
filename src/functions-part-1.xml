@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the book -->
+<!--                               -->
+<!-- Precalculus                   -->
+<!--                               -->
+<!-- Chris Hughes (author)         -->
+<!-- Alex Jordan (author)          -->
+   
+<chapter xml:id="chapter-functions-part-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Functions</title>
+    
+    <xi:include href="./function-basics.xml" />
+    <xi:include href="./tables-and-graphs.xml" />
+    <xi:include href="./rule-of-four.xml" />
+    <xi:include href="./domain-and-range.xml" />
+    <xi:include href="./monotonicity-and-concavity.xml" />
+    <xi:include href="./simplification.xml" />
+    <xi:include href="./composition.xml" />
+    <xi:include href="./transformations.xml" />    
+
+</chapter>

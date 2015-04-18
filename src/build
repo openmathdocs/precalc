@@ -1,0 +1,4 @@
+xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
+xsltproc -xinclude ../xsl/precalc-latex.xsl precalc.xml >> draft.tex
+pdflatex draft.tex
+pdflatex draft.tex

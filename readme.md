@@ -13,121 +13,61 @@ xsltproc ./xsl/mathbook-html.xsl sample-article.xml
 ```
 
 ####Process work flow (only an outline, as the work flow is ever changing)
-Writing the code in `xml` allows us to convert easily into beautiful `.tex` files 
-and into `.html` files. 
 
-##### .tex version
-`mainfile.tex` will be maintained separately as a `.tex` file - it will not be 
-changed using the `XML` approach
+#####Source Structure
+`precalc/src` contains compartmentalized source for the book.
+`precalc.xml` is the "top-level" source file. It loads `bookinfo.xml`, and then it writes the chapters. 
+The chapters (for example `functions-part-1.xml`) are also pretty bare---they just load section files.
+Sections (like `function-basics.xml`) are where real content is stored.
+`bookinfo.xml` stores some metadata for the book, as well as convenient tex macros, and all global pgfplots settings.
 
-chapter files *are* `.xml` files and are converted into `.tex` files using, for example,
+#####XSL local to this book
+`precalc/xsl` contains several files.
+The project's original `mainfile.tex` is here, just for reference, since its components occasionally get brought into the other files.
+`precalc-common.xsl`, `precalc-latex.xsl`, and `precalc-html.xsl` each provide a thin layer of XSL on top of MBX.
+*Edit* `precalc-latex.xsl` in two places, so that it knows the full path for your MBX repo and for your precalc repo.
+Also *edit* `precalc-html.xsl` in one place.
+TODO: put these file paths in a separate file that these XSL files reference, and then include that new file in `.gitignore`.
+`latex.preamble.xml` is a convenient file to store large chunks of LaTeX preamble code that is used by `precalc-latex.xsl`.
 
-```bash
-xsltproc ./xsl/omd2tex.xsl sample-article.xml > myfile.tex
+#####Style
+Hardcopy style is mostly controlled by MBX defaults, but a few things are locally over-written in `precalc/style/precalc-style.tex`.
+For instance, here the definition environment is given a border and color.
+Use of a `style.tex` file is experimental, and is being developed in the MBX branch `omd/feature/latex.style.extra`.
+If your MBX repo is on the dev branch instead, then you *should* have no trouble processing source into PDF.
+But the output will have default MBX styling.
+
+HTML style is controlled by `mathbook.css`. Since `mathbook.css` is a big project for MBX in general, we may not have good
+treatments of the CSS for our HTML output yet. If HTML styling seems bad, it will be dealt with later.
+
+#####Summary of control files
+`/src/bookinfo.xml` controls global latex-image (like pgfplots) settings
+`/style/latex/precalc-style.tex` has decoration of environments and other sytlistic choices for the PDF
+`/xsl/precalc-latex.xsl` is where we can add to or over-write `mathbook-latex.xsl`
+Large chunks of preamble code go into `/xsl/latex.preamble.xml`, to be called on by `mathbook-latex.xsl`
+`/xsl/precalc-html.xsl` is where we can add to or over-write `mathbook-html.xsl`
+`/xsl/precalc-common.xsl` is called by both `/xsl/precalc-latex.xsl` and `/xsl/precalc-html.xsl` to avoid redundancy where it can be avoided
+
+
+#####See some output
+Navigate to `precalc/src/`.
+Run
 ```
-
-The last thing to do is to run 
-
-```bash
-pdflatex mainfile.tex
+xsltproc -xinclude ../xsl/precalc-latex.xsl precalc.xml >> draft.tex
+pdflatex draft.tex
+pdflatex draft.tex
+open draft.pdf
 ```
+to see some PDF output.
 
-or, alternatively, once we put the `arara` directives in place, `arara chapterfile.tex`
-
-##### .html version
-`mainfile.html` (doesn't currently exist), which will link to mainfile.css and probably 
-a Javascript library, will link to chapter `.html` files and those are created by 
-running the command:
-
-```bash
-xsltproc ./xsl/omd2html.xsl sample-article.xml > myfile.html
+Run 
 ```
-
-##### using `arara` to help with conversion
-You can perform the `xsltproc` conversion using `arara` directives. For example, let's say that we have
-`myfile.xml` that begins with the following lines:
-
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<!-- 
-% arara: xslt: {convertTo: html, outputToFile: yes}
-% arara: xslt: {convertTo: tex, outputToFile: no}
--->
+xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
+open precalc.html
 ```
+to see some HTML output.
+TODO: Package this into arara.
 
-This will perform two conversions - the first to `html`, and will be written to `myfile.html`; the second to 
-`tex`, and will only be written to the screen.
 
-You'll need to update your `araraconfig.yaml` file (which lives at the highest level of your home directory, `~/araraconfig.yaml`)
-so that it contains the following lines:
 
-```yaml
-!config
-paths:
-- /home/cmhughes/Documents/projects/111and112doc
-filetypes:
-- extension: xml
-  pattern: ^(\s)*%\s+
-```
 
-Just make sure that the paths variable matches the directory in which you are keeping this project.
-
-##### cross referencing
-heavily inspired by the `cleveref` and `varioref` packages, we can use
-```xml
-<xref ref="firstsection" /> 
-<xref ref="firstsection" beginsentence='true'/> 
-<xref ref="firstsection" faraway="true"/> 
-<xref ref="firstsection" faraway="true" beginsentence="true"/> 
-```
-which will give, in `.tex`,
-```tex
-\cref{firstsection} 
-\Cref{firstsection} 
-\vref{firstsection} 
-\Vref{firstsection}
-```
-In `.html` it simply gives the name of the object being referred to (e.g Section, Figure, etc) and a hyperlink
-to that object; note that page references (given by `vref` and friends in `.tex`) are not as relevant in `.html`.
-
-Similarly,
-```xml
-<xrefrange ref1="firstsection" ref2="secondsection"/> 
-<xrefrange ref1="firstsection" ref2="secondsection" beginsentence='true'/>                
-<xrefrange ref1="firstsection" ref2="secondsection" faraway="true"/>                      
-<xrefrange ref1="firstsection" ref2="secondsection" faraway="true" beginsentence="true"/> 
-```
-outputs (in `.tex`)
-```tex
-\crefrange{firstsection}{secondsection} 
-\Crefrange{firstsection}{secondsection}                
-\vrefrange{firstsection}{secondsection}                      
-\Vrefrange{firstsection}{secondsection}
-```
-In `.html` it outputs, for example, Section `<hyperlink to firstsection>` through `<hyperlink to second section>`.
-
-##### to do
-- add support for multiple references such as `\cref{ref1,ref2,ref3}` which would output, for example `Sections 1, 2 and 3`, or 
-  even `Section 1, Figures 2 and 3`, or perhaps `Section 1, Table 2, Figure 1`, etc; `.tex` version is easy, `.html` is tricky
-  possibly useful: http://stackoverflow.com/questions/16894908/xsl-transform-to-split-comma-separated-values
-- research how to cross reference between .html pages (perhaps using php and a .haux file?)
-
-##### `html canvas` to do (mostly inspired by `pgfplots`)
-- MAKE SURE TO CHECK DIFFERENT BROWSERS!!!!
-- create alt tags and tool tips (http://msdn.microsoft.com/en-us/library/ie/hh968259%28v=vs.85%29.aspx)
-- need to make topMargin, leftMargin configurable with defaults (also rightMargin and bottomMargin)
-- some of the javascript should actually be controlled via css (xtick/ytick labels, xlabels, ylabels, nodes, cross hairs)
-- make a switch for tick label size? 
-- create nodes to label the graphs (with anchors: east, west, south, north), e.g y=f(x) (e.g `pos=0.5` a la `tikz`) 
-- add support for grid lines choices (minor, major, both)
-- add support for xticklabels
-- create `legend`
-- create zoom feature (zoomable on hover/click???)
-- zoom box? (like on a calculator?)
-- make the graphs change viewing window by clicking left, right, up, down, KEYBOARD navigable and touch screen compatable (????), 'swiping' culture
-- make right-click context menu for graphing (a la MathJax) which governs how zooming, hovering, etc behaves:
-  -- need to make axis labels obey crosshairs/MathJax priority
-  -- should be useful:  http://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage
-                    and https://www.google.co.uk/search?client=ubuntu&channel=fs&q=mathjax+right+click+context+menu&ie=utf-8&oe=utf-8&gfe_rd=cr&ei=O-e-U9uUM-bX8gfQtoDICg#channel=fs&q=html+create+right+click+context+menu
-                    and http://www.codeproject.com/Tips/630793/Context-Menu-on-Right-Click-in-Webpage
-  -- store choices in cookie (hide images, cross hairs vs MathJax for hover, zoom behaviour, etc)

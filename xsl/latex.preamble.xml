@@ -1,0 +1,52 @@
+<latex-preamble>
+
+<latex-preamble-early>
+\usepackage{enumitem}%        won't be needed once MBX issue #64 is addressed
+\usepackage{booktabs}
+\setlength{\parindent}{0pc}%
+\setlength{\parskip}{0.5pc}%
+</latex-preamble-early>
+
+
+
+<latex-preamble-late>
+<![CDATA[
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIRST if \mbxstyle has not been defined, define it to use defaulti
+% Also define anything defined in precalc-style.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdef{\mbxstyle}{}{
+  \newcommand\mbxstyle[2]{#2}
+  \newenvironment{outcomelist}{\begin{itemize}[itemsep=0pt, topsep=\parskip, partopsep=\parskip]}{\end{itemize}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Surrounding environment for Try-It-Yourself problems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{tryityourself}{\mbxstyle{try-it-yourself-begin}{}}{\mbxstyle{try-it-yourself-end}{}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environment for listing outcomes at the chapter beginning
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{outcomes}{\mbxstyle{outcomes-begin}{}}{\mbxstyle{outcomes-end}{}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem for standout element (orignal pccspecialcomment)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mbxstyle{theoremstyle-standout}{\theoremstyle{standout}}%
+\newtheorem*{standout}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%temporary hold on floating figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\SetupFloatingEnvironment{figure}{fileext=lof,placement={!htb},name=Figure,within=chapter}
+
+
+]]>
+</latex-preamble-late>
+
+</latex-preamble>

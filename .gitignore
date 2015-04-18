@@ -1,4 +1,6 @@
 ._*
+xsl/precalc-latex-paths.xsl
+xsl/precalc-html-paths.xsl
 *.tcp
 *.php
 *.out
@@ -20,11 +22,6 @@ longsolutions*
 *.maf
 *.pdf
 *.bak
-derivatives.html
+*.html
 myfile.*
 knowl
-chapters/figures/*.tex
-chapters/figures/*.svg
-chapters/*.html
-chapters/.html
-chapters/*.tex

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the book -->
+<!--                               -->
+<!-- Calculus I Lab Manual         -->
+<!--                               -->
+<!-- Chris Hughes (author)         -->
+<!-- Alex Jordan (author)          -->
+
+<docinfo>
+
+    <!-- For title into HTML head, then tabs, bookmarks, etc -->
+    <initialism>PC</initialism>
+
+
+    <!-- For LaTeX-based images; inserted both into tex preamble, -->
+    <!-- and into standalone preambles for svg production         -->
+
+    <latex-image-preamble>
+    <![CDATA[
+    \usepackage{pgfplots}       % graphs and graphics (loads tikz and xcolor)
+    \usetikzlibrary{backgrounds}
+    \usetikzlibrary{shadows}
+    \usetikzlibrary{mindmap}
+    \usetikzlibrary{backgrounds}
+    \usetikzlibrary{fit}
+    \usetikzlibrary{positioning}
+
+    % ====================================
+    % BEGIN GRAPH SETTINGS
+    % ====================================
+    %\usetikzlibrary{external}
+    %\tikzexternalize[mode=list and make]
+
+
+    % cycle list- truly awesome; see section 4.6.7, pg 129 of pgfplots
+    \pgfplotscreateplotcyclelist{pccstylelist}{%
+    color=red,mark=none,line width=1pt,<->\\%
+    color=blue,mark=none,line width=1pt,<->\\%
+    color=gray,mark=none,line width=1pt,<->\\%
+    }
+
+    % axis style, ticks, etc
+    \pgfplotsset{every axis/.append style={
+        axis x line=middle,    % put the x axis in the middle
+        axis y line=middle,    % put the y axis in the middle
+        axis line style={<->}, % arrows on the axis
+        xlabel={$x$},          % default put x on x-axis
+        ylabel={$y$},          % default put y on y-axis
+        scale only axis,       % otherwise width won't be as intended: http://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width
+        cycle list name=pccstylelist,
+        tick label style={font=\tiny},
+        label style={font=\small},
+        legend cell align=left,
+            legend style={font=\tiny},
+            width=\textwidth,
+            every node near coord/.append style={
+                font=\small},
+    }}
+    \tikzset{axisnode/.style={font=\tiny,text=black}}
+
+    % line style
+    \pgfplotsset{pccplot/.style={color=red,mark=none,line width=1pt,<->}} % this is pretty redundant in most cases now that cycle list is implemented
+    \pgfplotsset{asymptote/.style={color=red,mark=none,line width=1pt,dashed}}
+    \pgfplotsset{soldot/.style={color=red,only marks,mark=*}}
+    \pgfplotsset{holdot/.style={color=red,fill=white,only marks,mark=*}}
+
+    % bar chart style
+    \pgfplotsset{pccbar/.style={ybar,draw=blue,fill=blue!20}}
+
+    % arrow style
+    \tikzset{>=stealth}
+
+    % framing the graphs
+    \pgfplotsset{framed/.style={axis background/.style ={draw=gray}}}
+    % next line is a bit more colourful
+    %\pgfplotsset{framed/.style={axis background/.style ={draw=gray,fill=yellow!20,rounded corners=3ex}}}
+
+    % grid style
+    \pgfplotsset{grid style={dotted,gray}}
+
+    % if draft mode is specified then just draw a rectangle
+    % http://tex.stackexchange.com/questions/60434/draft-mode-for-pgfplots
+    \makeatletter
+    \@tempswafalse
+    \def\@tempa{draft}
+    \@for\next:=\@classoptionslist\do
+        {\ifx\next\@tempa\@tempswatrue\fi}
+    \if@tempswa % draft option is active
+    \let\tikz@@tikzpicture\tikzpicture
+    \let\tikz@@endtikzpicture\endtikzpicture
+    \patchcmd\tikz@opt{\tikzpicture}{\tikz@@tikzpicture}{}{}
+    \patchcmd\tikz@collectnormalsemicolon{\endtikzpicture}{\tikz@@endtikzpicture}{}{}
+    \chardef\@tempa=\catcode`\;
+    \catcode`\;=\active
+    \patchcmd\tikz@collectactivesemicolon{\endtikzpicture}{\tikz@@endtikzpicture}{}{}
+    \catcode`\;=\@tempa
+    \let\tikzpicture\relax
+    \let\endtikzpicture\relax
+    \NewEnviron{tikzpicture}{%
+        \begin{pgfpicture}
+        \pgfpathrectanglecorners{\pgfpointorigin}{\pgfpoint{3cm}{3cm}}%
+        \pgfusepath{stroke}
+        \end{pgfpicture}%
+    }
+    \fi
+    \makeatother
+
+    %Without the following, corves that are plotted using coordinates have arrow tips at the end that point in the wrong direction
+    \makeatletter
+    \def\pgf@plot@curveto@handler@finish{%
+        \ifpgf@plot@started%
+        \pgfpathcurvebetweentimecontinue{0}{0.995}{\pgf@plot@curveto@first}{\pgf@plot@curveto@first@support}{\pgf@plot@curveto@second}{\pgf@plot@curveto@second}%
+    \fi%
+    }
+    \makeatother
+
+    % ====================================
+    % END GRAPH SETTINGS
+    % ====================================]]>
+    </latex-image-preamble>
+
+
+    <!-- These subsequent macro definitions allow for a consistent look for   -->
+    <!-- mathematical structures.  It is relatively safe to play around with  -->
+    <!-- variants if you desire other notation or looks.                      -->
+    <!-- Edits here are effective for both HTML (MathJax) and LaTeX variants. -->
+    <!-- Important: put macros on one long line, no line breaks               -->
+    <!-- Important: no blank lines, each line is a macro or a comment         -->
+    <!-- This allows for sensible minification with a sed script              -->
+
+    <macros>
+% These macros are automatically generated from the "macros"
+% XML element.  Make permanent edits there.
+%
+%%%%%%%%%%%%%%%%%%%%%
+%
+%     Conveniences
+%
+%%%%%%%%%%%%%%%%%%%%%
+%
+%  Integers
+%  Usage:  \Z
+\newcommand{\Z}{\mathbb{Z}}
+%
+%  Real numbers, as set of scalars
+%  Usage:  \reals
+\newcommand{\reals}{\mathbb{R}}
+%
+%  n-space over real field
+%  Usage: \complex{integer-dimension}
+\newcommand{\real}[1]{\mathbb{R}^{#1}}
+%
+%  evaluate a function
+%  Usage: \fe{function-name}{input}
+\newcommand{\fe}[2]{{#1}{\left(#2\right)}}
+%
+%  closed interval
+%  Usage: \cinterval{left-endpoint}{right-endpoint}
+\newcommand{\cinterval}[2]{\left[#1,#2\right]}
+%
+%  point
+%  Usage: \point{x}{y}
+\newcommand{\point}[2]{\left(#1,#2\right)}
+%
+%  special Sq function with argument
+%  Usage: \SQ, \SQ[x]
+\newcommand\SQ[1][\phantom{x}]{\fe{\operatorname{sqrt}}{#1}}
+%
+%  special sq function without argument
+%  Usage: \sq
+\newcommand\sq{\operatorname{sqrt}}
+%
+
+
+    </macros>
+
+</docinfo>

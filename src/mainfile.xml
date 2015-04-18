@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the book -->
+<!--                               -->
+<!-- Precalculus                   -->
+<!--                               -->
+<!-- Chris Hughes (author)         -->
+<!-- Alex Jordan (editor)          -->
+
+<!-- USE XINCLUDE SWITCH ON XSLTPROC -->
+
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" style="chunk">
+
+    <book xml:id="precalc">
+        <xi:include href="./functions-part-1.xml" />
+<!--    
+        <xi:include href="./frontmatter.xml" />
+        <xi:include href="./functions-part-1.xml" />
+        <xi:include href="./exponential-functions.xml" />
+        <xi:include href="./functions-part-2.xml" />
+        <xi:include href="./logarithms.xml" />
+        <xi:include href="./polynomial-and-rational-functions.xml" />
+        <xi:include href="./gfdl-mathbook.xml" />-->
+
+   </book>
+
+</mathbook>
