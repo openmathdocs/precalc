@@ -13,6 +13,7 @@
 
     <book xml:id="precalc">
         <xi:include href="./functions-part-1.xml" />
+        <xi:include href="./exponentialfunctions.xml" />
 <!--    
         <xi:include href="./frontmatter.xml" />
         <xi:include href="./functions-part-1.xml" />

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <section>
+          <title>Introduction</title>
+          <outcomes>
+            <outcome> Explore increasing and decreasing functions, particularly in the context of concavity;</outcome>
+            <outcome> Determine a function's concavity based on a table of values, a graph, or a description. </outcome>
+          </outcomes>
+          <p> In our mathematical adventures so far we have studied linear, quadratic, 
+            and radical functions. The simplicity of these functions is useful when 
+            introducing new concepts such as transformations, composition, and 
+            inverse functions; but it is somewhat restrictive when we wish to 
+            consider interesting real-world application problems.  </p>
+          <p> For example, let's say that we were interested in modeling the 
+            temperature of a hot cup of coffee since it was first poured. We cannot 
+            write a formula for such a model yet, but perhaps <xref ref="exp-fig-motivatecool"/> depicts a reasonable
+            approximation of the graph of it. Or perhaps
+            we would like to model the growth in population of the world; again, 
+            we can not write a formula for such a model at this stage, but you 
+            might agree that <xref ref="exp-fig-motivatepop"/> is a likely candidate 
+            for the graph of the model.  </p>
+          <p> Clearly the functions depicted in <xref ref="exp-fig-motivate"/> belong to 
+            a different class than those that we have considered so far. In fact, they 
+            belong to the class known as <em>exponential</em> functions, the study of 
+            which is a fascinating topic that encompasses many applications, and a lot 
+            of interesting mathematical features. Prepare yourself for a colorful 
+            and exciting
+            journey that will take us through the landscape of some of the most useful 
+            functions that we will ever encounter.  </p>
+          <sidebyside xml:id="exp-fig-motivate">
+              <figure width="40%" xml:id="exp-fig-motivatecool">
+                <image>
+                  <latex-image-code>
+                  \begin{tikzpicture}
+                  \begin{axis}[
+                  framed,
+                  xmin=-10,xmax=50,
+                  ymin=-20,ymax=100,
+                  xtick={-30}, ytick={-30},
+                  minor xtick={10,20,...,50},
+                  minor ytick={20,40,...,100},
+                  xlabel={$t$},
+                  grid=minor,
+                  ]
+                  \addplot+[->]expression[domain=0:50,samples=50]{40*exp(-x/10)+50};
+                  \end{axis}
+                  \end{tikzpicture}
+                  </latex-image-code>
+                </image>
+                <caption></caption>
+              </figure>
+              <figure width="40%" xml:id="exp-fig-motivatepop">
+                <image>
+                  <latex-image-code>
+                  \begin{tikzpicture}
+                  \begin{axis}[
+                  framed,
+                  xmin=-10,xmax=50,
+                  ymin=-20,ymax=100,
+                  xtick={-30}, ytick={-30},
+                  minor xtick={10,20,...,50},
+                  minor ytick={20,40,...,100},
+                  xlabel={$t$},
+                  grid=minor,
+                  ]
+                  \addplot+[->]expression[domain=0:45,samples=50]{(1.1)^x+20};
+                  \end{axis}
+                  \end{tikzpicture}
+                  </latex-image-code>
+                </image>
+                <caption></caption>
+              </figure>
+            <caption></caption>
+          </sidebyside>
+</section>
