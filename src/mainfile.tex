@@ -1003,14 +1003,14 @@ can complete them before moving on!}}%
     \titlerule
     \typeout{PCCNAME: Chapter \thechapter: #1^^J}% for use with PCCNAME (diversity)
     \LARGE\MakeUppercase{#1} {\LARGE\thechapter}%
-}
-{1pc}
-{\titlerule
-\Huge
     % Executed BEFORE the body of the chapter (see titlesec documentation)
     % write to the solutions files to step the chapter counter
     \Writetofile{shortsolutions}{\protect\stepcounter{chapter}\protect\setcounter{section}{0}}%
     \Writetofile{longsolutions}{\protect\stepcounter{chapter}}%
+}
+{1pc}
+{\titlerule
+\Huge
     }
 
 % custom section
@@ -1465,7 +1465,7 @@ figcap\romannumeral\value{figstack}\endcsname{#5}%
 
 \clearpage
 % input the LONG solutions file
-\IfFileExists{longsolutions.tex}{\input{longsolutions.tex}}{}
+%\IfFileExists{longsolutions.tex}{\input{longsolutions.tex}}{}
 
 \clearpage
 % input the HINTS file

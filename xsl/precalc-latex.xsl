@@ -268,12 +268,22 @@
   <xsl:apply-templates select="title" mode="environment-option"/>
   <xsl:text>&#xa;</xsl:text>
   <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:if test="not(solution)">
+    <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
+    <xsl:text>{\bfseries\color{red}{NEED SOLUTION (update XML, not .tex)}}&#xa;</xsl:text>
+    <xsl:text>\end{shortsolution}&#xa;</xsl:text>
+  </xsl:if>
   <xsl:text>\end{problem}&#xa;</xsl:text>
 </xsl:template>
 
 <xsl:template match="exercise[ancestor::mathbook[@style='chunk'] and ancestor::exercisegroup]">
   <xsl:text>\begin{subproblem}&#xa;</xsl:text>
   <xsl:apply-templates select="*"/>
+  <xsl:if test="not(solution)">
+    <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
+    <xsl:text>{\bfseries\color{red}{NEED SOLUTION (update XML, not .tex)}}&#xa;</xsl:text>
+    <xsl:text>\end{shortsolution}&#xa;</xsl:text>
+  </xsl:if>
   <xsl:text>\end{subproblem}&#xa;</xsl:text>
 </xsl:template>
 
