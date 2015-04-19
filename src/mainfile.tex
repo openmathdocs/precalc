@@ -33,7 +33,7 @@
 \usepackage{minitoc}                            % mini-table of contents
 \usepackage{marginfix}                          % fixes margin notes (otherwise they can cut through pages)
 \usepackage{textcomp}			                      % gives symbols like \textcent and \textdegree
-\usepackage{nicefrac}				  									% \nicefrac{a}{b}
+\usepackage{xfrac}				  									% \nicefrac{a}{b}
 \usepackage{siunitx}														% \si{\meter\per\second}, \SI{1}{\kilo\gram}, much more
 	\sisetup{quotient-mode = fraction,per-mode=fraction,fraction-function = \nicefrac}
 \usepackage[super]{nth}													% \nth{17} for 17th
@@ -56,6 +56,8 @@
 \input{glyphtounicode} \pdfgentounicode=1						% More reliable copy-and-pasting
 \usepackage{adjustbox}      % used to provide better vertical alignment within solutions
 \usepackage{pdfpages}
+\usepackage{stackengine}    % vertical alignment of captions in subfigures
+\usepackage{newfloat}       % to set options for figures, tables, globally
 
 % load the hyperref (nearly) last
 \usepackage{hyperref}           % to allow hyper refs in the final pdf document
@@ -200,6 +202,12 @@ color=gray,mark=none,line width=1pt,<->\\%
 \captionsetup[subfigure]{labelformat=parens,labelfont=normal}
 \captionsetup[subtable]{labelformat=parens,labelfont=normal}
 
+% Figure environment setup so that it no longer floats
+\SetupFloatingEnvironment{figure}{fileext=lof,placement={!htb},name=Figure}
+
+% Table environment setup so that it no longer floats
+\SetupFloatingEnvironment{table}{fileext=lot,placement={!htb},name=Table}
+
 % itemize and enumerate settings
 \setlist{itemsep=0.05em,topsep=0.01em}
 \setlist[enumerate]{label*=(\alph*)}
@@ -227,7 +235,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 % 	- it writes to a file with a list of things that need fixing
 \newcommand{\fixthis}[1]
 {%
- \marginpar{\huge \color{red} \framebox{FIX}}%
+% \marginpar{\huge \color{red} \framebox{FIX}}%
 \typeout{FIXTHIS: p\thepage : #1^^J}%
 }
 
@@ -276,10 +284,10 @@ color=gray,mark=none,line width=1pt,<->\\%
 % custom environments
 \crefname{problem}{Problem}{Problems}
 \Crefname{problem}{Problem}{Problems}
-\crefname{pccdefinition}{Definition}{Definitions}
-\Crefname{pccdefinition}{Definition}{Definitions}
-\crefname{pccexample}{Example}{Examples}
-\Crefname{pccexample}{Example}{Examples}
+\crefname{omddefinition}{Definition}{Definitions}
+\Crefname{omddefinition}{Definition}{Definitions}
+\crefname{omdexample}{Example}{Examples}
+\Crefname{omdexample}{Example}{Examples}
 \crefname{worksheet}{Worksheet}{Worksheets}
 \Crefname{worksheet}{Worksheet}{Worksheets}
 \crefname{subprobenumi}{Problem}{Problems}
@@ -431,7 +439,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \makeatother
 
 % example (that uses an associated 'solution' )
-\newcounter{pccexample}[section]
+\newcounter{omdexample}[section]
 \theoremstyle{marginpcc}
 \theorembodyfont{}
 \theoremsymbol{\rlap{$\blacksquare$}}
@@ -439,7 +447,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \theorempostwork{}
 \theoremseparator{:}
 \theorempreskip{\topskip}
-\newtheorem{pccexample}{Example}%[chapter]
+\newtheorem{omdexample}{Example}%[chapter]
 
 
 % associated solution for the example
@@ -761,14 +769,14 @@ color=gray,mark=none,line width=1pt,<->\\%
 \makeatletter
 \if@tempswa % draft option is active
     % make the specialcomment environment without colour, no frame
-    \newtheorem{pccspecialcomment}{}%
+    \newtheorem{standout}{}%
 \else%
     \newmdtheoremenv[outerlinewidth=3,
         innerlinewidth=2,linecolor=gray,
         backgroundcolor=blue!20,%
         innerlinecolor=blue!50,outerlinecolor=red!50,innertopmargin=0pt,%
         splittopskip=\topskip,skipbelow=0pt,%
-        ]{pccspecialcomment}{}%[chapter]
+        ]{standout}{}%[chapter]
 \fi
 \makeatother
 
@@ -782,7 +790,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \makeatletter
 \if@tempswa % draft option is active
     % make the Definition environment without colour, no frame
-    \newtheorem{pccdefinition}{Definition}%
+    \newtheorem{omddefinition}{Definition}%
 \else%
     \newmdtheoremenv[outerlinewidth=3,
     innerlinewidth=2,linecolor=gray,leftmargin=60,%
@@ -790,7 +798,7 @@ color=gray,mark=none,line width=1pt,<->\\%
     backgroundcolor=yellow!40,%
     innerlinecolor=blue!50,outerlinecolor=red!50,innertopmargin=0pt,%
     splittopskip=\topskip,%skipbelow=\baselineskip,%
-    skipabove=\baselineskip,ntheorem]{pccdefinition}{Definition}%[chapter]
+    skipabove=\baselineskip,ntheorem]{omddefinition}{Definition}%[chapter]
 \fi
 \makeatother
 %====================================
@@ -938,7 +946,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 %====================================
 %   BEGIN essentialskills, tryityourself, exercises
 %====================================
-\newenvironment{doyouunderstand}%
+\newenvironment{tryityourself}%
 {\FloatBarrier\setlist[subprobenum]{align=left,leftmargin=!}%
     \begin{list}{}{%    the first argument of the list environment is the label
             \setlength{\leftmargin}{0mm}%
@@ -1121,6 +1129,61 @@ can complete them before moving on!}}%
 %====================================
 
 
+\newcounter{figstack}
+\newcounter{figindex}
+\newlength\fight
+\newcommand\pushValignCaptionBottom[5][b]{%
+\stepcounter{figstack}%
+\expandafter\def\csname %
+figalign\romannumeral\value{figstack}\endcsname{#1}%
+\expandafter\def\csname %
+figtype\romannumeral\value{figstack}\endcsname{#2}%
+\expandafter\def\csname %
+figwd\romannumeral\value{figstack}\endcsname{#3}%
+\expandafter\def\csname %
+figcontent\romannumeral\value{figstack}\endcsname{#4}%
+\expandafter\def\csname %
+figcap\romannumeral\value{figstack}\endcsname{#5}%
+\setbox0=\hbox{%
+\begin{#2}{#3}#4\end{#2}}%
+\ifdim\dimexpr\ht0+\dp0\relax>\fight\global\setlength{\fight}{%
+\dimexpr\ht0+\dp0\relax}\fi%
+}
+\newcommand\popValignCaptionBottom{%
+\setcounter{figindex}{0}%
+\hfill%
+\whiledo{\value{figindex}<\value{figstack}}{%
+\stepcounter{figindex}%
+\def\tmp{\csname figwd\romannumeral\value{figindex}\endcsname}%
+\begin{\csname figtype\romannumeral\value{figindex}\endcsname}[t]{\tmp}%
+\centering%
+\stackinset{c}{}%
+{\csname figalign\romannumeral\value{figindex}\endcsname}{}%
+{\csname figcontent\romannumeral\value{figindex}\endcsname}%
+{\rule{0pt}{\fight}}\par%
+\csname figcap\romannumeral\value{figindex}\endcsname%
+\end{\csname figtype\romannumeral\value{figindex}\endcsname}%
+\hfill%
+}%
+\setcounter{figstack}{0}%
+\setlength{\fight}{0pt}%
+\hfill%
+}
+
+\newcommand{\terminology}[1]{\textbf{#1}}
+%
+%  special Sq function with argument
+%  Usage: \SQ, \SQ[x]
+\newcommand\SQ[1][\phantom{x}]{\fe{\operatorname{sqrt}}{#1}}
+%
+%  evaluate a function
+%  Usage: \fe{function-name}{input}
+\newcommand{\fe}[2]{{#1}{\left(#2\right)}}
+%
+%  point
+%  Usage: \point{x}{y}
+\newcommand{\point}[2]{\left(#1,#2\right)}
+
 %====================================
 %   BEGIN DOCUMENT
 %====================================
@@ -1140,7 +1203,8 @@ can complete them before moving on!}}%
 %\includepdf{doccover}
 \tableofcontents
 %\include{chapters/functions}
-\include{chapters/exponentialfunctions}
+%\include{chapters/exponentialfunctions}
+\include{chapter-functions-part-1}
 %\include{chapters/functions2}
 %\include{chapters/logarithms}
 %\include{chapters/polyrat}

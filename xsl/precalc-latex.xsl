@@ -232,7 +232,11 @@
     <xsl:text>\end{tabular}&#xa;</xsl:text>
 </xsl:template>
 
-
+<!-- 
+    templates for chunking chapter files for use with mainfile.tex
+    templates for chunking chapter files for use with mainfile.tex
+    templates for chunking chapter files for use with mainfile.tex
+-->
 <xsl:template match="mathbook[@style='chunk']">
   <xsl:apply-templates/>
 </xsl:template>
@@ -252,6 +256,68 @@
         <xsl:apply-templates select="*[not(self::title)]"/>
     </exsl:document>
 </xsl:template>
+
+<xsl:template match="p[ancestor::mathbook[@style='chunk']]">
+    <xsl:text>\par&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercise[ancestor::mathbook[@style='chunk']]|exercisegroup[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{problem}</xsl:text>
+  <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:text>\end{problem}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercise[ancestor::mathbook[@style='chunk'] and ancestor::exercisegroup]">
+  <xsl:text>\begin{subproblem}&#xa;</xsl:text>
+  <xsl:apply-templates select="*"/>
+  <xsl:text>\end{subproblem}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="example[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{omdexample}</xsl:text>
+  <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:text>\end{omdexample}&#xa;</xsl:text>
+</xsl:template>
+
+<!-- Definition Statement -->
+<xsl:template match="definition/statement[ancestor::mathbook[@style='chunk']]">
+    <xsl:text>\begin{omddefinition}</xsl:text>
+    <xsl:apply-templates select="../title" mode="environment-option" />
+    <xsl:apply-templates select=".." mode="label"/>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>\end{omddefinition}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercises[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{exercises}&#xa;</xsl:text>
+  <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:text>\end{exercises}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="solution[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
+  <xsl:apply-templates select="*"/>
+  <xsl:text>\end{shortsolution}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="answer[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{longsolution}&#xa;</xsl:text>
+  <xsl:apply-templates select="*"/>
+  <xsl:text>\end{longsolution}&#xa;</xsl:text>
+</xsl:template>
+
+<!-- 
+    END templates for chunking chapter files for use with mainfile.tex
+    END templates for chunking chapter files for use with mainfile.tex
+    END templates for chunking chapter files for use with mainfile.tex
+-->
 
 <!-- Intend output for rendering by pdflatex -->
 <xsl:output method="text" />
