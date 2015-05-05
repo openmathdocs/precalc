@@ -19,6 +19,7 @@
         <todo>Make Outcomes Work in HTML</todo>
         <xi:include href="./frontmatter.xml" />
         <xi:include href="./functions-part-1.xml" />
+        <xi:include href="./exponentialfunctions.xml" />
 <!--        <xi:include href="./exponential-functions.xml" />
         <xi:include href="./functions-part-2.xml" />
         <xi:include href="./logarithms.xml" />

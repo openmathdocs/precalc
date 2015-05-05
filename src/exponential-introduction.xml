@@ -71,4 +71,177 @@
               </figure>
             <caption></caption>
           </sidebyside>
+        <example>
+            <author>Barkin/Bernards</author>
+            <date>April 2011</date>
+            <p>Congratulations, you've been offered a job!  Human Resources told you 
+              that you would start out making <m>\SI{2}{\centunit}</m> on the first day, and every day you work thereafter your pay will double.  
+              Would you take this job?</p>
+            <sidebyside>
+                <table xml:id="exp-tab-salary">
+                  <caption/>
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="."/>
+                  <thead>
+                    <row><cell><m>d</m> (days worked)</cell><cell><m>p</m> (cents)</cell></row>
+                  </thead>
+                    <row><cell>1</cell><cell>2</cell></row> 
+                    <row><cell>2</cell><cell>4</cell></row>
+                    <row><cell>3</cell><cell>8</cell></row>
+                    <row><cell>4</cell><cell>16</cell></row>
+                    <row><cell>5</cell><cell>32</cell></row>
+                    <row><cell>10</cell><cell>1024</cell></row>
+                    <row><cell>30</cell><cell>1073741824</cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+                <table xml:id="exp-tab-salaryalt">
+                  <caption />
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="left"/>
+                  <thead>
+                    <row><cell><m>d</m> (days worked)</cell> <cell><m>p</m> (cents)</cell></row> 
+                  </thead>
+                    <row><cell>1</cell> <cell><m>2</m>                  </cell></row>
+                    <row><cell>2</cell> <cell><m>2^2</m>                </cell></row>
+                    <row><cell>3</cell> <cell><m>2^3</m>                </cell></row>
+                    <row><cell>4</cell> <cell><m>2^4</m>                </cell></row>
+                    <row><cell>5</cell> <cell><m>2^5</m>                </cell></row>
+                    <row><cell>10</cell> <cell><m>2^{10}</m>             </cell></row>
+                    <row><cell>30</cell> <cell><m>2^{30}</m>             </cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+            </sidebyside>
+            <p><xref ref="exp-tab-salary" beginsentence="true"/> shows how much money you would make per day, 
+              in cents, for the first 5 days, and how much you would make on the 10th and 30th days. 
+              The amount you make on day 30 is 1073741824 cents, which is
+              <me> 
+                \$10\textrm{,}737\textrm{,}418.24   
+              </me>
+              That's over 10 million dollars in a single day! How did this happen? Can we develop 
+              a formula to help us understand the mathematics behind this?  </p>
+            <p>It seems that the dollar amount is multiplied by 2 each day. An alternative way 
+              of writing our daily income is shown in <xref ref="exp-tab-salaryalt"/>. Can we write 
+              a formula that calculates the pay, <m>p</m>, in cents, as a function of the number of days
+              worked, <m>d</m>? 
+              According to <xref ref="exp-tab-salaryalt"/>, it appears that the day of the month is in the exponent, 
+              so let's write
+              <me>
+                p = 2^{d}
+              </me>
+              where <m>d</m> is a positive integer. This is our first example of an exponential function -- exploring 
+              these types of functions is our primary goal in this chapter.</p>
+          </example>
+          <definition>
+            <title>Exponential functions</title>
+            <statement> <p>An exponential function is a function <m>f</m> that can be described with the formula 
+                <me>
+                  f(x)=a\,b^x
+                </me>
+                where <m>a</m> is a non-zero real number (<m>a\in\mathbb{R}, a\ne 0</m>) and <m>b</m> is a positive 
+                number other than 1 (<m>b>0</m>, <m>b\neq 1</m>). Notice that the variable is in the exponent 
+                and the base is the fixed constant <m>b</m>.</p>
+              <p>Note that in an exponential term the base is fixed and the variable is in the 
+                exponent (e.g. <m>5\cdot 4^x</m>), whereas in a polynomial term the exponent is fixed the base is the variable (e.g <m>6x^3</m>).</p>
+            </statement>
+          </definition>
+          <example xml:id="exp-prob-queenschessboard">
+            <author>Hughes</author>
+            <date>Feb 2011</date>
+            <title>Rice on a chessboard</title>
+            <p>Many years ago there lived a Queen who loved to play games; so much so, that 
+              she had a jester dedicated to devising interesting games for her. The Queen 
+              particularly enjoyed mathematical games.</p>
+            <p>One day the jester brought her a chessboard (see <xref ref="exp-fig-grainsofrice"/>) and a bucket filled with rice.</p> 
+            <table xml:id="exp-tab-grainsofrice">
+              <caption/>
+              <tabular>
+                <col align="."/>
+                <col align="."/>
+              <thead>
+                <row><cell>square on board</cell><cell>grains of rice</cell></row>
+                <row><cell><m>x</m></cell><cell><m>g(x)</m></cell></row>
+              </thead>
+                <row><cell>1                         </cell><cell> 3             </cell></row>
+                <row><cell>2                         </cell><cell> 9             </cell></row>
+                <row><cell>3                         </cell><cell> 27            </cell></row>
+                <row><cell>4                         </cell><cell> 81            </cell></row>
+                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
+                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
+                <row><cell>20                        </cell><cell> 3486784401    </cell></row>
+                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
+                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
+                <row><cell>\mbox{$x$}                </cell><cell> \mbox{$3^x$}  </cell></row>
+                <tfoot/>
+              </tabular>
+            </table>
+            <figure style="margin" xml:id="exp-fig-grainsofrice">
+              <image>
+                  <latex-image-code>
+                \begin{tikzpicture}[scale=.25]
+                \foreach \x in {0,...,7} \foreach \y in {0,...,7}
+                {
+                \pgfmathparse{mod(\x+\y,2) ? "black" : "white"}
+                \edef\colour{\pgfmathresult}
+                \path[fill=\colour] (\x,\y) rectangle ++ (1,1);
+                }
+                \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
+                \end{tikzpicture}
+              </latex-image-code>
+              </image>
+              <caption/>
+            </figure>
+            <p>The jester asked the Queen to follow these instructions
+              <ul>
+                <li>Place 3 grains of rice on the square in the lower left hand corner of the board.</li>
+                <li>Place 9 grains of rice on the square immediately to the right of the square you were just working with.</li>
+                <li>Place 27 grains of rice on the square immediately to the right of the square you were just working with.</li>
+              </ul>The Queen starts to notice a pattern, and records her findings in <xref ref="exp-tab-grainsofrice"/>. She also notes
+              that as she progresses from square to square, the number of grains appears to be <em>tripling</em> each time.</p>
+            <p>The Queen, being mathematically inclined, decides to try to model 
+              the game using a formula. She decides to  let <m>x</m> be the number 
+              corresponding to the square on the chessboard, and let <m>g(x)</m> represent 
+              the number of grains of rice on that square, and  assumes that she 
+              works each row from left to right as she moves up the chessboard.</p>
+            <figure style="margin" xml:id="exp-fig-queensgraph">
+              <image>
+                <latex-image-code>
+                \begin{tikzpicture}
+                \begin{axis}[
+                width=.75\textwidth,
+                xmin=-5, xmax=5,
+                ymin=-1, ymax=10,
+                ]
+                \addplot expression[domain=-4:2.0959]{3^x};
+                \end{axis}
+                \end{tikzpicture}
+                </latex-image-code>
+              </image>
+              <caption><m>g</m></caption>
+            </figure>
+            <p>The Queen notices that each of the numbers she writes in <xref ref="exp-tab-grainsofrice"/>
+              can be written as a power of <m>3</m>, and concludes that the formula for the number
+              of grains on square <m>x</m> of the chessboard is
+              <me>
+                g(x)=3^x
+              </me>
+              The Queen decides to test her formula by calculating the number of grains 
+              on the <m>\nth{17}</m> square. She finds that
+              <me>
+                g(17)=\num{129 140 163}
+              </me>
+              and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
+            <p> Of course, the Queen knows that this formula only works when <m>x</m> takes the 
+              integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
+              she graphed <m>g</m> on her calculator (which she always has with her for just 
+              such a situation). The Queen graphs <m>g</m> on her calculator assuming 
+              that <m>g</m> can take values outside of the contextual domain, and 
+              obtains the graph in <xref ref="exp-fig-queensgraph"/>.</p>
+            <p>The Queen concludes that <m>g</m> is increasing at a faster and faster rate, and 
+              cannot imagine ever being able to fit the appropriate amount of rice on 
+              each square.</p>
+          </example>
 </section>

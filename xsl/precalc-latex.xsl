@@ -54,6 +54,9 @@
     <xsl:text>\end{standout}&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="example/author"/>
+<xsl:template match="example/date"/>
+
 
 <!-- Overwrite table parts to use booktabs.              -->
 <xsl:template match="tabular/thead">
@@ -250,6 +253,7 @@
         <xsl:apply-templates select="." mode="internal-id" /><xsl:text>.tex</xsl:text>
     </xsl:variable>
     <exsl:document href="{$tex-chapter-name}" method="text">
+      <xsl:text>% arara: pdflatex: {files: [mainfile]}&#xa;</xsl:text>
         <xsl:text>\chapter{</xsl:text>
         <xsl:apply-templates select="title" />
         <xsl:text>}&#xa;</xsl:text>
@@ -321,6 +325,15 @@
   <xsl:text>\begin{longsolution}&#xa;</xsl:text>
   <xsl:apply-templates select="*"/>
   <xsl:text>\end{longsolution}&#xa;</xsl:text>
+</xsl:template>
+
+<!-- Figures -->
+<xsl:template match="figure[ancestor::mathbook[@style='chunk']][@style='margin']">
+    <!-- margin figure -->
+      <xsl:text>\begin{marginfigure}&#xa;\centering&#xa;</xsl:text>
+      <xsl:apply-templates />
+      <xsl:text>\end{marginfigure}&#xa;</xsl:text>
+      <xsl:text>%&#xa;</xsl:text>
 </xsl:template>
 
 <!-- 
