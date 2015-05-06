@@ -11,14 +11,41 @@
 -->
 <xsl:import href="precalc-html-paths.xsl" />
 
+<!-- Common thin layer                                                      -->
+<xsl:import href="precalc-common.xsl" />
+
 
 <!-- TODO: outcomes and outcome elements  -->
 <!-- TODO: try-it-yourself environment    -->
 <!-- TODO: standout element               -->
 
-<!-- Unit MBX handles solutions and answers better in HMTL, kill them       -->
+<!-- Unit MBX handles solutions and answers better in HMTL, kill them      -->
 <xsl:template match="solution" />
 <xsl:template match="answer" />
+<xsl:template match="example/author"/>
+<xsl:template match="example/date"/>
+<xsl:template match="exercisegroup/author"/>
+<xsl:template match="exercisegroup/date"/>
+<!-- vertical Ellipsis (vdots), for text, not math -->
+<xsl:template match="vellipsis">
+    <xsl:text>&#x22ee;</xsl:text>
+</xsl:template>
+
+<!-- Outcomes are an unordered type of list -->
+<xsl:template match="outcomes">
+  <xsl:element name="em">
+    <xsl:text>Section Themes, Concepts, Issues, Competencies, and Skills:</xsl:text>
+      </xsl:element>
+      <xsl:element name="ul">
+        <xsl:apply-templates select="outcome" />
+  </xsl:element>
+  </xsl:template>
+
+<xsl:template match="outcomes//outcome">
+  <xsl:element name="li">
+    <xsl:apply-templates />
+  </xsl:element>
+</xsl:template>
 
 
 </xsl:stylesheet>

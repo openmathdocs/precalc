@@ -25,10 +25,14 @@
 <xsl:param name="latex.preamble.late" select="document('latex.preamble.xml')//latex-preamble-late" />
 
 
+<!-- vertical Ellipsis (vdots), for text, not math -->
+<xsl:template match="vellipsis">
+    <xsl:text>\vdots</xsl:text>
+</xsl:template>
 
 <xsl:template match="try-it-yourself">
     <xsl:text>\begin{tryityourself}&#xa;</xsl:text>
-    <xsl:apply-templates select="exercise"/>
+    <xsl:apply-templates />
     <xsl:text>\end{tryityourself}&#xa;</xsl:text>
 </xsl:template>
 
@@ -56,6 +60,10 @@
 
 <xsl:template match="example/author"/>
 <xsl:template match="example/date"/>
+<xsl:template match="exercise/author"/>
+<xsl:template match="exercise/date"/>
+<xsl:template match="exercisegroup/author"/>
+<xsl:template match="exercisegroup/date"/>
 
 
 <!-- Overwrite table parts to use booktabs.              -->
@@ -333,6 +341,13 @@
       <xsl:text>\begin{marginfigure}&#xa;\centering&#xa;</xsl:text>
       <xsl:apply-templates />
       <xsl:text>\end{marginfigure}&#xa;</xsl:text>
+      <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<!-- Figures in solutions don't float -->
+<xsl:template match="figure[ancestor::mathbook[@style='chunk']][ancestor::solution]">
+    <!-- figure in solution -->
+      <xsl:apply-templates />
       <xsl:text>%&#xa;</xsl:text>
 </xsl:template>
 

@@ -159,22 +159,22 @@
             <table xml:id="exp-tab-grainsofrice">
               <caption/>
               <tabular>
-                <col align="."/>
-                <col align="."/>
+                <col halign="."/>
+                <col halign="."/>
               <thead>
                 <row><cell>square on board</cell><cell>grains of rice</cell></row>
                 <row><cell><m>x</m></cell><cell><m>g(x)</m></cell></row>
               </thead>
-                <row><cell>1                         </cell><cell> 3             </cell></row>
-                <row><cell>2                         </cell><cell> 9             </cell></row>
-                <row><cell>3                         </cell><cell> 27            </cell></row>
-                <row><cell>4                         </cell><cell> 81            </cell></row>
-                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
-                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
-                <row><cell>20                        </cell><cell> 3486784401    </cell></row>
-                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
-                <row><cell>\mbox{\vdots}             </cell><cell> \mbox{\vdots} </cell></row>
-                <row><cell>\mbox{$x$}                </cell><cell> \mbox{$3^x$}  </cell></row>
+                <row><cell>1</cell><cell>3</cell></row>
+                <row><cell>2</cell><cell>9</cell></row>
+                <row><cell>3</cell><cell>27</cell></row>
+                <row><cell>4</cell><cell>81</cell></row>
+                <row><cell><vellipsis/></cell><cell><vellipsis/></cell></row>
+                <row><cell><vellipsis/></cell><cell><vellipsis/></cell></row>
+                <row><cell>20</cell><cell>3486784401</cell></row>
+                <row><cell><vellipsis/></cell><cell><vellipsis/></cell></row>
+                <row><cell><vellipsis/></cell><cell><vellipsis/></cell></row>
+                <row><cell><m>x</m></cell><cell><m>3^x</m></cell></row>
                 <tfoot/>
               </tabular>
             </table>
@@ -244,4 +244,226 @@
               cannot imagine ever being able to fit the appropriate amount of rice on 
               each square.</p>
           </example>
+    <try-it-yourself>
+            <exercise>
+              <statement>Repeat <xref ref="exp-prob-queenschessboard"/>, but instead of <em>tripling</em> the 
+                number of grains of rice on each square, try <em>quadrupling</em> them.</statement>
+              <solution><p>The equivalent of the function <m>g</m> is <m>h</m> and has formula <m>h(x)=4^x</m>.</p></solution>
+            </exercise>
+          </try-it-yourself>
+          <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
+            at a faster and faster rate. You may wonder if all exponential functions behave in this way --
+            the next example demonstrates that they do not.</p>
+          <example>
+            <author>Hughes</author>
+            <date>Feb 2011</date>
+            <title>Folding paper</title>
+            <p>Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
+              of the paper, it becomes quite difficult -- the MythBusters tried quite an elaborate experiment 
+              along these lines. <fn><url href="http://www.youtube.com/watch?v=kRAEBbotuIE"/></fn> </p>
+            <p>We are going to experiment with paper folding and study the mathematics behind the results.
+              The area of a <q>letter</q> sheet of paper is <m>\SI{8.5 x 11}{\inch}</m>, or <m>\SI{93.5}{\square\inch}</m>. We will
+              use two decimal places in what follows.</p>
+            <p>If we fold a sheet of letter paper in half, the visible surface area is
+              <md>
+                <mrow>\frac{\SI{93.52}{\square\inch}}{2} &amp; =\left(\frac{1}{2}\right)\SI{93.5}{\square\inch}</mrow>
+                <mrow>&amp; =\SI{46.75}{\square\inch}                       </mrow>
+              </md>
+              Note that we say, <q>visible</q>, because the actual surface area of the paper has not changed.</p>
+            <p>If we fold the sheet in half again, the visible surface area is 
+              <md>
+                <mrow>\frac{\SI{46.75}{\square\inch}}{2} &amp; = \frac{\SI{93.52}{\square\inch}}{4}               </mrow>
+                <mrow>&amp; = \left(\frac{1}{2}\right)^2\SI{93.5}{\square\inch} </mrow>
+                <mrow>&amp; \approx \SI{23.38}{\square\inch}                    </mrow>
+              </md>
+              If we fold the sheet in half a third time, the visible surface area is
+              <md>
+                <mrow>\frac{\SI{93.5}{\square\inch}}{8} &amp; = \left(  \frac{1}{2}\right)^3\SI{93.5}{\square\inch} </mrow>
+                <mrow>&amp; \approx \SI{11.69}{\square\inch}                      </mrow>
+            </md></p>
+            <p>Let's try and generalize our results by letting <m>x</m> be the number of 
+              paper folds; <m>x</m> will start at 0, and increase in integer values. 
+              <xref ref="exp-tab-foldingpaper" beginsentence="true"/> has two columns, one for the number of folds (up to 7), and one for the visible surface area 
+              of the (folded) paper. </p>
+            <sidebyside>
+                <table xml:id="exp-tab-foldingpaper">
+                  <caption/>
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="."/>
+                  <thead>
+                    <row><cell>number of folds</cell><cell>visible area</cell></row>
+                    <row><cell><m>x</m></cell><cell><m>(\si{\inch\squared})</m></cell></row>
+                  </thead>
+                    <row><cell>0</cell><cell>93.50</cell></row> 
+                    <row><cell>1</cell><cell>46.75</cell></row>
+                    <row><cell>2</cell><cell>23.38</cell></row>
+                    <row><cell>3</cell><cell>11.69</cell></row>
+                    <row><cell>4</cell><cell>5.84</cell></row>
+                    <row><cell>5</cell><cell>2.92</cell></row>
+                    <row><cell>6</cell><cell>1.46</cell></row>
+                    <row><cell>7</cell><cell>0.73</cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+                <figure xml:id="exp-fig-foldingpaper">
+                  <image>
+                  <latex-image-code>
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    width=.75\textwidth,
+                    xmin=-5, xmax=5,
+                    ymin=-50, ymax=400,
+                    ytick={50,100,...,350},
+                    ]
+                    \addplot expression[domain=-2:4]{93.5*(1/2)^x};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </latex-image-code>
+                  </image>
+                  <caption><m>y=A(x)</m></caption>
+                </figure>
+            </sidebyside>
+            <p>If we let <m>A(x)</m> represent the visible surface area of the paper after <m>x</m> folds, then 
+              a formula for <m>A</m> is
+              <me>
+                A(x) = 93.5\left(\frac{1}{2}\right)^x
+              </me>
+              where <m>x=0,1,2,\ldots</m>. If we allow <m>A</m> to take values outside of its contextual domain, then 
+              we can graph <m>y=A(x)</m> on a graphing calculator, and obtain <xref ref="exp-fig-foldingpaper"/>. Notice 
+              in particular that <m>A</m> decreases at a slower and slower rate.</p>
+          </example>
+          <p>The graphs of exponential functions have certain features that tell us a lot about the quantities 
+            they are modeling.  Graphical features like increasing/decreasing and the position of any 
+            asymptotes translate to important information about population sizes, bank accounts, and more.</p>
+          <example xml:id="exp-ex-asymptote">
+            <author>Hughes</author>
+            <date>April 2011</date>
+            <p>Consider the function <m>f</m> in <xref ref="exp-fig-expmotivation"/>. 
+              There are a number of features that we can note:
+              <ul>
+                <li><m>f</m> is increasing;</li>
+                <li><m>f</m> is concave up; in particular, <m>f</m> is increasing at a faster and faster rate;</li>
+                <li>the line <m>y=3</m> is a horizontal asymptote of <m>f</m> as <m>x\to -\infty</m>;</li>
+                <li><m>f(x)\to\infty</m> as <m>x\to\infty</m>;</li>
+                <li>the range of <m>f</m> is <m>(3,\infty)</m>.</li>
+            </ul></p>
+            <p>Note that <m>f</m> never touches its horizontal asymptote (see <xref ref="exp-fig-closeup"/>).</p>
+            <sidebyside>
+                <figure xml:id="exp-fig-expmotivation">
+                  <image>
+                  <latex-image-code>
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    framed,
+                    xmin=-6,xmax=6,
+                    ymin=-1,ymax=10,
+                    xtick={-5,-4,...,5},
+                    minor ytick={1,3,...,9},
+                    ytick={2,4,...,8},
+                    grid=both,
+                    ]
+                    \addplot expression[domain=-6:2.807]{2^x+3};
+                    \addplot[asymptote]coordinates{(-6,3)(6,3)};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </latex-image-code>
+                  </image>
+                  <caption><m>f(x)=2^x+3</m></caption>
+                </figure>
+                <figure xml:id="exp-fig-closeup" valign="middle">
+                <image>
+                  <latex-image-code>
+                    \centering
+                    \begin{tikzpicture}
+                    \begin{axis}[
+                    width=.5\textwidth,
+                    axis x line=box,
+                    axis y line=box,
+                    axis line style={-}, 
+                    xmin=-6,xmax=-3,
+                    ymin=2,ymax=4,
+                    xtick={-6,-5,...,-3},
+                    ytick={2,2.5,...,4},
+                    grid=both,
+                    ]
+                    \addplot expression[domain=-6:-3]{2^x+3};
+                    \addplot[asymptote]coordinates{(-6,3)(6,3)};
+                    \end{axis}
+                    \end{tikzpicture}
+                  </latex-image-code>
+                </image>
+                  <caption>Close up!</caption>
+                </figure>
+            </sidebyside>
+          </example>
+          <try-it-yourself>
+            <exercisegroup cols="2">
+              <author>Hughes</author>
+              <date>February 2012</date>
+              <introduction>Repeat <xref ref="exp-ex-asymptote"/> for each of the functions defined 
+                by the following formulas.</introduction>
+                <exercise core="true"><statement><m>g(x)=5-4^x</m></statement>
+                  <solution><p>The graph of <m>g</m> is shown below. Note that
+                      <ul>
+                        <li> <m>g</m> is decreasing </li>
+                        <li> <m>g</m> is concave down; in particular <m>g</m> is decreasing at a faster and faster rate;</li>
+                        <li> the line <m>y=5</m> is a horizontal asymptote of <m>g</m> as <m>x\rightarrow-\infty</m>;</li>
+                        <li> <m>g(x)\rightarrow-\infty</m> as <m>x\rightarrow\infty</m>;</li>
+                        <li> the range of <m>g</m> is <m>(-\infty,5)</m>.</li>
+                    </ul></p>
+                    <figure>
+                      <image>
+                      <latex-image-code>
+                        \begin{tikzpicture}
+                        \begin{axis}[
+                        framed,
+                        xmin=-5,xmax=5,
+                        ymin=-10,ymax=10,
+                        xtick={-4,-3,...,4},
+                        ytick={-8,-6,...,8},
+                        grid=both,
+                        ]
+                        \addplot expression[domain=-5:1.95]{5-4^x};
+                        \addplot[asymptote]coordinates{(-5,5)(5,5)};
+                        \end{axis}
+                        \end{tikzpicture}     
+                      </latex-image-code>
+                      </image>
+                    </figure>
+                </solution>
+              </exercise>
+              <exercise>
+                <statement><m>h(x)=\left( \frac{2}{3} \right)^x-4</m></statement>
+                  <solution><p>The graph of <m>h</m> is shown below. Note that
+                      <ul>
+                        <li><m>h</m> is decreasing;</li>
+                        <li><m>h</m> is concave up; in particular <m>h</m> is decreasing at a slower and slower rate;</li>
+                        <li>the line <m>y=-4</m> is a horizontal asymptote of <m>h</m> as <m>x\rightarrow\infty</m>;</li>
+                        <li><m>h(x)\rightarrow\infty</m> as <m>x\rightarrow-\infty</m>;</li>
+                        <li>the range of <m>h</m> is <m>(-4,\infty)</m>.</li>
+                    </ul></p>
+                    <figure>
+                      <image>
+                        <latex-image-code>
+                        \begin{tikzpicture}
+                        \begin{axis}[
+                        framed,
+                        xmin=-5,xmax=5,
+                        ymin=-10,ymax=10,
+                        xtick={-4,-3,...,4},
+                        ytick={-8,-6,...,8},
+                        grid=both,
+                        ]
+                        \addplot expression[domain=-5:5]{(2/3)^x-4};
+                        \addplot[asymptote]coordinates{(-5,-4)(5,-4)};
+                        \end{axis}
+                        \end{tikzpicture}     
+                        </latex-image-code>
+                      </image>
+                    </figure>
+                  </solution>
+                </exercise>
+            </exercisegroup>
+        </try-it-yourself>
 </section>
