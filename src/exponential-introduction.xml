@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    to get images:
+        ./script/mbx -c latex-image -f svg -d /Users/alexjordan/precalc/src/images/ /Users/alexjordan/precalc/src/precalc.xml 
+    to do: nth tag
+           em dash
+           the \num issue
+           try-it-yourself in html
+           example/solution in html
+           exercise/solution in html
+-->
         <section>
           <title>Introduction</title>
           <outcomes>
@@ -30,7 +40,7 @@
               <figure width="40%" xml:id="exp-fig-motivatecool">
                 <image>
                   <latex-image-code>
-                  \begin{tikzpicture}
+                  <![CDATA[\begin{tikzpicture}
                   \begin{axis}[
                   framed,
                   xmin=-10,xmax=50,
@@ -43,7 +53,7 @@
                   ]
                   \addplot+[->]expression[domain=0:50,samples=50]{40*exp(-x/10)+50};
                   \end{axis}
-                  \end{tikzpicture}
+                  \end{tikzpicture}]]>
                   </latex-image-code>
                 </image>
                 <caption></caption>
@@ -51,7 +61,7 @@
               <figure width="40%" xml:id="exp-fig-motivatepop">
                 <image>
                   <latex-image-code>
-                  \begin{tikzpicture}
+                  <![CDATA[\begin{tikzpicture}
                   \begin{axis}[
                   framed,
                   xmin=-10,xmax=50,
@@ -64,7 +74,7 @@
                   ]
                   \addplot+[->]expression[domain=0:45,samples=50]{(1.1)^x+20};
                   \end{axis}
-                  \end{tikzpicture}
+                  \end{tikzpicture}]]>
                   </latex-image-code>
                 </image>
                 <caption></caption>
@@ -181,7 +191,7 @@
             <figure style="margin" xml:id="exp-fig-grainsofrice">
               <image>
                   <latex-image-code>
-                \begin{tikzpicture}[scale=.25]
+                <![CDATA[\begin{tikzpicture}[scale=.25]
                 \foreach \x in {0,...,7} \foreach \y in {0,...,7}
                 {
                 \pgfmathparse{mod(\x+\y,2) ? "black" : "white"}
@@ -189,7 +199,7 @@
                 \path[fill=\colour] (\x,\y) rectangle ++ (1,1);
                 }
                 \draw (0,0)--(0,8)--(8,8)--(8,0)--(0,0);
-                \end{tikzpicture}
+                \end{tikzpicture}]]>
               </latex-image-code>
               </image>
               <caption/>
@@ -209,7 +219,7 @@
             <figure style="margin" xml:id="exp-fig-queensgraph">
               <image>
                 <latex-image-code>
-                \begin{tikzpicture}
+                <![CDATA[\begin{tikzpicture}
                 \begin{axis}[
                 width=.75\textwidth,
                 xmin=-5, xmax=5,
@@ -217,7 +227,7 @@
                 ]
                 \addplot expression[domain=-4:2.0959]{3^x};
                 \end{axis}
-                \end{tikzpicture}
+                \end{tikzpicture}]]>
                 </latex-image-code>
               </image>
               <caption><m>g</m></caption>
@@ -229,7 +239,7 @@
                 g(x)=3^x
               </me>
               The Queen decides to test her formula by calculating the number of grains 
-              on the <m>\nth{17}</m> square. She finds that
+              on the \nth{17} square. She finds that
               <me>
                 g(17)=\num{129 140 163}
               </me>
@@ -309,7 +319,7 @@
                 <figure xml:id="exp-fig-foldingpaper">
                   <image>
                   <latex-image-code>
-                    \begin{tikzpicture}
+                    <![CDATA[\begin{tikzpicture}
                     \begin{axis}[
                     width=.75\textwidth,
                     xmin=-5, xmax=5,
@@ -318,7 +328,7 @@
                     ]
                     \addplot expression[domain=-2:4]{93.5*(1/2)^x};
                     \end{axis}
-                    \end{tikzpicture}
+                    \end{tikzpicture}]]>
                   </latex-image-code>
                   </image>
                   <caption><m>y=A(x)</m></caption>
@@ -353,7 +363,7 @@
                 <figure xml:id="exp-fig-expmotivation">
                   <image>
                   <latex-image-code>
-                    \begin{tikzpicture}
+                    <![CDATA[\begin{tikzpicture}
                     \begin{axis}[
                     framed,
                     xmin=-6,xmax=6,
@@ -366,7 +376,7 @@
                     \addplot expression[domain=-6:2.807]{2^x+3};
                     \addplot[asymptote]coordinates{(-6,3)(6,3)};
                     \end{axis}
-                    \end{tikzpicture}
+                    \end{tikzpicture}]]>
                   </latex-image-code>
                   </image>
                   <caption><m>f(x)=2^x+3</m></caption>
@@ -375,7 +385,7 @@
                 <image>
                   <latex-image-code>
                     \centering
-                    \begin{tikzpicture}
+                    <![CDATA[\begin{tikzpicture}
                     \begin{axis}[
                     width=.5\textwidth,
                     axis x line=box,
@@ -390,7 +400,7 @@
                     \addplot expression[domain=-6:-3]{2^x+3};
                     \addplot[asymptote]coordinates{(-6,3)(6,3)};
                     \end{axis}
-                    \end{tikzpicture}
+                    \end{tikzpicture}]]>
                   </latex-image-code>
                 </image>
                   <caption>Close up!</caption>
@@ -415,7 +425,7 @@
                     <figure>
                       <image>
                       <latex-image-code>
-                        \begin{tikzpicture}
+                        <![CDATA[\begin{tikzpicture}
                         \begin{axis}[
                         framed,
                         xmin=-5,xmax=5,
@@ -427,7 +437,7 @@
                         \addplot expression[domain=-5:1.95]{5-4^x};
                         \addplot[asymptote]coordinates{(-5,5)(5,5)};
                         \end{axis}
-                        \end{tikzpicture}     
+                        \end{tikzpicture}]]>     
                       </latex-image-code>
                       </image>
                     </figure>
@@ -446,7 +456,7 @@
                     <figure>
                       <image>
                         <latex-image-code>
-                        \begin{tikzpicture}
+                        <![CDATA[\begin{tikzpicture}
                         \begin{axis}[
                         framed,
                         xmin=-5,xmax=5,
@@ -458,7 +468,7 @@
                         \addplot expression[domain=-5:5]{(2/3)^x-4};
                         \addplot[asymptote]coordinates{(-5,-4)(5,-4)};
                         \end{axis}
-                        \end{tikzpicture}     
+                        \end{tikzpicture}]]>     
                         </latex-image-code>
                       </image>
                     </figure>
@@ -466,4 +476,32 @@
                 </exercise>
             </exercisegroup>
         </try-it-yourself>
+          <p>Exponential modeling will require familiarity with percentages. The next example aims to 
+            help you (re)acquaint yourself with them. </p>
+          <example>
+            <statement>Wild honeybee colonies tend to have around \SI{15}{\percent} drones (males).   If a colony has 4,280 bees, about how many of them are drones?</statement> 
+            <solution><p>The percentage \SI{15}{\percent} should be converted to a decimal in order to do arithmetic with it: 0.15. </p> 
+              <md>
+                <mrow>\textrm{drone count} &amp; = \SI{15}{\percent}\textrm{ of total bee count} </mrow>
+                <mrow>&amp; =0.15\cdot4280                                  </mrow>
+                <mrow>&amp; = 642                                           </mrow>
+              </md>
+              <p>So there are about 642 drones in the colony.  </p>
+            </solution>
+          </example>
+          <definition xml:id="exp-def-growthfactorrate">
+            <title>Growth factor and growth rate</title>
+            <statement>An exponential function <m>f</m> can be written in (at least) two ways.
+              <md>
+                <mrow>f(t) &amp; =a\,b^t &amp; f(t) &amp; =a(1+r)^t </mrow>
+              </md>
+              <ul>
+                <li>The constant <m>b</m> is called the <em>growth factor</em>.  When <m>t</m> increases by <m>1</m>, the value of <m>f(t)</m> changes by a factor of <m>b</m>; that is, every unit of time the value of <m>f(t)</m> is multiplied by <m>b</m>.</li>
+                <li>The constant <m>r</m> is called the <em>growth rate</em>.  We usually write <m>r</m> as a decimal and interpret it as a percent.
+                  When <m>t</m> increases by <m>1</m>, the amount of change in <m>f(t)</m> is <m>r</m>. 
+                  For example, if <m>r=0.10</m>, when <m>t</m> increases by <m>1</m> the value of <m>f(t)</m>
+                  increases by \SI{10}{\percent}. Whereas if <m>r=-0.05</m>, when <m>t</m> increases by <m>1</m> 
+                  the value of <m>f(t)</m> decreases by \SI{5}{\percent}.  </li>
+            </ul> </statement>
+          </definition>
 </section>

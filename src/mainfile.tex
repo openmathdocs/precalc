@@ -401,30 +401,6 @@ color=gray,mark=none,line width=1pt,<->\\%
 %====================================
 
 %====================================
-%   BEGIN php stuff
-%====================================
-\renewcommand{\solutionextension}{php}
-\Opensolutionfile{crossrefsWEB}
-\Writetofile{crossrefsWEB}{<?php}
-
-\newcommand{\phpreference}[2]{%
-                    \Writetofile{crossrefsWEB}{// page \thepage}%
-                    \Writetofile{crossrefsWEB}{$#1=array("#2","\thepage");}%
-                    %\marginpar{%
-                    %        \IfFileExists{geogebra-logo.eps}%
-                    %        {%
-                    %            \href{http://spot.pcc.edu/~chughes/}{\resizebox{2cm}{!}{\includegraphics{geogebra-logo.eps}}}%
-                    %        }%
-                    %        {%
-                    %        \href{http://spot.pcc.edu/~chughes/}{\fbox{\huge{www}}}%
-                    %        }%
-                    %}%
-                    }
-%====================================
-%   END php stuff
-%====================================
-
-%====================================
 %   BEGIN CUSTOM THEOREMS (for problems, subproblems)
 %====================================
 % margin theorem
@@ -456,7 +432,7 @@ color=gray,mark=none,line width=1pt,<->\\%
 \theorembodyfont{}
 \theorempostwork{}
 \theoremseparator{}
-\newtheorem{pccsolution}{Solution}
+\newtheorem{omdsolution}{Solution}
 
 % make a nobreak \item, which won't allow a pagebreak
 % to be put in. This is just a copy of \item and \@item 

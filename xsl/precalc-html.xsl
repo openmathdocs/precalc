@@ -22,10 +22,6 @@
 <!-- Unit MBX handles solutions and answers better in HMTL, kill them      -->
 <xsl:template match="solution" />
 <xsl:template match="answer" />
-<xsl:template match="example/author"/>
-<xsl:template match="example/date"/>
-<xsl:template match="exercisegroup/author"/>
-<xsl:template match="exercisegroup/date"/>
 <!-- vertical Ellipsis (vdots), for text, not math -->
 <xsl:template match="vellipsis">
     <xsl:text>&#x22ee;</xsl:text>

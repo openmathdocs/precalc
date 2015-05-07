@@ -58,14 +58,6 @@
     <xsl:text>\end{standout}&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="example/author"/>
-<xsl:template match="example/date"/>
-<xsl:template match="exercise/author"/>
-<xsl:template match="exercise/date"/>
-<xsl:template match="exercisegroup/author"/>
-<xsl:template match="exercisegroup/date"/>
-
-
 <!-- Overwrite table parts to use booktabs.              -->
 <xsl:template match="tabular/thead">
     <xsl:text>\toprule{}&#xa;</xsl:text>
@@ -307,6 +299,13 @@
   <xsl:text>\end{omdexample}&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="example/solution[ancestor::mathbook[@style='chunk']]">
+  <xsl:text>\begin{omdsolution}</xsl:text>
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:text>\end{omdsolution}&#xa;</xsl:text>
+</xsl:template>
+
 <!-- Definition Statement -->
 <xsl:template match="definition/statement[ancestor::mathbook[@style='chunk']]">
     <xsl:text>\begin{omddefinition}</xsl:text>
@@ -323,7 +322,7 @@
   <xsl:text>\end{exercises}&#xa;</xsl:text>
 </xsl:template>
 
-<xsl:template match="solution[ancestor::mathbook[@style='chunk']]">
+<xsl:template match="solution[ancestor::mathbook[@style='chunk'] and not(ancestor::example)]">
   <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
   <xsl:apply-templates select="*"/>
   <xsl:text>\end{shortsolution}&#xa;</xsl:text>
