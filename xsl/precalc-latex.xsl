@@ -30,12 +30,6 @@
     <xsl:text>\vdots</xsl:text>
 </xsl:template>
 
-<xsl:template match="try-it-yourself">
-    <xsl:text>\begin{tryityourself}&#xa;</xsl:text>
-    <xsl:apply-templates />
-    <xsl:text>\end{tryityourself}&#xa;</xsl:text>
-</xsl:template>
-
 <xsl:template match="outcomes">
     <xsl:text>\begin{outcomes}&#xa;</xsl:text>
     <xsl:text>\begin{outcomelist}&#xa;</xsl:text>
@@ -355,6 +349,13 @@
     END templates for chunking chapter files for use with mainfile.tex
     END templates for chunking chapter files for use with mainfile.tex
 -->
+
+<xsl:template match="exercises[@style='try-it-yourself']">
+    <xsl:text>\begin{tryityourself}&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>\end{tryityourself}&#xa;</xsl:text>
+</xsl:template>
+
 
 <!-- Intend output for rendering by pdflatex -->
 <xsl:output method="text" />

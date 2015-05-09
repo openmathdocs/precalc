@@ -1,0 +1,49 @@
+/* color reference: http://www.hitmill.com/html/pastels.html 
+                    http://www.computerhope.com/htmcolor.htm */
+
+/* definition style */
+article.definition-like {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #23819C;
+    background:#A5DBEB;
+  }
+
+/* definition style */
+div.definition {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #23819C;
+    background:#A5DBEB;
+  }
+
+/* specialnote style */
+div.specialnote {
+    margin-left:2cm;
+    padding-left:.5cm;
+    border-left: thick solid #23819C;
+    background:#A5DBEB;
+  }
+
+/* example style */
+article.example-like {
+    /*margin-left:2cm;*/
+    padding-left:.5cm;
+    border-left: 2px solid #4CC417;
+    border-bottom: 2px solid #4CC417;
+    background:#C3FDB8;
+    border-bottom-left-radius: 15px;
+  }
+
+
+/* exercise style */
+article.try-it-yourself{
+    margin-left:2cm;
+    padding-left:.5cm;
+    padding-top:.1cm;
+    padding-bottom:.1cm;
+    border: thick solid #BF00BF;
+    background:#DD75DD;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+  }

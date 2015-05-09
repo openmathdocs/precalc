@@ -5,7 +5,6 @@
     to do: nth tag
            em dash
            the \num issue
-           try-it-yourself in html
            example/solution in html
            exercise/solution in html
 -->
@@ -254,13 +253,13 @@
               cannot imagine ever being able to fit the appropriate amount of rice on 
               each square.</p>
           </example>
-    <try-it-yourself>
+          <exercises style="try-it-yourself">
             <exercise>
               <statement>Repeat <xref ref="exp-prob-queenschessboard"/>, but instead of <em>tripling</em> the 
                 number of grains of rice on each square, try <em>quadrupling</em> them.</statement>
               <solution><p>The equivalent of the function <m>g</m> is <m>h</m> and has formula <m>h(x)=4^x</m>.</p></solution>
             </exercise>
-          </try-it-yourself>
+          </exercises>
           <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
             at a faster and faster rate. You may wonder if all exponential functions behave in this way --
             the next example demonstrates that they do not.</p>
@@ -407,7 +406,7 @@
                 </figure>
             </sidebyside>
           </example>
-          <try-it-yourself>
+          <exercises style="try-it-yourself">
             <exercisegroup cols="2">
               <author>Hughes</author>
               <date>February 2012</date>
@@ -475,7 +474,7 @@
                   </solution>
                 </exercise>
             </exercisegroup>
-        </try-it-yourself>
+        </exercises>
           <p>Exponential modeling will require familiarity with percentages. The next example aims to 
             help you (re)acquaint yourself with them. </p>
           <example>

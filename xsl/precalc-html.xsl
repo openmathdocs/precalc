@@ -14,6 +14,9 @@
 <!-- Common thin layer                                                      -->
 <xsl:import href="precalc-common.xsl" />
 
+<!-- omd css file -->
+<xsl:param name="html.css.extra"  select="'../style/html/omd.css'" />
+
 
 <!-- TODO: outcomes and outcome elements  -->
 <!-- TODO: try-it-yourself environment    -->
@@ -43,5 +46,13 @@
   </xsl:element>
 </xsl:template>
 
+<!-- try it yourself is a special kind of exercises group -->
+<xsl:template match="exercises[@style='try-it-yourself']">
+  <xsl:element name="article">
+    <xsl:attribute name="class">try-it-yourself</xsl:attribute>
+    <xsl:element name="em">Try it yourself!</xsl:element>
+    <xsl:apply-templates />
+  </xsl:element>
+</xsl:template>
 
 </xsl:stylesheet>
