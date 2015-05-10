@@ -16,6 +16,7 @@
 <xsl:template match="exercisegroup/date"/>
 <xsl:template match="exercise/author"/>
 <xsl:template match="exercise/date"/>
+<xsl:template match="ignore" />
 
 
 

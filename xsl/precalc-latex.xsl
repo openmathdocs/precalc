@@ -274,8 +274,17 @@
   <xsl:text>\end{problem}&#xa;</xsl:text>
 </xsl:template>
 
+<xsl:template match="*" mode="omd-label">
+  <xsl:if test="@xml:id">
+    <xsl:text>\label{</xsl:text>
+    <xsl:value-of select="@xml:id"/>
+    <xsl:text>}</xsl:text>
+  </xsl:if>
+</xsl:template>
+
 <xsl:template match="exercise[ancestor::mathbook[@style='chunk'] and ancestor::exercisegroup]">
   <xsl:text>\begin{subproblem}&#xa;</xsl:text>
+  <xsl:apply-templates select="." mode="omd-label"/>
   <xsl:apply-templates select="*"/>
   <xsl:if test="not(solution)">
     <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
@@ -288,6 +297,7 @@
 <xsl:template match="example[ancestor::mathbook[@style='chunk']]">
   <xsl:text>\begin{omdexample}</xsl:text>
   <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:apply-templates select="." mode="omd-label"/>
   <xsl:text>&#xa;</xsl:text>
   <xsl:apply-templates select="*[not(self::title)]"/>
   <xsl:text>\end{omdexample}&#xa;</xsl:text>
@@ -342,6 +352,40 @@
     <!-- figure in solution -->
       <xsl:apply-templates />
       <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercises[ancestor::mathbook[@style='chunk']][@style='investigations']">
+  <xsl:text>\investigation*{}&#xa;</xsl:text>
+  <xsl:apply-templates />
+</xsl:template>
+
+<!-- default MBX does a strange thing with exercise references; this bit overwrites it -->
+<xsl:template match="exercises//exercise[ancestor::mathbook[@style='chunk']]" mode="ref-id">
+    <xsl:param name="autoname" />
+    <xsl:variable name="prefix">
+        <xsl:apply-templates select="." mode="ref-prefix">
+            <xsl:with-param name="local" select="$autoname" />
+        </xsl:apply-templates>
+    </xsl:variable>
+    <xsl:choose>
+        <!-- No autonaming prefix: generic LaTeX cross-reference -->
+        <xsl:when test="$prefix=''">
+            <xsl:text>\ref{</xsl:text>
+            <xsl:apply-templates select="." mode="internal-id" />
+            <xsl:text>}</xsl:text>
+        </xsl:when>
+        <!-- Autonaming prefix: hyperref enhanced cross-reference -->
+        <xsl:otherwise>
+            <xsl:text>\hyperref[</xsl:text>
+            <xsl:apply-templates select="." mode="internal-id" />
+            <xsl:text>]{</xsl:text>
+            <xsl:value-of select="$prefix" />
+            <xsl:text>~</xsl:text>
+            <xsl:text>\ref*{</xsl:text>
+            <xsl:apply-templates select="." mode="internal-id" />
+            <xsl:text>}}</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 <!-- 

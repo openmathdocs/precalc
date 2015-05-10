@@ -55,4 +55,14 @@
   </xsl:element>
 </xsl:template>
 
+<!-- examples can sometimes be posed in such a way that they have a solution -->
+<xsl:template match="example/solution">
+    <xsl:element name="h6">
+      <xsl:text>Solution</xsl:text>
+    </xsl:element>
+    <xsl:element name="article">
+        <xsl:apply-templates />
+    </xsl:element>
+</xsl:template>
+
 </xsl:stylesheet>
