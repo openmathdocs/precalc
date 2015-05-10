@@ -630,115 +630,163 @@
                   </p>
                 </solution>
               </exercise>
-            <exercise>
-              <statement>
-                Using the value you obtained in <xref ref="exp-prob-ricevalue"/>, determine the first square 
-                that would give you more than <dollar/>1,000,000 worth of rice.
-              </statement>
-              <solution>
-                <p>
-                  <m>6\cdot 2^{18}\approx 1572864&gt;1000000</m>. We would only have to get to the 34th square on the board in 
-                  order to get <dollar/>1,000,000 worth of rice.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Using the value you obtained in <xref ref="exp-prob-ricevalue"/>, determine the value
-                of the rice put on the last square. 
-              </statement>
-              <solution>
-                <p>
-                  <m>\$6\cdot 2^{48}\approx \$1.68884986\times 10^{15}</m>. Quite a lot.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                How does the value of the rice on the last square compare to the amount you wrote down in <xref ref="exp-prob-greedy"/>?
-              </statement>
-              <solution>
-                <p>
-                  Answers will vary.
-                </p>
-              </solution>
-            </exercise>
+              <exercise>
+                <statement>
+                  Using the value you obtained in <xref ref="exp-prob-ricevalue"/>, determine the first square 
+                  that would give you more than <dollar/>1,000,000 worth of rice.
+                </statement>
+                <solution>
+                  <p>
+                    <m>6\cdot 2^{18}\approx 1572864&gt;1000000</m>. We would only have to get to the 34th square on the board in 
+                    order to get <dollar/>1,000,000 worth of rice.
+                  </p>
+                </solution>
+              </exercise>
+              <exercise>
+                <statement>
+                  Using the value you obtained in <xref ref="exp-prob-ricevalue"/>, determine the value
+                  of the rice put on the last square. 
+                </statement>
+                <solution>
+                  <p>
+                    <m>\$6\cdot 2^{48}\approx \$1.68884986\times 10^{15}</m>. Quite a lot.
+                  </p>
+                </solution>
+              </exercise>
+              <exercise>
+                <statement>
+                  How does the value of the rice on the last square compare to the amount you wrote down in <xref ref="exp-prob-greedy"/>?
+                </statement>
+                <solution>
+                  <p>
+                    Answers will vary.
+                  </p>
+                </solution>
+              </exercise>
             </exercisegroup>    
-          </exercises>
-          <ignore>
-
-            %===================================
-            <author>Simonds</author>
-            <date>  Feb 2011</date>
-            %===================================
-            \begin{problem}[Changing Rates of Change]
-            <exercise xml:id="exp-prob-graphsofincreasingfunctions">
-              <statement>
-                The graphs of several increasing functions are given in \crefrange{exp-fig-functionm}{exp-fig-functiono}.  
-                For each function, decide whether the function increases at a constant rate, increases at an increasing 
-                rate (concave up), or increases at a slower and slower rate (concave down).
-              </statement>
-              <solution>
-                <p>
-                  <m>m(x)</m> in <xref ref="exp-fig-functionm"/> is increasing at a faster and faster rate, 
-                  <m>n(x)</m> in <xref ref="exp-fig-functionn"/> is increasing at a faster and faster rate, 
-                  and <m>o(x)</m> in <xref ref="exp-fig-functiono"/> is increasing at a slower and slower rate.
-                </p>
-              </solution>
-            </exercise>
-
-            \begin{figure}[!htb]
-            \mbox{}\hfill
-            \begin{minipage}{.25\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2,xmax=7,
-            ymin=-3,ymax=16,
-            xtick={-1,...,6},
-            ]
-            \addplot+[-&gt;]expression[domain=0:3.87]{x^2+1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=m(x)</m>}
-            \label{exp-fig-functionm}
-            \end{minipage}%
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2,xmax=7,
-            ymin=-3,ymax=16,
-            xtick={-1,...,6},
-            ]
-            \addplot expression[domain=-2:3.9]{2^x+1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=n(x)</m>}
-            \label{exp-fig-functionn}
-            \end{minipage}%
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2,xmax=7,
-            ymin=-3,ymax=16,
-            xtick={-1,...,6},
-            ]
-            \addplot+[-&gt;]expression[domain=0.01:6.5]{(25*x)^(1/2)+1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=o(x)</m>}
-            \label{exp-fig-functiono}
-            \end{minipage}
-            \hfill
-            \mbox{}
-            \end{figure}
-
+            <exercisegroup xml:id="exp-prob-graphsofincreasingfunctions">
+              <title>Changing Rates of Change</title>
+              <author>Simonds</author>
+              <date>  Feb 2011</date>
+              <exercise>
+                <statement>
+                  The graphs of several increasing functions are given in <xref ref="exp-fig-functionm" autoname="plural"/>
+                  through <xref ref="exp-fig-functiono" autoname="no"/>.  
+                  For each function, decide whether the function increases at a constant rate, increases at an increasing 
+                  rate (concave up), or increases at a slower and slower rate (concave down).
+                </statement>
+                <solution>
+                  <p>
+                    <m>m(x)</m> in <xref ref="exp-fig-functionm"/> is increasing at a faster and faster rate, 
+                    <m>n(x)</m> in <xref ref="exp-fig-functionn"/> is increasing at a faster and faster rate, 
+                    and <m>o(x)</m> in <xref ref="exp-fig-functiono"/> is increasing at a slower and slower rate.
+                  </p>
+                </solution>
+              </exercise>
+              <sidebyside>
+                <figure width="25%" xml:id="exp-fig-functionm">
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-2,xmax=7,
+                      ymin=-3,ymax=16,
+                      xtick={-1,...,6},
+                      ]
+                      \addplot+[->]expression[domain=0:3.87]{x^2+1};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
+                  <caption><m>y=m(x)</m></caption>
+                </figure>
+                <figure width="25%" xml:id="exp-fig-functionn">
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-2,xmax=7,
+                      ymin=-3,ymax=16,
+                      xtick={-1,...,6},
+                      ]
+                      \addplot expression[domain=-2:3.9]{2^x+1};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>           
+                  </image>
+                  <caption><m>y=n(x)</m></caption>
+                </figure>
+                <figure width="25%" xml:id="exp-fig-functiono">
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-2,xmax=7,
+                      ymin=-3,ymax=16,
+                      xtick={-1,...,6},
+                      ]
+                      \addplot+[->]expression[domain=0.01:6.5]{(25*x)^(1/2)+1};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
+                  <caption><m>y=o(x)</m></caption>
+                </figure>
+              </sidebyside>
+              <sidebyside>
+                <table xml:id="exp-tab-functionp" width="25%">
+                  <caption><m>y=p(x)</m></caption>
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="."/>
+                    <thead>
+                      <row><cell><m>x</m></cell><cell><m>y</m></cell></row>
+                    </thead>
+                    <row><cell>1</cell> <cell>3</cell></row>
+                    <row><cell>2</cell> <cell>8</cell></row> 
+                    <row><cell>4</cell> <cell>18</cell></row>
+                    <row><cell>8</cell> <cell>38</cell></row> 
+                    <row><cell>16</cell><cell>78</cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+                <table xml:id="exp-tab-functionq" width="25%">
+                  <caption><m>y=q(x)</m></caption>
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="."/>
+                    <thead>
+                      <row><cell><m>x</m></cell><cell><m>y</m></cell></row>
+                    </thead>
+                    <row><cell>1</cell><cell>6</cell></row>   
+                    <row><cell>4</cell><cell>7</cell></row> 
+                    <row><cell>9</cell><cell>8</cell></row> 
+                    <row><cell>16</cell><cell>9</cell></row>
+                    <row><cell>25</cell><cell>10</cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+                <table xml:id="exp-tab-functionr" width="25%">
+                  <caption><m>y=r(x)</m></caption>
+                  <tabular>
+                    <col halign="."/>
+                    <col halign="."/>
+                    <thead>
+                      <row><cell><m>x</m></cell><cell><m>y</m></cell></row>
+                    </thead>
+                    <row><cell>1</cell><cell>4</cell></row>
+                    <row><cell>2</cell><cell>8</cell></row>
+                    <row><cell>3</cell><cell>16</cell></row>
+                    <row><cell>4</cell><cell>32</cell></row>
+                    <row><cell>5</cell><cell>64</cell></row>
+                    <tfoot/>
+                  </tabular>
+                </table>
+              </sidebyside>
             <exercise xml:id="exp-prob-tablesofincreasingfunctions">
               <statement>
-                \Crefrange{exp-tab-functionp}{exp-tab-functionr} show values for <m>3</m> increasing functions.
+                <xref ref="exp-tab-functionp" autoname="plural"/> through <xref ref="exp-tab-functionr" autoname="no"/> 
+                show values for <m>3</m> increasing functions.
                 For each function, decide whether the function increases at a constant rate, increases at an increasing 
                 rate (concave up), or increases at a slower and slower rate (concave down).
               </statement>
@@ -748,73 +796,17 @@
                   and <m>r(x)</m> is increasing at a faster and faster rate.
                 </p>
               </solution>
-
-              \begin{table}[!htb]
-              \centering
-              \hfill
-              \begin{minipage}{0.25\textwidth}
-              \centering
-              \caption{<m>y=p(x)</m>}
-              \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
-              \beforeheading
-              \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-              \afterheading
-              1             &amp; 3             \\\normalline
-              2             &amp; 8             \\\normalline
-              4             &amp; 18            \\\normalline
-              8             &amp; 38            \\\normalline
-              16            &amp; 78            \\\lastline
-              \end{tabular}
-              \label{exp-tab-functionp}
-              \end{minipage}
-              \hfill
-              \begin{minipage}{0.25\textwidth}
-              \centering
-              \caption{<m>y=q(x)</m>}
-              \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
-              \beforeheading
-              \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-              \afterheading
-              1             &amp; 6             \\\normalline
-              4             &amp; 7             \\\normalline
-              9             &amp; 8             \\\normalline
-              16            &amp; 9             \\\normalline
-              25            &amp; 10            \\\lastline
-              \end{tabular}
-              \label{exp-tab-functionq}
-              \end{minipage}
-              \hfill
-              \begin{minipage}{0.25\textwidth}
-              \centering
-              \caption{<m>y=r(x)</m>}
-              \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-              \beforeheading
-              \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-              \afterheading
-              1             &amp; 4             \\\normalline
-              2             &amp; 8             \\\normalline
-              3             &amp; 16            \\\normalline
-              4             &amp; 32            \\\normalline
-              5             &amp; 64            \\\lastline
-              \end{tabular}
-              \label{exp-tab-functionr}
-              \end{minipage}
-              \hfill
-              \mbox{}
-              \end{table}
             </exercise>
-
-
             <exercise>
               <statement>
                 Several functions are described below.  For each function, decide whether the function 
                 increases at a constant rate, increases at a faster and faster rate (concave up), or increases at a slower and slower rate (concave down).
                 <ol>
-                  \item The amount in a bank account where \$5000 is initially invested and the money sits 
-                  and earns interest at a rate of \SI{6}{\percent} per year.
-                  <li> The distance your car has traveled <m>t</m> seconds after you slammed on the brakes.</li>
-                  \item The elevation of a typewriter that is falling, <m>t</m> seconds after it is dropped from a plane flying at an 
-                  elevation of 30,000 feet.
+                  <li>The amount in a bank account where <dollar/>5000 is initially invested and the money sits 
+                    and earns interest at a rate of <quantity><mag>6</mag><unit base="percent"/></quantity> per year.</li>
+                  <li>The distance your car has traveled <m>t</m> seconds after you slammed on the brakes.</li>
+                  <li>The elevation of a typewriter that is falling, <m>t</m> seconds after it is dropped from a plane flying at an 
+                  elevation of <quantity><mag>30000</mag><unit base="foot"/></quantity>.</li> 
                 </ol>
               </statement>
               <solution>
@@ -842,7 +834,9 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
+          </exercises>
+          <ignore>
 
             %===================================
             <author>Vega</author>
@@ -957,31 +951,39 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  xmin=-0.1,xmax=0.8,
-                  ymin=-1,ymax=10,
-                  xtick={-0.1,0,...,0.8},
-                  ytick={0,...,10},
-                  xlabel={<m>t</m>},
-                  ]
-                  \addplot+[-&gt;]expression[domain=-0.1:0.8]{5.35*0.92^x};
-                  \legend{<m>y=A(t)</m>}
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-0.1,xmax=0.8,
+                      ymin=-1,ymax=10,
+                      xtick={-0.1,0,...,0.8},
+                      ytick={0,...,10},
+                      xlabel={<m>t</m>},
+                      ]
+                      \addplot+[-&gt;]expression[domain=-0.1:0.8]{5.35*0.92^x};
+                      \legend{<m>y=A(t)</m>}
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  xmin=-5,xmax=40,
-                  ymin=-1,ymax=10,
-                  xtick={-5,0,...,40},
-                  ytick={0,...,10},
-                  xlabel={<m>t</m>},
-                  ]
-                  \addplot+[-&gt;]expression[domain=-5:40]{5.35*0.92^x};
-                  \legend{<m>y=A(t)</m>}
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-5,xmax=40,
+                      ymin=-1,ymax=10,
+                      xtick={-5,0,...,40},
+                      ytick={0,...,10},
+                      xlabel={<m>t</m>},
+                      ]
+                      \addplot+[-&gt;]expression[domain=-5:40]{5.35*0.92^x};
+                      \legend{<m>y=A(t)</m>}
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
 
                   One should consider the scale of a graph and location of the origin when reading graphs.  
                 </p>
@@ -1495,7 +1497,7 @@
             \centering
             \begin{minipage}{.3\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-increasingexp}
             \begin{tabular}{S[table-format=1.0]rr}
             \beforeheading
@@ -1550,23 +1552,27 @@
 
                   The functions <m>f</m> and <m>g</m> are graphed below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-3,xmax=2,
-                  ymin=-2,ymax=10,
-                  xtick={-2,...,2},
-                  ytick={5},
-                  minor ytick={-1,...,10},
-                  grid=both,
-                  legend pos=north west,
-                  ]
-                  \addplot expression[domain=-3:2]{2^x};
-                  \addlegendentry{<m>y=2^x</m>};
-                  \addplot expression[domain=-3:1.5]{3^x+4};
-                  \addlegendentry{<m>y=3^x+4</m>};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-3,xmax=2,
+                      ymin=-2,ymax=10,
+                      xtick={-2,...,2},
+                      ytick={5},
+                      minor ytick={-1,...,10},
+                      grid=both,
+                      legend pos=north west,
+                      ]
+                      \addplot expression[domain=-3:2]{2^x};
+                      \addlegendentry{<m>y=2^x</m>};
+                      \addplot expression[domain=-3:1.5]{3^x+4};
+                      \addlegendentry{<m>y=3^x+4</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -1639,21 +1645,25 @@
 
                   The functions <m>m</m> and <m>n</m> are graphed below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-2,xmax=3,
-                  ymin=-5,ymax=5,
-                  xtick={-1,...,2},
-                  ytick={-4,...,4},
-                  grid=both,
-                  ]
-                  \addplot expression[domain=-2:3]{(1/2)^x};
-                  \addlegendentry{<m>y=\left( \frac{1}{2} \right)^x</m>};
-                  \addplot expression[domain=-1.5:3]{(1/3)^x-2};
-                  \addlegendentry{<m>y=\left( \frac{1}{3} \right)^x-2</m>};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-2,xmax=3,
+                      ymin=-5,ymax=5,
+                      xtick={-1,...,2},
+                      ytick={-4,...,4},
+                      grid=both,
+                      ]
+                      \addplot expression[domain=-2:3]{(1/2)^x};
+                      \addlegendentry{<m>y=\left( \frac{1}{2} \right)^x</m>};
+                      \addplot expression[domain=-1.5:3]{(1/3)^x-2};
+                      \addlegendentry{<m>y=\left( \frac{1}{3} \right)^x-2</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -1705,69 +1715,85 @@
             \setlength{\figurewidth}{.2\textwidth}
             \centering
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-9:3]{2^x+1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-9:3]{2^x+1};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexponential1}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-9:2]{3^x-1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-9:2]{3^x-1};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexponential2}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-9:1.5]{(-1)*5^x+2};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-9:1.5]{(-1)*5^x+2};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexponential3}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-9:1.25]{(-1)*4^x-3};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-9:1.25]{(-1)*4^x-3};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexponential4}
             \end{subfigure}
-            \caption{Graphs for <xref ref="exp-prob-matchexponentials"/>.}
+            <caption>Graphs for <xref ref="exp-prob-matchexponentials"/>.</caption>
             \label{exp-fig-matchexponentials}
             \end{widepage}
             \end{figure}
@@ -1882,69 +1908,85 @@
             \setlength{\figurewidth}{.2\textwidth}
             \centering
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-3:9]{(1/2)^x+1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-3:9]{(1/2)^x+1};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexpsbaselt11}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-2:9]{(1/3)^x-1};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-2:9]{(1/3)^x-1};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexpsbaselt12}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-1.35:9]{-(1/5)^x+2};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-1.35:9]{-(1/5)^x+2};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexpsbaselt13}
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-10,xmax=10,ymin=-10,ymax=10,
-            xtick={-8,-4,4,8},
-            ytick={-8,-4,4,8},
-            grid=major,
-            ]
-            \addplot expression[domain=-1.35:9]{-(1/4)^x-3};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-10,xmax=10,ymin=-10,ymax=10,
+                xtick={-8,-4,4,8},
+                ytick={-8,-4,4,8},
+                grid=major,
+                ]
+                \addplot expression[domain=-1.35:9]{-(1/4)^x-3};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchexpsbaselt14}
             \end{subfigure}
-            \caption{Graphs for <xref ref="exp-prob-matchexpslessthan1"/>.}
+            <caption>Graphs for <xref ref="exp-prob-matchexpslessthan1"/>.</caption>
             \label{exp-fig-matchexpslessthan1}
             \end{widepage}
             \end{figure}
@@ -2071,62 +2113,74 @@
             \begin{widepage}
             \begin{minipage}{.25\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-2,xmax=4,
-            ymin=-3,ymax=11,
-            xtick={-1,1,2,3},
-            ytick={4,8},
-            minor ytick={2,4,...,8},
-            grid=both,
-            ]
-            \addplot expression[domain=-2:3.2]{2^x};
-            \addplot[soldot]coordinates{(0,1)(1,2)(2,4)(3,8)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=n(x)</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-1,1,2,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:3.2]{2^x};
+                \addplot[soldot]coordinates{(0,1)(1,2)(2,4)(3,8)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=n(x)</m></caption>
             \label{exp-fig-expfunctionn}
             \end{minipage}
             \hfill
             \begin{minipage}{.25\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=4,
-            ymin=-3,ymax=11,
-            xtick={-2,...,3},
-            ytick={4,8},
-            minor ytick={2,4,...,8},
-            grid=both,
-            ]
-            \addplot expression[domain=-2.19:4]{(1/3)^x};
-            \addplot[soldot]coordinates{(0,1)(-1,3)(-2,9)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=r(x)</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-2,...,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot expression[domain=-2.19:4]{(1/3)^x};
+                \addplot[soldot]coordinates{(0,1)(-1,3)(-2,9)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=r(x)</m></caption>
             \label{exp-fig-expfunctionr}
             \end{minipage}
             \hfill
             \centering
             \begin{minipage}{.25\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=4,
-            ymin=-3,ymax=11,
-            xtick={-2,...,3},
-            ytick={4,8},
-            minor ytick={2,4,...,8},
-            grid=both,
-            ]
-            \addplot+[-&gt;]expression[domain=0:3.17]{x^2+1};
-            \addplot[soldot]coordinates{(0,1)(1,2)(2,5)(3,10)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>y=m(x)</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-2,...,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot+[-&gt;]expression[domain=0:3.17]{x^2+1};
+                \addplot[soldot]coordinates{(0,1)(1,2)(2,5)(3,10)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=m(x)</m></caption>
             \label{exp-fig-expfunctionm}
             \end{minipage}
             \end{widepage}
@@ -2152,7 +2206,7 @@
             \hfill
             \begin{minipage}{.25\textwidth}
             \centering
-            \caption{<m>y=g(x)</m>}
+            <caption><m>y=g(x)</m></caption>
             \begin{tabular}{S[table-format=1.0]S[table-format=3.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -2168,7 +2222,7 @@
             \hfill
             \begin{minipage}{.25\textwidth}
             \centering
-            \caption{<m>y=h(x)</m>}
+            <caption><m>y=h(x)</m></caption>
             \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -2184,7 +2238,7 @@
             \hfill
             \begin{minipage}{.25\textwidth}
             \centering
-            \caption{<m>y=k(x)</m>}
+            <caption><m>y=k(x)</m></caption>
             \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -2683,18 +2737,22 @@
             \hfill
             \begin{minipage}{.4\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-1,xmax=5,
-            ymin=-3,ymax=18,
-            xtick={1,...,4},
-            grid=both,
-            ]
-            \addplot expression[domain=-1:4]{2^x};
-            \addplot expression[domain=-1:5]{13};
-            \end{axis}
-            \end{tikzpicture}     
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-1,xmax=5,
+                ymin=-3,ymax=18,
+                xtick={1,...,4},
+                grid=both,
+                ]
+                \addplot expression[domain=-1:4]{2^x};
+                \addplot expression[domain=-1:5]{13};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>     
             \captionof{figure}{<m>y=2^x</m>}
             \label{exp-fig-solvenoninteger}
             \end{minipage}%
@@ -3041,73 +3099,89 @@
             \begin{widepage}
             \centering
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=3,
-            ymin=-5,ymax=5,
-            ytick={-2,2},
-            grid=both,
-            ]
-            \addplot expression[domain=-1.2:1.2]{3^(x^2)};
-            \addplot expression[domain=-3:3]{3};
-            \end{axis}
-            \end{tikzpicture}     
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=3,
+                ymin=-5,ymax=5,
+                ytick={-2,2},
+                grid=both,
+                ]
+                \addplot expression[domain=-1.2:1.2]{3^(x^2)};
+                \addplot expression[domain=-3:3]{3};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>     
+            <caption></caption>
             \label{exp-fig-matcheqns1}
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=3,
-            ymin=-1,ymax=2,
-            ytick={1},
-            grid=both,
-            ]
-            \addplot expression[domain=-1.7:1.7]{4^(-x^2)};
-            \addplot expression[domain=-3:3]{1/4};
-            \end{axis}
-            \end{tikzpicture}     
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=3,
+                ymin=-1,ymax=2,
+                ytick={1},
+                grid=both,
+                ]
+                \addplot expression[domain=-1.7:1.7]{4^(-x^2)};
+                \addplot expression[domain=-3:3]{1/4};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>     
+            <caption></caption>
             \label{exp-fig-matcheqns2}
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=3,
-            ymin=-5,ymax=6,
-            ytick={-2,2},
-            grid=both,
-            ]
-            \addplot expression[domain=-1.2:1.1]{5^(x)};
-            \addplot expression[domain=-3:3]{5};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=3,
+                ymin=-5,ymax=6,
+                ytick={-2,2},
+                grid=both,
+                ]
+                \addplot expression[domain=-1.2:1.1]{5^(x)};
+                \addplot expression[domain=-3:3]{5};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matcheqns3}
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=3,
-            ymin=-5,ymax=6,
-            ytick={-2,2},
-            grid=both,
-            ]
-            \addplot expression[domain=-1.4:1.1]{-(1/3)^x};
-            \addplot expression[domain=-3:3]{-3};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=3,
+                ymin=-5,ymax=6,
+                ytick={-2,2},
+                grid=both,
+                ]
+                \addplot expression[domain=-1.4:1.1]{-(1/3)^x};
+                \addplot expression[domain=-3:3]{-3};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matcheqns4}
             \end{subfigure}%
-            \caption{Graphs for <xref ref="exp-prob-matcheqns"/>}
+            <caption>Graphs for <xref ref="exp-prob-matcheqns"/></caption>
             \label{exp-fig-matcheqns}
             \end{widepage}
             \end{figure}
@@ -3194,22 +3268,26 @@
             \end{problem}
             \begin{figure}[!htb]
             \begin{widepage}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            height=.25\textwidth,
-            xmin=-1,xmax=10,
-            ymin=-3,ymax=3,
-            xtick={1,...,9},
-            grid=both,
-            legend pos=south east,
-            ]
-            \addplot expression[domain=-1:10]{(1/2)^x+1/2};
-            \addplot expression[domain=-1:10,samples=200]{sin(deg(pi*x))+1/2};
-            \legend{<m>f</m>,<m>g</m>}
-            \end{axis}
-            \end{tikzpicture}     
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                height=.25\textwidth,
+                xmin=-1,xmax=10,
+                ymin=-3,ymax=3,
+                xtick={1,...,9},
+                grid=both,
+                legend pos=south east,
+                ]
+                \addplot expression[domain=-1:10]{(1/2)^x+1/2};
+                \addplot expression[domain=-1:10,samples=200]{sin(deg(pi*x))+1/2};
+                \legend{<m>f</m>,<m>g</m>}
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>     
+            <caption></caption>
             \label{exp-fig-extension}
             \end{widepage}
             \end{figure}
@@ -3259,53 +3337,65 @@
 
             \begin{figure}[!htb]
             \begin{subfigure}[t]{0.25\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2, xmax=8,
-            ymin=-3, ymax=10,
-            xtick={-1,...,7},
-            ytick={3,6,9},
-            ]
-            \addplot expression[domain=-2:8]{3/6*(x-1)+2};
-            \addplot[soldot]coordinates{(1,2)(7,5)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Points connected with a line}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                xmin=-2, xmax=8,
+                ymin=-3, ymax=10,
+                xtick={-1,...,7},
+                ytick={3,6,9},
+                ]
+                \addplot expression[domain=-2:8]{3/6*(x-1)+2};
+                \addplot[soldot]coordinates{(1,2)(7,5)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Points connected with a line</caption>
             \label{exp-fig-pointsline}
             \end{subfigure}%
             \hfill
             \begin{subfigure}[t]{0.25\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2, xmax=8,
-            ymin=-3, ymax=10,
-            xtick={-1,...,7},
-            ytick={3,6,9},
-            ]
-            \addplot expression[domain=-2:8,samples=100]{(x-1)/2+2+2*sin(deg(2*3.1415926/6*(x-1)))};
-            \addplot[soldot]coordinates{(1,2)(7,5)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Points connected with an arbitrary curve}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                xmin=-2, xmax=8,
+                ymin=-3, ymax=10,
+                xtick={-1,...,7},
+                ytick={3,6,9},
+                ]
+                \addplot expression[domain=-2:8,samples=100]{(x-1)/2+2+2*sin(deg(2*3.1415926/6*(x-1)))};
+                \addplot[soldot]coordinates{(1,2)(7,5)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Points connected with an arbitrary curve</caption>
             \label{exp-fig-pointscurve}
             \end{subfigure}%
             \hfill
             \begin{subfigure}[t]{0.25\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2, xmax=8,
-            ymin=-3, ymax=10,
-            xtick={-1,...,7},
-            ytick={3,6,9},
-            ]
-            \addplot expression[domain=-2:8]{2*(5/2)^((x-1)/6)};
-            \addplot[soldot]coordinates{(1,2)(7,5)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Points connected with an exponential curve}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                xmin=-2, xmax=8,
+                ymin=-3, ymax=10,
+                xtick={-1,...,7},
+                ytick={3,6,9},
+                ]
+                \addplot expression[domain=-2:8]{2*(5/2)^((x-1)/6)};
+                \addplot[soldot]coordinates{(1,2)(7,5)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Points connected with an exponential curve</caption>
             \label{exp-fig-pointsexp}
             \end{subfigure}%
-            \caption{Connecting two points with various curves}
+            <caption>Connecting two points with various curves</caption>
             \end{figure}
 
             \begin{essentialskills}
@@ -3458,22 +3548,26 @@
             as shown in <xref ref="exp-fig-expmodellingwithcurve"/>.
             \begin{figure}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            width=.5\textwidth,
-            xmin=-5,xmax=5,
-            ymin=-2,ymax=15,
-            xtick={-4,-2,...,10},
-            minor xtick={-3,-1,...,3}, 
-            ytick={2,4,...,14},
-            grid=both,
-            ]
-            \addplot expression[domain=-5:2.322]{3*2^x};
-            \addplot[soldot]coordinates{(-2,0.75)(2,12)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                width=.5\textwidth,
+                xmin=-5,xmax=5,
+                ymin=-2,ymax=15,
+                xtick={-4,-2,...,10},
+                minor xtick={-3,-1,...,3}, 
+                ytick={2,4,...,14},
+                grid=both,
+                ]
+                \addplot expression[domain=-5:2.322]{3*2^x};
+                \addplot[soldot]coordinates{(-2,0.75)(2,12)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-expmodellingwithcurve}
             \end{figure}
 
@@ -3585,18 +3679,22 @@
 
             \begin{figure}[!htb]
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            width=.3\textwidth,
-            xmin=-2,xmax=10,
-            ymin=-100,ymax=3000,
-            ytick={500,1000,...,2500},
-            xlabel=<m>t</m>
-            ]
-            \addplot[soldot]coordinates{(0,25)(7,2391)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Flu patient data}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                width=.3\textwidth,
+                xmin=-2,xmax=10,
+                ymin=-100,ymax=3000,
+                ytick={500,1000,...,2500},
+                xlabel=<m>t</m>
+                ]
+                \addplot[soldot]coordinates{(0,25)(7,2391)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Flu patient data</caption>
             \label{exp-fig-fludata}
             \end{figure}
 
@@ -3633,21 +3731,25 @@
             example, when will the number of infected persons reach 20,000?  
             \begin{figure}[!htb]
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            width=.3\textwidth,
-            xmin=-2,xmax=15,
-            ymin=-20,ymax=300,
-            xtick={2,4,...,14},
-            xlabel=<m>t</m>,
-            ytick={50,100,...,250},
-            yticklabels={5000,10000,15000,20000,25000}
-            ]
-            \addplot expression[domain=-1:10.7]{.25*(2391/25)^(x/7)};
-            \addplot[soldot]coordinates{(0,.25)(7,23.91)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Flu patient model}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                width=.3\textwidth,
+                xmin=-2,xmax=15,
+                ymin=-20,ymax=300,
+                xtick={2,4,...,14},
+                xlabel=<m>t</m>,
+                ytick={50,100,...,250},
+                yticklabels={5000,10000,15000,20000,25000}
+                ]
+                \addplot expression[domain=-1:10.7]{.25*(2391/25)^(x/7)};
+                \addplot[soldot]coordinates{(0,.25)(7,23.91)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Flu patient model</caption>
             \label{exp-fig-flugraph}
             \end{figure}
             \begin{pccsolution} 
@@ -3869,20 +3971,24 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-2,xmax=9,
-                  ymin=-8,ymax=55,
-                  xlabel={<m>t</m>},
-                  xtick={1,...,8},
-                  ytick={4,8,...,48},
-                  nodes near coords,
-                  grid=major,
-                  ]
-                  \addplot[soldot]coordinates{(0,2)(1,3)(2,4)(3,6)(4,9)(5,14)(6,21)(7,31)(8,47)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-2,xmax=9,
+                      ymin=-8,ymax=55,
+                      xlabel={<m>t</m>},
+                      xtick={1,...,8},
+                      ytick={4,8,...,48},
+                      nodes near coords,
+                      grid=major,
+                      ]
+                      \addplot[soldot]coordinates{(0,2)(1,3)(2,4)(3,6)(4,9)(5,14)(6,21)(7,31)(8,47)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -4282,73 +4388,89 @@
             \centering
             \setlength{\figurewidth}{.2\textwidth}
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=2,
-            ymin=-2,ymax=8,
-            xtick={-4,-2},
-            ytick={2,4,6},
-            width=\figurewidth,
-            grid=major,
-            ]
-            \addplot expression[domain=-4.5:1.26186]{2*3^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>f(1)=6</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=2,
+                ymin=-2,ymax=8,
+                xtick={-4,-2},
+                ytick={2,4,6},
+                width=\figurewidth,
+                grid=major,
+                ]
+                \addplot expression[domain=-4.5:1.26186]{2*3^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>f(1)=6</m></caption>
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-2,ymax=8,
-            xtick={-4,-2,...,4},
-            ytick={2,4,6},
-            width=\figurewidth,
-            grid=major,
-            ]
-            \addplot expression[domain=-2:3.2]{2*(1/2)^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>g(2)=\dfrac{1}{2}</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-2,ymax=8,
+                xtick={-4,-2,...,4},
+                ytick={2,4,6},
+                width=\figurewidth,
+                grid=major,
+                ]
+                \addplot expression[domain=-2:3.2]{2*(1/2)^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>g(2)=\dfrac{1}{2}</m></caption>
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=2,
-            ymin=-8,ymax=2,
-            width=\figurewidth,
-            xtick={-4,-2},
-            ytick={-6,-4,-2},
-            grid=major,
-            ]
-            \addplot expression[domain=-4.5:1.2920]{-1*(5^x)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>h(-4)=-\dfrac{1}{625}</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=2,
+                ymin=-8,ymax=2,
+                width=\figurewidth,
+                xtick={-4,-2},
+                ytick={-6,-4,-2},
+                grid=major,
+                ]
+                \addplot expression[domain=-4.5:1.2920]{-1*(5^x)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>h(-4)=-\dfrac{1}{625}</m></caption>
             \end{subfigure}
             \hfill
             \begin{subfigure}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-3,xmax=6,
-            ymin=-6,ymax=2,
-            width=\figurewidth,
-            xtick={-2,2,4},
-            ytick={-4,-2},
-            grid=major,
-            ]
-            \addplot expression[domain=-0.3691:5]{-4*(1/3)^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>k(3)=-\dfrac{4}{27}</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=6,
+                ymin=-6,ymax=2,
+                width=\figurewidth,
+                xtick={-2,2,4},
+                ytick={-4,-2},
+                grid=major,
+                ]
+                \addplot expression[domain=-0.3691:5]{-4*(1/3)^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>k(3)=-\dfrac{4}{27}</m></caption>
             \end{subfigure}
-            \caption{}
+            <caption></caption>
             \label{exp-fig-findab}
             \end{widepage}
             \end{figure}
@@ -4385,7 +4507,7 @@
             \begin{widepage}
             \begin{minipage}{.2\textwidth}
             \centering
-            \caption{} \label{exp-tab-findab10}
+            <caption></caption> \label{exp-tab-findab10}
             \begin{tabular}{S[table-format=1.0]S[table-format=6.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -4399,7 +4521,7 @@
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            \caption{} \label{exp-tab-findab7}
+            <caption></caption> \label{exp-tab-findab7}
             \begin{tabular}{S[table-format=1.0]c}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -4413,7 +4535,7 @@
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            \caption{}\label{exp-tab-findabthird}
+            <caption></caption>\label{exp-tab-findabthird}
             \begin{tabular}{S[table-format=2.0]c}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>}  \\
@@ -4428,7 +4550,7 @@
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            \caption{}\label{exp-tab-findabfifth}
+            <caption></caption>\label{exp-tab-findabfifth}
             \begin{tabular}{S[table-format=2.0]S[table-format=9.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -4523,37 +4645,41 @@
             \begin{figure}[!htb]
             \begin{widepage}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            x axis line style={-&gt;},
-            y axis line style={-&gt;},
-            xlabel={<m>t</m>},
-            ylabel={Solar PV Power Capacity by Year (\si{\mega\watt})},
-            width=.95\textwidth,
-            height=.5\textwidth,
-            xmin=-1,xmax=9,
-            xtick={1,2,...,9},
-            xticklabels={2000,2001,...,2007},
-            ymin=-500,ymax=9000,
-            ytick={1000,2000,...,8000},
-            yticklabels={1000,2000,...,8000},
-            nodes near coords,
-            every node near coord/.append style={anchor=north},
-            ]
-            \addplot[pccbar,bar width=30] plot coordinates
-            {
-            (1, 877)
-            (2, 1161)
-            (3, 1543)
-            (4, 2090)
-            (5, 2919)
-            (6, 4556)
-            (7, 5990)
-            (8, 8325)
-            };
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Solar capacity.}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                x axis line style={-&gt;},
+                y axis line style={-&gt;},
+                xlabel={<m>t</m>},
+                ylabel={Solar PV Power Capacity by Year (\si{\mega\watt})},
+                width=.95\textwidth,
+                height=.5\textwidth,
+                xmin=-1,xmax=9,
+                xtick={1,2,...,9},
+                xticklabels={2000,2001,...,2007},
+                ymin=-500,ymax=9000,
+                ytick={1000,2000,...,8000},
+                yticklabels={1000,2000,...,8000},
+                nodes near coords,
+                every node near coord/.append style={anchor=north},
+                ]
+                \addplot[pccbar,bar width=30] plot coordinates
+                {
+                (1, 877)
+                (2, 1161)
+                (3, 1543)
+                (4, 2090)
+                (5, 2919)
+                (6, 4556)
+                (7, 5990)
+                (8, 8325)
+                };
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Solar capacity.</caption>
             \label{exp-fig-solarcapacity}
             \end{widepage}
             \end{figure}
@@ -4841,7 +4967,7 @@
 
             \begin{table}[!htb]
             \centering
-            \caption{Decaying Radioactive Carbon-14}\label{exp-tab-C14decay}
+            <caption>Decaying Radioactive Carbon-14</caption>\label{exp-tab-C14decay}
             \begin{tabular}{S[table-format=5.0]S[table-format=4.0]}
             \beforeheading
             \heading{Number of years} &amp; \heading{Number of remaining} \\
@@ -5281,26 +5407,30 @@
 
             \begin{figure}[!htb]
             \centering
-            \begin{tikzpicture}[trim axis left]
-            \begin{axis}[
-            framed,
-            xmin=1945,xmax=2000,
-            ymin=-20,ymax=120,
-            xlabel={<m>t</m>},
-            width=.6\textwidth,
-            height=.3\textwidth,
-            grid=both,
-            axis line style=-&gt;,
-            xtick={1955,1965,...,1995},
-            xticklabels={1955,1965,...,1995},
-            ytick={20,40,...,100},
-            axis x discontinuity=crunch,
-            nodes near coords,
-            ]
-            \addplot[soldot]coordinates{ (1963,95) (1967,70) (1970,52) (1976,40) (1980,30) (1983,22)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Atmospheric C-14 in Austria (\si{\percent} above pre-nuclear age levels)}%
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}[trim axis left]
+                \begin{axis}[
+                framed,
+                xmin=1945,xmax=2000,
+                ymin=-20,ymax=120,
+                xlabel={<m>t</m>},
+                width=.6\textwidth,
+                height=.3\textwidth,
+                grid=both,
+                axis line style=-&gt;,
+                xtick={1955,1965,...,1995},
+                xticklabels={1955,1965,...,1995},
+                ytick={20,40,...,100},
+                axis x discontinuity=crunch,
+                nodes near coords,
+                ]
+                \addplot[soldot]coordinates{ (1963,95) (1967,70) (1970,52) (1976,40) (1980,30) (1983,22)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Atmospheric C-14 in Austria (\si{\percent</caption> above pre-nuclear age levels)}%
             \label{exp-fig-coldwar}
             \end{figure}
 
@@ -5377,23 +5507,27 @@
             <solution>
               <p>
                 We will use our answer from <xref ref="exp-prob-c14plot"/>:  <m>f(t) \approx 95(0.936)^t</m> where <m>t</m> is years since 1963. \\
-                \begin{tikzpicture}[trim axis left]
-                \begin{axis}[
-                framed,
-                xmin=1945,xmax=2000,
-                ymin=-20,ymax=120,
-                xlabel={<m>t</m>},
-                grid=both,
-                axis line style=-&gt;,
-                xtick={1955,1965,...,1995},
-                ytick={20,40,...,160},
-                axis x discontinuity=crunch,
-                ]
-                \addplot+[-&gt;]expression[domain=1962:2000]{(0.93562711)^(x -1963)*95};
-                \addplot[soldot,nodes near coords]coordinates{ (1963,95) (1967,70) (1970,52) (1976,40) (1980,30) (1983,22)};
-                \draw (axis cs:1945,45)--(axis cs:1974.2298,45)--(axis cs:1974.2298,0);
-                \end{axis}
-                \end{tikzpicture}
+                <image>
+                  <latex-image-code>
+                    <![CDATA[\begin{tikzpicture}[trim axis left]
+                    \begin{axis}[
+                    framed,
+                    xmin=1945,xmax=2000,
+                    ymin=-20,ymax=120,
+                    xlabel={<m>t</m>},
+                    grid=both,
+                    axis line style=-&gt;,
+                    xtick={1955,1965,...,1995},
+                    ytick={20,40,...,160},
+                    axis x discontinuity=crunch,
+                    ]
+                    \addplot+[-&gt;]expression[domain=1962:2000]{(0.93562711)^(x -1963)*95};
+                    \addplot[soldot,nodes near coords]coordinates{ (1963,95) (1967,70) (1970,52) (1976,40) (1980,30) (1983,22)};
+                    \draw (axis cs:1945,45)--(axis cs:1974.2298,45)--(axis cs:1974.2298,0);
+                    \end{axis}
+                    \end{tikzpicture}]]>
+                  </latex-image-code>
+                </image>
 
                 So this person was probably 6 or 7 years old in about 1974.  The person was probably born in 1967 or 1968.
               </p>
@@ -5715,21 +5849,25 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-40,xmax=150,
-                  ymin=-2,ymax=11,
-                  xtick={20,40,...,140},
-                  ytick={1,...,10},
-                  yticklabels={100,200,...,1000},
-                  xlabel={<m>t</m>},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:145]{2.81*(1.007)^x};
-                  \addplot[soldot]coordinates{(0,2.81)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-40,xmax=150,
+                      ymin=-2,ymax=11,
+                      xtick={20,40,...,140},
+                      ytick={1,...,10},
+                      yticklabels={100,200,...,1000},
+                      xlabel={<m>t</m>},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:145]{2.81*(1.007)^x};
+                      \addplot[soldot]coordinates{(0,2.81)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -5758,36 +5896,44 @@
             \begin{widepage}
             \setlength{\figurewidth}{8cm}
             \begin{minipage}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-20,xmax=150,
-            ymin=-1,ymax=11,
-            xtick={20,40,...,140},
-            ytick={1,...,10},
-            yticklabels={100,200,...,1000},
-            xlabel={<m>t</m>},
-            grid=both,
-            ]
-            \end{axis}
-            \end{tikzpicture}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-20,xmax=150,
+                ymin=-1,ymax=11,
+                xtick={20,40,...,140},
+                ytick={1,...,10},
+                yticklabels={100,200,...,1000},
+                xlabel={<m>t</m>},
+                grid=both,
+                ]
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
             \captionof{figure}{US population}
             \label{exp-fig-uspopulation}
             \end{minipage}
             \hfill
             \begin{minipage}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-40,xmax=220,
-            ymin=-0.15,ymax=1.4,
-            xtick={20,40,...,200},
-            ytick={0.1,0.2,...,1.3},
-            xlabel={<m>t</m>},
-            grid=both,
-            ]
-            \end{axis}
-            \end{tikzpicture}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-40,xmax=220,
+                ymin=-0.15,ymax=1.4,
+                xtick={20,40,...,200},
+                ytick={0.1,0.2,...,1.3},
+                xlabel={<m>t</m>},
+                grid=both,
+                ]
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
             \captionof{figure}{China population}
             \label{exp-fig-chinapopulation}
             \end{minipage}
@@ -5831,20 +5977,24 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-40,xmax=220,
-                  ymin=-0.15,ymax=1.4,
-                  xtick={20,40,...,200},
-                  ytick={0.1,0.2,...,1.3},
-                  xlabel={<m>t</m>},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:200]{1.3*(0.995)^x};
-                  \addplot[soldot]coordinates{(0,1.3)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-40,xmax=220,
+                      ymin=-0.15,ymax=1.4,
+                      xtick={20,40,...,200},
+                      ytick={0.1,0.2,...,1.3},
+                      xlabel={<m>t</m>},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:200]{1.3*(0.995)^x};
+                      \addplot[soldot]coordinates{(0,1.3)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -6287,7 +6437,7 @@
 
             \begin{margintable}
             \centering
-            \caption{}
+            <caption></caption>
             \begin{tabular}{S[table-format=8.0]S[table-format=1.8]}
             \beforeheading
             \heading{<m>n</m>} &amp; \heading{<m>\dd\left( 1+\frac{1}{n} \right)^n</m>} \\\afterheading
@@ -6570,55 +6720,67 @@
             \begin{widepage}
             \setlength{\figurewidth}{0.3\textwidth}
             \begin{minipage}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-2,xmax=1,
-            ymin=-1,ymax=2,
-            xtick={-1},
-            ytick={1},
-            grid=both,
-            ]
-            \addplot expression[domain=-2:1]{2^x};
-            \addplot[asymptote,&lt;-&gt;] expression[domain=-2:1]{0.693147181*x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m\approx 0.69</m>};
-            \end{axis}
-            \end{tikzpicture}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=1,
+                ymin=-1,ymax=2,
+                xtick={-1},
+                ytick={1},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:1]{2^x};
+                \addplot[asymptote,&lt;-&gt;] expression[domain=-2:1]{0.693147181*x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m\approx 0.69</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
             \captionof{figure}{<m>f(x)=2^x</m>}
             \label{exp-fig-eusingslopes2}
             \end{minipage}%
             \hfill
             \begin{minipage}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-2,xmax=1,
-            ymin=-1,ymax=2,
-            xtick={-1},
-            ytick={1},
-            grid=both,
-            ]
-            \addplot expression[domain=-2:.69]{exp(x)};
-            \addplot[asymptote,&lt;-&gt;] expression[domain=-2:1]{x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m=1</m>};
-            \end{axis}
-            \end{tikzpicture}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=1,
+                ymin=-1,ymax=2,
+                xtick={-1},
+                ytick={1},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:.69]{exp(x)};
+                \addplot[asymptote,&lt;-&gt;] expression[domain=-2:1]{x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m=1</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
             \captionof{figure}{<m>g(x)=e^x</m>}
             \label{exp-fig-eusingslopese}
             \end{minipage}%
             \hfill
             \begin{minipage}{\figurewidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-2,xmax=1,
-            ymin=-1,ymax=2,
-            xtick={-1},
-            ytick={1},
-            grid=both,
-            ]
-            \addplot expression[domain=-2:.65]{3^x};
-            \addplot[asymptote,&lt;-&gt;] expression[domain=-1.8:0.9]{1.09861229*x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m\approx 1.10</m>};
-            \end{axis}
-            \end{tikzpicture}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=1,
+                ymin=-1,ymax=2,
+                xtick={-1},
+                ytick={1},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:.65]{3^x};
+                \addplot[asymptote,&lt;-&gt;] expression[domain=-1.8:0.9]{1.09861229*x+1}node[axisnode,inner sep=.5cm,anchor=north,pos=0.8,]{<m>m\approx 1.10</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
             \captionof{figure}{<m>h(x)=3^x</m>}
             \label{exp-fig-eusingslopes3}
             \end{minipage}
@@ -6737,20 +6899,24 @@
                   are approximately the same function. The function <m>Q</m> is plotted below as a solid line, 
                   and the function <m>P</m> is plotted as dots.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-1,xmax=10,
-                  ymin=80,ymax=170,
-                  axis line style=-&gt;,
-                  xtick={0,2,...,8},
-                  xlabel={<m>t</m>},
-                  axis y discontinuity=crunch,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:10]{100*(1.05127)^x};
-                  \addplot+[-,width=3pt]expression[domain=0:10]{100*exp(0.05*x)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-1,xmax=10,
+                      ymin=80,ymax=170,
+                      axis line style=-&gt;,
+                      xtick={0,2,...,8},
+                      xlabel={<m>t</m>},
+                      axis y discontinuity=crunch,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:10]{100*(1.05127)^x};
+                      \addplot+[-,width=3pt]expression[domain=0:10]{100*exp(0.05*x)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -6993,21 +7159,25 @@
                 using our graphing calculator as shown below -- this gives that <m>t\approx 3.14</m>. 
                 So it would take just over <m>3</m> years for our account to reach <m>\</m>9,000$.
 
-                \begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=0,xmax=4,
-                ymin=0,ymax=2,
-                xtick={1,2,3},
-                ytick={0.5,1,1.5},
-                xlabel={<m>t</m>},
-                axis line style=-&gt;,
-                grid=both,
-                ]
-                \addplot+[-&gt;]expression[domain=0:4]{exp(.08*x)};
-                \addplot+[-]expression[domain=0:4]{9/7};
-                \end{axis}
-                \end{tikzpicture}
+                <image>
+                  <latex-image-code>
+                    <![CDATA[\begin{tikzpicture}
+                    \begin{axis}[
+                    framed,
+                    xmin=0,xmax=4,
+                    ymin=0,ymax=2,
+                    xtick={1,2,3},
+                    ytick={0.5,1,1.5},
+                    xlabel={<m>t</m>},
+                    axis line style=-&gt;,
+                    grid=both,
+                    ]
+                    \addplot+[-&gt;]expression[domain=0:4]{exp(.08*x)};
+                    \addplot+[-]expression[domain=0:4]{9/7};
+                    \end{axis}
+                    \end{tikzpicture}]]>
+                  </latex-image-code>
+                </image>
               </p>
             </solution>
             \end{problem}
@@ -7194,21 +7364,25 @@
                 <p>
                   <m>y=V(t)</m> is shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-0.2,xmax=1,
-                  ymin=-1,ymax=11,
-                  xtick={0.2,0.4,...,0.8},
-                  minor xtick={0.1,0.3,...,0.9},
-                  ytick={2,4,...,10},
-                  minor ytick={1,3,...,9},
-                  xlabel={<m>t</m>},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:1,samples=50]{10*exp(-10*x)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-0.2,xmax=1,
+                      ymin=-1,ymax=11,
+                      xtick={0.2,0.4,...,0.8},
+                      minor xtick={0.1,0.3,...,0.9},
+                      ytick={2,4,...,10},
+                      minor ytick={1,3,...,9},
+                      xlabel={<m>t</m>},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:1,samples=50]{10*exp(-10*x)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7294,21 +7468,25 @@
                 <p>
                   <m>y=V(t)</m> is shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-0.2,xmax=1,
-                  ymin=-1,ymax=11,
-                  xtick={0.2,0.4,...,0.8},
-                  minor xtick={0.1,0.3,...,0.9},
-                  ytick={2,4,...,10},
-                  minor ytick={1,3,...,9},
-                  xlabel={<m>t</m>},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:1,samples=50]{10*(1-exp(-10*x))};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-0.2,xmax=1,
+                      ymin=-1,ymax=11,
+                      xtick={0.2,0.4,...,0.8},
+                      minor xtick={0.1,0.3,...,0.9},
+                      ytick={2,4,...,10},
+                      minor ytick={1,3,...,9},
+                      xlabel={<m>t</m>},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:1,samples=50]{10*(1-exp(-10*x))};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7481,23 +7659,27 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-5,xmax=5,
-                  ymin=-5,ymax=50,
-                  ytick={10,20,...,40},
-                  grid=both,
-                  legend pos=north west,
-                  ]
-                  \addplot+[dashed]expression[domain=-10:5,samples=50]{2^x};
-                  \addlegendentry{<m>y=2^x</m>};
-                  \addplot expression[domain=-10:3.91,samples=50]{exp(x)};
-                  \addlegendentry{<m>y=e^x</m>};
-                  \addplot expression[domain=-10:3.56,samples=50]{3^x};
-                  \addlegendentry{<m>y=3^x</m>};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-5,xmax=5,
+                      ymin=-5,ymax=50,
+                      ytick={10,20,...,40},
+                      grid=both,
+                      legend pos=north west,
+                      ]
+                      \addplot+[dashed]expression[domain=-10:5,samples=50]{2^x};
+                      \addlegendentry{<m>y=2^x</m>};
+                      \addplot expression[domain=-10:3.91,samples=50]{exp(x)};
+                      \addlegendentry{<m>y=e^x</m>};
+                      \addplot expression[domain=-10:3.56,samples=50]{3^x};
+                      \addlegendentry{<m>y=3^x</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7508,23 +7690,27 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-5,xmax=5,
-                  ymin=-5,ymax=50,
-                  ytick={10,20,...,40},
-                  grid=both,
-                  legend pos=north east,
-                  ]
-                  \addplot expression[domain=-5:10,samples=50]{(1/2)^x};
-                  \addlegendentry{<m>y=\left( \frac{1}{2} \right)^x</m>};
-                  \addplot+[dashed]expression[domain=-3.91:10,samples=50]{exp(-x)};
-                  \addlegendentry{<m>y=e^{-x}</m>};
-                  \addplot expression[domain=-3.56:10,samples=50]{(1/3)^x};
-                  \addlegendentry{<m>y=\left( \frac{1}{3} \right)^x</m>};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-5,xmax=5,
+                      ymin=-5,ymax=50,
+                      ytick={10,20,...,40},
+                      grid=both,
+                      legend pos=north east,
+                      ]
+                      \addplot expression[domain=-5:10,samples=50]{(1/2)^x};
+                      \addlegendentry{<m>y=\left( \frac{1}{2} \right)^x</m>};
+                      \addplot+[dashed]expression[domain=-3.91:10,samples=50]{exp(-x)};
+                      \addlegendentry{<m>y=e^{-x}</m>};
+                      \addplot expression[domain=-3.56:10,samples=50]{(1/3)^x};
+                      \addlegendentry{<m>y=\left( \frac{1}{3} \right)^x</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7532,39 +7718,47 @@
             \begin{widepage}
             \begin{minipage}{.45\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-5,ymax=50,
-            ytick={10,20,...,40},
-            grid=both,
-            ]
-            \addplot+[dashed]expression[domain=-10:5,samples=50]{2^x};
-            \addplot expression[domain=-10:3.91,samples=50]{exp(x)};
-            \addplot expression[domain=-10:3.56,samples=50]{3^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Graph for <xref ref="exp-prob-matche23"/>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-5,ymax=50,
+                ytick={10,20,...,40},
+                grid=both,
+                ]
+                \addplot+[dashed]expression[domain=-10:5,samples=50]{2^x};
+                \addplot expression[domain=-10:3.91,samples=50]{exp(x)};
+                \addplot expression[domain=-10:3.56,samples=50]{3^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Graph for <xref ref="exp-prob-matche23"/></caption>
             \label{exp-fig-matche23}
             \end{minipage}%
             \hfill
             \begin{minipage}{.45\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-5,ymax=50,
-            ytick={10,20,...,40},
-            grid=both,
-            ]
-            \addplot expression[domain=-5:10,samples=50]{(1/2)^x};
-            \addplot+[dashed]expression[domain=-3.91:10,samples=50]{exp(-x)};
-            \addplot expression[domain=-3.56:10,samples=50]{(1/3)^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Graph for <xref ref="exp-prob-matchehalfthird"/>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-5,ymax=50,
+                ytick={10,20,...,40},
+                grid=both,
+                ]
+                \addplot expression[domain=-5:10,samples=50]{(1/2)^x};
+                \addplot+[dashed]expression[domain=-3.91:10,samples=50]{exp(-x)};
+                \addplot expression[domain=-3.56:10,samples=50]{(1/3)^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Graph for <xref ref="exp-prob-matchehalfthird"/></caption>
             \label{exp-fig-matchehalfthird}
             \end{minipage}%
             \end{widepage}
@@ -7609,7 +7803,7 @@
             \begin{widepage}
             \begin{minipage}{.25\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-factorial}
             \begin{tabular}{S[table-format=1.0]l}
             \beforeheading
@@ -7625,7 +7819,7 @@
             \end{minipage}%
             \begin{minipage}{.75\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-factoriale}
             \renewcommand{\arraystretch}{2}
             \begin{tabular}{ll}
@@ -7732,19 +7926,23 @@
                 <p>
                   The graph of <m>y=\frac{1}{2}x+10</m> is shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-2,xmax=10,
-                  ymin=-3,ymax=20,
-                  xtick={1,2,...,9},
-                  ytick={2,4,...,18},
-                  grid=major,
-                  ]
-                  \addplot expression[domain=-2:10]{0.5*x+10};
-                  \addplot[soldot]coordinates{(0,10)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-2,xmax=10,
+                      ymin=-3,ymax=20,
+                      xtick={1,2,...,9},
+                      ytick={2,4,...,18},
+                      grid=major,
+                      ]
+                      \addplot expression[domain=-2:10]{0.5*x+10};
+                      \addplot[soldot]coordinates{(0,10)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7756,19 +7954,23 @@
                 <p>
                   The graph of <m>y=15-0.8x</m> is shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-2,xmax=10,
-                  ymin=-3,ymax=20,
-                  xtick={1,2,...,9},
-                  ytick={2,4,...,18},
-                  grid=major,
-                  ]
-                  \addplot expression[domain=-2:10]{15-0.8*x};
-                  \addplot[soldot]coordinates{(0,15)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-2,xmax=10,
+                      ymin=-3,ymax=20,
+                      xtick={1,2,...,9},
+                      ytick={2,4,...,18},
+                      grid=major,
+                      ]
+                      \addplot expression[domain=-2:10]{15-0.8*x};
+                      \addplot[soldot]coordinates{(0,15)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7780,19 +7982,23 @@
                 <p>
                   The graph of <m>y=\frac{1}{3}(x-7)+4</m> is shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-2,xmax=10,
-                  ymin=-2,ymax=10,
-                  xtick={1,2,...,9},
-                  ytick={1,2,...,9},
-                  grid=major,
-                  ]
-                  \addplot expression[domain=-2:10]{1/3*(x-7)+4};
-                  \addplot[soldot]coordinates{(7,4)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-2,xmax=10,
+                      ymin=-2,ymax=10,
+                      xtick={1,2,...,9},
+                      ytick={1,2,...,9},
+                      grid=major,
+                      ]
+                      \addplot expression[domain=-2:10]{1/3*(x-7)+4};
+                      \addplot[soldot]coordinates{(7,4)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -7852,7 +8058,7 @@
             \null \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{} \label{exp-tab-lineardata}
+            <caption></caption> \label{exp-tab-lineardata}
             \begin{tabular}{S[table-format=4.0]S[table-format=2.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -7867,7 +8073,7 @@
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{} \label{exp-tab-expdata}
+            <caption></caption> \label{exp-tab-expdata}
             \begin{tabular}{S[table-format=2.0]S[table-format=1.2]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -7882,7 +8088,7 @@
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{}\label{exp-tab-neitherdata}
+            <caption></caption>\label{exp-tab-neitherdata}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -7934,7 +8140,7 @@
             \centering
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{} \label{exp-tab-dataexample1}
+            <caption></caption> \label{exp-tab-dataexample1}
             \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -7949,7 +8155,7 @@
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{} \label{exp-tab-dataexample2}
+            <caption></caption> \label{exp-tab-dataexample2}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -7964,7 +8170,7 @@
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{}\label{exp-tab-dataexample3}
+            <caption></caption>\label{exp-tab-dataexample3}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.7]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -7980,7 +8186,7 @@
             \hfill 
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{} \label{exp-tab-dataexample4}
+            <caption></caption> \label{exp-tab-dataexample4}
             \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -8072,7 +8278,7 @@
             \null\hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            \caption{}\label{exp-tab-dataexample55}
+            <caption></caption>\label{exp-tab-dataexample55}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -8088,7 +8294,7 @@
             \centering
             \begin{minipage}{0.20\textwidth}
             \centering
-            \caption{} \label{exp-tab-dataexample6}
+            <caption></caption> \label{exp-tab-dataexample6}
             \begin{tabular}{S[table-format=4.0]S[table-format=3.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -8103,7 +8309,7 @@
             \hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            \caption{} \label{exp-tab-dataexample7}
+            <caption></caption> \label{exp-tab-dataexample7}
             \begin{tabular}{S[table-format=4.0]S[table-format=2.3]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
@@ -8118,7 +8324,7 @@
             \hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            \caption{}\label{exp-tab-dataexample8}
+            <caption></caption>\label{exp-tab-dataexample8}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
             \beforeheading
             \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
@@ -8168,19 +8374,23 @@
             \end{minipage}
             \hfill
             \begin{minipage}{.3\textwidth}
-            \begin{tikzpicture}[trim axis left]
-            \begin{axis}[
-            xmin=-2,xmax=14,
-            ymin=-5,ymax=40,
-            ytick={5,10,...,35},
-            xtick={6,12},
-            xlabel={<m>t</m>},
-            xticklabels={2002,2008},
-            ]
-            \addplot[soldot]coordinates{(0,21)(2,22.6)(4,24.2) (6,26.0) (8,27.9) (10,30) (12,32.2)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{US C\ae{}sarian section data}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}[trim axis left]
+                \begin{axis}[
+                xmin=-2,xmax=14,
+                ymin=-5,ymax=40,
+                ytick={5,10,...,35},
+                xtick={6,12},
+                xlabel={<m>t</m>},
+                xticklabels={2002,2008},
+                ]
+                \addplot[soldot]coordinates{(0,21)(2,22.6)(4,24.2) (6,26.0) (8,27.9) (10,30) (12,32.2)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>US C\ae{</caption>sarian section data}
             \label{exp-fig-Csections}
             \end{minipage}%
             \hfill\mbox{}
@@ -8243,21 +8453,25 @@
 
             \begin{figure}[!htb]
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            xmin=-2,xmax=14,
-            ymin=-5,ymax=40,
-            ytick={5,10,...,35},
-            xtick={6,12},
-            xlabel={<m>t</m>},
-            xticklabels={2002,2008},
-            width=.3\textwidth,
-            ]
-            \addplot expression[domain=-2:14]{24.26*(1.036^(x-4))};  
-            \addplot[soldot]coordinates{(0,21)(2,22.6)(4,24.2) (6,26.0) (8,27.9) (10,30) (12,32.2)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{US C\ae{}sarian section model}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                xmin=-2,xmax=14,
+                ymin=-5,ymax=40,
+                ytick={5,10,...,35},
+                xtick={6,12},
+                xlabel={<m>t</m>},
+                xticklabels={2002,2008},
+                width=.3\textwidth,
+                ]
+                \addplot expression[domain=-2:14]{24.26*(1.036^(x-4))};  
+                \addplot[soldot]coordinates{(0,21)(2,22.6)(4,24.2) (6,26.0) (8,27.9) (10,30) (12,32.2)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>US C\ae{</caption>sarian section model}
             \label{exp-fig-CsectionsModel}
             \end{figure}
 
@@ -8297,44 +8511,52 @@
             \centering
             \hfill
             \begin{minipage}{0.3\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-40,ymax=100,
-            xtick={-4,...,4},
-            ytick={-20,0,...,80},
-            minor ytick={-30,-20,...,90},
-            grid=both,
-            legend pos=north west,
-            ]
-            \addplot expression[domain=-5:5]{4*x+1};
-            \addplot expression[domain=-5:3.3219]{4^x};
-            \legend{<m>f</m>, <m>g</m>};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-40,ymax=100,
+                xtick={-4,...,4},
+                ytick={-20,0,...,80},
+                minor ytick={-30,-20,...,90},
+                grid=both,
+                legend pos=north west,
+                ]
+                \addplot expression[domain=-5:5]{4*x+1};
+                \addplot expression[domain=-5:3.3219]{4^x};
+                \legend{<m>f</m>, <m>g</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-comparelinexp}
             \end{minipage}
             \hfill
             \begin{minipage}{0.3\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-100,ymax=40,
-            xtick={-4,...,4},
-            ytick={-80,-60,...,20},
-            minor ytick={-90,-70,...,30},
-            grid=both,
-            legend pos=south west,
-            ]
-            \addplot expression[domain=-5:2]{-10^x};
-            \addplot expression[domain=-5:5]{-6*x};
-            \legend{<m>m</m>,<m>n</m>};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-100,ymax=40,
+                xtick={-4,...,4},
+                ytick={-80,-60,...,20},
+                minor ytick={-90,-70,...,30},
+                grid=both,
+                legend pos=south west,
+                ]
+                \addplot expression[domain=-5:2]{-10^x};
+                \addplot expression[domain=-5:5]{-6*x};
+                \legend{<m>m</m>,<m>n</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-comparelinexpmn}
             \end{minipage}
             \hfill\null
@@ -8440,42 +8662,46 @@
 
             \begin{figure}[!htb]
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            x axis line style={-&gt;},
-            y axis line style={-&gt;},
-            xlabel={<m>t</m>},
-            ylabel={Wind Power Capacity By Year (MW)},
-            width=.95\textwidth,
-            height=.5\textwidth,
-            xmin=-1,xmax=17,
-            xtick={0,2,...,18},
-            xticklabels={1994,1996,...,2010},
-            ymin=-10,ymax=220,
-            ytick={0,20,...,200},
-            yticklabels={0,20000,40000,60000,80000,100000,120000,140000,160000,180000,200000},
-            ]
-            \addplot[pccbar,bar width=15] plot coordinates
-            {
-            (1,4.800)
-            (2,6.100)
-            (3,7.480)
-            (4,9.667)
-            (5,13.701)
-            (6,18.040)
-            (7,24.319)
-            (8,31.181)
-            (9,41.343)
-            (10,49.463)
-            (11,59.137)
-            (12,74.178)
-            (13,93.952)
-            (14,121.328)
-            (15,158.008)
-            (16,194.154)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{Wind power.}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                x axis line style={-&gt;},
+                y axis line style={-&gt;},
+                xlabel={<m>t</m>},
+                ylabel={Wind Power Capacity By Year (MW)},
+                width=.95\textwidth,
+                height=.5\textwidth,
+                xmin=-1,xmax=17,
+                xtick={0,2,...,18},
+                xticklabels={1994,1996,...,2010},
+                ymin=-10,ymax=220,
+                ytick={0,20,...,200},
+                yticklabels={0,20000,40000,60000,80000,100000,120000,140000,160000,180000,200000},
+                ]
+                \addplot[pccbar,bar width=15] plot coordinates
+                {
+                (1,4.800)
+                (2,6.100)
+                (3,7.480)
+                (4,9.667)
+                (5,13.701)
+                (6,18.040)
+                (7,24.319)
+                (8,31.181)
+                (9,41.343)
+                (10,49.463)
+                (11,59.137)
+                (12,74.178)
+                (13,93.952)
+                (14,121.328)
+                (15,158.008)
+                (16,194.154)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption>Wind power.</caption>
             \label{exp-fig-windpower}
             \end{figure}
 
@@ -8595,19 +8821,23 @@
                 <p>
                   According to the model, it appears that the population of Africa will reach <m>1.5</m> billion in the year 2026.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  xmin=-5,xmax=35,
-                  ymin=-200,ymax=2000,
-                  xlabel={<m>t</m>},
-                  xtick={5,10,...,30},
-                  ytick={500,1000,1500},
-                  xticklabels={2005,{},{},{},{},{}},
-                  ]
-                  \addplot expression[domain=-5:35]{819.7*1.0236^x};
-                  \draw[dashed,-&gt;](axis cs:0,1500)--(axis cs:25.98,1500)--(axis cs:25.98,0);
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      xmin=-5,xmax=35,
+                      ymin=-200,ymax=2000,
+                      xlabel={<m>t</m>},
+                      xtick={5,10,...,30},
+                      ytick={500,1000,1500},
+                      xticklabels={2005,{},{},{},{},{}},
+                      ]
+                      \addplot expression[domain=-5:35]{819.7*1.0236^x};
+                      \draw[dashed,-&gt;](axis cs:0,1500)--(axis cs:25.98,1500)--(axis cs:25.98,0);
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -8688,23 +8918,27 @@
                 <p>
                   The graphs of <m>H</m> and <m>T</m>  are shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-3,xmax=10,
-                  ymin=-200,ymax=1100,
-                  xtick={-2,-1,...,9},
-                  ytick={100,200,...,1000},
-                  xlabel={<m>t</m>},
-                  grid=major,
-                  legend pos=north east,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:10]{2^x};
-                  \addlegendentry{<m>y=T(x)</m>};
-                  \addplot+[-&gt;]expression[domain=0:10]{20*x};
-                  \addlegendentry{<m>y=H(x)</m>};
-                  \end{axis}
-                  \end{tikzpicture}\\
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-3,xmax=10,
+                      ymin=-200,ymax=1100,
+                      xtick={-2,-1,...,9},
+                      ytick={100,200,...,1000},
+                      xlabel={<m>t</m>},
+                      grid=major,
+                      legend pos=north east,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:10]{2^x};
+                      \addlegendentry{<m>y=T(x)</m>};
+                      \addplot+[-&gt;]expression[domain=0:10]{20*x};
+                      \addlegendentry{<m>y=H(x)</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>\\
                   The Tortoise wins the race.
                 </p>
               </solution>
@@ -8731,25 +8965,29 @@
                 <p>
                   The graphs of <m>H</m>, <m>T</m>, and <m>S</m>  are shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-3,xmax=10,
-                  ymin=-200,ymax=1100,
-                  xtick={-2,-1,...,9},
-                  ytick={100,200,...,1000},
-                  xlabel={<m>t</m>},
-                  grid=major,
-                  legend pos=north east,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:10]{2^x};
-                  \addlegendentry{<m>y=T(x)</m>};
-                  \addplot+[-&gt;]expression[domain=0:10]{20*x};
-                  \addlegendentry{<m>y=H(x)</m>};
-                  \addplot+[-&gt;]expression[domain=0:10]{40*x};
-                  \addlegendentry{<m>y=S(x)</m>};
-                  \end{axis}
-                  \end{tikzpicture}\\
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-3,xmax=10,
+                      ymin=-200,ymax=1100,
+                      xtick={-2,-1,...,9},
+                      ytick={100,200,...,1000},
+                      xlabel={<m>t</m>},
+                      grid=major,
+                      legend pos=north east,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:10]{2^x};
+                      \addlegendentry{<m>y=T(x)</m>};
+                      \addplot+[-&gt;]expression[domain=0:10]{20*x};
+                      \addlegendentry{<m>y=H(x)</m>};
+                      \addplot+[-&gt;]expression[domain=0:10]{40*x};
+                      \addlegendentry{<m>y=S(x)</m>};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>\\
                   The Tortoise wins the race.
                 </p>
               </solution>
@@ -8930,7 +9168,7 @@
             \begin{widepage}
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-findformula1}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.1]}
             \beforeheading
@@ -8946,7 +9184,7 @@
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-findformula2}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
             \beforeheading
@@ -8962,7 +9200,7 @@
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-findformula3}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.3]}
             \beforeheading
@@ -8978,7 +9216,7 @@
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-findformula4}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
             \beforeheading
@@ -8996,7 +9234,7 @@
             \null\hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-dataproblem1}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
             \beforeheading
@@ -9012,7 +9250,7 @@
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-dataproblem2}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.2]}
             \beforeheading
@@ -9028,7 +9266,7 @@
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            \caption{}
+            <caption></caption>
             \label{exp-tab-dataproblem3}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
             \beforeheading
@@ -9431,44 +9669,52 @@
             \centering
             \hfill
             \begin{minipage}{0.3\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-40,ymax=100,
-            xtick={-4,...,4},
-            ytick={-20,0,...,80},
-            minor ytick={-30,-20,...,90},
-            grid=both,
-            legend pos=north east,
-            ]
-            \addplot expression[domain=-3.3219:5]{(1/4)^x};
-            \addplot expression[domain=-5:5]{-3*x};
-            \legend{<m>f</m>, <m>n</m>};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>f</m> and <m>n</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-40,ymax=100,
+                xtick={-4,...,4},
+                ytick={-20,0,...,80},
+                minor ytick={-30,-20,...,90},
+                grid=both,
+                legend pos=north east,
+                ]
+                \addplot expression[domain=-3.3219:5]{(1/4)^x};
+                \addplot expression[domain=-5:5]{-3*x};
+                \legend{<m>f</m>, <m>n</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>f</m> and <m>n</m></caption>
             \label{exp-fig-complinexpfn}
             \end{minipage}
             \hfill
             \begin{minipage}{0.3\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-100,ymax=40,
-            xtick={-4,...,4},
-            ytick={-80,-60,...,20},
-            minor ytick={-90,-70,...,30},
-            grid=both,
-            legend pos=south east,
-            ]
-            \addplot expression[domain=-2.8613:5]{-(1/5)^x};
-            \addplot expression[domain=-5:5]{6*x};
-            \legend{<m>g</m>,<m>m</m>};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>g</m> and <m>m</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-100,ymax=40,
+                xtick={-4,...,4},
+                ytick={-80,-60,...,20},
+                minor ytick={-90,-70,...,30},
+                grid=both,
+                legend pos=south east,
+                ]
+                \addplot expression[domain=-2.8613:5]{-(1/5)^x};
+                \addplot expression[domain=-5:5]{6*x};
+                \legend{<m>g</m>,<m>m</m>};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>g</m> and <m>m</m></caption>
             \label{exp-fig-complinexpgm}
             \end{minipage}
             \hfill\null
@@ -9517,125 +9763,157 @@
             \setlength{\figurewidth}{0.2\textwidth}
             \centering
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-25,ymax=50,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:5]{2^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-25,ymax=50,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:5]{2^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp1}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-100,ymax=100,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:5]{-20*x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-100,ymax=100,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:5]{-20*x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp2}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-25,ymax=100,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-3.3219:5]{(1/4)^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-25,ymax=100,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-3.3219:5]{(1/4)^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp3}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-15,ymax=20,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:5]{3*x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-15,ymax=20,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:5]{3*x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp4}
             \end{subfigure}\\
             \vspace{0.5cm}
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-10,ymax=10,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:5]{5};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-10,ymax=10,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:5]{5};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp5}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-10,ymax=10,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-3.32193:5]{-(1/2)^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-10,ymax=10,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-3.32193:5]{-(1/2)^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp6}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-10,ymax=10,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:5]{x+2};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-10,ymax=10,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:5]{x+2};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp7}
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-5,xmax=5,
-            ymin=-100,ymax=40,
-            xtick={-10},ytick={-101},
-            ]
-            \addplot expression[domain=-5:4.1918]{-3^x};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-5,xmax=5,
+                ymin=-100,ymax=40,
+                xtick={-10},ytick={-101},
+                ]
+                \addplot expression[domain=-5:4.1918]{-3^x};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
             \label{exp-fig-matchlinexp8}
             \end{subfigure}
-            \caption{}
+            <caption></caption>
             \label{exp-fig-matchlinexp}
             \end{widepage}
             \end{figure}
@@ -9707,45 +9985,53 @@
             \begin{figure}[!htb]
             \begin{minipage}{.4\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-15,xmax=100,
-            ymin=-130,ymax=1500,
-            xtick={10,20,...,90},
-            ytick={200,400,...,1400},
-            minor ytick={100,300,...,1300},
-            xlabel={<m>t</m>},
-            grid=both,
-            ]
-            \addplot+[-&gt;]expression[domain=0:95]{1000/(1+9*exp(-0.08*x))};
-            \addplot[asymptote,domain=0:100]({x},{1000});
-            \addplot[soldot]coordinates{(0,100)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>\dd P(t)=\frac{1000}{1+9e^{-0.08t}}</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-15,xmax=100,
+                ymin=-130,ymax=1500,
+                xtick={10,20,...,90},
+                ytick={200,400,...,1400},
+                minor ytick={100,300,...,1300},
+                xlabel={<m>t</m>},
+                grid=both,
+                ]
+                \addplot+[-&gt;]expression[domain=0:95]{1000/(1+9*exp(-0.08*x))};
+                \addplot[asymptote,domain=0:100]({x},{1000});
+                \addplot[soldot]coordinates{(0,100)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>\dd P(t)=\frac{1000}{1+9e^{-0.08t}}</m></caption>
             \label{exp-fig-logistics1}
             \end{minipage}
             \hfill
             \begin{minipage}{.4\textwidth}
             \centering
-            \begin{tikzpicture}
-            \begin{axis}[
-            framed,
-            xmin=-15,xmax=100,
-            ymin=-130,ymax=1500,
-            xtick={10,20,...,90},
-            ytick={200,400,...,1400},
-            minor ytick={100,300,...,1300},
-            xlabel={<m>t</m>},
-            grid=both,
-            ]
-            \addplot+[-&gt;]expression[domain=0:95]{7000/(7-2*exp(-0.08*x))};
-            \addplot[asymptote,domain=0:100]({x},1000);
-            \addplot[soldot]coordinates{(0,1400)};
-            \end{axis}
-            \end{tikzpicture}
-            \caption{<m>\dd P(t)= \frac{7000}{7-2e^{-0.08t}}</m>}
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-15,xmax=100,
+                ymin=-130,ymax=1500,
+                xtick={10,20,...,90},
+                ytick={200,400,...,1400},
+                minor ytick={100,300,...,1300},
+                xlabel={<m>t</m>},
+                grid=both,
+                ]
+                \addplot+[-&gt;]expression[domain=0:95]{7000/(7-2*exp(-0.08*x))};
+                \addplot[asymptote,domain=0:100]({x},1000);
+                \addplot[soldot]coordinates{(0,1400)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>\dd P(t)= \frac{7000}{7-2e^{-0.08t}}</m></caption>
             \label{exp-fig-logistics2}
             \end{minipage}
             \end{figure}
@@ -9787,23 +10073,27 @@
                 <p>
                   <m>P(t)\to 800</m> as <m>t\to\infty</m>, as shown below.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-25,xmax=100,
-                  ymin=-200,ymax=1200,
-                  xlabel={<m>t</m>},
-                  xtick={20,40,...,80},
-                  ytick={200,400,...,1000},
-                  minor ytick={10,30,...,90},
-                  minor ytick={100,300,...,1100},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:95]{800/(1+7*exp(-0.05*x))};
-                  \addplot[asymptote,domain=-25:100]({x},800);
-                  \addplot[soldot]coordinates{(0,100)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-25,xmax=100,
+                      ymin=-200,ymax=1200,
+                      xlabel={<m>t</m>},
+                      xtick={20,40,...,80},
+                      ytick={200,400,...,1000},
+                      minor ytick={10,30,...,90},
+                      minor ytick={100,300,...,1100},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:95]{800/(1+7*exp(-0.05*x))};
+                      \addplot[asymptote,domain=-25:100]({x},800);
+                      \addplot[soldot]coordinates{(0,100)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
@@ -9895,23 +10185,27 @@
                   There are infinitely many choices available to us- we just need to choose <m>P_0&gt;800</m>. With <m>P_0=1000</m>, we have 
                   <m>P(t)=\frac{4000}{5-e^{-0.05t}}</m>.
 
-                  \begin{tikzpicture}
-                  \begin{axis}[
-                  framed,
-                  xmin=-25,xmax=100,
-                  ymin=-200,ymax=1200,
-                  xlabel={<m>t</m>},
-                  xtick={20,40,...,80},
-                  ytick={200,400,...,1000},
-                  minor ytick={10,30,...,90},
-                  minor ytick={100,300,...,1100},
-                  grid=both,
-                  ]
-                  \addplot+[-&gt;]expression[domain=0:95]{4000/(5-exp(-0.05*x))};
-                  \addplot[asymptote,domain=-25:100]({x},800);
-                  \addplot[soldot]coordinates{(0,1000)};
-                  \end{axis}
-                  \end{tikzpicture}
+                  <image>
+                    <latex-image-code>
+                      <![CDATA[\begin{tikzpicture}
+                      \begin{axis}[
+                      framed,
+                      xmin=-25,xmax=100,
+                      ymin=-200,ymax=1200,
+                      xlabel={<m>t</m>},
+                      xtick={20,40,...,80},
+                      ytick={200,400,...,1000},
+                      minor ytick={10,30,...,90},
+                      minor ytick={100,300,...,1100},
+                      grid=both,
+                      ]
+                      \addplot+[-&gt;]expression[domain=0:95]{4000/(5-exp(-0.05*x))};
+                      \addplot[asymptote,domain=-25:100]({x},800);
+                      \addplot[soldot]coordinates{(0,1000)};
+                      \end{axis}
+                      \end{tikzpicture}]]>
+                    </latex-image-code>
+                  </image>
                 </p>
               </solution>
             </exercise>
