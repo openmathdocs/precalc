@@ -264,8 +264,17 @@
 <xsl:template match="exercise[ancestor::mathbook[@style='chunk']]|exercisegroup[ancestor::mathbook[@style='chunk']]">
   <xsl:text>\begin{problem}</xsl:text>
   <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:apply-templates select="statement"/>
   <xsl:text>&#xa;</xsl:text>
-  <xsl:apply-templates select="*[not(self::title)]"/>
+  <xsl:if test="@cols">
+      <xsl:text>\begin{multicols}{</xsl:text>
+      <xsl:value-of select="@cols" />
+      <xsl:text>}&#xa;</xsl:text>
+  </xsl:if>
+  <xsl:apply-templates select="*[not(self::title or self::statement)]"/>
+  <xsl:if test="@cols">
+      <xsl:text>\end{multicols}&#xa;</xsl:text>
+  </xsl:if>
   <xsl:if test="not(solution)">
     <xsl:text>\begin{shortsolution}&#xa;</xsl:text>
     <xsl:text>{\bfseries\color{red}{NEED SOLUTION (update XML, not .tex)}}&#xa;</xsl:text>
@@ -349,6 +358,13 @@
 
 <!-- Figures in solutions don't float -->
 <xsl:template match="figure[ancestor::mathbook[@style='chunk']][ancestor::solution]">
+    <!-- figure in solution -->
+      <xsl:apply-templates />
+      <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<!-- tables in solutions don't float -->
+<xsl:template match="table[ancestor::mathbook[@style='chunk']][ancestor::exercise/solution]">
     <!-- figure in solution -->
       <xsl:apply-templates />
       <xsl:text>%&#xa;</xsl:text>

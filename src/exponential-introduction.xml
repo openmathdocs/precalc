@@ -1008,7 +1008,619 @@
       </exercise>
     </exercisegroup>
   </exercises>
-  <exercise>
-    
-  </exercise>
+  <!-- Regular exercises -->
+  <!-- Regular exercises -->
+  <!-- Regular exercises -->
+  <exercises>
+    <exercisegroup cols="4">
+      <title>Exponential or not</title>
+      <statement>
+        Decide if the following formulas correspond to  exponential functions or not.
+      </statement>
+      <exercise>
+        <statement>
+          <m>f(x)=5^x</m>
+        </statement>
+        <solution>
+          <p>
+            Exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>g(x)=x^5</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>h(x)=3\cdot 2^x</m>
+        </statement>
+        <solution>
+          <p>
+            Exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>k(x)=-3\cdot 2^x</m>
+        </statement>
+        <solution>
+          <p>
+            Exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>m(x)=3x^2</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>n(x)=\left(\frac{1}{2}\right)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>p(x)=4</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>q(x)=0</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>r(x)=\left(\frac{2}{3}\right)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>s(x)=\left(-\frac{2}{3}\right)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>t(x)=5x</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>u(x)=\pi</m>
+        </statement>
+        <solution>
+          <p>
+            Not exponential.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup cols="4">
+      <author>Hughes</author>
+      <date>  March 2012</date>
+      <title>Identify <m>a</m> and <m>b</m></title>
+      <statement>
+        Each of the following formulas define exponential functions, and have the form <m>f(x)=a\,b^x</m>. 
+        Identify <m>a</m> and <m>b</m> in each case.
+      </statement>
+      <exercise>
+        <statement>
+          <m>f(x)=2\cdot 3^x</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=2</m>, <m>b=3</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>g(x)=-4\cdot 5^x</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=-4</m>, <m>b=5</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>h(t) = \left( \frac{2}{3} \right)^t</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=1</m>, <m>b=\frac{2}{3}</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>k(y)= -\left( \frac{2}{3} \right)^y</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=-1</m>, <m>b=\frac{2}{3}</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>F(s)=3^{-s}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=1</m>, <m>b=\frac{1}{3}</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>G(r)=\frac{2}{3^r}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=2</m>, <m>b=\frac{1}{3}</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>H(w)=-\frac{4^w}{5}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=-\frac{1}{5}</m>, <m>b=4</m> 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>K(z)=-10\cdot 5^{-z}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>a=-10</m>, <m>b=\frac{1}{5}</m> 
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup cols="4" xml:id="exp-prob-fnevaln">
+      <author>Hughes</author>
+      <date>  February 2012</date>
+      <title>Exponential function evaluation</title>
+      <statement>
+        Evaluate each of the following formulas at <m>-10</m>, <m>-5</m>, <m>0</m>, <m>5</m>, and <m>10</m>. 
+        Give the exact answer, and an approximation (where appropriate) using two figures after the decimal.
+      </statement>
+      <exercise>
+        <statement>
+          <m>f(x)=2^x</m> 
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              f(-10) &amp; =\frac{1}{1024}\approx 0.00 \\
+              f(-5)  &amp; =\frac{1}{32}\approx 0.03   \\
+              f(0)   &amp; =\frac{1}{1}=1              \\
+              f(5)   &amp; =32                         \\
+              f(10)  &amp; =1024                       
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>g(x)=\left( \frac{1}{3} \right)^x</m>
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              g(-10) &amp; =59049                       \\
+              g(-5)  &amp; =243                         \\
+              g(0)   &amp; =1                           \\
+              g(5)   &amp; =\frac{1}{243}\approx 0.00   \\
+              g(10)  &amp; =\frac{1}{59049}\approx 0.00 
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>h(x)=-5^x</m> 
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              h(-10) &amp; =-\frac{1}{9765625}\approx -0.00 \\
+              h(-5)  &amp; =-\frac{1}{3125}\approx -0.00    \\
+              h(0)   &amp; =-1                              \\
+              h(5)   &amp; =-3125                           \\
+              h(10)  &amp; =-9765625                        
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>k(x)=-\left( \frac{2}{5} \right)^x</m> 
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              k(-10) &amp; =-\frac{9765625}{1024}\approx -9536.74 \\
+              k(-5)  &amp; =-\frac{3125}{32}\approx -97.66        \\
+              k(0)   &amp; =-1                                    \\
+              k(5)   &amp; =-\frac{32}{3125}\approx -0.01         \\
+              k(10)  &amp; =-\frac{1024}{9765625}\approx -0.00    
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <author>Hughes</author>
+      <date>  February 2012</date>
+      <title>Features of exponential functions</title>
+      <statement>
+        Refer to the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>k</m> defined in <xref ref="exp-prob-fnevaln"/> 
+        throughout this problem.
+      </statement>
+      <exercise>
+        <statement>
+          Decide if each function is always increasing or always decreasing. 
+        </statement>
+        <solution>
+          <p>
+            <m>f</m> is increasing, <m>g</m> is decreasing, <m>h</m> is decreasing, <m>k</m> is increasing. 
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Decide if each function is concave up or concave down.
+        </statement>
+        <solution>
+          <p>
+            <m>f</m> is concave up, <m>g</m> is concave up, <m>h</m> is concave down, and <m>k</m> is concave down.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Determine the domain and range of each function. 
+        </statement>
+        <solution>
+          <p>
+            <ul>
+              <li> <m>f</m> has domain <m>(-\infty,\infty)</m>, and range <m>(0,\infty)</m>.     </li>
+              <li> <m>g</m> has domain <m>(-\infty,\infty)</m>, and range <m>(0,\infty)</m>.</li>
+              <li> <m>h</m> has domain <m>(-\infty,\infty)</m>, and range <m>(-\infty,0)</m>.</li>
+              <li> <m>k</m> has domain <m>(-\infty,\infty)</m>, and range <m>(-\infty),0</m>.</li>
+            </ul>
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <title>Prerequisite percentage skills</title> 
+      <statement>Answer these questions concerning percentages. </statement>
+      <exercise>
+        <statement>
+          Wild honeybee colonies tend to have around <quantity><mag>15</mag><unit base="percent"/></quantity> drones (males).   If a colony has 4,280 bees, about how many of them are drones?
+        </statement>
+        <solution>
+          <p>
+            The percentage <quantity><mag>15</mag><unit base="percent"/></quantity> should be converted to a decimal in order to do arithmetic with it: 0.15.  
+            <md>
+              <mrow>\textrm{drone count} &amp; = \SI{15}{\percent}\textrm{ of total bee count} </mrow>
+              <mrow>&amp; = 0.15\cdot4280 </mrow>
+              <mrow>&amp; = 642  </mrow>                                         
+            </md>
+            So there are about 642 drones in the colony.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          The human body is made up of approximately <quantity><mag>66</mag><unit base="percent"/></quantity> water. If a person weighs <quantity><mag>180</mag><unit base="pound"/></quantity>, how 
+          much water do they contain?
+        </statement>
+        <solution>
+          <p>
+            <m>0.66\cdot 180=118.80</m>. The person contains approximately <quantity><mag>118</mag><unit base="pound"/></quantity> of water.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          The air we breathe is roughly <quantity><mag>20</mag><unit base="percent"/></quantity> oxygen. If you are in a room with dimensions <m>\SI{40 x 4 x 10}{\foot}</m>, approximately how much oxygen is there in the room?
+        </statement>
+        <solution>
+          <p>
+            <m>0.20\cdot 16000=3200</m>. There is approximately <quantity><mag>3200</mag><unit base="foot" exp="3"/></quantity> of oxygen in the room.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          You are at a restaurant and receive the check for \$26. You tip <quantity><mag>15</mag><unit base="percent"/></quantity>. How 
+          much is the total bill?
+        </statement>
+        <solution>
+          <p>
+            <m>(1.15)\cdot 26=29.90</m>. The total bill is \$29.90.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          You are working in a sales job and manage to secure a client worth \$100,000. You get a 
+          <quantity><mag>1</mag><unit base="percent"/></quantity> commission, of which your supervisor gets <quantity><mag>50</mag><unit base="percent"/></quantity>. How much do you get?
+        </statement>
+        <solution>
+          <p>
+            <m>0.01\cdot 100,000 \cdot 0.5 = 500</m>. You get \$500.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup cols="2">
+      <author>Vega</author>
+      <date>  March 2011</date>
+      <title>Growth factor</title>
+      <statement>
+        For each of the following, identify the growth factor, the growth rate, and the initial value.
+      </statement>
+      <exercise>
+        <statement>
+          <m>y=5\cdot 3^x</m>
+        </statement>
+        <solution>
+          <p>
+            Growth factor is <m>3</m>, initial value is 5.  Growth rate is <quantity><mag>200</mag><unit base="percent"/></quantity>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>y=6\cdot (0.5)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Decay factor is <m>0.5</m>, initial value is 6.  Growth rate is <quantity><mag>-50</mag><unit base="percent"/></quantity>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>\dd y=2\cdot \left(\sfrac{3}{4}\right)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Decay factor is <m>0.25</m>, initial value is 2.  Growth rate is <quantity><mag>-25</mag><unit base="percent"/></quantity>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>y=500\cdot (2.5)^x</m>
+        </statement>
+        <solution>
+          <p>
+            Growth factor is <m>2.5</m>, initial value is 500.  Growth rate is <quantity><mag>150</mag><unit base="percent"/></quantity>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup>
+      <author>Vega</author>
+      <date>  March 2011</date>
+      <title>Growth factor applications</title>
+      <statement>
+        Use the following descriptions to determine the growth rate and growth factor as decimals.
+      </statement>
+      <exercise>
+        <statement>
+          A store has 100 hats and is increasing their stock at a rate of <quantity><mag>10</mag><unit base="percent"/></quantity> per day.
+        </statement>
+        <solution>
+          <p>
+            Growth rate is <quantity><mag>10</mag><unit base="percent"/></quantity> or 0.1, growth factor is 1.1.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          A fire department is losing <quantity><mag>6</mag><unit base="percent"/></quantity> of its annual funding with each passing year, where they had \$10,500 in annual funding when the station opened. 
+        </statement>
+        <solution>
+          <p>
+            Growth rate is <quantity><mag>-6</mag><unit base="percent"/></quantity> or <m>-0.06</m>, growth factor is <m>0.94</m>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup xml:id="exp-prob-increasingexptabs">
+      <author>Barkin</author>
+      <date>  April 2011</date>
+      <title>
+        Increasing exponential functions
+      </title>
+      <statement>
+        Consider the functions <m>f</m> and <m>g</m> that have formulas <m>f(x) = 2^x</m> and <m>g(x) = 3^x+4</m>.  
+      </statement>
+      <sidebyside>
+        <table xml:id="exp-tab-increasingexp">
+          <caption/>
+          <tabular>
+            <col halign="."/>
+            <col halign="right"/>
+            <col halign="right"/>
+            <thead>
+              <row><cell><m>x</m></cell><cell><m>f(x)</m></cell><cell><m>g(x)</m></cell></row>
+            </thead>
+            <row><cell>-3</cell><cell></cell><cell></cell></row>
+            <row><cell>-2</cell><cell></cell><cell></cell></row>
+            <row><cell>-1</cell><cell></cell><cell></cell></row>
+            <row><cell>0</cell> <cell></cell><cell></cell></row>
+            <row><cell>1</cell> <cell></cell><cell></cell></row>
+            <row><cell>2</cell> <cell></cell><cell></cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+        <table xml:id="exp-tab-decreasingexp">
+          <caption/>
+          <tabular>
+            <col halign="."/>
+            <col halign="right"/>
+            <col halign="right"/>
+            <thead>
+              <row><cell><m>x</m></cell><cell><m>m(x)</m></cell><cell><m>n(x)</m></cell></row>
+            </thead>
+            <row><cell>-3</cell><cell></cell><cell></cell></row>
+            <row><cell>-2</cell><cell></cell><cell></cell></row>
+            <row><cell>-1</cell><cell></cell><cell></cell></row>
+            <row><cell>0</cell> <cell></cell><cell></cell></row>
+            <row><cell>1</cell> <cell></cell><cell></cell></row>
+            <row><cell>2</cell> <cell></cell><cell></cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+      </sidebyside>
+      <exercise>
+        <statement>
+          Graph the functions <m>f</m> and <m>g</m> over the interval <m>-3\le x \le 2</m> after first filling in <xref ref="exp-tab-increasingexp"/>.  
+          Label the functions <m>f</m> and <m>g</m> on your graph.
+        </statement>
+        <solution>
+          <p>
+            <table>
+              <tabular>
+                <col halign="."/>
+                <col halign="center"/>
+                <col halign="center"/>
+                <thead>
+                  <row><cell><m>x</m></cell><cell><m>f(x)</m></cell><cell><m>g(x)</m></cell></row>
+                </thead>
+                <row><cell>-3</cell><cell>1/8</cell><cell>109/27</cell></row>
+                <row><cell>-2</cell><cell>1/4</cell><cell>37/9</cell></row>
+                <row><cell>-1</cell><cell>1/2</cell><cell>13/3</cell></row>
+                <row><cell>0</cell> <cell>1</cell><cell>5</cell></row>      
+                <row><cell>1</cell> <cell>2</cell><cell>7</cell></row> 
+                <row><cell>2</cell> <cell>4</cell><cell>13</cell></row>
+                <tfoot/>
+              </tabular>
+            </table>
+
+            The functions <m>f</m> and <m>g</m> are graphed below.
+
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=2,
+                ymin=-2,ymax=10,
+                xtick={-2,...,2},
+                ytick={5},
+                minor ytick={-1,...,10},
+                grid=both,
+                legend pos=north west,
+                ]
+                \addplot expression[domain=-3:2]{2^x};
+                \addlegendentry{$y=2^x$};
+                \addplot expression[domain=-3:1.5]{3^x+4};
+                \addlegendentry{$y=3^x+4$};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          What are the horizontal asymptotes of <m>f</m> and <m>g</m>?
+        </statement>
+        <solution>
+          <p>
+            <m>f</m> has asymptote <m>y=0</m>, and <m>g</m> has asymptote <m>y=4</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Notice that both <m>f</m> and <m>g</m> are increasing as <m>x</m> increases.  Which function is increasing at the faster rate?
+        </statement>
+        <solution>
+          <p>
+            <m>g</m> is increasing at a faster rate than <m>f</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Can the value of <m>f(x)</m> be zero?  Can it be negative?  Why or why not?
+        </statement>
+        <solution>
+          <p>
+            No. There is no number such that <m>2^x=0</m>, and no real number such that <m>2^x</m> is negative.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          What are the domain and range of the functions <m>f</m> and <m>g</m>?
+        </statement>
+        <solution>
+          <p>
+            Both have domain <m>(-\infty,\infty)</m>; the range of <m>f</m> is <m>(0,\infty)</m> and the range of <m>g</m> is <m>(4,\infty)</m>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+  </exercises>
 </section>

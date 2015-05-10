@@ -1,633 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-    to get images:
-        ./script/mbx -vv -c latex-image -f svg -d ~/Documents/projects/openmathdocs/precalc/src/images/ ~/Documents/projects/openmathdocs/precalc/src/precalc.xml
-    to do: nth tag
-           em dash
-           the \num issue
-           exercise/solution in html
--->
-            %========================================================================
-            %
-            %			Exercises
-            %
-            %========================================================================
-            \begin{exercises}
-            \begin{problem}[Exponential or not]
-            Decide if the following formulas correspond to  exponential functions or not.
-            \begin{multicols}{4}
-            <exercise>
-              <statement>
-                <m>f(x)=5^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>g(x)=x^5</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>h(x)=3\cdot 2^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>k(x)=-3\cdot 2^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>m(x)=3x^2</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>n(x)=\left(\frac{1}{2}\right)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>p(x)=4</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>q(x)=0</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>r(x)=\left(\frac{2}{3}\right)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>s(x)=\left(-\frac{2}{3}\right)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>t(x)=5x</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>u(x)=\pi</m>
-              </statement>
-              <solution>
-                <p>
-                  Not exponential.
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            \end{problem}
-            %===================================
-            <author>Hughes</author>
-            <date>  March 2012</date>
-            %===================================
-            \begin{problem}[Identify <m>a</m> and <m>b</m>]
-            Each of the following formulas define exponential functions, and have the form <m>f(x)=a\,b^x</m>. 
-            Identify <m>a</m> and <m>b</m> in each case.
-            \begin{multicols}{4}
-            <exercise>
-              <statement>
-                <m>f(x)=2\cdot 3^x</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=2</m>, <m>b=3</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>g(x)=-4\cdot 5^x</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=-4</m>, <m>b=5</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>h(t) = \left( \frac{2}{3} \right)^t</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=1</m>, <m>b=\frac{2}{3}</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>k(y)= -\left( \frac{2}{3} \right)^y</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=-1</m>, <m>b=\frac{2}{3}</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>F(s)=3^{-s}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=1</m>, <m>b=\frac{1}{3}</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>G(r)=\frac{2}{3^r}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=2</m>, <m>b=\frac{1}{3}</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>H(w)=-\frac{4^w}{5}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=-\frac{1}{5}</m>, <m>b=4</m> 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>K(z)=-10\cdot 5^{-z}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>a=-10</m>, <m>b=\frac{1}{5}</m> 
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            \end{problem}
-
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            \begin{problem}[Exponential function evaluation]\label{exp-prob-fnevaln}%
-            Evaluate each of the following formulas at <m>-10</m>, <m>-5</m>, <m>0</m>, <m>5</m>, and <m>10</m>. 
-            Give the exact answer, and an approximation (where appropriate) using two figures after the decimal.
-            \begin{multicols}{4}
-            <exercise>
-              <statement>
-                <m>f(x)=2^x</m> 
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  f(-10) &amp; =\frac{1}{1024}\approx 0.00 \\
-                  f(-5)  &amp; =\frac{1}{32}\approx 0.03   \\
-                  f(0)   &amp; =\frac{1}{1}=1              \\
-                  f(5)   &amp; =32                         \\
-                  f(10)  &amp; =1024                       
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>g(x)=\left( \frac{1}{3} \right)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  g(-10) &amp; =59049                       \\
-                  g(-5)  &amp; =243                         \\
-                  g(0)   &amp; =1                           \\
-                  g(5)   &amp; =\frac{1}{243}\approx 0.00   \\
-                  g(10)  &amp; =\frac{1}{59049}\approx 0.00 
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>h(x)=-5^x</m> 
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  h(-10) &amp; =-\frac{1}{9765625}\approx -0.00 \\
-                  h(-5)  &amp; =-\frac{1}{3125}\approx -0.00    \\
-                  h(0)   &amp; =-1                              \\
-                  h(5)   &amp; =-3125                           \\
-                  h(10)  &amp; =-9765625                        
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>k(x)=-\left( \frac{2}{5} \right)^x</m> 
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  k(-10) &amp; =-\frac{9765625}{1024}\approx -9536.74 \\
-                  k(-5)  &amp; =-\frac{3125}{32}\approx -97.66        \\
-                  k(0)   &amp; =-1                                    \\
-                  k(5)   &amp; =-\frac{32}{3125}\approx -0.01         \\
-                  k(10)  &amp; =-\frac{1024}{9765625}\approx -0.00    
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            \end{problem}
-
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            \begin{problem}[Features of exponential functions]
-            Refer to the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>k</m> defined in <xref ref="exp-prob-fnevaln"/> 
-            throughout this problem.
-            <exercise>
-              <statement>
-                Decide if each function is always increasing or always decreasing. 
-              </statement>
-              <solution>
-                <p>
-                  <m>f</m> is increasing, <m>g</m> is decreasing, <m>h</m> is decreasing, <m>k</m> is increasing. 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Decide if each function is concave up or concave down.
-              </statement>
-              <solution>
-                <p>
-                  <m>f</m> is concave up, <m>g</m> is concave up, <m>h</m> is concave down, and <m>k</m> is concave down.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Determine the domain and range of each function. 
-              </statement>
-              <solution>
-                <p>
-                  \begin{itemize}
-                  <li> <m>f</m> has domain <m>(-\infty,\infty)</m>, and range <m>(0,\infty)</m>.     </li>
-                  <li> <m>g</m> has domain <m>(-\infty,\infty)</m>, and range <m>(0,\infty)</m>.</li>
-                  <li> <m>h</m> has domain <m>(-\infty,\infty)</m>, and range <m>(-\infty,0)</m>.</li>
-                  <li> <m>k</m> has domain <m>(-\infty,\infty)</m>, and range <m>(-\infty),0</m>.</li>
-                  \end{itemize}
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-
-            \begin{problem}[Prerequisite percentage skills]
-            Answer these questions concerning percentages.
-            <exercise>
-              <statement>
-                Wild honeybee colonies tend to have around \SI{15}{\percent} drones (males).   If a colony has 4,280 bees, about how many of them are drones?
-              </statement>
-              <answer>
-                <p>
-                  The percentage \SI{15}{\percent} should be converted to a decimal in order to do arithmetic with it: 0.15.  
-                  \begin{align*}
-                  \textrm{drone count} &amp; = \SI{15}{\percent}\textrm{ of total bee count} \\
-                  &amp; = 0.15\cdot4280                                 \\
-                  &amp; = 642                                           
-                  \end{align*}
-                  So there are about 642 drones in the colony.
-                </p>
-              </answer>
-            </exercise>
-            <exercise>
-              <statement>
-                The human body is made up of approximately \SI{66}{\percent} water. If a person weighs <m>\SI{180}{\pound}</m>, how 
-                much water do they contain?
-              </statement>
-              <solution>
-                <p>
-                  <m>0.66\cdot 180=118.80</m>. The person contains approximately <m>\SI{118}{\pound}</m> of water.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                The air we breathe is roughly \SI{20}{\percent} oxygen. If you are in a room with dimensions <m>\SI{40 x 4 x 10}{\foot}</m>, approximately how much oxygen is there in the room?
-              </statement>
-              <solution>
-                <p>
-                  <m>0.20\cdot 16000=3200</m>. There is approximately <m>\SI{3200}{\cubic\foot}</m> of oxygen in the room.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                You are at a restaurant and receive the check for \$26. You tip \SI{15}{\percent}. How 
-                much is the total bill?
-              </statement>
-              <solution>
-                <p>
-                  <m>(1.15)\cdot 26=29.90</m>. The total bill is \$29.90.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                You are working in a sales job and manage to secure a client worth \$100,000. You get a 
-                \SI{1}{\percent} commission, of which your supervisor gets \SI{50}{\percent}. How much do you get?
-              </statement>
-              <solution>
-                <p>
-                  <m>0.01\cdot 100,000 \cdot 0.5 = 500</m>. You get \$500.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-
-            %===================================
-            <author>Vega</author>
-            <date>  March 2011</date>
-            %===================================
-            \begin{problem}[Growth factor]
-            For each of the following, identify the growth factor, the growth rate, and the initial value.
-            \begin{multicols}{2}
-            <exercise>
-              <statement>
-                <m>y=5\cdot 3^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Growth factor is <m>3</m>, initial value is 5.  Growth rate is \SI{200}{\percent}.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>y=6\cdot (0.5)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Decay factor is <m>0.5</m>, initial value is 6.  Growth rate is <m>\SI{-50}{\percent}</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>\dd y=2\cdot \left(\nicefrac{3}{4}\right)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Decay factor is <m>0.25</m>, initial value is 2.  Growth rate is <m>\SI{-25}{\percent}</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>y=500\cdot (2.5)^x</m>
-              </statement>
-              <solution>
-                <p>
-                  Growth factor is <m>2.5</m>, initial value is 500.  Growth rate is \SI{150}{\percent}.
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            \end{problem}
-
-            %===================================
-            <author>Vega</author>
-            <date>  March 2011</date>
-            %===================================
-            \begin{problem}[Growth factor applications]
-            Use the following descriptions to determine the growth rate and growth factor as decimals.
-            <exercise>
-              <statement>
-                A store has 100 hats and is increasing their stock at a rate of \SI{10}{\percent} per day.
-              </statement>
-              <solution>
-                <p>
-                  Growth rate is \SI{10}{\percent} or 0.1, growth factor is 1.1.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                A fire department is losing \SI{6}{\percent} of its annual funding with each passing year, where they had \$10,500 in annual funding when the station opened. 
-              </statement>
-              <solution>
-                <p>
-                  Growth rate is <m>\SI{-6}{\percent}</m> or <m>-0.06</m>, growth factor is <m>0.94</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
 
 
 
-            %===================================
-            <author>Barkin</author>
-            <date>  April 2011</date>
-            %===================================
-            \begin{problem}[Increasing exponential functions]\label{exp-prob-increasingexptabs}%
-            Consider the functions <m>f</m> and <m>g</m> that have formulas <m>f(x) = 2^x</m> and <m>g(x) = 3^x+4</m>.  
-            \begin{table}[!htb]
-            \centering
-            \begin{minipage}{.3\textwidth}
-            \centering
-            <caption></caption>
-            \label{exp-tab-increasingexp}
-            \begin{tabular}{S[table-format=1.0]rr}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>f(x)</m>} &amp; \heading{<m>g(x)</m>} \\
-            \afterheading
-            -3            &amp;                  &amp;                  \\\normalline
-            -2            &amp;                  &amp;                  \\\normalline
-            -1            &amp;                  &amp;                  \\\normalline
-            0             &amp;                  &amp;                  \\\normalline
-            1             &amp;                  &amp;                  \\\normalline
-            2             &amp;                  &amp;                  \\\lastline
-            \end{tabular}
-            \end{minipage}%
-            \hfill
-            \begin{minipage}{.3\textwidth}
-            \centering
-            \captionof{table}{}
-            \begin{tabular}{S[table-format=1.0]rr}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>m(x)</m>} &amp; \heading{<m>n(x)</m>} \\
-            \afterheading
-            -3            &amp;                  &amp;                  \\\normalline
-            -2            &amp;                  &amp;                  \\\normalline
-            -1            &amp;                  &amp;                  \\\normalline
-            0             &amp;                  &amp;                  \\\normalline
-            1             &amp;                  &amp;                  \\\normalline
-            2             &amp;                  &amp;                  \\\lastline
-            \end{tabular}
-            \label{exp-tab-decreasingexp}
-            \end{minipage}%
-            \hfill\mbox{}
-            \end{table}
 
-            <exercise>
-              <statement>
-                Graph the functions <m>f</m> and <m>g</m> over the interval <m>-3\le x \le 2</m> after first filling in <xref ref="exp-tab-increasingexp"/>.  
-                Label the functions <m>f</m> and <m>g</m> on your graph.
-              </statement>
-              <solution>
-                <p>
-                  \begin{tabular}[t]{S[table-format=1.0]cc}
-                  \beforeheading
-                  \heading{<m>x</m>} &amp; \heading{<m>f(x)</m>} &amp; \heading{<m>g(x)</m>} \\
-                  \afterheading
-                  -3            &amp; \num{1/8}        &amp; \num{109/27}     \\\normalline
-                  -2            &amp; \num{1/4}        &amp; \num{37/9}       \\\normalline
-                  -1            &amp; \num{1/2}        &amp; \num{13/3}       \\\normalline
-                  0             &amp; \num{1}          &amp; \num{5}          \\\normalline
-                  1             &amp; \num{2}          &amp; \num{7}          \\\normalline
-                  2             &amp; \num{4}          &amp; \num{13}         \\\lastline
-                  \end{tabular}
 
-                  The functions <m>f</m> and <m>g</m> are graphed below.
 
-                  <image>
-                    <latex-image-code>
-                      <![CDATA[\begin{tikzpicture}
-                      \begin{axis}[
-                      framed,
-                      xmin=-3,xmax=2,
-                      ymin=-2,ymax=10,
-                      xtick={-2,...,2},
-                      ytick={5},
-                      minor ytick={-1,...,10},
-                      grid=both,
-                      legend pos=north west,
-                      ]
-                      \addplot expression[domain=-3:2]{2^x};
-                      \addlegendentry{<m>y=2^x</m>};
-                      \addplot expression[domain=-3:1.5]{3^x+4};
-                      \addlegendentry{<m>y=3^x+4</m>};
-                      \end{axis}
-                      \end{tikzpicture}]]>
-                    </latex-image-code>
-                  </image>
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                What are the horizontal asymptotes of <m>f</m> and <m>g</m>?
-              </statement>
-              <solution>
-                <p>
-                  <m>f</m> has asymptote <m>y=0</m>, and <m>g</m> has asymptote <m>y=4</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Notice that both <m>f</m> and <m>g</m> are increasing as <m>x</m> increases.  Which function is increasing at the faster rate?
-              </statement>
-              <solution>
-                <p>
-                  <m>g</m> is increasing at a faster rate than <m>f</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Can the value of <m>f(x)</m> be zero?  Can it be negative?  Why or why not?
-              </statement>
-              <solution>
-                <p>
-                  No. There is no number such that <m>2^x=0</m>, and no real number such that <m>2^x</m> is negative.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                What are the domain and range of the functions <m>f</m> and <m>g</m>?
-              </statement>
-              <solution>
-                <p>
-                  Both have domain <m>(-\infty,\infty)</m>; the range of <m>f</m> is <m>(0,\infty)</m> and the range of <m>g</m> is <m>(4,\infty)</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
 
             %===================================
             <author>Barkin</author>
             <date>  April 2011</date>
             %===================================
             \begin{problem}[Decreasing exponential functions]
-            Consider the functions <m>m</m> and <m>n</m> that have formulas <m>m(x) = \left(\nicefrac{1}{2}\right)^x</m> and <m>n(x) = \left(\nicefrac{1}{3}\right)^x-2</m>.  
+            Consider the functions <m>m</m> and <m>n</m> that have formulas <m>m(x) = \left(\sfrac{1}{2}\right)^x</m> and <m>n(x) = \left(\sfrac{1}{3}\right)^x-2</m>.  
             <exercise>
               <statement>
                 Graph these functions over the interval <m>-2\le x \le 3</m> after first filling in <xref ref="exp-tab-increasingexp"/>.  
@@ -1581,7 +965,7 @@
               &amp; = 2^{3t}\left(2^{\frac{t+1}{2}}\right)                          &amp;                            \\
               &amp; = 2^{3t+\frac{t+1}{2}}                                          &amp; \text{\cref{exp-prop-add}} \\
               &amp; = 2^{\frac{7t+1}{2}}                                            &amp;                            \\
-              &amp; = \left(2^{\nicefrac{1}{2}}\right)^{7t+1}                       &amp; \text{\cref{exp-prop-pow}} \\
+              &amp; = \left(2^{\sfrac{1}{2}}\right)^{7t+1}                       &amp; \text{\cref{exp-prop-pow}} \\
               &amp; = \left(\sqrt{2}\right)\left(\sqrt{2}\right)^{7t}               &amp; \text{\cref{exp-prop-add}} \\
               &amp; = \left(\sqrt{2}\right)\left(\left(\sqrt{2}\right)^{7}\right)^t &amp; \text{\cref{exp-prop-pow}} \\
               &amp; = \left(\sqrt{2}\right)\left(\sqrt{128}\right)^t
@@ -2452,7 +1836,7 @@
             \begin{multicols}{4}
             <exercise>
               <statement>
-                <m>8^{\nicefrac{1}3}</m>
+                <m>8^{\sfrac{1}3}</m>
               </statement>
               <solution>
                 <p>
@@ -2462,7 +1846,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>8^{-\nicefrac{2}3}</m>
+                <m>8^{-\sfrac{2}3}</m>
               </statement>
               <solution>
                 <p>
@@ -2472,7 +1856,7 @@
             </exercise>	
             <exercise>
               <statement>
-                <m>\left(8^5\right)^{\nicefrac{1}{3}}</m>
+                <m>\left(8^5\right)^{\sfrac{1}{3}}</m>
               </statement>
               <solution>
                 <p>
@@ -2532,7 +1916,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>x= \sqrt[4]{19}=19^{\nicefrac14}\approx 2.0878</m> or <m>x= -\sqrt[4]{19}=-19^{\nicefrac14}\approx -2.0878</m>
+                  <m>x= \sqrt[4]{19}=19^{\sfrac14}\approx 2.0878</m> or <m>x= -\sqrt[4]{19}=-19^{\sfrac14}\approx -2.0878</m>
                 </p>
               </solution>
             </exercise>
@@ -2579,13 +1963,13 @@
             We will need to find <m>a</m> and <m>b</m> in the equation <m>f(t)=a\,b^t</m>. We begin by using the given ordered pairs to write a system 
             of equations
             \begin{align*}
-            \nicefrac{3}{4} &amp; =  a\,b^{-2} \\
+            \sfrac{3}{4} &amp; =  a\,b^{-2} \\
             12              &amp; =  a\,b^2    
             \end{align*}
             We can eliminate <m>a</m> by equating the quotients formed by the two sides of the equations. One 
             result is 
             \begin{equation*}
-            \frac{12}{\nicefrac{3}{4}} = \frac{a\,b^{2}}{a\,b^{-2}}\qquad \Longrightarrow\qquad 16 = b^4
+            \frac{12}{\sfrac{3}{4}} = \frac{a\,b^{2}}{a\,b^{-2}}\qquad \Longrightarrow\qquad 16 = b^4
             \end{equation*}
 
             This implies that either <m>b=2</m> or <m>b=-2</m>. Since the base of an exponential function must be 
@@ -2635,19 +2019,19 @@
             \end{equation*}
             which simplifies to <m>b^9=\frac{53}{7}</m>. This means that 
             \[
-            b = \left(\frac{53}{7}\right)^{\nicefrac{1}{9}}
+            b = \left(\frac{53}{7}\right)^{\sfrac{1}{9}}
             \]
             If we substitute this 
             value of <m>b</m> into the first equation, we obtain
             \begin{align*}
             a &amp; = \frac{7}{b}                                           \\
-            &amp; = \frac{7}{\left(\frac{53}{7}\right)^{\nicefrac{1}{9}}} \\
-            &amp; = \frac{7^{\nicefrac{10}{9}}}{53^{\nicefrac{1}{9}}}     
+            &amp; = \frac{7}{\left(\frac{53}{7}\right)^{\sfrac{1}{9}}} \\
+            &amp; = \frac{7^{\sfrac{10}{9}}}{53^{\sfrac{1}{9}}}     
             \end{align*}
             We conclude that 
             \begin{align*}
-            f(x) &amp; = \frac{7^{\nicefrac{10}{9}}}{53^{\nicefrac{1}{9}}}\left(\frac{53}{7}\right)^{\nicefrac{x}{9}}                \\
-            &amp; = \frac{7^{\nicefrac{10}{9}}}{53^{\nicefrac{1}{9}}}\left(\left(\frac{53}{7}\right)^{\nicefrac{1}{9}}\right)^x \\
+            f(x) &amp; = \frac{7^{\sfrac{10}{9}}}{53^{\sfrac{1}{9}}}\left(\frac{53}{7}\right)^{\sfrac{x}{9}}                \\
+            &amp; = \frac{7^{\sfrac{10}{9}}}{53^{\sfrac{1}{9}}}\left(\left(\frac{53}{7}\right)^{\sfrac{1}{9}}\right)^x \\
             &amp; \approx 5.59 (1.252237)^x                                                                                     
             \end{align*}
             \end{pccsolution}
@@ -2659,7 +2043,7 @@
             Identify the growth factor.
             <solution>
               <p>	
-                <m>f(x)=\frac{10^{\nicefrac{11}{9}}}{23^{\nicefrac{2}{9}}}\left(\frac{23}{10}\right)^{\nicefrac{x}{9}}\approx 8.31 (1.096963)^x</m>
+                <m>f(x)=\frac{10^{\sfrac{11}{9}}}{23^{\sfrac{2}{9}}}\left(\frac{23}{10}\right)^{\sfrac{x}{9}}\approx 8.31 (1.096963)^x</m>
               </p>
             </solution>
             \end{problem}
@@ -2711,12 +2095,12 @@
             The first equation immediately tells us that <m>a=25</m>.  Now the second equation reduces to
             \begin{alignat*}{2}
             2391 {}={}25\,b^{7} &amp; \quad \Longrightarrow\quad &amp;   &amp; \frac{2391}{25}  {}={} b^7                         \\
-            &amp; \quad \Longrightarrow      &amp;   &amp; b {}={} \left(\frac{2391}{25}\right)^{\nicefrac17} 
+            &amp; \quad \Longrightarrow      &amp;   &amp; b {}={} \left(\frac{2391}{25}\right)^{\sfrac17} 
             \end{alignat*}
             So we can model the number of infected people as a function of the number of days since the outbreak was first noticed using the model 
             \begin{align*}
-            f(t) &amp; =25\left(\left(\frac{2391}{25}\right)^{\nicefrac17}\right)^t \\
-            &amp; =25\left(\frac{2391}{25}\right)^{\nicefrac{t}7}              
+            f(t) &amp; =25\left(\left(\frac{2391}{25}\right)^{\sfrac17}\right)^t \\
+            &amp; =25\left(\frac{2391}{25}\right)^{\sfrac{t}7}              
             \end{align*}
             \end{pccsolution}
 
@@ -2725,7 +2109,7 @@
             \begin{pccsolution} 
             Since 
             \begin{align*}
-            f(3) &amp; = 25\left(\frac{2391}{25}\right)^{\nicefrac{3}7} \\
+            f(3) &amp; = 25\left(\frac{2391}{25}\right)^{\sfrac{3}7} \\
             &amp; \approx 177                                      
             \end{align*}
             we can say that there will be about <m>177</m> infected people <m>3</m> days after the initial outbreak.
@@ -2787,7 +2171,7 @@
             \end{align*}
             Using this value of <m>b</m> in <xref ref="exp-eq-wood"/> gives
             \begin{align*}
-            a &amp; = \frac{53}{\left( \frac{47}{53} \right)^{\nicefrac{3}{7}}} \\
+            a &amp; = \frac{53}{\left( \frac{47}{53} \right)^{\sfrac{3}{7}}} \\
             &amp; \approx 55.8                                                
             \end{align*}
             We conclude that 
@@ -2812,7 +2196,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>p(t)=76.2\left( \frac{309}{76.2} \right)^{\nicefrac{t}{110}}\approx 76.2(1.012808)^t</m>
+                  <m>p(t)=76.2\left( \frac{309}{76.2} \right)^{\sfrac{t}{110}}\approx 76.2(1.012808)^t</m>
                 </p>
               </solution>
             </exercise>
@@ -2843,7 +2227,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>P(t)=282\left( \frac{309}{282} \right)^{\nicefrac{t}{10}}\approx 282(1.009185)^t</m>
+                  <m>P(t)=282\left( \frac{309}{282} \right)^{\sfrac{t}{10}}\approx 282(1.009185)^t</m>
                 </p>
               </solution>
             </exercise>
@@ -2873,7 +2257,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>c(t) = 18.1\left( \frac{16.3}{18.1} \right)^{\nicefrac{t}{21}}\approx 18.1(0.995024)^t</m>
+                  <m>c(t) = 18.1\left( \frac{16.3}{18.1} \right)^{\sfrac{t}{21}}\approx 18.1(0.995024)^t</m>
                 </p>
               </solution>
             </exercise>		
@@ -2896,7 +2280,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>C(t)=P(t)c(t)=282\left( \frac{309}{282} \right)^{\nicefrac{t}{10}}18.1\left( \frac{16.3}{18.1} \right)^{\nicefrac{t}{21}}\approx5104.2(1.00416412)^t</m>
+                  <m>C(t)=P(t)c(t)=282\left( \frac{309}{282} \right)^{\sfrac{t}{10}}18.1\left( \frac{16.3}{18.1} \right)^{\sfrac{t}{21}}\approx5104.2(1.00416412)^t</m>
                 </p>
               </solution>
             </exercise>		
@@ -3008,7 +2392,7 @@
                 <p>
                   Choosing <m>(0,2)</m> and <m>(8,47)</m>, 
                   \begin{align*}            
-                  A(t) &amp; = 2 \left(\left(\frac{47}{2}\right)^{\nicefrac{1}{8}}\right)^t \\
+                  A(t) &amp; = 2 \left(\left(\frac{47}{2}\right)^{\sfrac{1}{8}}\right)^t \\
                   &amp; \approx 2(1.483828)^t                                          
                   \end{align*}
                 </p>
@@ -3126,7 +2510,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>8^{\nicefrac{x}3}</m>
+                <m>8^{\sfrac{x}3}</m>
               </statement>
               <solution>
                 <p>
@@ -3136,7 +2520,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>100^{\nicefrac{x}2}</m>
+                <m>100^{\sfrac{x}2}</m>
               </statement>
               <solution>
                 <p>
@@ -3146,7 +2530,7 @@
             </exercise>	
             <exercise>
               <statement>
-                <m>\left(3b^{\nicefrac43}\right)^{3x}</m>
+                <m>\left(3b^{\sfrac43}\right)^{3x}</m>
               </statement>
               <solution>
                 <p>
@@ -3156,7 +2540,7 @@
             </exercise>	
             <exercise>
               <statement>
-                <m>16^t(64)^{\nicefrac{t}{3}}</m>
+                <m>16^t(64)^{\sfrac{t}{3}}</m>
               </statement>
               <solution>
                 <p>
@@ -3166,7 +2550,7 @@
             </exercise>	
             <exercise>
               <statement>
-                <m>\left( 27t^3 \right)^{\nicefrac{4}{3}}</m>
+                <m>\left( 27t^3 \right)^{\sfrac{4}{3}}</m>
               </statement>
               <solution>
                 <p>
@@ -3201,7 +2585,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>y=\nicefrac{3}{2}</m>
+                  <m>y=\sfrac{3}{2}</m>
                 </p>
               </solution>
             </exercise>
@@ -3281,7 +2665,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(t)=2\left(\frac{1}{3}\right)^t</m>; the growth factor is <m>\nicefrac{1}{3}</m>.
+                  <m>f(t)=2\left(\frac{1}{3}\right)^t</m>; the growth factor is <m>\sfrac{1}{3}</m>.
                 </p>
               </solution>
             </exercise>
@@ -3291,7 +2675,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(t)=17\left(\frac{2}{5}\right)^t</m>; the growth factor is <m>\nicefrac{2}{5}</m>.
+                  <m>f(t)=17\left(\frac{2}{5}\right)^t</m>; the growth factor is <m>\sfrac{2}{5}</m>.
                 </p>
               </solution>
             </exercise>
@@ -3301,7 +2685,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(t)=186\left( \nicefrac{2}{3} \right)^t</m>; the growth factor is <m>\nicefrac{2}{3}</m>.
+                  <m>f(t)=186\left( \sfrac{2}{3} \right)^t</m>; the growth factor is <m>\sfrac{2}{3}</m>.
                 </p>
               </solution>
             </exercise>
@@ -3311,7 +2695,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(t)=100\left( \nicefrac{4}{5} \right)^t</m>; the growth factor is <m>\nicefrac{4}{5}</m>.
+                  <m>f(t)=100\left( \sfrac{4}{5} \right)^t</m>; the growth factor is <m>\sfrac{4}{5}</m>.
                 </p>
               </solution>
             </exercise>
@@ -3334,7 +2718,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(x)=4\left(\frac{5}{2}\right)^{\nicefrac{3}{8}}\left(\frac{2}{5}\right)^{\nicefrac{x}{8}}\approx 5.64(0.891780)^x</m>
+                  <m>f(x)=4\left(\frac{5}{2}\right)^{\sfrac{3}{8}}\left(\frac{2}{5}\right)^{\sfrac{x}{8}}\approx 5.64(0.891780)^x</m>
                 </p>
               </solution>
             </exercise>
@@ -3344,7 +2728,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(x)=\frac{49}{2}\left(\frac{2}{7}\right)^{\nicefrac{x}{4}}\approx 24.5(0.731110)^x</m>
+                  <m>f(x)=\frac{49}{2}\left(\frac{2}{7}\right)^{\sfrac{x}{4}}\approx 24.5(0.731110)^x</m>
                 </p>
               </solution>
             </exercise>
@@ -3354,7 +2738,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(x)=\frac{6^{\nicefrac{13}{10}}}{29^{\nicefrac{3}{10}}}\left(\frac{29}{6}\right)^{\nicefrac{x}{10}}\approx 3.74 (1.170644)^x</m>
+                  <m>f(x)=\frac{6^{\sfrac{13}{10}}}{29^{\sfrac{3}{10}}}\left(\frac{29}{6}\right)^{\sfrac{x}{10}}\approx 3.74 (1.170644)^x</m>
                 </p>
               </solution>
             </exercise>
@@ -3364,7 +2748,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(x)=6\left(\frac{10}{3}\right)^{\nicefrac{5}{12}}\left(\frac{10}{3}\right)^{\nicefrac{x}{12}}\approx 9.91 (1.105537)^x</m>
+                  <m>f(x)=6\left(\frac{10}{3}\right)^{\sfrac{5}{12}}\left(\frac{10}{3}\right)^{\sfrac{x}{12}}\approx 9.91 (1.105537)^x</m>
                 </p>
               </solution>
             </exercise>
@@ -3707,7 +3091,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>S(t)=877\left( \frac{8325}{877} \right)^{\nicefrac{t}{7}}\approx 877(1.38)^t</m>
+                  <m>S(t)=877\left( \frac{8325}{877} \right)^{\sfrac{t}{7}}\approx 877(1.38)^t</m>
                 </p>
               </solution>
             </exercise>
@@ -3717,8 +3101,8 @@
               </statement>
               <solution>
                 <p>  
-                  The growth factor is <m>\left( \frac{8325}{877} \right)^{\nicefrac{1}{7}}\approx 1.379</m>. 
-                  The growth rate is <m>\left( \frac{8325}{877} \right)^{\nicefrac{1}{7}}-1 \approx 0.379</m>, or about <m>\SI{37.9}{\percent}</m> per year.
+                  The growth factor is <m>\left( \frac{8325}{877} \right)^{\sfrac{1}{7}}\approx 1.379</m>. 
+                  The growth rate is <m>\left( \frac{8325}{877} \right)^{\sfrac{1}{7}}-1 \approx 0.379</m>, or about <m>\SI{37.9}{\percent}</m> per year.
                 </p>
               </solution>
             </exercise>
@@ -4470,7 +3854,7 @@
               </statement>
               <solution>
                 <p>
-                  Using <m>(7,52)</m> and <m>(13,40)</m> we obtain <m>f(t)=\frac{52^{\nicefrac{13}{6}}}{40^{\nicefrac{7}{6}}}\left( \frac{40}{52} \right)^{\nicefrac{t}{6}}\approx 70.62(0.96)^t</m>.
+                  Using <m>(7,52)</m> and <m>(13,40)</m> we obtain <m>f(t)=\frac{52^{\sfrac{13}{6}}}{40^{\sfrac{7}{6}}}\left( \frac{40}{52} \right)^{\sfrac{t}{6}}\approx 70.62(0.96)^t</m>.
                 </p>
               </solution>
             </exercise>
@@ -4623,8 +4007,8 @@
             for which each US citizen is responsible. The functions we came up with were, 
             respectively,
             \[
-            P(t)=282\left( \frac{309}{282} \right)^{\nicefrac{t}{10}} \quad \textrm{and}\quad
-            C(t)=18.1\left( \frac{16.3}{18.1} \right)^{\nicefrac{-10}{21}}\left( \frac{16.3}{18.1} \right)^{\nicefrac{t}{21}}
+            P(t)=282\left( \frac{309}{282} \right)^{\sfrac{t}{10}} \quad \textrm{and}\quad
+            C(t)=18.1\left( \frac{16.3}{18.1} \right)^{\sfrac{-10}{21}}\left( \frac{16.3}{18.1} \right)^{\sfrac{t}{21}}
             \]
 
             <exercise xml:id="exp-prob-USACO2">
@@ -4636,7 +4020,7 @@
               <solution>
                 <p>
                   $\begin{aligned}[t]
-                  T(t) &amp; =76.2\left( \frac{309}{76.2} \right)^{\nicefrac{100}{110}}18.1\left( \frac{16.3}{18.1} \right)^{\nicefrac{-10}{21}}\left( \frac{309}{76.2} \right)^{\nicefrac{t}{110}}\left( \frac{16.3}{18.1} \right)^{\nicefrac{t}{21}} \\
+                  T(t) &amp; =76.2\left( \frac{309}{76.2} \right)^{\sfrac{100}{110}}18.1\left( \frac{16.3}{18.1} \right)^{\sfrac{-10}{21}}\left( \frac{309}{76.2} \right)^{\sfrac{t}{110}}\left( \frac{16.3}{18.1} \right)^{\sfrac{t}{21}} \\
                   &amp; \approx 5176.382674(1.007769)^t                                                                                                                                                                                           
                   \end{aligned}$
                 </p>
@@ -5133,7 +4517,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>r= \left( \frac{3600}{1200} \right)^{\nicefrac{1}{6}}-1\approx 0.20</m>
+                  <m>r= \left( \frac{3600}{1200} \right)^{\sfrac{1}{6}}-1\approx 0.20</m>
                 </p>
               </solution>
             </exercise>
@@ -5143,7 +4527,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>r= \left( \frac{5000}{600} \right)^{\nicefrac{1}{20}}-1\approx 0.11</m>
+                  <m>r= \left( \frac{5000}{600} \right)^{\sfrac{1}{20}}-1\approx 0.11</m>
                 </p>
               </solution>
             </exercise>
@@ -6083,11 +5467,11 @@
             \begin{problem}[The number <m>e</m>]
             Put the following numbers in ascending order:
             \[
-            e, \quad \nicefrac{1}{3},\quad 9,\quad e^{-1},\quad 1,\quad \nicefrac{1}{4},\quad e,\quad 3,\quad \nicefrac{1}{e^2}, \quad 2, \quad e^2
+            e, \quad \sfrac{1}{3},\quad 9,\quad e^{-1},\quad 1,\quad \sfrac{1}{4},\quad e,\quad 3,\quad \sfrac{1}{e^2}, \quad 2, \quad e^2
             \]
             <solution>
               <p>
-                In ascending order: <m>\nicefrac{1}{e^2}&lt;\nicefrac{1}{4}&lt;\nicefrac{1}{3}&lt;\nicefrac{1}{e}&lt;2&lt;e&lt;3&lt;e^2&lt;9</m>
+                In ascending order: <m>\sfrac{1}{e^2}&lt;\sfrac{1}{4}&lt;\sfrac{1}{3}&lt;\sfrac{1}{e}&lt;2&lt;e&lt;3&lt;e^2&lt;9</m>
               </p>
             </solution>
             \end{problem}
@@ -6159,7 +5543,7 @@
             <solution>
               <p>
                 We have to solve the equation <m>9000=7000e^{0.08t}</m> for <m>t</m>. This can 
-                be simplified to <m>\nicefrac{9}{7}=e^{0.08t}</m>.  We can solve this 
+                be simplified to <m>\sfrac{9}{7}=e^{0.08t}</m>.  We can solve this 
                 using our graphing calculator as shown below -- this gives that <m>t\approx 3.14</m>. 
                 So it would take just over <m>3</m> years for our account to reach <m>\</m>9,000$.
 
@@ -6846,10 +6230,10 @@
                 \begin{tabular}[t]{ll}
                 \beforeheading
                 \heading{Exact value}                                                                                                                                         &amp; \heading{Decimal value (to 5 d.p)} \\\afterheading
-                <m>\dd\nicefrac{1}{0!}+\nicefrac{1}{1!}+\nicefrac{1}{2!}+\nicefrac{1}{3!}+\nicefrac{1}{4!}+\nicefrac{1}{5!}</m>                                                    &amp; <m>2.71667</m>                          \\\normalline  
-                <m>\dd\nicefrac{1}{0!}+\nicefrac{1}{1!}+\nicefrac{1}{2!}+\nicefrac{1}{3!}+\nicefrac{1}{4!}+\nicefrac{1}{5!}+\nicefrac{1}{6!}</m>                                   &amp; <m>2.71806</m>                          \\\normalline  
-                <m>\dd\nicefrac{1}{0!}+\nicefrac{1}{1!}+\nicefrac{1}{2!}+\nicefrac{1}{3!}+\nicefrac{1}{4!}+\nicefrac{1}{5!}+\nicefrac{1}{6!}+\nicefrac{1}{7!}</m>                  &amp; <m>2.71825</m>                          \\\normalline  
-                <m>\dd\nicefrac{1}{0!}+\nicefrac{1}{1!}+\nicefrac{1}{2!}+\nicefrac{1}{3!}+\nicefrac{1}{4!}+\nicefrac{1}{5!}+\nicefrac{1}{6!}+\nicefrac{1}{7!}+\nicefrac{1}{8!}</m> &amp; <m>2.71828</m>                          \\\lastline  
+                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}</m>                                                    &amp; <m>2.71667</m>                          \\\normalline  
+                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}</m>                                   &amp; <m>2.71806</m>                          \\\normalline  
+                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}</m>                  &amp; <m>2.71825</m>                          \\\normalline  
+                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}+\sfrac{1}{8!}</m> &amp; <m>2.71828</m>                          \\\lastline  
                 \end{tabular}
 
                 We observe that as we add more terms, the decimal value appears to approach <m>e</m>.
@@ -7437,18 +6821,18 @@
             \]
             We can eliminate <m>a</m> by equating the quotients formed by the two sides of the equations. 
             \begin{equation*}
-            \frac{30.0}{22.6} = \frac{a\,b^{6}}{a\,b^{-2}}\qquad \Longrightarrow\qquad b=\left(\frac{30.0}{22.6}\right)^{\nicefrac18}\approx1.036
+            \frac{30.0}{22.6} = \frac{a\,b^{6}}{a\,b^{-2}}\qquad \Longrightarrow\qquad b=\left(\frac{30.0}{22.6}\right)^{\sfrac18}\approx1.036
             \end{equation*}
             The approximation of <m>b</m> by <m>1.036</m> is particularly valid in an application such as this, where we know that other choices of data points would have given different values of <m>b</m> anyway.
 
             Solving for <m>a</m> in the equation for 2006:
             \begin{align*}
-            30.0 = a\left( \frac{30.0}{22.6} \right)^{\nicefrac{6}{8}}\qquad \Longrightarrow\qquad a=\frac{30}{\left( \dfrac{30.0}{22.6} \right)^{\nicefrac{3}{4}}}\approx 24.26 
+            30.0 = a\left( \frac{30.0}{22.6} \right)^{\sfrac{6}{8}}\qquad \Longrightarrow\qquad a=\frac{30}{\left( \dfrac{30.0}{22.6} \right)^{\sfrac{3}{4}}}\approx 24.26 
             \end{align*}
             Therefore a model for the C\ae{}sarian section data is 
             \begin{align*}
-            f(t) &amp; = 30^{\nicefrac{1}{4}}22.6^{\nicefrac{3}{4}}\left( \frac{30.0}{22.6} \right)^{\nicefrac{t}{8}}                  \\
-            &amp; = 30^{\nicefrac{1}{4}}22.6^{\nicefrac{3}{4}}\left(  \left( \frac{30.0}{22.6} \right)^{\nicefrac{1}{8}}\right)^t \\
+            f(t) &amp; = 30^{\sfrac{1}{4}}22.6^{\sfrac{3}{4}}\left( \frac{30.0}{22.6} \right)^{\sfrac{t}{8}}                  \\
+            &amp; = 30^{\sfrac{1}{4}}22.6^{\sfrac{3}{4}}\left(  \left( \frac{30.0}{22.6} \right)^{\sfrac{1}{8}}\right)^t \\
             &amp; \approx 24.26(1.036)^t                                                                                          
             \end{align*}
             and it is acceptable to say that the percentage of C-section births is growing exponentially in the U.S.A.  For completeness, we can examine a graph of this model overlaying the data in \cref{exp-fig-CsectionsModel}.
@@ -7636,7 +7020,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>f(t)=\frac{(158)^2}{233}\left(\frac{233}{158}\right)^{\nicefrac{t}{3}}\approx107.14(1.13824)^t</m>.
+                  <m>f(t)=\frac{(158)^2}{233}\left(\frac{233}{158}\right)^{\sfrac{t}{3}}\approx107.14(1.13824)^t</m>.
                 </p>
               </solution>
             </exercise>
@@ -7737,8 +7121,8 @@
                 Using two ordered pairs, <m>(0,4800)</m> and <m>(15,194154)</m>, and assuming that an exponential model is appropriate, we can 
                 show that a formula that approximates <m>W</m> is
                 \begin{align*}
-                W(t) &amp; =      4800\left( \frac{194154}{4800} \right)^{\nicefrac{t}{15}}                  \\
-                &amp; =      4800\left( \left( \frac{194154}{4800} \right)^{\nicefrac{1}{15}} \right)^t \\
+                W(t) &amp; =      4800\left( \frac{194154}{4800} \right)^{\sfrac{t}{15}}                  \\
+                &amp; =      4800\left( \left( \frac{194154}{4800} \right)^{\sfrac{1}{15}} \right)^t \\
                 &amp; \approx 4800(1.279756)^t                                                          
                 \end{align*}
                 Using a table of values or a graph, find when the world's wind power capacity will be \SI{250000}{\mega\watt}.
@@ -8198,7 +7582,7 @@
             0             &amp; 16               \\\normalline
             1             &amp; 4                \\\normalline
             2             &amp; 1                \\\normalline
-            3             &amp; \nicefrac{1}{4}  \\\lastline
+            3             &amp; \sfrac{1}{4}  \\\lastline
             \end{tabular}
             \end{minipage}
             \hfill
@@ -8378,7 +7762,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>g(x)=\frac{10}{\left( \nicefrac{3}{2} \right)^{\nicefrac{3}{4}}}\left( \sqrt[4]{\frac{3}{2}} \right)^x\approx 7.38(1.106682)^x</m>
+                  <m>g(x)=\frac{10}{\left( \sfrac{3}{2} \right)^{\sfrac{3}{4}}}\left( \sqrt[4]{\frac{3}{2}} \right)^x\approx 7.38(1.106682)^x</m>
                 </p>
               </solution>
             </exercise>
@@ -8468,7 +7852,7 @@
               </statement>
               <solution>
                 <p>
-                  Linear, with <m>m=\nicefrac{3}{2}</m>.
+                  Linear, with <m>m=\sfrac{3}{2}</m>.
                 </p>
               </solution>
             </exercise>
@@ -8538,7 +7922,7 @@
             \end{multicols}
             <exercise>
               <statement>
-                To convert from Fahrenheit to Celsius, subtract 32 and then multiply by <m>\nicefrac{5}{9}</m>.
+                To convert from Fahrenheit to Celsius, subtract 32 and then multiply by <m>\sfrac{5}{9}</m>.
               </statement>
               <solution>
                 <p>
@@ -8578,7 +7962,7 @@
             </exercise>
             <exercise>
               <statement>
-                To convert from Celsius to Fahrenheit, multiply by <m>\nicefrac95</m> and then add 32.
+                To convert from Celsius to Fahrenheit, multiply by <m>\sfrac95</m> and then add 32.
               </statement>
               <solution>
                 <p>
