@@ -33,9 +33,9 @@
 \usepackage{minitoc}                            % mini-table of contents
 \usepackage{marginfix}                          % fixes margin notes (otherwise they can cut through pages)
 \usepackage{textcomp}			                      % gives symbols like \textcent and \textdegree
-\usepackage{xfrac}				  									% \nicefrac{a}{b}
+\usepackage{xfrac}				  									% \sfrac{a}{b}
 \usepackage{siunitx}														% \si{\meter\per\second}, \SI{1}{\kilo\gram}, much more
-	\sisetup{quotient-mode = fraction,per-mode=fraction,fraction-function = \nicefrac}
+	\sisetup{quotient-mode = fraction,per-mode=fraction,fraction-function = \sfrac}
 \usepackage[super]{nth}													% \nth{17} for 17th
 \usepackage{mleftright}													% for \mleft and \mright, which fix spacing issue in \left and \right
 \usepackage{needspace}                          % needed to keep problems looking good (stops ugly pagebreaks)
@@ -67,7 +67,6 @@
                                 % the hyperref package; the option [all]
                                 % makes hyperlinks to figures & tables go 
                                 % to the top
-\usepackage{cleveref}       % needs to be loaded after hyperref
 
 % hyperref settings- it seemed to work better here rather than
 % as options to the \usepackage call above
@@ -263,50 +262,6 @@ color=gray,mark=none,line width=1pt,<->\\%
 \newlist{props}{enumerate}{3}
 \setlist[props]{label*=($L_\arabic*$)}
 \newcommand{\reformatpropslist}[1]{\setlist[props]{label*=(${#1}_\arabic*$)}}
-
-%====================================
-%   BEGIN CLEVEREF
-%====================================
-
-% each of the following has two versions
-%   \crefname{environmentname}{singular}{plural}, to be used mid-sentence
-%   \Crefname{environmentname}{singular}{plural}, to be used at the beginning of a sentence
-
-% standard environments
-\crefname{table}{Table}{Tables}
-\Crefname{table}{Table}{Tables}
-\crefname{figure}{Figure}{Figures}
-\Crefname{figure}{Figure}{Figures}
-\crefname{section}{Section}{Sections}
-\Crefname{section}{Section}{Sections}
-\crefname{equation}{Equation}{Equations}
-\Crefname{equation}{Equation}{Equations}
-% custom environments
-\crefname{problem}{Problem}{Problems}
-\Crefname{problem}{Problem}{Problems}
-\crefname{omddefinition}{Definition}{Definitions}
-\Crefname{omddefinition}{Definition}{Definitions}
-\crefname{omdexample}{Example}{Examples}
-\Crefname{omdexample}{Example}{Examples}
-\crefname{worksheet}{Worksheet}{Worksheets}
-\Crefname{worksheet}{Worksheet}{Worksheets}
-\crefname{subprobenumi}{Problem}{Problems}
-\Crefname{subprobenumi}{Problem}{Problems}
-\crefname{stepsi}{step}{steps}
-\Crefname{stepsi}{Step}{Steps}
-\crefname{propsi}{property}{properties}
-\Crefname{propsi}{Property}{Properties}
-% conjunction between range; e.g Figures 1.2-1.3
-\newcommand{\crefrangeconjunction}{--}
-
-% Examples:
-%   \crefrange{exp:tab:findformula1}{exp:tab:findformula4}
-%       gives Tables 1-4
-%   \cref{exp:tab:findformula1,exp:tab:findformula4}
-%       gives Tables 1 and 4
-%====================================
-%   END CLEVEREF
-%====================================
 
 %====================================
 %   BEGIN MARGIN ENVIRONMENTS (shamelessly copied from tufte documentclass)
@@ -1086,7 +1041,7 @@ can complete them before moving on!}}%
         }%
         }
 
-\sisetup{quotient-mode = fraction,per-mode=fraction,fraction-function = \nicefrac}
+\sisetup{quotient-mode = fraction,per-mode=fraction,fraction-function = \sfrac}
 	\DeclareSIUnit{\inch}{in}													
 	\DeclareSIUnit{\trillion}{trillion}
 	\DeclareSIUnit{\Fahrenheit}{\SIUnitSymbolDegree{}F}
