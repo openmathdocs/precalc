@@ -1622,5 +1622,376 @@
         </solution>
       </exercise>
     </exercisegroup>
+    <exercisegroup>
+      <title>Decreasing exponential functions</title>
+      <author>Barkin</author>
+      <date>  April 2011</date>
+      <statement>
+        Consider the functions <m>m</m> and <m>n</m> that have formulas <m>m(x) = \left(\sfrac{1}{2}\right)^x</m> and <m>n(x) = \left(\sfrac{1}{3}\right)^x-2</m>.  
+      </statement>
+      <exercise>
+        <statement>
+          Graph these functions over the interval <m>-3\le x \le 2</m> after first filling in <xref ref="exp-tab-decreasingexp"/>.  
+          Label the functions <m>m</m> and <m>n</m>.
+        </statement>
+        <solution>
+          <p>
+            <table>
+              <tabular>
+                <col halign="."/>
+                <col halign="center"/>
+                <col halign="center"/>
+                <thead>
+                  <row><cell><m>x</m></cell><cell><m>m(x)</m></cell><cell><m>n(x)</m></cell></row>
+                </thead>
+                <row><cell>-3</cell><cell>8</cell><cell>25</cell></row>
+                <row><cell>-2</cell><cell>4</cell><cell>7</cell></row>
+                <row><cell>-1</cell><cell>2</cell><cell>1</cell></row>
+                <row><cell>0</cell><cell>1</cell><cell>-1</cell></row>
+                <row><cell>1</cell><cell>1/2</cell><cell>-5/3</cell></row>
+                <row><cell>2</cell><cell>1/4</cell><cell>-17/9</cell></row>
+                <tfoot/>
+              </tabular>
+            </table>
+
+            The functions <m>m</m> and <m>n</m> are graphed below.
+
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=3,
+                ymin=-5,ymax=5,
+                xtick={-1,...,2},
+                ytick={-4,...,4},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:3]{(1/2)^x};
+                \addlegendentry{$y=\left( \frac{1}{2} \right)^x$};
+                \addplot expression[domain=-1.5:3]{(1/3)^x-2};
+                \addlegendentry{$y=\left( \frac{1}{3} \right)^x-2$};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          What are the horizontal asymptotes of <m>m</m> and <m>n</m>?
+        </statement>
+        <solution>
+          <p>
+            <m>m</m> has asymptote <m>y=0</m>, and <m>n</m> has asymptote <m>y=-2</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          What are the domain and range of the functions <m>m</m> and <m>n</m>?
+        </statement>
+        <solution>
+          <p>
+            Both have domain <m>(-\infty,\infty)</m>; the range of <m>m</m> is <m>(0,\infty)</m> and the range of <m>n</m> is <m>(-2,\infty)</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Notice that both of these functions are decreasing as <m>x</m> increases.  Why do these functions decrease when 
+          the functions in <xref ref="exp-prob-increasingexptabs"/> increase?
+        </statement>
+        <solution>
+          <p>
+            Because <m>b&lt;1</m> and <m>a&gt;0</m>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup xml:id="exp-prob-matchexpslessthan1">
+      <author>Hughes</author>
+      <date>  Feb 2011</date>
+      <title>Horizontal asymptotes when <m>0&lt;b&lt;1</m></title>
+      <statement>
+        Consider the functions <m>F</m>, <m>G</m>, <m>H</m> and <m>J</m> that have formulas
+        <md>
+          <mrow>F(x) &amp; =\left(\frac{1}{3}\right)^x-1, &amp; G(x) &amp; =-\left(\frac{1}{4}\right)^x-3, &amp; H(x) &amp; =-\left(\frac{1}{5}\right)^x+2, &amp; J(x) &amp; =\left(\frac{1}{2}\right)^x+1 </mrow>
+        </md>
+      </statement>
+      <exercise>
+        <statement>
+          Match each of the functions <m>F</m>, <m>G</m>, <m>H</m>, and <m>J</m> with one of the graphs in <xref ref="exp-fig-matchexpslessthan1"/>.
+        </statement>
+        <solution>
+          <p>
+            <xref ref="exp-fig-matchexpsbaselt12"/> shows <m>\dd F(x)=\left(\frac{1}{3}\right)^x-1</m>.
+            <xref ref="exp-fig-matchexpsbaselt14"/> shows <m>\dd G(x)=-\left(\frac{1}{4}\right)^x-3</m>.
+            <xref ref="exp-fig-matchexpsbaselt13"/> shows <m>\dd H(x)=-\left(\frac{1}{5}\right)^x+2</m>.
+            <xref ref="exp-fig-matchexpsbaselt11"/> shows <m>\dd J(x)=\left(\frac{1}{2}\right)^x+1</m>.
+          </p>
+        </solution>
+      </exercise>
+      <sidebyside xml:id="exp-fig-matchexpslessthan1">
+        <figure width="20%" xml:id="exp-fig-matchexpsbaselt11">
+          <image>
+            <latex-image-code>
+              <![CDATA[\begin{tikzpicture}
+              \begin{axis}[
+              framed,
+              xmin=-10,xmax=10,ymin=-10,ymax=10,
+              xtick={-8,-4,4,8},
+              ytick={-8,-4,4,8},
+              grid=major,
+              ]
+              \addplot expression[domain=-3:9]{(1/2)^x+1};
+              \end{axis}
+              \end{tikzpicture}]]>
+            </latex-image-code>
+          </image>
+          <caption></caption>
+        </figure>
+        <figure width="20%" xml:id="exp-fig-matchexpsbaselt12">
+          <image>
+            <latex-image-code>
+              <![CDATA[\begin{tikzpicture}
+              \begin{axis}[
+              framed,
+              xmin=-10,xmax=10,ymin=-10,ymax=10,
+              xtick={-8,-4,4,8},
+              ytick={-8,-4,4,8},
+              grid=major,
+              ]
+              \addplot expression[domain=-2:9]{(1/3)^x-1};
+              \end{axis}
+              \end{tikzpicture}]]>
+            </latex-image-code>
+          </image>
+          <caption></caption>
+        </figure>
+        <figure width="20%" xml:id="exp-fig-matchexpsbaselt13">
+          <image>
+            <latex-image-code>
+              <![CDATA[\begin{tikzpicture}
+              \begin{axis}[
+              framed,
+              xmin=-10,xmax=10,ymin=-10,ymax=10,
+              xtick={-8,-4,4,8},
+              ytick={-8,-4,4,8},
+              grid=major,
+              ]
+              \addplot expression[domain=-1.35:9]{-(1/5)^x+2};
+              \end{axis}
+              \end{tikzpicture}]]>
+            </latex-image-code>
+          </image>
+          <caption></caption>
+        </figure>
+        <figure width="20%" xml:id="exp-fig-matchexpsbaselt14">
+          <image>
+            <latex-image-code>
+              <![CDATA[\begin{tikzpicture}
+              \begin{axis}[
+              framed,
+              xmin=-10,xmax=10,ymin=-10,ymax=10,
+              xtick={-8,-4,4,8},
+              ytick={-8,-4,4,8},
+              grid=major,
+              ]
+              \addplot expression[domain=-1.35:9]{-(1/4)^x-3};
+              \end{axis}
+              \end{tikzpicture}]]>
+            </latex-image-code>
+          </image>
+          <caption></caption>
+        </figure>
+        <caption>Graphs for <xref ref="exp-prob-matchexpslessthan1"/>.</caption>
+      </sidebyside>
+      <exercise xml:id="exp-prob-asymptoteslt1">
+        <statement>
+          Using the appropriate function in <xref ref="exp-fig-matchexpslessthan1"/>,
+          we can say that <m>\left( \frac{1}{2} \right)^x+1\to 1</m> as <m>x\to\infty</m>.
+          Similarly, we can say that <m>\left( \frac{1}{2} \right)^x+1\to \infty</m> as <m>x\to-\infty</m>.
+          Make analogous statements about the remaining functions in <xref ref="exp-fig-matchexpslessthan1"/>.
+        </statement>
+        <solution>
+          <p>
+            <m>\left(\frac{1}{3}\right)^x-1 \to   -1</m> as <m>x\to\infty</m>; <m>\left(\frac{1}{3}\right)^x-1 \to \infty</m> as <m>x\to-\infty</m>.\\ 
+            <m>-\left(\frac{1}{5}\right)^x+2\to   2</m> as <m>x\to\infty</m>;  <m>-\left(\frac{1}{5}\right)^x+2\to -\infty</m> as <m>x\to-\infty</m>.\\ 
+            <m>-\left(\frac{1}{4}\right)^x-3\to -3</m>  as <m>x\to\infty</m>;  <m>-\left(\frac{1}{4}\right)^x-3\to -\infty</m>  as <m>x\to-\infty</m> .
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Use limit notation to re-write your answers from <xref ref="exp-prob-asymptoteslt1"/>.
+        </statement>
+        <solution>
+          <p>
+            <m>\dd\lim_{x\to\infty}\left(\left(\frac{1}{3}\right)^x-1\right) =  -1</m>;  <m>\dd\lim_{x\to-\infty}\left(\left(\frac{1}{3}\right)^x-1\right) = \infty</m>.\\
+            <m>\dd\lim_{x\to\infty}-\left(\left(\frac{1}{5}\right)^x+2\right)=  2</m> ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{5}\right)^x+2\right)= -\infty</m>.\\
+            <m>\dd\lim_{x\to\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)=-3</m>  ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)= -\infty</m>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+            <exercisegroup>
+            <author>Hughes</author>
+            <date>  Feb 2011</date>
+<title>Increasing and decreasing functions</title>
+<statement>
+            Let <m>f</m> be an exponential function that has formula
+            \[
+            f(x) = a\,b^x
+            \]
+            where <m>b&gt;0</m>. In each of the following cases, give values of <m>a</m> and <m>b</m> that satisfy the given requirements.
+          </statement>
+            <exercise>
+              <statement>
+                <m>f</m> is always increasing, and <m>b&gt;1</m>
+              </statement>
+              <solution>
+                <p>
+                  <m>f(x)=2^x</m>. There are infinitely many other choices available.
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                <m>f</m> is always increasing, and <m>0&lt;b&lt;1</m>
+              </statement>
+              <solution>
+                <p>
+                  <m>f(x)=-\left(\frac{1}{3}\right)^x</m>. There are infinitely many other choices available.
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                <m>f</m> is always decreasing, and <m>0&lt;b&lt;1</m>
+              </statement>
+              <solution>
+                <p>
+                  <m>f(x)=\left(\frac{1}{4}\right)^x</m>. There are infinitely many other choices available.
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                <m>f</m> is always decreasing, and <m>b&gt;1</m>
+              </statement>
+              <solution>
+                <p>
+                  <m>f(x) = -5^x</m>. There are infinitely many other choices available.
+                </p>
+              </solution>
+            </exercise>
+            </exercisegroup>
+            <exercisegroup>
+            <author>Simonds</author>
+            <date>  Feb 2011</date>
+<title>Successive ratios</title>
+<statement>
+  <p>
+            In this activity, we are going to focus on functions that grow at faster and faster rates (concave up).  In 
+            casual conversation, all such functions are sometimes said to be ``growing exponentially''.  
+            While that's just fine while you are muttering about the price of gas, in 
+            the sciences the phrase ``exponential growth'' has a much more precise meaning.
+</p>
+<p>
+            One thing implied by the definition of an exponential function is that if <m>f(x)=a\,b^x</m> (where <m>b&gt;0</m>, <m>b\neq1</m>), 
+            then for all values of <m>x</m>, <m>\displaystyle\frac{f(x+1)}{f(x)}=b</m>.</p>
+        </statement>
+            <exercise>
+              <statement>
+                Verify that last assertion by simplifying the expression <m>\frac{ab^{x+1}}{ab^x}</m>.
+              </statement>
+              <solution>
+                <p>
+                  <m>\displaystyle\frac{f(x+1)}{f(x)}=\frac{ab^{x+1}}{ab^x}=\frac{b^{x+1}}{b^x}=b</m>
+                </p>
+              </solution>
+            </exercise>
+            <exercise xml:id="exp-prob-exponentialgraphs">
+              <statement>
+                For each of the functions graphed in <xref ref="exp-fig-expfunctionm" autoname="plural"/> through <xref ref="exp-fig-expfunctionr" autoname="no"/>, 
+                determine whether or not the function is exponential.  If it is, determine the base <m>b</m> of the function. Your first step might be to choose 
+                3 ordered pairs that have successive <m>x</m>-values (e.g 1, 2, 3), and compare the ratio of the <m>y</m>-values.
+              </statement>
+              <solution>
+                <p>
+                  The function graphed in <xref ref="exp-fig-expfunctionn"/> is exponential, <m>n(x)=2^x</m>.  
+                  The function graphed in <xref ref="exp-fig-expfunctionr"/> is exponential, and <m>r(x)=\left(\frac13\right)^x</m>.
+                  The function graphed in <xref ref="exp-fig-expfunctionm"/> is not exponential.  
+                </p>
+              </solution>
+            </exercise>
+            <sidebyside>
+            <figure width="25%" xml:id="exp-fig-expfunctionn">
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-2,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-1,1,2,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot expression[domain=-2:3.2]{2^x};
+                \addplot[soldot]coordinates{(0,1)(1,2)(2,4)(3,8)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=n(x)</m></caption>
+          </figure>
+            <figure width="25%" xml:id="exp-fig-expfunctionr">
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-2,...,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot expression[domain=-2.19:4]{(1/3)^x};
+                \addplot[soldot]coordinates{(0,1)(-1,3)(-2,9)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=r(x)</m></caption>
+          </figure>
+            <figure width="25%" xml-id="exp-fig-expfunctionm">
+            <image>
+              <latex-image-code>
+                <![CDATA[\begin{tikzpicture}
+                \begin{axis}[
+                framed,
+                xmin=-3,xmax=4,
+                ymin=-3,ymax=11,
+                xtick={-2,...,3},
+                ytick={4,8},
+                minor ytick={2,4,...,8},
+                grid=both,
+                ]
+                \addplot+[->]expression[domain=0:3.17]{x^2+1};
+                \addplot[soldot]coordinates{(0,1)(1,2)(2,5)(3,10)};
+                \end{axis}
+                \end{tikzpicture}]]>
+              </latex-image-code>
+            </image>
+            <caption><m>y=m(x)</m></caption>
+    </figure>
+</sidebyside>
+</exercisegroup>
   </exercises>
 </section>

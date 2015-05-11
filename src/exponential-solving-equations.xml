@@ -1,579 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
-
-
-
-
-            %===================================
-            <author>Barkin</author>
-            <date>  April 2011</date>
-            %===================================
-            \begin{problem}[Decreasing exponential functions]
-            Consider the functions <m>m</m> and <m>n</m> that have formulas <m>m(x) = \left(\sfrac{1}{2}\right)^x</m> and <m>n(x) = \left(\sfrac{1}{3}\right)^x-2</m>.  
-            <exercise>
-              <statement>
-                Graph these functions over the interval <m>-2\le x \le 3</m> after first filling in <xref ref="exp-tab-increasingexp"/>.  
-                Label the functions <m>m</m> and <m>n</m>.
-              </statement>
-              <solution>
-                <p>
-                  \begin{tabular}[t]{S[table-format=1.0]cc}
-                  \beforeheading
-                  \heading{<m>x</m>} &amp; \heading{<m>m(x)</m>} &amp; \heading{<m>n(x)</m>} \\
-                  \afterheading
-                  -3            &amp; \num{8}          &amp; \num{25}         \\\normalline
-                  -2            &amp; \num{4}          &amp; \num{7}          \\\normalline
-                  -1            &amp; \num{2}          &amp; \num{1}          \\\normalline
-                  0             &amp; \num{1}          &amp; \num{-1}         \\\normalline
-                  1             &amp; \num{1/2}        &amp; \num{-5/3}       \\\normalline
-                  2             &amp; \num{1/4}        &amp; \num{-17/9}      \\\lastline
-                  \end{tabular}
-
-                  The functions <m>m</m> and <m>n</m> are graphed below.
-
-                  <image>
-                    <latex-image-code>
-                      <![CDATA[\begin{tikzpicture}
-                      \begin{axis}[
-                      framed,
-                      xmin=-2,xmax=3,
-                      ymin=-5,ymax=5,
-                      xtick={-1,...,2},
-                      ytick={-4,...,4},
-                      grid=both,
-                      ]
-                      \addplot expression[domain=-2:3]{(1/2)^x};
-                      \addlegendentry{<m>y=\left( \frac{1}{2} \right)^x</m>};
-                      \addplot expression[domain=-1.5:3]{(1/3)^x-2};
-                      \addlegendentry{<m>y=\left( \frac{1}{3} \right)^x-2</m>};
-                      \end{axis}
-                      \end{tikzpicture}]]>
-                    </latex-image-code>
-                  </image>
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                What are the horizontal asymptotes of <m>m</m> and <m>n</m>?
-              </statement>
-              <solution>
-                <p>
-                  <m>m</m> has asymptote <m>y=0</m>, and <m>n</m> has asymptote <m>y=-2</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                What are the domain and range of the functions <m>m</m> and <m>n</m>?
-              </statement>
-              <solution>
-                <p>
-                  Both have domain <m>(-\infty,\infty)</m>; the range of <m>m</m> is <m>(0,\infty)</m> and the range of <m>n</m> is <m>(-2,\infty)</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Notice that both of these functions are decreasing as <m>x</m> increases.  Why do these functions decrease when 
-                the functions in <xref ref="exp-prob-increasingexptabs"/> increase?
-              </statement>
-              <solution>
-                <p>
-                  Because <m>b&lt;1</m> and <m>a&gt;0</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-
-            %===================================
-            <author>Hughes</author>
-            <date>  Feb 2011</date>
-            %===================================
-            \begin{problem}[Horizontal asymptotes when <m>b&gt;1</m>]\label{exp-prob-matchexponentials}%
-            Consider the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>j</m> that have formulas
-            \begin{align*}
-            f(x) &amp; =3^x-1, &amp; g(x) &amp; =-4^x-3, &amp; h(x) &amp; =2^x+1, &amp; j(x) &amp; =-5^x+2 
-            \end{align*}
-            %++++++++++++++++
-            \begin{figure}[!htb]
-            \begin{widepage}
-            \setlength{\figurewidth}{.2\textwidth}
-            \centering
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-9:3]{2^x+1};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexponential1}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-9:2]{3^x-1};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexponential2}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-9:1.5]{(-1)*5^x+2};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexponential3}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-9:1.25]{(-1)*4^x-3};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexponential4}
-            \end{subfigure}
-            <caption>Graphs for <xref ref="exp-prob-matchexponentials"/>.</caption>
-            \label{exp-fig-matchexponentials}
-            \end{widepage}
-            \end{figure}
-            %++++++++++++++++
-            <exercise>
-              <statement>
-                Match each of the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>j</m> with one of the graphs in <xref ref="exp-fig-matchexponentials"/>.
-              </statement>
-              <solution>
-                <p>
-                  \Vref{exp-fig-matchexponential2} shows <m>f(x)=3^x-1</m>.\\
-                  \Vref{exp-fig-matchexponential4} shows <m>f(x)=-4^x-3</m>.\\
-                  \Vref{exp-fig-matchexponential1} shows <m>f(x)=2^x+1</m>.  \\
-                  \Vref{exp-fig-matchexponential3} shows <m>f(x)=-5^x+2</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise xml:id="exp-prob-asympneginf">
-              <statement>
-                As <m>x\to-\infty</m>, <m>f(x)\to -1</m>. This tells us two things:
-                \begin{itemize}
-                <li> the horizontal asymptote as <m>x\to-\infty</m> is the line <m>y=-1</m>;</li>
-                <li> since the function is increasing, the range of the function is <m>(-1,\infty)</m>.</li>
-                \end{itemize}
-                For the remaining three functions <m>g</m>, <m>h</m>, and <m>j</m>, deduce the behavior as <m>x\to-\infty</m>, the horizontal 
-                asymptote as <m>x\to-\infty</m>, and the range.
-              </statement>
-              <solution>
-                <p>
-                  \Vref{exp-fig-matchexponential4}, <m>g(x)=-4^x-3</m>: 
-                  \begin{itemize}
-                  <li> <m>g(x)\to -3</m> as <m>x\to-\infty</m>;</li>
-                  <li> the horizontal asymptote as <m>x\to-\infty</m> is the line <m>y=-3</m>;</li>
-                  <li> the range of <m>g</m> is range: <m>(-\infty,-3)</m>.</li>
-                  \end{itemize}
-                  \Vref{exp-fig-matchexponential1}, <m>h(x)=2^x+1</m>: 
-                  \begin{itemize}
-                  <li> <m>h(x)\to 1</m> as <m>x\to -\infty</m>;</li>
-                  <li> the horizontal asymptote as <m>x\to-\infty</m> is the line <m>y=1</m>;</li>
-                  <li> the range of <m>h</m> is <m>(1,\infty)</m>.</li>
-                  \end{itemize}
-                  \Vref{exp-fig-matchexponential3}, <m>j(x)=-5^x+2</m>: 
-                  \begin{itemize}
-                  <li> <m>j(x)\to 2</m> as <m>x\to-\infty</m>;</li>
-                  <li> the horizontal asymptote as <m>x\to-\infty</m> is the line <m>y=2</m>;</li>
-                  <li> the range of <m>j</m> is <m>(-\infty,2)</m>.</li>
-                  \end{itemize}
-                </p>
-              </solution>
-            </exercise>
-            <exercise xml:id="exp-prob-asymptotes">
-              <statement>
-                Using the appropriate function in <xref ref="exp-fig-matchexponentials"/>, we can observe that
-                <m>f(x)\to \infty</m>, as <m>x\to\infty</m>.
-                Make analogous statements about the remaining functions in <xref ref="exp-fig-matchexponentials"/>.
-              </statement>
-              <solution>
-                <p>
-                  <m>-4^x-3\to -\infty</m> as <m>x\to\infty</m>.\\ 
-                  <m>2^x+1\to \infty</m> as <m>x\to\infty-</m>.\\
-                  <m>-5^x+2\to -\infty</m> as <m>x\to\infty</m>.	  	  
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Recall that an equivalent way of writing that <m>f(x)\to \infty</m> as <m>x\to \infty</m> is to use limit notation:
-                \[
-                \lim_{x\to\infty}f(x)=\infty
-                \]
-                Similarly, we can say 
-                \[
-                \lim_{x\to-\infty}f(x)=1.
-                \]
-                Use limit notation to re-write your answers from \cref{exp-prob-asympneginf,exp-prob-asymptotes}.
-              </statement>
-              <solution>
-                <p>
-                  <m>\dd\lim_{x\to-\infty}(-4^x-3)=3</m>;     <m>\dd\lim_{x\to\infty}(-4^x-3)= -\infty</m>.	\\  	    
-                  <m>\dd\lim_{x\to-\infty}(2^x+1)=1</m>;     <m>\dd\lim_{x\to\infty}(2^x+1)= \infty</m>.	\\  	    
-                  <m>\dd\lim_{x\to-\infty}(-5^x+2) =2</m>;     <m>\dd\lim_{x\to\infty}(-5^x+2)= -\infty</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-
-            %===================================
-            <author>Hughes</author>
-            <date>  Feb 2011</date>
-            %===================================
-            \begin{problem}[Horizontal asymptotes when <m>0&lt;b&lt;1</m>]\label{exp-prob-matchexpslessthan1}%
-            Consider the functions <m>F</m>, <m>G</m>, <m>H</m> and <m>J</m> that have formulas
-            \begin{align*}
-            F(x) &amp; =\left(\frac{1}{3}\right)^x-1, &amp; G(x) &amp; =-\left(\frac{1}{4}\right)^x-3, &amp; H(x) &amp; =-\left(\frac{1}{5}\right)^x+2, &amp; J(x) &amp; =\left(\frac{1}{2}\right)^x+1 
-            \end{align*}
-            <exercise>
-              <statement>
-                Match each of the functions <m>F</m>, <m>G</m>, <m>H</m>, and <m>J</m> with one of the graphs in <xref ref="exp-fig-matchexpslessthan1"/>.
-              </statement>
-              <solution>
-                <p>
-                  \Vref{exp-fig-matchexpsbaselt12} shows <m>\dd F(x)=\left(\frac{1}{3}\right)^x-1</m>.\\
-                  \Vref{exp-fig-matchexpsbaselt14} shows <m>\dd G(x)=-\left(\frac{1}{4}\right)^x-3</m>.\\
-                  \Vref{exp-fig-matchexpsbaselt13} shows <m>\dd H(x)=-\left(\frac{1}{5}\right)^x+2</m>.\\
-                  \Vref{exp-fig-matchexpsbaselt11} shows <m>\dd J(x)=\left(\frac{1}{2}\right)^x+1</m>.
-                </p>
-              </solution>
-            </exercise>
-            %++++++++++++++++
-            \begin{figure}[!htb]
-            \begin{widepage}
-            \setlength{\figurewidth}{.2\textwidth}
-            \centering
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-3:9]{(1/2)^x+1};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexpsbaselt11}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-2:9]{(1/3)^x-1};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexpsbaselt12}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-1.35:9]{-(1/5)^x+2};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexpsbaselt13}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}{\figurewidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-10,xmax=10,ymin=-10,ymax=10,
-                xtick={-8,-4,4,8},
-                ytick={-8,-4,4,8},
-                grid=major,
-                ]
-                \addplot expression[domain=-1.35:9]{-(1/4)^x-3};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            \label{exp-fig-matchexpsbaselt14}
-            \end{subfigure}
-            <caption>Graphs for <xref ref="exp-prob-matchexpslessthan1"/>.</caption>
-            \label{exp-fig-matchexpslessthan1}
-            \end{widepage}
-            \end{figure}
-            %++++++++++++++++
-            <exercise xml:id="exp-prob-asymptoteslt1">
-              <statement>
-                Using the appropriate function in <xref ref="exp-fig-matchexpslessthan1"/>,
-                we can say that <m>\left( \frac{1}{2} \right)^x+1\to 1</m> as <m>x\to\infty</m>.
-                Similarly, we can say that <m>\left( \frac{1}{2} \right)^x+1\to \infty</m> as <m>x\to-\infty</m>.
-                Make analogous statements about the remaining functions in <xref ref="exp-fig-matchexpslessthan1"/>.
-              </statement>
-              <solution>
-                <p>
-                  <m>\left(\frac{1}{3}\right)^x-1 \to   -1</m> as <m>x\to\infty</m>; <m>\left(\frac{1}{3}\right)^x-1 \to \infty</m> as <m>x\to-\infty</m>.\\ 
-                  <m>-\left(\frac{1}{5}\right)^x+2\to   2</m> as <m>x\to\infty</m>;  <m>-\left(\frac{1}{5}\right)^x+2\to -\infty</m> as <m>x\to-\infty</m>.\\ 
-                  <m>-\left(\frac{1}{4}\right)^x-3\to -3</m>  as <m>x\to\infty</m>;  <m>-\left(\frac{1}{4}\right)^x-3\to -\infty</m>  as <m>x\to-\infty</m> .
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Use limit notation to re-write your answers from <xref ref="exp-prob-asymptoteslt1"/>.
-              </statement>
-              <solution>
-                <p>
-                  <m>\dd\lim_{x\to\infty}\left(\left(\frac{1}{3}\right)^x-1\right) =  -1</m>;  <m>\dd\lim_{x\to-\infty}\left(\left(\frac{1}{3}\right)^x-1\right) = \infty</m>.\\
-                  <m>\dd\lim_{x\to\infty}-\left(\left(\frac{1}{5}\right)^x+2\right)=  2</m> ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{5}\right)^x+2\right)= -\infty</m>.\\
-                  <m>\dd\lim_{x\to\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)=-3</m>  ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)= -\infty</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-            %===================================
-            <author>Hughes</author>
-            <date>  Feb 2011</date>
-            %===================================
-            \begin{problem}[Increasing and decreasing functions]
-            Let <m>f</m> be an exponential function that has formula
-            \[
-            f(x) = a\,b^x
-            \]
-            where <m>b&gt;0</m>. In each of the following cases, give values of <m>a</m> and <m>b</m> that satisfy the given requirements.
-
-            <exercise>
-              <statement>
-                <m>f</m> is always increasing, and <m>b&gt;1</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>f(x)=2^x</m>. There are infinitely many other choices available.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>f</m> is always increasing, and <m>0&lt;b&lt;1</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>f(x)=-\left(\frac{1}{3}\right)^x</m>. There are infinitely many other choices available.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>f</m> is always decreasing, and <m>0&lt;b&lt;1</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>f(x)=\left(\frac{1}{4}\right)^x</m>. There are infinitely many other choices available.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>f</m> is always decreasing, and <m>b&gt;1</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>f(x) = -5^x</m>. There are infinitely many other choices available.
-                </p>
-              </solution>
-            </exercise>
-            \end{problem}
-            %===================================
-            <author>Simonds</author>
-            <date>  Feb 2011</date>
-            %===================================
-            \begin{problem}[Successive ratios]
-            In this activity, we are going to focus on functions that grow at faster and faster rates (concave up).  In 
-            casual conversation, all such functions are sometimes said to be ``growing exponentially''.  
-            While that's just fine while you are muttering about the price of gas, in 
-            the sciences the phrase ``exponential growth'' has a much more precise meaning.
-
-            One thing implied by the definition of an exponential function is that if <m>f(x)=a\,b^x</m> (where <m>b&gt;0</m>, <m>b\neq1</m>), 
-            then for all values of <m>x</m>, <m>\displaystyle\frac{f(x+1)}{f(x)}=b</m>.
-
-            <exercise>
-              <statement>
-                Verify that last assertion by simplifying the expression <m>\frac{ab^{x+1}}{ab^x}</m>.
-              </statement>
-              <solution>
-                <p>
-                  <m>\displaystyle\frac{f(x+1)}{f(x)}=\frac{ab^{x+1}}{ab^x}=\frac{b^{x+1}}{b^x}=b</m>
-                </p>
-              </solution>
-            </exercise>
-            <exercise xml:id="exp-prob-exponentialgraphs">
-              <statement>
-                For each of the functions graphed in \crefrange{exp-fig-expfunctionm}{exp-fig-expfunctionr}, 
-                determine whether or not the function is exponential.  If it is, determine the base <m>b</m> of the function. Your first step might be to choose 
-                3 ordered pairs that have successive <m>x</m>-values (e.g 1, 2, 3), and compare the ratio of the <m>y</m>-values.
-              </statement>
-              <solution>
-                <p>
-                  The function graphed in <xref ref="exp-fig-expfunctionn"/> is exponential, <m>n(x)=2^x</m>.  
-                  The function graphed in <xref ref="exp-fig-expfunctionr"/> is exponential, and <m>r(x)=\left(\frac13\right)^x</m>.
-                  The function graphed in <xref ref="exp-fig-expfunctionm"/> is not exponential.  
-                </p>
-              </solution>
-            </exercise>
-
-            \begin{figure}[!htb]
-            \begin{widepage}
-            \begin{minipage}{.25\textwidth}
-            \centering
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-2,xmax=4,
-                ymin=-3,ymax=11,
-                xtick={-1,1,2,3},
-                ytick={4,8},
-                minor ytick={2,4,...,8},
-                grid=both,
-                ]
-                \addplot expression[domain=-2:3.2]{2^x};
-                \addplot[soldot]coordinates{(0,1)(1,2)(2,4)(3,8)};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption><m>y=n(x)</m></caption>
-            \label{exp-fig-expfunctionn}
-            \end{minipage}
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=4,
-                ymin=-3,ymax=11,
-                xtick={-2,...,3},
-                ytick={4,8},
-                minor ytick={2,4,...,8},
-                grid=both,
-                ]
-                \addplot expression[domain=-2.19:4]{(1/3)^x};
-                \addplot[soldot]coordinates{(0,1)(-1,3)(-2,9)};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption><m>y=r(x)</m></caption>
-            \label{exp-fig-expfunctionr}
-            \end{minipage}
-            \hfill
-            \centering
-            \begin{minipage}{.25\textwidth}
-            \centering
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=4,
-                ymin=-3,ymax=11,
-                xtick={-2,...,3},
-                ytick={4,8},
-                minor ytick={2,4,...,8},
-                grid=both,
-                ]
-                \addplot+[-&gt;]expression[domain=0:3.17]{x^2+1};
-                \addplot[soldot]coordinates{(0,1)(1,2)(2,5)(3,10)};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption><m>y=m(x)</m></caption>
-            \label{exp-fig-expfunctionm}
-            \end{minipage}
-            \end{widepage}
-            \end{figure}
-
             <exercise xml:id="exp-prob-exponentialtables">
               <statement>
                 For each of the functions implied by the data in \crefrange{exp-tab-expfunctiong}{exp-tab-expfunctionk}, 
@@ -588,24 +14,22 @@
                 </p>
               </solution>
             </exercise>
-            \begin{table}[!htb]
-            \begin{widepage}
-            \centering
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
+            <sidebyside>
+              <table width="25%" xml:id="exp-tab-expfunctiong">
             <caption><m>y=g(x)</m></caption>
-            \begin{tabular}{S[table-format=1.0]S[table-format=3.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            1             &amp; 3             \\\normalline
-            2             &amp; 9             \\\normalline
-            3             &amp; 27            \\\normalline
-            4             &amp; 81            \\\normalline
-            5             &amp; 241           \\\lastline
-            \end{tabular}
-            \label{exp-tab-expfunctiong}
+            <tabular>
+              <col halign="."/>
+              <col halign="."/>
+              <thead>
+               <m>x</m>} &amp; \heading{<m>y</m>} \\
+             </thead>
+            <row><cell>1</cell><cell>3</cell></row>
+            <row><cell>2</cell><cell>9</cell></row>
+            <row><cell>3</cell><cell>27</cell></row>
+            <row><cell>4</cell><cell>81</cell></row>
+            <row><cell>5</cell><cell>243</cell></row>
+            </tabular>
+              </table>
             \end{minipage}
             \hfill
             \begin{minipage}{.25\textwidth}
@@ -638,17 +62,15 @@
             16            &amp; 1024          \\\lastline
             \end{tabular}
             \label{exp-tab-expfunctionk}
-            \end{minipage}
-            \hfill
-            \end{widepage}
-            \end{table}
+            </sidebyside>
 
-            \end{problem}
             %===================================
             <author>Hughes</author>
             <date>  Feb 2011</date>
             %===================================
-            \begin{problem}[True or false?]
+            <exercisegroup>
+<title>True or false?</title>
+<statement>
             Consider the function <m>f</m> that has formula
             \[
             f(x)=a\,b^x+c
@@ -777,7 +199,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             \end{exercises}
 
             \section{Solving exponential equations}
@@ -925,7 +347,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             \end{essentialskills}
             %===================================
             <author>Hughes, Jordan</author>
@@ -996,7 +418,7 @@
                 \end{aligned}$
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             \begin{pccexample}
@@ -1036,7 +458,7 @@
                 <m>x=2</m> (The solution is <m>2</m>.)
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             %===================================
@@ -1077,7 +499,7 @@
                 <m>x=0,2</m> (The solutions are <m>0</m>, and <m>2</m>)
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             Not all solutions are integers; in fact in applied problems solutions are almost never integers.
@@ -1163,7 +585,7 @@
                 <m>x\approx 3.32</m> (The solution is approximately <m>3.32</m>.)
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             \investigation*{}
@@ -1171,7 +593,9 @@
             <author>Hughes/Simonds</author>
             <date>  September 2011</date>
             %===================================
-            \begin{problem}[To the Moon]
+            <exercisegroup>
+<title>To the Moon</title>
+<statement>
             Let <m>x</m> represent the horizontal
             distance (in inches) that you are from your front door. Imagine that
             for every inch that you move away from your front door,
@@ -1219,11 +643,13 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
 
             \begin{exercises}
-            \begin{problem}[Algebraic manipulation]	
+            <exercisegroup>
+<title>Algebraic manipulation</title>
+<statement>	
             Use properties of exponents to write each of the following formulas in the 
             form <m>f(t)=a\,b^t</m>. Leave your answers in exact form. 
             \begin{multicols}{2}
@@ -1262,9 +688,11 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}	
+            </exercisegroup>	
 
-            \begin{problem}[Integer solutions]
+            <exercisegroup>
+<title>Integer solutions</title>
+<statement>
             Solve each of the following exponential equations. Check your solutions. 
             \phpreference{exponentialIntSolns}{\theproblem}
             \begin{multicols}{3}
@@ -1329,9 +757,11 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Non-integer solutions]
+            <exercisegroup>
+<title>Non-integer solutions</title>
+<statement>
             Solve each of the following exponential equations using either a graph 
             or a table of values; state your solutions to 2 decimal places, and check your answers. 
             \begin{multicols}{4}
@@ -1416,9 +846,11 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Factoring]
+            <exercisegroup>
+<title>Factoring</title>
+<statement>
             Use the technique demonstrated in <xref ref="exp-ex-factor"/> to help you solve the following 
             equations.
             For <xref ref="exp-prob-needfactor"/> try putting <m>t=4^x</m> as your first step. Check your solutions.
@@ -1457,12 +889,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Matching graphs to equations]\label{exp-prob-matcheqns}%
+            <exercisegroup xml:id="exp-prob-matcheqns">
+<title>Matching graphs to equations</title>
+<statement>%
             \pccname{Jake} and \pccname{Marisa} are solving the following exponential equations. To guide them, 
             they have graphed the functions involved in <xref ref="exp-fig-matcheqns"/>. Match the equations
             with the appropriate graph.
@@ -1482,7 +916,7 @@
                 \end{itemize}
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \begin{figure}[!htb]
             \begin{widepage}
             \centering
@@ -1578,7 +1012,9 @@
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Zeros]
+            <exercisegroup>
+<title>Zeros</title>
+<statement>
             Consider the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>k</m> that have formulas
             \[
             f(x)=4^{-x^2}-\frac{1}{4}, \qquad 
@@ -1598,13 +1034,15 @@
                 \end{itemize}
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[True or false?]
+            <exercisegroup>
+<title>True or false?</title>
+<statement>
             \pccname{Myron} and \pccname{Win} have studied all of the exponential equations so far, and 
             are trying to generalize their results. They begin with the equation
             \[
@@ -1643,17 +1081,19 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Beyond exponential equations]
+            <exercisegroup>
+<title>Beyond exponential equations</title>
+<statement>
             The function <m>f</m> that has formula <m>f(x)=\left( \frac{1}{2} \right)^x+\frac{1}{2}</m> is shown in <xref ref="exp-fig-extension"/>, 
             along with a mystery function <m>g</m>.
-            \end{problem}
+            </exercisegroup>
             \begin{figure}[!htb]
             \begin{widepage}
             <image>
@@ -1830,7 +1270,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             \begin{problem} Simplify the given expressions.
             \begin{multicols}{4}
@@ -1875,7 +1315,7 @@
               </solution>
             </exercise>	
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             \begin{problem}
             Solve the equations for <m>x</m>.  Give both exact values and decimal approximations.
@@ -1921,7 +1361,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %	\fixthis{Appendix?}
             \end{essentialskills}
 
@@ -1994,7 +1434,7 @@
                 <m>f(t)=2\cdot 4^t</m>; the growth factor is <m>4</m>.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             When dealing with application problems the values of <m>a</m> and <m>b</m> will rarely evaluate to integers. 
@@ -2046,7 +1486,7 @@
                 <m>f(x)=\frac{10^{\sfrac{11}{9}}}{23^{\sfrac{2}{9}}}\left(\frac{23}{10}\right)^{\sfrac{x}{9}}\approx 8.31 (1.096963)^x</m>
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             %===================================
@@ -2186,7 +1626,9 @@
             <date>  Apr 2011</date>
             %===================================
             \investigation*{}
-            \begin{problem}[US population]\label{exp-prob-uspopngreen}%
+            <exercisegroup xml:id="exp-prob-uspopngreen">
+<title>US population</title>
+<statement>%
             The population of the United States has increased roughly exponentially from 76.2 million 
             people in 1900 to 309 million people in 2010.\footnote{\href{http://www.wolframalpha.com/input/?i=us+population+1900}{http://www.wolframalpha.com/input/?i=us+population+1900}} 
             <exercise xml:id="exp-prob-USApop19002010">
@@ -2241,9 +1683,11 @@
                 </p>
               </solution>
             </exercise>		
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Greenhouse gases]\label{exp-prob-greenhouseorig}%
+            <exercisegroup xml:id="exp-prob-greenhouseorig">
+<title>Greenhouse gases</title>
+<statement>%
             As our cars, homes, businesses and industry become more efficient, each person is responsible for the production of  
             less carbon dioxide (CO<m>_{2}</m>) a greenhouse gas. The US Energy Information Administration 
             provides the estimates for future quantities of CO<m>_{2}</m> that each person will produce. They know 
@@ -2284,13 +1728,15 @@
                 </p>
               </solution>
             </exercise>		
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Kouzes, Hughes (scaffolding)</author>
             <date>  Apr 2011</date>
             %===================================
-            \begin{problem}[Tapfish app]\label{exp-prob-tapfishtable}%
+            <exercisegroup xml:id="exp-prob-tapfishtable">
+<title>Tapfish app</title>
+<statement>%
             Tapfish is a free mobile device app where you set up a digital aquarium.  
             We can use the application to create approximations of exponential functions. 
             We have simplified the nature of the application to make this problem easier.
@@ -2423,7 +1869,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %========================================================================
             %
@@ -2435,7 +1881,9 @@
             <author>Jordan</author>
             <date>  Nov 2011</date>
             %===================================
-            \begin{problem}[Prerequisite simplification skills]
+            <exercisegroup>
+<title>Prerequisite simplification skills</title>
+<statement>
             Simplify the given expressions.
             \begin{multicols}{4}
             <exercise>
@@ -2559,13 +2007,15 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Prerequisite solving skills]
+            <exercisegroup>
+<title>Prerequisite solving skills</title>
+<statement>
             Solve each of the following equations. Give both the exact value 
             and the decimal approximation where appropriate.
             \begin{multicols}{3}
@@ -2630,13 +2080,15 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{problem}[Find a formula, <m>a</m> and <m>b</m> rational]
+            <exercisegroup>
+<title>Find a formula, <m>a</m> and <m>b</m> rational</title>
+<statement>
             In each of the following problems, find an exponential function of the form <m>f(t)=a\,b^t</m> that goes through the given ordered pairs. Identify the growth factor in each problem.
             \begin{multicols}{2}
             <exercise>
@@ -2700,7 +2152,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
 
 
@@ -2708,7 +2160,9 @@
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{problem}[Find a formula, <m>a</m> and <m>b</m> irrational]
+            <exercisegroup>
+<title>Find a formula, <m>a</m> and <m>b</m> irrational</title>
+<statement>
             In each of the following problems, find an exponential function of the form <m>f(x)=a\,b^x</m> that 
             goes through the given ordered pairs. Be sure to give both the exact form and the approximate form of <m>f</m>.
             \begin{multicols}{2}
@@ -2753,14 +2207,16 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Find a formula from a graph]
+            <exercisegroup>
+<title>Find a formula from a graph</title>
+<statement>
             For each of the functions in <xref ref="exp-fig-findab"/>, assume that 
             the vertical intercept is an integer value. Use this, together with 
             the information in each caption, to find a formula for each function.
@@ -2769,7 +2225,7 @@
                 <m>f(x)=2\cdot 3^x</m>, <m>g(x)=2\left( \frac{1}{2} \right)^x</m>, <m>h(x)=-5^x</m>, <m>k(x)=-4\left( \frac{1}{3} \right)^x</m>  
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             \begin{figure}[!htb]
             \begin{widepage}
@@ -2867,20 +2323,24 @@
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Concavity]
+            <exercisegroup>
+<title>Concavity</title>
+<statement>
             For the functions in <xref ref="exp-fig-findab"/>, which graphs are concave up? Which are concave down? 
             <solution>
               <p>
                 The graphs of <m>f</m> and <m>g</m> are concave up; the graphs of <m>h</m> and <m>k</m> are concave down.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Find a formula from a table]
+            <exercisegroup>
+<title>Find a formula from a table</title>
+<statement>
             Find a formula for each of the functions implied by the data values in \crefrange{exp-tab-findab10}{exp-tab-findabfifth}.
             Assume that each function has the form <m>f(x)=a\, b^x</m>.
             <solution>
@@ -2888,7 +2348,7 @@
                 \Cref{exp-tab-findab10}: <m>f(x)=10^x</m>; <xref ref="exp-tab-findab7"/>: <m>f(x)=-9\cdot 7^x</m>; <xref ref="exp-tab-findabthird"/>: <m>f(x)=-6\left( \frac{1}{3} \right)^x</m>; <xref ref="exp-tab-findabfifth"/>: <m>f(x)=3\left( \frac{1}{5} \right)^x</m>.  
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             % manual table stretch, str. by factor of 1.25
             \renewcommand{\arraystretch}{1.25}
             \begin{table}[!htb]
@@ -2957,7 +2417,9 @@
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Increasing and decreasing functions]
+            <exercisegroup>
+<title>Increasing and decreasing functions</title>
+<statement>
             Refer to the functions in <xref ref="exp-fig-findab"/> and \crefrange{exp-tab-findab10}{exp-tab-findabfifth} to help you decide 
             if the following statements are true or false. If the answer is false, provide an 
             example that supports your answer.
@@ -3021,12 +2483,14 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  May 2011</date>
             %===================================
-            \begin{problem}[Solar capacity]
+            <exercisegroup>
+<title>Solar capacity</title>
+<statement>
             The global solar photovoltaic power capacity (in \si{\mega\watt}) grew from 2000-2007\footnote{\href{http://www.energyandcapital.com/articles/solar-stock-outlook/750}{http://www.energyandcapital.com/articles/solar-stock-outlook/750}} and 
             is shown in <xref ref="exp-fig-solarcapacity"/>. 
 
@@ -3130,7 +2594,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             \end{exercises}
 
             \section{Exponential modeling}\label{exp-sec-populationmodels}
@@ -3231,7 +2695,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             \end{essentialskills}
 
             \subsection*{Simple population models}
@@ -3284,7 +2748,7 @@
                 <m>P(t)=P_0(0.92)^t</m> 
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             %===================================
@@ -3316,7 +2780,9 @@
             <date>  September 2011</date>
             %===================================
             \begin{doyouunderstand}
-            \begin{problem}[Oregonians]
+            <exercisegroup>
+<title>Oregonians</title>
+<statement>
             In 2000 there were <m>3.83</m>  million people living in Oregon.  By 2010, the population had increased 
             by <m>\SI{12.0}{\percent}</m>.\footnote{2000 census}  Assuming the population continues to grow at this rate, find a 
             model representing the size of the population <m>t</m> years after 2000.
@@ -3329,7 +2795,7 @@
                 \]
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             \subsection*{Radioactive decay}
@@ -3785,7 +3251,9 @@
             <author>Kouzes, Jordan</author>
             <date>  Apr 2011</date>
             %===================================
-            \begin{problem}[Atmospheric C-14]
+            <exercisegroup>
+<title>Atmospheric C-14</title>
+<statement>
             During the Cold War, many above-ground thermonuclear tests were done in the South 
             Pacific region, making many islands completely uninhabitable for decades (if not centuries) due to lingering 
             radiation. In fact, the thermonuclear testing drastically increased the amount of atmospheric C-14 above normal levels worldwide. In this problem, we are going to investigate the long-term effects of worldwide 
@@ -3870,13 +3338,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Jordan</author>
             <date>  August 2011</date>
             %===================================
-            \begin{problem}[CSI]
+            <exercisegroup>
+<title>CSI</title>
+<statement>
             Almost every compound in your body is replaced frequently by the food, water, and air that you take in.  
             One of the few exceptions is the enamel in your teeth.  Enamel is formed in early childhood, and is never replaced.   
             Whatever C-14 level was in the atmosphere at that time becomes permanently locked in your teeth.  Because the 
@@ -3920,13 +3390,15 @@
                 So this person was probably 6 or 7 years old in about 1974.  The person was probably born in 1967 or 1968.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Vega</author>
             <date>  March 2011</date>
             %===================================
-            \begin{problem}[Resources]
+            <exercisegroup>
+<title>Resources</title>
+<statement>
             In 2005 a town has <m>1000</m> barrels of oil in a well. Some of the oil is easy to reach and some 
             of it is hard to reach. As more of the easily accessible oil is drilled, the amount that they can drill 
             in a given year is reduced.  In fact, limitations of drilling equipment lead to a \SI{20}{\percent} reduction in drilling capacity each year. In 2005, <m>200</m> barrels of oil were drilled. 
@@ -4000,8 +3472,10 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
-            \begin{problem}[Revisiting greenhouse gases]
+            </exercisegroup>
+            <exercisegroup>
+<title>Revisiting greenhouse gases</title>
+<statement>
             Recall in \vref{exp-prob-uspopngreen} we modeled the US population and 
             in \vref{exp-prob-greenhouseorig} we modeled the average amount of CO<m>_2</m> emissions
             for which each US citizen is responsible. The functions we came up with were, 
@@ -4048,14 +3522,16 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             \begin{exercises}
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Given description, write formula]
+            <exercisegroup>
+<title>Given description, write formula</title>
+<statement>
             In each of the following, assume that the population of a town 
             changes at the given rate.
             Write a formula for <m>P(t)</m>, the population at time <m>t</m>,
@@ -4142,12 +3618,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Given formula, write interpretaion]
+            <exercisegroup>
+<title>Given formula, write interpretaion</title>
+<statement>
             Each of the following formulas model the population of a town 
             at time <m>t</m> (in years) since 1998. Determine the initial population, <m>P_0</m>,
             and the percentage change, <m>r</m>, and give a sentence that describes the model.
@@ -4197,12 +3675,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Vega</author>
             <date>  March 2011</date>
             %===================================
-            \begin{problem}[US population]
+            <exercisegroup>
+<title>US population</title>
+<statement>
             In the year 2000, the population of the U.S.A.\ was around 281 million people with an estimated 
             percentage growth rate of \SI{0.7}{\percent} per year\footnote{2000 census}.
 
@@ -4278,7 +3758,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             \begin{figure}[!htb]
             \begin{widepage}
@@ -4331,7 +3811,9 @@
             <author>Vega</author>
             <date>  March 2011</date>
             %===================================
-            \begin{problem}[China population]
+            <exercisegroup>
+<title>China population</title>
+<statement>
             In the year 2009 China had a population around 1.3 billion people and its government had a goal of 
             reducing the population to 700 million by 2050. It aimed to do this by 
             limiting the number of children people had. Assume that with natural death rates and the restricted birth rate
@@ -4424,9 +3906,11 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Textiles]
+            <exercisegroup>
+<title>Textiles</title>
+<statement>
             When textiles are made from a certain plant that grows alongside the Nile river, each square inch contains 142 billion atoms of radioactive C-14.  
             <exercise>
               <statement>
@@ -4461,13 +3945,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{problem}[Simple interest]
+            <exercisegroup>
+<title>Simple interest</title>
+<statement>
             Use <xref ref="exp-eq-simpleinterest"/> to find the given unknowns 
             in each of the following problems. Give your answers to 2 decimal places.
             \begin{multicols}{2}
@@ -4532,12 +4018,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Vega</author>
             <date>  March 2011</date>
             %===================================
-            \begin{problem}[Investment]
+            <exercisegroup>
+<title>Investment</title>
+<statement>
             You invest \$15,000 in the year 2010 into an investment account earning 
             5\% simple interest annually.
             <exercise>
@@ -4572,14 +4060,16 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Compound interest]
+            <exercisegroup>
+<title>Compound interest</title>
+<statement>
             Assume that you invest \$8000 into an account that earns interest at a \SI{5}{\percent} nominal rate. 
             <exercise>
               <statement>
@@ -4637,13 +4127,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Exploring effective rate]
+            <exercisegroup>
+<title>Exploring effective rate</title>
+<statement>
             We have an amount <m>P_0</m> to invest in an account that earns interest at a \SI{6}{\percent} nominal rate. 
             Answer each of the following through the eighth digit after the decimal point.
             <exercise>
@@ -4713,26 +4205,30 @@
                 </p>
               </answer>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Cary</author>
             <date>  September 2011</date>
             %===================================
-            \begin{problem}[Credit card]
+            <exercisegroup>
+<title>Credit card</title>
+<statement>
             A credit card company advertises an annual rate of 24\%.  What is the effective annual interest rate if your bill is compiled monthly?
             <solution>
               <p>
                 <m>\left(1+\frac{0.24}{12}\right)^{12}-1\approx 0.26824179</m>; the effective annual interest rate is about <m>\SI{26.82}{\percent}</m>.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Cary</author>
             <date>  September 2011</date>
             %===================================
-            \begin{problem}[Payday loan]
+            <exercisegroup>
+<title>Payday loan</title>
+<statement>
             A payday loan company makes this offer to a customer: they will receive <m>\</m>375<m> today and when they get paid in two weeks, they owe the payday loan company </m>\<m>450</m>.  
             <exercise xml:id="exp-prob-paydayloan">
               <statement>
@@ -4754,13 +4250,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Kouzes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Find the rate]
+            <exercisegroup>
+<title>Find the rate</title>
+<statement>
             The amount of money in an account grows by a total of \SI{45}{\percent} over a period of 10 years. Find the nominal 
             interest rate (to 5 decimal places) if the account was compounded:
             \begin{multicols}{2}
@@ -4785,7 +4283,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             \end{exercises}
 
             \section{The number <m>e</m>}
@@ -4953,7 +4451,7 @@
                 </ol>
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
             %===================================
@@ -5033,7 +4531,7 @@
                 \end{itemize}
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{doyouunderstand}
 
 
@@ -5200,7 +4698,9 @@
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Trusting the definition of <m>e</m>]
+            <exercisegroup>
+<title>Trusting the definition of <m>e</m></title>
+<statement>
             \Cref{exp-def-e} says that 
             \[
             e = \lim_{n\rightarrow\infty}\left( 1+\frac{1}{n} \right)^n   
@@ -5243,12 +4743,14 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Kouzes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Compounding continuously]
+            <exercisegroup>
+<title>Compounding continuously</title>
+<statement>
             Imagine that you deposit \$100 into a bank account which  accrues interest at a nominal 
             rate of \SI{5}{\percent} compounded continuously. The amount <m>Q(t)</m> in the account  <m>t</m> years 
             after opening the account is given by <m>Q(t)=100\,e^{0.05t}</m>.
@@ -5308,14 +4810,16 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             \begin{exercises}
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Given description, write formula]
+            <exercisegroup>
+<title>Given description, write formula</title>
+<statement>
             In each of the following, assume that the population of a town 
             changes at the given rate.
             Write a formula for <m>P(t)</m>, the population at time <m>t</m>,
@@ -5402,12 +4906,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Given formula, write interpretaion]
+            <exercisegroup>
+<title>Given formula, write interpretaion</title>
+<statement>
             Each of the following formulas model the population of a town 
             at time <m>t</m> (in years) since 1998. Determine the initial population, <m>P_0</m>,
             and the percentage change, <m>r</m>, and give a sentence that describes the model.
@@ -5459,12 +4965,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{problem}[The number <m>e</m>]
+            <exercisegroup>
+<title>The number <m>e</m></title>
+<statement>
             Put the following numbers in ascending order:
             \[
             e, \quad \sfrac{1}{3},\quad 9,\quad e^{-1},\quad 1,\quad \sfrac{1}{4},\quad e,\quad 3,\quad \sfrac{1}{e^2}, \quad 2, \quad e^2
@@ -5474,12 +4982,14 @@
                 In ascending order: <m>\sfrac{1}{e^2}&lt;\sfrac{1}{4}&lt;\sfrac{1}{3}&lt;\sfrac{1}{e}&lt;2&lt;e&lt;3&lt;e^2&lt;9</m>
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Investing in an account]
+            <exercisegroup>
+<title>Investing in an account</title>
+<statement>
             You have \<m>2000 to invest in an account that accrues interest at a nominal rate of </m>\SI{3.75}{\percent}$. 
             Write a formula for <m>A(t)</m>, the amount of money in the account <m>t</m> years 
             after opening the account, assuming that the interest is compounded 
@@ -5531,12 +5041,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Solving an equation involving <m>e</m>]
+            <exercisegroup>
+<title>Solving an equation involving <m>e</m></title>
+<statement>
             You saved <m>\</m>7,000<m> toward the purchase of a car costing </m>\<m>9,000</m>. 
             How long would the <m>\</m>7,000$ have to be invested in an account that 
             earns \SI{8}{\percent} compounded continuously to grow to <m>\</m>9,000$?
@@ -5568,12 +5080,14 @@
                 </image>
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Kouzes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Annual effective rate vs continuous growth rate]
+            <exercisegroup>
+<title>Annual effective rate vs continuous growth rate</title>
+<statement>
             Imagine that you have a bank account with a principal of \$2500 earning an 
             annual <em>effective</em> rate of \SI{10}{\percent}.
             <exercise>
@@ -5600,12 +5114,14 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  February 2012</date>
             %===================================
-            \begin{problem}[Newton's Law of Cooling]
+            <exercisegroup>
+<title>Newton's Law of Cooling</title>
+<statement>
             You may have noticed that when you leave a cup of hot coffee in a room, 
             the coffee's temperature will decrease to room temperature. Provided that 
             the difference between the temperature of the liquid and its surrounding 
@@ -5679,13 +5195,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Neft (Hughes)</author>
             <date>  August 2012</date>
             %===================================
-            \begin{problem}[The RC circuit]
+            <exercisegroup>
+<title>The RC circuit</title>
+<statement>
             A <em>capacitor</em> is a device that stores electrical energy in the form of charged particles.
             The <em>voltage</em> on the capacitor is a result of the electric field created by the particles and
             is proportional to the amount of charge stored. A <em>resistor</em> is a device that dissipates
@@ -5787,13 +5305,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Neft (Hughes)</author>
             <date>  August 2012</date>
             %===================================
-            \begin{problem}[Charging a capacitor]
+            <exercisegroup>
+<title>Charging a capacitor</title>
+<statement>
             If a voltage source, such as a battery, is connected to a resistor and a uncharged
             capacitor, the capacitor will charge up. The voltage (in \si{\volt}), 
             on the capacitor as it is being charged is modeled by the function <m>V</m> 
@@ -5906,13 +5426,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{problem}[Half-life exploration]
+            <exercisegroup>
+<title>Half-life exploration</title>
+<statement>
             In each of the following problems, assume that 
             \[
             Q(t) = Q_0\,e^{kt}
@@ -5951,8 +5473,10 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
-            \begin{problem}[Continuous growth rate]
+            </exercisegroup>
+            <exercisegroup>
+<title>Continuous growth rate</title>
+<statement>
             For each of the exponential functions defined by the formulas below, find the continuous growth rate and the growth rate.
             \begin{multicols}{3}
             <exercise>
@@ -5986,12 +5510,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[The function <m>f(x)=e^x</m>]
+            <exercisegroup>
+<title>The function <m>f(x)=e^x</m></title>
+<statement>
             Let <m>f</m> be the function that has formula <m>f(x)=e^x</m>. 
             <exercise>
               <statement>
@@ -6151,9 +5677,11 @@
             \end{minipage}%
             \end{widepage}
             \end{figure}
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Slopes]
+            <exercisegroup>
+<title>Slopes</title>
+<statement>
             In this problem you are going to explore the proportionality relationship between the slope and <m>y</m>-coordinate of an exponential function. 
             <exercise>
               <statement>
@@ -6179,8 +5707,10 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
-            \begin{problem}[Factorials]\label{exp-prob-factorials}%
+            </exercisegroup>
+            <exercisegroup xml:id="exp-prob-factorials">
+<title>Factorials</title>
+<statement>%
             There is a function called the factorial function which is symbolized by 
             an exclamation point.  The domain of the function is limited to the 
             non-negative integers. 
@@ -6239,7 +5769,7 @@
                 We observe that as we add more terms, the decimal value appears to approach <m>e</m>.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
             \end{exercises}
 
             \section{Comparing linear and exponential functions}
@@ -6256,7 +5786,9 @@
             quantify the validity of the model and where and when it is appropriate to apply the model. 
 
             \begin{essentialskills}
-            \begin{problem}[Exponential or  linear]
+            <exercisegroup>
+<title>Exponential or  linear</title>
+<statement>
             Decide if the functions defined by the following formulas are linear or exponential.
             \begin{multicols}{2}
             <exercise>
@@ -6300,9 +5832,11 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Sketching linear functions]
+            <exercisegroup>
+<title>Sketching linear functions</title>
+<statement>
             Sketch a graph of each of the linear functions defined by the following 
             formulas.
             \begin{multicols}{3}
@@ -6391,9 +5925,11 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
-            \begin{problem}[Find the slope]
+            <exercisegroup>
+<title>Find the slope</title>
+<statement>
             Find the slope between each pair of points.
             \begin{multicols}{2}
             <exercise>
@@ -6427,7 +5963,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             \begin{problem}
             Determine if the data in \crefrange{exp-tab-lineardata}{exp-tab-neitherdata} could 
@@ -6439,7 +5975,7 @@
                 \Cref{exp-tab-neitherdata}: this data is not linear.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             \begin{table}[!htb]
             \centering
@@ -6659,7 +6195,7 @@
                 Successive differences rise steadily from <m>-44</m> to <m>-31</m>, so a linear model would not be appropriate.
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             \begin{table}[!htb]
             \centering
@@ -6976,7 +6512,9 @@
             <author>Vega</author>
             <date>  March 2011</date>
             %===================================
-            \begin{problem}[Cell phones]
+            <exercisegroup>
+<title>Cell phones</title>
+<statement>
             A cell phone company is 
             studying the number of cell phone subscriptions in the U.S.A. In 2003, there were 
             158 million cell phone users. In 2006, there were 233 million cell phone users.\footnote{CTIA - The Wireless Association}
@@ -7038,13 +6576,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  May 2011</date>
             %===================================
-            \begin{problem}[Wind power]
+            <exercisegroup>
+<title>Wind power</title>
+<statement>
             The wind energy production capacity (in \si{\mega\watt}) for the world\footnote{\href{http://www.thewindpower.net/statistics\_world.php}{http://www.thewindpower.net/statistics\_world.php}} is shown in 
             \vref{exp-fig-windpower}. 
 
@@ -7134,13 +6674,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Jordan</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Population of Africa]
+            <exercisegroup>
+<title>Population of Africa</title>
+<statement>
             \Cref{exp-tab-AfricaPopulation} gives the population of Africa for each year form 1999 to 2009.\footnote{\href{http://www.earth-policy.org/books/wote}{http://www.earth-policy.org/books/wote}}
 
             \begin{table}[!htb]
@@ -7258,13 +6800,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Tortoise and the Hare]
+            <exercisegroup>
+<title>Tortoise and the Hare</title>
+<statement>
             Aesop's fable of the Tortoise and the Hare depicts an unlikely race between
             the two animals. The Hare, being known as a quick and lively animal, brims
             with confidence. The Tortoise, who is known as a slow and more methodical
@@ -7380,7 +6924,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %=================================================================
             %
@@ -7388,7 +6932,9 @@
             %
             %=================================================================
             \begin{exercises}
-            \begin{problem}[Linear or exponential?]
+            <exercisegroup>
+<title>Linear or exponential?</title>
+<statement>
             Decide if the functions defined by the following formulas are linear or exponential.
             \begin{multicols}{4}
             <exercise>
@@ -7432,13 +6978,15 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Kouzes</author>
             <date>  Apr 2011</date>
             %===================================
-            \begin{problem}[Linear, exponential, or neither?]
+            <exercisegroup>
+<title>Linear, exponential, or neither?</title>
+<statement>
             Decide if the function that is described is more like an exponential function, a linear function, or neither.
             <exercise>
               <statement>
@@ -7531,13 +7079,15 @@
                 </p>
               </answer>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Barkin</author>
             <date>  April 2011</date>
             %===================================
-            \begin{problem}[Linear or exponential?]
+            <exercisegroup>
+<title>Linear or exponential?</title>
+<statement>
             Consider the data sets in \crefrange{exp-tab-findformula1}{exp-tab-dataproblem3}.
             <exercise>
               <statement>
@@ -7686,14 +7236,16 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Which is greater?]
+            <exercisegroup>
+<title>Which is greater?</title>
+<statement>
             Let <m>f</m> and <m>g</m> be functions that have the formulas
             \[
             f(x)=1000x+1\times 10^6,\qquad  g(x)=2^x
@@ -7738,7 +7290,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
@@ -7776,13 +7328,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[True or false]
+            <exercisegroup>
+<title>True or false</title>
+<statement>
             Answer the following questions as True or False; if you believe the answer 
             to be False, provide justification that supports your answer.
             <exercise>
@@ -7835,13 +7389,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Classify that function!]
+            <exercisegroup>
+<title>Classify that function!</title>
+<statement>
             \pccname{Carlos} and \pccname{Anita} are playing a game the call, `Classify that function!' One of them 
             describes how to plot the points or features of the graph, and the other has to say if it is linear 
             or exponential. Help them decide if the following describe 
@@ -7896,13 +7452,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Matching stories with formulas]
+            <exercisegroup>
+<title>Matching stories with formulas</title>
+<statement>
             Match each of the following formulas with one of the given statements. 
             Note that <m>y</m> and <m>x</m> have deliberately been used in each formula to avoid 
             any extra hints; you will also notice that there are more choices than questions so you 
@@ -7980,7 +7538,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Jordan</author>
@@ -8010,14 +7568,16 @@
 
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Long-run behavior of linear and exponential functions]
+            <exercisegroup>
+<title>Long-run behavior of linear and exponential functions</title>
+<statement>
             We are going to explore long-run behavior of exponential functions that have base less than one (<m>b&lt;1</m>).
             <exercise>
               <statement>
@@ -8051,7 +7611,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             \begin{figure}[!htb]
             \begin{widepage}
             \centering
@@ -8114,7 +7674,9 @@
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{problem}[Match formulas to graphs]
+            <exercisegroup>
+<title>Match formulas to graphs</title>
+<statement>
             Match each of the following formulas with one of the graphs in 
             \cref{exp-fig-matchlinexp}. Note that axis ticks and scaling have deliberately
             been omitted to encourage you to think about long-run behavior. 
@@ -8144,7 +7706,7 @@
                 \end{itemize}
               </p>
             </solution>
-            \end{problem}
+            </exercisegroup>
 
             \begin{figure}[!htb]
             \begin{widepage}
@@ -8429,7 +7991,9 @@
             <author>Hughes</author>
             <date>  May 2011</date>
             %===================================
-            \begin{problem}[Logistic model]
+            <exercisegroup>
+<title>Logistic model</title>
+<statement>
             Use \cref{exp-def-logistic} and \cref{exp-ex-logistic} to guide you in this 
             problem. Assume that <m>k=0.05</m>, <m>P_0=100</m> and <m>M=800</m>.
             <exercise>
@@ -8495,14 +8059,16 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
 
             %===================================
             <author>Hughes</author>
             <date>  2011</date>
             %===================================
-            \begin{problem}[Rats!]
+            <exercisegroup>
+<title>Rats!</title>
+<statement>
             In the 1800s, a ship landed on a remote island and 35 black rats (\textit{Rattus rattus}) escaped to colonize the island.  
             <exercise xml:id="exp-prob-ratisland">
               <statement>
@@ -8525,13 +8091,15 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Jordan</author>
             <date>  2011</date>
             %===================================
-            \begin{problem}[The invasive blackberry]
+            <exercisegroup>
+<title>The invasive blackberry</title>
+<statement>
             Himalayan blackberry is an invasive species.  
             Some seeds found their way into a remote valley and grew into <m>\SI{8}{\kilo\gram}</m> of blackberry biomass by the next year.  
             Suppose that the initial relative growth rate of blackberry biomass was \SI{350}{\percent} per year and that the valley has a carrying capacity of <m>\SI{50000}{\kilo\gram}</m>.  
@@ -8557,7 +8125,7 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  2011</date>
@@ -8607,12 +8175,14 @@
                 </p>
               </solution>
             </exercise>
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Composition]
+            <exercisegroup>
+<title>Composition</title>
+<statement>
             Let <m>f</m> and <m>g</m> be functions that have formulas <m>f(x)=2^x</m> and <m>g(x)=3^x</m>. Find each 
             of the following.
             \begin{multicols}{3}
@@ -8677,12 +8247,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Decomposition]
+            <exercisegroup>
+<title>Decomposition</title>
+<statement>
             In each of the following problems, you are given a formula for function  
             <m>h</m>. Decompose <m>h</m> into two functions <m>f</m> and <m>g</m> such that <m>h=f\circ g</m>.
             \begin{multicols}{4}
@@ -8727,12 +8299,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  August 2012</date>
             %===================================
-            \begin{problem}[Inverse function evaluation]
+            <exercisegroup>
+<title>Inverse function evaluation</title>
+<statement>
             The function <m>f</m> that has formula <m>f(x)=2^x</m> is invertible. Evaluate 
             each of the following.
             \begin{multicols}{4}
@@ -8777,12 +8351,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  March 2012</date>
             %===================================
-            \begin{problem}[Piecewise functions]
+            <exercisegroup>
+<title>Piecewise functions</title>
+<statement>
             Let <m>k</m> be the function that has formula
             \[
             k(t)=
@@ -8876,13 +8452,15 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  July 2012</date>
             %===================================
-            \begin{problem}[Function algebra]
+            <exercisegroup>
+<title>Function algebra</title>
+<statement>
             Let <m>f</m> and <m>g</m> be the exponential functions that have formulas
             \[
             f(x)=3^x, \qquad g(x)=\left( \frac{1}{4} \right)^x
@@ -8930,13 +8508,15 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
 
             %===================================
             <author>Hughes</author>
             <date>  July 2012</date>
             %===================================
-            \begin{problem}[Transformations: given the transformation, find the formula]
+            <exercisegroup>
+<title>Transformations: given the transformation, find the formula</title>
+<statement>
             Let <m>f</m> be the exponential function that has formula <m>f(x)=7^x</m>. In each of the following 
             problems apply the given transformation to the function <m>f</m> and 
             write a formula for the transformed version of <m>f</m>.
@@ -9002,12 +8582,14 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             %===================================
             <author>Hughes</author>
             <date>  July 2012</date>
             %===================================
-            \begin{problem}[Transformations: given the formula, describe the transformation]
+            <exercisegroup>
+<title>Transformations: given the formula, describe the transformation</title>
+<statement>
             Describe each of the functions defined by the following formulas in terms of transformations 
             of the exponential function <m>f</m> that has formula <m>f(x)=\left( \frac{2}{3} \right)^x</m>. 
             \begin{multicols}{4}
@@ -9054,7 +8636,7 @@
               </solution>
             </exercise>
             \end{multicols}
-            \end{problem}
+            </exercisegroup>
             \end{exercises}
             % We'll come back to this before presenting to the SAC (hopefully)  (Chris, 9/30/11)
             %\section{Glossary}
