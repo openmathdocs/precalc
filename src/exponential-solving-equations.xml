@@ -21,7 +21,7 @@
               <col halign="."/>
               <col halign="."/>
               <thead>
-               <m>x</m>} &amp; \heading{<m>y</m>} \\
+                <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
              </thead>
             <row><cell>1</cell><cell>3</cell></row>
             <row><cell>2</cell><cell>9</cell></row>
@@ -36,14 +36,14 @@
             \centering
             <caption><m>y=h(x)</m></caption>
             \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            1             &amp; 5             \\\normalline
-            4             &amp; 25            \\\normalline
-            7             &amp; 125           \\\normalline
-            10            &amp; 625           \\\normalline
-            13            &amp; 3125          \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>1</cell>&amp;<cell>5</cell></row>
+<row><cell>4</cell>&amp;<cell>25</cell></row>
+<row><cell>7</cell>&amp;<cell>125</cell></row>
+<row><cell>10</cell>&amp;<cell>625</cell></row>
+<cell>13</cell>&amp;<cell>3125</cell>\<tfoot/>
             \end{tabular}
             \label{exp-tab-expfunctionh}
             \end{minipage}
@@ -52,14 +52,14 @@
             \centering
             <caption><m>y=k(x)</m></caption>
             \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            1             &amp; 4             \\\normalline
-            2             &amp; 16            \\\normalline
-            4             &amp; 64            \\\normalline
-            8             &amp; 256           \\\normalline
-            16            &amp; 1024          \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>1</cell>&amp;<cell>4</cell></row>
+<row><cell>2</cell>&amp;<cell>16</cell></row>
+<row><cell>4</cell>&amp;<cell>64</cell></row>
+<row><cell>8</cell>&amp;<cell>256</cell></row>
+<cell>16</cell>&amp;<cell>1024</cell>\<tfoot/>
             \end{tabular}
             \label{exp-tab-expfunctionk}
             </sidebyside>
@@ -533,13 +533,13 @@
             \centering
             \captionof{table}{}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>2^x</m>} \\
-            \afterheading
-            1             &amp; 2               \\\normalline
-            2             &amp; 4               \\\normalline
-            3             &amp; 8               \\\normalline
-            4             &amp; 16              \\\normalline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>2^x</m></cell> \\
+            </thead>
+<row><cell>1</cell>&amp;<cell>2</cell></row>
+<row><cell>2</cell>&amp;<cell>4</cell></row>
+<row><cell>3</cell>&amp;<cell>8</cell></row>
+<row><cell>4</cell>&amp;<cell>16</cell></row>
             \lastline
             \end{tabular}
             \label{exp-tab-solvenoninteger}
@@ -1758,18 +1758,18 @@
             \centering
             \captionof{table}{}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.0]l}
-            \beforeheading
-            \heading{<m>t</m>} &amp; \heading{<m>F(t)</m>} &amp; \heading{<m>A(t)</m>} \\
-            \afterheading
-            0             &amp; 2                &amp;                  \\\normalline 
-            1             &amp; 3                &amp;                  \\\normalline 
-            2             &amp; 4                &amp;                  \\\normalline 
-            3             &amp;                  &amp;                  \\\normalline
-            4             &amp;                  &amp;                  \\\normalline 
-            5             &amp;                  &amp;                  \\\normalline
-            6             &amp;                  &amp;                  \\\normalline
-            7             &amp;                  &amp;                  \\\normalline
-            8             &amp;                  &amp;                  \\\lastline
+            <thead>
+            <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell><m>A(t)</m></cell> \\
+            </thead>
+<row><cell>0</cell>&amp;<cell>2</cell>&amp;<cell></cell></row>
+<row><cell>1</cell>&amp;<cell>3</cell>&amp;<cell></cell></row>
+<row><cell>2</cell>&amp;<cell>4</cell>&amp;<cell></cell></row>
+<row><cell>3</cell>&amp;<cell></cell>&amp;<cell></cell></row>
+<row><cell>4</cell>&amp;<cell></cell>&amp;<cell></cell></row>
+<row><cell>5</cell>&amp;<cell></cell>&amp;<cell></cell></row>
+<row><cell>6</cell>&amp;<cell></cell>&amp;<cell></cell></row>
+<row><cell>7</cell>&amp;<cell></cell>&amp;<cell></cell></row>
+<cell>8</cell>&amp;<cell></cell>&amp;<cell></cell><tfoot/>
             \end{tabular}
             \label{exp-tab-tapfish}
             \end{margintable}
@@ -1783,18 +1783,18 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]}
-                  \beforeheading
-                  \heading{<m>t</m>} &amp; \heading{<m>F(t)</m>} \\
-                  \afterheading
-                  0             &amp; 2                \\\normalline 
-                  1             &amp; 3                \\\normalline 
-                  2             &amp; 4                \\\normalline 
-                  3             &amp; 6                \\\normalline
-                  4             &amp; 9                \\\normalline 
-                  5             &amp; 14               \\\normalline
-                  6             &amp; 21               \\\normalline
-                  7             &amp; 31               \\\normalline
-                  8             &amp; 47               \\\lastline
+                  <thead>
+                  <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> \\
+                  </thead>
+<row><cell>0</cell>&amp;<cell>2</cell></row>
+<row><cell>1</cell>&amp;<cell>3</cell></row>
+<row><cell>2</cell>&amp;<cell>4</cell></row>
+<row><cell>3</cell>&amp;<cell>6</cell></row>
+<row><cell>4</cell>&amp;<cell>9</cell></row>
+<row><cell>5</cell>&amp;<cell>14</cell></row>
+<row><cell>6</cell>&amp;<cell>21</cell></row>
+<row><cell>7</cell>&amp;<cell>31</cell></row>
+<cell>8</cell>&amp;<cell>47</cell>\<tfoot/>
                   \end{tabular}
                 </p>
               </solution>
@@ -1853,18 +1853,18 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]S[table-format=2.6]}
-                  \beforeheading
-                  \heading{<m>t</m>} &amp; \heading{<m>F(t)</m>} &amp; \heading{<m>A(t)</m>} \\
-                  \afterheading
-                  0             &amp; 2                &amp; 2.000000         \\\normalline 
-                  1             &amp; 3                &amp; 2.967655         \\\normalline 
-                  2             &amp; 4                &amp; 4.403489         \\\normalline 
-                  3             &amp; 6                &amp; 6.503420         \\\normalline
-                  4             &amp; 9                &amp; 9.695360         \\\normalline 
-                  5             &amp; 14               &amp; 14.386240        \\\normalline
-                  6             &amp; 21               &amp; 21.346710        \\\normalline
-                  7             &amp; 31               &amp; 31.674840        \\\normalline
-                  8             &amp; 47               &amp; 47.000000        \\\lastline
+                  <thead>
+                  <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell><m>A(t)</m></cell> \\
+                  </thead>
+<row><cell>0</cell>&amp;<cell>2</cell>&amp; 2.000000         </row>
+<row><cell>1</cell>&amp;<cell>3</cell>&amp; 2.967655         </row>
+<row><cell>2</cell>&amp;<cell>4</cell>&amp; 4.403489         </row>
+<row><cell>3</cell>&amp;<cell>6</cell>&amp; 6.503420         </row>
+<row><cell>4</cell>&amp;<cell>9</cell>&amp; 9.695360         </row>
+<row><cell>5</cell>&amp;<cell>14</cell>&amp; 14.386240        </row>
+<row><cell>6</cell>&amp;<cell>21</cell>&amp; 21.346710        </row>
+<row><cell>7</cell>&amp;<cell>31</cell>&amp; 31.674840        </row>
+<cell>8</cell>&amp;<cell>47</cell>&amp; 47.000000        \<tfoot/>
                   \end{tabular}
                 </p>
               </solution>
@@ -2357,13 +2357,13 @@
             \centering
             <caption></caption> \label{exp-tab-findab10}
             \begin{tabular}{S[table-format=1.0]S[table-format=6.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            1             &amp; 10            \\\normalline
-            2             &amp; 100           \\\normalline
-            3             &amp; 1000          \\\normalline
-            4             &amp; 10000         \\\normalline
-            5             &amp; 100000        \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>1</cell>&amp;<cell>10</cell></row>
+<row><cell>2</cell>&amp;<cell>100</cell></row>
+<row><cell>3</cell>&amp;<cell>1000</cell></row>
+<row><cell>4</cell>&amp;<cell>10000</cell></row>
+<cell>5</cell>&amp;<cell>100000</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -2371,13 +2371,13 @@
             \centering
             <caption></caption> \label{exp-tab-findab7}
             \begin{tabular}{S[table-format=1.0]c}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            -5            &amp; \num{9/16897} \\\normalline
-            -4            &amp; \num{9/2401}  \\\normalline
-            -3            &amp; \num{9/343}   \\\normalline
-            -2            &amp; \num{9/49}    \\\normalline
-            -1            &amp; \num{9/7}     \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>-5</cell>&amp; 9/16897 </row>
+<row><cell>-4</cell>&amp;<cell>9/2401</cell></row>
+<row><cell>-3</cell>&amp;<cell>9/343</cell></row>
+<row><cell>-2</cell>&amp;<cell>9/49</cell></row>
+<cell>-1</cell>&amp;<cell>9/7</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -2385,14 +2385,14 @@
             \centering
             <caption></caption>\label{exp-tab-findabthird}
             \begin{tabular}{S[table-format=2.0]c}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>}  \\
-            \afterheading
-            2             &amp; \num{-2/3}     \\\normalline
-            4             &amp; \num{-2/27}    \\\normalline
-            6             &amp; \num{-2/243}   \\\normalline
-            8             &amp; \num{-2/2187}  \\\normalline
-            10            &amp; \num{-2/19683} \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell>  \\
+            </thead>
+<row><cell>2</cell>&amp;<cell>-2/3</cell></row>
+<row><cell>4</cell>&amp;<cell>-2/27</cell></row>
+<row><cell>6</cell>&amp;<cell>-2/243</cell></row>
+<row><cell>8</cell>&amp;<cell>-2/2187</cell></row>
+<cell>10</cell>&amp;<cell>-2/19683</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -2400,14 +2400,14 @@
             \centering
             <caption></caption>\label{exp-tab-findabfifth}
             \begin{tabular}{S[table-format=2.0]S[table-format=9.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            -12           &amp; 732421875     \\\normalline
-            -9            &amp; 5859375       \\\normalline
-            -6            &amp; 46875         \\\normalline
-            -3            &amp; 375           \\\normalline
-            0             &amp; 3             \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>-12</cell>&amp;<cell>732421875</cell></row>
+<row><cell>-9</cell>&amp;<cell>5859375</cell></row>
+<row><cell>-6</cell>&amp;<cell>46875</cell></row>
+<row><cell>-3</cell>&amp;<cell>375</cell></row>
+<cell>0</cell>&amp;<cell>3</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \end{widepage}
@@ -2823,15 +2823,15 @@
             \centering
             <caption>Decaying Radioactive Carbon-14</caption>\label{exp-tab-C14decay}
             \begin{tabular}{S[table-format=5.0]S[table-format=4.0]}
-            \beforeheading
-            \heading{Number of years} &amp; \heading{Number of remaining} \\
-            \heading{from today}      &amp; \heading{radioactive atoms}   \\
-            \afterheading
-            0                         &amp; 8000                          \\\normalline
-            5730                      &amp; 4000                          \\\normalline
-            11460                     &amp; 2000                          \\\normalline
-            17190                     &amp; 1000                          \\\normalline
-            22920                     &amp; 500                           \\\lastline
+            <thead>
+            <cell>Number of years</cell> &amp; <cell>Number of remaining</cell> \\
+            <cell>from today</cell>      &amp; <cell>radioactive atoms</cell>   \\
+            </thead>
+<row><cell>0</cell>&amp;<cell>8000</cell></row>
+<row><cell>5730</cell>&amp;<cell>4000</cell></row>
+<row><cell>11460</cell>&amp;<cell>2000</cell></row>
+<row><cell>17190</cell>&amp;<cell>1000</cell></row>
+<cell>22920</cell>&amp;<cell>500</cell>\<tfoot/>
             \end{tabular}
             \end{table}
 
@@ -2992,14 +2992,14 @@
             \centering
             \captionof{table}{Simple interest}
             \begin{tabular}{S[table-format=2.0]S[table-format=5.2]}
-            \beforeheading
-            \heading{<m>t</m>} &amp; \heading{<m>A(t)</m>} \\ 
-            \afterheading
-            0             &amp; 5000.00          \\\normalline
-            1             &amp; 5150.00          \\\normalline
-            \mbox{\vdots} &amp; \mbox{\vdots}    \\\normalline
-            23            &amp; 9867.93          \\\normalline
-            24            &amp; 10163.97         \\\lastline
+            <thead>
+            <cell><m>t</m></cell> &amp; <cell><m>A(t)</m></cell> \\ 
+            </thead>
+<row><cell>0</cell>&amp; 5000.00          </row>
+<row><cell>1</cell>&amp; 5150.00          </row>
+<row>            \mbox{\vdots} &amp; \mbox{\vdots}    </row>
+<row><cell>23</cell>&amp; 9867.93          </row>
+<cell>24</cell>&amp; 10163.97         \<tfoot/>
             \end{tabular}
             \label{exp-tab-simpleinterest}
             \end{margintable}
@@ -3043,22 +3043,22 @@
             \centering
             \captionof{table}{Fredo's account}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.2]}
-            \beforeheading
-            \heading{<m>t</m>} &amp; \heading{<m>A(t)</m>} \\
-            \afterheading
-            0             &amp; 100.00           \\\normalline
-            1             &amp; 101.00           \\\normalline
-            2             &amp; 102.01           \\\normalline
-            3             &amp; 103.03           \\\normalline
-            4             &amp; 104.06           \\\normalline
-            5             &amp; 105.10           \\\normalline
-            6             &amp; 106.15           \\\normalline
-            7             &amp; 107.21           \\\normalline
-            8             &amp; 108.29           \\\normalline
-            9             &amp; 109.37           \\\normalline
-            10            &amp; 110.46           \\\normalline
-            11            &amp; 111.57           \\\normalline
-            12            &amp; 112.68           \\\lastline
+            <thead>
+            <cell><m>t</m></cell> &amp; <cell><m>A(t)</m></cell> \\
+            </thead>
+<row><cell>0</cell>&amp;<cell>100.00</cell></row>
+<row><cell>1</cell>&amp;<cell>101.00</cell></row>
+<row><cell>2</cell>&amp;<cell>102.01</cell></row>
+<row><cell>3</cell>&amp;<cell>103.03</cell></row>
+<row><cell>4</cell>&amp;<cell>104.06</cell></row>
+<row><cell>5</cell>&amp;<cell>105.10</cell></row>
+<row><cell>6</cell>&amp;<cell>106.15</cell></row>
+<row><cell>7</cell>&amp;<cell>107.21</cell></row>
+<row><cell>8</cell>&amp;<cell>108.29</cell></row>
+<row><cell>9</cell>&amp;<cell>109.37</cell></row>
+<row><cell>10</cell>&amp;<cell>110.46</cell></row>
+<row><cell>11</cell>&amp;<cell>111.57</cell></row>
+<cell>12</cell>&amp;<cell>112.68</cell>\<tfoot/>
             \end{tabular}
             \label{exp-tab-fredo}
             \end{margintable}
@@ -3105,18 +3105,18 @@
             \centering
             \captionof{table}{}
             \begin{tabular}{lS[table-format=3.0]}
-            \beforeheading
-            \heading{Words} &amp; \heading{<m>n</m>} \\
-            \afterheading
-            yearly          &amp; 1             \\\normalline
-            annually        &amp; 1             \\\normalline
-            semi-annually   &amp; 2             \\\normalline
-            quarterly       &amp; 4             \\\normalline
-            monthly         &amp; 12            \\\normalline
-            biweekly        &amp; 26            \\\normalline
-            weekly          &amp; 52            \\\normalline
-            daily           &amp; 365           \\\normalline
-            non-stop        &amp; \mbox{??}     \\\lastline
+            <thead>
+            <cell>Words</cell> &amp; <cell><m>n</m></cell> \\
+            </thead>
+<row>            yearly          &amp;<cell>1</cell></row>
+<row>            annually        &amp;<cell>1</cell></row>
+<row>            semi-annually   &amp;<cell>2</cell></row>
+<row>            quarterly       &amp;<cell>4</cell></row>
+<row>            monthly         &amp;<cell>12</cell></row>
+<row>            biweekly        &amp;<cell>26</cell></row>
+<row>            weekly          &amp;<cell>52</cell></row>
+<row>            daily           &amp;<cell>365</cell></row>
+            non-stop        &amp; \mbox{??}     \<tfoot/>
             \end{tabular}
             \label{exp-tab-compoundingfreq}
             \end{margintable}
@@ -3231,14 +3231,14 @@
             \centering
             \captionof{table}{}
             \begin{tabular}{S[table-format=3.0]S[table-format=1.0]S[table-format=1.7]}
-            \beforeheading
-            \heading{<m>n</m>} &amp; \heading{nominal}   &amp; \heading{effective} \\
-            &amp; \heading{rate (\%)} &amp; \heading{rate} (\%) \\
-            \afterheading
-            1             &amp; 3                   &amp; 3                   \\ \normalline
-            12            &amp; 3                   &amp; 3.0415957           \\ \normalline 
-            52            &amp; 3                   &amp; 3.0445620           \\ \normalline
-            365           &amp; 3                   &amp; 3.0453264           \\ \lastline
+            <thead>
+            <cell><m>n</m></cell> &amp; <cell>nominal</cell>   &amp; <cell>effective</cell> \\
+            &amp; <cell>rate (\%)</cell> &amp; <cell>rate</cell> (\%) \\
+            </thead>
+<cell>1</cell>&amp;<cell>3</cell>&amp;<cell>3</cell>\\ \normalline
+<cell>12</cell>&amp;<cell>3</cell>&amp;<cell>3.0415957</cell>\\ \normalline 
+<cell>52</cell>&amp;<cell>3</cell>&amp;<cell>3.0445620</cell>\\ \normalline
+<cell>365</cell>&amp;<cell>3</cell>&amp;<cell>3.0453264</cell>\\ \lastline
             \end{tabular}
             \label{exp-tab-effectiverate}
             \end{margintable}
@@ -3407,15 +3407,15 @@
             \centering
             \captionof{table}{}
             \begin{tabular}{S[table-format=1.0]l}
-            \beforeheading
-            \heading{<m>t</m> (years)} &amp; \heading{<m>Q</m> (barrels)} \\
-            \afterheading
-            0                     &amp;                         \\\normalline 
-            1                     &amp;                         \\\normalline 
-            2                     &amp;                         \\\normalline 
-            3                     &amp;                         \\\normalline
-            4                     &amp;                         \\\normalline 
-            5                     &amp;                         \\\lastline
+            <thead>
+            <cell><m>t</m> (years)</cell> &amp; <cell><m>Q</m> (barrels)</cell> \\
+            </thead>
+<row><cell>0</cell>&amp;<cell></cell></row>
+<row><cell>1</cell>&amp;<cell></cell></row>
+<row><cell>2</cell>&amp;<cell></cell></row>
+<row><cell>3</cell>&amp;<cell></cell></row>
+<row><cell>4</cell>&amp;<cell></cell></row>
+<cell>5</cell>&amp;<cell></cell>\<tfoot/>
             \end{tabular}
             \label{exp-tab-modelresource}
             \end{margintable}
@@ -3427,15 +3427,15 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.0]S[table-format=4.2]}
-                  \beforeheading
-                  \heading{<m>t</m> (years)} &amp; \heading{<m>Q</m> (barrels)} \\
-                  \afterheading
-                  0                     &amp; 1000.00                 \\\normalline 
-                  1                     &amp; 800.00                  \\\normalline 
-                  2                     &amp; 640.00                  \\\normalline 
-                  3                     &amp; 512.00                  \\\normalline
-                  4                     &amp; 409.60                  \\\normalline 
-                  5                     &amp; 327.68                  \\\lastline
+                  <thead>
+                  <cell><m>t</m> (years)</cell> &amp; <cell><m>Q</m> (barrels)</cell> \\
+                  </thead>
+<row><cell>0</cell>&amp;<cell>1000.00</cell></row>
+<row><cell>1</cell>&amp;<cell>800.00</cell></row>
+<row><cell>2</cell>&amp;<cell>640.00</cell></row>
+<row><cell>3</cell>&amp;<cell>512.00</cell></row>
+<row><cell>4</cell>&amp;<cell>409.60</cell></row>
+<cell>5</cell>&amp;<cell>327.68</cell>\<tfoot/>
                   \end{tabular}
                 </p>
               </solution>
@@ -4325,15 +4325,15 @@
             \centering
             <caption></caption>
             \begin{tabular}{S[table-format=8.0]S[table-format=1.8]}
-            \beforeheading
-            \heading{<m>n</m>} &amp; \heading{<m>\dd\left( 1+\frac{1}{n} \right)^n</m>} \\\afterheading
-            1             &amp; 2                                             \\\normalline
-            12            &amp; 2.61303529                                    \\\normalline  
-            52            &amp; 2.69259695                                    \\\normalline
-            365           &amp; 2.71456748                                    \\\normalline
-            8760          &amp; 2.71812669                                    \\\normalline
-            525600        &amp; 2.71827922                                    \\\normalline
-            31536000      &amp; 2.71828247                                    \\\lastline
+            <thead>
+            <cell><m>n</m></cell> &amp; <cell><m>\dd\left( 1+\frac{1</cell>{n} \right)^n</m>} \\</thead>
+<row><cell>1</cell>&amp;<cell>2</cell></row>
+<row><cell>12</cell>&amp;<cell>2.61303529</cell></row>
+<row><cell>52</cell>&amp;<cell>2.69259695</cell></row>
+<row><cell>365</cell>&amp;<cell>2.71456748</cell></row>
+<row><cell>8760</cell>&amp;<cell>2.71812669</cell></row>
+<row><cell>525600</cell>&amp;<cell>2.71827922</cell></row>
+<cell>31536000</cell>&amp;<cell>2.71828247</cell>\<tfoot/>
             \end{tabular}
             \label{exp-tab-wheelfortune}
             \end{margintable}
@@ -5236,16 +5236,16 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.1]S[table-format=2.3]} 
-                  \beforeheading
-                  \heading{<m>t</m>}            &amp; \heading{<m>V(t)</m>}       \\
-                  \heading{(\si{\second})} &amp; \heading{(\si{\volt})} \\
-                  \afterheading
-                  0.0                      &amp; 10.000                 \\  \normalline
-                  0.1                      &amp; 3.369                  \\  \normalline
-                  0.2                      &amp; 1.353                  \\  \normalline
-                  0.3                      &amp; 0.498                  \\  \normalline
-                  0.4                      &amp; 0.183                  \\  \normalline
-                  0.5                      &amp; 0.067                  \\  \lastline
+                  <thead>
+                  <cell><m>t</m></cell>            &amp; <cell><m>V(t)</m></cell>       \\
+                  <cell>(\si{\second</cell>)} &amp; <cell>(\si{\volt</cell>)} \\
+                  </thead>
+<cell>0.0</cell>&amp;<cell>10.000</cell>\\  \normalline
+<cell>0.1</cell>&amp;<cell>3.369</cell>\\  \normalline
+<cell>0.2</cell>&amp;<cell>1.353</cell>\\  \normalline
+<cell>0.3</cell>&amp;<cell>0.498</cell>\\  \normalline
+<cell>0.4</cell>&amp;<cell>0.183</cell>\\  \normalline
+<cell>0.5</cell>&amp;<cell>0.067</cell>\\  \lastline
                   \end{tabular}
                 </p>
               </solution>
@@ -5342,16 +5342,16 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.1]S[table-format=1.3]} 
-                  \beforeheading
-                  \heading{<m>t</m>}            &amp; \heading{<m>V(t)</m>}       \\
-                  \heading{(\si{\second})} &amp; \heading{(\si{\volt})} \\
-                  \afterheading
-                  0.0                      &amp; 0.000                  \\  \normalline
-                  0.1                      &amp; 6.321                  \\  \normalline
-                  0.2                      &amp; 8.647                  \\  \normalline
-                  0.3                      &amp; 9.502                  \\  \normalline
-                  0.4                      &amp; 9.817                  \\  \normalline
-                  0.5                      &amp; 9.933                  \\  \lastline
+                  <thead>
+                  <cell><m>t</m></cell>            &amp; <cell><m>V(t)</m></cell>       \\
+                  <cell>(\si{\second</cell>)} &amp; <cell>(\si{\volt</cell>)} \\
+                  </thead>
+<cell>0.0</cell>&amp;<cell>0.000</cell>\\  \normalline
+<cell>0.1</cell>&amp;<cell>6.321</cell>\\  \normalline
+<cell>0.2</cell>&amp;<cell>8.647</cell>\\  \normalline
+<cell>0.3</cell>&amp;<cell>9.502</cell>\\  \normalline
+<cell>0.4</cell>&amp;<cell>9.817</cell>\\  \normalline
+<cell>0.5</cell>&amp;<cell>9.933</cell>\\  \lastline
                   \end{tabular}
                 </p>
               </solution>
@@ -5528,16 +5528,16 @@
               <solution>
                 <p>
                   \begin{tabular}[t]{S[table-format=1.0]S[table-format=1.5]}
-                  \beforeheading
-                  \heading{<m>x</m>} &amp; \heading{<m>f(x)</m>} \\
-                  \afterheading
-                  -3            &amp; 0.04979          \\\normalline
-                  -2            &amp; 0.13534          \\\normalline
-                  -1            &amp; 0.36788          \\\normalline
-                  0             &amp; 1.00000          \\\normalline
-                  1             &amp; 2.71828          \\\normalline
-                  2             &amp; 7.38906          \\\normalline
-                  3             &amp; 20.0855          \\\lastline
+                  <thead>
+                  <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\
+                  </thead>
+<row><cell>-3</cell>&amp;<cell>0.04979</cell></row>
+<row><cell>-2</cell>&amp;<cell>0.13534</cell></row>
+<row><cell>-1</cell>&amp;<cell>0.36788</cell></row>
+<row><cell>0</cell>&amp;<cell>1.00000</cell></row>
+<row><cell>1</cell>&amp;<cell>2.71828</cell></row>
+<row><cell>2</cell>&amp;<cell>7.38906</cell></row>
+<cell>3</cell>&amp;<cell>20.0855</cell>\<tfoot/>
                   \end{tabular}
                 </p>
               </solution>
@@ -5724,15 +5724,15 @@
             <caption></caption>
             \label{exp-tab-factorial}
             \begin{tabular}{S[table-format=1.0]l}
-            \beforeheading
-            \heading{<m>k</m>} &amp; \heading{<m>k!</m>}                         \\\afterheading
-            0             &amp; <m>1</m>                                    \\\normalline  
-            1             &amp; <m>1</m>                                    \\\normalline
-            2             &amp; <m>2\cdot 1</m>                             \\\normalline
-            3             &amp; <m>3\cdot 2\cdot 1</m>                      \\\normalline
-            4             &amp; <m>4\cdot 3\cdot 2\cdot 1</m>               \\\normalline
-            5             &amp; <m>5\cdot 4\cdot 3\cdot 2\cdot 1</m>        \\\normalline
-            6             &amp; <m>6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1</m> \\\lastline
+            <thead>
+            <cell><m>k</m></cell> &amp; <cell><m>k!</m></cell>                         \\</thead>
+<row><cell>0</cell>&amp; <m>1</m>                                    </row>
+<row><cell>1</cell>&amp; <m>1</m>                                    </row>
+<row><cell>2</cell>&amp; <m>2\cdot 1</m>                             </row>
+<row><cell>3</cell>&amp; <m>3\cdot 2\cdot 1</m>                      </row>
+<row><cell>4</cell>&amp; <m>4\cdot 3\cdot 2\cdot 1</m>               </row>
+<row><cell>5</cell>&amp; <m>5\cdot 4\cdot 3\cdot 2\cdot 1</m>        </row>
+<cell>6</cell>&amp; <m>6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1</m> \<tfoot/>
             \end{tabular}
             \end{minipage}%
             \begin{minipage}{.75\textwidth}
@@ -5741,12 +5741,12 @@
             \label{exp-tab-factoriale}
             \renewcommand{\arraystretch}{2}
             \begin{tabular}{ll}
-            \beforeheading
-            \heading{Exact value}                                                                                                     &amp; \heading{Decimal value} \\\afterheading
-            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}</m>                                        &amp;                         \\\normalline  
-            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}</m>                           &amp;                         \\\normalline  
-            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}</m>              &amp;                         \\\normalline  
-            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}</m> &amp;                         \\\lastline  
+            <thead>
+            <cell>Exact value</cell>                                                                                                     &amp; <cell>Decimal value</cell> \\</thead>
+<row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}</m>                                        &amp;                         </row>
+<row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}</m>                           &amp;                         </row>
+<row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}</m>              &amp;                         </row>
+            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}</m> &amp;                         \<tfoot/>  
             \end{tabular}
             \end{minipage}%
             \end{widepage}
@@ -5758,12 +5758,12 @@
             <solution>
               <p>
                 \begin{tabular}[t]{ll}
-                \beforeheading
-                \heading{Exact value}                                                                                                                                         &amp; \heading{Decimal value (to 5 d.p)} \\\afterheading
-                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}</m>                                                    &amp; <m>2.71667</m>                          \\\normalline  
-                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}</m>                                   &amp; <m>2.71806</m>                          \\\normalline  
-                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}</m>                  &amp; <m>2.71825</m>                          \\\normalline  
-                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}+\sfrac{1}{8!}</m> &amp; <m>2.71828</m>                          \\\lastline  
+                <thead>
+                <cell>Exact value</cell>                                                                                                                                         &amp; <cell>Decimal value (to 5 d.p)</cell> \\</thead>
+<row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}</m>                                                    &amp; <m>2.71667</m>                          </row>
+<row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}</m>                                   &amp; <m>2.71806</m>                          </row>
+<row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}</m>                  &amp; <m>2.71825</m>                          </row>
+                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}+\sfrac{1}{8!}</m> &amp; <m>2.71828</m>                          \<tfoot/>  
                 \end{tabular}
 
                 We observe that as we add more terms, the decimal value appears to approach <m>e</m>.
@@ -5984,14 +5984,14 @@
             \centering
             <caption></caption> \label{exp-tab-lineardata}
             \begin{tabular}{S[table-format=4.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            2005          &amp; 40            \\\normalline
-            2006          &amp; 46            \\\normalline
-            2007          &amp; 52            \\\normalline
-            2008          &amp; 58            \\\normalline
-            2009          &amp; 64            \\\normalline
-            2010          &amp; 70            \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>2005</cell>&amp;<cell>40</cell></row>
+<row><cell>2006</cell>&amp;<cell>46</cell></row>
+<row><cell>2007</cell>&amp;<cell>52</cell></row>
+<row><cell>2008</cell>&amp;<cell>58</cell></row>
+<row><cell>2009</cell>&amp;<cell>64</cell></row>
+<cell>2010</cell>&amp;<cell>70</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -5999,14 +5999,14 @@
             \centering
             <caption></caption> \label{exp-tab-expdata}
             \begin{tabular}{S[table-format=2.0]S[table-format=1.2]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            42            &amp; 1.7           \\\normalline
-            43            &amp; 1.92          \\\normalline
-            44            &amp; 2.11          \\\normalline
-            45            &amp; 2.31          \\\normalline
-            46            &amp; 2.53          \\\normalline
-            47            &amp; 2.72          \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>42</cell>&amp;<cell>1.7</cell></row>
+<row><cell>43</cell>&amp;<cell>1.92</cell></row>
+<row><cell>44</cell>&amp;<cell>2.11</cell></row>
+<row><cell>45</cell>&amp;<cell>2.31</cell></row>
+<row><cell>46</cell>&amp;<cell>2.53</cell></row>
+<cell>47</cell>&amp;<cell>2.72</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6014,15 +6014,15 @@
             \centering
             <caption></caption>\label{exp-tab-neitherdata}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            0             &amp; 312           \\\normalline
-            3             &amp; 330           \\\normalline
-            6             &amp; 338           \\\normalline
-            9             &amp; 341           \\\normalline
-            12            &amp; 340           \\\normalline
-            15            &amp; 330           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>0</cell>&amp;<cell>312</cell></row>
+<row><cell>3</cell>&amp;<cell>330</cell></row>
+<row><cell>6</cell>&amp;<cell>338</cell></row>
+<row><cell>9</cell>&amp;<cell>341</cell></row>
+<row><cell>12</cell>&amp;<cell>340</cell></row>
+<cell>15</cell>&amp;<cell>330</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6066,14 +6066,14 @@
             \centering
             <caption></caption> \label{exp-tab-dataexample1}
             \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            -7            &amp; 30            \\\normalline
-            -3            &amp; 21            \\\normalline
-            1             &amp; 12            \\\normalline
-            5             &amp; 3             \\\normalline
-            9             &amp; -6            \\\normalline
-            13            &amp; -15           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>-7</cell>&amp;<cell>30</cell></row>
+<row><cell>-3</cell>&amp;<cell>21</cell></row>
+<row><cell>1</cell>&amp;<cell>12</cell></row>
+<row><cell>5</cell>&amp;<cell>3</cell></row>
+<row><cell>9</cell>&amp;<cell>-6</cell></row>
+<cell>13</cell>&amp;<cell>-15</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6081,14 +6081,14 @@
             \centering
             <caption></caption> \label{exp-tab-dataexample2}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            22            &amp; 3.5           \\\normalline
-            28            &amp; 7             \\\normalline
-            34            &amp; 14            \\\normalline
-            40            &amp; 28            \\\normalline
-            46            &amp; 56            \\\normalline
-            52            &amp; 112           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>22</cell>&amp;<cell>3.5</cell></row>
+<row><cell>28</cell>&amp;<cell>7</cell></row>
+<row><cell>34</cell>&amp;<cell>14</cell></row>
+<row><cell>40</cell>&amp;<cell>28</cell></row>
+<row><cell>46</cell>&amp;<cell>56</cell></row>
+<cell>52</cell>&amp;<cell>112</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6096,15 +6096,15 @@
             \centering
             <caption></caption>\label{exp-tab-dataexample3}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.7]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            -8            &amp; 72            \\\normalline
-            -6            &amp; 18            \\\normalline
-            -4            &amp; 4.5           \\\normalline
-            -2            &amp; 1.125         \\\normalline
-            0             &amp; 0.28125       \\\normalline
-            2             &amp; 0.0703125     \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>-8</cell>&amp;<cell>72</cell></row>
+<row><cell>-6</cell>&amp;<cell>18</cell></row>
+<row><cell>-4</cell>&amp;<cell>4.5</cell></row>
+<row><cell>-2</cell>&amp;<cell>1.125</cell></row>
+<row><cell>0</cell>&amp;<cell>0.28125</cell></row>
+<cell>2</cell>&amp;<cell>0.0703125</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill 
@@ -6112,15 +6112,15 @@
             \centering
             <caption></caption> \label{exp-tab-dataexample4}
             \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            -15           &amp; 7             \\\normalline
-            -10           &amp; 2             \\\normalline
-            -5            &amp; -3            \\\normalline
-            0             &amp; -8            \\\normalline
-            5             &amp; -13           \\\normalline
-            10            &amp; -18           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>-15</cell>&amp;<cell>7</cell></row>
+<row><cell>-10</cell>&amp;<cell>2</cell></row>
+<row><cell>-5</cell>&amp;<cell>-3</cell></row>
+<row><cell>0</cell>&amp;<cell>-8</cell></row>
+<row><cell>5</cell>&amp;<cell>-13</cell></row>
+<cell>10</cell>&amp;<cell>-18</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \end{table}
@@ -6156,13 +6156,13 @@
             \centering
             \captionof{table}{} \label{exp-tab-dataexample5}
             \begin{tabular}{S[table-format=2.0]S[table-format=2.2]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>f(x)</m>} \\\afterheading
-            10            &amp; 8                \\\normalline
-            11            &amp; 12.01            \\\normalline
-            12            &amp; 16.02            \\\normalline
-            13            &amp; 20               \\\normalline
-            14            &amp; 24               \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\</thead>
+<row><cell>10</cell>&amp;<cell>8</cell></row>
+<row><cell>11</cell>&amp;<cell>12.01</cell></row>
+<row><cell>12</cell>&amp;<cell>16.02</cell></row>
+<row><cell>13</cell>&amp;<cell>20</cell></row>
+<cell>14</cell>&amp;<cell>24</cell>\<tfoot/>
             \end{tabular}
             \end{table}
             \begin{pccsolution}
@@ -6204,14 +6204,14 @@
             \centering
             <caption></caption>\label{exp-tab-dataexample55}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            1             &amp; 2             \\\normalline
-            2             &amp; 4             \\\normalline
-            3             &amp; 6             \\\normalline
-            4             &amp; 8             \\\normalline
-            5             &amp; 10            \\\normalline
-            6             &amp; 12            \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>1</cell>&amp;<cell>2</cell></row>
+<row><cell>2</cell>&amp;<cell>4</cell></row>
+<row><cell>3</cell>&amp;<cell>6</cell></row>
+<row><cell>4</cell>&amp;<cell>8</cell></row>
+<row><cell>5</cell>&amp;<cell>10</cell></row>
+<cell>6</cell>&amp;<cell>12</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6220,14 +6220,14 @@
             \centering
             <caption></caption> \label{exp-tab-dataexample6}
             \begin{tabular}{S[table-format=4.0]S[table-format=3.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            2005          &amp; 1             \\\normalline
-            2006          &amp; 3             \\\normalline
-            2007          &amp; 9             \\\normalline
-            2008          &amp; 27            \\\normalline
-            2009          &amp; 81            \\\normalline
-            2010          &amp; 243           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>2005</cell>&amp;<cell>1</cell></row>
+<row><cell>2006</cell>&amp;<cell>3</cell></row>
+<row><cell>2007</cell>&amp;<cell>9</cell></row>
+<row><cell>2008</cell>&amp;<cell>27</cell></row>
+<row><cell>2009</cell>&amp;<cell>81</cell></row>
+<cell>2010</cell>&amp;<cell>243</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6235,14 +6235,14 @@
             \centering
             <caption></caption> \label{exp-tab-dataexample7}
             \begin{tabular}{S[table-format=4.0]S[table-format=2.3]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\\afterheading
-            1950          &amp; 17.3          \\\normalline
-            1960          &amp; 19.6          \\\normalline
-            1970          &amp; 21.9          \\\normalline
-            1980          &amp; 24.1          \\\normalline
-            1990          &amp; 26.4          \\\normalline
-            2000          &amp; 28.7          \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
+<row><cell>1950</cell>&amp;<cell>17.3</cell></row>
+<row><cell>1960</cell>&amp;<cell>19.6</cell></row>
+<row><cell>1970</cell>&amp;<cell>21.9</cell></row>
+<row><cell>1980</cell>&amp;<cell>24.1</cell></row>
+<row><cell>1990</cell>&amp;<cell>26.4</cell></row>
+<cell>2000</cell>&amp;<cell>28.7</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -6250,15 +6250,15 @@
             \centering
             <caption></caption>\label{exp-tab-dataexample8}
             \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            0             &amp; 546           \\\normalline
-            4             &amp; 502           \\\normalline
-            8             &amp; 462           \\\normalline
-            12            &amp; 425           \\\normalline
-            16            &amp; 391           \\\normalline
-            20            &amp; 360           \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+<row><cell>0</cell>&amp;<cell>546</cell></row>
+<row><cell>4</cell>&amp;<cell>502</cell></row>
+<row><cell>8</cell>&amp;<cell>462</cell></row>
+<row><cell>12</cell>&amp;<cell>425</cell></row>
+<row><cell>16</cell>&amp;<cell>391</cell></row>
+<cell>20</cell>&amp;<cell>360</cell>\<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill\null
@@ -6283,16 +6283,16 @@
             \centering
             \captionof{table}{US C\ae{}sarian Section Data}
             \begin{tabular}{S[table-format=4.0]S[table-format=2.1]}
-            \beforeheading
-            \heading{Year} &amp; \heading{C-sections (\%)} \\
-            \afterheading
-            1996           &amp; 21.0                      \\\normalline
-            1998           &amp; 22.6                      \\\normalline
-            2000           &amp; 24.2                      \\\normalline
-            2002           &amp; 26.0                      \\\normalline
-            2004           &amp; 27.9                      \\\normalline
-            2006           &amp; 30.0                      \\\normalline
-            2008           &amp; 32.2                      \\\lastline
+            <thead>
+            <cell>Year</cell> &amp; <cell>C-sections (\%)</cell> \\
+            </thead>
+<row><cell>1996</cell>&amp;<cell>21.0</cell></row>
+<row><cell>1998</cell>&amp;<cell>22.6</cell></row>
+<row><cell>2000</cell>&amp;<cell>24.2</cell></row>
+<row><cell>2002</cell>&amp;<cell>26.0</cell></row>
+<row><cell>2004</cell>&amp;<cell>27.9</cell></row>
+<row><cell>2006</cell>&amp;<cell>30.0</cell></row>
+<cell>2008</cell>&amp;<cell>32.2</cell>\<tfoot/>
             \end{tabular}
             \label{exp-ex-Csection}
             \end{minipage}
@@ -6330,15 +6330,15 @@
             \captionof{table}{US C\ae{}sarian Section Data}
             \label{exp-ex-CsectionSuccessive}
             \begin{tabular}{S[table-format=1.1]l}
-            \beforeheading
-            \heading{Differences} &amp; \heading{Ratios} \\
-            \afterheading
-            1.6                   &amp; <m>1.076\ldots</m>    \\\normalline
-            1.6                   &amp; <m>1.071\ldots</m>    \\\normalline
-            1.8                   &amp; <m>1.074\ldots</m>    \\\normalline
-            1.9                   &amp; <m>1.073\ldots</m>    \\\normalline
-            2.1                   &amp; <m>1.075\ldots</m>    \\\normalline
-            2.2                   &amp; <m>1.073\ldots</m>    \\\lastline
+            <thead>
+            <cell>Differences</cell> &amp; <cell>Ratios</cell> \\
+            </thead>
+            1.6                   &amp; <m>1.076\ldots</m>    \nl
+            1.6                   &amp; <m>1.071\ldots</m>    \nl
+            1.8                   &amp; <m>1.074\ldots</m>    \nl
+            1.9                   &amp; <m>1.073\ldots</m>    \nl
+            2.1                   &amp; <m>1.075\ldots</m>    \nl
+            2.2                   &amp; <m>1.073\ldots</m>    \<tfoot/>
             \end{tabular}
             \end{table}
             \end{pccsolution}
@@ -6690,20 +6690,20 @@
             \captionof{table}{Human Population of Africa}
             \label{exp-tab-AfricaPopulation}
             \begin{tabular}{S[table-format=4.0]S[table-format=3.1]}
-            \beforeheading
-            \heading{Year} &amp; \heading{Millions} \\
-            \afterheading
-            1999           &amp; 800.2              \\\normalline
-            2000           &amp; 819.5              \\\normalline
-            2001           &amp; 839.0              \\\normalline
-            2002           &amp; 858.9              \\\normalline
-            2003           &amp; 879.2              \\\normalline
-            2004           &amp; 899.9              \\\normalline
-            2005           &amp; 921.1              \\\normalline
-            2006           &amp; 942.7              \\\normalline
-            2007           &amp; 964.7              \\\normalline
-            2008           &amp; 987.1              \\\normalline
-            2009           &amp; 1009.9             \\\lastline
+            <thead>
+            <cell>Year</cell> &amp; <cell>Millions</cell> \\
+            </thead>
+            1999           &amp; 800.2              \nl
+            2000           &amp; 819.5              \nl
+            2001           &amp; 839.0              \nl
+            2002           &amp; 858.9              \nl
+            2003           &amp; 879.2              \nl
+            2004           &amp; 899.9              \nl
+            2005           &amp; 921.1              \nl
+            2006           &amp; 942.7              \nl
+            2007           &amp; 964.7              \nl
+            2008           &amp; 987.1              \nl
+            2009           &amp; 1009.9             \<tfoot/>
             \end{tabular}
             \end{table}
 
@@ -6780,20 +6780,20 @@
                   Answers will vary as models vary.  Using the model <m>P(t)=819.7(1.023530)^t</m>:\\
 
                   \begin{tabular}{S[table-format=4.0]S[table-format=4.1]S[table-format=4.1]}
-                  \beforeheading
-                  \heading{Year} &amp; \heading{Actual} &amp; \heading{Model} \\
-                  \afterheading
-                  1999           &amp; 800.2            &amp; 800.9           \\\normalline
-                  2000           &amp; 819.5            &amp; 819.7           \\\normalline
-                  2001           &amp; 839.0            &amp; 839.0           \\\normalline
-                  2002           &amp; 858.9            &amp; 858.8           \\\normalline
-                  2003           &amp; 879.2            &amp; 879.0           \\\normalline
-                  2004           &amp; 899.9            &amp; 900.0           \\\normalline
-                  2005           &amp; 921.1            &amp; 920.8           \\\normalline
-                  2006           &amp; 942.7            &amp; 942.5           \\\normalline
-                  2007           &amp; 964.7            &amp; 964.7           \\\normalline
-                  2008           &amp; 987.1            &amp; 987.4           \\\normalline
-                  2009           &amp; 1009.9           &amp; 1010.6          \\\lastline
+                  <thead>
+                  <cell>Year</cell> &amp; <cell>Actual</cell> &amp; <cell>Model</cell> \\
+                  </thead>
+                  1999           &amp; 800.2            &amp; 800.9           \nl
+                  2000           &amp; 819.5            &amp; 819.7           \nl
+                  2001           &amp; 839.0            &amp; 839.0           \nl
+                  2002           &amp; 858.9            &amp; 858.8           \nl
+                  2003           &amp; 879.2            &amp; 879.0           \nl
+                  2004           &amp; 899.9            &amp; 900.0           \nl
+                  2005           &amp; 921.1            &amp; 920.8           \nl
+                  2006           &amp; 942.7            &amp; 942.5           \nl
+                  2007           &amp; 964.7            &amp; 964.7           \nl
+                  2008           &amp; 987.1            &amp; 987.4           \nl
+                  2009           &amp; 1009.9           &amp; 1010.6          \<tfoot/>
                   \end{tabular}
 
                   The model seems quite accurate.
@@ -7109,14 +7109,14 @@
             <caption></caption>
             \label{exp-tab-findformula1}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.1]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>f(x)</m>} \\
-            \afterheading
-            -1            &amp; -4.5             \\\normalline
-            0             &amp; -3.0             \\\normalline
-            1             &amp; -1.5             \\\normalline
-            2             &amp; 0.0              \\\normalline
-            3             &amp; 1.5              \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\
+            </thead>
+            -1            &amp; -4.5             \nl
+            0             &amp; -3.0             \nl
+            1             &amp; -1.5             \nl
+            2             &amp; 0.0              \nl
+            3             &amp; 1.5              \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7125,14 +7125,14 @@
             <caption></caption>
             \label{exp-tab-findformula2}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>g(x)</m>} \\
-            \afterheading
-            -1            &amp; 64               \\\normalline
-            0             &amp; 16               \\\normalline
-            1             &amp; 4                \\\normalline
-            2             &amp; 1                \\\normalline
-            3             &amp; \sfrac{1}{4}  \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>g(x)</m></cell> \\
+            </thead>
+            -1            &amp; 64               \nl
+            0             &amp; 16               \nl
+            1             &amp; 4                \nl
+            2             &amp; 1                \nl
+            3             &amp; \sfrac{1}{4}  \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7141,14 +7141,14 @@
             <caption></caption>
             \label{exp-tab-findformula3}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.3]}
-            \beforeheading
-            \heading{x} &amp; \heading{h(x)} \\
-            \afterheading
-            -1          &amp; 2.000          \\\normalline
-            0           &amp; 3.000          \\\normalline
-            1           &amp; 4.500          \\\normalline
-            2           &amp; 6.750          \\\normalline
-            3           &amp; 10.125         \\\lastline
+            <thead>
+            <cell>x</cell> &amp; <cell>h(x)</cell> \\
+            </thead>
+            -1          &amp; 2.000          \nl
+            0           &amp; 3.000          \nl
+            1           &amp; 4.500          \nl
+            2           &amp; 6.750          \nl
+            3           &amp; 10.125         \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7157,14 +7157,14 @@
             <caption></caption>
             \label{exp-tab-findformula4}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>k(x)</m>} \\
-            \afterheading
-            -1            &amp; 20               \\\normalline
-            0             &amp; 16               \\\normalline
-            1             &amp; 12               \\\normalline
-            2             &amp; 8                \\\normalline
-            3             &amp; 4                \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>k(x)</m></cell> \\
+            </thead>
+            -1            &amp; 20               \nl
+            0             &amp; 16               \nl
+            1             &amp; 12               \nl
+            2             &amp; 8                \nl
+            3             &amp; 4                \<tfoot/>
             \end{tabular}
             \end{minipage}
             \vspace{0.5cm}
@@ -7175,14 +7175,14 @@
             <caption></caption>
             \label{exp-tab-dataproblem1}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            4             &amp; 7.32          \\\normalline
-            5             &amp; 8.05          \\\normalline
-            6             &amp; 8.86          \\\normalline
-            7             &amp; 9.74          \\\normalline
-            8             &amp; 10.72         \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+            4             &amp; 7.32          \nl
+            5             &amp; 8.05          \nl
+            6             &amp; 8.86          \nl
+            7             &amp; 9.74          \nl
+            8             &amp; 10.72         \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7191,14 +7191,14 @@
             <caption></caption>
             \label{exp-tab-dataproblem2}
             \begin{tabular}{S[table-format=1.0]S[table-format=1.2]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            2             &amp; 4.27          \\\normalline
-            3             &amp; 5.4           \\\normalline
-            4             &amp; 6.52          \\\normalline
-            5             &amp; 7.63          \\\normalline
-            6             &amp; 8.75          \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+            2             &amp; 4.27          \nl
+            3             &amp; 5.4           \nl
+            4             &amp; 6.52          \nl
+            5             &amp; 7.63          \nl
+            6             &amp; 8.75          \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7207,14 +7207,14 @@
             <caption></caption>
             \label{exp-tab-dataproblem3}
             \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
-            \beforeheading
-            \heading{<m>x</m>} &amp; \heading{<m>y</m>} \\
-            \afterheading
-            5             &amp; 20            \\\normalline
-            6             &amp; 30            \\\normalline
-            7             &amp; 42            \\\normalline
-            8             &amp; 56            \\\normalline
-            9             &amp; 72            \\\lastline
+            <thead>
+            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
+            </thead>
+            5             &amp; 20            \nl
+            6             &amp; 30            \nl
+            7             &amp; 42            \nl
+            8             &amp; 56            \nl
+            9             &amp; 72            \<tfoot/>
             \end{tabular}
             \end{minipage}
             \hfill
@@ -7550,18 +7550,18 @@
             <solution>
               <p>
                 \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]l}
-                \beforeheading
-                \heading{<m>t</m>} &amp; \heading{<m>F(t)</m>} &amp; \heading{successive ratio} \\
-                \afterheading
-                0             &amp; 2                &amp;                            \\\normalline 
-                1             &amp; 3                &amp; <m>1.5</m>                      \\\normalline 
-                2             &amp; 4                &amp; <m>1.33\ldots</m>               \\\normalline 
-                3             &amp; 6                &amp; <m>1.5</m>                      \\\normalline
-                4             &amp; 9                &amp; <m>1.5</m>                      \\\normalline 
-                5             &amp; 14               &amp; <m>1.55\ldots</m>               \\\normalline
-                6             &amp; 21               &amp; <m>1.5</m>                      \\\normalline
-                7             &amp; 31               &amp; <m>1.48\ldots</m>               \\\normalline
-                8             &amp; 47               &amp; <m>1.52\ldots</m>               \\\lastline
+                <thead>
+                <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell>successive ratio</cell> \\
+                </thead>
+                0             &amp; 2                &amp;                            \nl 
+                1             &amp; 3                &amp; <m>1.5</m>                      \nl 
+                2             &amp; 4                &amp; <m>1.33\ldots</m>               \nl 
+                3             &amp; 6                &amp; <m>1.5</m>                      \nl
+                4             &amp; 9                &amp; <m>1.5</m>                      \nl 
+                5             &amp; 14               &amp; <m>1.55\ldots</m>               \nl
+                6             &amp; 21               &amp; <m>1.5</m>                      \nl
+                7             &amp; 31               &amp; <m>1.48\ldots</m>               \nl
+                8             &amp; 47               &amp; <m>1.52\ldots</m>               \<tfoot/>
                 \end{tabular}
 
                 The successive ratios are fairly close to <m>1.5</m>, although there is some variation.  This suggests that an exponential model might be appropriate with a base of <m>1.5</m>.
