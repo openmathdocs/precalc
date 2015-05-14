@@ -370,6 +370,19 @@
       <xsl:text>%&#xa;</xsl:text>
 </xsl:template>
 
+<!-- sidebyside in exercises need a widepage -->
+<xsl:template match="sidebyside[ancestor::mathbook[@style='chunk']][ancestor::exercises]">
+      <xsl:text>\begin{figure}&#xa;</xsl:text>
+      <xsl:text>\begin{widepage}&#xa;</xsl:text>
+      <xsl:apply-templates select="*[not(self::caption)]" mode="sidebyside"/>
+      <!-- output the child nodes -->
+      <xsl:text>\popValignCaptionBottom&#xa;</xsl:text>
+      <!-- global caption -->
+      <xsl:apply-templates select="caption" />
+      <xsl:text>\end{widepage}&#xa;</xsl:text>
+      <xsl:text>\end{figure}&#xa;</xsl:text>
+</xsl:template>
+
 <xsl:template match="exercises[ancestor::mathbook[@style='chunk']][@style='investigations']">
   <xsl:text>\investigation*{}&#xa;</xsl:text>
   <xsl:apply-templates />
