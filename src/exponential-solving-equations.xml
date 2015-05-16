@@ -1,206 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-            <exercise xml:id="exp-prob-exponentialtables">
-              <statement>
-                For each of the functions implied by the data in \crefrange{exp-tab-expfunctiong}{exp-tab-expfunctionk}, 
-                determine whether or not the function is exponential.  If it is, determine the base <m>b</m> of the function. 
-              </statement>
-              <solution>
-                <p>
-                  The function tabulated in <xref ref="exp-tab-expfunctiong"/> is exponential, and <m>g(x)=3^x</m>.  
-                  The function tabulated in <xref ref="exp-tab-expfunctionh"/> is exponential, and 
-                  <m>h(x)=\sqrt[3]{25}\cdot(\sqrt[3]{5})^x</m>.  
-                  The function tabulated in <xref ref="exp-tab-expfunctionk"/> is not exponential.
-                </p>
-              </solution>
-            </exercise>
-            <sidebyside>
-              <table width="25%" xml:id="exp-tab-expfunctiong">
-            <caption><m>y=g(x)</m></caption>
-            <tabular>
-              <col halign="."/>
-              <col halign="."/>
-              <thead>
-                <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
-             </thead>
-            <row><cell>1</cell><cell>3</cell></row>
-            <row><cell>2</cell><cell>9</cell></row>
-            <row><cell>3</cell><cell>27</cell></row>
-            <row><cell>4</cell><cell>81</cell></row>
-            <row><cell>5</cell><cell>243</cell></row>
-            </tabular>
-              </table>
-            \end{minipage}
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
-            <caption><m>y=h(x)</m></caption>
-            \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
-            <thead>
-            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
-            </thead>
-<row><cell>1</cell>&amp;<cell>5</cell></row>
-<row><cell>4</cell>&amp;<cell>25</cell></row>
-<row><cell>7</cell>&amp;<cell>125</cell></row>
-<row><cell>10</cell>&amp;<cell>625</cell></row>
-<cell>13</cell>&amp;<cell>3125</cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-tab-expfunctionh}
-            \end{minipage}
-            \hfill
-            \begin{minipage}{.25\textwidth}
-            \centering
-            <caption><m>y=k(x)</m></caption>
-            \begin{tabular}{S[table-format=2.0]S[table-format=4.0]}
-            <thead>
-            <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
-            </thead>
-<row><cell>1</cell>&amp;<cell>4</cell></row>
-<row><cell>2</cell>&amp;<cell>16</cell></row>
-<row><cell>4</cell>&amp;<cell>64</cell></row>
-<row><cell>8</cell>&amp;<cell>256</cell></row>
-<cell>16</cell>&amp;<cell>1024</cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-tab-expfunctionk}
-            </sidebyside>
 
-            %===================================
-            <author>Hughes</author>
-            <date>  Feb 2011</date>
-            %===================================
-            <exercisegroup>
-<title>True or false?</title>
-<statement>
-            Consider the function <m>f</m> that has formula
-            \[
-            f(x)=a\,b^x+c
-            \]
-            where <m>a</m> and <m>c</m> are any real numbers and <m>b</m> is a positive real number not equal to <m>1</m>. Label each 
-            of the following statements as true (T) or false (F); if you believe a statement is false, 
-            provide an example that supports your answer.
-
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then <m>f</m> is an increasing function for any value of <m>a</m>.
-              </statement>
-              <solution>
-                <p>
-                  False. Consider <m>f(x)=-2^x</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then <m>f</m> is a decreasing function for any value of <m>a</m>.
-              </statement>
-              <solution>
-                <p>
-                  False. Consider <m>f(x)=-\left(\frac{1}{9}^{x}\right)</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then <m>f(x)\to c</m> as <m>x\to -\infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then <m>f(x)\to c</m> as <m>x\to\infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then <m>f(x)\to \infty</m> as <m>x\to \infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  False. Consider <m>f(x)=-8^{x}</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then <m>f(x)\to \infty</m> as <m>x\to -\infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  False. Consider <m>f(x)=-\left(\frac{1}{8}\right)^{x}</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=0</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then <m>\dd\lim_{x\to-\infty}f(x)=\infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  False. Consider <m>f(x)=8^{x}</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=\infty</m> or <m>\dd\lim_{x\to\infty}f(x)=-\infty</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>b&gt;1</m>, then the line defined by <m>y=0</m> is an asymptote of <m>f</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then the line defined by <m>y=0</m> is an asymptote of <m>f</m>.
-              </statement>
-              <solution>
-                <p>
-                  True.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>0&lt;b&lt;1</m>, then the line defined by <m>x=0</m> is an asymptote of <m>f</m>.
-              </statement>
-              <solution>
-                <p>
-                  False.  Consider any exponential function.  There are no vertical asymptotes.
-                </p>
-              </solution>
-            </exercise>
-            </exercisegroup>
-            \end{exercises}
 
             \section{Solving exponential equations}
             As we have seen in the past, we are often interested in finding what value or values of a variable will cause certain conditions to be met.  
@@ -212,9 +12,9 @@
             Recall some of the basic rules for exponents, assuming that <m>a</m>, <m>b</m>, <m>x</m>,
             and <m>y</m> are real numbers:
             \begin{props}
-            <li>\label{exp-prop-pow} <m>a^xb^x=(ab)^x</m> </li>
-            <li>\label{exp-prop-add} <m>a^xa^y =a^{x+y}</m></li>
-            <li>\label{exp-prop-mult} <m>a^{(xy)} = (a^x)^y</m></li>
+            <li>xml:id="exp-prop-pow" <m>a^xb^x=(ab)^x</m> </li>
+            <li>xml:id="exp-prop-add" <m>a^xa^y =a^{x+y}</m></li>
+            <li>xml:id="exp-prop-mult" <m>a^{(xy)} = (a^x)^y</m></li>
             \end{props}
             \end{pccspecialcomment}
             We can often make use of these rules to simplify exponential expressions.
@@ -465,10 +265,10 @@
             <author>Hughes</author>
             <date>  August 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-factor}
+            \begin{pccexample}xml:id="exp-ex-factor"
             Solve the following equation by factoring. Hint: put <m>t=3^x</m> as 
             your first step.
-            \begin{equation}\label{exp-eq-solvefact}
+            \begin{equation}xml:id="exp-eq-solvefact"
             3^{2x}-10\cdot 3^x+9=0
             \end{equation}
             \begin{pccsolution}
@@ -532,7 +332,8 @@
             \begin{minipage}{.3\textwidth}
             \centering
             \captionof{table}{}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>2^x</m></cell> \\
             </thead>
@@ -541,8 +342,9 @@
 <row><cell>3</cell>&amp;<cell>8</cell></row>
 <row><cell>4</cell>&amp;<cell>16</cell></row>
             \lastline
-            \end{tabular}
-            \label{exp-tab-solvenoninteger}
+            </tabular>
+</table>
+            xml:id="exp-tab-solvenoninteger"
             \end{minipage}%
             \hfill
             \begin{minipage}{.4\textwidth}
@@ -564,7 +366,7 @@
               </latex-image-code>
             </image>     
             \captionof{figure}{<m>y=2^x</m>}
-            \label{exp-fig-solvenoninteger}
+            xml:id="exp-fig-solvenoninteger"
             \end{minipage}%
             \hfill\mbox{}
             \end{table}
@@ -938,7 +740,7 @@
               </latex-image-code>
             </image>     
             <caption></caption>
-            \label{exp-fig-matcheqns1}
+            xml:id="exp-fig-matcheqns1"
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -959,7 +761,7 @@
               </latex-image-code>
             </image>     
             <caption></caption>
-            \label{exp-fig-matcheqns2}
+            xml:id="exp-fig-matcheqns2"
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -980,7 +782,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matcheqns3}
+            xml:id="exp-fig-matcheqns3"
             \end{subfigure}%
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -1001,10 +803,10 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matcheqns4}
+            xml:id="exp-fig-matcheqns4"
             \end{subfigure}%
             <caption>Graphs for <xref ref="exp-prob-matcheqns"/></caption>
-            \label{exp-fig-matcheqns}
+            xml:id="exp-fig-matcheqns"
             \end{widepage}
             \end{figure}
 
@@ -1116,7 +918,7 @@
               </latex-image-code>
             </image>     
             <caption></caption>
-            \label{exp-fig-extension}
+            xml:id="exp-fig-extension"
             \end{widepage}
             \end{figure}
             <exercise>
@@ -1144,7 +946,7 @@
             </exercise>
             \end{exercises}
 
-            \section{Finding an exponential function given two points}\label{exp-sec-findformula}
+            \section{Finding an exponential function given two points}xml:id="exp-sec-findformula"
             \begin{outcomes}
             \begin{outcomelist}
             <li> You will be able to find a formula for an exponential curve that connects two points in the plane. </li>
@@ -1181,7 +983,7 @@
               </latex-image-code>
             </image>
             <caption>Points connected with a line</caption>
-            \label{exp-fig-pointsline}
+            xml:id="exp-fig-pointsline"
             \end{subfigure}%
             \hfill
             \begin{subfigure}[t]{0.25\textwidth}
@@ -1201,7 +1003,7 @@
               </latex-image-code>
             </image>
             <caption>Points connected with an arbitrary curve</caption>
-            \label{exp-fig-pointscurve}
+            xml:id="exp-fig-pointscurve"
             \end{subfigure}%
             \hfill
             \begin{subfigure}[t]{0.25\textwidth}
@@ -1221,7 +1023,7 @@
               </latex-image-code>
             </image>
             <caption>Points connected with an exponential curve</caption>
-            \label{exp-fig-pointsexp}
+            xml:id="exp-fig-pointsexp"
             \end{subfigure}%
             <caption>Connecting two points with various curves</caption>
             \end{figure}
@@ -1371,7 +1173,7 @@
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{pccexample} \label{exp-ex-findab}
+            \begin{pccexample} xml:id="exp-ex-findab"
             Find an exponential function <m>f</m> given by <m>f(t)=a\,b^t</m> whose graph goes through the points <m>\left(-2,\frac{3}{4}\right)</m> and <m>(2,12)</m>
             as shown in <xref ref="exp-fig-expmodellingwithcurve"/>.
             \begin{figure}
@@ -1396,7 +1198,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-expmodellingwithcurve}
+            xml:id="exp-fig-expmodellingwithcurve"
             \end{figure}
 
             \begin{pccsolution}
@@ -1523,7 +1325,7 @@
               </latex-image-code>
             </image>
             <caption>Flu patient data</caption>
-            \label{exp-fig-fludata}
+            xml:id="exp-fig-fludata"
             \end{figure}
 
             Since we are trying to use an exponential model, we are searching for values of <m>a</m> and <m>b</m> such that the curve <m>y=a\,b^t</m> will 
@@ -1578,7 +1380,7 @@
               </latex-image-code>
             </image>
             <caption>Flu patient model</caption>
-            \label{exp-fig-flugraph}
+            xml:id="exp-fig-flugraph"
             \end{figure}
             \begin{pccsolution} 
             The graph suggests that around the tenth day after the initial outbreak, there will be <m>20000</m> infected persons.
@@ -1601,7 +1403,7 @@
             \begin{pccsolution}
             We are given that <m>w(3)=53</m> and <m>w(10)=37</m> so
             \begin{align}
-            a\,b^3    &amp; = 53\label{exp-eq-wood} \\
+            a\,b^3    &amp; = 53xml:id="exp-eq-wood" \\
             a\,b^{10} &amp; =47 \nonumber           
             \end{align}
             Eliminating for <m>b</m> gives <m>b^7=\frac{47}{53}</m> and therefore
@@ -1757,7 +1559,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{}
-            \begin{tabular}{S[table-format=1.0]S[table-format=1.0]l}
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=1.0]l}
             <thead>
             <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell><m>A(t)</m></cell> \\
             </thead>
@@ -1770,8 +1573,9 @@
 <row><cell>6</cell>&amp;<cell></cell>&amp;<cell></cell></row>
 <row><cell>7</cell>&amp;<cell></cell>&amp;<cell></cell></row>
 <cell>8</cell>&amp;<cell></cell>&amp;<cell></cell><tfoot/>
-            \end{tabular}
-            \label{exp-tab-tapfish}
+            </tabular>
+</table>
+            xml:id="exp-tab-tapfish"
             \end{margintable}
 
             <exercise>
@@ -1782,7 +1586,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]}
+                  <table>
+<tabular>[t]{S[table-format=1.0]S[table-format=2.0]}
                   <thead>
                   <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> \\
                   </thead>
@@ -1795,7 +1600,8 @@
 <row><cell>6</cell>&amp;<cell>21</cell></row>
 <row><cell>7</cell>&amp;<cell>31</cell></row>
 <cell>8</cell>&amp;<cell>47</cell>\<tfoot/>
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
             </exercise>
@@ -1852,7 +1658,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]S[table-format=2.6]}
+                  <table>
+<tabular>[t]{S[table-format=1.0]S[table-format=2.0]S[table-format=2.6]}
                   <thead>
                   <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell><m>A(t)</m></cell> \\
                   </thead>
@@ -1865,7 +1672,8 @@
 <row><cell>6</cell>&amp;<cell>21</cell>&amp; 21.346710        </row>
 <row><cell>7</cell>&amp;<cell>31</cell>&amp; 31.674840        </row>
 <cell>8</cell>&amp;<cell>47</cell>&amp; 47.000000        \<tfoot/>
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
             </exercise>
@@ -2315,7 +2123,7 @@
             <caption><m>k(3)=-\dfrac{4}{27}</m></caption>
             \end{subfigure}
             <caption></caption>
-            \label{exp-fig-findab}
+            xml:id="exp-fig-findab"
             \end{widepage}
             \end{figure}
 
@@ -2355,8 +2163,9 @@
             \begin{widepage}
             \begin{minipage}{.2\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-findab10}
-            \begin{tabular}{S[table-format=1.0]S[table-format=6.0]}
+            <caption></caption> xml:id="exp-tab-findab10"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=6.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>1</cell>&amp;<cell>10</cell></row>
@@ -2364,13 +2173,15 @@
 <row><cell>3</cell>&amp;<cell>1000</cell></row>
 <row><cell>4</cell>&amp;<cell>10000</cell></row>
 <cell>5</cell>&amp;<cell>100000</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-findab7}
-            \begin{tabular}{S[table-format=1.0]c}
+            <caption></caption> xml:id="exp-tab-findab7"
+            <table>
+<tabular>{S[table-format=1.0]c}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>-5</cell>&amp; 9/16897 </row>
@@ -2378,13 +2189,15 @@
 <row><cell>-3</cell>&amp;<cell>9/343</cell></row>
 <row><cell>-2</cell>&amp;<cell>9/49</cell></row>
 <cell>-1</cell>&amp;<cell>9/7</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-findabthird}
-            \begin{tabular}{S[table-format=2.0]c}
+            <caption></caption>xml:id="exp-tab-findabthird"
+            <table>
+<tabular>{S[table-format=2.0]c}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell>  \\
             </thead>
@@ -2393,13 +2206,15 @@
 <row><cell>6</cell>&amp;<cell>-2/243</cell></row>
 <row><cell>8</cell>&amp;<cell>-2/2187</cell></row>
 <cell>10</cell>&amp;<cell>-2/19683</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{.2\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-findabfifth}
-            \begin{tabular}{S[table-format=2.0]S[table-format=9.0]}
+            <caption></caption>xml:id="exp-tab-findabfifth"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=9.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -2408,7 +2223,8 @@
 <row><cell>-6</cell>&amp;<cell>46875</cell></row>
 <row><cell>-3</cell>&amp;<cell>375</cell></row>
 <cell>0</cell>&amp;<cell>3</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \end{widepage}
             \end{table}
@@ -2532,7 +2348,7 @@
               </latex-image-code>
             </image>
             <caption>Solar capacity.</caption>
-            \label{exp-fig-solarcapacity}
+            xml:id="exp-fig-solarcapacity"
             \end{widepage}
             \end{figure}
 
@@ -2597,7 +2413,7 @@
             </exercisegroup>
             \end{exercises}
 
-            \section{Exponential modeling}\label{exp-sec-populationmodels}
+            \section{Exponential modeling}xml:id="exp-sec-populationmodels"
             \begin{outcomes}
             \begin{outcomelist}
             <li> stuff</li>
@@ -2722,7 +2538,7 @@
             <author>Kissick</author>
             <date>  April 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-innercity}
+            \begin{pccexample}xml:id="exp-ex-innercity"
             Since 2001 the population of an inner city has been decreasing as people 
             move to the suburbs. It is decreasing at a rate of \SI{1}{\percent} per year; find a model 
             for this situation.
@@ -2807,7 +2623,7 @@
             where some of the atoms are radioactive, the radioactive atoms will decay into other atoms in a very predictable way.  
             In fact, each radioactive element has an 
             associated half-life, which is the time it takes for \SI{50}{\percent} of the radioactive atoms to decay into something else.
-            \begin{pccexample}\label{exp-prob-radioactive}%
+            \begin{pccexample}xml:id="exp-prob-radioactive"%
             Suppose that we have 8000 atoms of Carbon-12 (which is non-radioactive).  Without an intervening act, 1,000,000 years from 
             now that sample of carbon will still have 8000 atoms of Carbon-12.  However, if we start with a sample 
             of 8000 
@@ -2821,8 +2637,9 @@
 
             \begin{table}[!htb]
             \centering
-            <caption>Decaying Radioactive Carbon-14</caption>\label{exp-tab-C14decay}
-            \begin{tabular}{S[table-format=5.0]S[table-format=4.0]}
+            <caption>Decaying Radioactive Carbon-14</caption>xml:id="exp-tab-C14decay"
+            <table>
+<tabular>{S[table-format=5.0]S[table-format=4.0]}
             <thead>
             <cell>Number of years</cell> &amp; <cell>Number of remaining</cell> \\
             <cell>from today</cell>      &amp; <cell>radioactive atoms</cell>   \\
@@ -2832,7 +2649,8 @@
 <row><cell>11460</cell>&amp;<cell>2000</cell></row>
 <row><cell>17190</cell>&amp;<cell>1000</cell></row>
 <cell>22920</cell>&amp;<cell>500</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{table}
 
             Using the data in <xref ref="exp-tab-C14decay"/> we can determine the formula for <m>R(t)</m>, 
@@ -2956,7 +2774,7 @@
             \begin{pccdefinition}[Simple interest]
             If we invest an amount <m>P</m> in an account with interest rate <m>r</m> (per year), then 
             the amount in the account is
-            \begin{equation}\label{exp-eq-simpleinterest}
+            \begin{equation}xml:id="exp-eq-simpleinterest"
             A(t)=P(1+r)^t
             \end{equation}
             where <m>t</m> is the amount of time that has passed (in years) since the initial 
@@ -2991,7 +2809,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{Simple interest}
-            \begin{tabular}{S[table-format=2.0]S[table-format=5.2]}
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=5.2]}
             <thead>
             <cell><m>t</m></cell> &amp; <cell><m>A(t)</m></cell> \\ 
             </thead>
@@ -3000,8 +2819,9 @@
 <row>            \mbox{\vdots} &amp; \mbox{\vdots}    </row>
 <row><cell>23</cell>&amp; 9867.93          </row>
 <cell>24</cell>&amp; 10163.97         \<tfoot/>
-            \end{tabular}
-            \label{exp-tab-simpleinterest}
+            </tabular>
+</table>
+            xml:id="exp-tab-simpleinterest"
             \end{margintable}
 
             Using <xref ref="exp-tab-simpleinterest"/>, we conclude that the 
@@ -3042,7 +2862,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{Fredo's account}
-            \begin{tabular}{S[table-format=2.0]S[table-format=3.2]}
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=3.2]}
             <thead>
             <cell><m>t</m></cell> &amp; <cell><m>A(t)</m></cell> \\
             </thead>
@@ -3059,8 +2880,9 @@
 <row><cell>10</cell>&amp;<cell>110.46</cell></row>
 <row><cell>11</cell>&amp;<cell>111.57</cell></row>
 <cell>12</cell>&amp;<cell>112.68</cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-tab-fredo}
+            </tabular>
+</table>
+            xml:id="exp-tab-fredo"
             \end{margintable}
 
             If we look closely at what happened in <xref ref="exp-tab-fredo"/>, we notice that 
@@ -3104,7 +2926,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{}
-            \begin{tabular}{lS[table-format=3.0]}
+            <table>
+<tabular>{lS[table-format=3.0]}
             <thead>
             <cell>Words</cell> &amp; <cell><m>n</m></cell> \\
             </thead>
@@ -3117,14 +2940,15 @@
 <row>            weekly          &amp;<cell>52</cell></row>
 <row>            daily           &amp;<cell>365</cell></row>
             non-stop        &amp; \mbox{??}     \<tfoot/>
-            \end{tabular}
-            \label{exp-tab-compoundingfreq}
+            </tabular>
+</table>
+            xml:id="exp-tab-compoundingfreq"
             \end{margintable}
 
-            \begin{pccdefinition}[Compound interest]\label{exp-def-compoundint}
+            \begin{pccdefinition}[Compound interest]xml:id="exp-def-compoundint"
             The compound interest formula is
             \begin{align}
-            A(t) = P_0\left(1+\frac{r}{n}\right)^{nt}\label{exp-form-compoundinterest} 
+            A(t) = P_0\left(1+\frac{r}{n}\right)^{nt}xml:id="exp-form-compoundinterest" 
             \end{align}
             where:
             \begin{itemize}
@@ -3141,7 +2965,7 @@
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-compoundinterest}
+            \begin{pccexample}xml:id="exp-ex-compoundinterest"
             We have \$7000 to invest into an account that earns interest at a \SI{3}{\percent} nominal rate. Find the amount that we 
             will have after four years assuming each of the following compounding frequencies:
             \begin{multicols}{4}
@@ -3212,7 +3036,7 @@
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-effectiverate}
+            \begin{pccexample}xml:id="exp-ex-effectiverate"
             Find the effective rate of interest for each of the problems in <xref ref="exp-ex-compoundinterest"/>.
 
             \begin{pccsolution}
@@ -3230,7 +3054,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{}
-            \begin{tabular}{S[table-format=3.0]S[table-format=1.0]S[table-format=1.7]}
+            <table>
+<tabular>{S[table-format=3.0]S[table-format=1.0]S[table-format=1.7]}
             <thead>
             <cell><m>n</m></cell> &amp; <cell>nominal</cell>   &amp; <cell>effective</cell> \\
             &amp; <cell>rate (\%)</cell> &amp; <cell>rate</cell> (\%) \\
@@ -3239,8 +3064,9 @@
 <cell>12</cell>&amp;<cell>3</cell>&amp;<cell>3.0415957</cell>\\ \normalline 
 <cell>52</cell>&amp;<cell>3</cell>&amp;<cell>3.0445620</cell>\\ \normalline
 <cell>365</cell>&amp;<cell>3</cell>&amp;<cell>3.0453264</cell>\\ \lastline
-            \end{tabular}
-            \label{exp-tab-effectiverate}
+            </tabular>
+</table>
+            xml:id="exp-tab-effectiverate"
             \end{margintable}
 
             \Cref{exp-ex-effectiverate} demonstrates that the nominal interest rate is usually different from the effective interest rate.  
@@ -3287,7 +3113,7 @@
               </latex-image-code>
             </image>
             <caption>Atmospheric C-14 in Austria (\si{\percent</caption> above pre-nuclear age levels)}%
-            \label{exp-fig-coldwar}
+            xml:id="exp-fig-coldwar"
             \end{figure}
 
             \Cref{exp-fig-coldwar} charts the percent of atmospheric C-14 above the natural pre-nuclear test level in the air above Austria\footnote{\href{http://en.wikipedia.org/wiki/Carbon-14}{http://en.wikipedia.org/wiki/Carbon-14}}.  The decay that you see has to do with C-14 being flushed out of the atmosphere and into the ground and ocean, not radioactive decay.
@@ -3406,7 +3232,8 @@
             \begin{margintable}
             \centering
             \captionof{table}{}
-            \begin{tabular}{S[table-format=1.0]l}
+            <table>
+<tabular>{S[table-format=1.0]l}
             <thead>
             <cell><m>t</m> (years)</cell> &amp; <cell><m>Q</m> (barrels)</cell> \\
             </thead>
@@ -3416,8 +3243,9 @@
 <row><cell>3</cell>&amp;<cell></cell></row>
 <row><cell>4</cell>&amp;<cell></cell></row>
 <cell>5</cell>&amp;<cell></cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-tab-modelresource}
+            </tabular>
+</table>
+            xml:id="exp-tab-modelresource"
             \end{margintable}
 
             <exercise>
@@ -3426,7 +3254,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.0]S[table-format=4.2]}
+                  <table>
+<tabular>[t]{S[table-format=1.0]S[table-format=4.2]}
                   <thead>
                   <cell><m>t</m> (years)</cell> &amp; <cell><m>Q</m> (barrels)</cell> \\
                   </thead>
@@ -3436,7 +3265,8 @@
 <row><cell>3</cell>&amp;<cell>512.00</cell></row>
 <row><cell>4</cell>&amp;<cell>409.60</cell></row>
 <cell>5</cell>&amp;<cell>327.68</cell>\<tfoot/>
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
 
@@ -3782,7 +3612,7 @@
               </latex-image-code>
             </image>
             \captionof{figure}{US population}
-            \label{exp-fig-uspopulation}
+            xml:id="exp-fig-uspopulation"
             \end{minipage}
             \hfill
             \begin{minipage}{\figurewidth}
@@ -3803,7 +3633,7 @@
               </latex-image-code>
             </image>
             \captionof{figure}{China population}
-            \label{exp-fig-chinapopulation}
+            xml:id="exp-fig-chinapopulation"
             \end{minipage}
             \end{widepage}
             \end{figure}
@@ -4324,7 +4154,8 @@
             \begin{margintable}
             \centering
             <caption></caption>
-            \begin{tabular}{S[table-format=8.0]S[table-format=1.8]}
+            <table>
+<tabular>{S[table-format=8.0]S[table-format=1.8]}
             <thead>
             <cell><m>n</m></cell> &amp; <cell><m>\dd\left( 1+\frac{1</cell>{n} \right)^n</m>} \\</thead>
 <row><cell>1</cell>&amp;<cell>2</cell></row>
@@ -4334,8 +4165,9 @@
 <row><cell>8760</cell>&amp;<cell>2.71812669</cell></row>
 <row><cell>525600</cell>&amp;<cell>2.71827922</cell></row>
 <cell>31536000</cell>&amp;<cell>2.71828247</cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-tab-wheelfortune}
+            </tabular>
+</table>
+            xml:id="exp-tab-wheelfortune"
             \end{margintable}
 
             We can see that through the fifth digit after the decimal point the 
@@ -4362,7 +4194,7 @@
             that would be in your giga-millions account at the end of year one 
             would be <m>e</m> dollars where <m>e\approx 2.71828</m>.
 
-            \begin{pccdefinition}[The number <m>e</m>]\label{exp-def-e}
+            \begin{pccdefinition}[The number <m>e</m>]xml:id="exp-def-e"
             The number <m>e</m> is called Euler's number named after the famous
             Swiss mathematician Leonhard Euler (1707-1783). It is also called 
             the natural base of an exponential function.
@@ -4377,7 +4209,7 @@
             We can use the natural base, <m>e</m>, to model real life situations that involve 
             <em>continuous</em> growth and decay. The following definition will guide us 
             in what follows.
-            \begin{pccdefinition}[Continuous growth and decay]\label{exp-def-contgrowthdecay}
+            \begin{pccdefinition}[Continuous growth and decay]xml:id="exp-def-contgrowthdecay"
             If we are modeling a situation that involves continuous growth or decay, then 
             the model will have the following form:
             \[
@@ -4395,7 +4227,7 @@
             <author>Hughes</author>
             <date>  April 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-compcont}
+            \begin{pccexample}xml:id="exp-ex-compcont"
             We have \$7000 to invest in an account that has a nominal interest rate of \SI{3}{\percent} compounded 
             {\em continuously}. 
             <ol>
@@ -4458,7 +4290,7 @@
             <author>Hughes</author>
             <date>  July 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-prob-compound5all}%
+            \begin{pccexample}xml:id="exp-prob-compound5all"%
             You have \<m>2000 to invest in an interest-bearing account that has a nominal interest rate of </m>\SI{5}{\percent}$.
             <ol>
               <li> Calculate the effective annual growth rates if the interest is compounded daily and if the interest is compounded continuously.  </li>
@@ -4624,7 +4456,7 @@
               </latex-image-code>
             </image>
             \captionof{figure}{<m>f(x)=2^x</m>}
-            \label{exp-fig-eusingslopes2}
+            xml:id="exp-fig-eusingslopes2"
             \end{minipage}%
             \hfill
             \begin{minipage}{\figurewidth}
@@ -4646,7 +4478,7 @@
               </latex-image-code>
             </image>
             \captionof{figure}{<m>g(x)=e^x</m>}
-            \label{exp-fig-eusingslopese}
+            xml:id="exp-fig-eusingslopese"
             \end{minipage}%
             \hfill
             \begin{minipage}{\figurewidth}
@@ -4668,7 +4500,7 @@
               </latex-image-code>
             </image>
             \captionof{figure}{<m>h(x)=3^x</m>}
-            \label{exp-fig-eusingslopes3}
+            xml:id="exp-fig-eusingslopes3"
             \end{minipage}
             \end{widepage}
             \end{figure}
@@ -5235,7 +5067,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.1]S[table-format=2.3]} 
+                  <table>
+<tabular>[t]{S[table-format=1.1]S[table-format=2.3]} 
                   <thead>
                   <cell><m>t</m></cell>            &amp; <cell><m>V(t)</m></cell>       \\
                   <cell>(\si{\second</cell>)} &amp; <cell>(\si{\volt</cell>)} \\
@@ -5246,7 +5079,8 @@
 <cell>0.3</cell>&amp;<cell>0.498</cell>\\  \normalline
 <cell>0.4</cell>&amp;<cell>0.183</cell>\\  \normalline
 <cell>0.5</cell>&amp;<cell>0.067</cell>\\  \lastline
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
             </exercise>
@@ -5341,7 +5175,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.1]S[table-format=1.3]} 
+                  <table>
+<tabular>[t]{S[table-format=1.1]S[table-format=1.3]} 
                   <thead>
                   <cell><m>t</m></cell>            &amp; <cell><m>V(t)</m></cell>       \\
                   <cell>(\si{\second</cell>)} &amp; <cell>(\si{\volt</cell>)} \\
@@ -5352,7 +5187,8 @@
 <cell>0.3</cell>&amp;<cell>9.502</cell>\\  \normalline
 <cell>0.4</cell>&amp;<cell>9.817</cell>\\  \normalline
 <cell>0.5</cell>&amp;<cell>9.933</cell>\\  \lastline
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
             </exercise>
@@ -5527,7 +5363,8 @@
               </statement>
               <solution>
                 <p>
-                  \begin{tabular}[t]{S[table-format=1.0]S[table-format=1.5]}
+                  <table>
+<tabular>[t]{S[table-format=1.0]S[table-format=1.5]}
                   <thead>
                   <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\
                   </thead>
@@ -5538,7 +5375,8 @@
 <row><cell>1</cell>&amp;<cell>2.71828</cell></row>
 <row><cell>2</cell>&amp;<cell>7.38906</cell></row>
 <cell>3</cell>&amp;<cell>20.0855</cell>\<tfoot/>
-                  \end{tabular}
+                  </tabular>
+</table>
                 </p>
               </solution>
             </exercise>
@@ -5650,7 +5488,7 @@
               </latex-image-code>
             </image>
             <caption>Graph for <xref ref="exp-prob-matche23"/></caption>
-            \label{exp-fig-matche23}
+            xml:id="exp-fig-matche23"
             \end{minipage}%
             \hfill
             \begin{minipage}{.45\textwidth}
@@ -5673,7 +5511,7 @@
               </latex-image-code>
             </image>
             <caption>Graph for <xref ref="exp-prob-matchehalfthird"/></caption>
-            \label{exp-fig-matchehalfthird}
+            xml:id="exp-fig-matchehalfthird"
             \end{minipage}%
             \end{widepage}
             \end{figure}
@@ -5722,8 +5560,9 @@
             \begin{minipage}{.25\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-factorial}
-            \begin{tabular}{S[table-format=1.0]l}
+            xml:id="exp-tab-factorial"
+            <table>
+<tabular>{S[table-format=1.0]l}
             <thead>
             <cell><m>k</m></cell> &amp; <cell><m>k!</m></cell>                         \\</thead>
 <row><cell>0</cell>&amp; <m>1</m>                                    </row>
@@ -5733,21 +5572,24 @@
 <row><cell>4</cell>&amp; <m>4\cdot 3\cdot 2\cdot 1</m>               </row>
 <row><cell>5</cell>&amp; <m>5\cdot 4\cdot 3\cdot 2\cdot 1</m>        </row>
 <cell>6</cell>&amp; <m>6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1</m> \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}%
             \begin{minipage}{.75\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-factoriale}
+            xml:id="exp-tab-factoriale"
             \renewcommand{\arraystretch}{2}
-            \begin{tabular}{ll}
+            <table>
+<tabular>{ll}
             <thead>
             <cell>Exact value</cell>                                                                                                     &amp; <cell>Decimal value</cell> \\</thead>
 <row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}</m>                                        &amp;                         </row>
 <row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}</m>                           &amp;                         </row>
 <row>            <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}</m>              &amp;                         </row>
             <m>\dd\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}</m> &amp;                         \<tfoot/>  
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}%
             \end{widepage}
             \end{table}
@@ -5757,14 +5599,16 @@
             What do you observe?
             <solution>
               <p>
-                \begin{tabular}[t]{ll}
+                <table>
+<tabular>[t]{ll}
                 <thead>
                 <cell>Exact value</cell>                                                                                                                                         &amp; <cell>Decimal value (to 5 d.p)</cell> \\</thead>
 <row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}</m>                                                    &amp; <m>2.71667</m>                          </row>
 <row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}</m>                                   &amp; <m>2.71806</m>                          </row>
 <row>                <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}</m>                  &amp; <m>2.71825</m>                          </row>
                 <m>\dd\sfrac{1}{0!}+\sfrac{1}{1!}+\sfrac{1}{2!}+\sfrac{1}{3!}+\sfrac{1}{4!}+\sfrac{1}{5!}+\sfrac{1}{6!}+\sfrac{1}{7!}+\sfrac{1}{8!}</m> &amp; <m>2.71828</m>                          \<tfoot/>  
-                \end{tabular}
+                </tabular>
+</table>
 
                 We observe that as we add more terms, the decimal value appears to approach <m>e</m>.
               </p>
@@ -5982,8 +5826,9 @@
             \null \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-lineardata}
-            \begin{tabular}{S[table-format=4.0]S[table-format=2.0]}
+            <caption></caption> xml:id="exp-tab-lineardata"
+            <table>
+<tabular>{S[table-format=4.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>2005</cell>&amp;<cell>40</cell></row>
@@ -5992,13 +5837,15 @@
 <row><cell>2008</cell>&amp;<cell>58</cell></row>
 <row><cell>2009</cell>&amp;<cell>64</cell></row>
 <cell>2010</cell>&amp;<cell>70</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-expdata}
-            \begin{tabular}{S[table-format=2.0]S[table-format=1.2]}
+            <caption></caption> xml:id="exp-tab-expdata"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=1.2]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>42</cell>&amp;<cell>1.7</cell></row>
@@ -6007,13 +5854,15 @@
 <row><cell>45</cell>&amp;<cell>2.31</cell></row>
 <row><cell>46</cell>&amp;<cell>2.53</cell></row>
 <cell>47</cell>&amp;<cell>2.72</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-neitherdata}
-            \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
+            <caption></caption>xml:id="exp-tab-neitherdata"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=3.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -6023,7 +5872,8 @@
 <row><cell>9</cell>&amp;<cell>341</cell></row>
 <row><cell>12</cell>&amp;<cell>340</cell></row>
 <cell>15</cell>&amp;<cell>330</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \end{table}
@@ -6064,8 +5914,9 @@
             \centering
             \begin{minipage}{0.2\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-dataexample1}
-            \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
+            <caption></caption> xml:id="exp-tab-dataexample1"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>-7</cell>&amp;<cell>30</cell></row>
@@ -6074,13 +5925,15 @@
 <row><cell>5</cell>&amp;<cell>3</cell></row>
 <row><cell>9</cell>&amp;<cell>-6</cell></row>
 <cell>13</cell>&amp;<cell>-15</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-dataexample2}
-            \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
+            <caption></caption> xml:id="exp-tab-dataexample2"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=3.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>22</cell>&amp;<cell>3.5</cell></row>
@@ -6089,13 +5942,15 @@
 <row><cell>40</cell>&amp;<cell>28</cell></row>
 <row><cell>46</cell>&amp;<cell>56</cell></row>
 <cell>52</cell>&amp;<cell>112</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-dataexample3}
-            \begin{tabular}{S[table-format=1.0]S[table-format=1.7]}
+            <caption></caption>xml:id="exp-tab-dataexample3"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=1.7]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -6105,13 +5960,15 @@
 <row><cell>-2</cell>&amp;<cell>1.125</cell></row>
 <row><cell>0</cell>&amp;<cell>0.28125</cell></row>
 <cell>2</cell>&amp;<cell>0.0703125</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill 
             \begin{minipage}{0.2\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-dataexample4}
-            \begin{tabular}{S[table-format=2.0]S[table-format=2.0]}
+            <caption></caption> xml:id="exp-tab-dataexample4"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -6121,7 +5978,8 @@
 <row><cell>0</cell>&amp;<cell>-8</cell></row>
 <row><cell>5</cell>&amp;<cell>-13</cell></row>
 <cell>10</cell>&amp;<cell>-18</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \end{table}
             If the data is truly exponential, then when the input values change at a steady pace, the 
@@ -6154,8 +6012,9 @@
             Is the data in \cref{exp-tab-dataexample5} better modeled with a linear function or an exponential function?
             \begin{table}[!htb]
             \centering
-            \captionof{table}{} \label{exp-tab-dataexample5}
-            \begin{tabular}{S[table-format=2.0]S[table-format=2.2]}
+            \captionof{table}{} xml:id="exp-tab-dataexample5"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=2.2]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\</thead>
 <row><cell>10</cell>&amp;<cell>8</cell></row>
@@ -6163,7 +6022,8 @@
 <row><cell>12</cell>&amp;<cell>16.02</cell></row>
 <row><cell>13</cell>&amp;<cell>20</cell></row>
 <cell>14</cell>&amp;<cell>24</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{table}
             \begin{pccsolution}
             Let's compute the successive differences and the successive ratios:
@@ -6202,8 +6062,9 @@
             \null\hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-dataexample55}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
+            <caption></caption>xml:id="exp-tab-dataexample55"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>1</cell>&amp;<cell>2</cell></row>
@@ -6212,14 +6073,16 @@
 <row><cell>4</cell>&amp;<cell>8</cell></row>
 <row><cell>5</cell>&amp;<cell>10</cell></row>
 <cell>6</cell>&amp;<cell>12</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \centering
             \begin{minipage}{0.20\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-dataexample6}
-            \begin{tabular}{S[table-format=4.0]S[table-format=3.0]}
+            <caption></caption> xml:id="exp-tab-dataexample6"
+            <table>
+<tabular>{S[table-format=4.0]S[table-format=3.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>2005</cell>&amp;<cell>1</cell></row>
@@ -6228,13 +6091,15 @@
 <row><cell>2008</cell>&amp;<cell>27</cell></row>
 <row><cell>2009</cell>&amp;<cell>81</cell></row>
 <cell>2010</cell>&amp;<cell>243</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            <caption></caption> \label{exp-tab-dataexample7}
-            \begin{tabular}{S[table-format=4.0]S[table-format=2.3]}
+            <caption></caption> xml:id="exp-tab-dataexample7"
+            <table>
+<tabular>{S[table-format=4.0]S[table-format=2.3]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\</thead>
 <row><cell>1950</cell>&amp;<cell>17.3</cell></row>
@@ -6243,13 +6108,15 @@
 <row><cell>1980</cell>&amp;<cell>24.1</cell></row>
 <row><cell>1990</cell>&amp;<cell>26.4</cell></row>
 <cell>2000</cell>&amp;<cell>28.7</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.20\textwidth}
             \centering
-            <caption></caption>\label{exp-tab-dataexample8}
-            \begin{tabular}{S[table-format=2.0]S[table-format=3.0]}
+            <caption></caption>xml:id="exp-tab-dataexample8"
+            <table>
+<tabular>{S[table-format=2.0]S[table-format=3.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -6259,7 +6126,8 @@
 <row><cell>12</cell>&amp;<cell>425</cell></row>
 <row><cell>16</cell>&amp;<cell>391</cell></row>
 <cell>20</cell>&amp;<cell>360</cell>\<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill\null
             \end{table}
@@ -6282,7 +6150,8 @@
             \begin{minipage}[b]{.3\textwidth}
             \centering
             \captionof{table}{US C\ae{}sarian Section Data}
-            \begin{tabular}{S[table-format=4.0]S[table-format=2.1]}
+            <table>
+<tabular>{S[table-format=4.0]S[table-format=2.1]}
             <thead>
             <cell>Year</cell> &amp; <cell>C-sections (\%)</cell> \\
             </thead>
@@ -6293,8 +6162,9 @@
 <row><cell>2004</cell>&amp;<cell>27.9</cell></row>
 <row><cell>2006</cell>&amp;<cell>30.0</cell></row>
 <cell>2008</cell>&amp;<cell>32.2</cell>\<tfoot/>
-            \end{tabular}
-            \label{exp-ex-Csection}
+            </tabular>
+</table>
+            xml:id="exp-ex-Csection"
             \end{minipage}
             \hfill
             \begin{minipage}{.3\textwidth}
@@ -6315,7 +6185,7 @@
               </latex-image-code>
             </image>
             <caption>US C\ae{</caption>sarian section data}
-            \label{exp-fig-Csections}
+            xml:id="exp-fig-Csections"
             \end{minipage}%
             \hfill\mbox{}
             \end{figure}
@@ -6328,8 +6198,9 @@
             \begin{table}[!htb]
             \centering
             \captionof{table}{US C\ae{}sarian Section Data}
-            \label{exp-ex-CsectionSuccessive}
-            \begin{tabular}{S[table-format=1.1]l}
+            xml:id="exp-ex-CsectionSuccessive"
+            <table>
+<tabular>{S[table-format=1.1]l}
             <thead>
             <cell>Differences</cell> &amp; <cell>Ratios</cell> \\
             </thead>
@@ -6339,7 +6210,8 @@
             1.9                   &amp; <m>1.073\ldots</m>    \nl
             2.1                   &amp; <m>1.075\ldots</m>    \nl
             2.2                   &amp; <m>1.073\ldots</m>    \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{table}
             \end{pccsolution}
 
@@ -6396,7 +6268,7 @@
               </latex-image-code>
             </image>
             <caption>US C\ae{</caption>sarian section model}
-            \label{exp-fig-CsectionsModel}
+            xml:id="exp-fig-CsectionsModel"
             \end{figure}
 
             We have so far modeled data using exponential and linear functions; this
@@ -6407,7 +6279,7 @@
             <author>Hughes</author>
             <date>  Dec 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-complinexp}
+            \begin{pccexample}xml:id="exp-ex-complinexp"
             Consider the functions <m>f</m> and <m>g</m> that have formulas
             \[
             f(x)=4x+1, \qquad g(x)=4^x
@@ -6456,7 +6328,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-comparelinexp}
+            xml:id="exp-fig-comparelinexp"
             \end{minipage}
             \hfill
             \begin{minipage}{0.3\textwidth}
@@ -6481,7 +6353,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-comparelinexpmn}
+            xml:id="exp-fig-comparelinexpmn"
             \end{minipage}
             \hfill\null
             \end{figure}
@@ -6630,7 +6502,7 @@
               </latex-image-code>
             </image>
             <caption>Wind power.</caption>
-            \label{exp-fig-windpower}
+            xml:id="exp-fig-windpower"
             \end{figure}
 
             <exercise>
@@ -6688,8 +6560,9 @@
             \begin{table}[!htb]
             \centering
             \captionof{table}{Human Population of Africa}
-            \label{exp-tab-AfricaPopulation}
-            \begin{tabular}{S[table-format=4.0]S[table-format=3.1]}
+            xml:id="exp-tab-AfricaPopulation"
+            <table>
+<tabular>{S[table-format=4.0]S[table-format=3.1]}
             <thead>
             <cell>Year</cell> &amp; <cell>Millions</cell> \\
             </thead>
@@ -6704,7 +6577,8 @@
             2007           &amp; 964.7              \nl
             2008           &amp; 987.1              \nl
             2009           &amp; 1009.9             \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{table}
 
             <exercise>
@@ -6779,7 +6653,8 @@
                 <p>
                   Answers will vary as models vary.  Using the model <m>P(t)=819.7(1.023530)^t</m>:\\
 
-                  \begin{tabular}{S[table-format=4.0]S[table-format=4.1]S[table-format=4.1]}
+                  <table>
+<tabular>{S[table-format=4.0]S[table-format=4.1]S[table-format=4.1]}
                   <thead>
                   <cell>Year</cell> &amp; <cell>Actual</cell> &amp; <cell>Model</cell> \\
                   </thead>
@@ -6794,7 +6669,8 @@
                   2007           &amp; 964.7            &amp; 964.7           \nl
                   2008           &amp; 987.1            &amp; 987.4           \nl
                   2009           &amp; 1009.9           &amp; 1010.6          \<tfoot/>
-                  \end{tabular}
+                  </tabular>
+</table>
 
                   The model seems quite accurate.
                 </p>
@@ -7107,8 +6983,9 @@
             \begin{minipage}{0.2\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-findformula1}
-            \begin{tabular}{S[table-format=1.0]S[table-format=1.1]}
+            xml:id="exp-tab-findformula1"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=1.1]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>f(x)</m></cell> \\
             </thead>
@@ -7117,14 +6994,16 @@
             1             &amp; -1.5             \nl
             2             &amp; 0.0              \nl
             3             &amp; 1.5              \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-findformula2}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
+            xml:id="exp-tab-findformula2"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>g(x)</m></cell> \\
             </thead>
@@ -7133,14 +7012,16 @@
             1             &amp; 4                \nl
             2             &amp; 1                \nl
             3             &amp; \sfrac{1}{4}  \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-findformula3}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.3]}
+            xml:id="exp-tab-findformula3"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.3]}
             <thead>
             <cell>x</cell> &amp; <cell>h(x)</cell> \\
             </thead>
@@ -7149,14 +7030,16 @@
             1           &amp; 4.500          \nl
             2           &amp; 6.750          \nl
             3           &amp; 10.125         \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.2\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-findformula4}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
+            xml:id="exp-tab-findformula4"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>k(x)</m></cell> \\
             </thead>
@@ -7165,7 +7048,8 @@
             1             &amp; 12               \nl
             2             &amp; 8                \nl
             3             &amp; 4                \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \vspace{0.5cm}
             \\
@@ -7173,8 +7057,9 @@
             \begin{minipage}{0.25\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-dataproblem1}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.2]}
+            xml:id="exp-tab-dataproblem1"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.2]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -7183,14 +7068,16 @@
             6             &amp; 8.86          \nl
             7             &amp; 9.74          \nl
             8             &amp; 10.72         \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-dataproblem2}
-            \begin{tabular}{S[table-format=1.0]S[table-format=1.2]}
+            xml:id="exp-tab-dataproblem2"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=1.2]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -7199,14 +7086,16 @@
             4             &amp; 6.52          \nl
             5             &amp; 7.63          \nl
             6             &amp; 8.75          \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \begin{minipage}{0.25\textwidth}
             \centering
             <caption></caption>
-            \label{exp-tab-dataproblem3}
-            \begin{tabular}{S[table-format=1.0]S[table-format=2.0]}
+            xml:id="exp-tab-dataproblem3"
+            <table>
+<tabular>{S[table-format=1.0]S[table-format=2.0]}
             <thead>
             <cell><m>x</m></cell> &amp; <cell><m>y</m></cell> \\
             </thead>
@@ -7215,7 +7104,8 @@
             7             &amp; 42            \nl
             8             &amp; 56            \nl
             9             &amp; 72            \<tfoot/>
-            \end{tabular}
+            </tabular>
+</table>
             \end{minipage}
             \hfill
             \null
@@ -7549,7 +7439,8 @@
 
             <solution>
               <p>
-                \begin{tabular}[t]{S[table-format=1.0]S[table-format=2.0]l}
+                <table>
+<tabular>[t]{S[table-format=1.0]S[table-format=2.0]l}
                 <thead>
                 <cell><m>t</m></cell> &amp; <cell><m>F(t)</m></cell> &amp; <cell>successive ratio</cell> \\
                 </thead>
@@ -7562,7 +7453,8 @@
                 6             &amp; 21               &amp; <m>1.5</m>                      \nl
                 7             &amp; 31               &amp; <m>1.48\ldots</m>               \nl
                 8             &amp; 47               &amp; <m>1.52\ldots</m>               \<tfoot/>
-                \end{tabular}
+                </tabular>
+</table>
 
                 The successive ratios are fairly close to <m>1.5</m>, although there is some variation.  This suggests that an exponential model might be appropriate with a base of <m>1.5</m>.
 
@@ -7638,7 +7530,7 @@
               </latex-image-code>
             </image>
             <caption><m>f</m> and <m>n</m></caption>
-            \label{exp-fig-complinexpfn}
+            xml:id="exp-fig-complinexpfn"
             \end{minipage}
             \hfill
             \begin{minipage}{0.3\textwidth}
@@ -7663,7 +7555,7 @@
               </latex-image-code>
             </image>
             <caption><m>g</m> and <m>m</m></caption>
-            \label{exp-fig-complinexpgm}
+            xml:id="exp-fig-complinexpgm"
             \end{minipage}
             \hfill\null
             \end{widepage}
@@ -7728,7 +7620,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp1}
+            xml:id="exp-fig-matchlinexp1"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7747,7 +7639,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp2}
+            xml:id="exp-fig-matchlinexp2"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7766,7 +7658,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp3}
+            xml:id="exp-fig-matchlinexp3"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7785,7 +7677,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp4}
+            xml:id="exp-fig-matchlinexp4"
             \end{subfigure}\\
             \vspace{0.5cm}
             \begin{subfigure}{.2\textwidth}
@@ -7804,7 +7696,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp5}
+            xml:id="exp-fig-matchlinexp5"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7823,7 +7715,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp6}
+            xml:id="exp-fig-matchlinexp6"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7842,7 +7734,7 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp7}
+            xml:id="exp-fig-matchlinexp7"
             \end{subfigure}
             \hfill
             \begin{subfigure}{.2\textwidth}
@@ -7861,10 +7753,10 @@
               </latex-image-code>
             </image>
             <caption></caption>
-            \label{exp-fig-matchlinexp8}
+            xml:id="exp-fig-matchlinexp8"
             \end{subfigure}
             <caption></caption>
-            \label{exp-fig-matchlinexp}
+            xml:id="exp-fig-matchlinexp"
             \end{widepage}
             \end{figure}
             \end{exercises}
@@ -7888,7 +7780,7 @@
             increasing population encounters limitations on food and other resources that will prevent it from growing 
             without bound.  The Logistic Model takes resource limitations into account.
 
-            \begin{pccdefinition}[The Logistic Model]\label{exp-def-logistic}
+            \begin{pccdefinition}[The Logistic Model]xml:id="exp-def-logistic"
             According to the Logistic Model, the population, <m>P(t)</m>, <m>t</m> years after the population started its logistic growth is 
             given by the formula
             \[
@@ -7908,7 +7800,7 @@
             <author>Hughes</author>
             <date>  May 2011</date>
             %===================================
-            \begin{pccexample}\label{exp-ex-logistic}
+            \begin{pccexample}xml:id="exp-ex-logistic"
             Let <m>P(t)</m> represent the population of a country at time <m>t</m> (in years) since 2000.
             Use \cref{exp-def-logistic}, with <m>k=0.08</m> and <m>M=1000</m>, to study the effect 
             of changing <m>P_0</m> from 100 to 1400. What happens to <m>P</m> as <m>t\to\infty</m>?
@@ -7956,7 +7848,7 @@
               </latex-image-code>
             </image>
             <caption><m>\dd P(t)=\frac{1000}{1+9e^{-0.08t}}</m></caption>
-            \label{exp-fig-logistics1}
+            xml:id="exp-fig-logistics1"
             \end{minipage}
             \hfill
             \begin{minipage}{.4\textwidth}
@@ -7982,7 +7874,7 @@
               </latex-image-code>
             </image>
             <caption><m>\dd P(t)= \frac{7000}{7-2e^{-0.08t}}</m></caption>
-            \label{exp-fig-logistics2}
+            xml:id="exp-fig-logistics2"
             \end{minipage}
             \end{figure}
 

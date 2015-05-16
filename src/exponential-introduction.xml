@@ -1992,6 +1992,205 @@
           <caption><m>y=m(x)</m></caption>
         </figure>
       </sidebyside>
+      <exercise xml:id="exp-prob-exponentialtables">
+        <statement>
+          For each of the functions implied by the data in <xref ref="exp-tab-expfunctiong" autoname="plural"/>
+          through <xref ref="exp-tab-expfunctionk" autoname="no"/>, 
+          determine whether or not the function is exponential.  If it is, determine the base <m>b</m> of the function. 
+        </statement>
+        <solution>
+          <p>
+            The function tabulated in <xref ref="exp-tab-expfunctiong"/> is exponential, and <m>g(x)=3^x</m>.  
+            The function tabulated in <xref ref="exp-tab-expfunctionh"/> is exponential, and 
+            <m>h(x)=\sqrt[3]{25}\cdot(\sqrt[3]{5})^x</m>.  
+            The function tabulated in <xref ref="exp-tab-expfunctionk"/> is not exponential.
+          </p>
+        </solution>
+      </exercise>
+      <sidebyside>
+        <table width="25%" xml:id="exp-tab-expfunctiong">
+          <caption><m>y=g(x)</m></caption>
+          <tabular>
+            <col halign="."/>
+            <col halign="."/>
+            <thead>
+              <row><cell><m>x</m></cell>  <cell><m>y</m></cell></row>
+            </thead>
+            <row><cell>1</cell><cell>3</cell></row>
+            <row><cell>2</cell><cell>9</cell></row>
+            <row><cell>3</cell><cell>27</cell></row>
+            <row><cell>4</cell><cell>81</cell></row>
+            <row><cell>5</cell><cell>243</cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+        <table xml:id="exp-tab-expfunctionh">
+          <caption><m>y=h(x)</m></caption>
+          <tabular>
+            <col halign="."/>
+            <col halign="."/>
+            <thead>
+              <row><cell><m>x</m></cell>  <cell><m>y</m></cell></row>
+            </thead>
+            <row><cell>1</cell><cell>5</cell></row>
+            <row><cell>4</cell><cell>25</cell></row>
+            <row><cell>7</cell><cell>125</cell></row>
+            <row><cell>10</cell><cell>625</cell></row>
+            <row><cell>13</cell><cell>3125</cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+        <table xml:id="exp-tab-expfunctionk">
+          <caption><m>y=k(x)</m></caption>
+          <tabular>
+            <col halign="."/>
+            <col halign="."/>
+            <thead>
+              <row><cell><m>x</m></cell>  <cell><m>y</m></cell></row>
+            </thead>
+            <row><cell>1</cell><cell>4</cell></row>
+            <row><cell>2</cell><cell>16</cell></row>
+            <row><cell>4</cell><cell>64</cell></row>
+            <row><cell>8</cell><cell>256</cell></row>
+            <row><cell>16</cell><cell>1024</cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+      </sidebyside>
+    </exercisegroup>
+    <exercisegroup>
+      <author>Hughes</author>
+      <date>  Feb 2011</date>
+      <title>True or false?</title>
+      <statement>
+        Consider the function <m>f</m> that has formula
+        <me>
+          f(x)=a\,b^x+c
+        </me>
+        where <m>a</m> and <m>c</m> are any real numbers and <m>b</m> is a positive real number not equal to <m>1</m>. Label each 
+        of the following statements as true (T) or false (F); if you believe a statement is false, 
+        provide an example that supports your answer.
+      </statement>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then <m>f</m> is an increasing function for any value of <m>a</m>.
+        </statement>
+        <solution>
+          <p>
+            False. Consider <m>f(x)=-2^x</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then <m>f</m> is a decreasing function for any value of <m>a</m>.
+        </statement>
+        <solution>
+          <p>
+            False. Consider <m>f(x)=-\left(\frac{1}{9}^{x}\right)</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then <m>f(x)\to c</m> as <m>x\to -\infty</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then <m>f(x)\to c</m> as <m>x\to\infty</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then <m>f(x)\to \infty</m> as <m>x\to \infty</m>.
+        </statement>
+        <solution>
+          <p>
+            False. Consider <m>f(x)=-8^{x}</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then <m>f(x)\to \infty</m> as <m>x\to -\infty</m>.
+        </statement>
+        <solution>
+          <p>
+            False. Consider <m>f(x)=-\left(\frac{1}{8}\right)^{x}</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=0</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then <m>\dd\lim_{x\to-\infty}f(x)=\infty</m>.
+        </statement>
+        <solution>
+          <p>
+            False. Consider <m>f(x)=8^{x}</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=\infty</m> or <m>\dd\lim_{x\to\infty}f(x)=-\infty</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>b&gt;1</m>, then the line defined by <m>y=0</m> is an asymptote of <m>f</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then the line defined by <m>y=0</m> is an asymptote of <m>f</m>.
+        </statement>
+        <solution>
+          <p>
+            True.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          If <m>0&lt;b&lt;1</m>, then the line defined by <m>x=0</m> is an asymptote of <m>f</m>.
+        </statement>
+        <solution>
+          <p>
+            False.  Consider any exponential function.  There are no vertical asymptotes.
+          </p>
+        </solution>
+      </exercise>
     </exercisegroup>
   </exercises>
 </section>
