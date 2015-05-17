@@ -65,4 +65,40 @@
     </xsl:element>
 </xsl:template>
 
+<!-- exercisegroups have numbers and titles in OMD -->
+<xsl:template match="exercisegroup">
+    <div class="exercisegroup">
+    <h5 class="heading">
+    <span class="type"><xsl:text>Exercise </xsl:text></span>
+    <span class="codenumber">
+        <xsl:number select="." from="chapter" level="any" count="exercisegroup"/>
+    </span>
+    <span class="title">
+      <xsl:text> </xsl:text>
+        <xsl:apply-templates select="title" mode="title-full" />
+    </span>
+  </h5>
+        <xsl:apply-templates select="*[not(self::title)]"/>
+    </div>
+</xsl:template>
+
+<xsl:template match="exercisegroup/exercise" mode="origin-id">
+        <xsl:number select=".." from="chapter" level="any" count="exercisegroup"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number count="exercisegroup/exercise"/>
+</xsl:template>
+
+<xsl:template match="exercisegroup/exercise" mode="number">
+        <xsl:number select=".." from="chapter" level="any" count="exercisegroup"/>
+  <xsl:text>.</xsl:text>
+  <xsl:number count="exercisegroup/exercise"/>
+</xsl:template>
+
+<xsl:template match="exercisegroup" mode="number">
+        <xsl:number select=".." from="chapter" level="any" count="exercisegroup"/>
+</xsl:template>
+
+<!-- We kill the statement, title, date, author exercises and for the exercisegroups    -->
+<xsl:template match="exercisegroup//statement|exercisegroup/title|date|author" mode="backmatter" />
+
 </xsl:stylesheet>

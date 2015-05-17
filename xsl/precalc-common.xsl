@@ -10,14 +10,8 @@
 <xsl:param name="exercise.backmatter.statement" select="'no'" />
 
 <!-- empty tag for authors and dates -->
-<xsl:template match="example/author"/>
-<xsl:template match="example/date"/>
-<xsl:template match="exercisegroup/author"/>
-<xsl:template match="exercisegroup/date"/>
-<xsl:template match="exercise/author"/>
-<xsl:template match="exercise/date"/>
+<xsl:template match="author[not(ancestor::docinfo)]"/>
+<xsl:template match="date[not(ancestor::docinfo)]"/>
 <xsl:template match="ignore" />
-
-
 
 </xsl:stylesheet>
