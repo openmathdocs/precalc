@@ -30,6 +30,16 @@
     <xsl:text>&#x22ee;</xsl:text>
 </xsl:template>
 
+<!-- em dash -->
+<xsl:template match="em-dash">
+    <xsl:text>&#8212;</xsl:text>
+</xsl:template>
+
+<!-- thead -->
+<xsl:template match="thead">
+  <xsl:apply-templates />
+</xsl:template>
+
 <!-- Outcomes are an unordered type of list -->
 <xsl:template match="outcomes">
   <xsl:element name="em">

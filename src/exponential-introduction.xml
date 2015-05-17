@@ -3,9 +3,7 @@
     to get images:
         ./script/mbx -vv -c latex-image -f svg -d ~/Documents/projects/openmathdocs/precalc/src/images/ ~/Documents/projects/openmathdocs/precalc/src/precalc.xml
     to do: nth tag
-           em dash
            the \num issue
-           exercise/solution in html
 -->
 <section>
   <title>Introduction</title>
@@ -140,7 +138,7 @@
       <me>
         p = 2^{d}
       </me>
-      where <m>d</m> is a positive integer. This is our first example of an exponential function -- exploring 
+      where <m>d</m> is a positive integer. This is our first example of an exponential function<em-dash/>exploring 
       these types of functions is our primary goal in this chapter.</p>
   </example>
   <definition>
@@ -241,7 +239,7 @@
       <me>
         g(17)=\num{129 140 163}
       </me>
-      and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square -- wow!</p>
+      and says that there are (or would be, if they could fit) \num{129 140 163} grains of rice on the \nth{17} square<em-dash/>wow!</p>
     <p> Of course, the Queen knows that this formula only works when <m>x</m> takes the 
       integer values <m>\{1,2,\ldots,64\}</m>, but wonders what would happen if 
       she graphed <m>g</m> on her calculator (which she always has with her for just 
@@ -260,14 +258,13 @@
     </exercise>
   </exercises>
   <p>We have so far seen two exponential functions, <m>p</m> and <m>g</m>, both of which increase 
-    at a faster and faster rate. You may wonder if all exponential functions behave in this way --
-    the next example demonstrates that they do not.</p>
+    at a faster and faster rate. You may wonder if all exponential functions behave in this way<em-dash/>the next example demonstrates that they do not.</p>
   <example>
     <author>Hughes</author>
     <date>Feb 2011</date>
     <title>Folding paper</title>
     <p>Have you ever tried to fold a piece of paper in half more than 7 times? No matter the size 
-      of the paper, it becomes quite difficult -- the MythBusters tried quite an elaborate experiment 
+      of the paper, it becomes quite difficult<em-dash/>the MythBusters tried quite an elaborate experiment 
       along these lines. <fn><url href="http://www.youtube.com/watch?v=kRAEBbotuIE"/></fn> </p>
     <p>We are going to experiment with paper folding and study the mathematics behind the results.
       The area of a <q>letter</q> sheet of paper is <quantity><mag>8.5</mag><unit base="inch"/></quantity> by 
@@ -1386,23 +1383,23 @@
       </exercise>
       <exercise>
         <statement>
-          You are at a restaurant and receive the check for \$26. You tip <quantity><mag>15</mag><unit base="percent"/></quantity>. How 
+          You are at a restaurant and receive the check for <dollar/>26. You tip <quantity><mag>15</mag><unit base="percent"/></quantity>. How 
           much is the total bill?
         </statement>
         <solution>
           <p>
-            <m>(1.15)\cdot 26=29.90</m>. The total bill is \$29.90.
+            <m>(1.15)\cdot 26=29.90</m>. The total bill is <dollar/>29.90.
           </p>
         </solution>
       </exercise>
       <exercise>
         <statement>
-          You are working in a sales job and manage to secure a client worth \$100,000. You get a 
+          You are working in a sales job and manage to secure a client worth <dollar/>100,000. You get a 
           <quantity><mag>1</mag><unit base="percent"/></quantity> commission, of which your supervisor gets <quantity><mag>50</mag><unit base="percent"/></quantity>. How much do you get?
         </statement>
         <solution>
           <p>
-            <m>0.01\cdot 100,000 \cdot 0.5 = 500</m>. You get \$500.
+            <m>0.01\cdot 100,000 \cdot 0.5 = 500</m>. You get <dollar/>500.
           </p>
         </solution>
       </exercise>
@@ -1436,7 +1433,7 @@
       </exercise>
       <exercise>
         <statement>
-          <m>\dd y=2\cdot \left(\sfrac{3}{4}\right)^x</m>
+          <m>\displaystyle y=2\cdot \left(\sfrac{3}{4}\right)^x</m>
         </statement>
         <solution>
           <p>
@@ -1474,7 +1471,7 @@
       </exercise>
       <exercise>
         <statement>
-          A fire department is losing <quantity><mag>6</mag><unit base="percent"/></quantity> of its annual funding with each passing year, where they had \$10,500 in annual funding when the station opened. 
+          A fire department is losing <quantity><mag>6</mag><unit base="percent"/></quantity> of its annual funding with each passing year, where they had <dollar/>10,500 in annual funding when the station opened. 
         </statement>
         <solution>
           <p>
@@ -1726,10 +1723,10 @@
         </statement>
         <solution>
           <p>
-            <xref ref="exp-fig-matchexpsbaselt12"/> shows <m>\dd F(x)=\left(\frac{1}{3}\right)^x-1</m>.
-            <xref ref="exp-fig-matchexpsbaselt14"/> shows <m>\dd G(x)=-\left(\frac{1}{4}\right)^x-3</m>.
-            <xref ref="exp-fig-matchexpsbaselt13"/> shows <m>\dd H(x)=-\left(\frac{1}{5}\right)^x+2</m>.
-            <xref ref="exp-fig-matchexpsbaselt11"/> shows <m>\dd J(x)=\left(\frac{1}{2}\right)^x+1</m>.
+            <xref ref="exp-fig-matchexpsbaselt12"/> shows <m>\displaystyle F(x)=\left(\frac{1}{3}\right)^x-1</m>.
+            <xref ref="exp-fig-matchexpsbaselt14"/> shows <m>\displaystyle G(x)=-\left(\frac{1}{4}\right)^x-3</m>.
+            <xref ref="exp-fig-matchexpsbaselt13"/> shows <m>\displaystyle H(x)=-\left(\frac{1}{5}\right)^x+2</m>.
+            <xref ref="exp-fig-matchexpsbaselt11"/> shows <m>\displaystyle J(x)=\left(\frac{1}{2}\right)^x+1</m>.
           </p>
         </solution>
       </exercise>
@@ -1829,9 +1826,9 @@
         </statement>
         <solution>
           <p>
-            <m>\dd\lim_{x\to\infty}\left(\left(\frac{1}{3}\right)^x-1\right) =  -1</m>;  <m>\dd\lim_{x\to-\infty}\left(\left(\frac{1}{3}\right)^x-1\right) = \infty</m>.\\
-            <m>\dd\lim_{x\to\infty}-\left(\left(\frac{1}{5}\right)^x+2\right)=  2</m> ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{5}\right)^x+2\right)= -\infty</m>.\\
-            <m>\dd\lim_{x\to\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)=-3</m>  ;  <m>\dd\lim_{x\to-\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)= -\infty</m>.
+            <m>\displaystyle\lim_{x\to\infty}\left(\left(\frac{1}{3}\right)^x-1\right) =  -1</m>;  <m>\displaystyle\lim_{x\to-\infty}\left(\left(\frac{1}{3}\right)^x-1\right) = \infty</m>.\\
+            <m>\displaystyle\lim_{x\to\infty}-\left(\left(\frac{1}{5}\right)^x+2\right)=  2</m> ;  <m>\displaystyle\lim_{x\to-\infty}\left(-\left(\frac{1}{5}\right)^x+2\right)= -\infty</m>.\\
+            <m>\displaystyle\lim_{x\to\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)=-3</m>  ;  <m>\displaystyle\lim_{x\to-\infty}\left(-\left(\frac{1}{4}\right)^x-3\right)= -\infty</m>.
           </p>
         </solution>
       </exercise>
@@ -2133,7 +2130,7 @@
       </exercise>
       <exercise>
         <statement>
-          If <m>0&lt;b&lt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=0</m>.
+          If <m>0&lt;b&lt;1</m>, then <m>\displaystyle\lim_{x\to\infty}f(x)=0</m>.
         </statement>
         <solution>
           <p>
@@ -2143,7 +2140,7 @@
       </exercise>
       <exercise>
         <statement>
-          If <m>b&gt;1</m>, then <m>\dd\lim_{x\to-\infty}f(x)=\infty</m>.
+          If <m>b&gt;1</m>, then <m>\displaystyle\lim_{x\to-\infty}f(x)=\infty</m>.
         </statement>
         <solution>
           <p>
@@ -2153,7 +2150,7 @@
       </exercise>
       <exercise>
         <statement>
-          If <m>b&gt;1</m>, then <m>\dd\lim_{x\to\infty}f(x)=\infty</m> or <m>\dd\lim_{x\to\infty}f(x)=-\infty</m>.
+          If <m>b&gt;1</m>, then <m>\displaystyle\lim_{x\to\infty}f(x)=\infty</m> or <m>\displaystyle\lim_{x\to\infty}f(x)=-\infty</m>.
         </statement>
         <solution>
           <p>

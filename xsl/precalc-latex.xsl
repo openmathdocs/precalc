@@ -30,6 +30,11 @@
     <xsl:text>\vdots</xsl:text>
 </xsl:template>
 
+<!-- em dash -->
+<xsl:template match="em-dash">
+    <xsl:text>---</xsl:text>
+</xsl:template>
+
 <xsl:template match="outcomes">
     <xsl:text>\begin{outcomes}&#xa;</xsl:text>
     <xsl:text>\begin{outcomelist}&#xa;</xsl:text>
