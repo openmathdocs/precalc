@@ -79,7 +79,7 @@
 <xsl:template match="exercisegroup">
     <div class="exercisegroup">
     <h5 class="heading">
-    <span class="type"><xsl:text>Exercise </xsl:text></span>
+    <span class="type"><xsl:text>Problem </xsl:text></span>
     <span class="codenumber">
         <xsl:number select="." from="chapter" level="any" count="exercisegroup"/>
     </span>

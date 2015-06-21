@@ -11,6 +11,7 @@
 
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" style="chunk">
 
+    <xi:include href="./bookinfo.xml" />
     <book xml:id="precalc">
         <xi:include href="./functions-part-1.xml" />
         <xi:include href="./exponentialfunctions.xml" />
