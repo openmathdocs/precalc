@@ -50,9 +50,11 @@
 </xsl:template>
 
 <xsl:template match="standout">
-    <xsl:text>\begin{standout}[</xsl:text>
+    <xsl:text>\begin{standout}</xsl:text>
+  <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:apply-templates select="." mode="omd-label"/>
     <xsl:apply-templates select="title"/>
-    <xsl:text>]&#xa;</xsl:text>
+    <xsl:text>&#xa;</xsl:text>
     <xsl:apply-templates select="*[not(self::title)]"/>
     <xsl:text>\end{standout}&#xa;</xsl:text>
 </xsl:template>
@@ -432,6 +434,12 @@
     <xsl:text>\begin{tryityourself}&#xa;</xsl:text>
     <xsl:apply-templates />
     <xsl:text>\end{tryityourself}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="exercises[@style='essential-skills']">
+    <xsl:text>\begin{essentialskills}&#xa;</xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>\end{essentialskills}&#xa;</xsl:text>
 </xsl:template>
 
 

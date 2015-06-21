@@ -10,6 +10,9 @@
 <chapter xml:id="chapter-exponential-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Exponential Functions</title>
     
+    <!--
     <xi:include href="./exponential-introduction.xml" />
+    -->
+    <xi:include href="./exponential-solving-equations.xml" />
 
 </chapter>
