@@ -365,7 +365,7 @@
 </xsl:template>
 
 <!-- Figures in solutions don't float -->
-<xsl:template match="figure[ancestor::mathbook[@style='chunk']][ancestor::solution]">
+<xsl:template match="figure[ancestor::mathbook[@style='chunk']][ancestor::solution and not(ancestor::example)]">
     <!-- figure in solution -->
       <xsl:apply-templates />
       <xsl:text>%&#xa;</xsl:text>
