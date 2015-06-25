@@ -9,7 +9,7 @@
     <title>Properties of exponents</title>
     Recall some of the basic rules for exponents, assuming that <m>a</m>, <m>b</m>, <m>x</m>,
     and <m>y</m> are real numbers:
-    <ol label="EI">
+    <ol label="E 1++">
       <li xml:id="exp-prop-pow"><m>a^xb^x=(ab)^x</m> </li>
       <li xml:id="exp-prop-add"><m>a^xa^y =a^{x+y}</m></li>
       <li xml:id="exp-prop-mult"><m>a^{(xy)} = (a^x)^y</m></li>
@@ -213,4 +213,678 @@
       </solution>
     </exercisegroup>
   </exercises>
-</section>
+  <example>
+    <statement>
+      Use your knowledge of exponents to solve the following 
+      equations:
+      <ol cols="2">
+        <li> <m>3^{x}=27</m></li>
+        <li> <m>2^{x^2}=16</m></li>
+      </ol>
+    </statement>
+    <solution>
+      <ol>
+        <li> We know that <m>3^3=27</m>, so <m>x=3</m>.</li>
+        \item We know that <m>2^4=16</m>, which means that 
+        <md>
+          x^2=4
+        </md>
+        The two solutions are <m>2</m> and <m>-2</m>.
+        It is left an exercise to check that both of these solutions satisfy the 
+        equation <m>2^{x^2}=16</m>.
+      </ol>
+    </solution>
+  </example>
+  <exercises style="try-it-yourself">
+    <author>Hughes</author>
+    <date>  April 2011</date>
+    <exercisegroup>
+      <statement>
+        Solve the following exponential equation. Check your solution. 
+        <me>
+          2^x=4
+        </me>
+      </statement>
+      <solution>
+        <p>
+          <m>x=2</m> (The solution is <m>2</m>.)
+        </p>
+      </solution>
+    </exercisegroup>
+  </exercises>
+  <example xml:id="exp-ex-factor">
+    <author>Hughes</author>
+    <date>  August 2011</date>
+    <statement>
+      Solve the following equation by factoring. Hint: put <m>t=3^x</m> as 
+      your first step.
+      <men xml:id="exp-eq-solvefact">
+        3^{2x}-10\cdot 3^x+9=0
+      </men>
+    </statement>
+    <solution>
+      <p>Following the hint, we substitute <m>t=3^x</m> into <xref ref="exp-eq-solvefact"/>, which gives
+        <me>
+          t^2 - 10t +9 = 0
+        </me>
+        This equation can be factored and written as <m>(t-9)(t-1)=0</m>. We therefore 
+        have to solve the equations
+        <me>
+          3^x = 9, \qquad 3^x = 1
+        </me>
+        Using our knowledge of exponents, we see that <m>x=2</m> or <m>x=0</m>. It is left 
+        an exercise to check that both of these solutions satisfy <xref ref="exp-eq-solvefact"/>. </p>
+    </solution>
+  </example>
+  <exercises style="try-it-yourself">
+    <exercisegroup>
+      <statement>
+        Solve the following equation.
+        Try putting <m>t=4^x</m> as your first step. Check your solutions.
+        <me>
+          % factor: (4^x-1)*(4^x-4)
+          4^{2x}-5\cdot 4^x-4=0
+        </me>
+      </statement>
+      <solution>
+        <p>
+          <m>x=0,2</m> (The solutions are <m>0</m>, and <m>2</m>)
+        </p>
+      </solution>
+    </exercisegroup>
+  </exercises>
+  <p>Not all equations have integer solutions; in fact in applied problems solutions are almost never integers.
+    We don't yet have the tools to find exact solutions to most exponential equations, so we
+    are going to explore techniques for approximating solutions to equations.</p>
+  <example>
+    <author>Hughes</author>
+    <date>  July 2011</date>
+    <statement>
+      Use a table of values or a graph to solve the following exponential 
+      equation
+      <me>
+        2^x = 13
+      </me>
+    </statement>
+    <solution>
+      <p> <xref ref="exp-tab-solvenoninteger"/> shows the solution is on the interval <m>[3,4]</m>; given that 13 is closer to 16 than 
+        it is to 8, we expect our solution to be closer to <m>4</m> than it is to <m>3</m>.</p>
+      <p>
+        <xref ref="exp-fig-solvenoninteger"/> shows <m>y=2^x</m> and <m>y=13</m>. The solution 
+        to the equation <m>2^x=13</m> is the <m>x</m>-coordinate of the point of intersection; using a calculator, we find
+        the <m>x</m>-coordinate is approximately <m>3.70</m>.  </p>
+      <sidebyside>
+        <table width="30%" xml:id="exp-tab-solvenoninteger">
+          <caption/>
+          <tabular>
+            <col halign="."/>
+            <col halign="."/>
+            <thead>
+              <cell><m>x</m></cell> &amp; <cell><m>2^x</m></cell>
+            </thead>
+            <row><cell>1</cell>&amp;<cell>2</cell></row>
+            <row><cell>2</cell>&amp;<cell>4</cell></row>
+            <row><cell>3</cell>&amp;<cell>8</cell></row>
+            <row><cell>4</cell>&amp;<cell>16</cell></row>
+            <tfoot/>
+          </tabular>
+        </table>
+        <figure width="40%" xml:id="exp-fig-solvenoninteger">
+          <caption><m>y=2^x</m></caption>
+          <image>
+            <latex-image-code>
+              <![CDATA[\begin{tikzpicture}
+              \begin{axis}[
+              framed,
+              xmin=-1,xmax=5,
+              ymin=-3,ymax=18,
+              xtick={1,...,4},
+              grid=both,
+              ]
+              \addplot expression[domain=-1:4]{2^x};
+              \addplot expression[domain=-1:5]{13};
+              \end{axis}
+              \end{tikzpicture}]]>
+            </latex-image-code>
+          </image>     
+        </figure>
+      </sidebyside>
+    </solution>
+  </example>
+  <exercises style="try-it-yourself">
+    <author>Hughes</author>
+    <date>  July 2011</date>
+    <exercisegroup>
+      <statement>
+        Solve the following exponential equation using either a graph 
+        or a table of values; state your solution to 2 decimal places, and check your answer. 
+        <me>
+          2^x=10
+        </me>
+      </statement>
+      <solution>
+        <p>
+          <m>x\approx 3.32</m> (The solution is approximately <m>3.32</m>.)
+        </p>
+      </solution>
+    </exercisegroup>
+  </exercises>
+  <exercises style="investigations">
+    <exercisegroup>
+      <author>Hughes/Simonds</author>
+      <date>  September 2011</date>
+      <title>To the Moon</title>
+      <statement>
+        Let <m>x</m> represent the horizontal
+        distance (in inches) that you are from your front door. Imagine that
+        for every inch that you move away from your front door,
+        your elevation above the ground <m>y</m> (in inches) magically increases
+        according to the rule <m>y=2^x</m>. 
+      </statement>
+      <exercise>
+        <statement>
+          What is your elevation above the ground when you are at a horizontal distance of <quantity><mag>1</mag><unit base="foot"/></quantity>
+          from your front door? State your answers in <quantity><unit base="foot"/></quantity>, using the fact that <quantity><mag>1</mag><unit base="foot"/></quantity> contains <quantity><mag>12</mag><unit base="inch"/></quantity>.
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{2^{12}}{12}\approx 341.33</m>; our elevation is approximately <quantity><mag>341</mag><unit base="foot"/></quantity> above the ground when 
+            we are <quantity><mag>1</mag><unit base="foot"/></quantity> from our front door.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          What is your elevation above the ground when you are at a horizontal distance of <quantity><mag>2</mag><unit base="foot"/></quantity>
+          from your front door? State your answers in <quantity><unit base="mile"/></quantity>, using the fact that <quantity><mag>1</mag><unit base="mile"/></quantity> contains <quantity><mag>63360</mag><unit base="inch"/></quantity>.
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{2^{24}}{63360}\approx 264.79</m>; our elevation is approximately <quantity><mag>264.79</mag><unit base="mile"/></quantity> above the ground when
+            we are <quantity><mag>2</mag><unit base="foot"/></quantity> from our front door.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          Given that the distance between
+          the Earth and the Moon is approximately <quantity><mag>1.595 e10</mag><unit base="inch"/></quantity><fix message="scientific notation"/>,
+          what is your horizontal distance from your front door when you reach the Moon?
+          Use a graphing calculator to help you.
+          \footnote{The distance from the Earth to the Moon (in miles) is <quantity><mag>227037</mag><unit base="mile"/></quantity>.}
+        </statement>
+        <solution>
+          <p>
+            We need to solve the equation <m>2^x=1.595\times 10^{10}</m>. Using a graphing
+            calculator, we obtain <m>x\approx 33.89</m>; we conclude that when we reach the Moon,
+            our horizontal distance from our front door is approximately <quantity><mag>34</mag><unit base="inch"/></quantity>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+  <exercises>
+    <exercisegroup cols="2">
+      <title>Algebraic manipulation</title>
+      <statement>	
+        Use properties of exponents to write each of the following formulas in the 
+        form <m>f(t)=a\,b^t</m>. Leave your answers in exact form. 
+      </statement>
+      <exercise>
+        <statement>
+          <m>f(t)=4^{t+1}\cdot 2^{3t}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              f(t) &amp; = 4^{t+1}\cdot 2^{3t}                  \\
+              &amp; = \left( 2^2 \right)^{t+1}\cdot 2^{3t} \\
+              &amp; = 2^{2t}\cdot 2^2\cdot 2^{3t}          \\
+              &amp; = 4\cdot 2^{5t}                        \\
+              &amp; = 4\cdot 32^t                          
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>f(t)=4^\frac{t+1}{2}\cdot 3^{2t}</m>. 
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{aligned}[t]
+              f(t) &amp; =  4^\frac{t+1}{2} \cdot 3^{2t}          \\
+              &amp; =  4^{\frac{1}{2}(t+1)} \cdot 3^{2t}     \\
+              &amp; =  (4^{\frac{1}{2}})^{t+1} \cdot (3^2)^t \\
+              &amp; =  2^{t+1} \cdot 9^t                     \\
+              &amp; =  2^1 \cdot 2^t \cdot 9^t               \\
+              &amp; =  2 \cdot (2 \cdot 9)^t                 \\
+              &amp; =  2 \cdot 18^t                          
+              \end{aligned}</m>
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>	
+    <exercisegroup cols="3">
+      <title>Integer solutions</title>
+      <statement>Solve each of the following exponential equations. Check your solutions.  </statement>
+      <exercise>
+        <statement>
+          <m>2^{-x}=\frac{1}{8}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=3</m> (The solution is <m>3</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>4^x=64</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=3</m> (The solution is <m>3</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>3\cdot 5^x=75</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=2</m> (The solution is <m>2</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>2^{x^2}-16=0</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=\pm 2</m> (The solutions are <m>\pm 2</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>2^{x^2-5x}=2^{-6}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=2,3</m> (The solutions are <m>2</m> and <m>3</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>7^{x^2}=49^{x}</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=2,0</m> (The solutions are <m>2</m> and <m>0</m>.)
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup cols="4">
+      <title>Non-integer solutions</title>
+      <statement>Solve each of the following exponential equations using either a graph 
+        or a table of values; state your solutions to 2 decimal places, and check your answers. 
+      </statement>
+      <exercise>
+        <statement>
+          <m>3^x=11</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 2.18</m> (The solution is approximately <m>2.18</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>4^x=29</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 2.43</m> (The solution is approximately <m>2.43</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>5^x=61</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 2.55</m> (The solution is approximately <m>2.55</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>7^x=-1</m>
+        </statement>
+        <solution>
+          <p>
+            No solution.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>-6^x = -31</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 1.92</m> (The solution is approximately <m>1.92</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>3\cdot 5^x = 7</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 0.53</m> (The solution is approximately <m>0.53</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>2^x+5 = 10</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 2.32</m> (The solution is approximately <m>2.32</m>.)
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <m>7^x=50</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x\approx 2.01</m> (The solution is approximately <m>2.01</m>.)
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+    <exercisegroup cols="3">
+      <title>Factoring</title>
+      <statement>
+        Use the technique demonstrated in <xref ref="exp-ex-factor"/> to help you solve the following 
+        equations.
+        For <xref ref="exp-prob-needfactor"/> try putting <m>t=4^x</m> as your first step. Check your solutions.
+      </statement>
+      <exercise xml:id="exp-prob-needfactor">
+        <statement>
+          <!-- factor: (4^x-1)*(4^x+3)-->
+          <m>4^{2x}+2\cdot 4^x=3</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=0</m> (The solution is <m>0</m>.) Note that there are no solutions to <m>4^x+3=0</m>.
+          </p>
+        </solution>
+      </exercise>
+      <!-- factor : (5^x-1)(5^x+1)-->
+      <exercise>
+        <statement>
+          <m>5^{2x}-1=0</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=1</m> (The solution is <m>1</m>.) Note that there are no solutions to <m>5^x=-1</m>.
+          </p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <!--  factor: 5^x*(5^x-25)*(5^x-1) -->
+          <m>125^x-26\cdot 25^x+25\cdot 5^x=0</m>
+        </statement>
+        <solution>
+          <p>
+            <m>x=0,2</m> (The solutions are <m>0</m> and <m>2</m>.) Note that there are no solutions to <m>5^x=0</m>.
+          </p>
+        </solution>
+      </exercise>
+    </exercisegroup>
+  <exercisegroup xml:id="exp-prob-matcheqns">
+    <author>Hughes</author>
+    <date>  February 2012</date>
+    <title>Matching graphs to equations</title>
+    <statement>
+      <omdname>Jake</omdname> and <omdname>Marisa</omdname> are solving the following exponential equations. To guide them, 
+      they have graphed the functions involved in <xref ref="exp-fig-matcheqns"/>. Match the equations
+      with the appropriate graph.
+      <me>
+        4^{-x^2}=\frac{1}{4}, \qquad 
+        -\left( \frac{1}{3} \right)^{x}=-3, \qquad
+        5^x=5, \qquad 
+        3^{x^2}=3 \qquad 
+      </me>
+    </statement>
+    <solution>
+      <p>
+        <ul>
+          <li> <xref ref="exp-fig-matcheqns1"/> represents <m>3^{x^2}=3</m></li>
+          <li> <xref ref="exp-fig-matcheqns2"/> represents <m>4^{-x^2}=\frac{1}{4}</m></li>
+          <li> <xref ref="exp-fig-matcheqns3"/> represents <m>5^x=5</m></li>
+          <li> <xref ref="exp-fig-matcheqns4"/> represents <m>-\left( \frac{1}{3} \right)^{x}=-3</m></li>
+        </ul>
+      </p>
+    </solution>
+  </exercisegroup>
+  <sidebyside xml:id="exp-fig-matcheqns">
+    <figure width="20%" xml:id="exp-fig-matcheqns1">
+      <image>
+        <latex-image-code>
+          <![CDATA[\begin{tikzpicture}
+          \begin{axis}[
+          framed,
+          xmin=-3,xmax=3,
+          ymin=-5,ymax=5,
+          ytick={-2,2},
+          grid=both,
+          ]
+          \addplot expression[domain=-1.2:1.2]{3^(x^2)};
+          \addplot expression[domain=-3:3]{3};
+          \end{axis}
+          \end{tikzpicture}]]>
+        </latex-image-code>
+      </image>     
+      <caption></caption>
+    </figure>
+    <figure width="20%" xml:id="exp-fig-matcheqns2">
+      <image>
+        <latex-image-code>
+          <![CDATA[\begin{tikzpicture}
+          \begin{axis}[
+          framed,
+          xmin=-3,xmax=3,
+          ymin=-1,ymax=2,
+          ytick={1},
+          grid=both,
+          ]
+          \addplot expression[domain=-1.7:1.7]{4^(-x^2)};
+          \addplot expression[domain=-3:3]{1/4};
+          \end{axis}
+          \end{tikzpicture}]]>
+        </latex-image-code>
+      </image>     
+      <caption></caption>
+    </figure>
+    <figure width="20%" xml:id="exp-fig-matcheqns3">
+      <image>
+        <latex-image-code>
+          <![CDATA[\begin{tikzpicture}
+          \begin{axis}[
+          framed,
+          xmin=-3,xmax=3,
+          ymin=-5,ymax=6,
+          ytick={-2,2},
+          grid=both,
+          ]
+          \addplot expression[domain=-1.2:1.1]{5^(x)};
+          \addplot expression[domain=-3:3]{5};
+          \end{axis}
+          \end{tikzpicture}]]>
+        </latex-image-code>
+      </image>
+      <caption></caption>
+    </figure>
+    <figure width="20%" xml:id="exp-fig-matcheqns4">
+      <image>
+        <latex-image-code>
+          <![CDATA[\begin{tikzpicture}
+          \begin{axis}[
+          framed,
+          xmin=-3,xmax=3,
+          ymin=-5,ymax=6,
+          ytick={-2,2},
+          grid=both,
+          ]
+          \addplot expression[domain=-1.4:1.1]{-(1/3)^x};
+          \addplot expression[domain=-3:3]{-3};
+          \end{axis}
+          \end{tikzpicture}]]>
+        </latex-image-code>
+      </image>
+      <caption></caption>
+    </figure>
+    <caption>Graphs for <xref ref="exp-prob-matcheqns"/></caption>
+  </sidebyside>
+                        <exercisegroup>
+                        <author>Hughes</author>
+            <date>  February 2012</date>
+<title>Zeros</title>
+<statement>
+            Consider the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>k</m> that have formulas
+            <me>
+            f(x)=4^{-x^2}-\frac{1}{4}, \qquad 
+            g(x)=3-\left( \frac{1}{3} \right)^{x}, \qquad
+            h(x)=5^x-5, \qquad 
+            k(x)=3^{x^2}-3
+            </me>
+            Use your work from <xref ref="exp-prob-matcheqns"/> to help you decide how 
+            many zeros each function has.
+          </statement>
+            <solution>
+              <p>
+                <ul>
+                <li> <m>f</m> has <m>2</m> zeros</li>
+                <li> <m>g</m> has <m>1</m> zero</li>
+                <li> <m>h</m> has <m>1</m> zero</li>
+                <li> <m>k</m> has <m>2</m> zeros</li>
+                </ul>
+              </p>
+            </solution>
+            </exercisegroup>
+                        <exercisegroup>
+                        <author>Hughes</author>
+            <date>  February 2012</date>
+<title>True or false?</title>
+<statement>
+            <omdname>Myron</omdname> and <omdname>Win</omdname> have studied all of the exponential equations so far, and 
+            are trying to generalize their results. They begin with the equation
+            <me>
+            2^x=c
+            </me>
+            where <m>c</m> can be any real number. Help them decide if the following statements
+            are true of false, if they are false, provide an example that supports your 
+            answer.
+          </statement>
+            <exercise>
+              <statement>
+                If <m>c&gt;0</m> then the equation has a solution.
+              </statement>
+              <solution>
+                <p>
+                  True. 
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                If <m>c&lt;0</m> then the equation has a solution. 
+              </statement>
+              <solution>
+                <p>
+                  False; consider <m>2^x=-3</m>. 
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                If <m>c=0</m> then the equation has a solution. 
+              </statement>
+              <solution>
+                <p>
+                  False; there are no values of <m>x</m> that satisfy <m>2^x=0</m>.
+                </p>
+              </solution>
+            </exercise>
+          </exercisegroup>
+          <exercisegroup>
+            <author>Hughes</author>
+            <date>  February 2012</date>
+            <title>Beyond exponential equations</title>
+            <statement>
+              The function <m>f</m> that has formula <m>f(x)=\left( \frac{1}{2} \right)^x+\frac{1}{2}</m> is shown in <xref ref="exp-fig-extension"/>, 
+              along with a mystery function <m>g</m>.
+            </statement>
+              <figure xml:id="exp-fig-extension">
+                <image>
+                  <latex-image-code>
+                    <![CDATA[\begin{tikzpicture}
+                    \begin{axis}[
+                    framed,
+                    height=.25\textwidth,
+                    xmin=-1,xmax=10,
+                    ymin=-3,ymax=3,
+                    xtick={1,...,9},
+                    grid=both,
+                    legend pos=south east,
+                    ]
+                    \addplot expression[domain=-1:10]{(1/2)^x+1/2};
+                    \addplot expression[domain=-1:10,samples=200]{sin(deg(pi*x))+1/2};
+                    \legend{<m>f</m>,<m>g</m>}
+                    \end{axis}
+                    \end{tikzpicture}]]>
+                  </latex-image-code>
+                </image>     
+              <caption></caption>
+              </figure>
+            <exercise>
+              <statement>
+                Use <xref ref="exp-fig-extension"/> to decide how many solutions there are to the equation <m>f(x)=g(x)</m>
+                on the interval <m>[0,9]</m>.
+              </statement>
+              <solution>
+                <p>
+                  By counting the number of points of intersection, there are <m>10</m> solutions on 
+                  the interval <m>[0,9]</m>.
+                </p>
+              </solution>
+            </exercise>
+            <exercise>
+              <statement>
+                Hence determine how many zeros the function <m>h(x)=f(x)-g(x)</m>
+                has on the interval <m>[0,9)</m>.
+              </statement>
+              <solution>
+                <p>
+                  The function <m>h</m> has <m>10</m> zeros on the interval <m>[0,9]</m>.
+                </p>
+              </solution>
+            </exercise>
+            </exercisegroup>
+          </exercises>
+        </section>

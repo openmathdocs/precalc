@@ -271,6 +271,7 @@
 <xsl:template match="exercise[ancestor::mathbook[@style='chunk']]|exercisegroup[ancestor::mathbook[@style='chunk']]">
   <xsl:text>\begin{problem}</xsl:text>
   <xsl:apply-templates select="title" mode="environment-option"/>
+  <xsl:apply-templates select="." mode="omd-label"/>
   <xsl:apply-templates select="statement"/>
   <xsl:text>&#xa;</xsl:text>
   <xsl:if test="@cols">
@@ -385,6 +386,18 @@
       <!-- output the child nodes -->
       <xsl:text>\popValignCaptionBottom&#xa;</xsl:text>
       <!-- global caption -->
+      <xsl:apply-templates select="caption" />
+      <xsl:text>\end{widepage}&#xa;</xsl:text>
+      <xsl:text>\end{figure}&#xa;</xsl:text>
+</xsl:template>
+
+<!-- figures in exercises (not in sidebyside) need a widepage -->
+<xsl:template match="figure[ancestor::mathbook[@style='chunk']][ancestor::exercises][not(ancestor::sidebyside or ancestor::solution)]">
+      <xsl:text>\begin{figure}&#xa;</xsl:text>
+      <xsl:text>\begin{widepage}&#xa;</xsl:text>
+      <!-- images -->
+      <xsl:apply-templates select="*[not(self::caption)]" />
+      <!-- caption -->
       <xsl:apply-templates select="caption" />
       <xsl:text>\end{widepage}&#xa;</xsl:text>
       <xsl:text>\end{figure}&#xa;</xsl:text>

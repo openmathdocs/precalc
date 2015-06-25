@@ -1,738 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-            <example>
-            Use your knowledge of exponents to solve the following 
-            equations:
-            \begin{multicols}{2}
-            <ol>
-              <li> <m>3^{x}=27</m></li>
-              <li> <m>2^{x^2}=16</m></li>
-            </ol>
-            \end{multicols}
-            <solution>
-            <ol>
-              <li> We know that <m>3^3=27</m>, so <m>x=3</m>.</li>
-              \item We know that <m>2^4=16</m>, which means that 
-              \[
-              x^2=4
-              \]
-              The two solutions are <m>2</m> and <m>-2</m>.
-              It is left an exercise to check that both of these solutions satisfy the 
-              equation <m>2^{x^2}=16</m>.
-            </ol>
-            \end{pccsolution}
-            </example>
-            <try-it-yourself>
-            %===================================
-            <author>Hughes</author>
-            <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
-<statement>
-            Solve the following exponential equation. Check your solution. 
-            \[
-            2^x=4
-            \]
-            <solution>
-              <p>
-                <m>x=2</m> (The solution is <m>2</m>.)
-              </p>
-            </solution>
-            </exercisegroup>
-            </try-it-yourself>
-
-            %===================================
-            <author>Hughes</author>
-            <date>  August 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-factor"
-            Solve the following equation by factoring. Hint: put <m>t=3^x</m> as 
-            your first step.
-            \begin{equation}xml:id="exp-eq-solvefact"
-            3^{2x}-10\cdot 3^x+9=0
-            \end{equation}
-            <solution>
-            Following the hint, we substitute <m>t=3^x</m> into <xref ref="exp-eq-solvefact"/>, which gives
-            \[
-            t^2 - 10t +9 = 0
-            \]
-            This equation can be factored and written as <m>(t-9)(t-1)=0</m>. We therefore 
-            have to solve the equations
-            \[
-            3^x = 9, \qquad 3^x = 1
-            \]
-            Using our knowledge of exponents, we see that <m>x=2</m> or <m>x=0</m>. It is left 
-            an exercise to check that both of these solutions satisfy <xref ref="exp-eq-solvefact"/>.
-            \end{pccsolution}
-            </example>
-
-            <try-it-yourself>
-            <exercisegroup>
-<statement>
-            Solve the following equation.
-            Try putting <m>t=4^x</m> as your first step. Check your solutions.
-            \[
-            % factor: (4^x-1)*(4^x-4)
-            4^{2x}-5\cdot 4^x-4=0
-            \]
-            <solution>
-              <p>
-                <m>x=0,2</m> (The solutions are <m>0</m>, and <m>2</m>)
-              </p>
-            </solution>
-            </exercisegroup>
-            </try-it-yourself>
-
-            Not all solutions are integers; in fact in applied problems solutions are almost never integers.
-            We don't yet have the tools to find exact solutions to most exponential equations, so we
-            are going to explore techniques for approximating solutions to equations.
-
-            %===================================
-            <author>Hughes</author>
-            <date>  July 2011</date>
-            %===================================
-            <example>
-            Use a table of values or a graph to solve the following exponential 
-            equation
-            \[
-            2^x = 13
-            \]
-            <solution>
-            \Cref{exp-tab-solvenoninteger} 
-            shows the solution is on the interval <m>[3,4]</m>; given that 13 is closer to 16 than 
-            it is to 8, we expect our solution to be closer to <m>4</m> than it is to <m>3</m>.
-
-            \Cref{exp-fig-solvenoninteger} shows <m>y=2^x</m> and <m>y=13</m>. The solution 
-            to the equation <m>2^x=13</m> is the <m>x</m>-coordinate of the point of intersection; using a calculator, we find
-            the <m>x</m>-coordinate is approximately <m>3.70</m>. 
-            \end{pccsolution}
-            </example>
-
-            \begin{table}[!htb]
-            \mbox{}\hfill
-            \begin{minipage}{.3\textwidth}
-            \centering
-            \captionof{table}{}
-            <table>
-<tabular>{S[table-format=1.0]S[table-format=2.0]}
-            <thead>
-            <cell><m>x</m></cell> &amp; <cell><m>2^x</m></cell> \\
-            </thead>
-<row><cell>1</cell>&amp;<cell>2</cell></row>
-<row><cell>2</cell>&amp;<cell>4</cell></row>
-<row><cell>3</cell>&amp;<cell>8</cell></row>
-<row><cell>4</cell>&amp;<cell>16</cell></row>
-            \lastline
-            </tabular>
-</table>
-            xml:id="exp-tab-solvenoninteger"
-            \end{minipage}%
-            \hfill
-            \begin{minipage}{.4\textwidth}
-            \centering
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-1,xmax=5,
-                ymin=-3,ymax=18,
-                xtick={1,...,4},
-                grid=both,
-                ]
-                \addplot expression[domain=-1:4]{2^x};
-                \addplot expression[domain=-1:5]{13};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>     
-            \captionof{figure}{<m>y=2^x</m>}
-            xml:id="exp-fig-solvenoninteger"
-            \end{minipage}%
-            \hfill\mbox{}
-            \end{table}
-
-            <try-it-yourself>
-            %===================================
-            <author>Hughes</author>
-            <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
-<statement>
-            Solve the following exponential equation using either a graph 
-            or a table of values; state your solution to 2 decimal places, and check your answer. 
-            \[
-            2^x=10
-            \]
-            <solution>
-              <p>
-                <m>x\approx 3.32</m> (The solution is approximately <m>3.32</m>.)
-              </p>
-            </solution>
-            </exercisegroup>
-            </try-it-yourself>
-
-            \investigation*{}
-            %===================================
-            <author>Hughes/Simonds</author>
-            <date>  September 2011</date>
-            %===================================
-            <exercisegroup>
-<title>To the Moon</title>
-<statement>
-            Let <m>x</m> represent the horizontal
-            distance (in inches) that you are from your front door. Imagine that
-            for every inch that you move away from your front door,
-            your elevation above the ground <m>y</m> (in inches) magically increases
-            according to the rule <m>y=2^x</m>. 
-            <exercise>
-              <statement>
-                What is your elevation above the ground when you are at a horizontal distance of \SI{1}{\foot}
-                from your front door? State your answers in \si{\foot}, using the fact that there are \SI{12}{\inch}
-                in \SI{1}{\foot}.
-              </statement>
-              <solution>
-                <p>
-                  <m>\frac{2^{12}}{12}\approx 341.33</m>; our elevation is approximately \SI{341}{\foot} above the ground when 
-                  we are \SI{1}{\foot} from our front door.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                What is your elevation above the ground when you are at a horizontal distance of \SI{2}{\foot}
-                from your front door? State your answers in \si{\mile}, using the fact that there are \SI{63360}{\inch}
-                in \SI{1}{\mile}.
-              </statement>
-              <solution>
-                <p>
-                  <m>\frac{2^{24}}{63360}\approx 264.79</m>; our elevation is approximately \SI{264.79}{\mile} above the ground when
-                  we are \SI{2}{\foot} from our front door.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Given that the distance between
-                the Earth and the Moon is approximately <m>\SI{1.595 e10}{\inch}</m>,
-                what is your horizontal distance from your front door when you reach the Moon?
-                Use a graphing calculator to help you.
-                \footnote{The distance from the Earth to the Moon (in miles) is \SI{227037}{\mile}.}
-              </statement>
-              <solution>
-                <p>
-                  We need to solve the equation <m>2^x=1.595\times 10^{10}</m>. Using a graphing
-                  calculator, we obtain <m>x\approx 33.89</m>; we conclude that when we reach the Moon,
-                  our horizontal distance from our front door is approximately <m>\SI{34}{\inch}</m>.
-                </p>
-              </solution>
-            </exercise>
-            </exercisegroup>
-
-
-            \begin{exercises}
-            <exercisegroup>
-<title>Algebraic manipulation</title>
-<statement>	
-            Use properties of exponents to write each of the following formulas in the 
-            form <m>f(t)=a\,b^t</m>. Leave your answers in exact form. 
-            \begin{multicols}{2}
-            <exercise>
-              <statement>
-                <m>f(t)=4^{t+1}\cdot 2^{3t}</m>
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  f(t) &amp; = 4^{t+1}\cdot 2^{3t}                  \\
-                  &amp; = \left( 2^2 \right)^{t+1}\cdot 2^{3t} \\
-                  &amp; = 2^{2t}\cdot 2^2\cdot 2^{3t}          \\
-                  &amp; = 4\cdot 2^{5t}                        \\
-                  &amp; = 4\cdot 32^t                          
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>f(t)=4^\frac{t+1}{2}\cdot 3^{2t}</m>. 
-              </statement>
-              <solution>
-                <p>
-                  $\begin{aligned}[t]
-                  f(t) &amp; =  4^\frac{t+1}{2} \cdot 3^{2t}          \\
-                  &amp; =  4^{\frac{1}{2}(t+1)} \cdot 3^{2t}     \\
-                  &amp; =  (4^{\frac{1}{2}})^{t+1} \cdot (3^2)^t \\
-                  &amp; =  2^{t+1} \cdot 9^t                     \\
-                  &amp; =  2^1 \cdot 2^t \cdot 9^t               \\
-                  &amp; =  2 \cdot (2 \cdot 9)^t                 \\
-                  &amp; =  2 \cdot 18^t                          
-                  \end{aligned}$
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            </exercisegroup>	
-
-            <exercisegroup>
-<title>Integer solutions</title>
-<statement>
-            Solve each of the following exponential equations. Check your solutions. 
-            \phpreference{exponentialIntSolns}{\theproblem}
-            \begin{multicols}{3}
-            <exercise>
-              <statement>
-                <m>2^{-x}=\frac{1}{8}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=3</m> (The solution is <m>3</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>4^x=64</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=3</m> (The solution is <m>3</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>3\cdot 5^x=75</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=2</m> (The solution is <m>2</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>2^{x^2}-16=0</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=\pm 2</m> (The solutions are <m>\pm 2</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>2^{x^2-5x}=2^{-6}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=2,3</m> (The solutions are <m>2</m> and <m>3</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>7^{x^2}=49^{x}</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=2,0</m> (The solutions are <m>2</m> and <m>0</m>.)
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            </exercisegroup>
-
-            <exercisegroup>
-<title>Non-integer solutions</title>
-<statement>
-            Solve each of the following exponential equations using either a graph 
-            or a table of values; state your solutions to 2 decimal places, and check your answers. 
-            \begin{multicols}{4}
-            <exercise>
-              <statement>
-                <m>3^x=11</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 2.18</m> (The solution is approximately <m>2.18</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>4^x=29</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 2.43</m> (The solution is approximately <m>2.43</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>5^x=61</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 2.55</m> (The solution is approximately <m>2.55</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>7^x=-1</m>
-              </statement>
-              <solution>
-                <p>
-                  No solution.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>-6^x = -31</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 1.92</m> (The solution is approximately <m>1.92</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>3\cdot 5^x = 7</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 0.53</m> (The solution is approximately <m>0.53</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>2^x+5 = 10</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 2.32</m> (The solution is approximately <m>2.32</m>.)
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                <m>7^x=50</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x\approx 2.01</m> (The solution is approximately <m>2.01</m>.)
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            </exercisegroup>
-
-            <exercisegroup>
-<title>Factoring</title>
-<statement>
-            Use the technique demonstrated in <xref ref="exp-ex-factor"/> to help you solve the following 
-            equations.
-            For <xref ref="exp-prob-needfactor"/> try putting <m>t=4^x</m> as your first step. Check your solutions.
-            \begin{multicols}{3}
-            <exercise xml:id="exp-prob-needfactor">
-              <statement>
-                % factor: (4^x-1)*(4^x+3)
-                <m>4^{2x}+2\cdot 4^x=3</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=0</m> (The solution is <m>0</m>.) Note that there are no solutions to <m>4^x+3=0</m>.
-                </p>
-              </solution>
-            </exercise>
-            % factor : (5^x-1)(5^x+1)
-            <exercise>
-              <statement>
-                <m>5^{2x}-1=0</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=1</m> (The solution is <m>1</m>.) Note that there are no solutions to <m>5^x=-1</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                % factor: 5^x*(5^x-25)*(5^x-1)
-                <m>125^x-26\cdot 25^x+25\cdot 5^x=0</m>
-              </statement>
-              <solution>
-                <p>
-                  <m>x=0,2</m> (The solutions are <m>0</m> and <m>2</m>.) Note that there are no solutions to <m>5^x=0</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{multicols}
-            </exercisegroup>
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            <exercisegroup xml:id="exp-prob-matcheqns">
-<title>Matching graphs to equations</title>
-<statement>%
-            \pccname{Jake} and \pccname{Marisa} are solving the following exponential equations. To guide them, 
-            they have graphed the functions involved in <xref ref="exp-fig-matcheqns"/>. Match the equations
-            with the appropriate graph.
-            \[
-            4^{-x^2}=\frac{1}{4}, \qquad 
-            -\left( \frac{1}{3} \right)^{x}=-3, \qquad
-            5^x=5, \qquad 
-            3^{x^2}=3 \qquad 
-            \]
-            <solution>
-              <p>
-                \begin{itemize}
-                <li> \Cref{exp-fig-matcheqns1} represents <m>3^{x^2}=3</m></li>
-                <li> \Cref{exp-fig-matcheqns2} represents <m>4^{-x^2}=\frac{1}{4}</m></li>
-                <li> \Cref{exp-fig-matcheqns3} represents <m>5^x=5</m></li>
-                <li> \Cref{exp-fig-matcheqns4} represents <m>-\left( \frac{1}{3} \right)^{x}=-3</m></li>
-                \end{itemize}
-              </p>
-            </solution>
-            </exercisegroup>
-            \begin{figure}[!htb]
-            \begin{widepage}
-            \centering
-            \begin{subfigure}{.2\textwidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=3,
-                ymin=-5,ymax=5,
-                ytick={-2,2},
-                grid=both,
-                ]
-                \addplot expression[domain=-1.2:1.2]{3^(x^2)};
-                \addplot expression[domain=-3:3]{3};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>     
-            <caption></caption>
-            xml:id="exp-fig-matcheqns1"
-            \end{subfigure}%
-            \hfill
-            \begin{subfigure}{.2\textwidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=3,
-                ymin=-1,ymax=2,
-                ytick={1},
-                grid=both,
-                ]
-                \addplot expression[domain=-1.7:1.7]{4^(-x^2)};
-                \addplot expression[domain=-3:3]{1/4};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>     
-            <caption></caption>
-            xml:id="exp-fig-matcheqns2"
-            \end{subfigure}%
-            \hfill
-            \begin{subfigure}{.2\textwidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=3,
-                ymin=-5,ymax=6,
-                ytick={-2,2},
-                grid=both,
-                ]
-                \addplot expression[domain=-1.2:1.1]{5^(x)};
-                \addplot expression[domain=-3:3]{5};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            xml:id="exp-fig-matcheqns3"
-            \end{subfigure}%
-            \hfill
-            \begin{subfigure}{.2\textwidth}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                xmin=-3,xmax=3,
-                ymin=-5,ymax=6,
-                ytick={-2,2},
-                grid=both,
-                ]
-                \addplot expression[domain=-1.4:1.1]{-(1/3)^x};
-                \addplot expression[domain=-3:3]{-3};
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>
-            <caption></caption>
-            xml:id="exp-fig-matcheqns4"
-            \end{subfigure}%
-            <caption>Graphs for <xref ref="exp-prob-matcheqns"/></caption>
-            xml:id="exp-fig-matcheqns"
-            \end{widepage}
-            \end{figure}
-
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
-<title>Zeros</title>
-<statement>
-            Consider the functions <m>f</m>, <m>g</m>, <m>h</m>, and <m>k</m> that have formulas
-            \[
-            f(x)=4^{-x^2}-\frac{1}{4}, \qquad 
-            g(x)=3-\left( \frac{1}{3} \right)^{x}, \qquad
-            h(x)=5^x-5, \qquad 
-            k(x)=3^{x^2}-3
-            \]
-            Use your work from <xref ref="exp-prob-matcheqns"/> to help you decide how 
-            many zeros each function has.
-            <solution>
-              <p>
-                \begin{itemize}
-                <li> <m>f</m> has <m>2</m> zeros</li>
-                <li> <m>g</m> has <m>1</m> zero</li>
-                <li> <m>h</m> has <m>1</m> zero</li>
-                <li> <m>k</m> has <m>2</m> zeros</li>
-                \end{itemize}
-              </p>
-            </solution>
-            </exercisegroup>
-
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
-<title>True or false?</title>
-<statement>
-            \pccname{Myron} and \pccname{Win} have studied all of the exponential equations so far, and 
-            are trying to generalize their results. They begin with the equation
-            \[
-            2^x=c
-            \]
-            where <m>c</m> can be any real number. Help them decide if the following statements
-            are true of false, if they are false, provide an example that supports your 
-            answer.
-            <exercise>
-              <statement>
-                If <m>c&gt;0</m> then the equation has a solution.
-              </statement>
-              <solution>
-                <p>
-                  True. 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>c&lt;0</m> then the equation has a solution. 
-              </statement>
-              <solution>
-                <p>
-                  False; consider <m>2^x=-3</m>. 
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                If <m>c=0</m> then the equation has a solution. 
-              </statement>
-              <solution>
-                <p>
-                  False; there are no values of <m>x</m> that satisfy <m>2^x=0</m>.
-                </p>
-              </solution>
-            </exercise>
-            </exercisegroup>
-
-
-            %===================================
-            <author>Hughes</author>
-            <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
-<title>Beyond exponential equations</title>
-<statement>
-            The function <m>f</m> that has formula <m>f(x)=\left( \frac{1}{2} \right)^x+\frac{1}{2}</m> is shown in <xref ref="exp-fig-extension"/>, 
-            along with a mystery function <m>g</m>.
-            </exercisegroup>
-            \begin{figure}[!htb]
-            \begin{widepage}
-            <image>
-              <latex-image-code>
-                <![CDATA[\begin{tikzpicture}
-                \begin{axis}[
-                framed,
-                height=.25\textwidth,
-                xmin=-1,xmax=10,
-                ymin=-3,ymax=3,
-                xtick={1,...,9},
-                grid=both,
-                legend pos=south east,
-                ]
-                \addplot expression[domain=-1:10]{(1/2)^x+1/2};
-                \addplot expression[domain=-1:10,samples=200]{sin(deg(pi*x))+1/2};
-                \legend{<m>f</m>,<m>g</m>}
-                \end{axis}
-                \end{tikzpicture}]]>
-              </latex-image-code>
-            </image>     
-            <caption></caption>
-            xml:id="exp-fig-extension"
-            \end{widepage}
-            \end{figure}
-            <exercise>
-              <statement>
-                Use <xref ref="exp-fig-extension"/> to decide how many solutions there are to the equation <m>f(x)=g(x)</m>
-                on the interval <m>[0,9]</m>.
-              </statement>
-              <solution>
-                <p>
-                  By counting the number of points of intersection, there are <m>10</m> solutions on 
-                  the interval <m>[0,9]</m>.
-                </p>
-              </solution>
-            </exercise>
-            <exercise>
-              <statement>
-                Hence determine how many zeros the function <m>h(x)=f(x)-g(x)</m>
-                has on the interval <m>[0,9)</m>.
-              </statement>
-              <solution>
-                <p>
-                  The function <m>h</m> has <m>10</m> zeros on the interval <m>[0,9]</m>.
-                </p>
-              </solution>
-            </exercise>
-            \end{exercises}
-
-
-
-
-
             \section{Finding an exponential function given two points}xml:id="exp-sec-findformula"
             \begin{outcomes}
             \begin{outcomelist}
@@ -741,11 +9,9 @@
             <li> You will be able to model the amount of <m>\mathrm{CO}_2</m> emitted in the United States over time.</li>
             \end{outcomelist}
             \end{outcomes}
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  Nov 2011</date>
-            %===================================
-            Consider a puzzle where two points are given on the plane, and you are asked to connect them with a curve.  
+                        Consider a puzzle where two points are given on the plane, and you are asked to connect them with a curve.  
             There are infinitely many ways to do this.  In the past, you've connected two points with a straight 
             line (as in <xref ref="exp-fig-pointsline"/>) and found the equation that represents that line.  Of course, you 
             could also connect the points with a random curve of your liking (as in <xref ref="exp-fig-pointscurve"/>).  
@@ -959,11 +225,9 @@
 
             In many application problems we will encounter situations where we wish to find an exponential function that 
             goes through the two points <m>(x_1,y_1)</m> and <m>(x_2,y_2)</m>. Let's practice this skill before moving on to the applied problems. 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <example> xml:id="exp-ex-findab"
+                        <example> xml:id="exp-ex-findab"
             Find an exponential function <m>f</m> given by <m>f(t)=a\,b^t</m> whose graph goes through the points <m>\left(-2,\frac{3}{4}\right)</m> and <m>(2,12)</m>
             as shown in <xref ref="exp-fig-expmodellingwithcurve"/>.
             \begin{figure}
@@ -1014,10 +278,10 @@
             We conclude that <m>f(t)=3\cdot 2^t</m>, which is graphed in <xref ref="exp-fig-expmodellingwithcurve"/>.
             The number <m>2</m> is called the growth factor; every time <m>t</m> increases by <m>1</m>, the value of <m>f(t)</m> 
             grows by a factor of <m>2</m>.
-            \end{pccsolution}
+            </solution>
             </example>
 
-            <try-it-yourself>
+            <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
             Find an exponential function <m>f</m> of the form <m>f(t)=a\,b^t</m> whose graph goes through the ordered 
@@ -1028,16 +292,14 @@
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
             When dealing with application problems the values of <m>a</m> and <m>b</m> will rarely evaluate to integers. 
             The method for finding an exponential model remains the same though.
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <example>
+                        <example>
             Find an exponential function <m>f(x)=a\,b^x</m> that goes through the points <m>(1,7)</m> and <m>(10,53)</m>.
             <solution>
             We will need to find <m>a</m> and <m>b</m> in the equation <m>f(x)=a\,b^x</m>. We begin by using the given ordered pairs to write a system 
@@ -1051,9 +313,9 @@
             \frac{53}{7} = \frac{a\,b^{10}}{a\,b}
             \end{equation*}
             which simplifies to <m>b^9=\frac{53}{7}</m>. This means that 
-            \[
+            <me>
             b = \left(\frac{53}{7}\right)^{\sfrac{1}{9}}
-            \]
+            </me>
             If we substitute this 
             value of <m>b</m> into the first equation, we obtain
             \begin{align*}
@@ -1067,10 +329,10 @@
             &amp; = \frac{7^{\sfrac{10}{9}}}{53^{\sfrac{1}{9}}}\left(\left(\frac{53}{7}\right)^{\sfrac{1}{9}}\right)^x \\
             &amp; \approx 5.59 (1.252237)^x                                                                                     
             \end{align*}
-            \end{pccsolution}
+            </solution>
             </example>
 
-            <try-it-yourself>
+            <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
             Find an exponential function <m>f</m> of the form <m>f(x)=a\,b^x</m> whose graph goes through the ordered pairs <m>(2,10)</m> and <m>(11,23)</m>. 
@@ -1081,13 +343,11 @@
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  Nov 2011</date>
-            %===================================
-            Suppose that we have some reason to model a situation using an exponential function.  In real-world applications, we 
+                        Suppose that we have some reason to model a situation using an exponential function.  In real-world applications, we 
             might only have two points of data to work with.  If we treat these data points as two points on a plane, we can 
             use the skills we have been practicing to explicitly give the exponential model that we would like to use.
             <example>
@@ -1136,7 +396,7 @@
             f(t) &amp; =25\left(\left(\frac{2391}{25}\right)^{\sfrac17}\right)^t \\
             &amp; =25\left(\frac{2391}{25}\right)^{\sfrac{t}7}              
             \end{align*}
-            \end{pccsolution}
+            </solution>
 
             Once we have this model we can answer interesting questions with it.  For example, how many people will be infected <m>3</m> days 
             after the initial outbreak?  
@@ -1147,7 +407,7 @@
             &amp; \approx 177                                      
             \end{align*}
             we can say that there will be about <m>177</m> infected people <m>3</m> days after the initial outbreak.
-            \end{pccsolution}
+            </solution>
 
             We can also look at a graph of the model (as in <xref ref="exp-fig-flugraph"/>) and answer other interesting questions.  For 
             example, when will the number of infected persons reach 20,000?  
@@ -1176,16 +436,14 @@
             \end{figure}
             <solution> 
             The graph suggests that around the tenth day after the initial outbreak, there will be <m>20000</m> infected persons.
-            \end{pccsolution}
+            </solution>
             </example>
 
-            %===================================
-            <author>Simonds, typeset by Hughes</author>
+                        <author>Simonds, typeset by Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <example>
+                        <example>
             Many buildings in Detroit have been vacant and unattended for several
-            years. Suppose that the amount of wood (in <m>\SI{}{\cubic\foot}</m>) that remains
+            years. Suppose that the amount of wood (in \si{\cubic\foot}) that remains
             attached to a building <m>t</m> years after it has been abandoned is 
             an exponential function of time. A particular building was abandoned on July 3, 1999. On July 3, 2002 there were 53 cubic yards of wood attached to the building and on July 3, 2009 there were 47 cubic yards of wood attached to the building.
 
@@ -1209,17 +467,15 @@
             &amp; \approx 55.8                                                
             \end{align*}
             We conclude that 
-            \[
+            <me>
             w(t)  \approx 55.8(0.983)^t
-            \]
-            \end{pccsolution}
+            </me>
+            </solution>
             </example>
 
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  Apr 2011</date>
-            %===================================
-            \investigation*{}
+                        \investigation*{}
             <exercisegroup xml:id="exp-prob-uspopngreen">
 <title>US population</title>
 <statement>%
@@ -1273,7 +529,10 @@
               </statement>
               <solution>
                 <p>
-                  <m>P(-50) \approx 178.526320</m> and <m>p(50)\approx 143.985979</m>.  <m>P(-50)</m> was an overestimate by about 27.5 million people, or \SI{18.2}{\percent}.  <m>p(50)</m> was an underestimate by about 7 million people, or \SI{4.6}{\percent}.  So the prediction based off of the model that used the years 1900 and 2000 is better.  Generally, it is better to interpolate than to extrapolate.
+                  <m>P(-50) \approx 178.526320</m> and <m>p(50)\approx 143.985979</m>.  <m>P(-50)</m> was an overestimate by about 27.5 million people, 
+                  or <quantity><mag>18.2</mag><unit base="percent"/></quantity>.  <m>p(50)</m> was an underestimate by about 7 million people, or <quantity><mag>4.6</mag><unit base="percent"/></quantity>.  
+                  So the prediction based off of the model that used the years 1900 and 2000 is better.  
+                  Generally, it is better to interpolate than to extrapolate.
                 </p>
               </solution>
             </exercise>		
@@ -1324,11 +583,9 @@
             </exercise>		
             </exercisegroup>
 
-            %===================================
-            <author>Kouzes, Hughes (scaffolding)</author>
+                        <author>Kouzes, Hughes (scaffolding)</author>
             <date>  Apr 2011</date>
-            %===================================
-            <exercisegroup xml:id="exp-prob-tapfishtable">
+                        <exercisegroup xml:id="exp-prob-tapfishtable">
 <title>Tapfish app</title>
 <statement>%
             Tapfish is a free mobile device app where you set up a digital aquarium.  
@@ -1341,12 +598,12 @@
             Each fish  costs 10 coins and sells for 15 coins after 1 day (because of its larger size). 
             Given that  we start with 20 coins
             on day 0, the transactions for the  first 3 days will be as follows:
-            \begin{itemize}
+            <ul>
             <li> on day <m>0</m> we buy <m>2</m> fish;</li>
             <li> on day <m>1</m> we sell both fish for a total of <m>30</m> coins, and then buy <m>3</m> fish;</li>
             \item on day <m>2</m> we sell our <m>3</m> fish for a total of 45 coins,and then buy <m>4</m> fish;
             we have <m>5</m> coins remaining as we cannot have fractions of fish.
-            \end{itemize}
+            </ul>
 
             \begin{margintable}
             \centering
@@ -1471,17 +728,13 @@
             </exercise>
             </exercisegroup>
 
-            %========================================================================
-            %
+                        %
             %			Exercises
             %
-            %========================================================================
-            \begin{exercises}
-            %===================================
-            <author>Jordan</author>
+                        \begin{exercises}
+                        <author>Jordan</author>
             <date>  Nov 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Prerequisite simplification skills</title>
 <statement>
             Simplify the given expressions.
@@ -1609,11 +862,9 @@
             \end{multicols}
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Prerequisite solving skills</title>
 <statement>
             Solve each of the following equations. Give both the exact value 
@@ -1682,11 +933,9 @@
             \end{multicols}
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Find a formula, <m>a</m> and <m>b</m> rational</title>
 <statement>
             In each of the following problems, find an exponential function of the form <m>f(t)=a\,b^t</m> that goes through the given ordered pairs. Identify the growth factor in each problem.
@@ -1756,11 +1005,9 @@
 
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Find a formula, <m>a</m> and <m>b</m> irrational</title>
 <statement>
             In each of the following problems, find an exponential function of the form <m>f(x)=a\,b^x</m> that 
@@ -1810,11 +1057,9 @@
             </exercisegroup>
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Find a formula from a graph</title>
 <statement>
             For each of the functions in <xref ref="exp-fig-findab"/>, assume that 
@@ -1919,11 +1164,9 @@
             \end{widepage}
             \end{figure}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Concavity</title>
 <statement>
             For the functions in <xref ref="exp-fig-findab"/>, which graphs are concave up? Which are concave down? 
@@ -1934,18 +1177,16 @@
             </solution>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Find a formula from a table</title>
 <statement>
             Find a formula for each of the functions implied by the data values in \crefrange{exp-tab-findab10}{exp-tab-findabfifth}.
             Assume that each function has the form <m>f(x)=a\, b^x</m>.
             <solution>
               <p>
-                \Cref{exp-tab-findab10}: <m>f(x)=10^x</m>; <xref ref="exp-tab-findab7"/>: <m>f(x)=-9\cdot 7^x</m>; <xref ref="exp-tab-findabthird"/>: <m>f(x)=-6\left( \frac{1}{3} \right)^x</m>; <xref ref="exp-tab-findabfifth"/>: <m>f(x)=3\left( \frac{1}{5} \right)^x</m>.  
+                <xref ref="exp-tab-findab10"/>: <m>f(x)=10^x</m>; <xref ref="exp-tab-findab7"/>: <m>f(x)=-9\cdot 7^x</m>; <xref ref="exp-tab-findabthird"/>: <m>f(x)=-6\left( \frac{1}{3} \right)^x</m>; <xref ref="exp-tab-findabfifth"/>: <m>f(x)=3\left( \frac{1}{5} \right)^x</m>.  
               </p>
             </solution>
             </exercisegroup>
@@ -2021,11 +1262,9 @@
             \end{widepage}
             \end{table}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Increasing and decreasing functions</title>
 <statement>
             Refer to the functions in <xref ref="exp-fig-findab"/> and \crefrange{exp-tab-findab10}{exp-tab-findabfifth} to help you decide 
@@ -2092,11 +1331,9 @@
               </solution>
             </exercise>
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  May 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Solar capacity</title>
 <statement>
             The global solar photovoltaic power capacity (in \si{\mega\watt}) grew from 2000-2007\footnote{\href{http://www.energyandcapital.com/articles/solar-stock-outlook/750}{http://www.energyandcapital.com/articles/solar-stock-outlook/750}} and 
@@ -2174,31 +1411,31 @@
               <solution>
                 <p>  
                   The growth factor is <m>\left( \frac{8325}{877} \right)^{\sfrac{1}{7}}\approx 1.379</m>. 
-                  The growth rate is <m>\left( \frac{8325}{877} \right)^{\sfrac{1}{7}}-1 \approx 0.379</m>, or about <m>\SI{37.9}{\percent}</m> per year.
+                  The growth rate is <m>\left( \frac{8325}{877} \right)^{\sfrac{1}{7}}-1 \approx 0.379</m>, or about <quantity><mag>37.9</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
             <exercise>
               <statement>
-                According to the article, the data implies `a compounded annual growth rate (CAGR) of \SI{37.9}{\percent}.'     
+                According to the article, the data implies `a compounded annual growth rate (CAGR) of <quantity><mag>37.9</mag><unit base="percent"/></quantity>.'     
                 Is your model consistent with this statement?
               </statement>
               <solution>
                 <p>
-                  Yes; we found <m>b\approx 1.379</m>, which means the annual growth rate is approximately \SI{37.9}{\percent}.  
+                  Yes; we found <m>b\approx 1.379</m>, which means the annual growth rate is approximately <quantity><mag>37.9</mag><unit base="percent"/></quantity>.  
                 </p>
               </solution>
             </exercise>
             <exercise>
               <statement>
                 According to your model, what is the Solar PV Power Capacity in 2010? Compare this 
-                with the actual value of  <m>\SI{13729}{\mega\watt}</m>, and give reasons for the difference.
+                with the actual value of  <quantity><mag>13729</mag><unit base="watt" prefix="mega"/></quantity>, and give reasons for the difference.
               </statement>
               <solution>
                 <p>
-                  <m>S(10)\approx \SI{21840.54}{\mega\watt}</m>. 
-                  This is much larger than <m>\SI{13729 }{\mega\watt}</m>, which indicates that the 
-                  growth rate did not continue at \SI{37.9}{\percent} after 2007.
+                  <m>S(10)\approx <quantity><mag>21840.54</mag><unit base="watt" prefix="mega"/></quantity></m>. 
+                  This is much larger than <m><quantity><mag>13729</mag><unit base="watt" prefix="mega"/></quantity></m>, which indicates that the 
+                  growth rate did not continue at <quantity><mag>37.9</mag><unit base="percent"/></quantity> after 2007.
                 </p>
               </solution>
             </exercise>
@@ -2214,18 +1451,16 @@
             In this section we explore some common applications of exponential functions. This will 
             require a working knowledge of percentages.
             \begin{essentialskills}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <statement>
             Perform the given percentage calculations. Give your answer correct 
             to two decimal places when an approximation is appropriate.
             \begin{multicols}{2}
             <exercise>
               <statement>
-                Find <m>\SI{10}{\percent}</m> of 100. 
+                Find <quantity><mag>10</mag><unit base="percent"/></quantity> of 100. 
               </statement>
               <solution>
                 <p>
@@ -2235,7 +1470,7 @@
             </exercise>
             <exercise>
               <statement>
-                Find <m>\SI{20}{\percent}</m> of 10. 
+                Find <quantity><mag>20</mag><unit base="percent"/></quantity> of 10. 
               </statement>
               <solution>
                 <p>
@@ -2245,7 +1480,7 @@
             </exercise>
             <exercise>
               <statement>
-                Find <m>\SI{13}{\percent}</m> of 28. 
+                Find <quantity><mag>13</mag><unit base="percent"/></quantity> of 28. 
               </statement>
               <solution>
                 <p>
@@ -2255,7 +1490,7 @@
             </exercise>
             <exercise>
               <statement>
-                Find <m>\SI{81}{\percent}</m> of 3. 
+                Find <quantity><mag>81</mag><unit base="percent"/></quantity> of 3. 
               </statement>
               <solution>
                 <p>
@@ -2265,7 +1500,7 @@
             </exercise>
             <exercise>
               <statement>
-                Increase <m>17</m> by <m>\SI{28}{\percent}</m>. 
+                Increase <m>17</m> by <quantity><mag>28</mag><unit base="percent"/></quantity>. 
               </statement>
               <solution>
                 <p>
@@ -2275,7 +1510,7 @@
             </exercise>
             <exercise>
               <statement>
-                Increase <m>42</m> by <m>\SI{67}{\percent}</m>. 
+                Increase <m>42</m> by <quantity><mag>67</mag><unit base="percent"/></quantity>. 
               </statement>
               <solution>
                 <p>
@@ -2285,7 +1520,7 @@
             </exercise>
             <exercise>
               <statement>
-                Decrease <m>107</m> by <m>\SI{10}{\percent}</m>. 
+                Decrease <m>107</m> by <quantity><mag>10</mag><unit base="percent"/></quantity>. 
               </statement>
               <solution>
                 <p>
@@ -2295,7 +1530,7 @@
             </exercise>
             <exercise>
               <statement>
-                Decrease <m>243</m> by <m>\SI{76}{\percent}</m>. 
+                Decrease <m>243</m> by <quantity><mag>76</mag><unit base="percent"/></quantity>. 
               </statement>
               <solution>
                 <p>
@@ -2327,96 +1562,86 @@
             but a smaller unit like hours might make sense for a bacteria population. 
             \end{pccdefinition}
 
-            %===================================
-            <author>Kissick</author>
+                        <author>Kissick</author>
             <date>  April 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-innercity"
+                        <example>xml:id="exp-ex-innercity"
             Since 2001 the population of an inner city has been decreasing as people 
-            move to the suburbs. It is decreasing at a rate of \SI{1}{\percent} per year; find a model 
+            move to the suburbs. It is decreasing at a rate of <quantity><mag>1</mag><unit base="percent"/></quantity> per year; find a model 
             for this situation.
             <solution>
             Let <m>P(t)</m> be the population of the inner city at time <m>t</m> in years since 2001. 
             Let <m>P_0</m> be the population of the inner city in 2001.
             Then, since <m>r=-0.01</m>,
-            \[
+            <me>
             P(t) = P_0(0.99)^t
-            \]
-            \end{pccsolution}
+            </me>
+            </solution>
             </example>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <try-it-yourself>
+                        <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
-            Repeat <xref ref="exp-ex-innercity"/> for a population that decreases at a rate of \SI{8}{\percent} per year.
+            Repeat <xref ref="exp-ex-innercity"/> for a population that decreases at a rate of <quantity><mag>8</mag><unit base="percent"/></quantity> per year.
             <solution>
               <p>
                 <m>P(t)=P_0(0.92)^t</m> 
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  Apr 2011</date>
-            %===================================
-            <example>	
+                        <example>	
             At the beginning of the year 2000, the population of One Horse was 10,000 people. By the beginning
             of 2005 the population had decreased to 9700. Assuming exponential decay, determine the population 
             at the beginning of 2012. Round your answer to the nearest person.
             <solution>
             Over 5 years, the population decreased by 300 people.  As <m>\frac{300}{10000}=0.03</m>, the population 
-            decreased by <m>\SI{3}{\percent}</m> over the five-year period.  The growth factor for this five-year period is <m>0.97</m> and 
+            decreased by <quantity><mag>3</mag><unit base="percent"/></quantity> over the five-year period.  The growth factor for this five-year period is <m>0.97</m> and 
             therefore the growth factor for one year is <m>(0.97)^{1/5}</m>.  Using this, the population <m>P(t)</m> at 
             time <m>t</m> in years after 2000 can be represented by
-            \[
+            <me>
             P(t) = 10000\left(0.97\right)^{t/5}
-            \]  
+            </me>  
             To estimate the population in 2012, we evaluate <m>P(12)</m>:
             \begin{align*}
             P(12) &amp; = 10000\left(0.97\right)^{12/5} \\
             &amp; \approx 9295                    
             \end{align*}
             In 2012, the population of One Horse is expected to be approximately 9,295 people.
-            \end{pccsolution}
+            </solution>
             </example>
-            %===================================
-            <author>Cary</author>
+                        <author>Cary</author>
             <date>  September 2011</date>
-            %===================================
-            <try-it-yourself>
+                        <exercises style="try-it-yourself">
             <exercisegroup>
 <title>Oregonians</title>
 <statement>
             In 2000 there were <m>3.83</m>  million people living in Oregon.  By 2010, the population had increased 
-            by <m>\SI{12.0}{\percent}</m>.\footnote{2000 census}  Assuming the population continues to grow at this rate, find a 
+            by <quantity><mag>12.0</mag><unit base="percent"/></quantity>.\footnote{2000 census}  Assuming the population continues to grow at this rate, find a 
             model representing the size of the population <m>t</m> years after 2000.
             <solution>
               <p>
                 Let <m>P(t)</m> be the population of Oregon (in millions of people) at time <m>t</m> in years since 2000. 
                 Since the initial population is 3.83 million people and <m>r=0.120</m>,
-                \[
+                <me>
                 P(t) = 3.83(1.12)^t
-                \]
+                </me>
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
             \subsection*{Radioactive decay}
-            %===================================
-            <author>Simonds</author>
+                        <author>Simonds</author>
             <date>  Feb 2011</date>
-            %===================================
-            One common application of decaying exponential functions involves radioactivity.  If you have a substance 
+                        One common application of decaying exponential functions involves radioactivity.  If you have a substance 
             where some of the atoms are radioactive, the radioactive atoms will decay into other atoms in a very predictable way.  
             In fact, each radioactive element has an 
-            associated half-life, which is the time it takes for \SI{50}{\percent} of the radioactive atoms to decay into something else.
+            associated half-life, which is the time it takes for <quantity><mag>50</mag><unit base="percent"/></quantity> of the radioactive atoms to decay into something else.
             <example>xml:id="exp-prob-radioactive"%
             Suppose that we have 8000 atoms of Carbon-12 (which is non-radioactive).  Without an intervening act, 1,000,000 years from 
             now that sample of carbon will still have 8000 atoms of Carbon-12.  However, if we start with a sample 
@@ -2459,30 +1684,28 @@
             \frac{1}{2} &amp; = b^{5730} \Longrightarrow b = \left( \frac{1}{2} \right)^{\frac{1}{5730}} 
             \end{align*}
             We can therefore say that
-            \[
+            <me>
             R(t)=8000\left(\frac12\right)^{\frac1{5730}t}
-            \]
+            </me>
             We can now determine how many atoms remain radioactive after 100 years
-            \[
+            <me>
             R(100)\approx 7904
-            \] 
+            </me> 
             Approximately 7904 atoms remain radioactive after 100 years.
 
             How long it would take until there are only 6000 radioactive atoms remaining?
             We need to solve the equation 
-            \[
+            <me>
             6000=8000\left( \frac{1}{2} \right)^{\frac{t}{5730}}
-            \]
+            </me>
             Using a graphing calculator, we obtain 
             <m>t\approx 2378</m>. We conclude that 6000 radioactive atoms remain after approximately <m>2378</m> years.
             </example>
 
             \subsection*{Simple interest}
-            %===================================
-            <author>Kissick</author>
+                        <author>Kissick</author>
             <date>  April 2011</date>
-            %===================================
-            Let's assume that we invest an amount <m>P</m> into an account that pays 
+                        Let's assume that we invest an amount <m>P</m> into an account that pays 
             an interest rate <m>r</m> per year.
 
             At the end of year 1 we have
@@ -2575,12 +1798,10 @@
             investment.
             \end{pccdefinition}
 
-            %===================================
-            <author>Kissick</author>
+                        <author>Kissick</author>
             <date>  April 2011</date>
-            %===================================
-            <example>
-            You invest \$5000 in an account that pays \SI{3}{\percent} simple interest. What is 
+                        <example>
+            You invest \$5000 in an account that pays <quantity><mag>3</mag><unit base="percent"/></quantity> simple interest. What is 
             the balance after four years? How long will it take your investment to double in value?
 
             <solution>
@@ -2593,9 +1814,9 @@
 
             To find when the investment will double in value, our first thought might 
             be to solve the equation
-            \[
+            <me>
             10000 = 5000(1.03)^t
-            \]
+            </me>
             for <m>t</m>. This is problematic in that the solution to this equation is almost 
             certainly non-integer and the domain of our function is restricted to the 
             integers. A more straight forward approach might be to simply find the first 
@@ -2620,7 +1841,7 @@
 
             Using <xref ref="exp-tab-simpleinterest"/>, we conclude that the 
             investment will double in about 24 years. 
-            \end{pccsolution}
+            </solution>
             </example>
 
 
@@ -2628,27 +1849,25 @@
             We have just studied simple interest. Most banks, however, 
             use a slightly more complicated system.
 
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  Apr 2011</date>
-            %===================================
-            <example>
+                        <example>
 <title>An offer you can't refuse</title>
             Two brothers, Michael and Fredo, each deposited \$100 into brand new bank accounts.
 
-            Michael's bank account gave him a \SI{12}{\percent} annual interest rate. 
+            Michael's bank account gave him a <quantity><mag>12</mag><unit base="percent"/></quantity> annual interest rate. 
             How much money did he have in his account after one year if he earned 
-            \SI{12}{\percent} in simple annual interest?
+            <quantity><mag>12</mag><unit base="percent"/></quantity> in simple annual interest?
 
             We need to calculate <m>100(1.12) = 112</m>. Michael had \$112 after one year.
 
             Fredo's bank account gave him a 12\% annual rate compounded monthly, 
-            which means that each month he received one-twelfth of the \SI{12}{\percent} (which is 
-            \SI{1}{\percent} interest) on his account:
-            \begin{itemize}
+            which means that each month he received one-twelfth of the <quantity><mag>12</mag><unit base="percent"/></quantity> (which is 
+            <quantity><mag>1</mag><unit base="percent"/></quantity> interest) on his account:
+            <ul>
             <li> after one month, he had <m>\</m>100(1.01)=\<m>101.00</m> in his account;</li>
             <li> after two months he had <m>\</m>100(1.01)^2=\<m>102.01</m> in his account.</li>
-            \end{itemize}
+            </ul>
             We complete <xref ref="exp-tab-fredo"/> using 
             2 decimal places, where <m>t</m> indicates the number of months
             since first investing and <m>A(t)</m> is the amount of money that was in his account (in 
@@ -2688,34 +1907,34 @@
             \end{align*}
             Similarly, <m>A(12)=100(1.01)^{12}</m>.
 
-            Fredo didn't actually earn \SI{12}{\percent} interest after one year on his initial investment, 
-            so the \SI{12}{\percent} is in name only, and is called the {\em nominal} 
+            Fredo didn't actually earn <quantity><mag>12</mag><unit base="percent"/></quantity> interest after one year on his initial investment, 
+            so the <quantity><mag>12</mag><unit base="percent"/></quantity> is in name only, and is called the {\em nominal} 
             interest rate.
 
             After one year, what percent did Fredo actually earn?  We calculate the <em>effective rate</em>: 
-            \[
+            <me>
             \left( 1+\frac{0.12}{12} \right)^{12}-1\approx 0.126825 
-            \] 
-            The effective rate is approximately \SI{12.68}{\percent}.
+            </me> 
+            The effective rate is approximately <quantity><mag>12.68</mag><unit base="percent"/></quantity>.
 
-            Note that although both Michael and Fredo both had accounts that were nominally at \SI{12}{\percent} annual interest, they ended up with different effective annual interest rates due to the different compounding periods.  
+            Note that although both Michael and Fredo both had accounts that were nominally at <quantity><mag>12</mag><unit base="percent"/></quantity> annual interest, they ended up with different effective annual interest rates due to the different compounding periods.  
 
             A third brother, Sonny, invested \$100 into another account. His account earned 
-            \SI{12}{\percent} nominal rate compounded daily. This means that he earned <m>\frac{\SI{12}{\percent}}{365}</m>, which is approximately 
-            <m>\SI{0.0328767}{\percent}</m> each day. 
+            <quantity><mag>12</mag><unit base="percent"/></quantity> nominal rate compounded daily. This means that he earned <m>\frac{<quantity><mag>12</mag><unit base="percent"/></quantity>}{365}</m>, which is approximately 
+            <quantity><mag>0.0328767</mag><unit base="percent"/></quantity> each day. 
             Find how much money Sonny had in his account after 1 year. 
 
             We calculate
-            \[
+            <me>
             100\left(1+\frac{0.12}{365}  \right)^{365}\approx 112.75
-            \]
+            </me>
             and therefore Sonny had <m>\</m>112.75$ after one year. 
 
             We can calculate the effective interest rate on Sonny's account using
-            \[
+            <me>
             \left( 1+\frac{0.12}{365} \right)^{365}-1\approx  0.127475
-            \]
-            The effective rate was approximately <m>\SI{12.75}{\percent}</m>.
+            </me>
+            The effective rate was approximately <quantity><mag>12.75</mag><unit base="percent"/></quantity>.
             </example>
 
             \begin{margintable}
@@ -2746,22 +1965,20 @@
             A(t) = P_0\left(1+\frac{r}{n}\right)^{nt}xml:id="exp-form-compoundinterest" 
             \end{align}
             where:
-            \begin{itemize}
+            <ul>
             <li> <m>P_0</m> is the initial amount invested;</li>
             <li> <m>r</m> is the nominal interest rate;</li>
             <li> <m>n</m> is the compounding frequency (see <xref ref="exp-tab-compoundingfreq"/>);</li>
             <li> <m>t</m> is the amount of time that has passed since the initial investment (in years);</li>
             <li> <m>A(t)</m> is the account balance (in dollars).</li>
-            \end{itemize}
+            </ul>
             \end{pccdefinition}
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-compoundinterest"
-            We have \$7000 to invest into an account that earns interest at a \SI{3}{\percent} nominal rate. Find the amount that we 
+                        <example>xml:id="exp-ex-compoundinterest"
+            We have \$7000 to invest into an account that earns interest at a <quantity><mag>3</mag><unit base="percent"/></quantity> nominal rate. Find the amount that we 
             will have after four years assuming each of the following compounding frequencies:
             \begin{multicols}{4}
             <ol>
@@ -2803,7 +2020,7 @@
             \end{multicols}
             After 4 years, assuming compounding frequencies of yearly, monthly, weekly, daily, the balance 
             will be, respectively, \<m>7878.56, \</m>7891.30, \<m>7892.20, and \</m>7892.44.
-            \end{pccsolution}
+            </solution>
             </example>
 
             We have covered a lot of rates including growth rates and decay rates. In the context of finance we've talked 
@@ -2815,23 +2032,21 @@
             Given a nominal annual interest rate, <m>r</m>, and a compounding frequency, <m>n</m>, the effective rate 
             is the interest rate that is <em>actually</em> earned over the course of one year. 
             The effective rate is calculated using the expression
-            \[
+            <me>
             \left( 1+\frac{r}{n} \right)^n - 1
-            \]
+            </me>
 
             The quantity <m>\left( 1+\frac{r}{n} \right)^n</m> represents the annual growth factor defined in <xref ref="exp-def-growthfactorrate"/>.
             This comes from the compound interest formula (<xref ref="exp-def-compoundint"/>) and the equality
-            \[
+            <me>
             \left( 1+\frac{r}{n} \right)^{nt}= \left(\left( 1+\frac{r}{n} \right)^n\right)^t 
-            \]
+            </me>
             \mbox{}
             \end{pccdefinition}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-effectiverate"
+                        <example>xml:id="exp-ex-effectiverate"
             Find the effective rate of interest for each of the problems in <xref ref="exp-ex-compoundinterest"/>.
 
             <solution>
@@ -2844,7 +2059,7 @@
               <li> <m>\left(1+\frac{0.03}{365}\right)^{365}-1\approx 0.030453264</m></li>
             </ol>
             These have been tabulated in <xref ref="exp-tab-effectiverate"/>.
-            \end{pccsolution}
+            </solution>
             </example>
             \begin{margintable}
             \centering
@@ -2864,15 +2079,13 @@
             xml:id="exp-tab-effectiverate"
             \end{margintable}
 
-            \Cref{exp-ex-effectiverate} demonstrates that the nominal interest rate is usually different from the effective interest rate.  
+            <xref ref="exp-ex-effectiverate"/> demonstrates that the nominal interest rate is usually different from the effective interest rate.  
             In practice, an effective interest rate is almost always a bit more than the nominal interest rate.  
 
             \investigation*{}
-            %===================================
-            <author>Kouzes, Jordan</author>
+                        <author>Kouzes, Jordan</author>
             <date>  Apr 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Atmospheric C-14</title>
 <statement>
             During the Cold War, many above-ground thermonuclear tests were done in the South 
@@ -2911,14 +2124,14 @@
             xml:id="exp-fig-coldwar"
             \end{figure}
 
-            \Cref{exp-fig-coldwar} charts the percent of atmospheric C-14 above the natural pre-nuclear test level in the air above Austria\footnote{\href{http://en.wikipedia.org/wiki/Carbon-14}{http://en.wikipedia.org/wiki/Carbon-14}}.  The decay that you see has to do with C-14 being flushed out of the atmosphere and into the ground and ocean, not radioactive decay.
+            <xref ref="exp-fig-coldwar"/> charts the percent of atmospheric C-14 above the natural pre-nuclear test level in the air above Austria\footnote{\href{http://en.wikipedia.org/wiki/Carbon-14}{http://en.wikipedia.org/wiki/Carbon-14}}.  The decay that you see has to do with C-14 being flushed out of the atmosphere and into the ground and ocean, not radioactive decay.
             <exercise>
               <statement>
                 Write a sentence that contextually interprets the data point <m>(1963,95)</m>.
               </statement>
               <solution>
                 <p>
-                  In <m>1963</m> the atmospheric concentration of C-14 in Austria was \SI{95}{\percent} greater than
+                  In <m>1963</m> the atmospheric concentration of C-14 in Austria was <quantity><mag>95</mag><unit base="percent"/></quantity> greater than
                   the pre-nuclear age concentration.
                 </p>
               </solution>
@@ -2961,11 +2174,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  August 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>CSI</title>
 <statement>
             Almost every compound in your body is replaced frequently by the food, water, and air that you take in.  
@@ -2979,7 +2190,7 @@
             known C-14 levels, the forensic scientists were able to determine the birth year of victims to within 18 months.  
 
             Suppose that skeletal human remains are found in a forest in Austria.  A first-molar from the remains is found to 
-            have \SI{145}{\percent} of pre-nuclear age C-14.  First-molars develop while a person is about 6 or 7 years of age.  In what 
+            have <quantity><mag>145</mag><unit base="percent"/></quantity> of pre-nuclear age C-14.  First-molars develop while a person is about 6 or 7 years of age.  In what 
             year was the person born?  Use the model determined in 
             <xref ref="exp-prob-c14plot"/> while working this problem.
 
@@ -3013,16 +2224,14 @@
             </solution>
             </exercisegroup>
 
-            %===================================
-            <author>Vega</author>
+                        <author>Vega</author>
             <date>  March 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Resources</title>
 <statement>
             In 2005 a town has <m>1000</m> barrels of oil in a well. Some of the oil is easy to reach and some 
             of it is hard to reach. As more of the easily accessible oil is drilled, the amount that they can drill 
-            in a given year is reduced.  In fact, limitations of drilling equipment lead to a \SI{20}{\percent} reduction in drilling capacity each year. In 2005, <m>200</m> barrels of oil were drilled. 
+            in a given year is reduced.  In fact, limitations of drilling equipment lead to a <quantity><mag>20</mag><unit base="percent"/></quantity> reduction in drilling capacity each year. In 2005, <m>200</m> barrels of oil were drilled. 
             Let <m>Q(t)</m> represent the amount of oil (in barrels) that is drilled where <m>t</m> is the number of years after 2005. Assume that in each year the town drills to its maximum capacity. 
             \begin{margintable}
             \centering
@@ -3105,10 +2314,10 @@
             in \vref{exp-prob-greenhouseorig} we modeled the average amount of CO<m>_2</m> emissions
             for which each US citizen is responsible. The functions we came up with were, 
             respectively,
-            \[
+            <me>
             P(t)=282\left( \frac{309}{282} \right)^{\sfrac{t}{10}} \quad \textrm{and}\quad
             C(t)=18.1\left( \frac{16.3}{18.1} \right)^{\sfrac{-10}{21}}\left( \frac{16.3}{18.1} \right)^{\sfrac{t}{21}}
-            \]
+            </me>
 
             <exercise xml:id="exp-prob-USACO2">
               <statement>
@@ -3132,7 +2341,7 @@
               </statement>
               <solution>
                 <p>
-                  The total amount of CO<m>_{2}</m> produced in the US each year is increasing by approximately \SI{0.7769}{\percent}.
+                  The total amount of CO<m>_{2}</m> produced in the US each year is increasing by approximately <quantity><mag>0.7769</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -3143,18 +2352,16 @@
               </statement>
               <solution>
                 <p>
-                  <m>T(15) \approx 5813</m>.  The approximation is only about 134 million metric tons of CO<m>_{2}</m> off, which may seem large but is really only about \SI{2}{\percent} off of the actual estimate.
+                  <m>T(15) \approx 5813</m>.  The approximation is only about 134 million metric tons of CO<m>_{2}</m> off, which may seem large but is really only about <quantity><mag>2</mag><unit base="percent"/></quantity> off of the actual estimate.
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
 
             \begin{exercises}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Given description, write formula</title>
 <statement>
             In each of the following, assume that the population of a town 
@@ -3164,7 +2371,7 @@
             \begin{multicols}{2}
             <exercise>
               <statement>
-                <m>P_0=500</m>, increasing at <m>\SI{6}{\percent}</m> per year.
+                <m>P_0=500</m>, increasing at <quantity><mag>6</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3174,7 +2381,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=1500</m>, increasing at <m>\SI{12}{\percent}</m> per year.
+                <m>P_0=1500</m>, increasing at <quantity><mag>12</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3184,7 +2391,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=2700</m>, increasing at <m>\SI{23}{\percent}</m> per year.
+                <m>P_0=2700</m>, increasing at <quantity><mag>23</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3194,7 +2401,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=3600</m>, increasing at <m>\SI{52}{\percent}</m> per year.
+                <m>P_0=3600</m>, increasing at <quantity><mag>52</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3204,7 +2411,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=700</m>, decreasing at <m>\SI{6}{\percent}</m> per year.
+                <m>P_0=700</m>, decreasing at <quantity><mag>6</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3214,7 +2421,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=2405</m>, decreasing at <m>\SI{12}{\percent}</m> per year.
+                <m>P_0=2405</m>, decreasing at <quantity><mag>12</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3224,7 +2431,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=4302</m>, decreasing at <m>\SI{23}{\percent}</m> per year.
+                <m>P_0=4302</m>, decreasing at <quantity><mag>23</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3234,7 +2441,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=7300</m>, decreasing at <m>\SI{52}{\percent}</m> per year.
+                <m>P_0=7300</m>, decreasing at <quantity><mag>52</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -3244,11 +2451,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Given formula, write interpretaion</title>
 <statement>
             Each of the following formulas model the population of a town 
@@ -3262,7 +2467,7 @@
               <solution>
                 <p>
                   <m>P_0=1000</m>, <m>r=\SI{10}{\percent}</m>; the population is initially <m>1000</m> people, and 
-                  increases at <m>\SI{10}{\percent}</m> per year.
+                  increases at <quantity><mag>10</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -3273,7 +2478,7 @@
               <solution>
                 <p>
                   <m>P_0=1800</m>, <m>r=\SI{7}{\percent}</m>; the population is initially <m>1800</m> people, and increases
-                  at <m>\SI{7}{\percent}</m> per year.
+                  at <quantity><mag>7</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -3284,7 +2489,7 @@
               <solution>
                 <p>
                   <m>P_0=200</m>, <m>r=\SI{-13}{\percent}</m>; the population is initially <m>200</m> people, and decreases
-                  at <m>\SI{13}{\percent}</m> per year.
+                  at <quantity><mag>13</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -3295,21 +2500,19 @@
               <solution>
                 <p>
                   <m>P_0=907</m>, <m>r=\SI{-24}{\percent}</m>; the population is initially <m>907</m> people, and decreases
-                  at <m>\SI{24}{\percent}</m> per year.
+                  at <quantity><mag>24</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Vega</author>
+                        <author>Vega</author>
             <date>  March 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>US population</title>
 <statement>
             In the year 2000, the population of the U.S.A.\ was around 281 million people with an estimated 
-            percentage growth rate of \SI{0.7}{\percent} per year\footnote{2000 census}.
+            percentage growth rate of <quantity><mag>0.7</mag><unit base="percent"/></quantity> per year\footnote{2000 census}.
 
             <exercise>
               <statement>
@@ -3432,17 +2635,15 @@
             \end{minipage}
             \end{widepage}
             \end{figure}
-            %===================================
-            <author>Vega</author>
+                        <author>Vega</author>
             <date>  March 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>China population</title>
 <statement>
             In the year 2009 China had a population around 1.3 billion people and its government had a goal of 
             reducing the population to 700 million by 2050. It aimed to do this by 
             limiting the number of children people had. Assume that with natural death rates and the restricted birth rate
-            the population is decreasing by \SI{0.5}{\percent} each year.
+            the population is decreasing by <quantity><mag>0.5</mag><unit base="percent"/></quantity> each year.
             <exercise>
               <statement>
                 Let <m>P(t)</m> represent the number of people in China, in billions of people, at 
@@ -3505,7 +2706,7 @@
             </exercise>
             <exercise>
               <statement>
-                Do you think the decay rate is likely to stay at \SI{0.5}{\percent} per year? If not, how do 
+                Do you think the decay rate is likely to stay at <quantity><mag>0.5</mag><unit base="percent"/></quantity> per year? If not, how do 
                 you think it might change?
               </statement>
               <solution>
@@ -3572,11 +2773,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Simple interest</title>
 <statement>
             Use <xref ref="exp-eq-simpleinterest"/> to find the given unknowns 
@@ -3644,11 +2843,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Vega</author>
+                        <author>Vega</author>
             <date>  March 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Investment</title>
 <statement>
             You invest \$15,000 in the year 2010 into an investment account earning 
@@ -3688,14 +2885,12 @@
             </exercisegroup>
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Compound interest</title>
 <statement>
-            Assume that you invest \$8000 into an account that earns interest at a \SI{5}{\percent} nominal rate. 
+            Assume that you invest \$8000 into an account that earns interest at a <quantity><mag>5</mag><unit base="percent"/></quantity> nominal rate. 
             <exercise>
               <statement>
                 How much will you have after four years if the interest is compounded yearly?
@@ -3754,14 +2949,12 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Exploring effective rate</title>
 <statement>
-            We have an amount <m>P_0</m> to invest in an account that earns interest at a \SI{6}{\percent} nominal rate. 
+            We have an amount <m>P_0</m> to invest in an account that earns interest at a <quantity><mag>6</mag><unit base="percent"/></quantity> nominal rate. 
             Answer each of the following through the eighth digit after the decimal point.
             <exercise>
               <statement>
@@ -3770,7 +2963,7 @@
               <solution>
                 <p>
                   <m>\left( 1+\frac{0.06}{1} \right)^1-1 = 0.06000000</m>. The effective rate is
-                  \SI{6}{\percent}.
+                  <quantity><mag>6</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -3781,7 +2974,7 @@
               <solution>
                 <p>
                   <m>\left( 1+\frac{0.06}{4} \right)^4-1 \approx 0.06136355</m>. The effective rate 
-                  is approximately \SI{6.136355}{\percent}.
+                  is approximately <quantity><mag>6.136355</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -3792,7 +2985,7 @@
               <solution>
                 <p>
                   <m>\left( 1+\frac{0.06}{365} \right)^{365}-1 \approx 0.06183131</m>. The effective rate
-                  is approximately \SI{6.183131}{\percent}.
+                  is approximately <quantity><mag>6.183131</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -3803,10 +2996,10 @@
               <solution>
                 <p>
                   There are <m>365\cdot 24\cdot 60\cdot 60 = 31536000</m> seconds in a year.
-                  \[
+                  <me>
                   \left( 1+\frac{0.06}{31536000} \right)^{31536000}-1 \approx 0.06183696
-                  \]
-                  The effective rate is approximately \SI{6.183696}{\percent}.
+                  </me>
+                  The effective rate is approximately <quantity><mag>6.183696</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -3823,35 +3016,31 @@
               <answer>
                 <p>
                   The compounding frequency would be <m>31536000\cdot 2 = 63072000</m>
-                  \[
+                  <me>
                   \left( 1+\frac{0.06}{63072000} \right)^{63072000}-1 \approx 0.06183696
-                  \]
+                  </me>
                   which is as before. No practical difference.
                 </p>
               </answer>
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Cary</author>
+                        <author>Cary</author>
             <date>  September 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Credit card</title>
 <statement>
             A credit card company advertises an annual rate of 24\%.  What is the effective annual interest rate if your bill is compiled monthly?
             <solution>
               <p>
-                <m>\left(1+\frac{0.24}{12}\right)^{12}-1\approx 0.26824179</m>; the effective annual interest rate is about <m>\SI{26.82}{\percent}</m>.
+                <m>\left(1+\frac{0.24}{12}\right)^{12}-1\approx 0.26824179</m>; the effective annual interest rate is about <quantity><mag>26.82</mag><unit base="percent"/></quantity>.
               </p>
             </solution>
             </exercisegroup>
 
-            %===================================
-            <author>Cary</author>
+                        <author>Cary</author>
             <date>  September 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Payday loan</title>
 <statement>
             A payday loan company makes this offer to a customer: they will receive <m>\</m>375<m> today and when they get paid in two weeks, they owe the payday loan company </m>\<m>450</m>.  
@@ -3861,7 +3050,7 @@
               </statement>
               <solution>
                 <p>
-                  The interest charged on the <m>\</m>375<m> loan was </m>\<m>75</m>. As <m>\frac{75}{375}=0.2</m>, the 2-week percentage rate is <m>\SI{20}{\percent}</m>.
+                  The interest charged on the <m>\</m>375<m> loan was </m>\<m>75</m>. As <m>\frac{75}{375}=0.2</m>, the 2-week percentage rate is <quantity><mag>20</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>	
             </exercise>
@@ -3871,20 +3060,18 @@
               </statement>
               <solution>
                 <p>
-                  <m>1.2^{26} - 1 \approx 113.475</m>; the effective annual rate is approximately \SI{11347.5}{\percent}.
+                  <m>1.2^{26} - 1 \approx 113.475</m>; the effective annual rate is approximately <quantity><mag>11347.5</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Find the rate</title>
 <statement>
-            The amount of money in an account grows by a total of \SI{45}{\percent} over a period of 10 years. Find the nominal 
+            The amount of money in an account grows by a total of <quantity><mag>45</mag><unit base="percent"/></quantity> over a period of 10 years. Find the nominal 
             interest rate (to 5 decimal places) if the account was compounded:
             \begin{multicols}{2}
             <exercise>
@@ -3919,16 +3106,14 @@
             \end{outcomes}
             \marginpar{\centering\resizebox{\marginparwidth/2}{!}{<m>e</m>}}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            \subsection*{Continuously compounded interest and the number <m>e</m>}
+                        \subsection*{Continuously compounded interest and the number <m>e</m>}
             Congratulations, you've just won the grand prize of one dollar in the 
             giga-millions Genuine Wheel of Fortune lottery game.  
             One dollar doesn't sound like much of a grand prize, but here's the 
             thing -- you can deposit that dollar into a savings account that earns 
-            interest at a rate of \SI{100}{\percent} per year!  So after one year your prize 
+            interest at a rate of <quantity><mag>100</mag><unit base="percent"/></quantity> per year!  So after one year your prize 
             will have grown to \<m>2, after two years it will have grown to \</m>4, wait 
             a minute \ldots  even after 10 years it has only grown to \$1024.  But 
             you know how these increasing exponential functions work; once they 
@@ -3940,7 +3125,7 @@
             All of those figures are based upon the assumption that the 
             interest is compounded only once a year -- that's where the wheel 
             comes in.  You spin the wheel to see the way in which the interest 
-            will be compounded.  \Cref{exp-tab-wheelfortune} shows the amount that will 
+            will be compounded.  <xref ref="exp-tab-wheelfortune"/> shows the amount that will 
             be in your account at the end of year one if the interest is compounded 
             yearly, monthly, weekly, daily, every hour, every minute, and every second.  
             Make sure that you see the connection between the expression <m>\left( 1+\frac{1}{n} \right)^n</m>
@@ -3974,9 +3159,9 @@
             the right of the decimal point the digits will be different if 
             the interest is compounded just one additional time. 
             That is to say
-            \[
+            <me>
             \lim_{n\to\infty}\left( 1+\frac{1}{n} \right)^{n}
-            \]
+            </me>
             is an irrational number (a number that in decimal form never terminates 
             and never forms a forever-repeating pattern).  
 
@@ -4007,23 +3192,21 @@
             \begin{pccdefinition}[Continuous growth and decay]xml:id="exp-def-contgrowthdecay"
             If we are modeling a situation that involves continuous growth or decay, then 
             the model will have the following form:
-            \[
+            <me>
             Q(t)=Q_0\,e^{kt}
-            \]
-            \begin{itemize}
+            </me>
+            <ul>
             <li> If <m>k&gt;0</m>, then the function <m>Q</m> is increasing, and <m>k</m> is called the <em>continuous growth rate</em>.</li>
             <li> If <m>k&lt;0</m>, then the function <m>Q</m> is decreasing, and <m>|k|</m> is called the <em>continuous decay rate</em>.</li>
-            \end{itemize}
+            </ul>
             In the context of a continuously compounded interest problems, <m>k</m> is the nominal interest rate and <m>e^k-1</m> is the effective interest rate.
             \end{pccdefinition}
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  April 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-compcont"
-            We have \$7000 to invest in an account that has a nominal interest rate of \SI{3}{\percent} compounded 
+                        <example>xml:id="exp-ex-compcont"
+            We have \$7000 to invest in an account that has a nominal interest rate of <quantity><mag>3</mag><unit base="percent"/></quantity> compounded 
             {\em continuously}. 
             <ol>
               <li> Find a model for this situation.</li>
@@ -4034,9 +3217,9 @@
             <solution>
             <ol>
               \item Using <xref ref="exp-def-contgrowthdecay"/>, 
-              \[
+              <me>
               Q(t) = 7000\,e^{0.03t}
-              \]
+              </me>
               \item We evaluate the function <m>Q</m> when <m>t=4</m>
               \begin{align*}
               Q(4) &amp; =  7000\,e^{0.03(4)} \\
@@ -4045,25 +3228,25 @@
               The amount in the account after four years is <m>\</m>7892.48$.
               <li> This is larger than any of the values we found in <xref ref="exp-ex-compoundinterest"/>.</li>
               \item We calculate the effective annual rate of interest using <xref ref="exp-def-contgrowthdecay"/>
-              \[
+              <me>
               e^{0.03} -1 \approx 0.030454534
-              \]
-              The effective annual rate of interest is approximately <m>\SI{3.0454534}{\percent}</m>. Note that this is greater than any of the values we found in \vref{exp-ex-effectiverate}.
+              </me>
+              The effective annual rate of interest is approximately <quantity><mag>3.0454534</mag><unit base="percent"/></quantity>. Note that this is greater than any of the values we found in \vref{exp-ex-effectiverate}.
             </ol>
-            \end{pccsolution}
+            </solution>
             </example>
-            <try-it-yourself>
+            <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
             Repeat <xref ref="exp-ex-compcont"/> using an investment of \$4000, and a 
-            nominal rate of \SI{2}{\percent}.
+            nominal rate of <quantity><mag>2</mag><unit base="percent"/></quantity>.
             <solution>
               <p>
                 <ol>
                   \item Using <xref ref="exp-def-contgrowthdecay"/>, 
-                  \[
+                  <me>
                   Q(t) = 4000\,e^{0.02t}
-                  \]
+                  </me>
                   \item We evaluate the function <m>Q</m> when <m>t=4</m>
                   \begin{align*}
                   Q(4) &amp; = 4000\,e^{0.02(4)} \\
@@ -4072,22 +3255,20 @@
                   The amount in the account after four years is <m>\</m>4333.15$.
                   <li> Not relevant to this problem.</li>
                   \item We calculate the effective annual rate of interest using <xref ref="exp-def-contgrowthdecay"/>
-                  \[
+                  <me>
                   e^{0.02}-1\approx 0.0202
-                  \]
-                  The effective annual rate of interest is approximately <m>\SI{2.02}{\percent}</m>. 
+                  </me>
+                  The effective annual rate of interest is approximately <quantity><mag>2.02</mag><unit base="percent"/></quantity>. 
                 </ol>
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <example>xml:id="exp-prob-compound5all"%
-            You have \<m>2000 to invest in an interest-bearing account that has a nominal interest rate of </m>\SI{5}{\percent}$.
+                        <example>xml:id="exp-prob-compound5all"%
+            You have \<m>2000 to invest in an interest-bearing account that has a nominal interest rate of </m><quantity><mag>5</mag><unit base="percent"/></quantity>$.
             <ol>
               <li> Calculate the effective annual growth rates if the interest is compounded daily and if the interest is compounded continuously.  </li>
               <li> State the annual growth factor for each account.</li>
@@ -4096,28 +3277,28 @@
             <solution>
             <ol>
               \item If the interest is compounded daily, then we calculate
-              \[
+              <me>
               \left(1+\frac{0.05}{365}\right)^{365\cdot 1} -1 \approx 0.051267496
-              \]
-              The effective annual rate is approximately <m>\SI{5.1267496}{\percent}</m>.
+              </me>
+              The effective annual rate is approximately <quantity><mag>5.1267496</mag><unit base="percent"/></quantity>.
 
               If the interest is compounded <em>continuously</em> then we calculate
-              \[
+              <me>
               e^{0.05}-1\approx 0.05127110
-              \]
-              The effective annual rate is approximately <m>\SI{5.127110}{\percent}</m>.
+              </me>
+              The effective annual rate is approximately <quantity><mag>5.127110</mag><unit base="percent"/></quantity>.
               \item If the interest is compounded daily, then the annual 
               growth factor is calculated using
-              \[
+              <me>
               \left(1+\frac{0.05}{365}\right)^{365\cdot 1} \approx 1.051267496
-              \]
+              </me>
               The growth factor is approximately <m>1.051267496</m>.
 
               If the interest is compounded continuously, then the annual 
               growth factor is calculated using
-              \[
+              <me>
               e^{0.05} \approx 1.05127110
-              \]
+              </me>
               The growth factor is approximately <m>1.05127110</m>.
               \item The account balance after 10 years if the interest is compounded annually, daily, and continuously 
               is calculated using (respectively)
@@ -4127,48 +3308,48 @@
               2000e^{0.05\cdot 10}                              &amp; \approx 3297.44 
               \end{align*}
               We conclude that 
-              \begin{itemize}
+              <ul>
               <li> when the interest is compounded annually the balance will be <m>\</m>3257.79$;</li>
               <li> when the interest is compounded daily the balance will be <m>\</m>3297.33$;</li>
               <li> when the interest is compounded continuously the balance will be <m>\</m>3297.44$.</li>
-              \end{itemize}
+              </ul>
             </ol>
-            \end{pccsolution}
+            </solution>
             </example>
 
-            <try-it-yourself>
+            <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
-            Repeat <xref ref="exp-prob-compound5all"/> using an initial investment of \<m>15,000 at a nominal interest rate of </m>\SI{8}{\percent}$.
+            Repeat <xref ref="exp-prob-compound5all"/> using an initial investment of \<m>15,000 at a nominal interest rate of </m><quantity><mag>8</mag><unit base="percent"/></quantity>$.
             <solution>
               <p>
                 Growth rates:
-                \begin{itemize}
-                <li> Daily: <m>\left(1+\frac{0.08}{365}\right)^{365\cdot 1} -1 \approx 0.083277572</m>; the effective annual rate is approximately <m>\SI{8.3277572}{\percent}</m>.</li>
-                <li> Continuous : <m>e^{0.08}-1\approx 0.08328707</m>; the effective annual rate is approximately <m>\SI{8.328707}{\percent}</m>.</li>
-                \end{itemize}
+                <ul>
+                <li> Daily: <m>\left(1+\frac{0.08}{365}\right)^{365\cdot 1} -1 \approx 0.083277572</m>; the effective annual rate is approximately <quantity><mag>8.3277572</mag><unit base="percent"/></quantity>.</li>
+                <li> Continuous : <m>e^{0.08}-1\approx 0.08328707</m>; the effective annual rate is approximately <quantity><mag>8.328707</mag><unit base="percent"/></quantity>.</li>
+                </ul>
                 Growth factors:
-                \begin{itemize}
+                <ul>
                 <li> Daily: <m>\left(1+\frac{0.08}{365}\right)^{365\cdot 1} \approx 8.3277572</m>; the annual growth factor is approximately <m>8.3277572\%</m>.</li>
                 <li> Continuous: <m>e^{0.08} \approx 1.08328707</m>; the growth factor is approximately <m>1.08328707</m>.</li>
-                \end{itemize}
+                </ul>
                 Balance after <m>10</m> years:
-                \begin{itemize}
+                <ul>
                 <li> Annually: <m>15000(1.08)^{10} \approx 32,383.87</m>; the balance will be <m>\</m>32,383.87$.</li>
                 <li> Daily: <m>15000\left(1+\frac{0.08}{365}\right)^{10\cdot 365} \approx 33380.19</m>; the balance will be <m>\</m>33380.19$.</li>
                 <li> Continuously: <m>15000e^{0.08\cdot 10} \approx 33383.11</m>; the balance will be <m>\</m>33383.11$.</li>
-                \end{itemize}
+                </ul>
               </p>
             </solution>
             </exercisegroup>
-            </try-it-yourself>
+            </exercises>
 
 
             <example>
             We have \$600 to invest in an account that compounds interest continuously.  
             <ol>
-              <li> If the nominal interest rate is \SI{8}{\percent}, what will the effective annual growth rate be?</li>
-              <li> If the effective annual interest rate is \SI{8}{\percent}, what will the nominal interest rate be?</li>
+              <li> If the nominal interest rate is <quantity><mag>8</mag><unit base="percent"/></quantity>, what will the effective annual growth rate be?</li>
+              <li> If the effective annual interest rate is <quantity><mag>8</mag><unit base="percent"/></quantity>, what will the nominal interest rate be?</li>
             </ol>
             <solution>
             <ol>
@@ -4178,43 +3359,41 @@
               &amp; = 600\left(e^{0.08}\right)^t         \\
               &amp; \approx 600\left(1.08328707\right)^t 
               \end{align*}
-              So the growth rate is <m>e^{0.08}-1</m>, or about <m>\SI{8.328707}{\percent}</m>.
+              So the growth rate is <m>e^{0.08}-1</m>, or about <quantity><mag>8.328707</mag><unit base="percent"/></quantity>.
               \item This time the account will have <m>600(1.08)^t</m>, <m>t</m> years after the money  is invested.  We need to find the value of <m>r</m> in the equation <m></m>A(t)=600\,e^{rt}.<m></m>  
               Since the two expressions for <m>A(t)</m> must be equal,
               \begin{align*}
               600\,e^{rt}  = 600(1.08)^t &amp; \Longrightarrow e^{rt}  = (1.08)^t \\
               &amp; \Longrightarrow e^r  = 1.08        
               \end{align*}
-              Later we will learn how to solve for <m>r</m> exactly using logarithms.  For now, we can find an approximate solution for <m>r</m> using a graphing calculator.  The value of <m>r</m> is about 0.077, so the nominal interest rate is about \SI{7.7}{\percent}.
+              Later we will learn how to solve for <m>r</m> exactly using logarithms.  For now, we can find an approximate solution for <m>r</m> using a graphing calculator.  The value of <m>r</m> is about 0.077, so the nominal interest rate is about <quantity><mag>7.7</mag><unit base="percent"/></quantity>.
             </ol> 
-            \end{pccsolution}
+            </solution>
             </example>
 
             \subsection*{Radioactive decay}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            You may remember that we studied radioactive decay in \vref{exp-prob-radioactive}. In 
+                        You may remember that we studied radioactive decay in \vref{exp-prob-radioactive}. In 
             fact it is often more appropriate to use the natural base, <m>e</m>, in such applications.
 
             <example>
             The number of radioactive atoms in a sample of Carbon-14 decays according to the model
-            \[
+            <me>
             Q(t)= Q_0\,e^{-0.000120968t},
-            \]
+            </me>
             where <m>Q_0</m> is the initial mass of the radioactive atoms and <m>Q(t)</m> is the mass of radioactive atoms <m>t</m> years after the sample was established.
 
-            Assuming that the radioactive atoms have an initial mass of <m>\SI{10}{\milli\gram}</m>  (<m>Q_0=10</m>),
+            Assuming that the radioactive atoms have an initial mass of <quantity><mag>10</mag><unit base="gram" prefix="milli"/></quantity>  (<m>Q_0=10</m>),
             what is the mass after 5730 years?
             <solution>
             We evaluate
-            \[
+            <me>
             Q(5730)\approx 5
-            \]
-            The radioactive atoms have a mass of approximately <m>\SI{5}{\milli\gram}</m>  after 5730 years; in other 
+            </me>
+            The radioactive atoms have a mass of approximately <quantity><mag>5</mag><unit base="gram" prefix="milli"/></quantity>  after 5730 years; in other 
             words, the sample has decayed by half.
-            \end{pccsolution}
+            </solution>
             </example>
 
 
@@ -4323,22 +3502,20 @@
             the point.
 
             \investigation*{}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Trusting the definition of <m>e</m></title>
 <statement>
-            \Cref{exp-def-e} says that 
-            \[
+            <xref ref="exp-def-e"/> says that 
+            <me>
             e = \lim_{n\rightarrow\infty}\left( 1+\frac{1}{n} \right)^n   
-            \]
+            </me>
             Let's see if we can verify this by doing some numerical calculations. Let <m>f</m> 
             be the function that has formula
-            \[
+            <me>
             f(x) = \left( 1+\frac{1}{x} \right)^x   
-            \]
+            </me>
             <exercise xml:id="exp-prob-exploree">
               <statement>
                 Evaluate <m>f(10)</m>, <m>f(100)</m>, <m>f(1000)</m>, <m>f(10000)</m>, and <m>f(100000)</m>. Give 
@@ -4373,15 +3550,13 @@
               </solution>
             </exercise>
             </exercisegroup>
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Compounding continuously</title>
 <statement>
             Imagine that you deposit \$100 into a bank account which  accrues interest at a nominal 
-            rate of \SI{5}{\percent} compounded continuously. The amount <m>Q(t)</m> in the account  <m>t</m> years 
+            rate of <quantity><mag>5</mag><unit base="percent"/></quantity> compounded continuously. The amount <m>Q(t)</m> in the account  <m>t</m> years 
             after opening the account is given by <m>Q(t)=100\,e^{0.05t}</m>.
 
             <exercise>
@@ -4400,16 +3575,16 @@
               </statement>
               <solution>
                 <p>
-                  The effective annual growth rate is <m>e^{0.05}-1\approx 0.05127 </m> or approximately <m>\SI{5.1271}{\percent}</m>.
+                  The effective annual growth rate is <m>e^{0.05}-1\approx 0.05127 </m> or approximately <quantity><mag>5.1271</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             <exercise>
               <statement>
                 Use your calculator to graph
-                \[
+                <me>
                 Q(t)=100\,e^{0.05t} \qquad \textrm{and} \qquad P(t)=100(1.05127)^t
-                \]
+                </me>
                 on the same axes. What do you notice?
               </statement>
               <solution>
@@ -4442,11 +3617,9 @@
             </exercisegroup>
 
             \begin{exercises}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Given description, write formula</title>
 <statement>
             In each of the following, assume that the population of a town 
@@ -4456,7 +3629,7 @@
             \begin{multicols}{2}
             <exercise>
               <statement>
-                <m>P_0=600</m>, increasing at <m>\SI{7}{\percent}</m> per year.
+                <m>P_0=600</m>, increasing at <quantity><mag>7</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -4466,7 +3639,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=1500</m>, increasing at <m>\SI{7}{\percent}</m> continuously per year.
+                <m>P_0=1500</m>, increasing at <quantity><mag>7</mag><unit base="percent"/></quantity> continuously per year.
               </statement>
               <solution>
                 <p>
@@ -4476,7 +3649,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=2300</m>, increasing at <m>\SI{27}{\percent}</m> per year.
+                <m>P_0=2300</m>, increasing at <quantity><mag>27</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -4486,7 +3659,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=3600</m>, increasing at <m>\SI{52}{\percent}</m> continously per year.
+                <m>P_0=3600</m>, increasing at <quantity><mag>52</mag><unit base="percent"/></quantity> continously per year.
               </statement>
               <solution>
                 <p>
@@ -4496,7 +3669,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=450</m>, decreasing at <m>\SI{6}{\percent}</m> per year.
+                <m>P_0=450</m>, decreasing at <quantity><mag>6</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -4506,7 +3679,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=2405</m>, decreasing at <m>\SI{12}{\percent}</m> continuously per year.
+                <m>P_0=2405</m>, decreasing at <quantity><mag>12</mag><unit base="percent"/></quantity> continuously per year.
               </statement>
               <solution>
                 <p>
@@ -4516,7 +3689,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=4402</m>, decreasing at <m>\SI{19}{\percent}</m> per year.
+                <m>P_0=4402</m>, decreasing at <quantity><mag>19</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -4526,7 +3699,7 @@
             </exercise>
             <exercise>
               <statement>
-                <m>P_0=7203</m>, decreasing at <m>\SI{31}{\percent}</m> continuously per year.
+                <m>P_0=7203</m>, decreasing at <quantity><mag>31</mag><unit base="percent"/></quantity> continuously per year.
               </statement>
               <solution>
                 <p>
@@ -4536,11 +3709,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Given formula, write interpretaion</title>
 <statement>
             Each of the following formulas model the population of a town 
@@ -4554,7 +3725,7 @@
               <solution>
                 <p>
                   <m>P_0=1000</m>, <m>r=\SI{10}{\percent}</m>; the population is initially <m>1000</m> people, and 
-                  increases at <m>\SI{10}{\percent}</m> per year.
+                  increases at <quantity><mag>10</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -4566,7 +3737,7 @@
               <solution>
                 <p>
                   <m>P_0=1000</m>, <m>r=\SI[exponent-base=e]{e0.11}{\percent}\approx\SI{1.11627807}{\percent}</m>; the population is 
-                  initially <m>1800</m> people, and increases at approximately <m>\SI{11.627807}{\percent}</m> per year.
+                  initially <m>1800</m> people, and increases at approximately <quantity><mag>11.627807</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -4577,7 +3748,7 @@
               <solution>
                 <p>
                   <m>P_0=300</m>, <m>r=\SI{-17}{\percent}</m>; the population is initially <m>200</m> people, and decreases
-                  at <m>\SI{17}{\percent}</m> per year.
+                  at <quantity><mag>17</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
@@ -4589,37 +3760,33 @@
                 <p>
                   <m>P_0=907</m>, <m>r=\SI[exponent-base=e]{e-0.08}{\percent}\approx\SI{0.923116346}{\percent}</m>; the population is 
                   initially <m>907</m> people, and decreases
-                  at approximately <m>\SI{7.69}{\percent}</m> per year.
+                  at approximately <quantity><mag>7.69</mag><unit base="percent"/></quantity> per year.
                 </p>
               </solution>
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>The number <m>e</m></title>
 <statement>
             Put the following numbers in ascending order:
-            \[
+            <me>
             e, \quad \sfrac{1}{3},\quad 9,\quad e^{-1},\quad 1,\quad \sfrac{1}{4},\quad e,\quad 3,\quad \sfrac{1}{e^2}, \quad 2, \quad e^2
-            \]
+            </me>
             <solution>
               <p>
                 In ascending order: <m>\sfrac{1}{e^2}&lt;\sfrac{1}{4}&lt;\sfrac{1}{3}&lt;\sfrac{1}{e}&lt;2&lt;e&lt;3&lt;e^2&lt;9</m>
               </p>
             </solution>
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Investing in an account</title>
 <statement>
-            You have \<m>2000 to invest in an account that accrues interest at a nominal rate of </m>\SI{3.75}{\percent}$. 
+            You have \<m>2000 to invest in an account that accrues interest at a nominal rate of </m><quantity><mag>3.75</mag><unit base="percent"/></quantity>$. 
             Write a formula for <m>A(t)</m>, the amount of money in the account <m>t</m> years 
             after opening the account, assuming that the interest is compounded 
             in each of the following ways. Calculate the effective annual rate in each case.
@@ -4630,7 +3797,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>A(t)=2000(1.0375)^t</m>; the effective annual rate is \SI{3.75}{\percent}. 
+                  <m>A(t)=2000(1.0375)^t</m>; the effective annual rate is <quantity><mag>3.75</mag><unit base="percent"/></quantity>. 
                 </p>
               </solution>
             </exercise>
@@ -4642,7 +3809,7 @@
                 <p>
                   <m>A(t)=2000\left( 1+\frac{0.0375}{12} \right)^{12t}</m>; the effective annual rate is 
                   calculated using <m>\left( 1+\frac{0.0375}{12} \right)^{12}\approx 1.03815129</m>. The 
-                  effective annual rate is approximately \SI{1.03815129}{\percent}.
+                  effective annual rate is approximately <quantity><mag>1.03815129</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -4654,7 +3821,7 @@
                 <p>
                   <m>A(t)=2000\left( 1+\frac{0.0375}{365} \right)^{365t}</m>; the effective annual rate is 
                   calculated using <m>\left( 1+\frac{0.0375}{365} \right)^{365}\approx 1.0382100</m>. The 
-                  effective annual rate is approximately \SI{1.0382100}{\percent}.
+                  effective annual rate is approximately <quantity><mag>1.0382100</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -4665,22 +3832,20 @@
               <solution>
                 <p>
                   <m>A(t)=2000e^{0.0375t}</m>; the effective annual rate is calculated using <m>e^{0.0375}\approx 1.0382120</m>.
-                  The effective annual rate is approximately \SI{1.0382120}{\percent}.
+                  The effective annual rate is approximately <quantity><mag>1.0382120</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Solving an equation involving <m>e</m></title>
 <statement>
             You saved <m>\</m>7,000<m> toward the purchase of a car costing </m>\<m>9,000</m>. 
             How long would the <m>\</m>7,000$ have to be invested in an account that 
-            earns \SI{8}{\percent} compounded continuously to grow to <m>\</m>9,000$?
+            earns <quantity><mag>8</mag><unit base="percent"/></quantity> compounded continuously to grow to <m>\</m>9,000$?
             <solution>
               <p>
                 We have to solve the equation <m>9000=7000e^{0.08t}</m> for <m>t</m>. This can 
@@ -4710,15 +3875,13 @@
               </p>
             </solution>
             </exercisegroup>
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Annual effective rate vs continuous growth rate</title>
 <statement>
             Imagine that you have a bank account with a principal of \$2500 earning an 
-            annual <em>effective</em> rate of \SI{10}{\percent}.
+            annual <em>effective</em> rate of <quantity><mag>10</mag><unit base="percent"/></quantity>.
             <exercise>
               <statement>
                 Write a formula for <m>A(t)</m>, the amount of money in the account <m>t</m> years 
@@ -4739,16 +3902,14 @@
                 <p>
                   We need to solve the equation <m>e^r=1.1</m>; using a table of values, we 
                   find <m>r\approx 0.09531</m>, and the continuous growth rate is 
-                  approximately <m>\SI{9.531}{\percent}</m>.
+                  approximately <quantity><mag>9.531</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  February 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Newton's Law of Cooling</title>
 <statement>
             You may have noticed that when you leave a cup of hot coffee in a room, 
@@ -4756,8 +3917,8 @@
             the difference between the temperature of the liquid and its surrounding 
             is not too great, then <em>Newton's Law of Cooling</em> applies.
 
-            One day you buy a cup of coffee that starts at \SI{90}{\degreeCelsius}, 
-            and you are stood outside where the temperature is \SI{0}{\degreeCelsius}. Let
+            One day you buy a cup of coffee that starts at <quantity><mag>90</mag><unit base="degreeCelsius"/></quantity>, 
+            and you are stood outside where the temperature is <quantity><mag>0</mag><unit base="degreeCelsius"/></quantity>. Let
             <m>T(t)</m> represent the temperature of your coffee at time <m>t</m> (in minutes) since you bought it.
             <exercise>
               <statement>
@@ -4781,7 +3942,7 @@
             </exercise>
             <exercise>
               <statement>
-                The temperature of the coffee <em>decreases</em> at a continuous rate of \SI{7}{\percent} per minute. Write a
+                The temperature of the coffee <em>decreases</em> at a continuous rate of <quantity><mag>7</mag><unit base="percent"/></quantity> per minute. Write a
                 formula for <m>T(t)</m>.
               </statement>
               <solution>
@@ -4792,31 +3953,31 @@
             </exercise>
             <exercise>
               <statement>
-                According to your model, what is the temperature of the coffee \SI{10}{\minute} after you bought it?
+                According to your model, what is the temperature of the coffee <quantity><mag>10</mag><unit base="minute"/></quantity> after you bought it?
               </statement>
               <solution>
                 <p>
                   <m>T(10)=90e^{-0.07\cdot 10}\approx 45</m>; the temperature of the coffee
-                  is approximately \SI{45}{\degreeCelsius}.
+                  is approximately <quantity><mag>45</mag><unit base="degreeCelsius"/></quantity>.
                 </p>
               </solution>
             </exercise>
             <exercise>
               <statement>
                 According to your model, how long after you bought your coffee is 
-                the temperature of the coffee \SI{5}{\degreeCelsius}?
+                the temperature of the coffee <quantity><mag>5</mag><unit base="degreeCelsius"/></quantity>?
               </statement>
               <solution>
                 <p>
                   We need to solve the equation <m>5=90e^{-0.07t}</m> for <m>t</m>. Using a graphing calculator, 
-                  we find <m>t\approx 41.29</m>. The coffee will be \SI{5}{\degreeCelsius} approximately \SI{41}{\minute} 
+                  we find <m>t\approx 41.29</m>. The coffee will be <quantity><mag>5</mag><unit base="degreeCelsius"/></quantity> approximately <quantity><mag>41</mag><unit base="minute"/></quantity> 
                   after it was bought.
                 </p>
               </solution>
             </exercise>
             <exercise>
               <statement>
-                According to your model, is the temperature of the coffee ever \SI{0}{\degreeCelsius}? 
+                According to your model, is the temperature of the coffee ever <quantity><mag>0</mag><unit base="degreeCelsius"/></quantity>? 
               </statement>
               <solution>
                 <p>
@@ -4826,11 +3987,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Neft (Hughes)</author>
+                        <author>Neft (Hughes)</author>
             <date>  August 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>The RC circuit</title>
 <statement>
             A <em>capacitor</em> is a device that stores electrical energy in the form of charged particles.
@@ -4841,15 +4000,15 @@
 
             The voltage (in \si{\volt}), on the capacitor as it is being discharged is modeled by the
             function <m>V</m> that has formula 
-            \[
+            <me>
             V(t)=V_0e^{-\frac{t}{RC}}
-            \]
+            </me>
             where <m>V_0</m> is the initial capacitor voltage, <m>R</m> is the value of the
             resistor (in \si{\ohm}), <m>C</m> is the value of the capacitor (in \si{\farad}) and <m>t</m> is time (in \si{\second}).
             <exercise>
               <statement>
                 Suppose that a <m>2\times 10^{-6}</m>-farad capacitor, initially charged up 
-                to <m>\SI{10}{\volt}</m>, is connected across a 50,000-ohm resistor. 
+                to <quantity><mag>10</mag><unit base="volt"/></quantity>, is connected across a 50,000-ohm resistor. 
                 Write the formula for <m>V(t)</m>.
               </statement>
               <solution>
@@ -4925,33 +4084,31 @@
             </exercise>
             <exercise>
               <statement>
-                By what percentage has the voltage decreased on the capacitor after <m>\SI{0.1}{\second}</m>? 
-                After <m>\SI{0.2}{\second}</m>?
+                By what percentage has the voltage decreased on the capacitor after <quantity><mag>0.1</mag><unit base="second"/></quantity>? 
+                After <quantity><mag>0.2</mag><unit base="second"/></quantity>?
               </statement>
               <solution>
                 <p>
-                  After <m>\SI{0.1}{\second}</m>, the voltage on the capacitor has decreased by about
-                  <m>\SI{63}{\percent}</m>. After <m>\SI{0.2}{\second}</m>, the voltage on the 
-                  capacitor has decreased by about <m>\SI{86}{\percent}</m>.
+                  After <quantity><mag>0.1</mag><unit base="second"/></quantity>, the voltage on the capacitor has decreased by about
+                  <quantity><mag>63</mag><unit base="percent"/></quantity>. After <quantity><mag>0.2</mag><unit base="second"/></quantity>, the voltage on the 
+                  capacitor has decreased by about <quantity><mag>86</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Neft (Hughes)</author>
+                        <author>Neft (Hughes)</author>
             <date>  August 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Charging a capacitor</title>
 <statement>
             If a voltage source, such as a battery, is connected to a resistor and a uncharged
             capacitor, the capacitor will charge up. The voltage (in \si{\volt}), 
             on the capacitor as it is being charged is modeled by the function <m>V</m> 
             that has formula
-            \[
+            <me>
             V(t)=V_S\left( 1-e^{-\frac{t}{RC}} \right)
-            \]
+            </me>
             where <m>V_S</m> represents the voltage of the source (in \si{\volt}), <m>R</m>
             is the value of the resistor (in \si{\ohm}), <m>C</m> is the
             value of the capacitor (in \si{\farad}) and <m>t</m> is time (in \si{\second}).
@@ -5033,14 +4190,14 @@
             </exercise>
             <exercise>
               <statement>
-                After <m>\SI{0.1}{\second}</m>, the voltage on the capicitor is 
-                what percentage of the battery voltage? After <m>\SI{0.2}{\second}</m>?
+                After <quantity><mag>0.1</mag><unit base="second"/></quantity>, the voltage on the capicitor is 
+                what percentage of the battery voltage? After <quantity><mag>0.2</mag><unit base="second"/></quantity>?
               </statement>
               <solution>
                 <p>
-                  After <m>\SI{0.1}{\second}</m>, the capacitor has charged up to about
-                  <m>\SI{63}{\percent}</m> of the battery voltage. After <m>\SI{0.2}{\second}</m>,
-                  the capacitor has charged up to about <m>\SI{86}{\percent}</m> of the 
+                  After <quantity><mag>0.1</mag><unit base="second"/></quantity>, the capacitor has charged up to about
+                  <quantity><mag>63</mag><unit base="percent"/></quantity> of the battery voltage. After <quantity><mag>0.2</mag><unit base="second"/></quantity>,
+                  the capacitor has charged up to about <quantity><mag>86</mag><unit base="percent"/></quantity> of the 
                   battery voltage.
                 </p>
               </solution>
@@ -5061,17 +4218,15 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Half-life exploration</title>
 <statement>
             In each of the following problems, assume that 
-            \[
+            <me>
             Q(t) = Q_0\,e^{kt}
-            \]
+            </me>
             models the mass of radioactive atoms in a substance (in \si{\milli\gram}) <m>t</m> years after the sample was established. Use a graphing calculator to approximate the half-life for the given values of <m>Q_0</m> and <m>k</m>. State 
             your answers correctly to 2 decimal places.
             \begin{multicols}{2}
@@ -5128,7 +4283,7 @@
               </statement>
               <solution>
                 <p>
-                  <m>e^{0.2t}\approx 1.2214028^t</m>,  so <m>f</m> has continuous growth rate <m>\SI{20}{\percent}</m> and growth rate about <m>\SI{22.14028}{\percent}</m>.
+                  <m>e^{0.2t}\approx 1.2214028^t</m>,  so <m>f</m> has continuous growth rate <quantity><mag>20</mag><unit base="percent"/></quantity> and growth rate about <quantity><mag>22.14028</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -5138,17 +4293,15 @@
               </statement>
               <solution>
                 <p>
-                  <m>e^{-0.1t}\approx 0.9048374^t</m>,  so <m>f</m> has continuous decay rate <m>\SI{10}{\percent}</m> and decay rate about <m>\SI{9.51626}{\percent}</m>.
+                  <m>e^{-0.1t}\approx 0.9048374^t</m>,  so <m>f</m> has continuous decay rate <quantity><mag>10</mag><unit base="percent"/></quantity> and decay rate about <quantity><mag>9.51626</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>The function <m>f(x)=e^x</m></title>
 <statement>
             Let <m>f</m> be the function that has formula <m>f(x)=e^x</m>. 
@@ -5194,16 +4347,16 @@
               </statement>
               <solution>
                 <p>
-                  \begin{itemize}
+                  <ul>
                   <li> <m>g</m> has domain <m>(-\infty,\infty)</m> and range <m>(4,\infty)</m> </li>
                   <li> <m>h</m> has domain <m>(-\infty,\infty)</m> and range <m>(-\infty,0)</m> </li>
-                  \end{itemize}
+                  </ul>
                 </p>
               </solution>
             </exercise>
             <exercise xml:id="exp-prob-matche23">
               <statement>
-                \Cref{exp-fig-matche23} shows <m>y=2^x</m>, <m>y=e^x</m>, and <m>y=3^x</m>. Match each 
+                <xref ref="exp-fig-matche23"/> shows <m>y=2^x</m>, <m>y=e^x</m>, and <m>y=3^x</m>. Match each 
                 curve to the appropriate formula.
               </statement>
               <solution>
@@ -5234,7 +4387,7 @@
             </exercise>
             <exercise xml:id="exp-prob-matchehalfthird">
               <statement>
-                \Cref{exp-fig-matchehalfthird} shows <m>y=\left( \frac{1}{2} \right)^x</m>, <m>y=e^{-x}</m>, and <m>y=\left( \frac{1}{3} \right)^x</m>. Match each 
+                <xref ref="exp-fig-matchehalfthird"/> shows <m>y=\left( \frac{1}{2} \right)^x</m>, <m>y=e^{-x}</m>, and <m>y=\left( \frac{1}{3} \right)^x</m>. Match each 
                 curve to the appropriate formula.
               </statement>
               <solution>
@@ -5349,7 +4502,7 @@
             There is a function called the factorial function which is symbolized by 
             an exclamation point.  The domain of the function is limited to the 
             non-negative integers. 
-            \Cref{exp-tab-factorial} shows enough values of the function for you to 
+            <xref ref="exp-tab-factorial"/> shows enough values of the function for you to 
             hopefully see the way the function works.
 
             \begin{table}[!htb]
@@ -5612,9 +4765,9 @@
             reasonably be modeled with a linear function. 
             <solution>
               <p>
-                \Cref{exp-tab-lineardata}: this is linear data since <m>y</m> values increase by a constant <m>6</m> when <m>x</m> increases by <m>1</m>.
-                \Cref{exp-tab-expdata}: this data is reasonably close to linear since <m>y</m> values increase by <em>almost</em> a constant <m>0.2</m> when <m>x</m> increases by <m>1</m>.
-                \Cref{exp-tab-neitherdata}: this data is not linear.
+                <xref ref="exp-tab-lineardata"/>: this is linear data since <m>y</m> values increase by a constant <m>6</m> when <m>x</m> increases by <m>1</m>.
+                <xref ref="exp-tab-expdata"/>: this data is reasonably close to linear since <m>y</m> values increase by <em>almost</em> a constant <m>0.2</m> when <m>x</m> increases by <m>1</m>.
+                <xref ref="exp-tab-neitherdata"/>: this data is not linear.
               </p>
             </solution>
             </exercisegroup>
@@ -5686,19 +4839,19 @@
             is a function of the number of hours the wine has been fermenting.
             <solution>
             After the first hour, the cells will reproduce and the number of cells will be larger.  After the second hour, there will be <em>even more</em> new cells added, since we will have more cells in the first place capable of reproducing.  This pattern continues.  The population is increasing at a faster and faster rate, so an exponential model may be appropriate.
-            \end{pccsolution}
+            </solution>
             </example>
 
             <example>
             Decide if the function that is described is more like an exponential function, a linear function, or neither.
 
-            Your house is being repainted, and every hour the workers paint an additional <m>\SI{400}{\square\foot}</m>.  
+            Your house is being repainted, and every hour the workers paint an additional <quantity><mag>400</mag><unit base="foot" exp="2"/></quantity>.  
             The amount that has been painted is a function of the number of hours that have been worked.
 
             <solution>
-            After the first hour, the workers paint <m>\SI{400}{\square\foot}</m>.  After the second hour they have painted an additional 
-            <m>\SI{400}{\square\foot}</m>.  The amount of space that has been painted is increasing at a constant rate, so a linear model is appropriate.
-            \end{pccsolution}
+            After the first hour, the workers paint <quantity><mag>400</mag><unit base="foot" exp="2"/></quantity>.  After the second hour they have painted an additional 
+            <quantity><mag>400</mag><unit base="foot" exp="2"/></quantity>.  The amount of space that has been painted is increasing at a constant rate, so a linear model is appropriate.
+            </solution>
             </example>
 
             Suppose that you have some actual data and that you want to determine whether it would be 
@@ -5788,16 +4941,16 @@
             For each of the data sets in \cref{exp-tab-dataexample3,exp-tab-dataexample4}, determine if the data is 
             linear, exponential, or neither.  If the data is either linear or exponential, find a formula that models the data.
 
-            In \cref{exp-tab-dataexample3}, every time the value of <m>x</m> increases by <m>2</m>, the ratio of the successive <m>y</m>-values is <m>\frac{1}{4}</m>.  
+            In <xref ref="exp-tab-dataexample3"/>, every time the value of <m>x</m> increases by <m>2</m>, the ratio of the successive <m>y</m>-values is <m>\frac{1}{4}</m>.  
             This is indicative of an exponential function.  
 
             If <m>f(x)=a\,b^x</m>, then from the data points <m>(-8,72)</m> and <m>(-6,18)</m> we get <m>\frac{a\,b^{-6}}{a b^{-8}}=\frac{18}{72}</m>.  
             So <m>b^2=\frac{1}{4}</m> which means that the base of the function <m>b</m> must be <m>\frac{1}{2}</m> (since the base cannot be negative).  
             Using the data point <m>(0,0.28125)</m> along with our newly discovered base we find <m>a(0.5)^0=0.28125</m>, so <m>a=0.28125</m>.  
 
-            In conclusion, the data in \cref{exp-tab-dataexample3} is modeled by the exponential function <m>f</m> where <m>f(x)=0.28125\left(\frac12\right)^x</m>.
+            In conclusion, the data in <xref ref="exp-tab-dataexample3"/> is modeled by the exponential function <m>f</m> where <m>f(x)=0.28125\left(\frac12\right)^x</m>.
 
-            In \cref{exp-tab-dataexample4}, every time the value of <m>x</m> increase by 5, the value of <m>y</m> decreases by 5.  This is 
+            In <xref ref="exp-tab-dataexample4"/>, every time the value of <m>x</m> increase by 5, the value of <m>y</m> decreases by 5.  This is 
             the behavior of a linear function with a slope of <m>-1</m>.  Using either the slope-intercept form of a linear 
             equation or the point-slope form of a linear equation, we can deduce that the data is modeled by the linear 
             function <m>g</m> where <m>g(x)=-x-8</m>.
@@ -5807,7 +4960,7 @@
             might need to decide which model <em>best</em> fits the data, linear or exponential.
 
             <example>
-            Is the data in \cref{exp-tab-dataexample5} better modeled with a linear function or an exponential function?
+            Is the data in <xref ref="exp-tab-dataexample5"/> better modeled with a linear function or an exponential function?
             \begin{table}[!htb]
             \centering
             \captionof{table}{} xml:id="exp-tab-dataexample5"
@@ -5834,23 +4987,23 @@
             The differences are not constant, but they are all fairly close to having the constant value of 4.  
             The ratios however are not close to being constant.  It might be appropriate to model this 
             data with a linear function, but it would not be appropriate to model it with an exponential function.
-            \end{pccsolution}
+            </solution>
             </example>
 
-            <try-it-yourself>
+            <exercises style="try-it-yourself">
             <exercisegroup>
 <statement>
             Determine if each of the data sets in \crefrange{exp-tab-dataexample55}{exp-tab-dataexample8} 
             suggest an exponential relationship, a linear relationship, or neither. 
             <solution>
               <p>
-                \Cref{exp-tab-dataexample55}: since successive differences are all equal to <m>2</m>, a linear model would be appropriate. 
+                <xref ref="exp-tab-dataexample55"/>: since successive differences are all equal to <m>2</m>, a linear model would be appropriate. 
                 Successive ratios decrease steadily, so an exponential model would not be appropriate.
-                \Cref{exp-tab-dataexample6}: since successive ratios are all equal to <m>3</m>, an exponential model would be appropriate.  
+                <xref ref="exp-tab-dataexample6"/>: since successive ratios are all equal to <m>3</m>, an exponential model would be appropriate.  
                 Successive differences increase, so a linear model would not be appropriate.
-                \Cref{exp-tab-dataexample7}: since successive differences are all quite close to <m>2.3</m>, a linear model might be appropriate.  
+                <xref ref="exp-tab-dataexample7"/>: since successive differences are all quite close to <m>2.3</m>, a linear model might be appropriate.  
                 Successive ratios drop steadily from about <m>1.13</m> to <m>1.09</m>, so an exponential model would not be appropriate.
-                \Cref{exp-tab-dataexample8}: since successive ratios are all quite close to <m>0.92</m>, an exponential model might be appropriate.  
+                <xref ref="exp-tab-dataexample8"/>: since successive ratios are all quite close to <m>0.92</m>, an exponential model might be appropriate.  
                 Successive differences rise steadily from <m>-44</m> to <m>-31</m>, so a linear model would not be appropriate.
               </p>
             </solution>
@@ -5930,15 +5083,13 @@
             \end{minipage}
             \hfill\null
             \end{table}
-            </try-it-yourself>
-            %===================================
-            <author>Jordan</author>
+            </exercises>
+                        <author>Jordan</author>
             <date>  Nov 2011</date>
-            %===================================
-            Our examples in this section so far have not had any context; they have just been tables of numbers.  As a student of the natural and social sciences, you will encounter data sets that come from interesting sources.  Understanding how to model these data sets can help you understand that subject better.
+                        Our examples in this section so far have not had any context; they have just been tables of numbers.  As a student of the natural and social sciences, you will encounter data sets that come from interesting sources.  Understanding how to model these data sets can help you understand that subject better.
 
             <example>
-            A study of reproductive health care found the data in \cref{exp-ex-Csection} concerning the percentage of births in the U.S.A.\ that were delivered via a C\ae{}sarian section.
+            A study of reproductive health care found the data in <xref ref="exp-ex-Csection"/> concerning the percentage of births in the U.S.A.\ that were delivered via a C\ae{}sarian section.
 
             Can we model this data with a linear or exponential function?
             <solution>
@@ -5989,11 +5140,11 @@
             \hfill\mbox{}
             \end{figure}
 
-            \Cref{exp-fig-Csections} shows us that there is a clear upward trend in C\ae{}sarian section deliveries.  Is the trend linear, exponential, or neither?  
+            <xref ref="exp-fig-Csections"/> shows us that there is a clear upward trend in C\ae{}sarian section deliveries.  Is the trend linear, exponential, or neither?  
 
-            You might be able to see a slight upward bend to the plot, suggesting an exponential growth pattern.  Then again, your eyes might see these points as lying in a relatively straight line, suggesting a linear growth pattern.   Let's look at successive ratios and differences in \cref{exp-ex-CsectionSuccessive}.
+            You might be able to see a slight upward bend to the plot, suggesting an exponential growth pattern.  Then again, your eyes might see these points as lying in a relatively straight line, suggesting a linear growth pattern.   Let's look at successive ratios and differences in <xref ref="exp-ex-CsectionSuccessive"/>.
 
-            In \cref{exp-ex-CsectionSuccessive}, we see successive differences that become larger and larger.  This tells us that a linear model would not be appropriate for the C\ae{}sarian section data.  On the other hand, the successive ratios all bounce around close to <m>1.074</m>.  This suggests that an exponential model would be appropriate.
+            In <xref ref="exp-ex-CsectionSuccessive"/>, we see successive differences that become larger and larger.  This tells us that a linear model would not be appropriate for the C\ae{}sarian section data.  On the other hand, the successive ratios all bounce around close to <m>1.074</m>.  This suggests that an exponential model would be appropriate.
             \begin{table}[!htb]
             \centering
             \captionof{table}{US C\ae{}sarian Section Data}
@@ -6012,7 +5163,7 @@
             </tabular>
 </table>
             \end{table}
-            \end{pccsolution}
+            </solution>
 
             If we have decided that an exponential model is appropriate, can we explicitly write down a model?
 
@@ -6020,12 +5171,12 @@
             We have many data points, but we only require two in order to determine a formula for an exponential function.  And it's likely that different choices of points will lead to slightly different models.  In an intermediate statistics course, students learn how to deal with this issue.  For now, we will use the following rule of thumb: use data points that are a little inward from the edges.  In the current example, we will use the data from 1998 and 2006.
 
             Since we typically wish to associate <m>t=0</m> to a year where the data was relevant, we will identify <m>t=0</m> with the year 2000. Now if <m>f(t)=a\,b^t</m>, then the data from 1998 and 2006 tell us that 
-            \[
+            <me>
             \begin{cases}
             22.6   =  a\,b^{-2} 
             30.0  =  a\,b^6     
             \end{cases}
-            \]
+            </me>
             We can eliminate <m>a</m> by equating the quotients formed by the two sides of the equations. 
             \begin{equation*}
             \frac{30.0}{22.6} = \frac{a\,b^{6}}{a\,b^{-2}}\qquad \Longrightarrow\qquad b=\left(\frac{30.0}{22.6}\right)^{\sfrac18}\approx1.036
@@ -6042,8 +5193,8 @@
             &amp; = 30^{\sfrac{1}{4}}22.6^{\sfrac{3}{4}}\left(  \left( \frac{30.0}{22.6} \right)^{\sfrac{1}{8}}\right)^t \\
             &amp; \approx 24.26(1.036)^t                                                                                          
             \end{align*}
-            and it is acceptable to say that the percentage of C-section births is growing exponentially in the U.S.A.  For completeness, we can examine a graph of this model overlaying the data in \cref{exp-fig-CsectionsModel}.
-            \end{pccsolution}
+            and it is acceptable to say that the percentage of C-section births is growing exponentially in the U.S.A.  For completeness, we can examine a graph of this model overlaying the data in <xref ref="exp-fig-CsectionsModel"/>.
+            </solution>
             </example>
 
             \begin{figure}[!htb]
@@ -6074,23 +5225,21 @@
             has helped us determine how the two classes of function behave differently 
             in the short term. You may wonder how the two classes of function behave differently in the long term.
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-complinexp"
+                        <example>xml:id="exp-ex-complinexp"
             Consider the functions <m>f</m> and <m>g</m> that have formulas
-            \[
+            <me>
             f(x)=4x+1, \qquad g(x)=4^x
-            \]
+            </me>
             Describe the behavior of both functions as <m>x\to\infty</m> and as <m>x\to -\infty</m>.
             <solution>
-            The functions <m>f</m> and <m>g</m> are graphed in \cref{exp-fig-comparelinexp}.
+            The functions <m>f</m> and <m>g</m> are graphed in <xref ref="exp-fig-comparelinexp"/>.
             Note that both functions grow without bound as <m>x\to\infty</m>. Another 
             way to express this is to say
-            \[
+            <me>
             f(x)\to\infty \qquad\mathrm{and}\qquad g(x)\to\infty
-            \]
+            </me>
             as <m>x\to\infty</m>.
 
             However, even though both functions grow without bound, the exponential 
@@ -6099,7 +5248,7 @@
             The behavior of the functions as <m>x\to-\infty</m> is quite different.
             Note that <m>g</m> has a horizontal asymptote (<m>y=0</m>) and that <m>f</m> does not; in 
             fact <m>f(x)\to-\infty</m> as <m>x\to-\infty</m>.
-            \end{pccsolution}
+            </solution>
             </example>
 
             \begin{figure}[!htb]
@@ -6157,33 +5306,29 @@
             \hfill\null
             \end{figure}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <example>
+                        <example>
             Now consider the functions <m>m</m> and <m>n</m> that have formulas
-            \[
+            <me>
             m(x) = -10^x, \qquad n(x)=-6x
-            \]
+            </me>
             Describe the behavior of both functions as <m>x\to\infty</m> and as <m>x\to-\infty</m>.
             <solution>
-            The functions <m>m</m> and <m>n</m> are both graphed in \cref{exp-fig-comparelinexpmn}. 
+            The functions <m>m</m> and <m>n</m> are both graphed in <xref ref="exp-fig-comparelinexpmn"/>. 
             Note that both functions decrease without bound as <m>x\to\infty</m>. However, <m>m</m> does so 
             at <em>a much faster rate</em>.
 
-            As in \cref{exp-ex-complinexp}, the behavior of <m>m</m> and <m>n</m> as <m>x\to-\infty</m>
+            As in <xref ref="exp-ex-complinexp"/>, the behavior of <m>m</m> and <m>n</m> as <m>x\to-\infty</m>
             is different. Notice that <m>m</m> has a horizontal asymptote (<m>y=0</m>) and that 
             <m>n</m> does not.  In this case <m>n(x)\to \infty</m> as <m>x\to-\infty</m>.
-            \end{pccsolution}
+            </solution>
             </example>
 
             \investigation*{}
-            %===================================
-            <author>Vega</author>
+                        <author>Vega</author>
             <date>  March 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Cell phones</title>
 <statement>
             A cell phone company is 
@@ -6201,7 +5346,7 @@
                   &amp; =  \frac{75}{3}        \\
                   &amp; = 25                   
                   \end{align*}
-                  The units in the numerator are millions and the units in the denominator are years.  So the slope of 25 has meaning as a rate of <m>\SI{25}{\million\per\year}</m>.  This means there are 25 million new cell phone subscriptions each year since 2000.
+                  The units in the numerator are millions and the units in the denominator are years.  So the slope of 25 has meaning as a rate of \SI{25}{\million\per\year}.  This means there are 25 million new cell phone subscriptions each year since 2000.
                 </p>
               </solution>
             </exercise>
@@ -6249,11 +5394,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  May 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Wind power</title>
 <statement>
             The wind energy production capacity (in \si{\mega\watt}) for the world\footnote{\href{http://www.thewindpower.net/statistics\_world.php}{http://www.thewindpower.net/statistics\_world.php}} is shown in 
@@ -6328,7 +5471,7 @@
               <statement>
                 Let <m>W(t)</m> represent the wind energy production (in \si{\mega\watt}) at time <m>t</m> in 
                 years since 1995. 
-                In 1995 the wind power capacity was \SI{4800}{\mega\watt} and in 2010 the wind power capacity was \SI{194154}{\mega\watt}.
+                In 1995 the wind power capacity was <quantity><mag>4800</mag><unit base="watt" prefix="mega"/></quantity> and in 2010 the wind power capacity was <quantity><mag>194154</mag><unit base="watt" prefix="mega"/></quantity>.
                 Using two ordered pairs, <m>(0,4800)</m> and <m>(15,194154)</m>, and assuming that an exponential model is appropriate, we can 
                 show that a formula that approximates <m>W</m> is
                 \begin{align*}
@@ -6336,25 +5479,23 @@
                 &amp; =      4800\left( \left( \frac{194154}{4800} \right)^{\sfrac{1}{15}} \right)^t \\
                 &amp; \approx 4800(1.279756)^t                                                          
                 \end{align*}
-                Using a table of values or a graph, find when the world's wind power capacity will be \SI{250000}{\mega\watt}.
+                Using a table of values or a graph, find when the world's wind power capacity will be <quantity><mag>250000</mag><unit base="watt" prefix="mega"/></quantity>.
               </statement>
               <solution>
                 <p>
                   Using a table of values, we find that <m>W(16)\approx 248470</m>, and <m>W(17)\approx 317980</m>. We conclude that, 
-                  according to the model, the world's wind power capacity will be \SI{250000}{\mega\watt} in early 2012. 
+                  according to the model, the world's wind power capacity will be <quantity><mag>250000</mag><unit base="watt" prefix="mega"/></quantity> in early 2012. 
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Population of Africa</title>
 <statement>
-            \Cref{exp-tab-AfricaPopulation} gives the population of Africa for each year form 1999 to 2009.\footnote{\href{http://www.earth-policy.org/books/wote}{http://www.earth-policy.org/books/wote}}
+            <xref ref="exp-tab-AfricaPopulation"/> gives the population of Africa for each year form 1999 to 2009.\footnote{\href{http://www.earth-policy.org/books/wote}{http://www.earth-policy.org/books/wote}}
 
             \begin{table}[!htb]
             \centering
@@ -6408,7 +5549,7 @@
             </exercise>
             <exercise>
               <statement>
-                Use the model that you found in \cref{exp-prob-Africamodel} to estimate the population of Africa in the year 2020.
+                Use the model that you found in <xref ref="exp-prob-Africamodel"/> to estimate the population of Africa in the year 2020.
               </statement>
               <solution>
                 <p>
@@ -6446,7 +5587,7 @@
             </exercise>
             <exercise>
               <statement>
-                How good is your model?  Use your model to add a third column to  \cref{exp-tab-AfricaPopulation} that displays the model's predicted population.  Discuss the accuracy of the model.
+                How good is your model?  Use your model to add a third column to  <xref ref="exp-tab-AfricaPopulation"/> that displays the model's predicted population.  Discuss the accuracy of the model.
               </statement>
               <solution>
                 <p>
@@ -6477,11 +5618,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Tortoise and the Hare</title>
 <statement>
             Aesop's fable of the Tortoise and the Hare depicts an unlikely race between
@@ -6489,11 +5628,11 @@
             with confidence. The Tortoise, who is known as a slow and more methodical
             creature is a little nervous. We are going to model a version of this fable.
 
-            The Tortoise and the Hare are going to race over \SI{1000}{\meter}. The Hare boasts
-            that he can run at <m>\SI{20}{\meter\per\second}</m> for as long as he likes. The 
+            The Tortoise and the Hare are going to race over <quantity><mag>1000</mag><unit base="meter"/></quantity>. The Hare boasts
+              that he can run at <quantity><mag>20</mag><unit base="meter"/><per base="second"/></quantity> for as long as he likes. The 
             Tortoise doesn't know how fast he can run, but he says that his distance from the 
             their starting line obeys the rule <m>y=2^t</m>, where <m>t</m> is the time (in seconds) 
-            since they begin the race; he does ask the Hare if he can have a \SI{1}{\meter} head start. 
+            since they begin the race; he does ask the Hare if he can have a <quantity><mag>1</mag><unit base="meter"/></quantity> head start. 
             The Hare laughs at the Tortoise and says, `Fine by me!'
             <exercise>
               <statement>
@@ -6552,7 +5691,7 @@
             </exercise>
             Unbeknown to both competitors, the Hare's older sister has been watching the race.
             She approaches the Tortoise and says that if she had been racing, she would easily have won
-            because she can run at <m>\SI{40}{\meter\per\second}</m> for as long as she likes. 
+            because she can run at <quantity><mag>40</mag><unit base="meter"/><per base="second"/></quantity> for as long as she likes. 
             <exercise>
               <statement>
                 Let <m>S(t)</m> represent the Hare's sister's distance from the starting line (in meters) <m>t</m> seconds 
@@ -6601,12 +5740,10 @@
             </exercise>
             </exercisegroup>
 
-            %=================================================================
-            %
+                        %
             %				Exercises
             %
-            %=================================================================
-            \begin{exercises}
+                        \begin{exercises}
             <exercisegroup>
 <title>Linear or exponential?</title>
 <statement>
@@ -6655,18 +5792,16 @@
             \end{multicols}
             </exercisegroup>
 
-            %===================================
-            <author>Kouzes</author>
+                        <author>Kouzes</author>
             <date>  Apr 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Linear, exponential, or neither?</title>
 <statement>
             Decide if the function that is described is more like an exponential function, a linear function, or neither.
             <exercise>
               <statement>
                 The number of plants that germinate is a function of the number of seeds sown.
-                For a particular crop of peas, exactly \SI{70}{\percent} of the seeds sown germinate. 
+                For a particular crop of peas, exactly <quantity><mag>70</mag><unit base="percent"/></quantity> of the seeds sown germinate. 
               </statement>
               <solution>
                 <p>
@@ -6677,7 +5812,7 @@
                 <p>
                   Linear. The function can be modeled by <m>g(x)=0.7x</m>, where <m>g(x)</m> is the number 
                   of plants that germinate and <m>x</m> is the number of seeds sown. An increase in the <m>x</m> 
-                  value results in an increase in the <m>g(x)</m> value by \SI{70}{\percent} of the <m>x</m> value. 
+                  value results in an increase in the <m>g(x)</m> value by <quantity><mag>70</mag><unit base="percent"/></quantity> of the <m>x</m> value. 
                 </p>
               </answer>
             </exercise>
@@ -6721,7 +5856,7 @@
               <statement>
                 The amount of money in Serena's account is a function of the number 
                 of years since she opened the account.
-                Every year the amount of money Serena's account increases by \SI{2}{\percent} of the amount that was in the 
+                Every year the amount of money Serena's account increases by <quantity><mag>2</mag><unit base="percent"/></quantity> of the amount that was in the 
                 account the year before. 
               </statement>
               <solution>
@@ -6733,7 +5868,7 @@
                 <p>
                   Exponential. The function can be modeled by <m>f(x)=1.02^x</m>, where <m>f(x)</m> is the amount of money 
                   in the bank account and <m>x</m> is the number of years since I opened the account. Every increase 
-                  in the <m>x</m> value results in \SI{102}{\percent} of the value of <m>f(x)</m>.
+                  in the <m>x</m> value results in <quantity><mag>102</mag><unit base="percent"/></quantity> of the value of <m>f(x)</m>.
                 </p>
               </answer>
             </exercise>
@@ -6756,11 +5891,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Barkin</author>
+                        <author>Barkin</author>
             <date>  April 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Linear or exponential?</title>
 <statement>
             Consider the data sets in \crefrange{exp-tab-findformula1}{exp-tab-dataproblem3}.
@@ -6919,26 +6052,24 @@
               </statement>
               <solution>
                 <p>
-                  The data in \cref{exp-tab-dataproblem1} could be modeled with an exponential function, since all of the ratios are fairly close to 1.1.  The model could be <m>y=f(x)</m>, where <m>f(x)=5(1.1)^x</m>.
-                  The data in \cref{exp-tab-dataproblem2} could be modeled with a linear function, since all of the differences are fairly close to 1.12.  The model could be <m>y=g(x)</m>, where <m>g(x)=1.12x+2.03</m>.
-                  The data in \cref{exp-tab-dataproblem3} should not be modeled with either a linear function or an exponential function, since the differences are increasing and the ratios are decreasing.
+                  The data in <xref ref="exp-tab-dataproblem1"/> could be modeled with an exponential function, since all of the ratios are fairly close to 1.1.  The model could be <m>y=f(x)</m>, where <m>f(x)=5(1.1)^x</m>.
+                  The data in <xref ref="exp-tab-dataproblem2"/> could be modeled with a linear function, since all of the differences are fairly close to 1.12.  The model could be <m>y=g(x)</m>, where <m>g(x)=1.12x+2.03</m>.
+                  The data in <xref ref="exp-tab-dataproblem3"/> should not be modeled with either a linear function or an exponential function, since the differences are increasing and the ratios are decreasing.
                 </p>
               </solution>
             </exercise>
             </exercisegroup>
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Which is greater?</title>
 <statement>
             Let <m>f</m> and <m>g</m> be functions that have the formulas
-            \[
+            <me>
             f(x)=1000x+1\times 10^6,\qquad  g(x)=2^x
-            \]
+            </me>
             <exercise>
               <statement>
                 Evaluate <m>f(1)</m> and <m>g(1)</m>. Which is greater?
@@ -6971,7 +6102,7 @@
             </exercise>
             <exercise>
               <statement>
-                Evaluate <m>f(20)</m> and <m>g(20)</m>. Does this change your answer to \cref{exp-prob-expovertake}?
+                Evaluate <m>f(20)</m> and <m>g(20)</m>. Does this change your answer to <xref ref="exp-prob-expovertake"/>?
               </statement>
               <solution>
                 <p>
@@ -6981,11 +6112,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <statement>
             Consider the ordered pairs <m>(3,10)</m> and <m>(7,15)</m>.
             <exercise>
@@ -7020,11 +6149,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>True or false</title>
 <statement>
             Answer the following questions as True or False; if you believe the answer 
@@ -7081,14 +6208,12 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Classify that function!</title>
 <statement>
-            \pccname{Carlos} and \pccname{Anita} are playing a game the call, `Classify that function!' One of them 
+            <omdname>Carlos</omdname> and <omdname>Anita</omdname> are playing a game the call, `Classify that function!' One of them 
             describes how to plot the points or features of the graph, and the other has to say if it is linear 
             or exponential. Help them decide if the following describe 
             linear or exponential functions.
@@ -7144,11 +6269,9 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Matching stories with formulas</title>
 <statement>
             Match each of the following formulas with one of the given statements. 
@@ -7180,7 +6303,7 @@
             </exercise>
             <exercise>
               <statement>
-                A population starts with 100 people, and decreases by <m>\SI{10}{\percent}</m> per year.
+                A population starts with 100 people, and decreases by <quantity><mag>10</mag><unit base="percent"/></quantity> per year.
               </statement>
               <solution>
                 <p>
@@ -7230,13 +6353,11 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <statement>
-            Did you complete \cref{exp-prob-tapfishtable} (from \cref{exp-sec-findformula}) about the Tapfish app?  If you did, do the values of <m>F(t)</m> suggest that an exponential model might be appropriate?  Use successive ratios to decide.
+            Did you complete <xref ref="exp-prob-tapfishtable"/> (from <xref ref="exp-sec-findformula"/>) about the Tapfish app?  If you did, do the values of <m>F(t)</m> suggest that an exponential model might be appropriate?  Use successive ratios to decide.
 
             <solution>
               <p>
@@ -7264,21 +6385,19 @@
             </exercisegroup>
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Long-run behavior of linear and exponential functions</title>
 <statement>
             We are going to explore long-run behavior of exponential functions that have base less than one (<m>b&lt;1</m>).
             <exercise>
               <statement>
                 Let <m>f</m> and <m>n</m> be the functions that have formulas
-                \[
+                <me>
                 f(x)=\left( \frac{1}{4} \right)^x, \qquad n(x)=-3x
-                \]
-                which are shown in \cref{exp-fig-complinexpfn}. Describe the behavior
+                </me>
+                which are shown in <xref ref="exp-fig-complinexpfn"/>. Describe the behavior
                 of <m>f</m> and <m>n</m> as <m>x\to\infty</m> and <m>x\to-\infty</m>.
               </statement>
               <solution>
@@ -7291,10 +6410,10 @@
             <exercise>
               <statement>
                 Let <m>g</m> and <m>m</m> be the functions that have formulas
-                \[
+                <me>
                 g(x)= -\left( \frac{1}{5} \right)^x, \qquad m(x)=6x
-                \]
-                which are shown in \cref{exp-fig-complinexpgm}. Describe the behavior
+                </me>
+                which are shown in <xref ref="exp-fig-complinexpgm"/>. Describe the behavior
                 of <m>g</m> and <m>m</m> as <m>x\to\infty</m> and <m>x\to-\infty</m>.
               </statement>
               <solution>
@@ -7363,15 +6482,13 @@
             \end{figure}
 
             \FloatBarrier
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  Dec 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Match formulas to graphs</title>
 <statement>
             Match each of the following formulas with one of the graphs in 
-            \cref{exp-fig-matchlinexp}. Note that axis ticks and scaling have deliberately
+            <xref ref="exp-fig-matchlinexp"/>. Note that axis ticks and scaling have deliberately
             been omitted to encourage you to think about long-run behavior. 
             \begin{multicols}{4}
             <ol>[label=(\roman*)]
@@ -7387,16 +6504,16 @@
             \end{multicols}
             <solution>
               <p>
-                \begin{itemize}
-                <li> \Cref{exp-fig-matchlinexp1}: <m>y=10^x</m></li>
-                <li> \Cref{exp-fig-matchlinexp2}: <m>y=-\pi x</m></li>
-                <li> \Cref{exp-fig-matchlinexp3}: <m>y=\left( \dfrac{1}{2} \right)^x</m></li>
-                <li> \Cref{exp-fig-matchlinexp4}: <m>y=x</m></li>
-                <li> \Cref{exp-fig-matchlinexp5}: <m>y=4</m></li>
-                <li> \Cref{exp-fig-matchlinexp6}: <m>y=-\left( \dfrac{1}{2} \right)^x</m></li>
-                <li> \Cref{exp-fig-matchlinexp7}: <m>y=10x+2</m></li>
-                <li> \Cref{exp-fig-matchlinexp8}: <m>y=-4^x</m></li>
-                \end{itemize}
+                <ul>
+                <li> <xref ref="exp-fig-matchlinexp1"/>: <m>y=10^x</m></li>
+                <li> <xref ref="exp-fig-matchlinexp2"/>: <m>y=-\pi x</m></li>
+                <li> <xref ref="exp-fig-matchlinexp3"/>: <m>y=\left( \dfrac{1}{2} \right)^x</m></li>
+                <li> <xref ref="exp-fig-matchlinexp4"/>: <m>y=x</m></li>
+                <li> <xref ref="exp-fig-matchlinexp5"/>: <m>y=4</m></li>
+                <li> <xref ref="exp-fig-matchlinexp6"/>: <m>y=-\left( \dfrac{1}{2} \right)^x</m></li>
+                <li> <xref ref="exp-fig-matchlinexp7"/>: <m>y=10x+2</m></li>
+                <li> <xref ref="exp-fig-matchlinexp8"/>: <m>y=-4^x</m></li>
+                </ul>
               </p>
             </solution>
             </exercisegroup>
@@ -7570,11 +6687,11 @@
             \end{outcomelist}
             \end{outcomes}
             \subsection*{A more realistic population model}
-            We considered population models in \cref{exp-sec-populationmodels}. 
+            We considered population models in <xref ref="exp-sec-populationmodels"/>. 
             Each model had the form 
-            \[
+            <me>
             P(t) = a\,b^t
-            \]
+            </me>
             and therefore implied that as <m>t\to\infty</m>, the population either decays to zero, or grows without bound.
 
             Intuitively, these models are unrealistic.  A decreasing population does not necessarily decay to zero, and an 
@@ -7584,45 +6701,43 @@
             \begin{pccdefinition}[The Logistic Model]xml:id="exp-def-logistic"
             According to the Logistic Model, the population, <m>P(t)</m>, <m>t</m> years after the population started its logistic growth is 
             given by the formula
-            \[
+            <me>
             P(t) = \frac{MP_0}{P_0+(M-P_0)e^{-kt}}
-            \]
+            </me>
             where
-            \begin{itemize}
+            <ul>
             <li> <m>P_0</m> is the initial population:  <m>P_0=P(0)</m>;</li>
             \item <m>M</m> is the {\em carrying capacity}, the maximum population that can be supported by the 
             available resources;
             \item <m>k</m> approximates the relative growth rate when the population is small, relative to the carrying capacity, 
             interpreted as a percent per year.       
-            \end{itemize}
+            </ul>
             \end{pccdefinition}
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  May 2011</date>
-            %===================================
-            <example>xml:id="exp-ex-logistic"
+                        <example>xml:id="exp-ex-logistic"
             Let <m>P(t)</m> represent the population of a country at time <m>t</m> (in years) since 2000.
-            Use \cref{exp-def-logistic}, with <m>k=0.08</m> and <m>M=1000</m>, to study the effect 
+            Use <xref ref="exp-def-logistic"/>, with <m>k=0.08</m> and <m>M=1000</m>, to study the effect 
             of changing <m>P_0</m> from 100 to 1400. What happens to <m>P</m> as <m>t\to\infty</m>?
             <solution>
-            Using <m>k=0.08</m> and <m>M=1000</m> in \cref{exp-def-logistic}, we have
-            \[
+            Using <m>k=0.08</m> and <m>M=1000</m> in <xref ref="exp-def-logistic"/>, we have
+            <me>
             P(t) = \frac{1000P_0}{P_0+(1000-P_0)e^{-0.08t}}
-            \]
+            </me>
             If we put <m>P_0=100</m> and then <m>P_0=1400</m> then we have, respectively,
-            \[
+            <me>
             P(t)=\frac{1000}{1+9e^{-0.08t}}, \qquad P(t)= \frac{7000}{7-2e^{-0.08t}}
-            \]
+            </me>
             graphs of which are shown in \cref{exp-fig-logistics1,exp-fig-logistics2}.
 
             Notice that in both models, <m>P(t)\to 1000</m> as <m>t\to\infty</m>. Remember 
-            that we called <m>M</m> the carrying capacity in \cref{exp-def-logistic}, 
+            that we called <m>M</m> the carrying capacity in <xref ref="exp-def-logistic"/>, 
             which represents the maximum population that the environment can support. 
 
-            In contrast to the models presented in \cref{exp-sec-populationmodels}, the populations 
+            In contrast to the models presented in <xref ref="exp-sec-populationmodels"/>, the populations 
             neither grow without bound nor decay toward zero. 
-            \end{pccsolution}
+            </solution>
             </example>
 
             \begin{figure}[!htb]
@@ -7680,14 +6795,12 @@
             \end{figure}
 
             \begin{exercises}
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  May 2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Logistic model</title>
 <statement>
-            Use \cref{exp-def-logistic} and \cref{exp-ex-logistic} to guide you in this 
+            Use <xref ref="exp-def-logistic"/> and <xref ref="exp-ex-logistic"/> to guide you in this 
             problem. Assume that <m>k=0.05</m>, <m>P_0=100</m> and <m>M=800</m>.
             <exercise>
               <statement>
@@ -7706,7 +6819,7 @@
               <solution>
                 <p>
                   <m>P(1)\approx 104.46</m>. We calculate <m>\frac{P(1)}{P(0)}\approx 1.0446</m>. The 
-                  relative growth over the first year is approximately <m>\SI{4.46}{\percent}</m>.
+                  relative growth over the first year is approximately <quantity><mag>4.46</mag><unit base="percent"/></quantity>.
                 </p>
               </solution>
             </exercise>
@@ -7755,17 +6868,15 @@
             </exercisegroup>
 
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Rats!</title>
 <statement>
             In the 1800s, a ship landed on a remote island and 35 black rats (\textit{Rattus rattus}) escaped to colonize the island.  
             <exercise xml:id="exp-prob-ratisland">
               <statement>
-                If the initial relative growth rate was about \SI{90}{\percent} per year and the island has a carrying capacity of 20,000 rats, find a formula for <m>P(t)</m>, the number of rats on the island at time <m>t</m>, assuming logistic growth.
+                If the initial relative growth rate was about <quantity><mag>90</mag><unit base="percent"/></quantity> per year and the island has a carrying capacity of 20,000 rats, find a formula for <m>P(t)</m>, the number of rats on the island at time <m>t</m>, assuming logistic growth.
               </statement>
               <solution>
                 <p>
@@ -7786,19 +6897,17 @@
             </exercise>
             </exercisegroup>
 
-            %===================================
-            <author>Jordan</author>
+                        <author>Jordan</author>
             <date>  2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>The invasive blackberry</title>
 <statement>
             Himalayan blackberry is an invasive species.  
-            Some seeds found their way into a remote valley and grew into <m>\SI{8}{\kilo\gram}</m> of blackberry biomass by the next year.  
-            Suppose that the initial relative growth rate of blackberry biomass was \SI{350}{\percent} per year and that the valley has a carrying capacity of <m>\SI{50000}{\kilo\gram}</m>.  
+            Some seeds found their way into a remote valley and grew into <quantity><mag>8</mag><unit base="gram" prefix="kilo"/></quantity> of blackberry biomass by the next year.  
+            Suppose that the initial relative growth rate of blackberry biomass was <quantity><mag>350</mag><unit base="percent"/></quantity> per year and that the valley has a carrying capacity of <quantity><mag>50000</mag><unit base="gram" prefix="kilo"/></quantity>.  
             <exercise xml:id="exp-prob-blackberries">
               <statement>
-                If <m>t=0</m> corresponds to the time when there was <m>\SI{8}{\kilo\gram}</m> of biomass, find a formula for the amount of 
+                If <m>t=0</m> corresponds to the time when there was <quantity><mag>8</mag><unit base="gram" prefix="kilo"/></quantity> of biomass, find a formula for the amount of 
                 blackberry biomass in the valley after <m>t</m> years, assuming logistic growth.  
               </statement>
               <solution>
@@ -7819,11 +6928,9 @@
               </solution>
             </exercise>
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  2011</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <statement>
             <exercise>
               <statement>
@@ -7870,11 +6977,9 @@
               </solution>
             </exercise>
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Composition</title>
 <statement>
             Let <m>f</m> and <m>g</m> be functions that have formulas <m>f(x)=2^x</m> and <m>g(x)=3^x</m>. Find each 
@@ -7942,11 +7047,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Decomposition</title>
 <statement>
             In each of the following problems, you are given a formula for function  
@@ -7994,11 +7097,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  August 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Inverse function evaluation</title>
 <statement>
             The function <m>f</m> that has formula <m>f(x)=2^x</m> is invertible. Evaluate 
@@ -8046,15 +7147,13 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  March 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Piecewise functions</title>
 <statement>
             Let <m>k</m> be the function that has formula
-            \[
+            <me>
             k(t)=
             \begin{cases}
             2^t,  &amp; t&lt;-5        \\
@@ -8062,7 +7161,7 @@
             6t,   &amp; 3&lt;t&lt; 7      \\
             -4^t, &amp; t&gt;7         
             \end{cases}
-            \]
+            </me>
             Evaluate each of the following, and leave your answers in exact form.
             \begin{multicols}{4}
             <exercise>
@@ -8148,17 +7247,15 @@
             \end{multicols}
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Function algebra</title>
 <statement>
             Let <m>f</m> and <m>g</m> be the exponential functions that have formulas
-            \[
+            <me>
             f(x)=3^x, \qquad g(x)=\left( \frac{1}{4} \right)^x
-            \]
+            </me>
             Evaluate each of the following (if possible).
             \begin{multicols}{4}
             <exercise>
@@ -8204,11 +7301,9 @@
             \end{multicols}
             </exercisegroup>
 
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Transformations: given the transformation, find the formula</title>
 <statement>
             Let <m>f</m> be the exponential function that has formula <m>f(x)=7^x</m>. In each of the following 
@@ -8277,11 +7372,9 @@
             </exercise>
             \end{multicols}
             </exercisegroup>
-            %===================================
-            <author>Hughes</author>
+                        <author>Hughes</author>
             <date>  July 2012</date>
-            %===================================
-            <exercisegroup>
+                        <exercisegroup>
 <title>Transformations: given the formula, describe the transformation</title>
 <statement>
             Describe each of the functions defined by the following formulas in terms of transformations 

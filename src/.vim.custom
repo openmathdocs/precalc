@@ -1,0 +1,37 @@
+" by default make the compile verbose
+let g:Myvar="quiet"
+"
+" function to toggle between Noisy and Quiet
+function! ToggleNQ()
+    if g:Myvar=="noisy"
+     let g:Myvar="quiet"
+     echo "Silent mode ON"
+    else
+     let g:Myvar="noisy"
+     echo "Silent mode OFF"
+    endif
+endfunction
+
+:map f :w<CR>:call ProduceLaTeXFile()<CR>
+:map F :w<CR>:call ProduceHTMLFile()<CR>
+:map t :call ToggleNQ() <CR>
+"
+" run xsltproc and compile mainfile.tex
+function! ProduceLaTeXFile()
+    :silent ! xsltproc -xinclude ../xsl/precalc-latex.xsl mainfile.xml
+    if g:Myvar=="noisy"
+    :! arara -v mainfile
+   else
+    "echo "quiet"
+    :! arara mainfile
+   endif
+endfunction
+"
+" run xsltproc to produce an HTML file
+function! ProduceHTMLFile()
+    :silent ! echo "HTML version"
+    :silent ! echo "HTML version"
+    :silent ! echo "HTML version"
+    :silent ! echo "running xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml"
+    :! xsltproc -xinclude ../xsl/precalc-html.xsl precalc.xml
+endfunction

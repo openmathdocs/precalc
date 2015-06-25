@@ -14,4 +14,9 @@
 <xsl:template match="date[not(ancestor::docinfo)]"/>
 <xsl:template match="ignore" />
 
+<!-- omd names -->
+<xsl:template match="omdname" >
+  <xsl:apply-templates/>
+</xsl:template>
+
 </xsl:stylesheet>
