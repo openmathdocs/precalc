@@ -13,7 +13,8 @@
     <!--
     <xi:include href="./exponential-introduction.xml" />
     <xi:include href="./exponential-solving-equations.xml" />
-    -->
     <xi:include href="./exponential-finding-function-given-two-points.xml" />
+    -->
+    <xi:include href="./exponential-modeling.xml" />
 
 </chapter>
