@@ -355,12 +355,21 @@
   <xsl:text>\end{longsolution}&#xa;</xsl:text>
 </xsl:template>
 
-<!-- Figures -->
+<!-- margin figures -->
 <xsl:template match="figure[ancestor::mathbook[@style='chunk']][@style='margin']">
     <!-- margin figure -->
       <xsl:text>\begin{marginfigure}&#xa;\centering&#xa;</xsl:text>
       <xsl:apply-templates />
       <xsl:text>\end{marginfigure}&#xa;</xsl:text>
+      <xsl:text>%&#xa;</xsl:text>
+</xsl:template>
+
+<!-- margin tables -->
+<xsl:template match="table[ancestor::mathbook[@style='chunk']][@style='margin']">
+    <!-- margin figure -->
+      <xsl:text>\begin{margintable}&#xa;\centering&#xa;</xsl:text>
+      <xsl:apply-templates />
+      <xsl:text>\end{margintable}&#xa;</xsl:text>
       <xsl:text>%&#xa;</xsl:text>
 </xsl:template>
 
