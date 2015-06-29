@@ -11,12 +11,12 @@
     <title>Functions</title>
     
     <xi:include href="./function-basics.xml" />
-    <xi:include href="./tables-and-graphs.xml" />
-    <xi:include href="./rule-of-four.xml" />
-    <xi:include href="./domain-and-range.xml" />
-    <xi:include href="./monotonicity-and-concavity.xml" />
-    <xi:include href="./simplification.xml" />
-    <xi:include href="./composition.xml" />
-    <xi:include href="./transformations.xml" />    
+    <xi:include href="./functions-tables-and-graphs.xml" />
+    <xi:include href="./functions-rule-of-four.xml" />
+    <xi:include href="./functions-domain-and-range.xml" />
+    <xi:include href="./functions-monotonicity-and-concavity.xml" />
+    <xi:include href="./functions-simplification.xml" />
+    <xi:include href="./functions-composition.xml" />
+    <xi:include href="./functions-transformations.xml" />    
 
 </chapter>

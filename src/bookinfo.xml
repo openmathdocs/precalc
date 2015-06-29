@@ -19,6 +19,7 @@
     <latex-image-preamble>
     <![CDATA[
     \usepackage{pgfplots}       % graphs and graphics (loads tikz and xcolor)
+    \usepackage{siunitx}
     \usetikzlibrary{backgrounds}
     \usetikzlibrary{shadows}
     \usetikzlibrary{mindmap}

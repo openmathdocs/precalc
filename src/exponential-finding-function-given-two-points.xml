@@ -650,7 +650,7 @@
                   framed,
                   xmin=-2,xmax=9,
                   ymin=-8,ymax=55,
-                  xlabel={<m>t</m>},
+                  xlabel={$t$},
                   xtick={1,...,8},
                   ytick={4,8,...,48},
                   nodes near coords,
@@ -1051,7 +1051,6 @@
             ymin=-2,ymax=8,
             xtick={-4,-2},
             ytick={2,4,6},
-            width=\figurewidth,
             grid=major,
             ]
             \addplot expression[domain=-4.5:1.26186]{2*3^x};
@@ -1071,7 +1070,6 @@
             ymin=-2,ymax=8,
             xtick={-4,-2,...,4},
             ytick={2,4,6},
-            width=\figurewidth,
             grid=major,
             ]
             \addplot expression[domain=-2:3.2]{2*(1/2)^x};
@@ -1089,7 +1087,6 @@
             framed,
             xmin=-5,xmax=2,
             ymin=-8,ymax=2,
-            width=\figurewidth,
             xtick={-4,-2},
             ytick={-6,-4,-2},
             grid=major,
@@ -1109,7 +1106,6 @@
             framed,
             xmin=-3,xmax=6,
             ymin=-6,ymax=2,
-            width=\figurewidth,
             xtick={-2,2,4},
             ytick={-4,-2},
             grid=major,
@@ -1292,9 +1288,9 @@
           <latex-image-code>
             <![CDATA[\begin{tikzpicture}
             \begin{axis}[
-            x axis line style={-&gt;},
-            y axis line style={-&gt;},
-            xlabel={<m>t</m>},
+            x axis line style={->},
+            y axis line style={->},
+            xlabel={$t$},
             ylabel={Solar PV Power Capacity by Year (\si{\mega\watt})},
             width=.95\textwidth,
             height=.5\textwidth,
